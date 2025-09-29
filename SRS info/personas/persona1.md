@@ -8,6 +8,7 @@ GOALS: Wants to keep track of her collection of cards. Her favourite Pokemon is 
         Because of this, Sandra will collect multiples of the same card to fill out her binders. She wants to be able to indicate that 
         she has multiples of a card in her collection. She also wants to be able to indicate the condition of each cards, as some duplicates are in
         better condition than others. She wants to be able to differentiate the binders by what is on the cover and not their specific location in her room.
+        Wants to reduce her collection size and thus wants to be able to indicate that she is selling any cards that she does not care for.
 
 
 
@@ -15,3 +16,4 @@ POKEMON CARD COLLECTING REQUIRMENTS PULLED FROM PERSONAS:
 - multiples of one card
 - ability to add perceived card grade/condition
 - ability to specify location
+- ability to indicate cards for sale

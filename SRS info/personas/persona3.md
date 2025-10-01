@@ -7,5 +7,5 @@ FRUSTRATIONS: Doesn't have a lot of money and wants to find a way to make money 
 GOALS: Does not care about starting a collection. Wants to be able to quickly find cards that he
 can resell for a profit. 
 
-POKEMON CARD COLLECTING REQUIRMENTS PULLED FROM PERSONAS:
+POKEMON CARD COLLECTING REQUIREMENTS PULLED FROM PERSONAS:
 - ability to report users (scam, inappropriate behaviour, scalping, etc) (issue: if messaging does not happen in app, how can we know which reports to trust and which are false or malicious)

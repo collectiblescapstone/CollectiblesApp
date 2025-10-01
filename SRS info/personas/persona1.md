@@ -12,7 +12,7 @@ GOALS: Wants to keep track of her collection of cards. Her favourite Pokemon is 
 
 
 
-POKEMON CARD COLLECTING REQUIRMENTS PULLED FROM PERSONAS:
+POKEMON CARD COLLECTING REQUIREMENTS PULLED FROM PERSONAS:
 - multiples of one card
 - ability to add perceived card grade/condition
 - ability to specify location

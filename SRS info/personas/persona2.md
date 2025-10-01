@@ -8,7 +8,7 @@ GOALS: Wants to keep track of his cards and their grades. He likes collecting ra
        Wants to easily be able to change the location of his cards once they get moved from the box to a binder or slab.
        Willing to sell and trade cards but mostly wants to buy other cards. 
 
-POKEMON CARD COLLECTING REQUIRMENTS PULLED FROM PERSONAS:
+POKEMON CARD COLLECTING REQUIREMENTS PULLED FROM PERSONAS:
 - ability to add actual card grade/condition
 - ability to specify location
 - misprint or error cards

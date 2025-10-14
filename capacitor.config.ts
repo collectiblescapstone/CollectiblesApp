@@ -1,4 +1,4 @@
-import type { CapacitorConfig } from '@capacitor/cli'
+import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.collectibles.app',
@@ -8,6 +8,6 @@ const config: CapacitorConfig = {
     url: `${process.env.LOCAL_NEXT_SERVER_URL}`,
     cleartext: true,
   },
-}
+};
 
-export default config
+export default config;

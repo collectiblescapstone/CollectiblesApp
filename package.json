@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:android": "npx cap open android",
+    "dev:ios": "npx cap open ios",
+    "sync": "npx cap sync",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

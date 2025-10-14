@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Collectibles App
+
+An app for collectors to keep track of their collectibles and trade with others! We're starting _not so small_ with Pokémon cards!
 
 ## Getting Started
 
-First, run the development server:
+First, have the following installed in your machine:
 
-```bash
+1. [Node version 22](https://nodejs.org/en/download)
+2. [Android Studio](https://developer.android.com/studio) for Android Development
+3. [Xcode](https://developer.apple.com/xcode/) for iOS Development
+
+Then, run the following commands to get it up and running on the web:
+
+```
+// if you have ssh setup on your GitHub account (recommended)
+git clone git@github.com:collectiblescapstone/CollectiblesApp.git
+// or
+git clone https://github.com/collectiblescapstone/CollectiblesApp.git
+
+cd CollectiblesApp
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+At this point, the application should be available on http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Setting up mobile development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+First, add the following environment variable:
 
-## Learn More
+```
+CAPACITOR_LIVE_RELOAD_URL='http://192.168.x.x:3000'
+```
 
-To learn more about Next.js, take a look at the following resources:
+This is your local network's IPv4 address. You can get this from the terminal after you run `npm run dev` or you can run `ipconfig` (Windows) or `ipconfig getifaddr en0` (Mac)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then, run the following commands to get it working on the mobile emulators:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+// The default is without specifying the platform, which syncs both platforms
+npm run sync [ios|android]
 
-## Deploy on Vercel
+// For Android Development on Android Studio
+npm run dev:android
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+// For iOS Development on Xcode
+npm run dev:ios
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+These two commands will open Andriod Studio and Xcode respectively with the CollectiblesApp project already loaded.
+
+If you already have the Android and/or iOS device emulator installed, all that's left to do is click **Run/Build** (usually the play button), and the emulators will run the app with live reload enabled (if you have the environment variable set up)
+
+### Setting up the mobile emulators
+
+#### Android
+
+1. Open **Android Studio**
+2. Go to **Device Manager** (Either under the 3 dots menu or an icon on the right side)
+3. Select **Create Virtual Device**, then select one of the Pixel phones
+4. Follow the instructions and download the required system image
+5. Select the device before running the app
+
+Now, you should see the app build, then your emulator will boot up and open the CollectiblesApp project in the emulator.
+
+#### iOS
+
+1. Open **Xcode**
+2. Go to **Settings > Components**, then click add an **iOS** simulator
+3. Select any iOS version, and click **Download & Install**
+4. Once the iOS simulator runtime is downloaded, go to **Window > Devices and Simulators** and add any iPhone in the simulators tab
+5. Make sure to select the device before running the app.
+
+Now, you should see the app build, then your emulator will boot up and open the CollectiblesApp project in the emulator.
+
+#### Troubleshooting
+
+- [Android Studio Docs](https://developer.android.com/studio/run)
+- [XCode Emulator Docs](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)

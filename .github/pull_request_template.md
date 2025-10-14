@@ -10,7 +10,10 @@
 
 #### Links
 
-JIRA ticket:
+<!-- Replace ### with the actual ticket number. It will automatically be linked to JIRA -->
+<!-- To link to PR 123, simply type #123, GitHub will suggest the PR -->
+
+JIRA ticket: [JIRA-###]
 Other PR:
 
 #### Testing Description

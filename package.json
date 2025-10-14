@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "prettier": "prettier --write ."
@@ -13,6 +13,7 @@
     "@capacitor/android": "^7.4.3",
     "@capacitor/core": "^7.4.3",
     "@capacitor/ios": "^7.4.3",
+    "dotenv": "^17.2.3",
     "next": "15.5.5",
     "react": "19.1.0",
     "react-dom": "19.1.0"

@@ -1,11 +1,15 @@
 import type { CapacitorConfig } from '@capacitor/cli';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const liveReloadUrl = process.env.CAPACITOR_LIVE_RELOAD_URL;
 
 const config: CapacitorConfig = {
-  appId: 'com.collectibles.app',
+  appId: 'com.collectiblesApp.app',
   appName: 'collectiblesApp',
   webDir: 'out',
   server: {
-    url: `${process.env.LOCAL_NEXT_SERVER_URL}`,
+    url: liveReloadUrl ?? undefined,
     cleartext: true,
   },
 };

@@ -5,7 +5,7 @@ dotenv.config();
 const liveReloadUrl = process.env.CAPACITOR_LIVE_RELOAD_URL;
 
 const config: CapacitorConfig = {
-  appId: 'com.collectiblesApp.app',
+  appId: 'com.collectibles.app',
   appName: 'collectiblesApp',
   webDir: 'out',
   server: {

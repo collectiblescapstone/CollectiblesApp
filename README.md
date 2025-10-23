@@ -38,6 +38,9 @@ This is your local network's IPv4 address. You can get this from the terminal af
 Then, run the following commands to get it working on the mobile emulators:
 
 ```
+// Run the build command first
+npm run build
+
 // The default is without specifying the platform, which syncs both platforms
 npm run sync [ios|android]
 

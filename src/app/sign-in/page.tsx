@@ -1,8 +1,8 @@
 import React from 'react';
-import LoginForm from '@/components/login/LoginForm';
+import AuthForm from '@/components/auth/AuthForm';
 import { Flex } from '@chakra-ui/react';
 
-export default function LoginPage() {
+export default function SignInPage() {
   return (
     <Flex
       flexDirection="column"
@@ -11,7 +11,7 @@ export default function LoginPage() {
       minHeight="dvh"
       minWidth="dvw"
     >
-      <LoginForm />
+      <AuthForm type="signin" />
     </Flex>
   );
 }

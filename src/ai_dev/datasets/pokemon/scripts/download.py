@@ -110,7 +110,7 @@ def download_fast(api_key: str):
     # cleanup
     shutil.rmtree("temp")
 
-    print("download metadata, saved to ai_dev/datasets/pokemon/data/")
+    print("Downloaded metadata, saved to ai_dev/datasets/pokemon/data/")
 
 # sanitize card ids to remove invalid filename characters, as ids are used as filenames
 def sanitize_ids():

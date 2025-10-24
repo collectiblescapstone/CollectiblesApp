@@ -47,12 +47,9 @@ def generate_variations(variants_per_card:int = 4, filters:bool = True, transfor
                 enhance_choice = random()
                 if enhance_choice < 0.33:
                     img = ImageEnhance.Color(img).enhance(0.6 + random() * 0.8)
-                    print("color enhanced")
                 elif enhance_choice < 0.66:
-                    print("contrast enhanced")
                     img = ImageEnhance.Contrast(img).enhance(0.5 + random())
                 else:
-                    print("brightness enhanced")
                     img = ImageEnhance.Brightness(img).enhance(0.5 + random())
 
             # transformations

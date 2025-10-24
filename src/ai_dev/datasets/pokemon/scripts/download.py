@@ -1,26 +1,46 @@
 from .pokemontcgapi import PokemonTCGAPI
+from .util import read_image_paths
+from .generate_variations import generate_variations
 import os
 import json
 import requests
 import zipfile
 import shutil
 import tqdm
+import re
 
-def download():
+def download(variants_per_card:int = 4, filters:bool = True, transformations:bool = False, occlusions:bool = False):
     # API key can be obtained at https://dev.pokemontcg.io/
     api_key = input("Enter your Pokemon TCG API key: ").strip()
 
-    get_prices = input("enter (f) for fast download for training dataset, (s) for slow download with pricing data, or (i) for only imazges if metadata exists:").strip().lower()
+    # prompt user for where to resume in the downloading and creation process
+    #  1/2 for downloading metadata
+    #  3 for downloading images
+    #  4 for generating dataset using base images
+    # each step will 
+    selection = input("(1) for fast download for training dataset \n (2) for slow download with pricing data \n (3) for only images if metadata exists \n (4) for dataset generation if metadata and images exist \n->").strip().lower()
+    if len(selection) < 1:
+        print("no selection made, aborting")
+        return
+    selection = selection[0]
 
-    if get_prices == 's':
-        print("downloading with pricing data, this may take a while...")
-        download_with_pricing(api_key)
-    elif get_prices == "f":
+    if "1" in selection:
         print("downloading fast without pricing data...")
         download_fast(api_key)
-    elif get_prices == "i":
-        print("downloading images only...")
+
+    elif "2" in selection:
+        print("downloading with pricing data, this may take a while...")
+        download_with_pricing(api_key)
+
+    if "3" in selection or "1" in selection or "2" in selection:
+        print("downloading images...")
+        sanitize_ids()
         download_images(api_key)
+
+    input(f"will generate ~{int(variants_per_card*13.5)}GB of image variations for training, make sure you have enough disk space. Press Enter to continue...")
+
+    print("generating image variations...")
+    generate_variations(variants_per_card, filters, transformations, occlusions)
 
 # uses the tcgapi to download all card metadata with pricing information
 def download_with_pricing(api_key: str):
@@ -58,7 +78,6 @@ def download_with_pricing(api_key: str):
 
     print("download metadata, saved to ai_dev/datasets/pokemon/data/")
 
-    download_images(api_key)
 
 # downloads a zip file of the repo the tcgapi pulls data from, does not include pricing data
 def download_fast(api_key: str):
@@ -93,14 +112,9 @@ def download_fast(api_key: str):
 
     print("download metadata, saved to ai_dev/datasets/pokemon/data/")
 
-    download_images(api_key)
-
-def download_images(api_key: str):
-    image_paths = []
-
-    print("reading image urls...")
-
-    # find all image paths
+# sanitize card ids to remove invalid filename characters, as ids are used as filenames
+def sanitize_ids():
+    print("sanitizing card ids...")
     for filename in os.listdir("data"):
         if not (filename.startswith("cards_") and filename.endswith(".json")):
             continue
@@ -110,14 +124,23 @@ def download_images(api_key: str):
         with open(set_file, "r", encoding="utf-8") as f:
             cards = json.load(f)
 
-
-        # create folder for set images
-        set_id = filename[len("cards_"):-len(".json")]
-        images_dir = os.path.join("data", "images", set_id)
-        os.makedirs(images_dir, exist_ok=True)
-        
+        # sanitize ids
         for card in cards:
-            image_paths.append({"id": card["id"], "url": card["images"]["large"], "dir": images_dir})
+            card_id = card["id"]
+            new_id = re.sub(r"[<>:\"/\\|?*]", "_", card_id)
+            if new_id != card_id:
+                print(f"sanitized id {card_id} to {new_id}")
+                card["id"] = new_id
+
+        # save set
+        with open(set_file, "w", encoding="utf-8") as f:
+            json.dump(cards, f, indent=4)
+
+def download_images(api_key: str):
+
+    print("reading image urls...")
+
+    image_paths = read_image_paths()
 
     # download images
     for image_info in tqdm.tqdm(image_paths, desc="Downloading card images"):
@@ -143,4 +166,4 @@ def download_images(api_key: str):
         except requests.exceptions.RequestException as e:
             print(f"failed to download image {image_id} from {image_url}: {e}")  
 
-    print("download images, saved to ai_dev/datasets/pokemon/data/images/")
+    print("download images, saved to src/ai_dev/datasets/pokemon/data/images/")

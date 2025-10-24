@@ -14,7 +14,7 @@ class PokemonTCGAPI:
 
         # ensure API key is set
         if cls.__api_key is None:
-            raise ValueError("API key is not configured. Please call RestClient.configure(api_key) first.")
+            raise ValueError("API key is not configured. Please call PokemonTCGAPI.configure(api_key) first.")
         headers = { 'User-Agent': 'Mozilla/5.0', 'X-Api-Key': cls.__api_key }
 
         try:

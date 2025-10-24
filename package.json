@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "dev:android": "npx cap open android",
     "dev:ios": "npx cap open ios",
     "sync": "npx cap sync",
@@ -16,14 +16,21 @@
     "@capacitor/android": "^7.4.3",
     "@capacitor/core": "^7.4.3",
     "@capacitor/ios": "^7.4.3",
+    "@chakra-ui/react": "^3.28.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@supabase/supabase-js": "^2.76.1",
     "@prisma/client": "^6.18.0",
     "dotenv": "^17.2.3",
+    "framer-motion": "^12.23.24",
     "next": "15.5.5",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.3",
+    "@chakra-ui/cli": "^3.28.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.23",

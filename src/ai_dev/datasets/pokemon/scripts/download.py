@@ -166,4 +166,4 @@ def download_images(api_key: str):
         except requests.exceptions.RequestException as e:
             print(f"failed to download image {image_id} from {image_url}: {e}")  
 
-    print("download images, saved to src/ai_dev/datasets/pokemon/data/images/")
+    print("Downloaded images, saved to src/ai_dev/datasets/pokemon/data/images/")

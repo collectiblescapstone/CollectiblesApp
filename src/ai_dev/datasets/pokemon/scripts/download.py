@@ -76,7 +76,7 @@ def download_with_pricing(api_key: str):
         with open(set_file, "w", encoding="utf-8") as f:
             json.dump(cards, f, indent=4)
 
-    print("download metadata, saved to ai_dev/datasets/pokemon/data/")
+    print("Downloaded metadata, saved to ai_dev/datasets/pokemon/data/")
 
 
 # downloads a zip file of the repo the tcgapi pulls data from, does not include pricing data

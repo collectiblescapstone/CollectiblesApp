@@ -14,11 +14,14 @@ def download(variants_per_card:int = 4, filters:bool = True, transformations:boo
     api_key = input("Enter your Pokemon TCG API key: ").strip()
 
     # prompt user for where to resume in the downloading and creation process
+    # the options are to select where in the script to start/resume the download/generation process,
+    # this is necessary for us to be able to resume after potential errors
+    #
     #  1/2 for downloading metadata
     #  3 for downloading images
     #  4 for generating dataset using base images
-    # each step will 
-    selection = input("(1) for fast download for training dataset \n (2) for slow download with pricing data \n (3) for only images if metadata exists \n (4) for dataset generation if metadata and images exist \n->").strip().lower()
+    # step 3 runs after 1 or 2, step 4 runs after 3
+    selection = input("(1) for fast download for training dataset \n (2) for slow download with pricing data \n (3) for only images if metadata exists \n (4) for dataset generation if metadata and images exist \n->").strip()
     if len(selection) < 1:
         print("no selection made, aborting")
         return

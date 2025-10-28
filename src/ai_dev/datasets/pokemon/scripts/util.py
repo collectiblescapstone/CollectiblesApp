@@ -11,7 +11,8 @@ def read_image_paths() -> list:
         # open set
         set_file = os.path.join("data", filename)
         with open(set_file, "r", encoding="utf-8") as f:
-            cards = json.load(f)
+            data = json.load(f)
+        cards = data["cards"]
 
         # create folder for set images
         set_id = filename[len("cards_"):-len(".json")]
@@ -19,7 +20,9 @@ def read_image_paths() -> list:
         os.makedirs(images_dir, exist_ok=True)
         
         for card in cards:
-            ret.append({"id": card["id"], "url": card["images"]["large"], "dir": images_dir})
-
+            if "image" not in card:
+                continue
+            ret.append({"id": card["id"], "url": card["image"], "dir": images_dir})
+            
     return ret
 

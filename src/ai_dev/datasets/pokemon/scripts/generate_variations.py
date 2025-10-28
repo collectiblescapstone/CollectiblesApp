@@ -14,12 +14,12 @@ def generate_variations(variants_per_card:int = 4, filters:bool = True, transfor
     for image_info in tqdm.tqdm(image_paths):
         image_id = image_info["id"]
         images_dir = image_info["dir"]
-        image_path = os.path.join(images_dir, f"{image_id}.png")
+        image_path = os.path.join(images_dir, f"{image_id}.jpg")
 
 
         save_dir = images_dir.replace("images", "image_variations")
         
-        if os.path.exists(os.path.join(save_dir, f"{image_id}_variant_0.png")):
+        if os.path.exists(os.path.join(save_dir, f"{image_id}_variant_0.jpg")):
             # skip if variants already exist
             continue
 
@@ -79,5 +79,5 @@ def generate_variations(variants_per_card:int = 4, filters:bool = True, transfor
 
             # save variant
             os.makedirs(save_dir, exist_ok=True)
-            variant_path = os.path.join(save_dir, f"{image_id}_variant_{i}.png")
+            variant_path = os.path.join(save_dir, f"{image_id}_variant_{i}.jpg")
             img.save(variant_path)

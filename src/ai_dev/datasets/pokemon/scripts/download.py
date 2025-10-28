@@ -32,7 +32,7 @@ def download(variants_per_card:int = 4, filters:bool = True, transformations:boo
         sanitize_ids()
         download_images()
 
-    input(f"will generate ~{int(variants_per_card*13.5)}GB of image variations for training, make sure you have enough disk space. Press Enter to continue...")
+    input(f"will generate ~{int(variants_per_card*4)}GB of image variations for training, make sure you have enough disk space. Press Enter to continue...")
 
     print("generating image variations...")
     generate_variations(variants_per_card, filters, transformations, occlusions)

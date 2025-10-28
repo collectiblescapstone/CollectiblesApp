@@ -80,4 +80,5 @@ def generate_variations(variants_per_card:int = 4, filters:bool = True, transfor
             # save variant
             os.makedirs(save_dir, exist_ok=True)
             variant_path = os.path.join(save_dir, f"{image_id}_variant_{i}.jpg")
-            img.save(variant_path)
+            img = img.convert("RGB")
+            img.save(variant_path, "jpeg", quality=90)

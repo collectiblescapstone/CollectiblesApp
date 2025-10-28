@@ -26,7 +26,6 @@ def download(variants_per_card:int = 4, filters:bool = True, transformations:boo
     if "1" in selection:
         print("downloading metadata...")
         download_metadata()
-        return
 
     if "1" in selection or "2" in selection:
         print("downloading images...")

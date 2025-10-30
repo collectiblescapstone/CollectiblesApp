@@ -83,8 +83,6 @@ export const AuthContextProvider = ({
         return { success: false, error: error.message }; // Return the error
       }
 
-      // If no error, return success
-      console.log('Sign-in success:', data);
       return { success: true, data }; // Return the user data
     } catch (error) {
       // Handle unexpected issues

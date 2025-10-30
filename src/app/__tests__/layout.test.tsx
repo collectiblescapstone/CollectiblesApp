@@ -20,7 +20,7 @@ jest.mock('next/font/google', () => ({
 
 describe('RootLayout', () => {
   it('renders children inside providers and applies font variables', () => {
-    const { container, getByTestId } = render(
+    const { getByTestId } = render(
       <RootLayout>
         <div data-testid="child">Test Child</div>
       </RootLayout>

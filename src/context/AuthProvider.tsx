@@ -23,18 +23,7 @@ interface AuthContextData {
   session: Session | null;
 }
 
-const AuthContext = createContext<AuthContextData>({
-  signUp: async () => {
-    throw new Error('signUp function not implemented');
-  },
-  signIn: async () => {
-    throw new Error('signIn function not implemented');
-  },
-  signOut: async () => {
-    throw new Error('signOut function not implemented');
-  },
-  session: null,
-});
+const AuthContext = createContext<AuthContextData | undefined>(undefined);
 
 export const AuthContextProvider = ({
   children,
@@ -62,8 +51,8 @@ export const AuthContextProvider = ({
     return {
       success: true,
       data: {
-        user: data.user ?? null,
-        session: data.session ?? null,
+        user: data.user,
+        session: data.session,
       },
       error: null,
     };
@@ -120,5 +109,9 @@ export const AuthContextProvider = ({
 };
 
 export const useAuth = () => {
-  return useContext(AuthContext);
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthContextProvider');
+  }
+  return context;
 };

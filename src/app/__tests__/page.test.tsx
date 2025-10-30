@@ -3,22 +3,16 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import Page from '../page';
 import { useAuth } from '@/context/AuthProvider';
 import { User, Session } from '@supabase/supabase-js';
+import { ButtonProps, FlexProps, HeadingProps } from '@chakra-ui/react';
 
 jest.mock('@chakra-ui/react', () => {
   return {
     __esModule: true,
-    Flex: (props: any) => <div>{props.children}</div>,
-    Heading: (props: any) => <h1>{props.children}</h1>,
-    Button: (props: any) => (
+    Flex: (props: FlexProps) => <div>{props.children}</div>,
+    Heading: (props: HeadingProps) => <h1>{props.children}</h1>,
+    Button: (props: ButtonProps) => (
       <button onClick={props.onClick}>{props.children}</button>
     ),
-  };
-});
-
-jest.mock('next/link', () => {
-  return {
-    __esModule: true,
-    default: (props: any) => <a {...props} />,
   };
 });
 

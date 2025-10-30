@@ -2,6 +2,7 @@ import { renderHook, act } from '@testing-library/react';
 import { AuthContextProvider, useAuth } from '../AuthProvider';
 import React from 'react';
 import { supabase } from '@/utils/supabase';
+import { Session } from '@supabase/supabase-js';
 
 jest.mock('../../utils/supabase', () => ({
   supabase: {
@@ -21,9 +22,7 @@ describe('AuthProvider', () => {
     (supabase.auth.getSession as jest.Mock).mockResolvedValue({
       data: { session: null },
     });
-    (supabase.auth.onAuthStateChange as jest.Mock).mockImplementation(
-      (_event, _session) => {}
-    );
+    (supabase.auth.onAuthStateChange as jest.Mock).mockImplementation(() => {});
   });
 
   const wrapper = ({ children }: { children: React.ReactNode }) => (
@@ -134,7 +133,7 @@ describe('AuthProvider', () => {
   it('updates session on auth state change', async () => {
     let authStateChangeCallback: (
       event: string,
-      session: any
+      session: Session
     ) => void = () => {};
     (supabase.auth.onAuthStateChange as jest.Mock).mockImplementation(
       (callback) => {
@@ -144,7 +143,7 @@ describe('AuthProvider', () => {
 
     const { result } = renderHook(() => useAuth(), { wrapper });
 
-    const newSession = { user: { id: '3' } };
+    const newSession = { user: { id: '3' } } as Session;
     act(() => {
       authStateChangeCallback('SIGNED_IN', newSession);
     });

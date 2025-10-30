@@ -1,6 +1,11 @@
 'use client';
 import { supabase } from '@/utils/supabase';
-import type { User, Session } from '@supabase/supabase-js';
+import type {
+  User,
+  Session,
+  AuthError,
+  WeakPassword,
+} from '@supabase/supabase-js';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 interface AuthContextData {
@@ -13,12 +18,20 @@ interface AuthContextData {
       user: User | null;
       session: Session | null;
     };
-    error?: any;
+    error?: AuthError | null;
   }>;
   signIn: (
     email: string,
     password: string
-  ) => Promise<{ success: boolean; data?: any; error?: any }>;
+  ) => Promise<{
+    success: boolean;
+    data?: {
+      user: User;
+      session: Session;
+      weakPassword?: WeakPassword;
+    };
+    error?: string;
+  }>;
   signOut: () => Promise<void>;
   session: Session | null;
 }

@@ -39,7 +39,7 @@ export default function AuthForm({ type }: AuthFormProps) {
     } else {
       const result = await signUp(email, password);
       if (!result.success) {
-        alert(`Sign-up failed: ${result.error.message}`);
+        alert(`Sign-up failed: ${result.error?.message}`);
       } else {
         alert(
           'Sign-up successful! Please check your email to confirm your account.'
@@ -90,7 +90,7 @@ export default function AuthForm({ type }: AuthFormProps) {
       </Field.Root>
       {type === 'signin' && (
         <Text>
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <ChakraLink color="teal" href="/sign-up">
             Sign up!
           </ChakraLink>

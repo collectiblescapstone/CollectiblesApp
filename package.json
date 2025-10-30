@@ -9,7 +9,8 @@
     "sync": "npx cap sync",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
     "prettier": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watch"

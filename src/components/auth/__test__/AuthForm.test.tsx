@@ -2,27 +2,55 @@ import React from 'react';
 import { screen, render, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom'; // Needed for the "toBeInTheDocument" matcher
 import AuthForm from '../AuthForm';
+import {
+  ButtonProps,
+  FieldLabelProps,
+  FieldRootProps,
+  HeadingProps,
+  InputProps,
+  LinkProps,
+  StackProps,
+  TextProps,
+} from '@chakra-ui/react';
+import { PasswordInputProps } from '@/components/ui/password-input';
 
 // Mock Chakra UI components used in AuthForm
 jest.mock('@chakra-ui/react', () => ({
-  Button: (props: any) => (
+  Button: (props: ButtonProps) => (
     <button onClick={props.onClick}>{props.children}</button>
   ),
   Field: {
-    Root: (props: any) => <div {...props} />,
-    Label: (props: any) => <label {...props} />,
+    Root: (props: FieldRootProps) => <div>{props.children}</div>,
+    Label: (props: FieldLabelProps) => <label>{props.children}</label>,
     RequiredIndicator: () => <span data-testid="required-indicator">*</span>,
   },
-  Heading: (props: any) => <h1 data-testid="form-title" {...props} />,
-  Input: ({ backgroundColor, ...props }: any) => <input {...props} />,
-  VStack: ({ backgroundColor, ...props }: any) => <div {...props} />,
-  Text: (props: any) => <span {...props} />,
-  Link: (props: any) => <a {...props} />,
+  Heading: (props: HeadingProps) => (
+    <h1 data-testid="form-title">{props.children}</h1>
+  ),
+  Input: (props: InputProps) => (
+    <input
+      placeholder={props.placeholder}
+      value={props.value}
+      onChange={props.onChange}
+    >
+      {props.children}
+    </input>
+  ),
+  VStack: (props: StackProps) => <div>{props.children}</div>,
+  Text: (props: TextProps) => <span>{props.children}</span>,
+  Link: (props: LinkProps) => <a>{props.children}</a>,
 }));
 
 jest.mock('../../ui/password-input', () => ({
-  PasswordInput: ({ backgroundColor, ...props }: any) => (
-    <input type="password" {...props} />
+  PasswordInput: (props: PasswordInputProps) => (
+    <input
+      type="password"
+      placeholder={props.placeholder}
+      value={props.value}
+      onChange={props.onChange}
+    >
+      {props.children}
+    </input>
   ),
 }));
 

@@ -2,6 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import SignInPage from '../page';
+import { FlexProps } from '@chakra-ui/react';
 
 jest.mock('../../../components/auth/AuthForm', () => ({
   __esModule: true,
@@ -13,7 +14,7 @@ jest.mock('../../../components/auth/AuthForm', () => ({
 jest.mock('@chakra-ui/react', () => {
   return {
     __esModule: true,
-    Flex: (props: any) => <div data-testid="flex">{props.children}</div>,
+    Flex: (props: FlexProps) => <div data-testid="flex">{props.children}</div>,
   };
 });
 

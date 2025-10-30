@@ -1,6 +1,11 @@
 'use client';
 import { supabase } from '@/utils/supabase';
-import type { User, Session } from '@supabase/supabase-js';
+import type {
+  User,
+  Session,
+  AuthError,
+  WeakPassword,
+} from '@supabase/supabase-js';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 interface AuthContextData {
@@ -13,28 +18,25 @@ interface AuthContextData {
       user: User | null;
       session: Session | null;
     };
-    error?: any;
+    error?: AuthError | null;
   }>;
   signIn: (
     email: string,
     password: string
-  ) => Promise<{ success: boolean; data?: any; error?: any }>;
+  ) => Promise<{
+    success: boolean;
+    data?: {
+      user: User;
+      session: Session;
+      weakPassword?: WeakPassword;
+    };
+    error?: string;
+  }>;
   signOut: () => Promise<void>;
   session: Session | null;
 }
 
-const AuthContext = createContext<AuthContextData>({
-  signUp: async () => {
-    throw new Error('signUp function not implemented');
-  },
-  signIn: async () => {
-    throw new Error('signIn function not implemented');
-  },
-  signOut: async () => {
-    throw new Error('signOut function not implemented');
-  },
-  session: null,
-});
+const AuthContext = createContext<AuthContextData | undefined>(undefined);
 
 export const AuthContextProvider = ({
   children,
@@ -62,8 +64,8 @@ export const AuthContextProvider = ({
     return {
       success: true,
       data: {
-        user: data.user ?? null,
-        session: data.session ?? null,
+        user: data.user,
+        session: data.session,
       },
       error: null,
     };
@@ -83,8 +85,6 @@ export const AuthContextProvider = ({
         return { success: false, error: error.message }; // Return the error
       }
 
-      // If no error, return success
-      console.log('Sign-in success:', data);
       return { success: true, data }; // Return the user data
     } catch (error) {
       // Handle unexpected issues
@@ -122,5 +122,9 @@ export const AuthContextProvider = ({
 };
 
 export const useAuth = () => {
-  return useContext(AuthContext);
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthContextProvider');
+  }
+  return context;
 };

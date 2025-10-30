@@ -11,7 +11,6 @@ import {
 import React, { useState } from 'react';
 import { PasswordInput } from '@/components/ui/password-input';
 import { useAuth } from '@/context/AuthProvider';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export type AuthFormProps = {

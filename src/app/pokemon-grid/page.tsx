@@ -8,14 +8,21 @@ import {
   Select,
   Portal,
   createListCollection,
+  Box,
+  Image,
+  SimpleGrid,
+  Text,
 } from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/react';
 import { GoRows } from 'react-icons/go';
 import { FiGrid } from 'react-icons/fi';
+import PokemonPolaroid from '@/components/pokemonPolaroid/PokemonPolaroid';
 
 export default function PokemonGridPage() {
   // True is row, false is grid
   const [display, setDisplay] = React.useState(true);
+  const TOTAL_POKEMON = 1025; // or more if you like
+  const pokemon = Array.from({ length: TOTAL_POKEMON }, (_, i) => i + 1);
 
   function displayClick() {
     setDisplay(!display);
@@ -65,6 +72,14 @@ export default function PokemonGridPage() {
           </Select.Positioner>
         </Portal>
       </Select.Root>
+      <Box p={8} bg="gray.100" minH="100vh">
+        <SimpleGrid columns={[2, 3, 4, 6]} spacing={6} justifyItems="center">
+          {pokemon.map((id) => (
+            <PokemonPolaroid key={id} id={id} />
+          ))}
+        </SimpleGrid>
+      </Box>
+      );
     </div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { Button, Box, Flex, Image, Text } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
 
@@ -17,8 +18,14 @@ const cards: CardType[] = [
 
 const WishList: React.FC = () => {
 
+    const router = useRouter();
+    
     const display = cards.slice(0, 3);
     const viewmore = cards.length > 3;
+
+    const press = () => {
+        router.push('/user-profile/wish');
+    };
 
   return (
     <Flex
@@ -65,7 +72,7 @@ const WishList: React.FC = () => {
                 variant="solid"
                 colorScheme="black"
                 size="sm"
-                onClick={() => console.log('View more clicked')}
+                onClick={press}
                 >
                     <FiPlus /> View more
                 </Button>

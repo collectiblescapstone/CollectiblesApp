@@ -23,7 +23,7 @@ const TradeList: React.FC = () => {
     const viewmore = cards.length > 3;
 
     const press = () => {
-        router.push('/app/user-profile/trade-page/page.tsx');
+        router.push('/user-profile/trade');
     };
 
   return (

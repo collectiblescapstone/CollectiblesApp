@@ -3,6 +3,9 @@
 import React from 'react';
 
 import SocialLinks from '@/components/user-profile/social-links';
+import Showcase from '@/components/user-profile/showcase';
+import TradeList from '@/components/user-profile/trade-list';
+import WishList from '@/components/user-profile/wish-list';
 
 import {
   Box,
@@ -67,8 +70,10 @@ const ProfileScreen: React.FC = () => {
         <Flex mt={1}>
           <SocialLinks />
         </Flex>
-        <Box height="1px" width="93%" bg="gray.500" mt={5}/>
       </Flex>
+      <Showcase />
+      <TradeList />
+      <WishList />
     </Box>
   );
 };

@@ -17,6 +17,7 @@ const socials: SocialsType[] = [
 ];
 
 const SocialLinks: React.FC = () => {
+    if (socials.length === 0) return null;
   return (
     <Flex 
       flexDirection="row" 

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Divider from '@/components/user-profile/divider'; 
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 
 type CardType = {
@@ -24,7 +25,7 @@ const Showcase: React.FC = () => {
     w="100%"
     px={6}
     >
-        <Box height="2px" width="97%" bg="gray.500" mt={5}/>
+        <Divider />
         <Flex
         mt={1}
         >
@@ -45,6 +46,7 @@ const Showcase: React.FC = () => {
             >
             <Image
                 src={card.imageSrc}
+                alt="Showcase Card"
                 w="105px"
                 h="auto"
                 borderRadius="none"

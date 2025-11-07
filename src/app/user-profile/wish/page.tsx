@@ -81,6 +81,7 @@ const WishScreen: React.FC = () => {
                 >
                 <Image
                     src={card.imageSrc}
+                    alt="Wish List Card"
                     w="105px"
                     h="auto"
                     borderRadius="none"

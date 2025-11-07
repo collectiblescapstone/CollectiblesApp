@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Divider from '@/components/user-profile/divider';
 import { useRouter } from 'next/navigation';
-import { Button, Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Button, Flex, Image, Text } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
 
 type CardType = {
@@ -35,7 +36,7 @@ const TradeList: React.FC = () => {
     w="100%"
     px={6}
     >
-        <Box height="2px" width="97%" bg="gray.500" mt={5}/>
+        <Divider />
         <Flex
         mt={1}
         >
@@ -56,6 +57,7 @@ const TradeList: React.FC = () => {
             >
             <Image
                 src={card.imageSrc}
+                alt="Trade List Card"
                 w="105px"
                 h="auto"
                 borderRadius="none"

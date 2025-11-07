@@ -1,24 +1,31 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 import SocialLinks from '@/components/user-profile/social-links';
 import Showcase from '@/components/user-profile/showcase';
 import TradeList from '@/components/user-profile/trade-list';
 import WishList from '@/components/user-profile/wish-list';
-import AccountOptions from '@/components/user-profile/accountoptions';
 
 import {
   Box,
   Flex,
   Heading,
   Text,
-  Icon
+  Icon,
+  Button
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
-import { FiMapPin } from 'react-icons/fi';
+import { FiMapPin, FiSettings } from 'react-icons/fi';
 
-const ProfileScreen: React.FC = () => {
+const PersonalProfileScreen: React.FC = () => {
+    const router = useRouter();
+
+    const editpress = () => {
+        router.push('/personal-profile/edit-profile');
+    };
+
   return (
     <Box bg="white" minH="100vh" color="black">
       <Box
@@ -30,7 +37,18 @@ const ProfileScreen: React.FC = () => {
         position="relative"
         mt={16}
       />
-      <AccountOptions />
+      <Button 
+        onClick={editpress} 
+        position="absolute" 
+        top={28} 
+        left={2} 
+        zIndex={1} 
+        size="xs"
+        rounded="sm"
+        variant="solid"
+        >
+            <FiSettings /> Edit Profile
+      </Button>
       <Flex
         flexDirection="column"
         alignItems="center"
@@ -41,7 +59,7 @@ const ProfileScreen: React.FC = () => {
           shape="rounded"
           mt={-20}
         >
-          <Avatar.Image src="user-profile/pfp_temp.jpg" />
+          <Avatar.Image src="/user-profile/pfp_temp.jpg" />
           <Avatar.Fallback> SA </Avatar.Fallback>
         </Avatar.Root>
         <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
@@ -72,4 +90,4 @@ const ProfileScreen: React.FC = () => {
   );
 };
 
-export default ProfileScreen;
+export default PersonalProfileScreen;

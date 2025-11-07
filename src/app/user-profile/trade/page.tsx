@@ -83,6 +83,7 @@ const TradeScreen: React.FC = () => {
                 >
                 <Image
                     src={card.imageSrc}
+                    alt="Trade List Card"
                     w="105px"
                     h="auto"
                     borderRadius="none"

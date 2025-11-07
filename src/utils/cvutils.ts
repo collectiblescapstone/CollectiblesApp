@@ -53,25 +53,6 @@ export function reorderCorners(cv: CV, cornersInput: Mat): [number, number][] {
       const y = cornersInput.intAt(i, 1);
       corners.push([x, y]);
     }
-  } else if (Array.isArray(cornersInput)) {
-    // Support shapes like [[ [x,y] ], [ [x,y] ], ...] or [ [x,y], ... ]
-    if (cornersInput.length >= 4) {
-      for (let i = 0; i < 4; i++) {
-        const v = cornersInput[i];
-        if (Array.isArray(v)) {
-          // nested [[x,y]] or [x,y]
-          if (Array.isArray(v[0])) {
-            const p = v[0] as number[];
-            corners.push([p[0] || 0, p[1] || 0]);
-          } else {
-            const p = v as number[];
-            corners.push([p[0] || 0, p[1] || 0]);
-          }
-        } else {
-          corners.push([0, 0]);
-        }
-      }
-    }
   }
 
   // Fallback: ensure 4 points

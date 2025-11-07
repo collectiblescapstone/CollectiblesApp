@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Grid, Text } from '@chakra-ui/react';
 import cvReadyPromise from '@techstark/opencv-js';
 import { CARD_WIDTH_PX, CARD_HEIGHT_PX } from '@/utils/constants';

@@ -2,7 +2,6 @@
 import { useAuth } from '@/context/AuthProvider';
 import { Button, Flex, Heading } from '@chakra-ui/react';
 import Link from 'next/link';
-import TestNormalize from '@/components/cv/TestNormalize';
 
 export default function Home() {
   const { session, signOut } = useAuth();
@@ -29,7 +28,6 @@ export default function Home() {
           <Button mt={4}>Go to Login</Button>
         </Link>
       )}
-      <TestNormalize />
     </Flex>
   );
 }

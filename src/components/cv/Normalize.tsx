@@ -132,6 +132,9 @@ export default function Normalize({ image }: NormalizeProps) {
         new cv.Size(CARD_WIDTH_PX, CARD_HEIGHT_PX)
       );
       cv.imshow(ProcessedImageRef.current!, warped);
+      pts1.delete();
+      pts2.delete();
+      Matrix.delete();
     }
     contourFrame.delete();
     bigContour.delete();

@@ -1,14 +1,14 @@
 // automatically translated from NolanAmblard/Pokemon-Card-Scanner/blob/main/utils.py
 // TODO: reference https://stackoverflow.com/questions/51528462/opencv-js-perspective-transform and rewrite by hand
 
-import { MatVector, Mat } from "@techstark/opencv-js";
+import { MatVector, Mat, CV } from "@techstark/opencv-js";
 
 //  Returns the corners & area of the biggest contour
 export function biggestContour(
-  cv: any,
+  cv: CV,
   contours: MatVector
-): { biggest: any | null; maxArea: number } {
-  let biggest: any | null = null;
+): { biggest: Mat | null; maxArea: number } {
+  let biggest: Mat | null = null;
   let maxArea = 0;
 
   // loop through contours
@@ -34,13 +34,9 @@ export function biggestContour(
 
 // reorderCorners: input may be a contour approximation (Mat) or nested arrays.
 // Returns corners in format [[topleft],[topright],[bottomleft],[bottomright]]
-export function reorderCorners(cv: any, cornersInput: any): any {
+export function reorderCorners(cv: CV, cornersInput: Mat): [number, number][] {
   // Normalize input into an array of 4 points [x,y]
-  let corners: [number, number][] = [];
-
-  if (!cornersInput) {
-    return [[[0, 0]], [[0, 0]], [[0, 0]], [[0, 0]]];
-  }
+  const corners: [number, number][] = [];
 
   // If input is an OpenCV Mat approx with shape (4,1,2)
   if (
@@ -173,7 +169,7 @@ export function swap<T>(arr: T[], ind1: number, ind2: number): void {
 }
 
 // drawRectangle: draws lines between 4 corners on img (cv.Mat). corners in same format as reorderCorners output.
-export function drawRectangle(cv: any, img: Mat, corners: any): any {
+export function drawRectangle(cv: CV, img: Mat, corners: [number, number][]) {
   const thickness = 10;
   try {
     const c0 = corners[0];
@@ -212,5 +208,4 @@ export function drawRectangle(cv: any, img: Mat, corners: any): any {
   } catch {
     // ignore drawing errors
   }
-  return img;
 }

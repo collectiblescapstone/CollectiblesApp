@@ -90,10 +90,13 @@ export default function Normalize({ image }: NormalizeProps) {
     cv.imshow(ContoursImageRef.current!, contourFrame);
 
     // find biggest contour
-    let { biggest: corners, maxArea: maxArea } = biggestContour(cv, contours);
+    const { biggest: corners } = biggestContour(cv, contours);
     
     // draw found contour and warp card
     const warped = cv.Mat.zeros(CARD_HEIGHT_PX, CARD_WIDTH_PX, cv.CV_8UC3);
+    if (!corners) {
+        return;
+    }
     if (corners.rows === 4) {
       const reorderedCorners = reorderCorners(cv, corners);
       

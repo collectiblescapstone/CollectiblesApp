@@ -22,12 +22,16 @@ export function biggestContour(
       
       // approx.rows = number of sides
       if (area > maxArea && approx.rows === 4) {
+        if (biggest !== null) {
+          biggest.delete();
+        }
         biggest = approx;
         maxArea = area;
       } else {
         approx.delete();
       }
     }
+    cnt.delete();
   }
   return { biggest, maxArea };
 }

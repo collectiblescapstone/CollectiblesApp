@@ -24,7 +24,7 @@ export default function Normalize({ image }: NormalizeProps) {
     const img = new window.Image();
     img.crossOrigin = 'anonymous';
     img.src = src;
-    
+
     // wait for image to load and be drawn to canvas
     await new Promise((resolve) => {
       img.onload = () => {
@@ -36,7 +36,7 @@ export default function Normalize({ image }: NormalizeProps) {
         resolve(true);
       };
     });
-    
+
     // adapted from NolanAmblard/Pokemon-Card-Scanner/blob/main/main.py
 
     // get openCV instance
@@ -91,15 +91,12 @@ export default function Normalize({ image }: NormalizeProps) {
 
     // find biggest contour
     const { biggest: corners } = biggestContour(cv, contours);
-    
+
     // draw found contour and warp card
     const warped = cv.Mat.zeros(CARD_HEIGHT_PX, CARD_WIDTH_PX, cv.CV_8UC3);
-    if (!corners) {
-        return;
-    }
-    if (corners.rows === 4) {
+    if (corners && corners.rows === 4) {
       const reorderedCorners = reorderCorners(cv, corners);
-      
+
       // draw contour
       drawRectangle(cv, bigContour, reorderedCorners);
       cv.imshow(BiggestContourImageRef.current!, bigContour);
@@ -136,6 +133,12 @@ export default function Normalize({ image }: NormalizeProps) {
       );
       cv.imshow(ProcessedImageRef.current!, warped);
     }
+    contourFrame.delete();
+    bigContour.delete();
+    if (corners) {
+      corners.delete();
+    }
+    kernel.delete();
     hierarchy.delete();
     contours.delete();
     warped.delete();

@@ -1,7 +1,7 @@
 // automatically translated from NolanAmblard/Pokemon-Card-Scanner/blob/main/utils.py
 // TODO: reference https://stackoverflow.com/questions/51528462/opencv-js-perspective-transform and rewrite by hand
 
-import { MatVector, Mat, CV } from "@techstark/opencv-js";
+import { MatVector, Mat, CV } from '@techstark/opencv-js';
 
 //  Returns the corners & area of the biggest contour
 export function biggestContour(
@@ -19,7 +19,7 @@ export function biggestContour(
       const peri = cv.arcLength(cnt, true); // get perimeter
       const approx = new cv.Mat();
       cv.approxPolyDP(cnt, approx, 0.02 * peri, true); // get number of sides
-      
+
       // approx.rows = number of sides
       if (area > maxArea && approx.rows === 4) {
         if (biggest !== null) {
@@ -128,9 +128,10 @@ export function reorderCorners(cv: CV, cornersInput: Mat): [number, number][] {
   return [topleft, topright, bottomleft, bottomright];
 }
 
-export function sortVals(
-  vals: number[]
-): { vals: number[]; indexes: number[] } {
+export function sortVals(vals: number[]): {
+  vals: number[];
+  indexes: number[];
+} {
   const indexes = Array.from({ length: vals.length }, (_, i) => i);
   for (let i = 0; i < vals.length; i++) {
     let index = i;

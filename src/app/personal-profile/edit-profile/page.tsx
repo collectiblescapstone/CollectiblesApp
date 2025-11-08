@@ -56,7 +56,7 @@ const PersonalProfileScreen: React.FC = () => {
 
     const bioVal = watch('bio');
 
-    const handleSave = handleSubmit((data) => {
+    const handleSave = handleSubmit(() => {
         // Save profile logic here
     });
 

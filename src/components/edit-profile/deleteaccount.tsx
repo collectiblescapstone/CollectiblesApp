@@ -32,6 +32,8 @@ const DeleteAccount: React.FC = () => {
 
   const closePopup = () => { 
       setDeletePopUpOpen(false);
+      // reset password field if needed
+      reset({ password: '' });
   }
 
   useEffect(() => {
@@ -46,6 +48,7 @@ const DeleteAccount: React.FC = () => {
     register,
     handleSubmit,
     setError,
+    reset,
     formState: { errors },
   } = useForm<FormValues>();
 

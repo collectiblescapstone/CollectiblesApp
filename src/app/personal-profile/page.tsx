@@ -17,7 +17,7 @@ import {
   Button
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
-import { FiMapPin, FiSettings } from 'react-icons/fi';
+import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 
 const PersonalProfileScreen: React.FC = () => {
     const router = useRouter();
@@ -47,7 +47,7 @@ const PersonalProfileScreen: React.FC = () => {
         rounded="sm"
         variant="solid"
         >
-            <FiSettings />
+            <FiEdit3 />
       </Button>
       <Flex
         flexDirection="column"

@@ -5,7 +5,8 @@ import React from 'react';
 import {
   Box,
   Flex,
-  Image
+  Image,
+  Button
 } from '@chakra-ui/react';
 
 import { FiPlusCircle, FiXCircle } from 'react-icons/fi';
@@ -24,6 +25,15 @@ const cards: CardType[] = [
 ];
 
 const WishScreen: React.FC = () => {
+
+    const removecard = () => {
+        // Edit remove card item logic here
+    };
+
+    const addcard = () => {
+        // Edit add card item logic here
+    };
+
   return (
     <Box bg="white" minH="100vh" color="black">
         <Flex
@@ -63,7 +73,15 @@ const WishScreen: React.FC = () => {
                         w="100%"
                         h="100%"
                     >
-                        <FiPlusCircle size={26} color='white'/>
+                        <Button 
+                            onClick={addcard} 
+                            position="absolute" 
+                            size="2xl"
+                            rounded="sm"
+                            variant="ghost"
+                        >
+                            <FiPlusCircle color='white'/>
+                        </Button>
                     </Flex>
                 </Box>
             {cards.map((card, index) => (
@@ -101,7 +119,15 @@ const WishScreen: React.FC = () => {
                         w="100%"
                         h="100%"
                     >
-                        <FiXCircle size={26} color='white'/>
+                        <Button 
+                            onClick={removecard} 
+                            position="absolute" 
+                            size="2xl"
+                            rounded="sm"
+                            variant="ghost"
+                        >
+                                <FiXCircle color='white'/>
+                        </Button>
                     </Flex>
                 </Box>
                 </Flex>

@@ -1,7 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { 
+    Box, 
+    Flex, 
+    Image, 
+    Text,
+    Button
+} from '@chakra-ui/react';
 
 import { FiXCircle } from 'react-icons/fi';
 
@@ -16,7 +22,11 @@ const cards: CardType[] = [
 ];
 
 const Showcase: React.FC = () => {
-    if (cards.length === 0) return null;
+    
+    const removecard = () => {
+        // Edit remove card item logic here
+    };
+
   return (
     <Flex
     flexDirection="column"
@@ -70,7 +80,15 @@ const Showcase: React.FC = () => {
                     w="100%"
                     h="100%"
                 >
-                    <FiXCircle size={26} color='white'/>
+                    <Button 
+                        onClick={removecard} 
+                        position="absolute" 
+                        size="2xl"
+                        rounded="sm"
+                        variant="ghost"
+                    >
+                            <FiXCircle color='white'/>
+                    </Button>
                 </Flex>
             </Box>
             </Flex>

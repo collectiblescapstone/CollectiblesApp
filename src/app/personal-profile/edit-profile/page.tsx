@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useState } from "react";
+import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
 import Showcase from '@/components/edit-profile/showcase';
@@ -23,41 +23,42 @@ import { FiEdit3, FiCheck, FiEdit2 } from 'react-icons/fi';
 
 const MAX_CHARACTERS = 110;
 
+interface FormValues {
+  name: string;
+  bio: string;
+  location: string;
+  instagram: string;
+  twitter: string;
+  facebook: string;
+  visibility: string;
+}
+
 const PersonalProfileScreen: React.FC = () => {
     
     const router = useRouter();
 
-    const [form, setForm] = useState({
-        name: "",
-        bio: "",
-        location: "",
-        instagram: "",
-        twitter: "",
-        facebook: "",
-        visibility: "Public",
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm<FormValues>({
+        defaultValues: {
+            name: '',
+            bio: '',
+            location: '',
+            instagram: '',
+            twitter: '',
+            facebook: '',
+            visibility: 'Public',
+        },
     });
 
-    const [error, setError] = useState("");
+    const bioVal = watch('bio');
 
-    const handleChange = (key: string, value: string) => {
-        setForm({
-            ...form,
-            [key]: value,
-        });
-    }
-
-    const handleSave = (e: React.FormEvent) => {
-        const allValid = form.name.trim() 
-                         && form.location.trim();
-        e.preventDefault();
-        
-        if (!allValid) {
-            setError("This field is required.");
-            return;
-        }
-
-        // Save logic here
-    };
+    const handleSave = handleSubmit((data) => {
+        // Save profile logic here
+    });
 
     const wishlist = () => {
         router.push('/personal-profile/edit-profile/wishlist');
@@ -134,49 +135,46 @@ const PersonalProfileScreen: React.FC = () => {
                     <FiEdit3 size={24} color='white'/>
                 </Flex>
             </Box>
-            <Field.Root required invalid={!!error}>
+            <Field.Root required invalid={!!errors.name}>
                 <Field.Label>
                     Name <Field.RequiredIndicator />
                 </Field.Label>
                 <Input 
                     placeholder="Enter your name" 
                     fontWeight="normal"
-                    value={form.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
+                    {...register('name', { required: 'Name is required' })}
                 />
                 <Field.HelperText>The name displayed on your profile.</Field.HelperText>
-                {error && <Field.ErrorText>{error}</Field.ErrorText>}
+                {errors.name && <Field.ErrorText>{errors.name.message}</Field.ErrorText>}
             </Field.Root>
             <Field.Root>
                 <Field.Label>
                     Bio
                 </Field.Label>
                 <Span color="gray.500" textStyle="xs">
-                    {form.bio.length} / {MAX_CHARACTERS}
+                    {bioVal.length} / {MAX_CHARACTERS}
                 </Span>
                 <InputGroup>
                     <Input 
                         placeholder="Hi! This is my amazing bio!"
                         fontWeight="normal"
-                        value={form.bio}
                         maxLength={MAX_CHARACTERS}
-                        onChange={(e) => handleChange('bio', e.currentTarget.value.slice(0, MAX_CHARACTERS))}
+                        {...register('bio')}
                     />
                 </InputGroup>
                 <Field.HelperText>Write a little about yourself for others to see.</Field.HelperText>
             </Field.Root>
-            <Field.Root required invalid={!!error}>
+            <Field.Root required invalid={!!errors.location}>
                 <Field.Label>
                     Location <Field.RequiredIndicator />
                 </Field.Label>
                 <Input 
                     placeholder="ex. Toronto, ON" 
                     fontWeight="normal"
-                    value={form.location}
-                    onChange={(e) => handleChange('location', e.target.value)}
+                    {...register('location', { required: 'Location is required' })}
                 />
                 <Field.HelperText>Will be displayed on your profile.</Field.HelperText>
-                {error && <Field.ErrorText>{error}</Field.ErrorText>}
+                {errors.location && <Field.ErrorText>{errors.location.message}</Field.ErrorText>}
             </Field.Root>
             <Field.Root>
                 <Field.Label>
@@ -188,8 +186,7 @@ const PersonalProfileScreen: React.FC = () => {
                     <Input 
                         placeholder="Instagram handle" 
                         fontWeight="normal"
-                        value={form.instagram}
-                        onChange={(e) => handleChange('instagram', e.target.value)}
+                        {...register('instagram')}
                     />
                 </InputGroup>
             </Field.Root>
@@ -203,8 +200,7 @@ const PersonalProfileScreen: React.FC = () => {
                     <Input 
                         placeholder="Twitter handle" 
                         fontWeight="normal"
-                        value={form.twitter}
-                        onChange={(e) => handleChange('twitter', e.target.value)}
+                        {...register('twitter')}
                     />
                 </InputGroup>
             </Field.Root>
@@ -218,8 +214,7 @@ const PersonalProfileScreen: React.FC = () => {
                     <Input 
                         placeholder="Facebook handle" 
                         fontWeight="normal"
-                        value={form.facebook}
-                        onChange={(e) => handleChange('facebook', e.target.value)}
+                        {...register('facebook')}
                     />
                 </InputGroup>
             </Field.Root>
@@ -234,9 +229,7 @@ const PersonalProfileScreen: React.FC = () => {
                 <Field.Label>Public Visibility</Field.Label>
                 <NativeSelect.Root>
                     <NativeSelect.Field 
-                        name="Profile Visibility"
-                        value={form.visibility}
-                        onChange={(e) => handleChange('visibility', e.target.value)}
+                        {...register('visibility')}
                     >
                     {["Public", "Friends Only", "Private"].map((item) => (
                         <option key={item} value={item}>

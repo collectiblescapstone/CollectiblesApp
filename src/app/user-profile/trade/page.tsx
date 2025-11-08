@@ -23,7 +23,6 @@ const cards: CardType[] = [
   {imageSrc: '/user-profile/card_temp.png'},
   {imageSrc: '/user-profile/card_temp.png'},
   {imageSrc: '/user-profile/card_temp.png'},
-  {imageSrc: '/user-profile/card_temp.png'},
 ];
 
 const TradeScreen: React.FC = () => {

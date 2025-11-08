@@ -43,11 +43,11 @@ const PersonalProfileScreen: React.FC = () => {
         top={28} 
         left={2} 
         zIndex={1} 
-        size="xs"
+        size="sm"
         rounded="sm"
         variant="solid"
         >
-            <FiSettings /> Edit Profile
+            <FiSettings />
       </Button>
       <Flex
         flexDirection="column"

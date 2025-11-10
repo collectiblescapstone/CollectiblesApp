@@ -13,8 +13,8 @@ export default function PokemonPolaroid({ id }: { id: number }) {
       bg="white"
       boxShadow="lg"
       borderRadius="md"
-      w="150px"
-      h="200px"
+      w="200px"
+      h="250px"
       p={3}
       display="flex"
       flexDirection="column"
@@ -27,9 +27,13 @@ export default function PokemonPolaroid({ id }: { id: number }) {
       <Image
         src={imageUrl}
         alt={`Pokemon ${id}`}
-        boxSize="80px"
+        boxSize="200px"
         objectFit="contain"
         mt={2}
+        css={{
+          imageRendering: 'pixelated', // <-- key: crisp nearest-neighbor
+          transform: 'translateZ(0)', // <-- prevents blurring on some GPUs
+        }}
       />
 
       {/* Stats Section */}

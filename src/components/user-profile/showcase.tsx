@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Divider from '@/components/user-profile/divider'; 
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Flex, Image, Text } from '@chakra-ui/react';
 
 type CardType = {
   imageSrc: string;

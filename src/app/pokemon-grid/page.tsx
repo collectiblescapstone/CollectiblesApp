@@ -11,18 +11,7 @@ import {
 } from '@chakra-ui/react';
 import PokemonPolaroid from '@/components/pokemonPolaroid/PokemonPolaroid';
 import PokemonSet from '@/components/pokemonSet/PokemonSet';
-
-// For the set information
-interface PokemonSetType {
-  cardCount: {
-    official: number;
-    total: number;
-  };
-  id: string;
-  logo?: string;
-  name: string;
-  symbol?: string;
-}
+import { PokemonSetType } from '@/types/pokemon-grid';
 
 export default function PokemonGridPage() {
   const [selected, setSelected] = useState('set');

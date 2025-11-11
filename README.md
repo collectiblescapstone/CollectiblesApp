@@ -23,6 +23,15 @@ npm i
 npm run dev
 ```
 
+Then, to make sure user authentication works, add the following environment variables to your .env file:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=<thesupabasepublicurl>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<thesupabaseanonkey>
+```
+
+The values above can be found in our supabase dashboard under `Connect (top bar) -> App Frameworks (Options: Next.js, App Router, supabase-js)`
+
 At this point, the application should be available on http://localhost:3000
 
 ### Setting up mobile development

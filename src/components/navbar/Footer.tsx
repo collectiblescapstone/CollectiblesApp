@@ -8,6 +8,12 @@ const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
 
+  const menuItems: { icon: React.ReactNode; path: string }[] = [
+    { icon: <LuLibrary size={36} />, path: '/collections' },
+    { icon: <LuCamera size={36} />, path: '/camera' },
+    { icon: <LuUser size={36} />, path: '/profile' },
+  ];
+
   return (
     <Flex
       color="white"
@@ -22,30 +28,20 @@ const Footer = () => {
       justifyContent="space-between"
       px={16}
     >
-      <Box
-        onClick={() => router.push('/collections')}
-        bgColor={
-          pathname.includes('/collections') ? 'whiteAlpha.300' : 'transparent'
-        }
-      >
-        <LuLibrary size={36} />
-      </Box>
-      <Box
-        onClick={() => router.push('/camera')}
-        bgColor={
-          pathname.includes('/camera') ? 'whiteAlpha.300' : 'transparent'
-        }
-      >
-        <LuCamera size={36} />
-      </Box>
-      <Box
-        onClick={() => router.push('/profile')}
-        bgColor={
-          pathname.includes('/profile') ? 'whiteAlpha.300' : 'transparent'
-        }
-      >
-        <LuUser size={36} />
-      </Box>
+      {menuItems.map((item) => (
+        <Box
+          key={item.path}
+          onClick={() => router.push(item.path)}
+          bgColor={
+            pathname.includes(item.path) ? 'whiteAlpha.400' : 'transparent'
+          }
+          padding={2}
+          borderRadius={8}
+          cursor="pointer"
+        >
+          {item.icon}
+        </Box>
+      ))}
     </Flex>
   );
 };

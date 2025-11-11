@@ -57,7 +57,7 @@ export default function AuthForm({ type }: AuthFormProps) {
     <VStack
       gap="10"
       width="1/3"
-      backgroundColor="whiteAlpha.300"
+      backgroundColor="blackAlpha.300"
       padding={16}
       rounded="xl"
     >

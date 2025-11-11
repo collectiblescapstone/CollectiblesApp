@@ -5,13 +5,83 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { Box, Grid, Heading, Spinner, Text, Button } from '@chakra-ui/react';
 import PokemonCardMini from '@/components/pokemonCardMini/PokemonCardMini';
 
+// Define the types
+interface PokemonSetInfo {
+  cardCount: { official: number; total: number };
+  id: string;
+  logo?: string;
+  name: string;
+  symbol?: string;
+}
+
+interface PokemonVariant {
+  firstEdition: boolean;
+  holo: boolean;
+  normal: boolean;
+  reverse: boolean;
+  wPromo: boolean;
+}
+
+interface PokemonVariantDetailed {
+  type: string;
+  size: string;
+}
+
+interface PokemonAttack {
+  cost: string[];
+  name: string;
+  effect?: string;
+  damage?: number;
+}
+
+interface PokemonCard {
+  category: string;
+  id: string;
+  illustrator: string;
+  image: string;
+  localId: string;
+  name: string;
+  rarity: string;
+  set: PokemonSetInfo;
+  variants: PokemonVariant;
+  variants_detailed: PokemonVariantDetailed[];
+  dexId: number[];
+  hp: number;
+  types: string[];
+  stage: string;
+  attacks: PokemonAttack[];
+  retreat: number;
+  regulationMark: string;
+  legal: { standard: boolean; expanded: boolean };
+  updated: string;
+  pricing: {
+    cardmarket: {
+      updated: string;
+      unit: string;
+      avg: number;
+      low: number;
+      trend: number;
+      avg1: number;
+      avg7: number;
+      avg30: number;
+      'avg-holo': number;
+      'low-holo': number;
+      'trend-holo': number;
+      'avg1-holo': number;
+      'avg7-holo': number;
+      'avg30-holo': number;
+    };
+    tcgplayer: null;
+  };
+}
+
 export default function FilterCardsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const type = searchParams.get('type');
   const name = searchParams.get('name');
 
-  const [cards, setCards] = useState<any[]>([]);
+  const [cards, setCards] = useState<PokemonCard[]>([]);
   const [loading, setLoading] = useState(true);
   const [mainSet, setMainSet] = useState(0);
 
@@ -31,12 +101,56 @@ export default function FilterCardsPage() {
           if (data.cards && Array.isArray(data.cards)) setCards(data.cards);
           else setCards([]);
         } else if (type === 'pokemon') {
-          const fakeData = Array.from({ length: 5 }, (_, i) => ({
-            name: `${name} Variant ${i + 1}`,
+          const fakeData: PokemonCard[] = Array.from({ length: 5 }, (_, i) => ({
+            category: 'Pokemon',
+            id: `fake-${i + 1}`,
+            illustrator: 'Unknown',
             image:
               'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+            localId: `${i + 1}`,
+            name: `${name} Variant ${i + 1}`,
             rarity: 'Special',
-            illustrator: 'Unknown',
+            set: {
+              cardCount: { official: 0, total: 0 },
+              id: 'fake',
+              name: 'Fake Set',
+            },
+            variants: {
+              firstEdition: false,
+              holo: false,
+              normal: true,
+              reverse: true,
+              wPromo: false,
+            },
+            variants_detailed: [{ type: 'normal', size: 'standard' }],
+            dexId: [],
+            hp: 0,
+            types: [],
+            stage: 'Basic',
+            attacks: [],
+            retreat: 0,
+            regulationMark: '',
+            legal: { standard: true, expanded: true },
+            updated: new Date().toISOString(),
+            pricing: {
+              cardmarket: {
+                updated: '',
+                unit: '',
+                avg: 0,
+                low: 0,
+                trend: 0,
+                avg1: 0,
+                avg7: 0,
+                avg30: 0,
+                'avg-holo': 0,
+                'low-holo': 0,
+                'trend-holo': 0,
+                'avg1-holo': 0,
+                'avg7-holo': 0,
+                'avg30-holo': 0,
+              },
+              tcgplayer: null,
+            },
           }));
           setCards(fakeData);
         }
@@ -60,7 +174,6 @@ export default function FilterCardsPage() {
 
   return (
     <Box p={6}>
-      {/* Back Button */}
       <Button mb={4} colorScheme="blue" onClick={() => router.back()}>
         ← Back
       </Button>

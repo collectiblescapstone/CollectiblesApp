@@ -41,7 +41,7 @@ const ProfileScreen: React.FC = () => {
           shape="rounded"
           mt={-20}
         >
-          <Avatar.Image src="user-profile/pfp_temp.jpg" />
+          <Avatar.Image src="/user-profile/pfp_temp.jpg" />
           <Avatar.Fallback> SA </Avatar.Fallback>
         </Avatar.Root>
         <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>

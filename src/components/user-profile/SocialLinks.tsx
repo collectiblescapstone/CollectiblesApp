@@ -4,11 +4,7 @@ import React from 'react';
 
 import { Flex, Icon, Text } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter/*, FaFacebook*/ } from 'react-icons/fa';
-
-type SocialsType = {
-  icon: React.ElementType;
-  handle: string;
-}
+import { SocialsType } from '@/types/user-profile';
 
 const socials: SocialsType[] = [
   { icon: FaInstagram, handle: '@anneofinstagables'},

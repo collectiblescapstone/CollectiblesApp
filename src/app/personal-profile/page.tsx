@@ -3,10 +3,10 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-import SocialLinks from '@/components/user-profile/social-links';
-import Showcase from '@/components/user-profile/showcase';
-import TradeList from '@/components/user-profile/trade-list';
-import WishList from '@/components/user-profile/wish-list';
+import SocialLinks from '@/components/user-profile/SocialLinks';
+import Showcase from '@/components/user-profile/Showcase';
+import TradeList from '@/components/user-profile/TradeList';
+import WishList from '@/components/user-profile/WishList';
 
 import {
   Box,

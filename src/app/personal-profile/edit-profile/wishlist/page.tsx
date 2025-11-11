@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { CardType } from '@/types/user-profile';
 
 import {
   Box,
@@ -10,10 +11,6 @@ import {
 } from '@chakra-ui/react';
 
 import { FiPlusCircle, FiXCircle } from 'react-icons/fi';
-
-type CardType = {
-  imageSrc: string;
-};
 
 const cards: CardType[] = [
   {imageSrc: '/user-profile/card_temp.png'},

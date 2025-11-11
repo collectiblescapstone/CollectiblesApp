@@ -1,12 +1,9 @@
 'use client';
 
 import React from 'react';
-import Divider from '@/components/user-profile/divider'; 
+import Divider from '@/components/user-profile/Divider'; 
 import { Flex, Image, Text } from '@chakra-ui/react';
-
-type CardType = {
-  imageSrc: string;
-};
+import { CardType } from '@/types/user-profile';
 
 const cards: CardType[] = [
   {imageSrc: '/user-profile/card_temp.png'},

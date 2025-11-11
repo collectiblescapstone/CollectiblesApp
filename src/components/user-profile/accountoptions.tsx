@@ -9,7 +9,6 @@ import {
 } from '@chakra-ui/react';
 import { FiMoreVertical, FiSlash, FiUserX } from 'react-icons/fi';
 
-
 const AccountOptions: React.FC = () => {
   return (
     <Menu.Root>

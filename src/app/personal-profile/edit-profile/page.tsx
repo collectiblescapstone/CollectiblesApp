@@ -4,8 +4,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
-import Showcase from '@/components/edit-profile/showcase';
-import DeleteAccount from '@/components/edit-profile/deleteaccount';
+import Showcase from '@/components/edit-profile/Showcase';
+import DeleteAccount from '@/components/edit-profile/DeleteAccount';
+import { FormValues } from '@/types/personal-profile';
+
 
 import {
   Box,
@@ -22,16 +24,6 @@ import { Avatar } from '@chakra-ui/react';
 import { FiEdit3, FiCheck, FiEdit2 } from 'react-icons/fi';
 
 const MAX_CHARACTERS = 110;
-
-interface FormValues {
-  name: string;
-  bio: string;
-  location: string;
-  instagram: string;
-  twitter: string;
-  facebook: string;
-  visibility: string;
-}
 
 const PersonalProfileScreen: React.FC = () => {
     

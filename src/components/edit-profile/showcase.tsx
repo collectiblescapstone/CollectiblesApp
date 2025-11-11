@@ -10,10 +10,7 @@ import {
 } from '@chakra-ui/react';
 
 import { FiXCircle } from 'react-icons/fi';
-
-type CardType = {
-  imageSrc: string;
-};
+import { CardType } from '../../types/user-profile';
 
 const cards: CardType[] = [
   {imageSrc: '/user-profile/card_temp.png'},

@@ -12,10 +12,25 @@ import {
 import PokemonPolaroid from '@/components/pokemonPolaroid/PokemonPolaroid';
 import PokemonSet from '@/components/pokemonSet/PokemonSet';
 
+// For the set information
+interface PokemonSetType {
+  cardCount: {
+    official: number;
+    total: number;
+  };
+  id: string;
+  logo?: string;
+  name: string;
+  symbol?: string;
+}
+
 export default function PokemonGridPage() {
   const [selected, setSelected] = useState('set');
-  const [selectedEra, setSelectedEra] = useState('');
-  const [groupedSets, setGroupedSets] = useState<Record<string, any[]>>({});
+  const [selectedEra, setSelectedEra] = useState('sv');
+  const [groupedSets, setGroupedSets] = useState<
+    Record<string, PokemonSetType[]>
+  >({});
+  const [selectedGen, setSelectedGen] = useState('ALL');
 
   const TOTAL_POKEMON = 1025;
   const pokemon = Array.from({ length: TOTAL_POKEMON }, (_, i) => i + 1);
@@ -27,6 +42,18 @@ export default function PokemonGridPage() {
     ],
   });
 
+  // Final Pokédex numbers for each generation
+  const pokemonGen = [151, 251, 386, 493, 649, 721, 809, 905, 1025];
+
+  // Generation options
+  const genOptions = [
+    { label: 'ALL', value: 'ALL' },
+    ...pokemonGen.map((last, index) => ({
+      label: `Gen ${index + 1}`,
+      value: (index + 1).toString(),
+    })),
+  ];
+
   const setEras = [
     { label: 'Scarlet & Violet', value: 'sv' },
     { label: 'Sword & Shield', value: 'swsh' },
@@ -35,6 +62,7 @@ export default function PokemonGridPage() {
     { label: 'Black & White', value: 'bw' },
     { label: 'Diamond & Pearl', value: 'dp' },
     { label: 'Mega Evolution', value: 'me' },
+    { label: 'Base', value: 'base' },
     { label: 'Other', value: 'other' },
   ];
 
@@ -45,14 +73,13 @@ export default function PokemonGridPage() {
     })),
   });
 
-  // 🧩 Fetch and group JSON once on mount
   useEffect(() => {
     fetch('/temporary_card_data/sets.json')
       .then((res) => res.json())
       .then((data) => {
         const sets = Array.isArray(data) ? data : [data];
 
-        const groups: Record<string, any[]> = {
+        const groups: Record<string, PokemonSetType[]> = {
           sv: [],
           swsh: [],
           sm: [],
@@ -60,6 +87,7 @@ export default function PokemonGridPage() {
           bw: [],
           dp: [],
           me: [],
+          base: [],
           other: [],
         };
 
@@ -72,6 +100,7 @@ export default function PokemonGridPage() {
           else if (id.includes('bw')) groups.bw.push(set);
           else if (id.includes('dp')) groups.dp.push(set);
           else if (id.includes('me')) groups.me.push(set);
+          else if (id.includes('base')) groups.base.push(set);
           else groups.other.push(set);
         });
 
@@ -79,6 +108,26 @@ export default function PokemonGridPage() {
       })
       .catch((err) => console.error('Error loading sets.json:', err));
   }, []);
+
+  const selectStyles = {
+    bg: 'gray.50',
+    color: 'gray.800',
+    border: '1px solid',
+    borderColor: 'gray.300',
+    _hover: { bg: 'gray.100' },
+    _focusWithin: { borderColor: 'blue.400', boxShadow: '0 0 0 1px #63b3ed' },
+  };
+
+  // Filter Pokémon based on selected generation
+  const filteredPokemon =
+    selectedGen === 'ALL'
+      ? pokemon
+      : pokemon.filter((id) => {
+          const genIndex = parseInt(selectedGen) - 1;
+          const startId = genIndex === 0 ? 1 : pokemonGen[genIndex - 1] + 1;
+          const endId = pokemonGen[genIndex];
+          return id >= startId && id <= endId;
+        });
 
   return (
     <div>
@@ -90,12 +139,12 @@ export default function PokemonGridPage() {
         defaultValue={['set']}
         onValueChange={(e) => {
           setSelected(e.value[0]);
-          setSelectedEra('');
+          setSelectedEra('sv');
         }}
       >
         <Select.HiddenSelect />
         <Select.Label>Sort By</Select.Label>
-        <Select.Control>
+        <Select.Control {...selectStyles}>
           <Select.Trigger>
             <Select.ValueText placeholder="Select sort" />
           </Select.Trigger>
@@ -105,9 +154,19 @@ export default function PokemonGridPage() {
         </Select.Control>
         <Portal>
           <Select.Positioner>
-            <Select.Content>
+            <Select.Content
+              bg="white"
+              color="gray.800"
+              border="1px solid"
+              borderColor="gray.300"
+            >
               {frameworks.items.map((framework) => (
-                <Select.Item item={framework} key={framework.value}>
+                <Select.Item
+                  item={framework}
+                  key={framework.value}
+                  _hover={{ bg: 'gray.100' }}
+                  _selected={{ bg: 'blue.50', color: 'blue.700' }}
+                >
                   {framework.label}
                   <Select.ItemIndicator />
                 </Select.Item>
@@ -119,7 +178,55 @@ export default function PokemonGridPage() {
 
       {/* Pokémon Grid View */}
       {selected === 'pokemon' && (
-        <Box bg="gray.100" minH="100vh" p="50px">
+        <Box
+          bg="gray.100"
+          minH="100vh"
+          px={{ base: '10px', md: '50px' }}
+          py="50px"
+        >
+          {/* Generation dropdown */}
+          <Select.Root
+            collection={createListCollection({ items: genOptions })}
+            size="sm"
+            width="200px"
+            defaultValue={['ALL']}
+            onValueChange={(val) => setSelectedGen(val.value[0])}
+          >
+            <Select.HiddenSelect />
+            <Select.Label>Generation</Select.Label>
+            <Select.Control {...selectStyles}>
+              <Select.Trigger>
+                <Select.ValueText placeholder="Select Generation" />
+              </Select.Trigger>
+              <Select.IndicatorGroup>
+                <Select.Indicator />
+              </Select.IndicatorGroup>
+            </Select.Control>
+            <Portal>
+              <Select.Positioner>
+                <Select.Content
+                  bg="white"
+                  color="gray.800"
+                  border="1px solid"
+                  borderColor="gray.300"
+                >
+                  {genOptions.map((gen) => (
+                    <Select.Item
+                      item={gen}
+                      key={gen.value}
+                      _hover={{ bg: 'gray.100' }}
+                      _selected={{ bg: 'blue.50', color: 'blue.700' }}
+                    >
+                      {gen.label}
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                  ))}
+                </Select.Content>
+              </Select.Positioner>
+            </Portal>
+          </Select.Root>
+
+          {/* Filtered Pokémon Grid */}
           <Grid
             templateColumns={{
               base: 'repeat(2, 1fr)',
@@ -129,8 +236,9 @@ export default function PokemonGridPage() {
             }}
             gap="2vw"
             justifyItems="center"
+            mt={4}
           >
-            {pokemon.map((id) => (
+            {filteredPokemon.map((id) => (
               <GridItem key={id}>
                 <PokemonPolaroid id={id} />
               </GridItem>
@@ -146,14 +254,14 @@ export default function PokemonGridPage() {
             collection={eraOptions}
             size="sm"
             width="300px"
-            placeholder="Select an Era"
+            defaultValue={['sv']}
             onValueChange={(e) => setSelectedEra(e.value[0])}
           >
             <Select.HiddenSelect />
             <Select.Label>Set Era</Select.Label>
-            <Select.Control>
+            <Select.Control {...selectStyles}>
               <Select.Trigger>
-                <Select.ValueText placeholder="Select Era" />
+                <Select.ValueText placeholder="Select an Era" />
               </Select.Trigger>
               <Select.IndicatorGroup>
                 <Select.Indicator />
@@ -161,9 +269,19 @@ export default function PokemonGridPage() {
             </Select.Control>
             <Portal>
               <Select.Positioner>
-                <Select.Content>
+                <Select.Content
+                  bg="white"
+                  color="gray.800"
+                  border="1px solid"
+                  borderColor="gray.300"
+                >
                   {eraOptions.items.map((era) => (
-                    <Select.Item item={era} key={era.value}>
+                    <Select.Item
+                      item={era}
+                      key={era.value}
+                      _hover={{ bg: 'gray.100' }}
+                      _selected={{ bg: 'blue.50', color: 'blue.700' }}
+                    >
                       {era.label}
                       <Select.ItemIndicator />
                     </Select.Item>
@@ -173,7 +291,7 @@ export default function PokemonGridPage() {
             </Portal>
           </Select.Root>
 
-          {/* Display sets (using your PokemonSet component) */}
+          {/* Display sets */}
           {selectedEra && groupedSets[selectedEra] && (
             <Grid
               mt="30px"
@@ -186,8 +304,7 @@ export default function PokemonGridPage() {
               gap="20px"
             >
               {groupedSets[selectedEra].map((set) => {
-                const imageSrc =
-                  set.logo || set.symbol || '/placeholder-set-image.png';
+                const imageSrc = set.logo || set.symbol;
                 const description = `ID: ${set.id} • Cards: ${
                   set.cardCount?.official ?? 'N/A'
                 }`;
@@ -196,7 +313,11 @@ export default function PokemonGridPage() {
                   <GridItem key={set.id}>
                     <PokemonSet
                       label={set.name}
-                      image={imageSrc + '.png'}
+                      image={
+                        typeof imageSrc !== 'undefined' || imageSrc === ''
+                          ? imageSrc + '.png'
+                          : '/Images/temp_icon.svg'
+                      }
                       description={description}
                     />
                   </GridItem>

@@ -1,20 +1,21 @@
+'use client';
+
 import { LuSparkle, LuSparkles } from 'react-icons/lu';
-import { Box, Image, Icon, Progress } from '@chakra-ui/react';
-import { HStack } from '@chakra-ui/react/stack';
+import { Box, Image, Icon, Progress, HStack } from '@chakra-ui/react';
 
 export default function PokemonPolaroid({ id }: { id: number }) {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
-  const progress1 = Math.floor(Math.random() * 70) + 30;
-  const progress2 = Math.floor(Math.random() * 70) + 30;
+  //
+  const masterSet = 100;
+  const grandmasterSet = 100;
 
   return (
     <Box
       bg="white"
       boxShadow="lg"
       borderRadius="md"
-      w="200px"
-      h="250px"
+      w={{ base: '45vw', md: '200px' }}
       p={3}
       display="flex"
       flexDirection="column"
@@ -27,36 +28,46 @@ export default function PokemonPolaroid({ id }: { id: number }) {
       <Image
         src={imageUrl}
         alt={`Pokemon ${id}`}
-        boxSize="200px"
+        boxSize={{ base: '40vw', md: '200px' }}
         objectFit="contain"
         mt={2}
         css={{
-          imageRendering: 'pixelated', // <-- key: crisp nearest-neighbor
-          transform: 'translateZ(0)', // <-- prevents blurring on some GPUs
+          imageRendering: 'pixelated',
+          transform: 'translateZ(0)',
         }}
       />
 
       {/* Stats Section */}
       <Box w="100%" mb={2}>
-        <HStack>
-          <Icon as={LuSparkle} color="black" boxSize={4} />
-          <Progress.Root value={progress1} variant="outline" maxW="sm">
-            <HStack gap="5">
-              <Progress.Track flex="1" bg="yellow.100">
-                <Progress.Range bg="yellow.400" />
-              </Progress.Track>
-            </HStack>
+        <HStack mb={1}>
+          <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
+          <Progress.Root
+            value={masterSet}
+            max={100}
+            w="100%"
+            h="6px"
+            borderRadius="full"
+            overflow="hidden"
+          >
+            <Progress.Track bg="gray.100">
+              <Progress.Range bg="yellow.400" />
+            </Progress.Track>
           </Progress.Root>
         </HStack>
 
         <HStack>
-          <Icon as={LuSparkles} color="black" boxSize={4} />
-          <Progress.Root value={progress2} variant="outline" maxW="sm">
-            <HStack gap="5">
-              <Progress.Track flex="1" bg="yellow.100">
-                <Progress.Range bg="yellow.400" />
-              </Progress.Track>
-            </HStack>
+          <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
+          <Progress.Root
+            value={grandmasterSet}
+            max={100}
+            w="100%"
+            h="6px"
+            borderRadius="full"
+            overflow="hidden"
+          >
+            <Progress.Track bg="gray.100">
+              <Progress.Range bg="yellow.400" />
+            </Progress.Track>
           </Progress.Root>
         </HStack>
       </Box>

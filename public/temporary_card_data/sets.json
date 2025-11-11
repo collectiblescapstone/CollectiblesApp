@@ -1144,6 +1144,7 @@
   {
     "cardCount": { "official": 162, "total": 218 },
     "id": "sv05",
+    "logo": "",
     "name": "Temporal Forces",
     "symbol": "https://assets.tcgdex.net/univ/sv/sv05/symbol"
   },
@@ -1195,11 +1196,13 @@
   {
     "cardCount": { "official": 86, "total": 173 },
     "id": "sv10.5w",
+    "logo": "https://assets.tcgdex.net/en/sv/sv10.5w/logo",
     "name": "White Flare"
   },
   {
     "cardCount": { "official": 86, "total": 172 },
     "id": "sv10.5b",
+    "logo": "https://assets.tcgdex.net/en/sv/sv10.5b/logo",
     "name": "Black Bolt"
   },
   {

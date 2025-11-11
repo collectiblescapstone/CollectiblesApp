@@ -3,21 +3,22 @@
 import React from 'react';
 
 import { Flex, Icon, Text } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter/*, FaFacebook*/ } from 'react-icons/fa';
+import { FaInstagram, FaTwitter } from 'react-icons/fa';
 
 type SocialsType = {
-  icon: React.ElementType;
+  icon: keyof typeof iconsMap;
   handle: string;
 }
 
-const socials: SocialsType[] = [
-  { icon: FaInstagram, handle: '@anneofinstagables'},
-  { icon: FaTwitter, handle: '@not_sandra_bullock' },
-  // { icon: FaFacebook, handle: '@sandra.smith.anne' },
-];
+const iconsMap: {[key: string]: typeof FaInstagram | typeof FaTwitter} = {
+    FaTwitter: FaTwitter,
+    FaInstagram: FaInstagram
+};
 
-const SocialLinks: React.FC = () => {
-    if (socials.length === 0) return null;
+type sociallinks = { items: SocialsType[] };
+
+const SocialLinks: React.FC<sociallinks> = ({ items }) => {
+    if (items.length === 0) return null;
   return (
     <Flex 
       flexDirection="row" 
@@ -26,15 +27,15 @@ const SocialLinks: React.FC = () => {
       gap={3}
       wrap={"wrap"}
     >
-      {socials.map((social, index) => (
+      {items.map((social) => (
         <Flex
-          key={index}
+          key={social.handle}
           flexDirection="row"
           justifyContent="center"
           alignItems="center"
           gap={1}
         >
-          <Icon as={social.icon} boxSize={4} />
+          <Icon as={iconsMap[social.icon]} boxSize={4} />
           <Text fontSize="xs" color="gray.500" fontWeight="semibold">
             {social.handle}
           </Text>

@@ -6,22 +6,19 @@ import { useRouter } from 'next/navigation';
 import { Button, Flex, Image, Text } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
 
-type CardType = {
-  imageSrc: string;
+type Card = {
+  id: string;
+  title: string;
+  image: string;
 };
 
-const cards: CardType[] = [
-  {imageSrc: '/user-profile/card_temp.png'},
-  {imageSrc: '/user-profile/card_temp.png'},
-  {imageSrc: '/user-profile/card_temp.png'},
-  {imageSrc: '/user-profile/card_temp.png'}
-];
+type cards = { items: Card[] };
 
-const TradeList: React.FC = () => {
+const TradeList: React.FC<cards> = ({ items }) => {
     const router = useRouter();
 
-    const display = cards.slice(0, 3);
-    const viewmore = cards.length > 3;
+    const display = items.slice(0, 3);
+    const viewmore = items.length > 3;
 
     const press = () => {
         router.push('/user-profile/trade');
@@ -51,12 +48,12 @@ const TradeList: React.FC = () => {
         wrap="wrap"
         gap={7}
         >
-        {display.map((card, index) => (
+        {display.map((card) => (
             <Flex
-            key={index}
+            key={card.id}
             >
             <Image
-                src={card.imageSrc}
+                src={card.image}
                 alt="Trade List Card"
                 w="105px"
                 h="auto"

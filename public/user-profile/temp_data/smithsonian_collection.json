@@ -1,0 +1,66 @@
+{
+    "username": "smithsonian_collection",
+    "name": "Sandra Smith Anne",
+    "location": "Toronto, ON",
+    "bio": "Hi there! My name is Sandra and this is the bio I have written! Isn’t the guy who made this page so talented?",
+    "profilePictureUrl": "/user-profile/pfp_temp.jpg",
+    "bannerImageUrl": "/user-profile/banner_temp.jpg",
+    "socialLinks": [
+        { "icon": "FaTwitter",
+          "handle": "@not_sandra_bullock"
+        },
+        { "icon": "FaInstagram",
+          "handle": "@anneofinstagables"
+        }
+    ],
+    "showcaseItems": [
+        { "id": "1",
+            "title": "Showcase Card 1",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "2",
+            "title": "Showcase Card 2",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "3",
+            "title": "Showcase Card 3",
+            "image": "/user-profile/card_temp.png"
+        }
+    ],
+    "tradeListItems": [
+        { "id": "1",
+            "title": "Trade List Card 1",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "2",
+            "title": "Trade List Card 2",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "3",
+            "title": "Trade List Card 3",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "4",
+            "title": "Trade List Card 4",
+            "image": "/user-profile/card_temp.png"
+        }
+    ],
+    "wishListItems": [
+        { "id": "1",
+            "title": "Wish List Card 1",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "2",
+            "title": "Wish List Card 2",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "3",
+            "title": "Wish List Card 3",
+            "image": "/user-profile/card_temp.png"
+        },
+        { "id": "4",
+            "title": "Wish List Card 4",
+            "image": "/user-profile/card_temp.png"
+        }
+    ]
+}

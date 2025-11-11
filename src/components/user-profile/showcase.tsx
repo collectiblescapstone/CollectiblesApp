@@ -2,20 +2,18 @@
 
 import React from 'react';
 import Divider from '@/components/user-profile/divider'; 
-import { Flex, Image, Text } from '@chakra-ui/react';
+import { Card, Flex, Image, Text } from '@chakra-ui/react';
 
-type CardType = {
-  imageSrc: string;
+type Card = {
+  id: string;
+  title: string;
+  image: string;
 };
 
-const cards: CardType[] = [
-  {imageSrc: '/user-profile/card_temp.png'},
-  {imageSrc: '/user-profile/card_temp.png'},
-  {imageSrc: '/user-profile/card_temp.png'}
-];
+type cards = { items: Card[] };
 
-const Showcase: React.FC = () => {
-    if (cards.length === 0) return null;
+const Showcase: React.FC<cards> = ({ items }) => {
+    if (items.length === 0) return null;
   return (
     <Flex
     flexDirection="column"
@@ -40,13 +38,13 @@ const Showcase: React.FC = () => {
         wrap="wrap"
         gap={7}
         >
-        {cards.map((card, index) => (
+        {items.map((card) => (
             <Flex
-            key={index}
+            key={card.id}
             >
             <Image
-                src={card.imageSrc}
-                alt="Showcase Card"
+                src={card.image}
+                alt={card.title}
                 w="105px"
                 h="auto"
                 borderRadius="none"

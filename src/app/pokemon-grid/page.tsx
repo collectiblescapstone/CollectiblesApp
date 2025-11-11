@@ -240,7 +240,9 @@ export default function PokemonGridPage() {
           >
             {filteredPokemon.map((id) => (
               <GridItem key={id}>
-                <PokemonPolaroid id={id} />
+                <PokemonPolaroid
+                  props={{ id: id, masterSet: 100, grandmasterSet: 100 }}
+                />
               </GridItem>
             ))}
           </Grid>
@@ -305,20 +307,20 @@ export default function PokemonGridPage() {
             >
               {groupedSets[selectedEra].map((set) => {
                 const imageSrc = set.logo || set.symbol;
-                const description = `ID: ${set.id} • Cards: ${
-                  set.cardCount?.official ?? 'N/A'
-                }`;
+                const setID = set.id;
 
                 return (
                   <GridItem key={set.id}>
                     <PokemonSet
-                      label={set.name}
-                      image={
-                        typeof imageSrc !== 'undefined' || imageSrc === ''
-                          ? imageSrc + '.png'
-                          : '/Images/temp_icon.svg'
-                      }
-                      description={description}
+                      props={{
+                        label: set.name,
+                        image: imageSrc
+                          ? `${imageSrc}.png`
+                          : '/Images/temp_icon.svg',
+                        setID: setID,
+                        masterSet: 100,
+                        grandmasterSet: 100,
+                      }}
                     />
                   </GridItem>
                 );

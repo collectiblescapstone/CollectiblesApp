@@ -3,15 +3,22 @@
 import { LuSparkle, LuSparkles } from 'react-icons/lu';
 import { Box, Image, Icon, Progress, HStack } from '@chakra-ui/react';
 
-export default function PokemonPolaroid({ id }: { id: number }) {
-  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+interface PokemonPolaroidProps {
+  id: number;
+  masterSet: number;
+  grandmasterSet: number;
+}
 
-  //
-  const masterSet = 100;
-  const grandmasterSet = 100;
+export default function PokemonPolaroid({
+  props,
+}: {
+  props: PokemonPolaroidProps;
+}) {
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`;
 
   return (
     <Box
+      as="button"
       bg="white"
       boxShadow="lg"
       borderRadius="md"
@@ -22,12 +29,14 @@ export default function PokemonPolaroid({ id }: { id: number }) {
       alignItems="center"
       justifyContent="space-between"
       transition="transform 0.2s"
-      _hover={{ transform: 'scale(1.05)' }}
+      _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
+      _active={{ transform: 'scale(0.98)' }}
+      // cursor="pointer" CHANGE THIS WHEN IT BECOMES CLICKY
     >
       {/* Pokémon Image */}
       <Image
         src={imageUrl}
-        alt={`Pokemon ${id}`}
+        alt={`Pokemon ${props.id}`}
         boxSize={{ base: '40vw', md: '200px' }}
         objectFit="contain"
         mt={2}
@@ -36,13 +45,12 @@ export default function PokemonPolaroid({ id }: { id: number }) {
           transform: 'translateZ(0)',
         }}
       />
-
       {/* Stats Section */}
       <Box w="100%" mb={2}>
         <HStack mb={1}>
           <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
           <Progress.Root
-            value={masterSet}
+            value={props.masterSet}
             max={100}
             w="100%"
             h="6px"
@@ -58,7 +66,7 @@ export default function PokemonPolaroid({ id }: { id: number }) {
         <HStack>
           <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
           <Progress.Root
-            value={grandmasterSet}
+            value={props.grandmasterSet}
             max={100}
             w="100%"
             h="6px"

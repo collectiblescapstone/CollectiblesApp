@@ -386,7 +386,8 @@
   {
     "cardCount": { "official": 30, "total": 30 },
     "id": "tk-bw-z",
-    "name": "BW trainer Kit (Zoroark)"
+    "name": "BW trainer Kit (Zoroark)",
+    "logo": "https://archives.bulbagarden.net/media/upload/0/01/SetSymbolZoroark_Half_Deck"
   },
   {
     "cardCount": { "official": 30, "total": 30 },
@@ -680,47 +681,47 @@
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2011bw",
-    "name": "Macdonald's Collection 2011"
+    "name": "McDonald's Collection 2011"
   },
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2012bw",
-    "name": "Macdonald's Collection 2012"
+    "name": "McDonald's Collection 2012"
   },
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2014xy",
-    "name": "Macdonald's Collection 2014"
+    "name": "McDonald's Collection 2014"
   },
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2015xy",
-    "name": "Macdonald's Collection 2015"
+    "name": "McDonald's Collection 2015"
   },
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2016xy",
-    "name": "Macdonald's Collection 2016"
+    "name": "McDonald's Collection 2016"
   },
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2017sm",
-    "name": "Macdonald's Collection 2017"
+    "name": "McDonald's Collection 2017"
   },
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2018sm",
-    "name": "Macdonald's Collection 2018"
+    "name": "McDonald's Collection 2018"
   },
   {
     "cardCount": { "official": 12, "total": 12 },
     "id": "2019sm",
-    "name": "Macdonald's Collection 2019"
+    "name": "McDonald's Collection 2019"
   },
   {
     "cardCount": { "official": 25, "total": 25 },
     "id": "2021swsh",
-    "name": "Macdonald's Collection 2021",
+    "name": "McDonald's Collection 2021",
     "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
   },
   {
@@ -740,7 +741,7 @@
   {
     "cardCount": { "official": 6, "total": 6 },
     "id": "xya",
-    "name": "Yello A Alternate"
+    "name": "Yellow A Alternate"
   },
   {
     "cardCount": { "official": 146, "total": 146 },
@@ -1104,7 +1105,9 @@
   {
     "cardCount": { "official": 0, "total": 200 },
     "id": "svp",
-    "name": "SVP Black Star Promos"
+    "logo": "https://assets.tcgdex.net/en/swsh/swshp/logo",
+    "name": "SVP Black Star Promos",
+    "symbol": "https://assets.tcgdex.net/univ/swsh/swshp/symbol"
   },
   {
     "cardCount": { "official": 193, "total": 279 },
@@ -1144,7 +1147,7 @@
   {
     "cardCount": { "official": 162, "total": 218 },
     "id": "sv05",
-    "logo": "",
+    "logo": "https://archives.bulbagarden.net/media/upload/d/d9/SV5_Logo_EN",
     "name": "Temporal Forces",
     "symbol": "https://assets.tcgdex.net/univ/sv/sv05/symbol"
   },

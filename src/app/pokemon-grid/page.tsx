@@ -229,9 +229,7 @@ export default function PokemonGridPage() {
           >
             {filteredPokemon.map((id) => (
               <GridItem key={id}>
-                <PokemonPolaroid
-                  props={{ id: id, masterSet: 100, grandmasterSet: 100 }}
-                />
+                <PokemonPolaroid id={id} masterSet={100} grandmasterSet={100} />
               </GridItem>
             ))}
           </Grid>
@@ -301,15 +299,13 @@ export default function PokemonGridPage() {
                 return (
                   <GridItem key={set.id}>
                     <PokemonSet
-                      props={{
-                        label: set.name,
-                        image: imageSrc
-                          ? `${imageSrc}.png`
-                          : '/Images/temp_icon.svg',
-                        setID: setID,
-                        masterSet: 100,
-                        grandmasterSet: 100,
-                      }}
+                      label={set.name}
+                      image={
+                        imageSrc ? `${imageSrc}.png` : '/Images/temp_icon.svg'
+                      }
+                      setID={setID}
+                      masterSet={100}
+                      grandmasterSet={100}
                     />
                   </GridItem>
                 );

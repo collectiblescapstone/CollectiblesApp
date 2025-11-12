@@ -7,19 +7,21 @@ interface PokemonCardMiniProps {
   cardName: string;
   image: string;
   cardId: string; // actual card ID, e.g., "sv01-001"
-  illustrator?: string;
-  rarity?: string;
+  // illustrator?: string;
+  // rarity?: string;
 }
 
 export default function PokemonCardMini({
-  props,
-}: {
-  props: PokemonCardMiniProps;
-}) {
+  cardName,
+  image,
+  cardId,
+  // illustrator,
+  // rarity,
+}: PokemonCardMiniProps) {
   return (
     <Box
       as="button"
-      aria-label={props.cardName}
+      aria-label={cardName}
       bg="white"
       boxShadow="lg"
       borderRadius="md"
@@ -43,8 +45,8 @@ export default function PokemonCardMini({
         alignItems="center"
       >
         <Image
-          src={props.image + '/high.png'}
-          alt={props.cardName}
+          src={image + '/high.png'}
+          alt={cardName}
           objectFit="contain"
           width="100%"
           style={{ imageRendering: 'auto', transform: 'translateZ(0)' }}
@@ -59,12 +61,12 @@ export default function PokemonCardMini({
           color="black" // high contrast
           textShadow="0 0 2px rgba(255, 255, 255, 0.8)" // subtle outline
         >
-          {props.cardName}
+          {cardName}
         </Text>
 
         {/* Show the actual card ID */}
         <Text fontSize="sm" color="gray.600">
-          {props.cardId}
+          {cardId}
         </Text>
       </VStack>
     </Box>

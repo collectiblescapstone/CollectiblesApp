@@ -18,17 +18,23 @@ interface PokemonSetProps {
   label: string;
   image: string;
   setID: string;
-  masterSet?: number;
-  grandmasterSet?: number;
+  masterSet: number;
+  grandmasterSet: number;
 }
 
-export default function PokemonSet({ props }: { props: PokemonSetProps }) {
+export default function PokemonSet({
+  label,
+  image,
+  setID,
+  masterSet,
+  grandmasterSet,
+}: PokemonSetProps) {
   return (
     <Box w="100%" maxW="300px" mx="auto">
       <Link
         href={{
           pathname: '/filter-cards',
-          query: { type: 'set', name: props.setID },
+          query: { type: 'set', name: setID },
         }}
         style={{ textDecoration: 'none' }}
       >
@@ -57,8 +63,8 @@ export default function PokemonSet({ props }: { props: PokemonSetProps }) {
             borderColor="gray.200"
           >
             <Image
-              src={props.image}
-              alt={props.label}
+              src={image}
+              alt={label}
               objectFit="contain"
               maxH="100%"
               maxW="90%"
@@ -79,9 +85,9 @@ export default function PokemonSet({ props }: { props: PokemonSetProps }) {
             textAlign="center"
             p={4}
           >
-            <Heading size="md">{props.label}</Heading>
+            <Heading size="md">{label}</Heading>
             {/* <Text color="gray.600" mt={2}>
-              {props.setID} Troubleshooting code to show the set ID
+              {setID} Troubleshooting code to show the set ID
             </Text> */}
 
             {/* Progress bars section */}
@@ -89,7 +95,7 @@ export default function PokemonSet({ props }: { props: PokemonSetProps }) {
               <HStack mb={2}>
                 <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
                 <Progress.Root
-                  value={props.masterSet}
+                  value={masterSet}
                   max={100}
                   w="100%"
                   h="6px"
@@ -105,7 +111,7 @@ export default function PokemonSet({ props }: { props: PokemonSetProps }) {
               <HStack>
                 <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
                 <Progress.Root
-                  value={props.grandmasterSet}
+                  value={grandmasterSet}
                   max={100}
                   w="100%"
                   h="6px"

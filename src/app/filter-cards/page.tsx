@@ -130,13 +130,11 @@ export default function FilterCardsPage() {
           {cards.map((card, index) => (
             <PokemonCardMini
               key={index}
-              props={{
-                cardName: card.name,
-                cardId: card.localId + '/' + mainSet,
-                image: card.image,
-                rarity: card.rarity,
-                illustrator: card.illustrator,
-              }}
+              cardName={card.name}
+              cardId={card.localId + '/' + mainSet}
+              image={card.image}
+              // rarity={card.rarity}
+              // illustrator={card.illustrator}
             />
           ))}
         </Grid>

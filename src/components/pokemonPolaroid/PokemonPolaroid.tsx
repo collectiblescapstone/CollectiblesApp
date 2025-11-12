@@ -10,11 +10,11 @@ interface PokemonPolaroidProps {
 }
 
 export default function PokemonPolaroid({
-  props,
-}: {
-  props: PokemonPolaroidProps;
-}) {
-  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`;
+  id,
+  masterSet,
+  grandmasterSet,
+}: PokemonPolaroidProps) {
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   return (
     <Box
@@ -36,7 +36,7 @@ export default function PokemonPolaroid({
       {/* Pokémon Image */}
       <Image
         src={imageUrl}
-        alt={`Pokemon ${props.id}`}
+        alt={`Pokemon ${id}`}
         boxSize={{ base: '40vw', md: '200px' }}
         objectFit="contain"
         mt={2}
@@ -50,7 +50,7 @@ export default function PokemonPolaroid({
         <HStack mb={1}>
           <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
           <Progress.Root
-            value={props.masterSet}
+            value={masterSet}
             max={100}
             w="100%"
             h="6px"
@@ -66,7 +66,7 @@ export default function PokemonPolaroid({
         <HStack>
           <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
           <Progress.Root
-            value={props.grandmasterSet}
+            value={grandmasterSet}
             max={100}
             w="100%"
             h="6px"

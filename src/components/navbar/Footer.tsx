@@ -9,9 +9,9 @@ const Footer = () => {
   const pathname = usePathname();
 
   const menuItems: { icon: React.ReactNode; path: string }[] = [
-    { icon: <LuLibrary size={36} />, path: '/collections' },
+    { icon: <LuLibrary size={36} />, path: '/pokemon-grid' },
     { icon: <LuCamera size={36} />, path: '/camera' },
-    { icon: <LuUser size={36} />, path: '/profile' },
+    { icon: <LuUser size={36} />, path: '/personal-profile' },
   ];
 
   return (
@@ -19,7 +19,7 @@ const Footer = () => {
       color="white"
       background="purple.600"
       minHeight="8dvh"
-      position="fixed"
+      position="sticky"
       bottom={0}
       left={0}
       right={0}

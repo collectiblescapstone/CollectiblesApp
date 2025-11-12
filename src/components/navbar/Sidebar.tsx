@@ -11,11 +11,11 @@ const Sidebar = () => {
   const menuItems: { icon: React.ReactNode; path: string; name: string }[] = [
     {
       icon: <LuLibrary size={36} />,
-      path: '/collections',
+      path: '/pokemon-grid',
       name: 'Collections',
     },
     { icon: <LuCamera size={36} />, path: '/camera', name: 'Camera' },
-    { icon: <LuUser size={36} />, path: '/profile', name: 'Profile' },
+    { icon: <LuUser size={36} />, path: '/personal-profile', name: 'Profile' },
   ];
 
   return (

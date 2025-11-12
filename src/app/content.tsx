@@ -8,13 +8,14 @@ import { Capacitor } from '@capacitor/core';
 import Sidebar from '@/components/navbar/Sidebar';
 
 const Content = ({ children }: { children: React.ReactNode }) => {
-  const [isMobileView, setIsMobileView] = useState<boolean>(false);
+  const [isMobileView, setIsMobileView] = useState<boolean>(true);
 
   useEffect(() => {
     const handleResize = () => {
       const innerWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
       setIsMobileView(Capacitor.isNativePlatform() || innerWidth <= 992);
     };
+    handleResize();
 
     window.addEventListener('resize', handleResize);
     return () => {
@@ -31,9 +32,9 @@ const Content = ({ children }: { children: React.ReactNode }) => {
   ) : (
     <Flex flexDirection="row">
       <Sidebar />
-      <Box minWidth="75dvw" minHeight="dvh">
-        {children}
-      </Box>
+      <Flex minWidth="75dvw" minHeight="dvh" justifyContent="center">
+        <Box maxWidth="40dvw">{children}</Box>
+      </Flex>
     </Flex>
   );
 };

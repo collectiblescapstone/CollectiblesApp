@@ -105,10 +105,6 @@ export default function FilterCardsPage() {
 
   return (
     <Box p={6}>
-      <Button mb={4} colorScheme="blue" onClick={() => router.back()}>
-        ← Back
-      </Button>
-
       <Heading mb={6}>
         {type === 'set' ? `${name} Card Set` : `${name} Cards`}
       </Heading>

@@ -9,12 +9,19 @@ const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
 
+  const mainPages = ['/', '/pokemon-grid', '/camera', '/personal-profile'];
+
   const isMainPage = useMemo(() => {
-    return ['/'].includes(pathname);
+    return mainPages.includes(pathname);
   }, [pathname]);
 
   return (
     <Flex
+      position="sticky"
+      top={0}
+      left={0}
+      right={0}
+      zIndex={999}
       color="white"
       bgColor="purple.600"
       minHeight="8dvh"

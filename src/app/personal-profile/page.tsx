@@ -31,8 +31,8 @@ const PersonalProfileScreen: React.FC = () => {
       />
       <Button
         onClick={editpress}
-        position="absolute"
-        top={28}
+        position="relative"
+        top={3}
         left={2}
         zIndex={1}
         size="sm"

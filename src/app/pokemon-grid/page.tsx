@@ -119,7 +119,7 @@ export default function PokemonGridPage() {
         });
 
   return (
-    <div>
+    <Box bg="white" minH="100vh" color="black">
       {/* Sort dropdown */}
       <Select.Root
         collection={frameworks}
@@ -318,6 +318,6 @@ export default function PokemonGridPage() {
           )}
         </Box>
       )}
-    </div>
+    </Box>
   );
 }

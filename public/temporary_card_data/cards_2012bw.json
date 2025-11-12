@@ -1,0 +1,590 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 7,
+    "normal": 0,
+    "official": 12,
+    "reverse": 0,
+    "total": 12
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "2012bw-1",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "1",
+      "name": "Servine",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 80,
+      "types": ["Grass"],
+      "description": "They avoid attacks by sinking into the shadows of thick foliage. They retaliate with masterful whipping techniques.",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "name": "Wrap",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        },
+        { "name": "Tackle", "damage": 30 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3.25,
+            "midPrice": 3.28,
+            "highPrice": 4.8,
+            "marketPrice": 4.8,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-2",
+      "illustrator": "Kouki Saitou",
+      "localId": "2",
+      "name": "Pansage",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 70,
+      "types": ["Grass"],
+      "description": "This Pok\u00e9mon dwells deep in the forest. Eating a leaf from its head whisks weariness away as if by magic.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Collect", "effect": "Draw a card." },
+        { "name": "Scratch", "damage": 20 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.04,
+            "midPrice": 3.85,
+            "highPrice": 5.99,
+            "marketPrice": 3.77,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-3",
+      "illustrator": "MAHOU",
+      "localId": "3",
+      "name": "Dwebble",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "The Pok\u00e9mon can easily melt holes in hard rocks with a liquid secreted from its mouth.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Withdraw",
+          "effect": "Flip a coin. If heads, prevent all damage done to this Pok\u00e9mon by attacks during your opponent\u2019s next turn."
+        },
+        { "name": "Slash", "damage": 20 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.99,
+            "midPrice": 5.11,
+            "highPrice": 9.99,
+            "marketPrice": 6.45,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-4",
+      "illustrator": "Kouki Saitou",
+      "localId": "4",
+      "name": "Pignite",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "hp": 100,
+      "types": ["Fire"],
+      "description": "When its internal fire flares up, its movements grow sharper and faster. When in trouble, it emits smoke.",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "name": "Flame Charge",
+          "effect": "Search your deck for a Fire Energy card and attach it to this Pok\u00e9mon. Shuffle your deck afterward."
+        },
+        { "name": "Heat Crash", "damage": 50 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4.99,
+            "midPrice": 7,
+            "highPrice": 9.99,
+            "marketPrice": 6.68,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-5",
+      "illustrator": "Masakazu Fukuda",
+      "localId": "5",
+      "name": "Dewott",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "hp": 90,
+      "types": ["Water"],
+      "description": "Scalchop techniques differ from one Dewott to another. It never neglects maintaining its scalchops.",
+      "stage": "Stage1",
+      "attacks": [
+        { "name": "Water Gun", "damage": 30 },
+        {
+          "name": "Razor Shell",
+          "effect": "Flip a coin. If heads, this attack does 20 more damage.",
+          "damage": "40+"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.93,
+            "midPrice": 4.51,
+            "highPrice": 9.99,
+            "marketPrice": 5.05,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-6",
+      "illustrator": "Kouki Saitou",
+      "localId": "6",
+      "name": "Emolga",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 70,
+      "types": ["Lightning"],
+      "description": "The energy made in its cheeks\u2019 electric pouches is stored inside its membranes and released while it is gliding.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Thundershock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 10
+        },
+        {
+          "name": "Acrobatics",
+          "effect": "Flip 2 coins. This attack does 20 more damage for each heads.",
+          "damage": "10+"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 5.59,
+            "midPrice": 9.99,
+            "highPrice": 17.99,
+            "marketPrice": 7.81,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-7",
+      "illustrator": "Masakazu Fukuda",
+      "localId": "7",
+      "name": "Woobat",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 60,
+      "types": ["Psychic"],
+      "description": "Its habitat is dark forests and caves. It emits ultrasonic waves from its nose to learn about its surroundings.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Psy Bolt",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.86,
+            "midPrice": 5.72,
+            "highPrice": 8.09,
+            "marketPrice": 6.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-8",
+      "illustrator": "match",
+      "localId": "8",
+      "name": "Drilbur",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 70,
+      "types": ["Fighting"],
+      "description": "It can dig through the ground at a speed of 30 mph. It could give a car running aboveground a good race.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Hone Claws",
+          "effect": "During your next turn, each of this Pok\u00e9mon\u2019s attacks does 30 more damage (before applying Weakness and Resistance).\nFighting"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.75,
+            "midPrice": 2.72,
+            "highPrice": 9.99,
+            "marketPrice": 3.75,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-9",
+      "illustrator": "Atsuko Nishida",
+      "localId": "9",
+      "name": "Purrloin",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 60,
+      "types": ["Darkness"],
+      "description": "They steal from people for fun, but their victims can\u2019t help but forgive them. Their deceptively cute act is perfect.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Knock Off",
+          "effect": "Flip a coin. If heads, discard a random card from your opponent\u2019s hand.",
+          "damage": 20
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3.75,
+            "midPrice": 12.72,
+            "highPrice": 16.28,
+            "marketPrice": 12.78,
+            "directLowPrice": 12.52
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-10",
+      "illustrator": "Masakazu Fukuda",
+      "localId": "10",
+      "name": "Scraggy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "hp": 60,
+      "types": ["Darkness"],
+      "description": "Its skin has a rubbery elasticity, so it can reduce damage by defensively pulling its skin up to its neck.",
+      "stage": "Basic",
+      "attacks": [{ "name": "Headbutt", "damage": 10 }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4.46,
+            "midPrice": 9,
+            "highPrice": 13.1,
+            "marketPrice": 8.99,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-11",
+      "illustrator": "Kouki Saitou",
+      "localId": "11",
+      "name": "Klang",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "hp": 80,
+      "types": ["Metal"],
+      "description": "Spinning minigears are rotated at high speed and repeatedly fired away. It is dangerous if the gears don\u2019t return.",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "name": "Metal Sound",
+          "effect": "The Defending Pok\u00e9mon is now Confused."
+        },
+        {
+          "name": "Guard Press",
+          "effect": "During your opponent\u2019s next turn, any damage done to this Pok\u00e9mon by attacks is reduced by 20 (after applying Weakness and Resistance).",
+          "damage": 60
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.57,
+            "midPrice": 4.25,
+            "highPrice": 14.99,
+            "marketPrice": 4.77,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2012bw-12",
+      "illustrator": "Atsuko Nishida",
+      "localId": "12",
+      "name": "Axew",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2012bw",
+        "name": "Macdonald's Collection 2012"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "hp": 60,
+      "types": ["Colorless"],
+      "description": "They use their tusks to crush the berries they eat. Repeated regrowth makes their tusks strong and sharp.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Dual Chop",
+          "effect": "Flip 2 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4.19,
+            "midPrice": 9.84,
+            "highPrice": 14.99,
+            "marketPrice": 5.12,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "2012bw",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Macdonald's Collection 2012",
+  "releaseDate": "2012-06-15",
+  "serie": { "id": "mc", "name": "McDonald's Collection" },
+  "abbreviation": { "official": "MCD12" }
+}

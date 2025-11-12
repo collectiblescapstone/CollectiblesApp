@@ -1,0 +1,16 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 6,
+    "reverse": 0,
+    "total": 6
+  },
+  "cards": [],
+  "id": "xya",
+  "legal": { "expanded": true, "standard": false },
+  "name": "Yellow A Alternate",
+  "releaseDate": "2014-02-05",
+  "serie": { "id": "xy", "name": "XY" }
+}

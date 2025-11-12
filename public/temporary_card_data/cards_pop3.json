@@ -1,1 +1,1265 @@
-{"cardCount": {"firstEd": 0, "holo": 6, "normal": 4, "official": 17, "reverse": 0, "total": 17}, "cards": [{"category": "Pokemon", "id": "pop3-1", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop3/1", "localId": "1", "name": "Blastoise", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [9], "hp": 120, "types": ["Water"], "evolveFrom": "Wartortle", "stage": "Stage2", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Smash Turn", "effect": "After your attack, you may switch Blastoise with 1 of your Benched Pok\u00e9mon.", "damage": 30}, {"cost": ["Water", "Water", "Colorless", "Colorless"], "name": "Rocket Tackle", "effect": "Blastoise does 10 damage to itself. Flip a coin. If heads, prevent all damage done to Blastoise by attacks during your opponent\u2019s next turn.", "damage": 60}], "weaknesses": [{"type": "Lightning"}], "retreat": 2, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 30, "low": 20, "trend": 107.58, "avg1": 30, "avg7": 74.37, "avg30": 73.87, "avg-holo": null, "low-holo": null, "trend-holo": 59.99, "avg1-holo": 99.99, "avg7-holo": 50, "avg30-holo": 50}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 82, "midPrice": 95, "highPrice": 124.99, "marketPrice": 121.66, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-2", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/pop/pop3/2", "localId": "2", "name": "Flareon", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [136], "hp": 70, "types": ["Fire"], "evolveFrom": "Eevee", "stage": "Stage1", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Quick Attack", "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage.", "damage": "10+"}, {"cost": ["Fire", "Fire", "Colorless"], "name": "Fire Spin", "effect": "Discard 2 basic Energy cards attached to Flareon or this attack does nothing.", "damage": 70}], "weaknesses": [{"type": "Water"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 13.73, "low": 3.99, "trend": 22.48, "avg1": 10.95, "avg7": 22.2, "avg30": 14.19, "avg-holo": null, "low-holo": 10, "trend-holo": 13.29, "avg1-holo": 14.9, "avg7-holo": 9.77, "avg30-holo": 15.28}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 2, "midPrice": 4.56, "highPrice": 12.22, "marketPrice": 8.85, "directLowPrice": null}, "holofoil": {"lowPrice": 10.47, "midPrice": 19.99, "highPrice": 26.99, "marketPrice": 16.98, "directLowPrice": 19.77}}}}, {"category": "Pokemon", "id": "pop3-3", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/pop/pop3/3", "localId": "3", "name": "Jolteon", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [135], "hp": 70, "types": ["Lightning"], "evolveFrom": "Eevee", "stage": "Stage1", "attacks": [{"cost": ["Lightning", "Colorless"], "name": "Thundershock", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.", "damage": 20}, {"cost": ["Lightning", "Colorless", "Colorless"], "name": "Pin Missile", "effect": "Flip 4 coins. This attack does 20 damage times the number of heads.", "damage": "20\u00d7"}], "weaknesses": [{"type": "Fighting"}], "resistances": [{"type": "Metal", "value": "-30"}], "retreat": 0, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 14, "low": 1.5, "trend": 17.07, "avg1": 19.98, "avg7": 16.43, "avg30": 12.18, "avg-holo": null, "low-holo": null, "trend-holo": 0.57, "avg1-holo": 4.8, "avg7-holo": 8.18, "avg30-holo": 12.89}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.99, "midPrice": 3.76, "highPrice": 4.95, "marketPrice": 15.57, "directLowPrice": null}, "holofoil": {"lowPrice": 12, "midPrice": 14.72, "highPrice": 39.99, "marketPrice": 13.09, "directLowPrice": 14.72}}}}, {"category": "Pokemon", "id": "pop3-4", "illustrator": "Sumiyoshi Kizuki", "image": "https://assets.tcgdex.net/en/pop/pop3/4", "localId": "4", "name": "Minun", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [312], "hp": 50, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Cheer Up", "effect": "Draw a card. If you have Plusle in play, draw 2 cards instead."}, {"cost": ["Lightning", "Colorless"], "name": "Negative Ion", "effect": "During your opponent\u2019s next turn, any damage done by attacks from the Defending Pok\u00e9mon is reduced by 10 (before applying Weakness and Resistance).", "damage": 20}, {"cost": ["Lightning", "Lightning"], "name": "Power Bolt", "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon that has any Pok\u00e9-Powers. This attack does 30 damage to that Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"}], "weaknesses": [{"type": "Fighting"}], "resistances": [{"type": "Metal", "value": "-30"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 5.48, "low": 3, "trend": 11.14, "avg1": 7.95, "avg7": 11.85, "avg30": 7.76, "avg-holo": null, "low-holo": null, "trend-holo": 7.68, "avg1-holo": 3.95, "avg7-holo": 6.46, "avg30-holo": 5.63}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 4.74, "midPrice": 4.74, "highPrice": 4.74, "marketPrice": 5.51, "directLowPrice": null}, "holofoil": {"lowPrice": 6.46, "midPrice": 10.08, "highPrice": 15.82, "marketPrice": 12.65, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-5", "illustrator": "Sumiyoshi Kizuki", "image": "https://assets.tcgdex.net/en/pop/pop3/5", "localId": "5", "name": "Plusle", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [311], "hp": 50, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Cheer Up", "effect": "Draw a card. If you have Minun in play, draw 2 cards instead."}, {"cost": ["Lightning", "Colorless"], "name": "Positive Ion", "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage.", "damage": "20+"}, {"cost": ["Lightning", "Lightning"], "name": "Body Bolt", "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon that has any Pok\u00e9-Bodies. This attack does 30 damage to that Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"}], "weaknesses": [{"type": "Fighting"}], "resistances": [{"type": "Metal", "value": "-30"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 7.88, "low": 0.95, "trend": 6.54, "avg1": 5, "avg7": 6.66, "avg30": 6.68, "avg-holo": null, "low-holo": null, "trend-holo": 8.78, "avg1-holo": 4.99, "avg7-holo": 8.69, "avg30-holo": 5.41}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 28.99, "midPrice": 29.99, "highPrice": 32.99, "marketPrice": 9.99, "directLowPrice": null}, "holofoil": {"lowPrice": 33.99, "midPrice": 36.05, "highPrice": 42, "marketPrice": 6, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-6", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/pop/pop3/6", "localId": "6", "name": "Vaporeon", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [134], "hp": 70, "types": ["Water"], "evolveFrom": "Diglett", "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Bite", "damage": 20}, {"cost": ["Water", "Colorless"], "name": "Water Gun", "effect": "Does 30 damage plus 20 more damage for each Water Energy attached to Vaporeon but not used to pay for this attack\u2019s Energy cost. You can\u2019t add more than 40 damage in this way.", "damage": "30+"}], "weaknesses": [{"type": "Lightning"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 11.15, "low": 3, "trend": 10.15, "avg1": 13.5, "avg7": 12.12, "avg30": 12.86, "avg-holo": null, "low-holo": 10, "trend-holo": 7.95, "avg1-holo": 17.95, "avg7-holo": 9.56, "avg30-holo": 12.07}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 10.25, "midPrice": 13.98, "highPrice": 39, "marketPrice": 22.11, "directLowPrice": null}, "holofoil": {"lowPrice": 11.95, "midPrice": 18.69, "highPrice": 44, "marketPrice": 17.24, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-7", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop3/7", "localId": "7", "name": "Combusken", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [256], "hp": 70, "types": ["Fire"], "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Scratch", "damage": 10}, {"cost": ["Fire", "Colorless", "Colorless"], "name": "Flamethrower", "effect": "Discard a Fire Energy attached to Combusken.", "damage": 50}], "weaknesses": [{"type": "Water"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 8.94, "low": 1.99, "trend": 9.5, "avg1": 9, "avg7": 9.01, "avg30": 7.42, "avg-holo": null, "low-holo": null, "trend-holo": 15, "avg1-holo": 15, "avg7-holo": 15, "avg30-holo": 15}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 8, "midPrice": 10.59, "highPrice": 15, "marketPrice": 10.19, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-8", "illustrator": "Tomoaki Imakuni", "image": "https://assets.tcgdex.net/en/pop/pop3/8", "localId": "8", "name": "Donphan", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [232], "hp": 80, "types": ["Fighting"], "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Sniff Out", "effect": "Put any 1 card from your discard pile into your hand."}, {"cost": ["Fighting", "Colorless", "Colorless"], "name": "Fury Attack", "effect": "Flip 3 coins. This attack does 30 damage times the number of heads.", "damage": "30\u00d7"}], "weaknesses": [{"type": "Grass"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 9.33, "low": 1.69, "trend": 9.46, "avg1": 4, "avg7": 12.35, "avg30": 11.68, "avg-holo": null, "low-holo": null, "trend-holo": 15, "avg1-holo": 15, "avg7-holo": 15, "avg30-holo": 15}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 16.56, "midPrice": 20.94, "highPrice": 23.29, "marketPrice": 18.63, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-9", "illustrator": "Midori Harada", "image": "https://assets.tcgdex.net/en/pop/pop3/9", "localId": "9", "name": "Forretress", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [205], "hp": 70, "types": ["Grass"], "stage": "Stage1", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Tackle", "damage": 20}, {"cost": ["Grass", "Grass", "Colorless"], "name": "Toxic", "effect": "The Defending Pok\u00e9mon is now Poisoned. Put 2 damage counters instead of 1 on the Defending Pok\u00e9mon between turns.", "damage": 20}], "weaknesses": [{"type": "Fire"}], "retreat": 2, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 5, "low": 1.5, "trend": 5.68, "avg1": 3, "avg7": 3.15, "avg30": 5.41, "avg-holo": null, "low-holo": null, "trend-holo": 0.8, "avg1-holo": 0.8, "avg7-holo": 7.9, "avg30-holo": 7.9}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 6.86, "midPrice": 8.74, "highPrice": 9.82, "marketPrice": 7.89, "directLowPrice": null}}}}, {"category": "Trainer", "id": "pop3-10", "illustrator": "Ken Ikuji", "image": "https://assets.tcgdex.net/en/pop/pop3/10", "localId": "10", "name": "High Pressure System", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "effect": "Each player pays Colorless less to retreat his or her Fire and Water Pok\u00e9mon.", "trainerType": "Stadium", "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.42, "low": 0.5, "trend": 2.2, "avg1": 0.39, "avg7": 1.59, "avg30": 2.22, "avg-holo": null, "low-holo": null, "trend-holo": 10, "avg1-holo": 10, "avg7-holo": 3.85, "avg30-holo": 3.85}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 3.24, "midPrice": 3.55, "highPrice": 5, "marketPrice": 3.4, "directLowPrice": null}}}}, {"category": "Trainer", "id": "pop3-11", "illustrator": "Shin-ichi Yoshikawa", "image": "https://assets.tcgdex.net/en/pop/pop3/11", "localId": "11", "name": "Low Pressure System", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "effect": "Each Grass and Lightning Pok\u00e9mon in play (both yours and your opponent\u2019s) gets +10 HP.", "trainerType": "Stadium", "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.83, "low": 0.15, "trend": 3.66, "avg1": 0.49, "avg7": 2.89, "avg30": 3.25, "avg-holo": null, "low-holo": null, "trend-holo": 10, "avg1-holo": 10, "avg7-holo": 10, "avg30-holo": 10}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 3.86, "midPrice": 4.49, "highPrice": 7.59, "marketPrice": 5.01, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-12", "illustrator": "Yuka Morii", "image": "https://assets.tcgdex.net/en/pop/pop3/12", "localId": "12", "name": "Ditto", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [132], "hp": 60, "types": ["Psychic"], "stage": "Basic", "abilities": [{"type": "Poke-POWER", "name": "Duplicate", "effect": "Once during your turn (before your attack), you may search your deck for another Ditto and switch it with Ditto. (Any cards attached to Ditto, damage counters, Special Conditions, and effects on it are now on the new Pok\u00e9mon.) If you do, put Ditto on top of your deck. Shuffle your deck afterward. You can\u2019t use more than 1 Duplicate Pok\u00e9-Power each turn."}], "attacks": [{"cost": ["Psychic", "Colorless"], "name": "Psybeam", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Confused.", "damage": 20}], "weaknesses": [{"type": "Psychic"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 8.93, "low": 2.88, "trend": 7.07, "avg1": 3.5, "avg7": 7.05, "avg30": 8.03, "avg-holo": null, "low-holo": null, "trend-holo": 3, "avg1-holo": 3, "avg7-holo": 3, "avg30-holo": 3}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 16.66, "midPrice": 24.99, "highPrice": 29.99, "marketPrice": 16.66, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-13", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/pop/pop3/13", "localId": "13", "name": "Eevee", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "dexId": [133], "hp": 50, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Tackle", "damage": 10}, {"cost": ["Colorless", "Colorless"], "name": "Take Down", "effect": "Eevee does 10 damage to itself.", "damage": 30}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 12.01, "low": 5, "trend": 13.51, "avg1": 8.5, "avg7": 12.73, "avg30": 14.58, "avg-holo": null, "low-holo": null, "trend-holo": 5, "avg1-holo": 5, "avg7-holo": 5, "avg30-holo": 5}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 19, "midPrice": 27.9, "highPrice": 36, "marketPrice": 16.92, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-14", "illustrator": "Midori Harada", "image": "https://assets.tcgdex.net/en/pop/pop3/14", "localId": "14", "name": "Ivysaur", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [2], "hp": 70, "types": ["Grass"], "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Gouge", "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage.", "damage": "10+"}, {"cost": ["Grass", "Colorless", "Colorless"], "name": "Poisonpowder", "effect": "The Defending Pok\u00e9mon is now Poisoned.", "damage": 40}], "weaknesses": [{"type": "Psychic"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 3.58, "low": 0.4, "trend": 4.1, "avg1": 1, "avg7": 3.58, "avg30": 3.57, "avg-holo": null, "low-holo": null, "trend-holo": 3, "avg1-holo": 3, "avg7-holo": 1.63, "avg30-holo": 1.63}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 4, "midPrice": 5, "highPrice": 9.99, "marketPrice": 4.91, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-15", "illustrator": "Midori Harada", "image": "https://assets.tcgdex.net/en/pop/pop3/15", "localId": "15", "name": "Marshtomp", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [259], "hp": 70, "types": ["Fighting"], "evolveFrom": "Mudkip", "stage": "Stage1", "attacks": [{"cost": ["Fighting"], "name": "Mud Slap", "damage": 20}, {"cost": ["Colorless", "Colorless", "Colorless"], "name": "Double-edge", "effect": "Marshtomp does 10 damage to itself.", "damage": 40}], "weaknesses": [{"type": "Grass"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.05, "low": 0.08, "trend": 1.01, "avg1": 0.3, "avg7": 0.76, "avg30": 1.24, "avg-holo": null, "low-holo": null, "trend-holo": 3, "avg1-holo": 3, "avg7-holo": 3, "avg30-holo": 3}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 2, "midPrice": 6.99, "highPrice": 15, "marketPrice": 2.99, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-16", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/pop/pop3/16", "localId": "16", "name": "Pichu Bros.", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [172], "hp": 60, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Lightning", "Lightning"], "name": "Bustle", "effect": "Flip 2 coins. This attack does 20 damage times the number of heads. If either coin is heads, the Defending Pok\u00e9mon is now Confused.", "damage": "20\u00d7"}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 20.25, "low": 2.79, "trend": 15.08, "avg1": 22.6, "avg7": 22.75, "avg30": 17.42, "avg-holo": null, "low-holo": null, "trend-holo": 3.71, "avg1-holo": 2, "avg7-holo": 8.78, "avg30-holo": 8.78}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 44.41, "midPrice": 56, "highPrice": 85, "marketPrice": 31.13, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop3-17", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop3/17", "localId": "17", "name": "Ho-Oh ex", "rarity": "Ultra Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop3", "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [250], "hp": 110, "types": ["Fire"], "stage": "Basic", "suffix": "EX", "abilities": [{"type": "Poke-POWER", "name": "Golden Wing", "effect": "If Ho-Oh ex would be Knocked Out by damage from an opponent\u2019s attack, you may move up to 2 Energy attached to Ho-Oh ex to your Pok\u00e9mon in any way you like."}], "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Rainbow Burn", "effect": "Does 10 damage plus 20 more damage for each type of basic Energy card attached to Ho-Oh ex.", "damage": "10+"}], "weaknesses": [{"type": "Water"}], "retreat": 2, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 37.23, "midPrice": 59.95, "highPrice": 99.99, "marketPrice": 59, "directLowPrice": null}}}}], "id": "pop3", "legal": {"expanded": false, "standard": false}, "logo": "https://assets.tcgdex.net/en/pop/pop3/logo", "name": "POP Series 3", "releaseDate": "2006-04-01", "serie": {"id": "pop", "name": "POP"}, "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol", "abbreviation": {"official": "P3"}}
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 6,
+    "normal": 4,
+    "official": 17,
+    "reverse": 0,
+    "total": 17
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "pop3-1",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/1",
+      "localId": "1",
+      "name": "Blastoise",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [9],
+      "hp": 120,
+      "types": ["Water"],
+      "evolveFrom": "Wartortle",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Smash Turn",
+          "effect": "After your attack, you may switch Blastoise with 1 of your Benched Pok\u00e9mon.",
+          "damage": 30
+        },
+        {
+          "cost": ["Water", "Water", "Colorless", "Colorless"],
+          "name": "Rocket Tackle",
+          "effect": "Blastoise does 10 damage to itself. Flip a coin. If heads, prevent all damage done to Blastoise by attacks during your opponent\u2019s next turn.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 30,
+          "low": 20,
+          "trend": 107.58,
+          "avg1": 30,
+          "avg7": 74.37,
+          "avg30": 73.87,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 59.99,
+          "avg1-holo": 99.99,
+          "avg7-holo": 50,
+          "avg30-holo": 50
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 82,
+            "midPrice": 95,
+            "highPrice": 124.99,
+            "marketPrice": 121.66,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-2",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/2",
+      "localId": "2",
+      "name": "Flareon",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [136],
+      "hp": 70,
+      "types": ["Fire"],
+      "evolveFrom": "Eevee",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage.",
+          "damage": "10+"
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Fire Spin",
+          "effect": "Discard 2 basic Energy cards attached to Flareon or this attack does nothing.",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Water" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 13.73,
+          "low": 3.99,
+          "trend": 22.48,
+          "avg1": 10.95,
+          "avg7": 22.2,
+          "avg30": 14.19,
+          "avg-holo": null,
+          "low-holo": 10,
+          "trend-holo": 13.29,
+          "avg1-holo": 14.9,
+          "avg7-holo": 9.77,
+          "avg30-holo": 15.28
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 2,
+            "midPrice": 4.56,
+            "highPrice": 12.22,
+            "marketPrice": 8.85,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 10.47,
+            "midPrice": 19.99,
+            "highPrice": 26.99,
+            "marketPrice": 16.98,
+            "directLowPrice": 19.77
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-3",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/3",
+      "localId": "3",
+      "name": "Jolteon",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [135],
+      "hp": 70,
+      "types": ["Lightning"],
+      "evolveFrom": "Eevee",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Thundershock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        },
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Pin Missile",
+          "effect": "Flip 4 coins. This attack does 20 damage times the number of heads.",
+          "damage": "20\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "resistances": [{ "type": "Metal", "value": "-30" }],
+      "retreat": 0,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 14,
+          "low": 1.5,
+          "trend": 17.07,
+          "avg1": 19.98,
+          "avg7": 16.43,
+          "avg30": 12.18,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.57,
+          "avg1-holo": 4.8,
+          "avg7-holo": 8.18,
+          "avg30-holo": 12.89
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.99,
+            "midPrice": 3.76,
+            "highPrice": 4.95,
+            "marketPrice": 15.57,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 12,
+            "midPrice": 14.72,
+            "highPrice": 39.99,
+            "marketPrice": 13.09,
+            "directLowPrice": 14.72
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-4",
+      "illustrator": "Sumiyoshi Kizuki",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/4",
+      "localId": "4",
+      "name": "Minun",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [312],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Cheer Up",
+          "effect": "Draw a card. If you have Plusle in play, draw 2 cards instead."
+        },
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Negative Ion",
+          "effect": "During your opponent\u2019s next turn, any damage done by attacks from the Defending Pok\u00e9mon is reduced by 10 (before applying Weakness and Resistance).",
+          "damage": 20
+        },
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Power Bolt",
+          "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon that has any Pok\u00e9-Powers. This attack does 30 damage to that Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "resistances": [{ "type": "Metal", "value": "-30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 5.48,
+          "low": 3,
+          "trend": 11.14,
+          "avg1": 7.95,
+          "avg7": 11.85,
+          "avg30": 7.76,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 7.68,
+          "avg1-holo": 3.95,
+          "avg7-holo": 6.46,
+          "avg30-holo": 5.63
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 4.74,
+            "midPrice": 4.74,
+            "highPrice": 4.74,
+            "marketPrice": 5.51,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 6.46,
+            "midPrice": 10.08,
+            "highPrice": 15.82,
+            "marketPrice": 12.65,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-5",
+      "illustrator": "Sumiyoshi Kizuki",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/5",
+      "localId": "5",
+      "name": "Plusle",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [311],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Cheer Up",
+          "effect": "Draw a card. If you have Minun in play, draw 2 cards instead."
+        },
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Positive Ion",
+          "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage.",
+          "damage": "20+"
+        },
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Body Bolt",
+          "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon that has any Pok\u00e9-Bodies. This attack does 30 damage to that Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "resistances": [{ "type": "Metal", "value": "-30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 7.88,
+          "low": 0.95,
+          "trend": 6.54,
+          "avg1": 5,
+          "avg7": 6.66,
+          "avg30": 6.68,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 8.78,
+          "avg1-holo": 4.99,
+          "avg7-holo": 8.69,
+          "avg30-holo": 5.41
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 28.99,
+            "midPrice": 29.99,
+            "highPrice": 32.99,
+            "marketPrice": 9.99,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 33.99,
+            "midPrice": 36.05,
+            "highPrice": 42,
+            "marketPrice": 6,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-6",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/6",
+      "localId": "6",
+      "name": "Vaporeon",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [134],
+      "hp": 70,
+      "types": ["Water"],
+      "evolveFrom": "Diglett",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Bite", "damage": 20 },
+        {
+          "cost": ["Water", "Colorless"],
+          "name": "Water Gun",
+          "effect": "Does 30 damage plus 20 more damage for each Water Energy attached to Vaporeon but not used to pay for this attack\u2019s Energy cost. You can\u2019t add more than 40 damage in this way.",
+          "damage": "30+"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 11.15,
+          "low": 3,
+          "trend": 10.15,
+          "avg1": 13.5,
+          "avg7": 12.12,
+          "avg30": 12.86,
+          "avg-holo": null,
+          "low-holo": 10,
+          "trend-holo": 7.95,
+          "avg1-holo": 17.95,
+          "avg7-holo": 9.56,
+          "avg30-holo": 12.07
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 10.25,
+            "midPrice": 13.98,
+            "highPrice": 39,
+            "marketPrice": 22.11,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 11.95,
+            "midPrice": 18.69,
+            "highPrice": 44,
+            "marketPrice": 17.24,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-7",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/7",
+      "localId": "7",
+      "name": "Combusken",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [256],
+      "hp": 70,
+      "types": ["Fire"],
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Scratch", "damage": 10 },
+        {
+          "cost": ["Fire", "Colorless", "Colorless"],
+          "name": "Flamethrower",
+          "effect": "Discard a Fire Energy attached to Combusken.",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Water" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 8.94,
+          "low": 1.99,
+          "trend": 9.5,
+          "avg1": 9,
+          "avg7": 9.01,
+          "avg30": 7.42,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 15,
+          "avg1-holo": 15,
+          "avg7-holo": 15,
+          "avg30-holo": 15
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 8,
+            "midPrice": 10.59,
+            "highPrice": 15,
+            "marketPrice": 10.19,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-8",
+      "illustrator": "Tomoaki Imakuni",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/8",
+      "localId": "8",
+      "name": "Donphan",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [232],
+      "hp": 80,
+      "types": ["Fighting"],
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Sniff Out",
+          "effect": "Put any 1 card from your discard pile into your hand."
+        },
+        {
+          "cost": ["Fighting", "Colorless", "Colorless"],
+          "name": "Fury Attack",
+          "effect": "Flip 3 coins. This attack does 30 damage times the number of heads.",
+          "damage": "30\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Grass" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 9.33,
+          "low": 1.69,
+          "trend": 9.46,
+          "avg1": 4,
+          "avg7": 12.35,
+          "avg30": 11.68,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 15,
+          "avg1-holo": 15,
+          "avg7-holo": 15,
+          "avg30-holo": 15
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 16.56,
+            "midPrice": 20.94,
+            "highPrice": 23.29,
+            "marketPrice": 18.63,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-9",
+      "illustrator": "Midori Harada",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/9",
+      "localId": "9",
+      "name": "Forretress",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [205],
+      "hp": 70,
+      "types": ["Grass"],
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless", "Colorless"], "name": "Tackle", "damage": 20 },
+        {
+          "cost": ["Grass", "Grass", "Colorless"],
+          "name": "Toxic",
+          "effect": "The Defending Pok\u00e9mon is now Poisoned. Put 2 damage counters instead of 1 on the Defending Pok\u00e9mon between turns.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fire" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 5,
+          "low": 1.5,
+          "trend": 5.68,
+          "avg1": 3,
+          "avg7": 3.15,
+          "avg30": 5.41,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.8,
+          "avg1-holo": 0.8,
+          "avg7-holo": 7.9,
+          "avg30-holo": 7.9
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 6.86,
+            "midPrice": 8.74,
+            "highPrice": 9.82,
+            "marketPrice": 7.89,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "pop3-10",
+      "illustrator": "Ken Ikuji",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/10",
+      "localId": "10",
+      "name": "High Pressure System",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "effect": "Each player pays Colorless less to retreat his or her Fire and Water Pok\u00e9mon.",
+      "trainerType": "Stadium",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.42,
+          "low": 0.5,
+          "trend": 2.2,
+          "avg1": 0.39,
+          "avg7": 1.59,
+          "avg30": 2.22,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 10,
+          "avg1-holo": 10,
+          "avg7-holo": 3.85,
+          "avg30-holo": 3.85
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 3.24,
+            "midPrice": 3.55,
+            "highPrice": 5,
+            "marketPrice": 3.4,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "pop3-11",
+      "illustrator": "Shin-ichi Yoshikawa",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/11",
+      "localId": "11",
+      "name": "Low Pressure System",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "effect": "Each Grass and Lightning Pok\u00e9mon in play (both yours and your opponent\u2019s) gets +10 HP.",
+      "trainerType": "Stadium",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.83,
+          "low": 0.15,
+          "trend": 3.66,
+          "avg1": 0.49,
+          "avg7": 2.89,
+          "avg30": 3.25,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 10,
+          "avg1-holo": 10,
+          "avg7-holo": 10,
+          "avg30-holo": 10
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 3.86,
+            "midPrice": 4.49,
+            "highPrice": 7.59,
+            "marketPrice": 5.01,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-12",
+      "illustrator": "Yuka Morii",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/12",
+      "localId": "12",
+      "name": "Ditto",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [132],
+      "hp": 60,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Duplicate",
+          "effect": "Once during your turn (before your attack), you may search your deck for another Ditto and switch it with Ditto. (Any cards attached to Ditto, damage counters, Special Conditions, and effects on it are now on the new Pok\u00e9mon.) If you do, put Ditto on top of your deck. Shuffle your deck afterward. You can\u2019t use more than 1 Duplicate Pok\u00e9-Power each turn."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Psybeam",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Confused.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 8.93,
+          "low": 2.88,
+          "trend": 7.07,
+          "avg1": 3.5,
+          "avg7": 7.05,
+          "avg30": 8.03,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3,
+          "avg1-holo": 3,
+          "avg7-holo": 3,
+          "avg30-holo": 3
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 16.66,
+            "midPrice": 24.99,
+            "highPrice": 29.99,
+            "marketPrice": 16.66,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-13",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/13",
+      "localId": "13",
+      "name": "Eevee",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "dexId": [133],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Tackle", "damage": 10 },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Take Down",
+          "effect": "Eevee does 10 damage to itself.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 12.01,
+          "low": 5,
+          "trend": 13.51,
+          "avg1": 8.5,
+          "avg7": 12.73,
+          "avg30": 14.58,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 5,
+          "avg1-holo": 5,
+          "avg7-holo": 5,
+          "avg30-holo": 5
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 19,
+            "midPrice": 27.9,
+            "highPrice": 36,
+            "marketPrice": 16.92,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-14",
+      "illustrator": "Midori Harada",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/14",
+      "localId": "14",
+      "name": "Ivysaur",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [2],
+      "hp": 70,
+      "types": ["Grass"],
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Gouge",
+          "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage.",
+          "damage": "10+"
+        },
+        {
+          "cost": ["Grass", "Colorless", "Colorless"],
+          "name": "Poisonpowder",
+          "effect": "The Defending Pok\u00e9mon is now Poisoned.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.58,
+          "low": 0.4,
+          "trend": 4.1,
+          "avg1": 1,
+          "avg7": 3.58,
+          "avg30": 3.57,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3,
+          "avg1-holo": 3,
+          "avg7-holo": 1.63,
+          "avg30-holo": 1.63
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 4,
+            "midPrice": 5,
+            "highPrice": 9.99,
+            "marketPrice": 4.91,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-15",
+      "illustrator": "Midori Harada",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/15",
+      "localId": "15",
+      "name": "Marshtomp",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [259],
+      "hp": 70,
+      "types": ["Fighting"],
+      "evolveFrom": "Mudkip",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Fighting"], "name": "Mud Slap", "damage": 20 },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Double-edge",
+          "effect": "Marshtomp does 10 damage to itself.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Grass" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.05,
+          "low": 0.08,
+          "trend": 1.01,
+          "avg1": 0.3,
+          "avg7": 0.76,
+          "avg30": 1.24,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3,
+          "avg1-holo": 3,
+          "avg7-holo": 3,
+          "avg30-holo": 3
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 2,
+            "midPrice": 6.99,
+            "highPrice": 15,
+            "marketPrice": 2.99,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-16",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/16",
+      "localId": "16",
+      "name": "Pichu Bros.",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [172],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Bustle",
+          "effect": "Flip 2 coins. This attack does 20 damage times the number of heads. If either coin is heads, the Defending Pok\u00e9mon is now Confused.",
+          "damage": "20\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 20.25,
+          "low": 2.79,
+          "trend": 15.08,
+          "avg1": 22.6,
+          "avg7": 22.75,
+          "avg30": 17.42,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3.71,
+          "avg1-holo": 2,
+          "avg7-holo": 8.78,
+          "avg30-holo": 8.78
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 44.41,
+            "midPrice": 56,
+            "highPrice": 85,
+            "marketPrice": 31.13,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop3-17",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop3/17",
+      "localId": "17",
+      "name": "Ho-Oh ex",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop3",
+        "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+        "name": "POP Series 3",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [250],
+      "hp": 110,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "suffix": "EX",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Golden Wing",
+          "effect": "If Ho-Oh ex would be Knocked Out by damage from an opponent\u2019s attack, you may move up to 2 Energy attached to Ho-Oh ex to your Pok\u00e9mon in any way you like."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Rainbow Burn",
+          "effect": "Does 10 damage plus 20 more damage for each type of basic Energy card attached to Ho-Oh ex.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Water" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 37.23,
+            "midPrice": 59.95,
+            "highPrice": 99.99,
+            "marketPrice": 59,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "pop3",
+  "legal": { "expanded": false, "standard": false },
+  "logo": "https://assets.tcgdex.net/en/pop/pop3/logo",
+  "name": "POP Series 3",
+  "releaseDate": "2006-04-01",
+  "serie": { "id": "pop", "name": "POP" },
+  "symbol": "https://assets.tcgdex.net/univ/pop/pop3/symbol",
+  "abbreviation": { "official": "P3" }
+}

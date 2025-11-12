@@ -8,13 +8,7 @@ import TradeList from '@/components/user-profile/TradeList';
 import WishList from '@/components/user-profile/WishList';
 import AccountOptions from '@/components/user-profile/AccountOptions';
 
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Icon
-} from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Icon } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin } from 'react-icons/fi';
 
@@ -31,16 +25,8 @@ const ProfileScreen: React.FC = () => {
         mt={16}
       />
       <AccountOptions />
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        gap={2}
-      >
-        <Avatar.Root
-          boxSize="100px"
-          shape="rounded"
-          mt={-20}
-        >
+      <Flex flexDirection="column" alignItems="center" gap={2}>
+        <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
           <Avatar.Fallback> SA </Avatar.Fallback>
         </Avatar.Root>
@@ -58,8 +44,15 @@ const ProfileScreen: React.FC = () => {
             Toronto, ON
           </Text>
         </Flex>
-        <Text fontSize="sm" color="gray.800" textAlign="center" maxW="400px" px={4}>
-          Hi there! My name is Sandra and this is the bio I have written! Isn’t the guy who made this page so talented?
+        <Text
+          fontSize="sm"
+          color="gray.800"
+          textAlign="center"
+          maxW="400px"
+          px={4}
+        >
+          Hi there! My name is Sandra and this is the bio I have written! Isn’t
+          the guy who made this page so talented?
         </Text>
         <Flex mt={1}>
           <SocialLinks />

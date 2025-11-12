@@ -1,1 +1,16 @@
-{"cardCount": {"firstEd": 0, "holo": 0, "normal": 0, "official": 160, "reverse": 0, "total": 160}, "cards": [], "id": "jumbo", "legal": {"expanded": false, "standard": false}, "name": "Jumbo cards", "releaseDate": "2000-02-01", "serie": {"id": "misc", "name": "Miscellaneous"}}
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 160,
+    "reverse": 0,
+    "total": 160
+  },
+  "cards": [],
+  "id": "jumbo",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Jumbo cards",
+  "releaseDate": "2000-02-01",
+  "serie": { "id": "misc", "name": "Miscellaneous" }
+}

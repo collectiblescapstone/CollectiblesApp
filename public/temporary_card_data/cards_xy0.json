@@ -1,1 +1,2849 @@
-{"cardCount": {"firstEd": 0, "holo": 0, "normal": 0, "official": 39, "reverse": 0, "total": 39}, "cards": [{"category": "Pokemon", "id": "xy0-1", "illustrator": "Akira Komayama", "image": "https://assets.tcgdex.net/en/xy/xy0/1", "localId": "1", "name": "Weedle", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [13], "hp": 40, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Grass"], "name": "String Shot", "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.", "damage": 10}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.13, "low": 0.05, "trend": 1, "avg1": 0.8, "avg7": 1.13, "avg30": 0.73, "avg-holo": null, "low-holo": 0.4, "trend-holo": 0.3, "avg1-holo": 0.3, "avg7-holo": 0.4, "avg30-holo": 0.4}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.41, "midPrice": 0.6, "highPrice": 2.41, "marketPrice": 1.27, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-2", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/xy/xy0/2", "localId": "2", "name": "Pansage", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [511], "hp": 70, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Collect", "effect": "Draw a card."}, {"cost": ["Colorless", "Colorless"], "name": "Fury Swipes", "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.", "damage": "10\u00d7"}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.1, "low": 0.05, "trend": 0.39, "avg1": 0.1, "avg7": 0.41, "avg30": 0.43, "avg-holo": null, "low-holo": null, "trend-holo": 0.3, "avg1-holo": 0.3, "avg7-holo": 0.3, "avg30-holo": 0.3}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.1, "midPrice": 0.4, "highPrice": 2.49, "marketPrice": 0.42, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-3", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/3", "localId": "3", "name": "Chespin", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [650], "hp": 60, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Grass"], "name": "Vine Whip", "damage": 10}, {"cost": ["Grass", "Colorless"], "name": "Seed Bomb", "damage": 20}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.34, "low": 0.05, "trend": 0.21, "avg1": 0.5, "avg7": 0.34, "avg30": 0.39, "avg-holo": null, "low-holo": null, "trend-holo": 0.77, "avg1-holo": 0.1, "avg7-holo": 0.71, "avg30-holo": 0.71}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.01, "midPrice": 0.31, "highPrice": 1.58, "marketPrice": 0.31, "directLowPrice": 0.24}, "holofoil": {"lowPrice": 0.39, "midPrice": 0.81, "highPrice": 5.42, "marketPrice": 0.96, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-4", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/4", "localId": "4", "name": "Quilladin", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [651], "hp": 90, "types": ["Grass"], "evolveFrom": "Chespin", "stage": "Stage1", "attacks": [{"cost": ["Grass", "Colorless"], "name": "Leech Seed", "effect": "Heal 10 damage from this Pok\u00e9mon.", "damage": 20}, {"cost": ["Grass", "Colorless", "Colorless"], "name": "Needle Arm", "damage": 50}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.14, "low": 0.05, "trend": 0.17, "avg1": 0.7, "avg7": 0.9, "avg30": 1.07, "avg-holo": null, "low-holo": null, "trend-holo": 0.29, "avg1-holo": 0.05, "avg7-holo": 0.45, "avg30-holo": 0.45}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.5, "midPrice": 0.85, "highPrice": 1.96, "marketPrice": 0.94, "directLowPrice": null}, "holofoil": {"lowPrice": 0.75, "midPrice": 1.6, "highPrice": 2.33, "marketPrice": 1.58, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-5", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/5", "localId": "5", "name": "Chesnaught", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [652], "hp": 150, "types": ["Grass"], "evolveFrom": "Quilladin", "stage": "Stage2", "attacks": [{"cost": ["Grass", "Colorless", "Colorless"], "name": "Needle Arm", "damage": 50}, {"cost": ["Grass", "Grass", "Colorless", "Colorless"], "name": "Tumbling Attack", "effect": "Flip a coin. If heads, this attack does 40 more damage.", "damage": "80+"}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "retreat": 4, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.35, "low": 0.05, "trend": 2.24, "avg1": 3, "avg7": 2.28, "avg30": 1.94, "avg-holo": null, "low-holo": 1.5, "trend-holo": 2.06, "avg1-holo": 1, "avg7-holo": 2.25, "avg30-holo": 1.98}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.64, "midPrice": 1.25, "highPrice": 5.63, "marketPrice": 1.69, "directLowPrice": null}, "holofoil": {"lowPrice": 0.85, "midPrice": 1.81, "highPrice": 6.12, "marketPrice": 1.93, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-6", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/xy/xy0/6", "localId": "6", "name": "Slugma", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [218], "hp": 80, "types": ["Fire"], "stage": "Basic", "attacks": [{"cost": ["Fire", "Colorless"], "name": "Combustion", "damage": 20}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.68, "low": 0.02, "trend": 0.54, "avg1": 0.97, "avg7": 0.62, "avg30": 0.46, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.36, "highPrice": 2.49, "marketPrice": 1.4, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-7", "illustrator": "Naoyo Kimura", "image": "https://assets.tcgdex.net/en/xy/xy0/7", "localId": "7", "name": "Pansear", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [513], "hp": 70, "types": ["Fire"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Collect", "effect": "Draw a card."}, {"cost": ["Colorless", "Colorless"], "name": "Fury Swipes", "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.", "damage": "10\u00d7"}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.59, "low": 0.02, "trend": 0.45, "avg1": 0.39, "avg7": 0.44, "avg30": 0.45, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.36, "highPrice": 1.76, "marketPrice": 0.59, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-8", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/8", "localId": "8", "name": "Fennekin", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [653], "hp": 60, "types": ["Fire"], "stage": "Basic", "attacks": [{"cost": ["Fire"], "name": "Scratch", "damage": 10}, {"cost": ["Fire", "Colorless"], "name": "Live Coal", "damage": 20}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.47, "low": 0.02, "trend": 0.57, "avg1": 0.16, "avg7": 0.48, "avg30": 0.41, "avg-holo": null, "low-holo": null, "trend-holo": 0.93, "avg1-holo": 2, "avg7-holo": 0.55, "avg30-holo": 0.55}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.05, "midPrice": 0.2, "highPrice": 1.49, "marketPrice": 0.18, "directLowPrice": null}, "holofoil": {"lowPrice": 0.3, "midPrice": 0.69, "highPrice": 3.1, "marketPrice": 1.91, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-9", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/9", "localId": "9", "name": "Braixen", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [654], "hp": 80, "types": ["Fire"], "evolveFrom": "Fennekin", "stage": "Stage1", "attacks": [{"cost": ["Fire", "Colorless"], "name": "Firebreathing", "effect": "Flip a coin. If heads, this attack does 20 more damage.", "damage": "20+"}, {"cost": ["Fire", "Colorless", "Colorless"], "name": "Flame Tail", "damage": 60}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.3, "low": 0.02, "trend": 0.6, "avg1": 0.43, "avg7": 0.33, "avg30": 0.4, "avg-holo": null, "low-holo": null, "trend-holo": 3.05, "avg1-holo": 4, "avg7-holo": 1.18, "avg30-holo": 1.18}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.34, "highPrice": 1.71, "marketPrice": 0.57, "directLowPrice": null}, "holofoil": {"lowPrice": 0.25, "midPrice": 0.88, "highPrice": 4.02, "marketPrice": 0.96, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-10", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/10", "localId": "10", "name": "Delphox", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [655], "hp": 140, "types": ["Fire"], "evolveFrom": "Braixen", "stage": "Stage2", "attacks": [{"cost": ["Fire", "Colorless"], "name": "Will-O-Wisp", "damage": 30}, {"cost": ["Fire", "Colorless", "Colorless", "Colorless"], "name": "Fire Blast", "effect": "Discard an Energy attached to this Pok\u00e9mon.", "damage": 120}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.99, "low": 0.1, "trend": 1.02, "avg1": 0.7, "avg7": 1, "avg30": 1.12, "avg-holo": 1, "low-holo": 0.4, "trend-holo": 1.43, "avg1-holo": 1, "avg7-holo": 1.39, "avg30-holo": 1.43}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.4, "midPrice": 0.77, "highPrice": 1.99, "marketPrice": 0.87, "directLowPrice": null}, "holofoil": {"lowPrice": 0.4, "midPrice": 0.85, "highPrice": 1.71, "marketPrice": 1.04, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-11", "illustrator": "Shin Nagasawa", "image": "https://assets.tcgdex.net/en/xy/xy0/11", "localId": "11", "name": "Panpour", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [515], "hp": 70, "types": ["Water"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Collect", "effect": "Draw a card."}, {"cost": ["Colorless", "Colorless"], "name": "Fury Swipes", "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.", "damage": "10\u00d7"}], "weaknesses": [{"type": "Grass", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.57, "low": 0.02, "trend": 0.64, "avg1": 0.38, "avg7": 0.76, "avg30": 0.47, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.29, "midPrice": 0.75, "highPrice": 2.5, "marketPrice": 0.68, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-12", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/12", "localId": "12", "name": "Froakie", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [656], "hp": 60, "types": ["Water"], "stage": "Basic", "attacks": [{"cost": ["Water"], "name": "Pound", "damage": 10}, {"cost": ["Water", "Colorless"], "name": "Water Drip", "damage": 20}], "weaknesses": [{"type": "Grass", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.08, "low": 0.02, "trend": 1.13, "avg1": 0.05, "avg7": 1.07, "avg30": 0.53, "avg-holo": 3.29, "low-holo": 1.5, "trend-holo": 3.02, "avg1-holo": 3.29, "avg7-holo": 1.4, "avg30-holo": 1.4}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.15, "midPrice": 0.5, "highPrice": 1.75, "marketPrice": 0.52, "directLowPrice": null}, "holofoil": {"lowPrice": 0.4, "midPrice": 0.89, "highPrice": 4.72, "marketPrice": 1.1, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-13", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/13", "localId": "13", "name": "Frogadier", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [657], "hp": 80, "types": ["Water"], "evolveFrom": "Froakie", "stage": "Stage1", "attacks": [{"cost": ["Water"], "name": "Water Drip", "damage": 20}, {"cost": ["Water", "Water", "Colorless"], "name": "Aqua Wave", "effect": "Flip 2 coins. This attack does 20 more damage for each heads.", "damage": "40+"}], "weaknesses": [{"type": "Grass", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.38, "low": 0.02, "trend": 0.37, "avg1": 0.05, "avg7": 0.29, "avg30": 0.32, "avg-holo": null, "low-holo": 1.2, "trend-holo": 1.79, "avg1-holo": 2.98, "avg7-holo": 1.52, "avg30-holo": 1.52}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.6, "highPrice": 1.25, "marketPrice": 0.62, "directLowPrice": null}, "holofoil": {"lowPrice": 0.49, "midPrice": 1.23, "highPrice": 2.99, "marketPrice": 2.27, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-14", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/14", "localId": "14", "name": "Greninja", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [658], "hp": 140, "types": ["Water"], "evolveFrom": "Frogadier", "stage": "Stage2", "attacks": [{"cost": ["Water"], "name": "Mat Block", "effect": "Flip a coin. If heads, discard an Energy attached to your opponent's Active Pok\u00e9mon.", "damage": 40}, {"cost": ["Water", "Water", "Colorless"], "name": "Aqua Edge", "damage": 80}], "weaknesses": [{"type": "Grass", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.53, "low": 0.16, "trend": 3.21, "avg1": 0.8, "avg7": 1.99, "avg30": 3.04, "avg-holo": 2.08, "low-holo": 0.35, "trend-holo": 2.48, "avg1-holo": 3.15, "avg7-holo": 2.64, "avg30-holo": 2.26}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 1.16, "midPrice": 2.23, "highPrice": 4.8, "marketPrice": 4.21, "directLowPrice": null}, "holofoil": {"lowPrice": 2.43, "midPrice": 4.98, "highPrice": 11.76, "marketPrice": 7.11, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-15", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/15", "localId": "15", "name": "Clauncher", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [692], "hp": 70, "types": ["Water"], "stage": "Basic", "attacks": [{"cost": ["Water", "Colorless"], "name": "Water Gun", "damage": 20}], "weaknesses": [{"type": "Grass", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.51, "low": 0.02, "trend": 0.48, "avg1": 0.33, "avg7": 0.41, "avg30": 0.34, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.61, "highPrice": 1.75, "marketPrice": 0.68, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-16", "illustrator": "Mizue", "image": "https://assets.tcgdex.net/en/xy/xy0/16", "localId": "16", "name": "Poochyena", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [261], "hp": 60, "types": ["Darkness"], "stage": "Basic", "attacks": [{"cost": ["Darkness", "Colorless"], "name": "Bite", "damage": 20}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.45, "low": 0.02, "trend": 0.72, "avg1": 0.45, "avg7": 0.73, "avg30": 0.41, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.4, "highPrice": 1.76, "marketPrice": 0.66, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-17", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/xy/xy0/17", "localId": "17", "name": "Mightyena", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [262], "hp": 90, "types": ["Darkness"], "evolveFrom": "Poochyena", "stage": "Stage1", "attacks": [{"cost": ["Darkness", "Colorless"], "name": "Hard Bite", "effect": "Flip a coin. If heads, this attack does 20 more damage.", "damage": "40+"}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.57, "low": 0.1, "trend": 0.84, "avg1": 0.6, "avg7": 0.72, "avg30": 0.89, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.3, "midPrice": 0.76, "highPrice": 2.91, "marketPrice": 1.91, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-18", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/18", "localId": "18", "name": "Inkay", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [686], "hp": 60, "types": ["Darkness"], "stage": "Basic", "attacks": [{"cost": ["Darkness"], "name": "Peck", "damage": 10}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.43, "low": 0.05, "trend": 0.28, "avg1": 0.3, "avg7": 0.36, "avg30": 0.35, "avg-holo": null, "low-holo": null, "trend-holo": 0.05, "avg1-holo": 0.05, "avg7-holo": 0.05, "avg30-holo": 0.05}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.25, "midPrice": 0.41, "highPrice": 2.49, "marketPrice": 0.93, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-19", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/xy/xy0/19", "localId": "19", "name": "Pawniard", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [624], "hp": 60, "types": ["Metal"], "stage": "Basic", "attacks": [{"cost": ["Metal"], "name": "Pierce", "damage": 10}, {"cost": ["Colorless", "Colorless"], "name": "Cut", "damage": 20}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.34, "low": 0.02, "trend": 0.1, "avg1": 0.05, "avg7": 0.16, "avg30": 0.19, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.15, "midPrice": 0.45, "highPrice": 1, "marketPrice": 0.47, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-20", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/xy/xy0/20", "localId": "20", "name": "Bisharp", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [625], "hp": 90, "types": ["Metal"], "evolveFrom": "Pawniard", "stage": "Stage1", "attacks": [{"cost": ["Metal"], "name": "Wicked Jab", "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.", "damage": 20}, {"cost": ["Metal", "Colorless", "Colorless"], "name": "Metal Claw", "damage": 70}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.55, "low": 0.02, "trend": 0.6, "avg1": 0.55, "avg7": 0.67, "avg30": 0.44, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.4, "midPrice": 0.52, "highPrice": 4.72, "marketPrice": 0.57, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-21", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/21", "localId": "21", "name": "Honedge", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [679], "hp": 60, "types": ["Metal"], "stage": "Basic", "attacks": [{"cost": ["Metal", "Colorless"], "name": "Continuous Slash", "effect": "Flip a coin until you get tails. This attack does 30 damage times the number of heads.", "damage": "30x"}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.5, "low": 0.02, "trend": 0.57, "avg1": 0.75, "avg7": 0.52, "avg30": 0.44, "avg-holo": null, "low-holo": null, "trend-holo": 0.5, "avg1-holo": 0.5, "avg7-holo": 0.91, "avg30-holo": 0.91}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.44, "midPrice": 0.77, "highPrice": 4.72, "marketPrice": 0.8, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-22", "illustrator": "Naoki Saito", "image": "https://assets.tcgdex.net/en/xy/xy0/22", "localId": "22", "name": "Snubbull", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [209], "hp": 70, "types": ["Fairy"], "stage": "Basic", "attacks": [{"cost": ["Fairy", "Colorless"], "name": "Headbutt", "damage": 20}], "weaknesses": [{"type": "Metal", "value": "\u00d72"}], "resistances": [{"type": "Darkness", "value": "-20"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.18, "low": 0.02, "trend": 0.22, "avg1": 0.15, "avg7": 0.17, "avg30": 0.18, "avg-holo": null, "low-holo": null, "trend-holo": 0.98, "avg1-holo": 0.98, "avg7-holo": 0.98, "avg30-holo": 0.98}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.18, "midPrice": 0.45, "highPrice": 2.49, "marketPrice": 0.58, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-23", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/xy/xy0/23", "localId": "23", "name": "Granbull", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [210], "hp": 100, "types": ["Fairy"], "evolveFrom": "Snubbull", "stage": "Stage1", "attacks": [{"cost": ["Fairy", "Colorless"], "name": "Headbutt", "damage": 30}, {"cost": ["Fairy", "Colorless", "Colorless"], "name": "Double Stomp", "effect": "Flip 2 coins. This attack does 20 more damage for each heads.", "damage": "50+"}], "weaknesses": [{"type": "Metal", "value": "\u00d72"}], "resistances": [{"type": "Darkness", "value": "-20"}], "retreat": 3, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.38, "low": 0.02, "trend": 0.74, "avg1": 0.3, "avg7": 0.52, "avg30": 0.76, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.01, "midPrice": 0.75, "highPrice": 2, "marketPrice": 1.05, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-24", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/24", "localId": "24", "name": "Swirlix", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [684], "hp": 60, "types": ["Fairy"], "stage": "Basic", "attacks": [{"cost": ["Fairy"], "name": "Draining Kiss", "effect": "Heal 10 damage from this Pok\u00e9mon.", "damage": 10}], "weaknesses": [{"type": "Metal", "value": "\u00d72"}], "resistances": [{"type": "Darkness", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.39, "low": 0.02, "trend": 1.14, "avg1": 0.75, "avg7": 1.51, "avg30": 0.99, "avg-holo": null, "low-holo": null, "trend-holo": 3.45, "avg1-holo": 5, "avg7-holo": 2.05, "avg30-holo": 2.05}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.34, "midPrice": 0.66, "highPrice": 3.99, "marketPrice": 0.96, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-25", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/xy/xy0/25", "localId": "25", "name": "Farfetch'd", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [83], "hp": 70, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Slash", "damage": 30}], "weaknesses": [{"type": "Lightning", "value": "\u00d72"}], "resistances": [{"type": "Fighting", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.87, "low": 0.02, "trend": 1.18, "avg1": 0.23, "avg7": 1.14, "avg30": 1.43, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.74, "highPrice": 2.6, "marketPrice": 1.94, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-26", "illustrator": "Naoki Saito", "image": "https://assets.tcgdex.net/en/xy/xy0/26", "localId": "26", "name": "Snorlax", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [143], "hp": 120, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Rock Smash", "effect": "Flip a coin. If heads, this attack does 30 more damage.", "damage": "10+"}, {"cost": ["Colorless", "Colorless", "Colorless", "Colorless"], "name": "Strength", "damage": 70}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "retreat": 4, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 5.33, "low": 3, "trend": 23.1, "avg1": 3, "avg7": 18.98, "avg30": 15.92, "avg-holo": null, "low-holo": 10, "trend-holo": 3, "avg1-holo": 3, "avg7-holo": 3, "avg30-holo": 3}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 16.23, "midPrice": 23.99, "highPrice": 49.99, "marketPrice": 32.69, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-27", "illustrator": "Akira Komayama", "image": "https://assets.tcgdex.net/en/xy/xy0/27", "localId": "27", "name": "Miltank", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [241], "hp": 100, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Sitdown Splash", "effect": "Flip a coin. If heads, this attack does 20 more damage.", "damage": "50+"}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "retreat": 3, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 7.15, "low": 0.8, "trend": 7.74, "avg1": 9, "avg7": 8.84, "avg30": 5.38, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 2.77, "midPrice": 3.63, "highPrice": 17.58, "marketPrice": 5.86, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-28", "illustrator": "Shin Nagasawa", "image": "https://assets.tcgdex.net/en/xy/xy0/28", "localId": "28", "name": "Skitty", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [300], "hp": 60, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Jump On", "effect": "Flip a coin. If heads, this attack does 20 more damage.", "damage": "20+"}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 7.99, "low": 1.4, "trend": 5.35, "avg1": 12.98, "avg7": 5.14, "avg30": 4.78, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 3.36, "midPrice": 4.5, "highPrice": 11.16, "marketPrice": 6.16, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-29", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/xy/xy0/29", "localId": "29", "name": "Bidoof", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [399], "hp": 70, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Rollout", "damage": 60}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 7.19, "low": 2.5, "trend": 6.86, "avg1": 9.97, "avg7": 6.71, "avg30": 4.84, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 4.64, "midPrice": 6.22, "highPrice": 14.28, "marketPrice": 10.22, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-30", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/30", "localId": "30", "name": "Bunnelby", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [659], "hp": 60, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Tackle", "damage": 20}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.18, "low": 0.02, "trend": 0.23, "avg1": 0.13, "avg7": 0.16, "avg30": 0.33, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.17, "midPrice": 0.64, "highPrice": 1.59, "marketPrice": 0.93, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-31", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/31", "localId": "31", "name": "Fletchling", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [661], "hp": 50, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Razor Wind", "effect": "Flip a coin. If tails, this attack does nothing.", "damage": 20}], "weaknesses": [{"type": "Lightning", "value": "\u00d72"}], "resistances": [{"type": "Fighting", "value": "-20"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.4, "low": 0.02, "trend": 0.21, "avg1": 0.4, "avg7": 0.22, "avg30": 0.28, "avg-holo": null, "low-holo": null, "trend-holo": 2.99, "avg1-holo": 2.99, "avg7-holo": 2.99, "avg30-holo": 2.99}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.25, "midPrice": 0.59, "highPrice": 1.99, "marketPrice": 0.67, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-32", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/32", "localId": "32", "name": "Furfrou", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [676], "hp": 90, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Tight Jaw", "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.", "damage": 20}, {"cost": ["Colorless", "Colorless", "Colorless"], "name": "Sharp Fang", "damage": 50}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.8, "low": 0.02, "trend": 1.37, "avg1": 0.6, "avg7": 1.9, "avg30": 1.24, "avg-holo": null, "low-holo": 2, "trend-holo": 2, "avg1-holo": 2, "avg7-holo": 2, "avg30-holo": 2}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.59, "midPrice": 0.89, "highPrice": 1.8, "marketPrice": 1.96, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "xy0-33", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/33", "localId": "33", "name": "Furfrou", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [676], "hp": 90, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Tight Jaw", "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.", "damage": 20}, {"cost": ["Colorless", "Colorless", "Colorless"], "name": "Sharp Fang", "damage": 50}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.8, "low": 0.02, "trend": 1.37, "avg1": 0.6, "avg7": 1.9, "avg30": 1.24, "avg-holo": null, "low-holo": 2, "trend-holo": 2, "avg1-holo": 2, "avg7-holo": 2, "avg30-holo": 2}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 1.2, "midPrice": 1.61, "highPrice": 4.3, "marketPrice": 2.75, "directLowPrice": null}}}}, {"category": "Trainer", "id": "xy0-34", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/34", "localId": "34", "name": "Crushing Hammer", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "effect": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pok\u00e9mon.", "trainerType": "Item", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.37, "low": 0.02, "trend": 0.35, "avg1": 0.45, "avg7": 0.33, "avg30": 0.31, "avg-holo": null, "low-holo": null, "trend-holo": 1.01, "avg1-holo": 1, "avg7-holo": 0.54, "avg30-holo": 0.47}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.2, "midPrice": 0.4, "highPrice": 1.51, "marketPrice": 0.23, "directLowPrice": null}}}}, {"category": "Trainer", "id": "xy0-35", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/35", "localId": "35", "name": "Pok\u00e9 Ball", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "effect": "Flip a coin. If heads, search your deck for a Pok\u00e9mon, reveal it, and put it into your hand. Shuffle your deck afterward.", "trainerType": "Item", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.1, "low": 0.02, "trend": 0.08, "avg1": 0.02, "avg7": 0.08, "avg30": 0.08, "avg-holo": null, "low-holo": null, "trend-holo": 0.1, "avg1-holo": 0.1, "avg7-holo": 0.1, "avg30-holo": 0.1}, "tcgplayer": null}}, {"category": "Trainer", "id": "xy0-36", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/36", "localId": "36", "name": "Pok\u00e9mon Catcher", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "effect": "Flip a coin. If heads, switch 1 of your opponent's Benched Pok\u00e9mon with his or her Active Pok\u00e9mon.", "trainerType": "Item", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.24, "low": 0.02, "trend": 0.1, "avg1": 0.05, "avg7": 0.2, "avg30": 0.33, "avg-holo": null, "low-holo": 9.99, "trend-holo": 0.38, "avg1-holo": 0.39, "avg7-holo": 0.44, "avg30-holo": 0.44}, "tcgplayer": null}}, {"category": "Trainer", "id": "xy0-37", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/37", "localId": "37", "name": "Potion", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "effect": "Heal 30 damage from 1 of your Pok\u00e9mon.", "trainerType": "Item", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.02, "low": 0.02, "trend": 0.08, "avg1": 0.02, "avg7": 0.08, "avg30": 0.08, "avg-holo": null, "low-holo": null, "trend-holo": 0.02, "avg1-holo": 0.02, "avg7-holo": 0.02, "avg30-holo": 0.02}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.01, "midPrice": 0.15, "highPrice": 1.54, "marketPrice": 0.13, "directLowPrice": null}}}}, {"category": "Trainer", "id": "xy0-38", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/xy/xy0/38", "localId": "38", "name": "Switch", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "effect": "Switch your Active Pok\u00e9mon with 1 of your Benched Pok\u00e9mon.", "trainerType": "Item", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.2, "low": 0.02, "trend": 0.15, "avg1": 0.02, "avg7": 0.11, "avg30": 0.1, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.05, "midPrice": 0.22, "highPrice": 19, "marketPrice": 0.18, "directLowPrice": null}}}}, {"category": "Trainer", "id": "xy0-39", "illustrator": "Ken Sugimori", "image": "https://assets.tcgdex.net/en/xy/xy0/39", "localId": "39", "name": "Tierno", "rarity": "None", "set": {"cardCount": {"official": 39, "total": 39}, "id": "xy0", "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "effect": "Draw 3 cards.", "trainerType": "Supporter", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 0.18, "low": 0.02, "trend": 0.21, "avg1": 0.1, "avg7": 0.18, "avg30": 0.12, "avg-holo": null, "low-holo": 2.95, "trend-holo": 0.41, "avg1-holo": 1, "avg7-holo": 0.41, "avg30-holo": 0.41}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 0.01, "midPrice": 0.17, "highPrice": 1.32, "marketPrice": 0.14, "directLowPrice": null}}}}], "id": "xy0", "legal": {"expanded": true, "standard": false}, "logo": "https://assets.tcgdex.net/en/xy/xy0/logo", "name": "Kalos Starter Set", "releaseDate": "2013-11-08", "serie": {"id": "xy", "name": "XY"}, "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol", "tcgOnline": "KSS", "abbreviation": {"official": "KSS"}}
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 39,
+    "reverse": 0,
+    "total": 39
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "xy0-1",
+      "illustrator": "Akira Komayama",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/1",
+      "localId": "1",
+      "name": "Weedle",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [13],
+      "hp": 40,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "String Shot",
+          "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.13,
+          "low": 0.05,
+          "trend": 1,
+          "avg1": 0.8,
+          "avg7": 1.13,
+          "avg30": 0.73,
+          "avg-holo": null,
+          "low-holo": 0.4,
+          "trend-holo": 0.3,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.4,
+          "avg30-holo": 0.4
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.41,
+            "midPrice": 0.6,
+            "highPrice": 2.41,
+            "marketPrice": 1.27,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-2",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/2",
+      "localId": "2",
+      "name": "Pansage",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [511],
+      "hp": 70,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Collect", "effect": "Draw a card." },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Fury Swipes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.1,
+          "low": 0.05,
+          "trend": 0.39,
+          "avg1": 0.1,
+          "avg7": 0.41,
+          "avg30": 0.43,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.3,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.3,
+          "avg30-holo": 0.3
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.4,
+            "highPrice": 2.49,
+            "marketPrice": 0.42,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-3",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/3",
+      "localId": "3",
+      "name": "Chespin",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [650],
+      "hp": 60,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Grass"], "name": "Vine Whip", "damage": 10 },
+        { "cost": ["Grass", "Colorless"], "name": "Seed Bomb", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.34,
+          "low": 0.05,
+          "trend": 0.21,
+          "avg1": 0.5,
+          "avg7": 0.34,
+          "avg30": 0.39,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.77,
+          "avg1-holo": 0.1,
+          "avg7-holo": 0.71,
+          "avg30-holo": 0.71
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.31,
+            "highPrice": 1.58,
+            "marketPrice": 0.31,
+            "directLowPrice": 0.24
+          },
+          "holofoil": {
+            "lowPrice": 0.39,
+            "midPrice": 0.81,
+            "highPrice": 5.42,
+            "marketPrice": 0.96,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-4",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/4",
+      "localId": "4",
+      "name": "Quilladin",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [651],
+      "hp": 90,
+      "types": ["Grass"],
+      "evolveFrom": "Chespin",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Leech Seed",
+          "effect": "Heal 10 damage from this Pok\u00e9mon.",
+          "damage": 20
+        },
+        {
+          "cost": ["Grass", "Colorless", "Colorless"],
+          "name": "Needle Arm",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.14,
+          "low": 0.05,
+          "trend": 0.17,
+          "avg1": 0.7,
+          "avg7": 0.9,
+          "avg30": 1.07,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.29,
+          "avg1-holo": 0.05,
+          "avg7-holo": 0.45,
+          "avg30-holo": 0.45
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.5,
+            "midPrice": 0.85,
+            "highPrice": 1.96,
+            "marketPrice": 0.94,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 0.75,
+            "midPrice": 1.6,
+            "highPrice": 2.33,
+            "marketPrice": 1.58,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-5",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/5",
+      "localId": "5",
+      "name": "Chesnaught",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [652],
+      "hp": 150,
+      "types": ["Grass"],
+      "evolveFrom": "Quilladin",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Grass", "Colorless", "Colorless"],
+          "name": "Needle Arm",
+          "damage": 50
+        },
+        {
+          "cost": ["Grass", "Grass", "Colorless", "Colorless"],
+          "name": "Tumbling Attack",
+          "effect": "Flip a coin. If heads, this attack does 40 more damage.",
+          "damage": "80+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 4,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.35,
+          "low": 0.05,
+          "trend": 2.24,
+          "avg1": 3,
+          "avg7": 2.28,
+          "avg30": 1.94,
+          "avg-holo": null,
+          "low-holo": 1.5,
+          "trend-holo": 2.06,
+          "avg1-holo": 1,
+          "avg7-holo": 2.25,
+          "avg30-holo": 1.98
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.64,
+            "midPrice": 1.25,
+            "highPrice": 5.63,
+            "marketPrice": 1.69,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 0.85,
+            "midPrice": 1.81,
+            "highPrice": 6.12,
+            "marketPrice": 1.93,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-6",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/6",
+      "localId": "6",
+      "name": "Slugma",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [218],
+      "hp": 80,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Combustion", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.68,
+          "low": 0.02,
+          "trend": 0.54,
+          "avg1": 0.97,
+          "avg7": 0.62,
+          "avg30": 0.46,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.36,
+            "highPrice": 2.49,
+            "marketPrice": 1.4,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-7",
+      "illustrator": "Naoyo Kimura",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/7",
+      "localId": "7",
+      "name": "Pansear",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [513],
+      "hp": 70,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Collect", "effect": "Draw a card." },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Fury Swipes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.59,
+          "low": 0.02,
+          "trend": 0.45,
+          "avg1": 0.39,
+          "avg7": 0.44,
+          "avg30": 0.45,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.36,
+            "highPrice": 1.76,
+            "marketPrice": 0.59,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-8",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/8",
+      "localId": "8",
+      "name": "Fennekin",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [653],
+      "hp": 60,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fire"], "name": "Scratch", "damage": 10 },
+        { "cost": ["Fire", "Colorless"], "name": "Live Coal", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.47,
+          "low": 0.02,
+          "trend": 0.57,
+          "avg1": 0.16,
+          "avg7": 0.48,
+          "avg30": 0.41,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.93,
+          "avg1-holo": 2,
+          "avg7-holo": 0.55,
+          "avg30-holo": 0.55
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.2,
+            "highPrice": 1.49,
+            "marketPrice": 0.18,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 0.3,
+            "midPrice": 0.69,
+            "highPrice": 3.1,
+            "marketPrice": 1.91,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-9",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/9",
+      "localId": "9",
+      "name": "Braixen",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [654],
+      "hp": 80,
+      "types": ["Fire"],
+      "evolveFrom": "Fennekin",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Firebreathing",
+          "effect": "Flip a coin. If heads, this attack does 20 more damage.",
+          "damage": "20+"
+        },
+        {
+          "cost": ["Fire", "Colorless", "Colorless"],
+          "name": "Flame Tail",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.3,
+          "low": 0.02,
+          "trend": 0.6,
+          "avg1": 0.43,
+          "avg7": 0.33,
+          "avg30": 0.4,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3.05,
+          "avg1-holo": 4,
+          "avg7-holo": 1.18,
+          "avg30-holo": 1.18
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.34,
+            "highPrice": 1.71,
+            "marketPrice": 0.57,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 0.25,
+            "midPrice": 0.88,
+            "highPrice": 4.02,
+            "marketPrice": 0.96,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-10",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/10",
+      "localId": "10",
+      "name": "Delphox",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [655],
+      "hp": 140,
+      "types": ["Fire"],
+      "evolveFrom": "Braixen",
+      "stage": "Stage2",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Will-O-Wisp", "damage": 30 },
+        {
+          "cost": ["Fire", "Colorless", "Colorless", "Colorless"],
+          "name": "Fire Blast",
+          "effect": "Discard an Energy attached to this Pok\u00e9mon.",
+          "damage": 120
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.99,
+          "low": 0.1,
+          "trend": 1.02,
+          "avg1": 0.7,
+          "avg7": 1,
+          "avg30": 1.12,
+          "avg-holo": 1,
+          "low-holo": 0.4,
+          "trend-holo": 1.43,
+          "avg1-holo": 1,
+          "avg7-holo": 1.39,
+          "avg30-holo": 1.43
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.4,
+            "midPrice": 0.77,
+            "highPrice": 1.99,
+            "marketPrice": 0.87,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 0.4,
+            "midPrice": 0.85,
+            "highPrice": 1.71,
+            "marketPrice": 1.04,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-11",
+      "illustrator": "Shin Nagasawa",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/11",
+      "localId": "11",
+      "name": "Panpour",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [515],
+      "hp": 70,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Collect", "effect": "Draw a card." },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Fury Swipes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.57,
+          "low": 0.02,
+          "trend": 0.64,
+          "avg1": 0.38,
+          "avg7": 0.76,
+          "avg30": 0.47,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.29,
+            "midPrice": 0.75,
+            "highPrice": 2.5,
+            "marketPrice": 0.68,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-12",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/12",
+      "localId": "12",
+      "name": "Froakie",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [656],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Water"], "name": "Pound", "damage": 10 },
+        { "cost": ["Water", "Colorless"], "name": "Water Drip", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.08,
+          "low": 0.02,
+          "trend": 1.13,
+          "avg1": 0.05,
+          "avg7": 1.07,
+          "avg30": 0.53,
+          "avg-holo": 3.29,
+          "low-holo": 1.5,
+          "trend-holo": 3.02,
+          "avg1-holo": 3.29,
+          "avg7-holo": 1.4,
+          "avg30-holo": 1.4
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.15,
+            "midPrice": 0.5,
+            "highPrice": 1.75,
+            "marketPrice": 0.52,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 0.4,
+            "midPrice": 0.89,
+            "highPrice": 4.72,
+            "marketPrice": 1.1,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-13",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/13",
+      "localId": "13",
+      "name": "Frogadier",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [657],
+      "hp": 80,
+      "types": ["Water"],
+      "evolveFrom": "Froakie",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Water"], "name": "Water Drip", "damage": 20 },
+        {
+          "cost": ["Water", "Water", "Colorless"],
+          "name": "Aqua Wave",
+          "effect": "Flip 2 coins. This attack does 20 more damage for each heads.",
+          "damage": "40+"
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.38,
+          "low": 0.02,
+          "trend": 0.37,
+          "avg1": 0.05,
+          "avg7": 0.29,
+          "avg30": 0.32,
+          "avg-holo": null,
+          "low-holo": 1.2,
+          "trend-holo": 1.79,
+          "avg1-holo": 2.98,
+          "avg7-holo": 1.52,
+          "avg30-holo": 1.52
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.6,
+            "highPrice": 1.25,
+            "marketPrice": 0.62,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 0.49,
+            "midPrice": 1.23,
+            "highPrice": 2.99,
+            "marketPrice": 2.27,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-14",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/14",
+      "localId": "14",
+      "name": "Greninja",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [658],
+      "hp": 140,
+      "types": ["Water"],
+      "evolveFrom": "Frogadier",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Water"],
+          "name": "Mat Block",
+          "effect": "Flip a coin. If heads, discard an Energy attached to your opponent's Active Pok\u00e9mon.",
+          "damage": 40
+        },
+        {
+          "cost": ["Water", "Water", "Colorless"],
+          "name": "Aqua Edge",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.53,
+          "low": 0.16,
+          "trend": 3.21,
+          "avg1": 0.8,
+          "avg7": 1.99,
+          "avg30": 3.04,
+          "avg-holo": 2.08,
+          "low-holo": 0.35,
+          "trend-holo": 2.48,
+          "avg1-holo": 3.15,
+          "avg7-holo": 2.64,
+          "avg30-holo": 2.26
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1.16,
+            "midPrice": 2.23,
+            "highPrice": 4.8,
+            "marketPrice": 4.21,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 2.43,
+            "midPrice": 4.98,
+            "highPrice": 11.76,
+            "marketPrice": 7.11,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-15",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/15",
+      "localId": "15",
+      "name": "Clauncher",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [692],
+      "hp": 70,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Water", "Colorless"], "name": "Water Gun", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.51,
+          "low": 0.02,
+          "trend": 0.48,
+          "avg1": 0.33,
+          "avg7": 0.41,
+          "avg30": 0.34,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.61,
+            "highPrice": 1.75,
+            "marketPrice": 0.68,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-16",
+      "illustrator": "Mizue",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/16",
+      "localId": "16",
+      "name": "Poochyena",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [261],
+      "hp": 60,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Darkness", "Colorless"], "name": "Bite", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.45,
+          "low": 0.02,
+          "trend": 0.72,
+          "avg1": 0.45,
+          "avg7": 0.73,
+          "avg30": 0.41,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.4,
+            "highPrice": 1.76,
+            "marketPrice": 0.66,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-17",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/17",
+      "localId": "17",
+      "name": "Mightyena",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [262],
+      "hp": 90,
+      "types": ["Darkness"],
+      "evolveFrom": "Poochyena",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Darkness", "Colorless"],
+          "name": "Hard Bite",
+          "effect": "Flip a coin. If heads, this attack does 20 more damage.",
+          "damage": "40+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.57,
+          "low": 0.1,
+          "trend": 0.84,
+          "avg1": 0.6,
+          "avg7": 0.72,
+          "avg30": 0.89,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.3,
+            "midPrice": 0.76,
+            "highPrice": 2.91,
+            "marketPrice": 1.91,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-18",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/18",
+      "localId": "18",
+      "name": "Inkay",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [686],
+      "hp": 60,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [{ "cost": ["Darkness"], "name": "Peck", "damage": 10 }],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.43,
+          "low": 0.05,
+          "trend": 0.28,
+          "avg1": 0.3,
+          "avg7": 0.36,
+          "avg30": 0.35,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.05,
+          "avg1-holo": 0.05,
+          "avg7-holo": 0.05,
+          "avg30-holo": 0.05
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.25,
+            "midPrice": 0.41,
+            "highPrice": 2.49,
+            "marketPrice": 0.93,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-19",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/19",
+      "localId": "19",
+      "name": "Pawniard",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [624],
+      "hp": 60,
+      "types": ["Metal"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Metal"], "name": "Pierce", "damage": 10 },
+        { "cost": ["Colorless", "Colorless"], "name": "Cut", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.34,
+          "low": 0.02,
+          "trend": 0.1,
+          "avg1": 0.05,
+          "avg7": 0.16,
+          "avg30": 0.19,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.15,
+            "midPrice": 0.45,
+            "highPrice": 1,
+            "marketPrice": 0.47,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-20",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/20",
+      "localId": "20",
+      "name": "Bisharp",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [625],
+      "hp": 90,
+      "types": ["Metal"],
+      "evolveFrom": "Pawniard",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Metal"],
+          "name": "Wicked Jab",
+          "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        },
+        {
+          "cost": ["Metal", "Colorless", "Colorless"],
+          "name": "Metal Claw",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.55,
+          "low": 0.02,
+          "trend": 0.6,
+          "avg1": 0.55,
+          "avg7": 0.67,
+          "avg30": 0.44,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.4,
+            "midPrice": 0.52,
+            "highPrice": 4.72,
+            "marketPrice": 0.57,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-21",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/21",
+      "localId": "21",
+      "name": "Honedge",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [679],
+      "hp": 60,
+      "types": ["Metal"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Metal", "Colorless"],
+          "name": "Continuous Slash",
+          "effect": "Flip a coin until you get tails. This attack does 30 damage times the number of heads.",
+          "damage": "30x"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.5,
+          "low": 0.02,
+          "trend": 0.57,
+          "avg1": 0.75,
+          "avg7": 0.52,
+          "avg30": 0.44,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.5,
+          "avg1-holo": 0.5,
+          "avg7-holo": 0.91,
+          "avg30-holo": 0.91
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.44,
+            "midPrice": 0.77,
+            "highPrice": 4.72,
+            "marketPrice": 0.8,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-22",
+      "illustrator": "Naoki Saito",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/22",
+      "localId": "22",
+      "name": "Snubbull",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [209],
+      "hp": 70,
+      "types": ["Fairy"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fairy", "Colorless"], "name": "Headbutt", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Metal", "value": "\u00d72" }],
+      "resistances": [{ "type": "Darkness", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.18,
+          "low": 0.02,
+          "trend": 0.22,
+          "avg1": 0.15,
+          "avg7": 0.17,
+          "avg30": 0.18,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.98,
+          "avg1-holo": 0.98,
+          "avg7-holo": 0.98,
+          "avg30-holo": 0.98
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.18,
+            "midPrice": 0.45,
+            "highPrice": 2.49,
+            "marketPrice": 0.58,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-23",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/23",
+      "localId": "23",
+      "name": "Granbull",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [210],
+      "hp": 100,
+      "types": ["Fairy"],
+      "evolveFrom": "Snubbull",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Fairy", "Colorless"], "name": "Headbutt", "damage": 30 },
+        {
+          "cost": ["Fairy", "Colorless", "Colorless"],
+          "name": "Double Stomp",
+          "effect": "Flip 2 coins. This attack does 20 more damage for each heads.",
+          "damage": "50+"
+        }
+      ],
+      "weaknesses": [{ "type": "Metal", "value": "\u00d72" }],
+      "resistances": [{ "type": "Darkness", "value": "-20" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.38,
+          "low": 0.02,
+          "trend": 0.74,
+          "avg1": 0.3,
+          "avg7": 0.52,
+          "avg30": 0.76,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.75,
+            "highPrice": 2,
+            "marketPrice": 1.05,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-24",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/24",
+      "localId": "24",
+      "name": "Swirlix",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [684],
+      "hp": 60,
+      "types": ["Fairy"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fairy"],
+          "name": "Draining Kiss",
+          "effect": "Heal 10 damage from this Pok\u00e9mon.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Metal", "value": "\u00d72" }],
+      "resistances": [{ "type": "Darkness", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.39,
+          "low": 0.02,
+          "trend": 1.14,
+          "avg1": 0.75,
+          "avg7": 1.51,
+          "avg30": 0.99,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3.45,
+          "avg1-holo": 5,
+          "avg7-holo": 2.05,
+          "avg30-holo": 2.05
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.34,
+            "midPrice": 0.66,
+            "highPrice": 3.99,
+            "marketPrice": 0.96,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-25",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/25",
+      "localId": "25",
+      "name": "Farfetch'd",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [83],
+      "hp": 70,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [{ "cost": ["Colorless"], "name": "Slash", "damage": 30 }],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.87,
+          "low": 0.02,
+          "trend": 1.18,
+          "avg1": 0.23,
+          "avg7": 1.14,
+          "avg30": 1.43,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.74,
+            "highPrice": 2.6,
+            "marketPrice": 1.94,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-26",
+      "illustrator": "Naoki Saito",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/26",
+      "localId": "26",
+      "name": "Snorlax",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [143],
+      "hp": 120,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Rock Smash",
+          "effect": "Flip a coin. If heads, this attack does 30 more damage.",
+          "damage": "10+"
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+          "name": "Strength",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 4,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 5.33,
+          "low": 3,
+          "trend": 23.1,
+          "avg1": 3,
+          "avg7": 18.98,
+          "avg30": 15.92,
+          "avg-holo": null,
+          "low-holo": 10,
+          "trend-holo": 3,
+          "avg1-holo": 3,
+          "avg7-holo": 3,
+          "avg30-holo": 3
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 16.23,
+            "midPrice": 23.99,
+            "highPrice": 49.99,
+            "marketPrice": 32.69,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-27",
+      "illustrator": "Akira Komayama",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/27",
+      "localId": "27",
+      "name": "Miltank",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [241],
+      "hp": 100,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Sitdown Splash",
+          "effect": "Flip a coin. If heads, this attack does 20 more damage.",
+          "damage": "50+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 7.15,
+          "low": 0.8,
+          "trend": 7.74,
+          "avg1": 9,
+          "avg7": 8.84,
+          "avg30": 5.38,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 2.77,
+            "midPrice": 3.63,
+            "highPrice": 17.58,
+            "marketPrice": 5.86,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-28",
+      "illustrator": "Shin Nagasawa",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/28",
+      "localId": "28",
+      "name": "Skitty",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [300],
+      "hp": 60,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Jump On",
+          "effect": "Flip a coin. If heads, this attack does 20 more damage.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 7.99,
+          "low": 1.4,
+          "trend": 5.35,
+          "avg1": 12.98,
+          "avg7": 5.14,
+          "avg30": 4.78,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 3.36,
+            "midPrice": 4.5,
+            "highPrice": 11.16,
+            "marketPrice": 6.16,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-29",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/29",
+      "localId": "29",
+      "name": "Bidoof",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [399],
+      "hp": 70,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Rollout",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 7.19,
+          "low": 2.5,
+          "trend": 6.86,
+          "avg1": 9.97,
+          "avg7": 6.71,
+          "avg30": 4.84,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 4.64,
+            "midPrice": 6.22,
+            "highPrice": 14.28,
+            "marketPrice": 10.22,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-30",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/30",
+      "localId": "30",
+      "name": "Bunnelby",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [659],
+      "hp": 60,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless", "Colorless"], "name": "Tackle", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.18,
+          "low": 0.02,
+          "trend": 0.23,
+          "avg1": 0.13,
+          "avg7": 0.16,
+          "avg30": 0.33,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.17,
+            "midPrice": 0.64,
+            "highPrice": 1.59,
+            "marketPrice": 0.93,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-31",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/31",
+      "localId": "31",
+      "name": "Fletchling",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [661],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Razor Wind",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.4,
+          "low": 0.02,
+          "trend": 0.21,
+          "avg1": 0.4,
+          "avg7": 0.22,
+          "avg30": 0.28,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 2.99,
+          "avg1-holo": 2.99,
+          "avg7-holo": 2.99,
+          "avg30-holo": 2.99
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.25,
+            "midPrice": 0.59,
+            "highPrice": 1.99,
+            "marketPrice": 0.67,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-32",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/32",
+      "localId": "32",
+      "name": "Furfrou",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [676],
+      "hp": 90,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Tight Jaw",
+          "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Sharp Fang",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.8,
+          "low": 0.02,
+          "trend": 1.37,
+          "avg1": 0.6,
+          "avg7": 1.9,
+          "avg30": 1.24,
+          "avg-holo": null,
+          "low-holo": 2,
+          "trend-holo": 2,
+          "avg1-holo": 2,
+          "avg7-holo": 2,
+          "avg30-holo": 2
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.59,
+            "midPrice": 0.89,
+            "highPrice": 1.8,
+            "marketPrice": 1.96,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "xy0-33",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/33",
+      "localId": "33",
+      "name": "Furfrou",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [676],
+      "hp": 90,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Tight Jaw",
+          "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Sharp Fang",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.8,
+          "low": 0.02,
+          "trend": 1.37,
+          "avg1": 0.6,
+          "avg7": 1.9,
+          "avg30": 1.24,
+          "avg-holo": null,
+          "low-holo": 2,
+          "trend-holo": 2,
+          "avg1-holo": 2,
+          "avg7-holo": 2,
+          "avg30-holo": 2
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1.2,
+            "midPrice": 1.61,
+            "highPrice": 4.3,
+            "marketPrice": 2.75,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "xy0-34",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/34",
+      "localId": "34",
+      "name": "Crushing Hammer",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pok\u00e9mon.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.37,
+          "low": 0.02,
+          "trend": 0.35,
+          "avg1": 0.45,
+          "avg7": 0.33,
+          "avg30": 0.31,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 1.01,
+          "avg1-holo": 1,
+          "avg7-holo": 0.54,
+          "avg30-holo": 0.47
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.2,
+            "midPrice": 0.4,
+            "highPrice": 1.51,
+            "marketPrice": 0.23,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "xy0-35",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/35",
+      "localId": "35",
+      "name": "Pok\u00e9 Ball",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Flip a coin. If heads, search your deck for a Pok\u00e9mon, reveal it, and put it into your hand. Shuffle your deck afterward.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.1,
+          "low": 0.02,
+          "trend": 0.08,
+          "avg1": 0.02,
+          "avg7": 0.08,
+          "avg30": 0.08,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.1,
+          "avg1-holo": 0.1,
+          "avg7-holo": 0.1,
+          "avg30-holo": 0.1
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "xy0-36",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/36",
+      "localId": "36",
+      "name": "Pok\u00e9mon Catcher",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Flip a coin. If heads, switch 1 of your opponent's Benched Pok\u00e9mon with his or her Active Pok\u00e9mon.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.24,
+          "low": 0.02,
+          "trend": 0.1,
+          "avg1": 0.05,
+          "avg7": 0.2,
+          "avg30": 0.33,
+          "avg-holo": null,
+          "low-holo": 9.99,
+          "trend-holo": 0.38,
+          "avg1-holo": 0.39,
+          "avg7-holo": 0.44,
+          "avg30-holo": 0.44
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "xy0-37",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/37",
+      "localId": "37",
+      "name": "Potion",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Heal 30 damage from 1 of your Pok\u00e9mon.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.02,
+          "low": 0.02,
+          "trend": 0.08,
+          "avg1": 0.02,
+          "avg7": 0.08,
+          "avg30": 0.08,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.02,
+          "avg1-holo": 0.02,
+          "avg7-holo": 0.02,
+          "avg30-holo": 0.02
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.15,
+            "highPrice": 1.54,
+            "marketPrice": 0.13,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "xy0-38",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/38",
+      "localId": "38",
+      "name": "Switch",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Switch your Active Pok\u00e9mon with 1 of your Benched Pok\u00e9mon.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.2,
+          "low": 0.02,
+          "trend": 0.15,
+          "avg1": 0.02,
+          "avg7": 0.11,
+          "avg30": 0.1,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.22,
+            "highPrice": 19,
+            "marketPrice": 0.18,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "xy0-39",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/xy/xy0/39",
+      "localId": "39",
+      "name": "Tierno",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 39, "total": 39 },
+        "id": "xy0",
+        "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+        "name": "Kalos Starter Set",
+        "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Draw 3 cards.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.18,
+          "low": 0.02,
+          "trend": 0.21,
+          "avg1": 0.1,
+          "avg7": 0.18,
+          "avg30": 0.12,
+          "avg-holo": null,
+          "low-holo": 2.95,
+          "trend-holo": 0.41,
+          "avg1-holo": 1,
+          "avg7-holo": 0.41,
+          "avg30-holo": 0.41
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.17,
+            "highPrice": 1.32,
+            "marketPrice": 0.14,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "xy0",
+  "legal": { "expanded": true, "standard": false },
+  "logo": "https://assets.tcgdex.net/en/xy/xy0/logo",
+  "name": "Kalos Starter Set",
+  "releaseDate": "2013-11-08",
+  "serie": { "id": "xy", "name": "XY" },
+  "symbol": "https://assets.tcgdex.net/univ/xy/xy0/symbol",
+  "tcgOnline": "KSS",
+  "abbreviation": { "official": "KSS" }
+}

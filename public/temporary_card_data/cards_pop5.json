@@ -1,1 +1,1015 @@
-{"cardCount": {"firstEd": 0, "holo": 5, "normal": 11, "official": 17, "reverse": 0, "total": 17}, "cards": [{"category": "Pokemon", "id": "pop5-1", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop5/1", "localId": "1", "name": "Ho-Oh", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [250], "hp": 80, "types": ["Fire"], "stage": "Basic", "attacks": [{"cost": ["Fire", "Colorless"], "name": "Fire Wing", "damage": 20}, {"cost": ["Fire", "Fire", "Fire", "Colorless"], "name": "Fire Blast", "effect": "Discard a Fire Energy attached to Ho-Oh.", "damage": 60}], "weaknesses": [{"type": "Water"}], "retreat": 2, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 27.47, "low": 14.98, "trend": 50.33, "avg1": 24.95, "avg7": 52.85, "avg30": 36.1, "avg-holo": null, "low-holo": null, "trend-holo": 13.19, "avg1-holo": 12.99, "avg7-holo": 12.81, "avg30-holo": 9.16}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 5, "midPrice": 12.51, "highPrice": 22.99, "marketPrice": 15.29, "directLowPrice": null}, "holofoil": {"lowPrice": 15, "midPrice": 21.75, "highPrice": 114.95, "marketPrice": 24.41, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop5-2", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop5/2", "localId": "2", "name": "Lugia", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [249], "hp": 80, "types": ["Psychic"], "stage": "Basic", "attacks": [{"cost": ["Psychic", "Colorless"], "name": "Super Psy Bolt", "damage": 20}, {"cost": ["Psychic", "Colorless", "Colorless"], "name": "Aerowing", "effect": "Before doing damage, you may flip a coin. If tails, this attack does nothing. If heads, this attack does 60 damage instead.", "damage": 30}], "weaknesses": [{"type": "Psychic"}], "retreat": 2, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 37.47, "low": 44.94, "trend": 52.33, "avg1": 44.95, "avg7": 45.63, "avg30": 46.37, "avg-holo": null, "low-holo": 275, "trend-holo": 31.46, "avg1-holo": 25, "avg7-holo": 23.42, "avg30-holo": 23.42}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 34.3, "midPrice": 41.98, "highPrice": 225, "marketPrice": 100, "directLowPrice": null}, "holofoil": {"lowPrice": 80, "midPrice": 107.99, "highPrice": 111.99, "marketPrice": 100.14, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop5-3", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/pop/pop5/3", "localId": "3", "name": "Mew \u03b4", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "dexId": [151], "hp": 60, "types": ["Fire"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Copy", "effect": "Choose 1 of the Defending Pok\u00e9mon\u2019s attacks. Copy copies that attack. This attack does nothing if Mew doesn\u2019t have the Energy necessary to use that attack. (You must still do anything else required for that attack.) Mew performs that attack."}, {"cost": ["Fire"], "name": "Extra Draw", "effect": "If your opponent has any Pok\u00e9mon-ex in play, search your deck for up to 2 basic Energy cards and attach them to Mew. Shuffle your deck afterward."}], "weaknesses": [{"type": "Psychic"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 284.75, "low": 245, "trend": 222.77, "avg1": 249.99, "avg7": 223, "avg30": 206.04, "avg-holo": null, "low-holo": null, "trend-holo": 70.57, "avg1-holo": 55, "avg7-holo": 53.56, "avg30-holo": 43.21}, "tcgplayer": null}}, {"category": "Energy", "id": "pop5-4", "illustrator": "Takumi Akabane", "image": "https://assets.tcgdex.net/en/pop/pop5/4", "localId": "4", "name": "Double Rainbow Energy", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "effect": "Double Rainbow Energy can be attached only to an Evolved Pok\u00e9mon (excluding Pok\u00e9mon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent\u2019s Pok\u00e9mon by the Pok\u00e9mon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pok\u00e9mon Double Rainbow Energy is attached to is no longer an Evolved Pok\u00e9mon, discard Double Rainbow Energy.", "energyType": "Special", "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 8.41, "low": 10, "trend": 7.71, "avg1": 4.98, "avg7": 8.38, "avg30": 7.72, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 12.66, "midPrice": 16.48, "highPrice": 28.08, "marketPrice": 26.25, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop5-5", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop5/5", "localId": "5", "name": "Charmeleon \u03b4", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [5], "hp": 70, "types": ["Lightning"], "evolveFrom": "Charmander", "stage": "Stage1", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Slash", "damage": 20}, {"cost": ["Lightning", "Colorless", "Colorless"], "name": "Thunder Jolt", "effect": "Flip a coin. If tails, Charmeleon does 10 damage to itself.", "damage": 50}], "weaknesses": [{"type": "Water"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 34.75, "low": 19.99, "trend": 22.83, "avg1": 29.5, "avg7": 27.78, "avg30": 20.31, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": null}}, {"category": "Trainer", "id": "pop5-6", "illustrator": "Ken Sugimori", "image": "https://assets.tcgdex.net/en/pop/pop5/6", "localId": "6", "name": "Bill\u2019s Maintenance", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "effect": "If you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards.", "trainerType": "Supporter", "legal": {"standard": false, "expanded": false}, "updated": "2021-10-26T17:23:45+02:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "pop5-7", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/pop/pop5/7", "localId": "7", "name": "Rare Candy", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "effect": "Choose 1 of your Basic Pok\u00e9mon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pok\u00e9mon in your hand, put that card on the Basic Pok\u00e9mon. (This counts as evolving that Pok\u00e9mon.)", "trainerType": "Item", "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 10, "low": 1.99, "trend": 6.11, "avg1": 10, "avg7": 5.99, "avg30": 4.17, "avg-holo": 7, "low-holo": null, "trend-holo": 7, "avg1-holo": 7, "avg7-holo": 7, "avg30-holo": 7}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 11.04, "midPrice": 12.85, "highPrice": 20, "marketPrice": 12.99, "directLowPrice": null}}}}, {"category": "Energy", "id": "pop5-8", "illustrator": "Shin-ichi Yoshikawa", "image": "https://assets.tcgdex.net/en/pop/pop5/8", "localId": "8", "name": "Boost Energy", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "effect": "Boost Energy can be attached only to an Evolved Pok\u00e9mon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pok\u00e9mon Boost Energy is attached to can\u2019t retreat. If the Pok\u00e9mon Boost Energy is attached to isn\u2019t an Evolved Pok\u00e9mon, discard Boost Energy.", "energyType": "Special", "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 3.5, "low": 1, "trend": 2.89, "avg1": 3.5, "avg7": 2.48, "avg30": 2.34, "avg-holo": null, "low-holo": null, "trend-holo": 1.48, "avg1-holo": 1.48, "avg7-holo": 2.08, "avg30-holo": 2.08}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 1.75, "midPrice": 2.99, "highPrice": 5.54, "marketPrice": 3.71, "directLowPrice": null}}}}, {"category": "Energy", "id": "pop5-9", "illustrator": "Takumi Akabane", "image": "https://assets.tcgdex.net/en/pop/pop5/9", "localId": "9", "name": "\u03b4 Rainbow Energy", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "effect": "\u03b4 Rainbow Energy provides Colorless Energy. While attached to a Pok\u00e9mon that has \u03b4 on its card, \u03b4 Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)", "energyType": "Special", "legal": {"standard": false, "expanded": false}, "updated": "2021-10-26T17:23:45+02:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "pop5-10", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop5/10", "localId": "10", "name": "Charmander \u03b4", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [4], "hp": 50, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Scratch", "damage": 10}, {"cost": ["Lightning", "Colorless"], "name": "Bite", "damage": 20}], "weaknesses": [{"type": "Water"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 8.73, "low": 5, "trend": 10.96, "avg1": 13.95, "avg7": 9.42, "avg30": 8.53, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": null}}, {"category": "Pokemon", "id": "pop5-11", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop5/11", "localId": "11", "name": "Meowth \u03b4", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "dexId": [52], "hp": 40, "types": ["Darkness"], "stage": "Basic", "attacks": [{"cost": ["Darkness"], "name": "Feint Attack", "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon. This attack does 10 damage to that Pok\u00e9mon. This attack\u2019s damage isn\u2019t affected by Weakness, Resistance, Pok\u00e9-Powers, Pok\u00e9-Bodies, or any other effects on that Pok\u00e9mon."}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.76, "low": 1.69, "trend": 4.1, "avg1": 2.5, "avg7": 4.03, "avg30": 2.63, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": null}}, {"category": "Pokemon", "id": "pop5-12", "illustrator": "Naoyo Kimura", "image": "https://assets.tcgdex.net/en/pop/pop5/12", "localId": "12", "name": "Pikachu", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [25], "hp": 50, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Lightning"], "name": "Lightning Ball", "damage": 10}, {"cost": ["Lightning", "Colorless", "Colorless"], "name": "Thunderbolt", "effect": "Discard all Energy cards attached to Pikachu.", "damage": 50}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 25.69, "low": 10, "trend": 22.48, "avg1": 20, "avg7": 26.1, "avg30": 21.48, "avg-holo": null, "low-holo": null, "trend-holo": 135.86, "avg1-holo": 249.99, "avg7-holo": 75.98, "avg30-holo": 51.33}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "normal": {"lowPrice": 20.5, "midPrice": 38.69, "highPrice": 45.69, "marketPrice": 27.59, "directLowPrice": null}, "holofoil": {"lowPrice": 35.43, "midPrice": 66.29, "highPrice": 110.25, "marketPrice": 99.97, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop5-13", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/pop/pop5/13", "localId": "13", "name": "Pikachu \u03b4", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "dexId": [25], "hp": 40, "types": ["Metal"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Electric Punch", "damage": 10}, {"cost": ["Colorless", "Colorless"], "name": "Heavy Metal", "effect": "Flip a coin for each Metal Energy attached to Pikachu. This attack does 10 damage plus 20 more damage for each heads.", "damage": "10+"}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 22.66, "low": 8.07, "trend": 17.78, "avg1": 6, "avg7": 20.28, "avg30": 15.48, "avg-holo": null, "low-holo": null, "trend-holo": 0, "avg1-holo": null, "avg7-holo": null, "avg30-holo": null}, "tcgplayer": null}}, {"category": "Pokemon", "id": "pop5-14", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop5/14", "localId": "14", "name": "Pelipper \u03b4", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [279], "hp": 70, "types": ["Lightning"], "evolveFrom": "Wingull", "stage": "Stage1", "abilities": [{"type": "Poke-BODY", "name": "Mist", "effect": "Any damage done to Pelipper by attacks from Stage 2 Evolved Pok\u00e9mon (both yours and your opponent\u2019s) is reduced by 30 (after applying Weakness and Resistance)."}], "attacks": [{"cost": ["Lightning", "Colorless", "Colorless"], "name": "Lightning Wing", "effect": "Does 10 damage to 1 of your Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 50}], "weaknesses": [{"type": "Lightning"}], "resistances": [{"type": "Fighting", "value": "-30"}], "retreat": 0, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.21, "low": 0.35, "trend": 1.6, "avg1": 1.95, "avg7": 1.27, "avg30": 1.79, "avg-holo": null, "low-holo": null, "trend-holo": 3.31, "avg1-holo": 2.5, "avg7-holo": 2.61, "avg30-holo": 2.61}, "tcgplayer": null}}, {"category": "Pokemon", "id": "pop5-15", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/pop/pop5/15", "localId": "15", "name": "Zangoose \u03b4", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [335], "hp": 70, "types": ["Metal"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Detect", "effect": "Flip a coin. If heads, prevent all effects of an attack, including damage, done to Zangoose during your opponent\u2019s next turn."}, {"cost": ["Metal", "Colorless", "Colorless"], "name": "Metal Claw", "damage": 40}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.55, "low": 0.5, "trend": 1.81, "avg1": 0.75, "avg7": 1.53, "avg30": 1.97, "avg-holo": null, "low-holo": null, "trend-holo": 5.41, "avg1-holo": 5, "avg7-holo": 3.86, "avg30-holo": 3.86}, "tcgplayer": null}}, {"category": "Pokemon", "id": "pop5-16", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/pop/pop5/16", "localId": "16", "name": "Espeon \u2605", "rarity": "Ultra Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [196], "hp": 70, "types": ["Psychic"], "stage": "Basic", "abilities": [{"type": "Poke-POWER", "name": "Purple Ray", "effect": "Once during your turn, when you put Espeon Star from your hand onto your Bench, you may use this power. Each Active Pok\u00e9mon (both yours and your opponent\u2019s) is now Confused."}], "attacks": [{"cost": ["Psychic", "Psychic", "Colorless"], "name": "Psychic Boom", "effect": "Does 30 damage plus 10 more damage for each Energy attached to the Defending Pok\u00e9mon.", "damage": "30+"}], "weaknesses": [{"type": "Psychic"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2021-10-26T17:23:45+02:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "pop5-17", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/pop/pop5/17", "localId": "17", "name": "Umbreon \u2605", "rarity": "Ultra Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop5", "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "dexId": [197], "hp": 70, "types": ["Darkness"], "stage": "Basic", "abilities": [{"type": "Poke-POWER", "name": "Dark Ray", "effect": "Once during your turn, when you put Umbreon Star from your hand onto your Bench, you may choose 1 card from your opponent\u2019s hand without looking and discard it."}], "attacks": [{"cost": ["Darkness", "Darkness"], "name": "Feint Attack", "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon. This attack does 30 damage to that Pok\u00e9mon. This attack\u2019s damage isn\u2019t affected by Weakness, Resistance, Pok\u00e9-Powers, Pok\u00e9-Bodies, or any other effects on that Pok\u00e9mon."}], "weaknesses": [{"type": "Fighting"}], "resistances": [{"type": "Psychic", "value": "-30"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2021-10-26T17:23:45+02:00", "pricing": {"cardmarket": null, "tcgplayer": null}}], "id": "pop5", "legal": {"expanded": false, "standard": false}, "logo": "https://assets.tcgdex.net/en/pop/pop5/logo", "name": "POP Series 5", "releaseDate": "2007-03-01", "serie": {"id": "pop", "name": "POP"}, "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol", "abbreviation": {"official": "P5"}}
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 5,
+    "normal": 11,
+    "official": 17,
+    "reverse": 0,
+    "total": 17
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "pop5-1",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/1",
+      "localId": "1",
+      "name": "Ho-Oh",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [250],
+      "hp": 80,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Fire Wing", "damage": 20 },
+        {
+          "cost": ["Fire", "Fire", "Fire", "Colorless"],
+          "name": "Fire Blast",
+          "effect": "Discard a Fire Energy attached to Ho-Oh.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Water" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 27.47,
+          "low": 14.98,
+          "trend": 50.33,
+          "avg1": 24.95,
+          "avg7": 52.85,
+          "avg30": 36.1,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 13.19,
+          "avg1-holo": 12.99,
+          "avg7-holo": 12.81,
+          "avg30-holo": 9.16
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 5,
+            "midPrice": 12.51,
+            "highPrice": 22.99,
+            "marketPrice": 15.29,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 15,
+            "midPrice": 21.75,
+            "highPrice": 114.95,
+            "marketPrice": 24.41,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-2",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/2",
+      "localId": "2",
+      "name": "Lugia",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [249],
+      "hp": 80,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Super Psy Bolt",
+          "damage": 20
+        },
+        {
+          "cost": ["Psychic", "Colorless", "Colorless"],
+          "name": "Aerowing",
+          "effect": "Before doing damage, you may flip a coin. If tails, this attack does nothing. If heads, this attack does 60 damage instead.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 37.47,
+          "low": 44.94,
+          "trend": 52.33,
+          "avg1": 44.95,
+          "avg7": 45.63,
+          "avg30": 46.37,
+          "avg-holo": null,
+          "low-holo": 275,
+          "trend-holo": 31.46,
+          "avg1-holo": 25,
+          "avg7-holo": 23.42,
+          "avg30-holo": 23.42
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 34.3,
+            "midPrice": 41.98,
+            "highPrice": 225,
+            "marketPrice": 100,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 80,
+            "midPrice": 107.99,
+            "highPrice": 111.99,
+            "marketPrice": 100.14,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-3",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/3",
+      "localId": "3",
+      "name": "Mew \u03b4",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "dexId": [151],
+      "hp": 60,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Copy",
+          "effect": "Choose 1 of the Defending Pok\u00e9mon\u2019s attacks. Copy copies that attack. This attack does nothing if Mew doesn\u2019t have the Energy necessary to use that attack. (You must still do anything else required for that attack.) Mew performs that attack."
+        },
+        {
+          "cost": ["Fire"],
+          "name": "Extra Draw",
+          "effect": "If your opponent has any Pok\u00e9mon-ex in play, search your deck for up to 2 basic Energy cards and attach them to Mew. Shuffle your deck afterward."
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 284.75,
+          "low": 245,
+          "trend": 222.77,
+          "avg1": 249.99,
+          "avg7": 223,
+          "avg30": 206.04,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 70.57,
+          "avg1-holo": 55,
+          "avg7-holo": 53.56,
+          "avg30-holo": 43.21
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "pop5-4",
+      "illustrator": "Takumi Akabane",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/4",
+      "localId": "4",
+      "name": "Double Rainbow Energy",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "effect": "Double Rainbow Energy can be attached only to an Evolved Pok\u00e9mon (excluding Pok\u00e9mon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent\u2019s Pok\u00e9mon by the Pok\u00e9mon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pok\u00e9mon Double Rainbow Energy is attached to is no longer an Evolved Pok\u00e9mon, discard Double Rainbow Energy.",
+      "energyType": "Special",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 8.41,
+          "low": 10,
+          "trend": 7.71,
+          "avg1": 4.98,
+          "avg7": 8.38,
+          "avg30": 7.72,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 12.66,
+            "midPrice": 16.48,
+            "highPrice": 28.08,
+            "marketPrice": 26.25,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-5",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/5",
+      "localId": "5",
+      "name": "Charmeleon \u03b4",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [5],
+      "hp": 70,
+      "types": ["Lightning"],
+      "evolveFrom": "Charmander",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless", "Colorless"], "name": "Slash", "damage": 20 },
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Thunder Jolt",
+          "effect": "Flip a coin. If tails, Charmeleon does 10 damage to itself.",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Water" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 34.75,
+          "low": 19.99,
+          "trend": 22.83,
+          "avg1": 29.5,
+          "avg7": 27.78,
+          "avg30": 20.31,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "pop5-6",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/6",
+      "localId": "6",
+      "name": "Bill\u2019s Maintenance",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "effect": "If you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-26T17:23:45+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "pop5-7",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/7",
+      "localId": "7",
+      "name": "Rare Candy",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "effect": "Choose 1 of your Basic Pok\u00e9mon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pok\u00e9mon in your hand, put that card on the Basic Pok\u00e9mon. (This counts as evolving that Pok\u00e9mon.)",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 10,
+          "low": 1.99,
+          "trend": 6.11,
+          "avg1": 10,
+          "avg7": 5.99,
+          "avg30": 4.17,
+          "avg-holo": 7,
+          "low-holo": null,
+          "trend-holo": 7,
+          "avg1-holo": 7,
+          "avg7-holo": 7,
+          "avg30-holo": 7
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 11.04,
+            "midPrice": 12.85,
+            "highPrice": 20,
+            "marketPrice": 12.99,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "pop5-8",
+      "illustrator": "Shin-ichi Yoshikawa",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/8",
+      "localId": "8",
+      "name": "Boost Energy",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "effect": "Boost Energy can be attached only to an Evolved Pok\u00e9mon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pok\u00e9mon Boost Energy is attached to can\u2019t retreat. If the Pok\u00e9mon Boost Energy is attached to isn\u2019t an Evolved Pok\u00e9mon, discard Boost Energy.",
+      "energyType": "Special",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.5,
+          "low": 1,
+          "trend": 2.89,
+          "avg1": 3.5,
+          "avg7": 2.48,
+          "avg30": 2.34,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 1.48,
+          "avg1-holo": 1.48,
+          "avg7-holo": 2.08,
+          "avg30-holo": 2.08
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1.75,
+            "midPrice": 2.99,
+            "highPrice": 5.54,
+            "marketPrice": 3.71,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "pop5-9",
+      "illustrator": "Takumi Akabane",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/9",
+      "localId": "9",
+      "name": "\u03b4 Rainbow Energy",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "effect": "\u03b4 Rainbow Energy provides Colorless Energy. While attached to a Pok\u00e9mon that has \u03b4 on its card, \u03b4 Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)",
+      "energyType": "Special",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-26T17:23:45+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-10",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/10",
+      "localId": "10",
+      "name": "Charmander \u03b4",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [4],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Scratch", "damage": 10 },
+        { "cost": ["Lightning", "Colorless"], "name": "Bite", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 8.73,
+          "low": 5,
+          "trend": 10.96,
+          "avg1": 13.95,
+          "avg7": 9.42,
+          "avg30": 8.53,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-11",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/11",
+      "localId": "11",
+      "name": "Meowth \u03b4",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "dexId": [52],
+      "hp": 40,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Darkness"],
+          "name": "Feint Attack",
+          "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon. This attack does 10 damage to that Pok\u00e9mon. This attack\u2019s damage isn\u2019t affected by Weakness, Resistance, Pok\u00e9-Powers, Pok\u00e9-Bodies, or any other effects on that Pok\u00e9mon."
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.76,
+          "low": 1.69,
+          "trend": 4.1,
+          "avg1": 2.5,
+          "avg7": 4.03,
+          "avg30": 2.63,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-12",
+      "illustrator": "Naoyo Kimura",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/12",
+      "localId": "12",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Lightning"], "name": "Lightning Ball", "damage": 10 },
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Thunderbolt",
+          "effect": "Discard all Energy cards attached to Pikachu.",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 25.69,
+          "low": 10,
+          "trend": 22.48,
+          "avg1": 20,
+          "avg7": 26.1,
+          "avg30": 21.48,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 135.86,
+          "avg1-holo": 249.99,
+          "avg7-holo": 75.98,
+          "avg30-holo": 51.33
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 20.5,
+            "midPrice": 38.69,
+            "highPrice": 45.69,
+            "marketPrice": 27.59,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 35.43,
+            "midPrice": 66.29,
+            "highPrice": 110.25,
+            "marketPrice": 99.97,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-13",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/13",
+      "localId": "13",
+      "name": "Pikachu \u03b4",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "dexId": [25],
+      "hp": 40,
+      "types": ["Metal"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Electric Punch", "damage": 10 },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Heavy Metal",
+          "effect": "Flip a coin for each Metal Energy attached to Pikachu. This attack does 10 damage plus 20 more damage for each heads.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 22.66,
+          "low": 8.07,
+          "trend": 17.78,
+          "avg1": 6,
+          "avg7": 20.28,
+          "avg30": 15.48,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-14",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/14",
+      "localId": "14",
+      "name": "Pelipper \u03b4",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [279],
+      "hp": 70,
+      "types": ["Lightning"],
+      "evolveFrom": "Wingull",
+      "stage": "Stage1",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Mist",
+          "effect": "Any damage done to Pelipper by attacks from Stage 2 Evolved Pok\u00e9mon (both yours and your opponent\u2019s) is reduced by 30 (after applying Weakness and Resistance)."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Lightning Wing",
+          "effect": "Does 10 damage to 1 of your Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning" }],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "retreat": 0,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.21,
+          "low": 0.35,
+          "trend": 1.6,
+          "avg1": 1.95,
+          "avg7": 1.27,
+          "avg30": 1.79,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3.31,
+          "avg1-holo": 2.5,
+          "avg7-holo": 2.61,
+          "avg30-holo": 2.61
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-15",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/15",
+      "localId": "15",
+      "name": "Zangoose \u03b4",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [335],
+      "hp": 70,
+      "types": ["Metal"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Detect",
+          "effect": "Flip a coin. If heads, prevent all effects of an attack, including damage, done to Zangoose during your opponent\u2019s next turn."
+        },
+        {
+          "cost": ["Metal", "Colorless", "Colorless"],
+          "name": "Metal Claw",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.55,
+          "low": 0.5,
+          "trend": 1.81,
+          "avg1": 0.75,
+          "avg7": 1.53,
+          "avg30": 1.97,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 5.41,
+          "avg1-holo": 5,
+          "avg7-holo": 3.86,
+          "avg30-holo": 3.86
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-16",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/16",
+      "localId": "16",
+      "name": "Espeon \u2605",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [196],
+      "hp": 70,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Purple Ray",
+          "effect": "Once during your turn, when you put Espeon Star from your hand onto your Bench, you may use this power. Each Active Pok\u00e9mon (both yours and your opponent\u2019s) is now Confused."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Psychic", "Colorless"],
+          "name": "Psychic Boom",
+          "effect": "Does 30 damage plus 10 more damage for each Energy attached to the Defending Pok\u00e9mon.",
+          "damage": "30+"
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-26T17:23:45+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop5-17",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop5/17",
+      "localId": "17",
+      "name": "Umbreon \u2605",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop5",
+        "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+        "name": "POP Series 5",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [197],
+      "hp": 70,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Dark Ray",
+          "effect": "Once during your turn, when you put Umbreon Star from your hand onto your Bench, you may choose 1 card from your opponent\u2019s hand without looking and discard it."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Darkness", "Darkness"],
+          "name": "Feint Attack",
+          "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon. This attack does 30 damage to that Pok\u00e9mon. This attack\u2019s damage isn\u2019t affected by Weakness, Resistance, Pok\u00e9-Powers, Pok\u00e9-Bodies, or any other effects on that Pok\u00e9mon."
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-26T17:23:45+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    }
+  ],
+  "id": "pop5",
+  "legal": { "expanded": false, "standard": false },
+  "logo": "https://assets.tcgdex.net/en/pop/pop5/logo",
+  "name": "POP Series 5",
+  "releaseDate": "2007-03-01",
+  "serie": { "id": "pop", "name": "POP" },
+  "symbol": "https://assets.tcgdex.net/univ/pop/pop5/symbol",
+  "abbreviation": { "official": "P5" }
+}

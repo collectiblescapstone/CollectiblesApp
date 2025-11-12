@@ -1,1 +1,2700 @@
-{"cardCount": {"firstEd": 0, "holo": 0, "normal": 0, "official": 56, "reverse": 0, "total": 56}, "cards": [{"category": "Pokemon", "id": "dpp-DP01", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP01", "localId": "DP01", "name": "Turtwig", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [387], "hp": 60, "types": ["Grass"], "stage": "Basic", "attacks": [{"name": "Tackle", "damage": 10}, {"cost": ["Grass"], "name": "Razor Leaf", "damage": 20}], "weaknesses": [{"type": "Fire", "value": "+10"}], "resistances": [{"type": "Water", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP02", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP02", "localId": "DP02", "name": "Chimchar", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [390], "hp": 50, "types": ["Fire"], "stage": "Basic", "attacks": [{"name": "Scratch", "damage": 10}, {"cost": ["Fire", "Colorless"], "name": "Ember", "effect": "Flip a coin. If tails, discard a Fire Energy attached to Chimchar.", "damage": 30}], "weaknesses": [{"type": "Water", "value": "+10"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP03", "illustrator": "Atsuko Nishida", "image": "https://assets.tcgdex.net/en/dp/dpp/DP03", "localId": "DP03", "name": "Piplup", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [393], "hp": 60, "types": ["Water"], "stage": "Basic", "attacks": [{"damage": 10}, {"cost": ["Water", "Colorless"], "damage": "20+"}], "weaknesses": [{"type": "Lightning", "value": "+10"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP04", "illustrator": "Atsuko Nishida", "image": "https://assets.tcgdex.net/en/dp/dpp/DP04", "localId": "DP04", "name": "Pachirisu", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [417], "hp": 70, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Minor Errand-Running", "effect": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."}, {"cost": ["Lightning"], "name": "Thunder Jolt", "effect": "Flip a coin. If tails, Pachirisu does 10 damage to itself.", "damage": 20}], "weaknesses": [{"type": "Fighting", "value": "+20"}], "resistances": [{"type": "Metal", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "dpp-DP05", "illustrator": "Sumiyoshi Kizuki", "image": "https://assets.tcgdex.net/en/dp/dpp/DP05", "localId": "DP05", "name": "Tropical Wind", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP06", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP06", "localId": "DP06", "name": "Buneary", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [427], "hp": 50, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Splash", "damage": 10}, {"cost": ["Colorless", "Colorless"], "name": "Jump Kick", "effect": "Does 10 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 10}], "weaknesses": [{"type": "Fighting", "value": "+10"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP07", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/dp/dpp/DP07", "localId": "DP07", "name": "Cranidos", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [408], "hp": 70, "types": ["Fighting"], "evolveFrom": "Skull Fossil", "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Headbutt", "damage": 20}, {"cost": ["Fighting", "Colorless"], "name": "Steamroll", "effect": "Does 20 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 30}], "weaknesses": [{"type": "Grass", "value": "+20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP08", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/dp/dpp/DP08", "localId": "DP08", "name": "Shieldon", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [410], "hp": 80, "types": ["Metal"], "evolveFrom": "Armor Fossil", "stage": "Stage1", "attacks": [{"cost": ["Metal", "Colorless"], "name": "Hard Face", "effect": "During your opponents next turn, any damage done to Shieldon by attacks is reduced by 20 (after applying Weakness and Resistance).", "damage": 20}, {"cost": ["Metal", "Colorless", "Colorless"], "name": "Shield Attack", "effect": "Flip a coin. If heads, this attack does 40 damage plus 20 more damage.", "damage": "40+"}], "weaknesses": [{"type": "Fire", "value": "+20"}], "resistances": [{"type": "Metal", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP09", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP09", "localId": "DP09", "name": "Torterra", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [389], "hp": 160, "types": ["Grass"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Forest Murmurs", "effect": "Once during your turn (before your attack), if you have more Prize cards left than your opponent, you may choose 1 of your opponent's Benched Pok\u00e9mon and switch it with 1 of the Defending Pok\u00e9mon. This power can't be used if Torterra is affected by a Special Condition."}], "attacks": [{"cost": ["Grass", "Grass", "Grass", "Colorless"], "name": "Vigorous Dash", "effect": "Does 30 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) Torterra does 30 damage to itself.", "damage": 100}], "weaknesses": [{"type": "Fire", "value": "+30"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP10", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP10", "localId": "DP10", "name": "Infernape", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [392], "hp": 120, "types": ["Fire"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Burning Head", "effect": "Once during your turn (before your attack), you may look at the top 3 cards of your deck, choose 1 of them, and put it into your hand. Discard the other 2 cards. This power can't be used if Infernape is affected by a Special Condition."}], "attacks": [{"cost": ["Fire", "Fire"], "name": "Flare Up", "effect": "Search your discard pile for 8 Fire Energy cards, show them to your opponent, and shuffle them into your deck. (This attack does nothing if you don't have 8 Fire Energy cards in your discard pile.)", "damage": 150}], "weaknesses": [{"type": "Water", "value": "+30"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP11", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP11", "localId": "DP11", "name": "Empoleon", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [395], "hp": 140, "types": ["Water"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Supreme Command", "effect": "Once during your turn (before your attack), you may choose up to 2 cards from your opponent's hand without looking and put them face down next to the Defending Pok\u00e9mon. (These cards are not in play or in your opponent's hand.) At the end of your opponent's next turn, return those cards to your opponent's hand. This power can't be used if Empoleon is affected by a Special Condition."}], "attacks": [{"cost": ["Water", "Water", "Water"], "name": "Hydro Impact", "effect": "Choose 1 of your opponent's Pok\u00e9mon. This attack does 80 damage to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) Empoleon can't attack during your next turn."}], "weaknesses": [{"type": "Lightning", "value": "+30"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP12", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP12", "localId": "DP12", "name": "Lucario", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [448], "hp": 110, "types": ["Fighting"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Stance", "effect": "Once during your turn (before your attack), when you put Lucario LV.X from your hand onto your Active Lucario, you may use this power. Prevent all effects of an attack, including damage, done to Lucario during your opponent's next turn. (If Lucario is no longer your Active Pok\u00e9mon, this effect ends.)"}], "attacks": [{"cost": ["Fighting", "Fighting", "Colorless"], "name": "Close Combat", "effect": "During your opponent's next turn, any damage done to Lucario by attacks is increased by 30 (after applying Weakness and Resistance).", "damage": 80}], "weaknesses": [{"type": "Psychic", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "dpp-DP13", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/dp/dpp/DP13", "localId": "DP13", "name": "Buizel", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [418], "hp": 60, "types": ["Water"], "stage": "Basic", "attacks": [{"cost": ["Water"], "damage": "10+"}], "weaknesses": [{"type": "Lightning", "value": "+10"}], "effect": "If Buizel has less Energy attached to it than the Defending Pok\u00e9mon, this attack does 10 damage plus 10 more damage.", "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP14", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP14", "localId": "DP14", "name": "Chatot", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [441], "hp": 60, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Me First", "effect": "Draw a card."}, {"cost": ["Colorless"], "name": "Tone-Deaf", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Confused.", "damage": 10}], "weaknesses": [{"type": "Lightning", "value": "+10"}], "resistances": [{"type": "Fighting", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP15", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP15", "localId": "DP15", "name": "Shinx", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [403], "hp": 60, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Lightning"], "name": "Spark", "effect": "Does 10 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 10}], "weaknesses": [{"type": "Fighting", "value": "+10"}], "resistances": [{"type": "Metal", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP16", "illustrator": "Sumiyoshi Kizuki", "image": "https://assets.tcgdex.net/en/dp/dpp/DP16", "localId": "DP16", "name": "Pikachu", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [25], "hp": 60, "types": ["Lightning"], "stage": "Basic", "abilities": [{"type": "Poke-POWER", "name": "Electro Recycle", "effect": "Once during your turn (before your attack), if Pichu is anywhere under Pikachu, you may search your discard pile for a Lightning Energy card, show it to your opponent, and put it into your hand. This power can't be used if Pikachu is affected by a Special Condition."}], "attacks": [{"cost": ["Lightning", "Colorless"], "name": "BikaBika", "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage.", "damage": "20+"}], "weaknesses": [{"type": "Fighting", "value": "+10"}], "resistances": [{"type": "Metal", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP17", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP17", "localId": "DP17", "name": "Dialga", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [483], "hp": 120, "types": ["Metal"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Time Skip", "effect": "Once during your turn (before your attack), you may have your opponent flip 2 coins. If both of them are heads, your turn ends. If both of them are tails, after your opponent draws a card at the beginning of his or her next turn, his or her turn ends. This power can't be used if Dialga is affected by a Special Condition."}], "attacks": [{"cost": ["Metal", "Metal", "Colorless", "Colorless"], "name": "Metal Flash", "effect": "During your next turn, Dialga can't use Metal Flash.", "damage": 80}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP18", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP18", "localId": "DP18", "name": "Palkia", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [484], "hp": 120, "types": ["Water"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Restructure", "effect": "Once during your turn (before your attack), you may have your opponent switch 1 of your Active Pok\u00e9mon with 1 of your Benched Pok\u00e9mon. Then, you switch 1 of the Defending Pok\u00e9mon with 1 of your opponent's Benched Pok\u00e9mon. This power can't be used if Palkia is affected by a Special Condition."}], "attacks": [{"cost": ["Water", "Water", "Water"], "name": "Hydro Reflect", "effect": "You may move all Energy cards attached to Palkia to your Benched Pok\u00e9mon in any way you like. (Ignore this effect if you don't have any Benched Pok\u00e9mon.)", "damage": 60}], "weaknesses": [{"type": "Lightning", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP19", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP19", "localId": "DP19", "name": "Darkrai", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [491], "hp": 100, "types": ["Darkness"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Dark Shadow", "effect": "Each basic Darkness Energy card attached to your Darkness Pok\u00e9mon now has the effect \"If the Pok\u00e9mon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pok\u00e9mon (before applying Weakness and Resistance).\" You can't use more than 1 Dark Shadow Pok\u00e9-Body each turn."}], "attacks": [{"cost": ["Darkness", "Darkness", "Colorless"], "name": "Endless Darkness", "effect": "The Defending Pok\u00e9mon is now Asleep. Flip 2 coins instead of 1 between turns. If either of them is tails, the Defending Pok\u00e9mon is still Asleep. If both of them are tails, the Defending Pok\u00e9mon is Knocked Out.", "damage": 40}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP20", "illustrator": "Hiroaki Ito", "image": "https://assets.tcgdex.net/en/dp/dpp/DP20", "localId": "DP20", "name": "Magmortar", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [467], "hp": 100, "types": ["Fire"], "evolveFrom": "Magmar", "stage": "Stage1", "attacks": [{"cost": ["Fire", "Colorless"], "name": "Smoke Bomb", "effect": "If the Defending Pok\u00e9mon tries to attack during your opponent's next turn, your opponent flips a coin.  If tails, that attack does nothing.", "damage": 30}, {"cost": ["Fire", "Fire", "Colorless"], "name": "Flame Drum", "effect": "If Magby isn't anywhere under Magmortar, discard 2 Energy cards from your hand. (If you can't discard 2 Energy cards from your hand, this attack does nothing.)", "damage": 80}], "weaknesses": [{"type": "Water", "value": "+30"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP21", "illustrator": "Daisuke Ito", "image": "https://assets.tcgdex.net/en/dp/dpp/DP21", "localId": "DP21", "name": "Raichu", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [26], "hp": 90, "types": ["Lightning"], "evolveFrom": "Pikachu", "stage": "Stage1", "attacks": [{"name": "Electromagnetic Induction", "effect": "Search your deck for up to 2 Lightning Energy cards and attach them to 1 of your Pok\u00e9mon. Shuffle your deck afterward."}, {"cost": ["Lightning", "Colorless"], "name": "Explosive Thunder", "effect": "Discard all basic Lightning Energy cards attached to Raichu. This attack does 30 damage times the number of Lightning Energy cards you discarded.", "damage": "30x"}], "weaknesses": [{"type": "Fighting", "value": "+20"}], "resistances": [{"type": "Metal", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP22", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/dp/dpp/DP22", "localId": "DP22", "name": "Mime Jr.", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [439], "hp": 40, "types": ["Psychic"], "stage": "Basic", "abilities": [{"type": "Poke-POWER", "name": "Baby Evolution", "effect": "Once during your turn (before your attack), you may put Mr. Mime from your hand onto Mime Jr. (this counts as evolving Mime Jr.) and remove all damage counters from Mime Jr.."}], "attacks": [{"cost": ["Psychic"], "name": "Mime", "effect": "Shuffle your hand into your deck. Then, draw a number of cards equal to the number of cards in your opponent's hand."}], "weaknesses": [{"type": "Psychic", "value": "+10"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP23", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/dp/dpp/DP23", "localId": "DP23", "name": "Glameow", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [431], "hp": 50, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Charm", "effect": "During your opponent's next turn, any damage done by attacks from the Defending Pok\u00e9mon is reduced by 20 (before applying Weakness and Resistance)."}, {"cost": ["Colorless", "Colorless"], "name": "Pose", "effect": "Flip a coin. If tails, this attack does nothing.", "damage": 30}], "weaknesses": [{"type": "Fighting", "value": "+10"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP24", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/dp/dpp/DP24", "localId": "DP24", "name": "Darkrai", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [491], "hp": 80, "types": ["Darkness"], "stage": "Basic", "attacks": [{"cost": ["Water"], "name": "Spacial Rend", "effect": "Search your deck for a Stadium card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. If there is any Stadium card in play, discard it.", "damage": 10}, {"cost": ["Metal", "Metal", "Metal"], "name": "Roar of Time", "effect": "Search your discard pile for 3 Pok\u00e9mon, show them to your opponent, and put them on top of your deck. Shuffle your deck afterward. (If you don't have 3 Pok\u00e9mon in your discard pile, this attack does nothing.)", "damage": 80}], "weaknesses": [{"type": "Fighting", "value": "+20"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "dpp-DP25", "illustrator": "Sumiyoshi Kizuki", "image": "https://assets.tcgdex.net/en/dp/dpp/DP25", "localId": "DP25", "name": "Tropical Wind", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP26", "illustrator": "Kazuyuki Kano", "image": "https://assets.tcgdex.net/en/dp/dpp/DP26", "localId": "DP26", "name": "Dialga", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [483], "hp": 90, "types": ["Metal"], "stage": "Basic", "attacks": [{"cost": ["Metal"], "name": "Time Bellow", "effect": "Draw a card.", "damage": 10}, {"cost": ["Metal", "Metal", "Colorless"], "name": "Flash Cannon", "effect": "You may return all Energy cards attached to Dialga to your hand. If you do, remove the highest Stage Evolution card from the Defending Pok\u00e9mon and shuffle that card into your opponent's deck.", "damage": 40}], "weaknesses": [{"type": "Fire", "value": "+20"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP27", "illustrator": "Daisuke Ito", "image": "https://assets.tcgdex.net/en/dp/dpp/DP27", "localId": "DP27", "name": "Palkia", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [484], "hp": 90, "types": ["Water"], "stage": "Basic", "attacks": [{"cost": ["Water"], "name": "Spacial Rend", "effect": "Search your deck for a Stadium card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. If there is any Stadium card in play, discard it.", "damage": 10}, {"cost": ["Water", "Water", "Colorless"], "name": "Transback", "effect": "You may flip a coin. If heads, discard all Energy attached to Palkia and put the Defending Pok\u00e9mon and all cards attached to it on top of your opponent's deck. Your opponent shuffles his or her deck afterward.", "damage": 40}], "weaknesses": [{"type": "Lightning", "value": "+20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP28", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP28", "localId": "DP28", "name": "Mewtwo", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [150], "hp": 120, "types": ["Psychic"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Psybarrier", "effect": "Prevent all effects of attacks, including damage, done to Mewtwo by your opponent's Pok\u00e9mon that isn't an Evolved Pok\u00e9mon."}], "attacks": [{"cost": ["Psychic", "Psychic", "Colorless"], "name": "Giga Burn", "effect": "Discard all Energy attached to Mewtwo.", "damage": 120}], "weaknesses": [{"type": "Psychic", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP29", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP29", "localId": "DP29", "name": "Rhyperior", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [464], "hp": 170, "types": ["Fighting"], "stage": "LEVEL-UP", "attacks": [{"name": "Hard Crush", "effect": "Discard the top 5 cards of your deck. This attack does 50 damage for each Energy card you discarded.", "damage": "50x"}, {"cost": ["Fighting", "Fighting", "Colorless"], "name": "Upthrow", "effect": "Search your discard pile for all Fighting Energy cards, show them to your opponent, and shuffle them into your deck.", "damage": 60}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "resistances": [{"type": "Lightning", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP30", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP30", "localId": "DP30", "name": "Regigigas", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [486], "hp": 150, "types": ["Colorless"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Sacrifice", "effect": "Once during your turn (before your attack), you may choose 1 of your Pok\u00e9mon and that Pok\u00e9mon is Knocked Out. Then, search your discard pile for up to 2 basic Energy cards, attach them to Regigigas, and remove 8 damage counters from Regigigas. This power can't be used if Regigigas is affected by a Special Condition."}], "attacks": [{"cost": ["Water", "Fighting", "Metal", "Colorless"], "name": "Giga Blaster", "effect": "Discard the top card from your opponent's deck. Then, choose 1 card from your opponent's hand without looking and discard it. Regigigas can't use Giga Blaster during your next turn.", "damage": 100}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP31", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP31", "localId": "DP31", "name": "Heatran", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [485], "hp": 120, "types": ["Fire"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Heat Metal", "effect": "Your opponent can't remove the Special Condition Burned by evolving or devolving his or her Burned Pok\u00e9mon. (This also includes putting a Pok\u00e9mon Level-Up card onto the Burned Pok\u00e9mon.) Whenever your opponent flips a coin for the Special Condition Burned between turns, treat it as tails."}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP32", "illustrator": "Kent Kanetsuna", "image": "https://assets.tcgdex.net/en/dp/dpp/DP32", "localId": "DP32", "name": "Magnezone", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [462], "hp": 130, "types": ["Metal"], "evolveFrom": "Magneton", "stage": "Stage2", "attacks": [{"cost": ["Metal", "Colorless"], "name": "Mirror Shot", "effect": "If the Defending Pok\u00e9mon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing.", "damage": 40}, {"cost": ["Lightning", "Metal", "Colorless", "Colorless"], "name": "Magnet Slash", "effect": "Discard all Lightning Energy attached to Magnezone.", "damage": 100}], "weaknesses": [{"type": "Fire", "value": "+30"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP33", "illustrator": "Kent Kanetsuna", "image": "https://assets.tcgdex.net/en/dp/dpp/DP33", "localId": "DP33", "name": "Dusknoir", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [477], "hp": 130, "types": ["Psychic"], "evolveFrom": "Dusclops", "stage": "Stage2", "abilities": [{"type": "Poke-POWER", "name": "Dark Hide", "effect": "Once during your turn (before your attack), you may flip a coin. If heads, look at your opponent's hand, choose a Pok\u00e9mon you find there, and put it on the bottom of his or her deck. This power can't be used if Dusknoir is affected by a Special Condition."}], "attacks": [{"cost": ["Psychic", "Psychic", "Colorless"], "name": "Reaper Pulse", "effect": "Move up to 2 damage counters from Dusknoir to 1 of your opponent's Benched Pok\u00e9mon.", "damage": 70}], "weaknesses": [{"type": "Darkness", "value": "+30"}], "resistances": [{"type": "Colorless", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP34", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/dp/dpp/DP34", "localId": "DP34", "name": "Drifblim", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [426], "hp": 80, "types": ["Psychic"], "evolveFrom": "Drifloon", "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Wind Wave", "effect": "Search your discard pile for up to 5 in any combination of Pok\u00e9mon and Supporter cards. Show them to your opponent and shuffle them into your deck."}, {"cost": ["Psychic", "Psychic", "Psychic"], "name": "Explosive Smoke", "effect": "Does 10 damage to each Benched Pok\u00e9mon (both yours and your opponent's). (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 60}], "weaknesses": [{"type": "Darkness", "value": "+20"}], "resistances": [{"type": "Colorless", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP35", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP35", "localId": "DP35", "name": "Porygon-Z", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [474], "hp": 120, "types": ["Colorless"], "evolveFrom": "Porygon2", "stage": "Stage2", "abilities": [{"type": "Poke-POWER", "name": "Install", "effect": "As often as you like during your turn (before your attack), move a Technical Machine card attached to 1 of your Pok\u00e9mon to another of your Pok\u00e9mon. This power can't be used if Porygon-Z is affected by a Special Condition."}], "attacks": [{"name": "Learning", "effect": "Search your deck for a Pok\u00e9mon LV.X that levels up from 1 of your Pok\u00e9mon and put it onto that Pok\u00e9mon. (This counts as leveling up that Pok\u00e9mon). Shuffle your deck afterward."}, {"cost": ["Colorless", "Colorless"], "name": "Overload", "effect": "Does 40 damage plus 20 more damage for each Technical Machine card attached to Porygon-Z.", "damage": "40+"}], "weaknesses": [{"type": "Fighting", "value": "+30"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP36", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP36", "localId": "DP36", "name": "Gliscor", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [472], "hp": 90, "types": ["Fighting"], "evolveFrom": "Gligar", "stage": "Stage1", "abilities": [{"type": "Poke-BODY", "name": "Bind Eye", "effect": "As long as Gliscor is your Active Pok\u00e9mon, your opponent can't remove any Special Conditions by evolving or devolving his or her Pok\u00e9mon. (This also includes putting a Pok\u00e9mon Level-Up card onto that Pok\u00e9mon.)"}], "attacks": [{"cost": ["Colorless"], "name": "Cutting Turn", "effect": "Flip a coin. If heads, put damage counters on the Defending Pok\u00e9mon until it is 10HP away from being Knocked Out. If you do, shuffle Gliscor and all cards attached to it into your deck."}, {"cost": ["Fighting"], "name": "Friction Heat", "effect": "The Defending Pok\u00e9mon is now Burned.", "damage": 20}], "weaknesses": [{"type": "Water", "value": "+20"}], "resistances": [{"type": "Fighting", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP37", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP37", "localId": "DP37", "name": "Dialga", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [483], "hp": 120, "types": ["Metal"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Time Skip", "effect": "Once during your turn (before your attack), you may have your opponent flip 2 coins. If both of them are heads, your turn ends. If both of them are tails, after your opponent draws a card at the beginning of his or her next turn, his or her turn ends. This power can't be used if Dialga is affected by a Special Condition."}], "attacks": [{"cost": ["Metal", "Metal", "Colorless", "Colorless"], "name": "Metal Flash", "effect": "During your next turn, Dialga can't use Metal Flash.", "damage": 80}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP38", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP38", "localId": "DP38", "name": "Giratina", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [487], "hp": 130, "types": ["Psychic"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Invisible Tentacles", "effect": "Whenever your opponent's Pok\u00e9mon tries to attack, your opponent discards 1 card from his or her hand. (If your opponent can't discard 1 card, your opponent's Pok\u00e9mon can't attack.) You can't use more than 1 Invisible Tentacles Pok\u00e9-Body each turn."}], "attacks": [{"cost": ["Psychic", "Psychic", "Colorless", "Colorless"], "name": "Darkness Lost", "effect": "This attack does 30 damage to each of your opponent's Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) If any of your opponent's Pok\u00e9mon would be Knocked Out by damage from this attack, put that Pok\u00e9mon and all cards attached to it in the Lost Zone instead of discarding it."}], "weaknesses": [{"type": "Darkness", "value": "\u00d72"}], "resistances": [{"type": "Colorless", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP39", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP39", "localId": "DP39", "name": "Shaymin", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [492], "hp": 110, "types": ["Grass"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Revenge Seed", "effect": "If any of your Grass Pok\u00e9mon were Knocked Out by damage from an opponent's attack during his or her last turn, each of Shaymin's attacks does 60 more damage to the Active Pok\u00e9mon (before applying Weakness and Resistance)."}], "attacks": [{"cost": ["Grass", "Colorless"], "name": "Energy Flare", "effect": "You may move any number of Energy cards attached to your Pok\u00e9mon to your other Pok\u00e9mon in any way you like.", "damage": 50}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Fighting", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP40", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP40", "localId": "DP40", "name": "Regigigas", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [486], "hp": 100, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Drag Off", "effect": "Before doing damage, you may choose 1 of your opponent's Benched Pok\u00e9mon and switch it with 1 of the Defending Pok\u00e9mon.", "damage": 30}, {"cost": ["Colorless", "Colorless", "Colorless", "Colorless"], "name": "Giga Hammer", "effect": "Regigigas can't use Giga Hammer during your next turn.", "damage": 80}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP41", "illustrator": "Ryota Saito", "image": "https://assets.tcgdex.net/en/dp/dpp/DP41", "localId": "DP41", "name": "Toxicroak G", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [454], "hp": 90, "types": ["Fighting"], "stage": "Basic", "abilities": [{"type": "Poke-POWER", "name": "Leap Away", "effect": "Once during your turn (before your attack), if Toxicroak  is your Active Pok\u00e9mon, you may flip a coin. If heads, return Toxicroak  and all cards attached to it to your hand. This Power can't be used if Toxicroak  is affected by a Special Condition."}], "attacks": [{"cost": ["Psychic", "Colorless"], "name": "Poison Revenge", "effect": "If any of your Pok\u00e9mon were Knocked Out by damage from an opponent's attack during his or her last turn, this attack does 20 damage plus 40 more damage and the Defending Pok\u00e9mon is now Poisoned.", "damage": "20+"}], "weaknesses": [{"type": "Psychic", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP42", "illustrator": "Makoto Imai", "image": "https://assets.tcgdex.net/en/dp/dpp/DP42", "localId": "DP42", "name": "Carnivine G", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [455], "hp": 80, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Power Whip", "effect": "Choose 1 of your opponent's Pok\u00e9mon. This attack does 10 damage for each Energy attached to Carnivine  to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"}, {"cost": ["Grass", "Colorless"], "name": "Grass Knot", "effect": "Does 20 damage plus 10 more damage for each Colorless Energy in the Defending Pok\u00e9mon's Retreat Cost (after applying effects to the Retreat Cost).", "damage": "20+"}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Water", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP43", "illustrator": "Ryota Saito", "image": "https://assets.tcgdex.net/en/dp/dpp/DP43", "localId": "DP43", "name": "Probopass G", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [476], "hp": 90, "types": ["Fighting"], "stage": "Basic", "attacks": [{"cost": ["Metal", "Colorless"], "name": "Nose Unit", "effect": "This attack does 20 damage to each of your opponent's Pok\u00e9mon that has any Pok\u00e9-Bodies. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"}, {"cost": ["Metal", "Colorless", "Colorless", "Colorless"], "name": "Loud Snort", "effect": "Probopass 's Retreat Cost is 0 until the end of your next turn.", "damage": 70}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP44", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP44", "localId": "DP44", "name": "Magnezone", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [462], "hp": 130, "types": ["Lightning"], "evolveFrom": "Magneton", "stage": "Stage2", "attacks": [{"cost": ["Lightning"], "name": "Charge Beam", "effect": "Search your discard pile for an Energy card and attach it to Magnezone.", "damage": 30}, {"cost": ["Lightning", "Metal", "Colorless", "Colorless"], "name": "Metallic Bolt", "effect": "You may discard a Lightning Energy and a Metal Energy attached to Magnezone. If you do, this attack's base damage is 120 instead of 60.", "damage": 60}], "weaknesses": [{"type": "Fighting", "value": "+30"}], "resistances": [{"type": "Metal", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP45", "illustrator": "Wataru Kawahara", "image": "https://assets.tcgdex.net/en/dp/dpp/DP45", "localId": "DP45", "name": "Charizard G", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [6], "hp": 120, "types": ["Fire"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Call for Power", "effect": "As often as you like during your turn (before your attack), you may move an Energy attached to 1 of your Pok\u00e9mon to Charizard . This power can't be used if Charizard  is affected by a Special Condition."}], "attacks": [{"cost": ["Fire", "Fire", "Colorless", "Colorless", "Colorless"], "name": "Malevolent Fire", "effect": "Flip a coin. If tails, discard all Energy attached to Charizard .", "damage": 150}], "weaknesses": [{"type": "Water", "value": "\u00d72"}], "resistances": [{"type": "Fighting", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP46", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP46", "localId": "DP46", "name": "Garchomp C", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [445], "hp": 110, "types": ["Colorless"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-POWER", "name": "Healing Breath", "effect": "Once during your turn (before your attack), when you put Garchomp  LV.X from your hand onto your Active Garchomp , you may remove all damage counters from each of your Pok\u00e9mon SP."}], "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Dragon Rush", "effect": "Discard 2 Energy attached to Garchomp . Choose 1 of your opponent's Pok\u00e9mon. This attack does 80 damage to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) Garchomp  can't use Dragon Rush during your next turn."}], "weaknesses": [{"type": "Colorless", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP47", "image": "https://assets.tcgdex.net/en/dp/dpp/DP47", "localId": "DP47", "name": "Rayquaza C", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [384], "hp": 120, "types": ["Colorless"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Dragon Spirit", "effect": "If Rayquaza  is your Active Pok\u00e9mon and is damaged but not Knocked Out by an opponent's attack, you may search your discard pile for an Energy card and attach it to Rayquaza ."}], "attacks": [{"cost": ["Water", "Psychic", "Fighting", "Colorless"], "name": "Final Blowup", "effect": "Discard all Energy attached to Rayquaza . Ignore this effect if you have no cards in your hand.", "damage": 200}], "weaknesses": [{"type": "Colorless", "value": "\u00d72"}], "resistances": [{"type": "Fighting", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "dpp-DP48", "illustrator": "Sumiyoshi Kizuki", "image": "https://assets.tcgdex.net/en/dp/dpp/DP48", "localId": "DP48", "name": "Tropical Wind", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP49", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/dp/dpp/DP49", "localId": "DP49", "name": "Dialga", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [483], "hp": 100, "types": ["Metal"], "stage": "Basic", "attacks": [{"cost": ["Metal"], "name": "Time Call", "effect": "Search your deck for a card that evolves from 1 of your Pok\u00e9mon and put it on that Pok\u00e9mon. (This counts as evolving that Pok\u00e9mon.) Shuffle your deck afterward."}, {"cost": ["Metal", "Colorless", "Colorless"], "name": "Time Wager", "effect": "Flip 2 coins. If either of them is tails, this attack's base damage is 50 instead of 100.", "damage": 100}], "weaknesses": [{"type": "Fire", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP50", "illustrator": "Kunihiko Yuyama", "image": "https://assets.tcgdex.net/en/dp/dpp/DP50", "localId": "DP50", "name": "Arceus", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [493], "hp": 90, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless", "Colorless", "Colorless"], "name": "Judgment", "effect": "Discard all Energy cards attached to Arceus and this attack does 10 damage to each of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 80}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP51", "illustrator": "Wataru Kawahara", "image": "https://assets.tcgdex.net/en/dp/dpp/DP51", "localId": "DP51", "name": "Cresselia", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [488], "hp": 90, "types": ["Psychic"], "stage": "Basic", "abilities": [{"type": "Poke-BODY", "name": "Lunar Aura", "effect": "If you have Darkrai in play, remove 1 damage counter from Cresselia between turns."}], "attacks": [{"cost": ["Psychic", "Psychic", "Colorless"], "name": "Lunar Flight", "effect": "Does 80 damage minus 10 damage for each damage counter on Cresselia.", "damage": "80-"}], "weaknesses": [{"type": "Psychic", "value": "\u00d72"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP52", "illustrator": "Wataru Kawahara", "image": "https://assets.tcgdex.net/en/dp/dpp/DP52", "localId": "DP52", "name": "Darkrai", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [491], "hp": 90, "types": ["Darkness"], "stage": "Basic", "abilities": [{"type": "Poke-BODY", "name": "Darkness Aura", "effect": "If you have Cresselia in play, each of Darkrai's attacks does 20 more damage to the Defending Pok\u00e9mon (before applying Weakness and Resistance)."}], "attacks": [{"cost": ["Darkness", "Darkness", "Colorless"], "name": "Hypnoblast", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Asleep.", "damage": 60}], "weaknesses": [{"type": "Fighting", "value": "\u00d72"}], "resistances": [{"type": "Psychic", "value": "-20"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP53", "illustrator": "Shizurow", "image": "https://assets.tcgdex.net/en/dp/dpp/DP53", "localId": "DP53", "name": "Arceus", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [493], "hp": 120, "types": ["Colorless"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Multitype", "effect": "Arceus LV.X's type is the same type as its previous Level."}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "dpp-DP54", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP54", "localId": "DP54", "name": "Beginning Door", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "dpp-DP55", "illustrator": "Yusuke Ishikawa", "image": "https://assets.tcgdex.net/en/dp/dpp/DP55", "localId": "DP55", "name": "Ultimate Zone", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "trainerType": "Stadium", "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Pokemon", "id": "dpp-DP56", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/dp/dpp/DP56", "localId": "DP56", "name": "Arceus", "rarity": "Common", "set": {"cardCount": {"official": 56, "total": 56}, "id": "dpp", "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [493], "hp": 120, "types": ["Colorless"], "stage": "LEVEL-UP", "abilities": [{"type": "Poke-BODY", "name": "Multitype", "effect": "Arceus LV.X's type is the same type as its previous Level."}], "attacks": [{"cost": ["Grass", "Fire", "Colorless"], "name": "Meteor Blast", "effect": "Flip a coin. If tails, this attack's base damage is 50 instead of 100.", "damage": 100}], "legal": {"standard": false, "expanded": false}, "updated": "2023-12-06T00:47:28+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}], "id": "dpp", "legal": {"expanded": false, "standard": false}, "logo": "https://assets.tcgdex.net/en/dp/dpp/logo", "name": "DP Black Star Promos", "releaseDate": "2007-05-01", "serie": {"id": "dp", "name": "Diamond & Pearl"}, "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol", "tcgOnline": "PR-DPP"}
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 56,
+    "reverse": 0,
+    "total": 56
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP01",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP01",
+      "localId": "DP01",
+      "name": "Turtwig",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [387],
+      "hp": 60,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Tackle", "damage": 10 },
+        { "cost": ["Grass"], "name": "Razor Leaf", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+10" }],
+      "resistances": [{ "type": "Water", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP02",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP02",
+      "localId": "DP02",
+      "name": "Chimchar",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [390],
+      "hp": 50,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Scratch", "damage": 10 },
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Ember",
+          "effect": "Flip a coin. If tails, discard a Fire Energy attached to Chimchar.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "+10" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP03",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP03",
+      "localId": "DP03",
+      "name": "Piplup",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [393],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        { "damage": 10 },
+        { "cost": ["Water", "Colorless"], "damage": "20+" }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+10" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP04",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP04",
+      "localId": "DP04",
+      "name": "Pachirisu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [417],
+      "hp": 70,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Minor Errand-Running",
+          "effect": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Lightning"],
+          "name": "Thunder Jolt",
+          "effect": "Flip a coin. If tails, Pachirisu does 10 damage to itself.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+20" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "dpp-DP05",
+      "illustrator": "Sumiyoshi Kizuki",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP05",
+      "localId": "DP05",
+      "name": "Tropical Wind",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP06",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP06",
+      "localId": "DP06",
+      "name": "Buneary",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [427],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Splash", "damage": 10 },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Jump Kick",
+          "effect": "Does 10 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+10" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP07",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP07",
+      "localId": "DP07",
+      "name": "Cranidos",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [408],
+      "hp": 70,
+      "types": ["Fighting"],
+      "evolveFrom": "Skull Fossil",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Headbutt", "damage": 20 },
+        {
+          "cost": ["Fighting", "Colorless"],
+          "name": "Steamroll",
+          "effect": "Does 20 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "+20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP08",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP08",
+      "localId": "DP08",
+      "name": "Shieldon",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [410],
+      "hp": 80,
+      "types": ["Metal"],
+      "evolveFrom": "Armor Fossil",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Metal", "Colorless"],
+          "name": "Hard Face",
+          "effect": "During your opponents next turn, any damage done to Shieldon by attacks is reduced by 20 (after applying Weakness and Resistance).",
+          "damage": 20
+        },
+        {
+          "cost": ["Metal", "Colorless", "Colorless"],
+          "name": "Shield Attack",
+          "effect": "Flip a coin. If heads, this attack does 40 damage plus 20 more damage.",
+          "damage": "40+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+20" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP09",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP09",
+      "localId": "DP09",
+      "name": "Torterra",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [389],
+      "hp": 160,
+      "types": ["Grass"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Forest Murmurs",
+          "effect": "Once during your turn (before your attack), if you have more Prize cards left than your opponent, you may choose 1 of your opponent's Benched Pok\u00e9mon and switch it with 1 of the Defending Pok\u00e9mon. This power can't be used if Torterra is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Grass", "Grass", "Grass", "Colorless"],
+          "name": "Vigorous Dash",
+          "effect": "Does 30 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) Torterra does 30 damage to itself.",
+          "damage": 100
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP10",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP10",
+      "localId": "DP10",
+      "name": "Infernape",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [392],
+      "hp": 120,
+      "types": ["Fire"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Burning Head",
+          "effect": "Once during your turn (before your attack), you may look at the top 3 cards of your deck, choose 1 of them, and put it into your hand. Discard the other 2 cards. This power can't be used if Infernape is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Fire", "Fire"],
+          "name": "Flare Up",
+          "effect": "Search your discard pile for 8 Fire Energy cards, show them to your opponent, and shuffle them into your deck. (This attack does nothing if you don't have 8 Fire Energy cards in your discard pile.)",
+          "damage": 150
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "+30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP11",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP11",
+      "localId": "DP11",
+      "name": "Empoleon",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [395],
+      "hp": 140,
+      "types": ["Water"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Supreme Command",
+          "effect": "Once during your turn (before your attack), you may choose up to 2 cards from your opponent's hand without looking and put them face down next to the Defending Pok\u00e9mon. (These cards are not in play or in your opponent's hand.) At the end of your opponent's next turn, return those cards to your opponent's hand. This power can't be used if Empoleon is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Water", "Water", "Water"],
+          "name": "Hydro Impact",
+          "effect": "Choose 1 of your opponent's Pok\u00e9mon. This attack does 80 damage to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) Empoleon can't attack during your next turn."
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP12",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP12",
+      "localId": "DP12",
+      "name": "Lucario",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [448],
+      "hp": 110,
+      "types": ["Fighting"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Stance",
+          "effect": "Once during your turn (before your attack), when you put Lucario LV.X from your hand onto your Active Lucario, you may use this power. Prevent all effects of an attack, including damage, done to Lucario during your opponent's next turn. (If Lucario is no longer your Active Pok\u00e9mon, this effect ends.)"
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Fighting", "Fighting", "Colorless"],
+          "name": "Close Combat",
+          "effect": "During your opponent's next turn, any damage done to Lucario by attacks is increased by 30 (after applying Weakness and Resistance).",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "dpp-DP13",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP13",
+      "localId": "DP13",
+      "name": "Buizel",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [418],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [{ "cost": ["Water"], "damage": "10+" }],
+      "weaknesses": [{ "type": "Lightning", "value": "+10" }],
+      "effect": "If Buizel has less Energy attached to it than the Defending Pok\u00e9mon, this attack does 10 damage plus 10 more damage.",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP14",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP14",
+      "localId": "DP14",
+      "name": "Chatot",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [441],
+      "hp": 60,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Me First", "effect": "Draw a card." },
+        {
+          "cost": ["Colorless"],
+          "name": "Tone-Deaf",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Confused.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+10" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP15",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP15",
+      "localId": "DP15",
+      "name": "Shinx",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [403],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Spark",
+          "effect": "Does 10 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+10" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP16",
+      "illustrator": "Sumiyoshi Kizuki",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP16",
+      "localId": "DP16",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Electro Recycle",
+          "effect": "Once during your turn (before your attack), if Pichu is anywhere under Pikachu, you may search your discard pile for a Lightning Energy card, show it to your opponent, and put it into your hand. This power can't be used if Pikachu is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "BikaBika",
+          "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+10" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP17",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP17",
+      "localId": "DP17",
+      "name": "Dialga",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [483],
+      "hp": 120,
+      "types": ["Metal"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Time Skip",
+          "effect": "Once during your turn (before your attack), you may have your opponent flip 2 coins. If both of them are heads, your turn ends. If both of them are tails, after your opponent draws a card at the beginning of his or her next turn, his or her turn ends. This power can't be used if Dialga is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Metal", "Metal", "Colorless", "Colorless"],
+          "name": "Metal Flash",
+          "effect": "During your next turn, Dialga can't use Metal Flash.",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP18",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP18",
+      "localId": "DP18",
+      "name": "Palkia",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [484],
+      "hp": 120,
+      "types": ["Water"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Restructure",
+          "effect": "Once during your turn (before your attack), you may have your opponent switch 1 of your Active Pok\u00e9mon with 1 of your Benched Pok\u00e9mon. Then, you switch 1 of the Defending Pok\u00e9mon with 1 of your opponent's Benched Pok\u00e9mon. This power can't be used if Palkia is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Water", "Water", "Water"],
+          "name": "Hydro Reflect",
+          "effect": "You may move all Energy cards attached to Palkia to your Benched Pok\u00e9mon in any way you like. (Ignore this effect if you don't have any Benched Pok\u00e9mon.)",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP19",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP19",
+      "localId": "DP19",
+      "name": "Darkrai",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [491],
+      "hp": 100,
+      "types": ["Darkness"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Dark Shadow",
+          "effect": "Each basic Darkness Energy card attached to your Darkness Pok\u00e9mon now has the effect \"If the Pok\u00e9mon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pok\u00e9mon (before applying Weakness and Resistance).\" You can't use more than 1 Dark Shadow Pok\u00e9-Body each turn."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Darkness", "Darkness", "Colorless"],
+          "name": "Endless Darkness",
+          "effect": "The Defending Pok\u00e9mon is now Asleep. Flip 2 coins instead of 1 between turns. If either of them is tails, the Defending Pok\u00e9mon is still Asleep. If both of them are tails, the Defending Pok\u00e9mon is Knocked Out.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP20",
+      "illustrator": "Hiroaki Ito",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP20",
+      "localId": "DP20",
+      "name": "Magmortar",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [467],
+      "hp": 100,
+      "types": ["Fire"],
+      "evolveFrom": "Magmar",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Smoke Bomb",
+          "effect": "If the Defending Pok\u00e9mon tries to attack during your opponent's next turn, your opponent flips a coin.  If tails, that attack does nothing.",
+          "damage": 30
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Flame Drum",
+          "effect": "If Magby isn't anywhere under Magmortar, discard 2 Energy cards from your hand. (If you can't discard 2 Energy cards from your hand, this attack does nothing.)",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "+30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP21",
+      "illustrator": "Daisuke Ito",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP21",
+      "localId": "DP21",
+      "name": "Raichu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [26],
+      "hp": 90,
+      "types": ["Lightning"],
+      "evolveFrom": "Pikachu",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "name": "Electromagnetic Induction",
+          "effect": "Search your deck for up to 2 Lightning Energy cards and attach them to 1 of your Pok\u00e9mon. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Explosive Thunder",
+          "effect": "Discard all basic Lightning Energy cards attached to Raichu. This attack does 30 damage times the number of Lightning Energy cards you discarded.",
+          "damage": "30x"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+20" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP22",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP22",
+      "localId": "DP22",
+      "name": "Mime Jr.",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [439],
+      "hp": 40,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Baby Evolution",
+          "effect": "Once during your turn (before your attack), you may put Mr. Mime from your hand onto Mime Jr. (this counts as evolving Mime Jr.) and remove all damage counters from Mime Jr.."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Mime",
+          "effect": "Shuffle your hand into your deck. Then, draw a number of cards equal to the number of cards in your opponent's hand."
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "+10" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP23",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP23",
+      "localId": "DP23",
+      "name": "Glameow",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [431],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Charm",
+          "effect": "During your opponent's next turn, any damage done by attacks from the Defending Pok\u00e9mon is reduced by 20 (before applying Weakness and Resistance)."
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Pose",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+10" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP24",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP24",
+      "localId": "DP24",
+      "name": "Darkrai",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [491],
+      "hp": 80,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water"],
+          "name": "Spacial Rend",
+          "effect": "Search your deck for a Stadium card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. If there is any Stadium card in play, discard it.",
+          "damage": 10
+        },
+        {
+          "cost": ["Metal", "Metal", "Metal"],
+          "name": "Roar of Time",
+          "effect": "Search your discard pile for 3 Pok\u00e9mon, show them to your opponent, and put them on top of your deck. Shuffle your deck afterward. (If you don't have 3 Pok\u00e9mon in your discard pile, this attack does nothing.)",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+20" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "dpp-DP25",
+      "illustrator": "Sumiyoshi Kizuki",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP25",
+      "localId": "DP25",
+      "name": "Tropical Wind",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP26",
+      "illustrator": "Kazuyuki Kano",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP26",
+      "localId": "DP26",
+      "name": "Dialga",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [483],
+      "hp": 90,
+      "types": ["Metal"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Metal"],
+          "name": "Time Bellow",
+          "effect": "Draw a card.",
+          "damage": 10
+        },
+        {
+          "cost": ["Metal", "Metal", "Colorless"],
+          "name": "Flash Cannon",
+          "effect": "You may return all Energy cards attached to Dialga to your hand. If you do, remove the highest Stage Evolution card from the Defending Pok\u00e9mon and shuffle that card into your opponent's deck.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+20" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP27",
+      "illustrator": "Daisuke Ito",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP27",
+      "localId": "DP27",
+      "name": "Palkia",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [484],
+      "hp": 90,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water"],
+          "name": "Spacial Rend",
+          "effect": "Search your deck for a Stadium card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. If there is any Stadium card in play, discard it.",
+          "damage": 10
+        },
+        {
+          "cost": ["Water", "Water", "Colorless"],
+          "name": "Transback",
+          "effect": "You may flip a coin. If heads, discard all Energy attached to Palkia and put the Defending Pok\u00e9mon and all cards attached to it on top of your opponent's deck. Your opponent shuffles his or her deck afterward.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP28",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP28",
+      "localId": "DP28",
+      "name": "Mewtwo",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 120,
+      "types": ["Psychic"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Psybarrier",
+          "effect": "Prevent all effects of attacks, including damage, done to Mewtwo by your opponent's Pok\u00e9mon that isn't an Evolved Pok\u00e9mon."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Psychic", "Colorless"],
+          "name": "Giga Burn",
+          "effect": "Discard all Energy attached to Mewtwo.",
+          "damage": 120
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP29",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP29",
+      "localId": "DP29",
+      "name": "Rhyperior",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [464],
+      "hp": 170,
+      "types": ["Fighting"],
+      "stage": "LEVEL-UP",
+      "attacks": [
+        {
+          "name": "Hard Crush",
+          "effect": "Discard the top 5 cards of your deck. This attack does 50 damage for each Energy card you discarded.",
+          "damage": "50x"
+        },
+        {
+          "cost": ["Fighting", "Fighting", "Colorless"],
+          "name": "Upthrow",
+          "effect": "Search your discard pile for all Fighting Energy cards, show them to your opponent, and shuffle them into your deck.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "resistances": [{ "type": "Lightning", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP30",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP30",
+      "localId": "DP30",
+      "name": "Regigigas",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [486],
+      "hp": 150,
+      "types": ["Colorless"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Sacrifice",
+          "effect": "Once during your turn (before your attack), you may choose 1 of your Pok\u00e9mon and that Pok\u00e9mon is Knocked Out. Then, search your discard pile for up to 2 basic Energy cards, attach them to Regigigas, and remove 8 damage counters from Regigigas. This power can't be used if Regigigas is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Water", "Fighting", "Metal", "Colorless"],
+          "name": "Giga Blaster",
+          "effect": "Discard the top card from your opponent's deck. Then, choose 1 card from your opponent's hand without looking and discard it. Regigigas can't use Giga Blaster during your next turn.",
+          "damage": 100
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP31",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP31",
+      "localId": "DP31",
+      "name": "Heatran",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [485],
+      "hp": 120,
+      "types": ["Fire"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Heat Metal",
+          "effect": "Your opponent can't remove the Special Condition Burned by evolving or devolving his or her Burned Pok\u00e9mon. (This also includes putting a Pok\u00e9mon Level-Up card onto the Burned Pok\u00e9mon.) Whenever your opponent flips a coin for the Special Condition Burned between turns, treat it as tails."
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP32",
+      "illustrator": "Kent Kanetsuna",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP32",
+      "localId": "DP32",
+      "name": "Magnezone",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [462],
+      "hp": 130,
+      "types": ["Metal"],
+      "evolveFrom": "Magneton",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Metal", "Colorless"],
+          "name": "Mirror Shot",
+          "effect": "If the Defending Pok\u00e9mon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing.",
+          "damage": 40
+        },
+        {
+          "cost": ["Lightning", "Metal", "Colorless", "Colorless"],
+          "name": "Magnet Slash",
+          "effect": "Discard all Lightning Energy attached to Magnezone.",
+          "damage": 100
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+30" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP33",
+      "illustrator": "Kent Kanetsuna",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP33",
+      "localId": "DP33",
+      "name": "Dusknoir",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [477],
+      "hp": 130,
+      "types": ["Psychic"],
+      "evolveFrom": "Dusclops",
+      "stage": "Stage2",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Dark Hide",
+          "effect": "Once during your turn (before your attack), you may flip a coin. If heads, look at your opponent's hand, choose a Pok\u00e9mon you find there, and put it on the bottom of his or her deck. This power can't be used if Dusknoir is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Psychic", "Colorless"],
+          "name": "Reaper Pulse",
+          "effect": "Move up to 2 damage counters from Dusknoir to 1 of your opponent's Benched Pok\u00e9mon.",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Darkness", "value": "+30" }],
+      "resistances": [{ "type": "Colorless", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP34",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP34",
+      "localId": "DP34",
+      "name": "Drifblim",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [426],
+      "hp": 80,
+      "types": ["Psychic"],
+      "evolveFrom": "Drifloon",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Wind Wave",
+          "effect": "Search your discard pile for up to 5 in any combination of Pok\u00e9mon and Supporter cards. Show them to your opponent and shuffle them into your deck."
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Psychic"],
+          "name": "Explosive Smoke",
+          "effect": "Does 10 damage to each Benched Pok\u00e9mon (both yours and your opponent's). (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Darkness", "value": "+20" }],
+      "resistances": [{ "type": "Colorless", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP35",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP35",
+      "localId": "DP35",
+      "name": "Porygon-Z",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [474],
+      "hp": 120,
+      "types": ["Colorless"],
+      "evolveFrom": "Porygon2",
+      "stage": "Stage2",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Install",
+          "effect": "As often as you like during your turn (before your attack), move a Technical Machine card attached to 1 of your Pok\u00e9mon to another of your Pok\u00e9mon. This power can't be used if Porygon-Z is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Learning",
+          "effect": "Search your deck for a Pok\u00e9mon LV.X that levels up from 1 of your Pok\u00e9mon and put it onto that Pok\u00e9mon. (This counts as leveling up that Pok\u00e9mon). Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Overload",
+          "effect": "Does 40 damage plus 20 more damage for each Technical Machine card attached to Porygon-Z.",
+          "damage": "40+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP36",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP36",
+      "localId": "DP36",
+      "name": "Gliscor",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [472],
+      "hp": 90,
+      "types": ["Fighting"],
+      "evolveFrom": "Gligar",
+      "stage": "Stage1",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Bind Eye",
+          "effect": "As long as Gliscor is your Active Pok\u00e9mon, your opponent can't remove any Special Conditions by evolving or devolving his or her Pok\u00e9mon. (This also includes putting a Pok\u00e9mon Level-Up card onto that Pok\u00e9mon.)"
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Cutting Turn",
+          "effect": "Flip a coin. If heads, put damage counters on the Defending Pok\u00e9mon until it is 10HP away from being Knocked Out. If you do, shuffle Gliscor and all cards attached to it into your deck."
+        },
+        {
+          "cost": ["Fighting"],
+          "name": "Friction Heat",
+          "effect": "The Defending Pok\u00e9mon is now Burned.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "+20" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP37",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP37",
+      "localId": "DP37",
+      "name": "Dialga",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [483],
+      "hp": 120,
+      "types": ["Metal"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Time Skip",
+          "effect": "Once during your turn (before your attack), you may have your opponent flip 2 coins. If both of them are heads, your turn ends. If both of them are tails, after your opponent draws a card at the beginning of his or her next turn, his or her turn ends. This power can't be used if Dialga is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Metal", "Metal", "Colorless", "Colorless"],
+          "name": "Metal Flash",
+          "effect": "During your next turn, Dialga can't use Metal Flash.",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP38",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP38",
+      "localId": "DP38",
+      "name": "Giratina",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [487],
+      "hp": 130,
+      "types": ["Psychic"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Invisible Tentacles",
+          "effect": "Whenever your opponent's Pok\u00e9mon tries to attack, your opponent discards 1 card from his or her hand. (If your opponent can't discard 1 card, your opponent's Pok\u00e9mon can't attack.) You can't use more than 1 Invisible Tentacles Pok\u00e9-Body each turn."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Psychic", "Colorless", "Colorless"],
+          "name": "Darkness Lost",
+          "effect": "This attack does 30 damage to each of your opponent's Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) If any of your opponent's Pok\u00e9mon would be Knocked Out by damage from this attack, put that Pok\u00e9mon and all cards attached to it in the Lost Zone instead of discarding it."
+        }
+      ],
+      "weaknesses": [{ "type": "Darkness", "value": "\u00d72" }],
+      "resistances": [{ "type": "Colorless", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP39",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP39",
+      "localId": "DP39",
+      "name": "Shaymin",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [492],
+      "hp": 110,
+      "types": ["Grass"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Revenge Seed",
+          "effect": "If any of your Grass Pok\u00e9mon were Knocked Out by damage from an opponent's attack during his or her last turn, each of Shaymin's attacks does 60 more damage to the Active Pok\u00e9mon (before applying Weakness and Resistance)."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Energy Flare",
+          "effect": "You may move any number of Energy cards attached to your Pok\u00e9mon to your other Pok\u00e9mon in any way you like.",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP40",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP40",
+      "localId": "DP40",
+      "name": "Regigigas",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [486],
+      "hp": 100,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Drag Off",
+          "effect": "Before doing damage, you may choose 1 of your opponent's Benched Pok\u00e9mon and switch it with 1 of the Defending Pok\u00e9mon.",
+          "damage": 30
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+          "name": "Giga Hammer",
+          "effect": "Regigigas can't use Giga Hammer during your next turn.",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP41",
+      "illustrator": "Ryota Saito",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP41",
+      "localId": "DP41",
+      "name": "Toxicroak G",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [454],
+      "hp": 90,
+      "types": ["Fighting"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Leap Away",
+          "effect": "Once during your turn (before your attack), if Toxicroak  is your Active Pok\u00e9mon, you may flip a coin. If heads, return Toxicroak  and all cards attached to it to your hand. This Power can't be used if Toxicroak  is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Poison Revenge",
+          "effect": "If any of your Pok\u00e9mon were Knocked Out by damage from an opponent's attack during his or her last turn, this attack does 20 damage plus 40 more damage and the Defending Pok\u00e9mon is now Poisoned.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP42",
+      "illustrator": "Makoto Imai",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP42",
+      "localId": "DP42",
+      "name": "Carnivine G",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [455],
+      "hp": 80,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Power Whip",
+          "effect": "Choose 1 of your opponent's Pok\u00e9mon. This attack does 10 damage for each Energy attached to Carnivine  to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        },
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Grass Knot",
+          "effect": "Does 20 damage plus 10 more damage for each Colorless Energy in the Defending Pok\u00e9mon's Retreat Cost (after applying effects to the Retreat Cost).",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Water", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP43",
+      "illustrator": "Ryota Saito",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP43",
+      "localId": "DP43",
+      "name": "Probopass G",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [476],
+      "hp": 90,
+      "types": ["Fighting"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Metal", "Colorless"],
+          "name": "Nose Unit",
+          "effect": "This attack does 20 damage to each of your opponent's Pok\u00e9mon that has any Pok\u00e9-Bodies. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        },
+        {
+          "cost": ["Metal", "Colorless", "Colorless", "Colorless"],
+          "name": "Loud Snort",
+          "effect": "Probopass 's Retreat Cost is 0 until the end of your next turn.",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP44",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP44",
+      "localId": "DP44",
+      "name": "Magnezone",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [462],
+      "hp": 130,
+      "types": ["Lightning"],
+      "evolveFrom": "Magneton",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Charge Beam",
+          "effect": "Search your discard pile for an Energy card and attach it to Magnezone.",
+          "damage": 30
+        },
+        {
+          "cost": ["Lightning", "Metal", "Colorless", "Colorless"],
+          "name": "Metallic Bolt",
+          "effect": "You may discard a Lightning Energy and a Metal Energy attached to Magnezone. If you do, this attack's base damage is 120 instead of 60.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+30" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP45",
+      "illustrator": "Wataru Kawahara",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP45",
+      "localId": "DP45",
+      "name": "Charizard G",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [6],
+      "hp": 120,
+      "types": ["Fire"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Call for Power",
+          "effect": "As often as you like during your turn (before your attack), you may move an Energy attached to 1 of your Pok\u00e9mon to Charizard . This power can't be used if Charizard  is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Fire", "Fire", "Colorless", "Colorless", "Colorless"],
+          "name": "Malevolent Fire",
+          "effect": "Flip a coin. If tails, discard all Energy attached to Charizard .",
+          "damage": 150
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP46",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP46",
+      "localId": "DP46",
+      "name": "Garchomp C",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [445],
+      "hp": 110,
+      "types": ["Colorless"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Healing Breath",
+          "effect": "Once during your turn (before your attack), when you put Garchomp  LV.X from your hand onto your Active Garchomp , you may remove all damage counters from each of your Pok\u00e9mon SP."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Dragon Rush",
+          "effect": "Discard 2 Energy attached to Garchomp . Choose 1 of your opponent's Pok\u00e9mon. This attack does 80 damage to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) Garchomp  can't use Dragon Rush during your next turn."
+        }
+      ],
+      "weaknesses": [{ "type": "Colorless", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP47",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP47",
+      "localId": "DP47",
+      "name": "Rayquaza C",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [384],
+      "hp": 120,
+      "types": ["Colorless"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Dragon Spirit",
+          "effect": "If Rayquaza  is your Active Pok\u00e9mon and is damaged but not Knocked Out by an opponent's attack, you may search your discard pile for an Energy card and attach it to Rayquaza ."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Water", "Psychic", "Fighting", "Colorless"],
+          "name": "Final Blowup",
+          "effect": "Discard all Energy attached to Rayquaza . Ignore this effect if you have no cards in your hand.",
+          "damage": 200
+        }
+      ],
+      "weaknesses": [{ "type": "Colorless", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "dpp-DP48",
+      "illustrator": "Sumiyoshi Kizuki",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP48",
+      "localId": "DP48",
+      "name": "Tropical Wind",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP49",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP49",
+      "localId": "DP49",
+      "name": "Dialga",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [483],
+      "hp": 100,
+      "types": ["Metal"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Metal"],
+          "name": "Time Call",
+          "effect": "Search your deck for a card that evolves from 1 of your Pok\u00e9mon and put it on that Pok\u00e9mon. (This counts as evolving that Pok\u00e9mon.) Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Metal", "Colorless", "Colorless"],
+          "name": "Time Wager",
+          "effect": "Flip 2 coins. If either of them is tails, this attack's base damage is 50 instead of 100.",
+          "damage": 100
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP50",
+      "illustrator": "Kunihiko Yuyama",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP50",
+      "localId": "DP50",
+      "name": "Arceus",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [493],
+      "hp": 90,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+          "name": "Judgment",
+          "effect": "Discard all Energy cards attached to Arceus and this attack does 10 damage to each of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP51",
+      "illustrator": "Wataru Kawahara",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP51",
+      "localId": "DP51",
+      "name": "Cresselia",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [488],
+      "hp": 90,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Lunar Aura",
+          "effect": "If you have Darkrai in play, remove 1 damage counter from Cresselia between turns."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Psychic", "Colorless"],
+          "name": "Lunar Flight",
+          "effect": "Does 80 damage minus 10 damage for each damage counter on Cresselia.",
+          "damage": "80-"
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP52",
+      "illustrator": "Wataru Kawahara",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP52",
+      "localId": "DP52",
+      "name": "Darkrai",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [491],
+      "hp": 90,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Darkness Aura",
+          "effect": "If you have Cresselia in play, each of Darkrai's attacks does 20 more damage to the Defending Pok\u00e9mon (before applying Weakness and Resistance)."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Darkness", "Darkness", "Colorless"],
+          "name": "Hypnoblast",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Asleep.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP53",
+      "illustrator": "Shizurow",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP53",
+      "localId": "DP53",
+      "name": "Arceus",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [493],
+      "hp": 120,
+      "types": ["Colorless"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Multitype",
+          "effect": "Arceus LV.X's type is the same type as its previous Level."
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "dpp-DP54",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP54",
+      "localId": "DP54",
+      "name": "Beginning Door",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "dpp-DP55",
+      "illustrator": "Yusuke Ishikawa",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP55",
+      "localId": "DP55",
+      "name": "Ultimate Zone",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "trainerType": "Stadium",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dpp-DP56",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/dp/dpp/DP56",
+      "localId": "DP56",
+      "name": "Arceus",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 56, "total": 56 },
+        "id": "dpp",
+        "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+        "name": "DP Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [493],
+      "hp": 120,
+      "types": ["Colorless"],
+      "stage": "LEVEL-UP",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Multitype",
+          "effect": "Arceus LV.X's type is the same type as its previous Level."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Grass", "Fire", "Colorless"],
+          "name": "Meteor Blast",
+          "effect": "Flip a coin. If tails, this attack's base damage is 50 instead of 100.",
+          "damage": 100
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2023-12-06T00:47:28+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    }
+  ],
+  "id": "dpp",
+  "legal": { "expanded": false, "standard": false },
+  "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
+  "name": "DP Black Star Promos",
+  "releaseDate": "2007-05-01",
+  "serie": { "id": "dp", "name": "Diamond & Pearl" },
+  "symbol": "https://assets.tcgdex.net/univ/dp/dpp/symbol",
+  "tcgOnline": "PR-DPP"
+}

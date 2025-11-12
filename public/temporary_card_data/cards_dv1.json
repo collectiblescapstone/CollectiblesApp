@@ -1,1 +1,1585 @@
-{"cardCount": {"firstEd": 0, "holo": 0, "normal": 0, "official": 20, "reverse": 0, "total": 21}, "cards": [{"category": "Pokemon", "id": "dv1-1", "illustrator": "Masakazu Fukuda", "image": "https://assets.tcgdex.net/en/bw/dv1/1", "localId": "1", "name": "Dratini", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [147], "hp": 40, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Grass", "Lightning"], "name": "Wrap", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.", "damage": 20}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 3.83, "low": 0.15, "trend": 2.92, "avg1": 6.29, "avg7": 3.79, "avg30": 2.72, "avg-holo": 3.5, "low-holo": 0.4, "trend-holo": 2.13, "avg1-holo": 3.5, "avg7-holo": 2.94, "avg30-holo": 1.8}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 1, "midPrice": 2.15, "highPrice": 6.58, "marketPrice": 2.38, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-2", "illustrator": "Naoki Saito", "image": "https://assets.tcgdex.net/en/bw/dv1/2", "localId": "2", "name": "Dratini", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [147], "hp": 40, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Grass"], "name": "Hypnotic Gaze", "effect": "The Defending Pok\u00e9mon is now Asleep."}, {"cost": ["Lightning"], "name": "Tail Whap", "damage": 10}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 3.83, "low": 0.15, "trend": 2.92, "avg1": 6.29, "avg7": 3.79, "avg30": 2.72, "avg-holo": 3.5, "low-holo": 0.4, "trend-holo": 2.13, "avg1-holo": 3.5, "avg7-holo": 2.94, "avg30-holo": 1.8}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 2.69, "midPrice": 4.91, "highPrice": 6.99, "marketPrice": 4.81, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-3", "illustrator": "Hajime Kusajima", "image": "https://assets.tcgdex.net/en/bw/dv1/3", "localId": "3", "name": "Dragonair", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [148], "hp": 70, "types": ["Dragon"], "evolveFrom": "Dratini", "stage": "Stage1", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Tail Whap", "damage": 20}, {"cost": ["Grass", "Lightning", "Colorless"], "name": "Dragon Pulse", "effect": "Discard the top card of your deck.", "damage": 70}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 4.24, "low": 0.35, "trend": 3.95, "avg1": 3, "avg7": 4.43, "avg30": 3.28, "avg-holo": 3, "low-holo": 0.4, "trend-holo": 2.43, "avg1-holo": 3, "avg7-holo": 2.2, "avg30-holo": 2.24}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 1.25, "midPrice": 3.17, "highPrice": 19.95, "marketPrice": 3.21, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-4", "illustrator": "Kagemaru Himeno", "image": "https://assets.tcgdex.net/en/bw/dv1/4", "localId": "4", "name": "Dragonair", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [148], "hp": 70, "types": ["Dragon"], "evolveFrom": "Dratini", "stage": "Stage1", "attacks": [{"cost": ["Grass"], "name": "Healing Melody", "effect": "Heal 10 damage from each of your Pok\u00e9mon."}, {"cost": ["Lightning", "Colorless"], "name": "Slam", "effect": "Flip 2 coins. This attack does 30 damage times the number of heads.", "damage": 30}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 4.24, "low": 0.35, "trend": 3.95, "avg1": 3, "avg7": 4.43, "avg30": 3.28, "avg-holo": 3, "low-holo": 0.4, "trend-holo": 2.43, "avg1-holo": 3, "avg7-holo": 2.2, "avg30-holo": 2.24}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 4.77, "midPrice": 6.31, "highPrice": 14.95, "marketPrice": 6.24, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-5", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/bw/dv1/5", "localId": "5", "name": "Dragonite", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [149], "hp": 150, "types": ["Dragon"], "evolveFrom": "Dragonair", "stage": "Stage2", "attacks": [{"cost": ["Lightning", "Colorless", "Colorless"], "name": "Hyper Beam", "effect": "Flip a coin. If heads, discard an Energy attached to the Defending Pok\u00e9mon.", "damage": 50}, {"cost": ["Grass", "Colorless", "Colorless", "Colorless"], "name": "Hurricane Tail", "effect": "Flip 4 coins. This attack does 60 damage times the number of heads.", "damage": 60}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 3, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 9.73, "low": 0.5, "trend": 9.15, "avg1": 6, "avg7": 6.71, "avg30": 6.57, "avg-holo": null, "low-holo": 1.5, "trend-holo": 2.8, "avg1-holo": 1.39, "avg7-holo": 3.53, "avg30-holo": 3.88}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 5.13, "midPrice": 14.44, "highPrice": 44.95, "marketPrice": 14.15, "directLowPrice": 19.99}}}}, {"category": "Pokemon", "id": "dv1-6", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/bw/dv1/6", "localId": "6", "name": "Bagon", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [371], "hp": 50, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Headbutt", "damage": 10}, {"cost": ["Fire", "Water"], "name": "Dragon Claw", "damage": 20}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.08, "low": 0.1, "trend": 1.42, "avg1": 0.97, "avg7": 1.73, "avg30": 1.4, "avg-holo": 0.75, "low-holo": 0.15, "trend-holo": 1.61, "avg1-holo": 1, "avg7-holo": 1.55, "avg30-holo": 1.12}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.65, "midPrice": 1.05, "highPrice": 46.17, "marketPrice": 1.16, "directLowPrice": 4.99}}}}, {"category": "Pokemon", "id": "dv1-7", "illustrator": "Akira Komayama", "image": "https://assets.tcgdex.net/en/bw/dv1/7", "localId": "7", "name": "Shelgon", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [372], "hp": 80, "types": ["Dragon"], "evolveFrom": "Bagon", "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Knock Away", "effect": "Flip a coin. If heads, this attack does 20 more damage.", "damage": 10}, {"cost": ["Fire", "Water", "Colorless"], "name": "Rollout", "damage": 50}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 3, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.94, "low": 0.15, "trend": 1.96, "avg1": 1.19, "avg7": 1.9, "avg30": 1.61, "avg-holo": null, "low-holo": 0.15, "trend-holo": 1.32, "avg1-holo": 0.45, "avg7-holo": 1.43, "avg30-holo": 1.27}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.59, "midPrice": 1.35, "highPrice": 3.98, "marketPrice": 1.5, "directLowPrice": 0.95}}}}, {"category": "Pokemon", "id": "dv1-8", "illustrator": "BERUBURI", "image": "https://assets.tcgdex.net/en/bw/dv1/8", "localId": "8", "name": "Salamence", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [373], "hp": 140, "types": ["Dragon"], "evolveFrom": "Shelgon", "stage": "Stage2", "abilities": [{"type": "Ability", "name": "Scornful Storm", "effect": "Once during your turn (before your attack), you may have your opponent discard cards from his or her hand until he or she has 4 cards left in his or her hand."}], "attacks": [{"cost": ["Fire", "Water", "Colorless", "Colorless"], "name": "Shred", "effect": "This attack's damage isn't affected by any effects on the Defending Pok\u00e9mon.", "damage": 90}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 3.47, "low": 0.49, "trend": 3.85, "avg1": 6.9, "avg7": 3.54, "avg30": 3.65, "avg-holo": 4.19, "low-holo": 0.7, "trend-holo": 2.81, "avg1-holo": 4.19, "avg7-holo": 2.7, "avg30-holo": 2.81}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 1.98, "midPrice": 4, "highPrice": 20, "marketPrice": 4.01, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-9", "illustrator": "Hideaki Hakozaki", "image": "https://assets.tcgdex.net/en/bw/dv1/9", "localId": "9", "name": "Latias", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [380], "hp": 100, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Energy Assist", "effect": "Attach a basic Energy card from your discard pile to 1 of your Benched Pok\u00e9mon."}, {"cost": ["Fire", "Psychic"], "name": "Sky Heal", "effect": "If Latios is on your Bench, heal 20 damage from this Pok\u00e9mon.", "damage": 40}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 6.94, "low": 0.3, "trend": 8.08, "avg1": 9.9, "avg7": 7.42, "avg30": 7, "avg-holo": 1.33, "low-holo": 0.5, "trend-holo": 5.07, "avg1-holo": 0.2, "avg7-holo": 3.69, "avg30-holo": 5.05}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 3.04, "midPrice": 4.77, "highPrice": 10.8, "marketPrice": 7.28, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-10", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/bw/dv1/10", "localId": "10", "name": "Latios", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [381], "hp": 100, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Water", "Colorless"], "name": "Sky Blade", "effect": "If Latias is on your Bench, this attack does 20 more damage.", "damage": 20}, {"cost": ["Psychic", "Colorless", "Colorless"], "name": "Speed Wing", "damage": 60}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 6.38, "low": 0.4, "trend": 6.78, "avg1": 7.99, "avg7": 6.91, "avg30": 5.55, "avg-holo": 4.32, "low-holo": 1.49, "trend-holo": 3.71, "avg1-holo": 8.5, "avg7-holo": 4.71, "avg30-holo": 4.61}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 3.97, "midPrice": 5.97, "highPrice": 19.95, "marketPrice": 6.26, "directLowPrice": 4.39}}}}, {"category": "Pokemon", "id": "dv1-11", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/bw/dv1/11", "localId": "11", "name": "Rayquaza", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [384], "hp": 120, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Lightning"], "name": "Dragon Pulse", "effect": "Discard the top 2 cards of your deck.", "damage": 40}, {"cost": ["Fire", "Lightning", "Colorless"], "name": "Shred", "effect": "This attack's damage isn't affected by any effects on the Defending Pok\u00e9mon.", "damage": 90}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 3, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 11.78, "low": 1.3, "trend": 12.55, "avg1": 4, "avg7": 12.4, "avg30": 12.54, "avg-holo": 10.38, "low-holo": 3, "trend-holo": 17.96, "avg1-holo": 7, "avg7-holo": 12.72, "avg30-holo": 13.22}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 15, "midPrice": 38.71, "highPrice": 70, "marketPrice": 27, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-12", "illustrator": "Mizue", "image": "https://assets.tcgdex.net/en/bw/dv1/12", "localId": "12", "name": "Axew", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [610], "hp": 40, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Fighting"], "name": "Signs of Evolution", "effect": "Flip a coin. If heads, search your deck for Fraxure, reveal it, and put it into your hand. Shuffle your deck afterward."}, {"cost": ["Metal"], "name": "Scratch", "damage": 10}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.77, "low": 0.1, "trend": 2.71, "avg1": 0.25, "avg7": 2.68, "avg30": 1.81, "avg-holo": null, "low-holo": 0.15, "trend-holo": 0.89, "avg1-holo": 0.32, "avg7-holo": 0.92, "avg30-holo": 1.17}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.5, "midPrice": 1.04, "highPrice": 2.44, "marketPrice": 1.29, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-13", "illustrator": "TOKIYA", "image": "https://assets.tcgdex.net/en/bw/dv1/13", "localId": "13", "name": "Axew", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [610], "hp": 50, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Fighting", "Metal"], "name": "Lunge", "effect": "Flip a coin. If tails, this attack does nothing.", "damage": 30}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.77, "low": 0.1, "trend": 2.71, "avg1": 0.25, "avg7": 2.68, "avg30": 1.81, "avg-holo": null, "low-holo": 0.15, "trend-holo": 0.89, "avg1-holo": 0.32, "avg7-holo": 0.92, "avg30-holo": 1.17}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.71, "midPrice": 1.34, "highPrice": 3, "marketPrice": 1.35, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-14", "illustrator": "Shin Nagasawa", "image": "https://assets.tcgdex.net/en/bw/dv1/14", "localId": "14", "name": "Fraxure", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [611], "hp": 70, "types": ["Dragon"], "evolveFrom": "Axew", "stage": "Stage1", "abilities": [{"type": "Ability", "name": "Grit", "effect": "If this Pok\u00e9mon is affected by a Special Condition, each of its attacks does 40 more damage (before applying Weakness and Resistance)."}], "attacks": [{"cost": ["Fighting", "Metal", "Colorless"], "name": "Dragon Claw", "damage": 60}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 1, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.31, "low": 0.15, "trend": 2.1, "avg1": 2.95, "avg7": 2.12, "avg30": 1.69, "avg-holo": null, "low-holo": 1, "trend-holo": 1.34, "avg1-holo": 2.5, "avg7-holo": 1.57, "avg30-holo": 1.27}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.65, "midPrice": 1.39, "highPrice": 4.04, "marketPrice": 1.55, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-15", "illustrator": "match", "image": "https://assets.tcgdex.net/en/bw/dv1/15", "localId": "15", "name": "Fraxure", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [611], "hp": 80, "types": ["Dragon"], "evolveFrom": "Axew", "stage": "Stage1", "attacks": [{"cost": ["Metal", "Colorless"], "name": "Scratch", "damage": 20}, {"cost": ["Fighting", "Colorless", "Colorless"], "name": "Sharp Fang", "damage": 40}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.31, "low": 0.15, "trend": 2.1, "avg1": 2.95, "avg7": 2.12, "avg30": 1.69, "avg-holo": null, "low-holo": 1, "trend-holo": 1.34, "avg1-holo": 2.5, "avg7-holo": 1.57, "avg30-holo": 1.27}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.74, "midPrice": 1.22, "highPrice": 3.56, "marketPrice": 1.25, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-16", "illustrator": "Eske Yoshinob", "image": "https://assets.tcgdex.net/en/bw/dv1/16", "localId": "16", "name": "Haxorus", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [612], "hp": 140, "types": ["Dragon"], "evolveFrom": "Fraxure", "stage": "Stage2", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Axe Slugger", "effect": "If the Defending Pok\u00e9mon is a Colorless Pok\u00e9mon, this attack does 60 more damage.", "damage": 60}, {"cost": ["Fighting", "Metal", "Colorless", "Colorless"], "name": "Dragon Pulse", "effect": "Discard the top card of your deck.", "damage": 100}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 13, "low": 0.29, "trend": 6.01, "avg1": 0.5, "avg7": 8.27, "avg30": 4.79, "avg-holo": 0.9, "low-holo": 0.93, "trend-holo": 4.11, "avg1-holo": 0.9, "avg7-holo": 3.47, "avg30-holo": 4.74}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 1.41, "midPrice": 3.03, "highPrice": 5, "marketPrice": 3.09, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-17", "illustrator": "kawayoo", "image": "https://assets.tcgdex.net/en/bw/dv1/17", "localId": "17", "name": "Druddigon", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [621], "hp": 110, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Tight Jaw", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.", "damage": 20}, {"cost": ["Fire", "Water", "Colorless"], "name": "Dragon Tail", "effect": "Flip 2 coins. This attack does 80 damage times the number of heads.", "damage": 80}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "retreat": 2, "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 10.93, "low": 0.4, "trend": 8.8, "avg1": 1.25, "avg7": 12.9, "avg30": 5.84, "avg-holo": 2.99, "low-holo": 0.96, "trend-holo": 4.18, "avg1-holo": 1.99, "avg7-holo": 4.42, "avg30-holo": 3.54}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 1.41, "midPrice": 2.2, "highPrice": 6, "marketPrice": 2.63, "directLowPrice": null}}}}, {"category": "Trainer", "id": "dv1-18", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/bw/dv1/18", "localId": "18", "name": "Exp. Share", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "trainerType": "Tool", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 2.54, "low": 0.2, "trend": 2.13, "avg1": 2.25, "avg7": 2.31, "avg30": 1.54, "avg-holo": 2.3, "low-holo": 0.25, "trend-holo": 1.65, "avg1-holo": 3.5, "avg7-holo": 1.83, "avg30-holo": 1.16}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.8, "midPrice": 1.42, "highPrice": 4.99, "marketPrice": 1.52, "directLowPrice": null}}}}, {"category": "Trainer", "id": "dv1-19", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/bw/dv1/19", "localId": "19", "name": "First Ticket", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "trainerType": "Item", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 1.49, "low": 0.3, "trend": 2.06, "avg1": 5.9, "avg7": 1.95, "avg30": 1.96, "avg-holo": null, "low-holo": 0.3, "trend-holo": 1.12, "avg1-holo": 1.4, "avg7-holo": 0.96, "avg30-holo": 1.18}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 0.3, "midPrice": 0.75, "highPrice": 5, "marketPrice": 0.63, "directLowPrice": null}}}}, {"category": "Trainer", "id": "dv1-20", "illustrator": "5ban Graphics", "image": "https://assets.tcgdex.net/en/bw/dv1/20", "localId": "20", "name": "Super Rod", "rarity": "Rare", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "trainerType": "Item", "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 4.7, "low": 0.35, "trend": 4.39, "avg1": 7.9, "avg7": 4.3, "avg30": 4.3, "avg-holo": 2.69, "low-holo": 1.99, "trend-holo": 3.14, "avg1-holo": 3.99, "avg7-holo": 3.3, "avg30-holo": 2.16}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 2.82, "midPrice": 7.78, "highPrice": 16.79, "marketPrice": 7.45, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "dv1-21", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/bw/dv1/21", "localId": "21", "name": "Kyurem", "rarity": "Common", "set": {"cardCount": {"official": 20, "total": 21}, "id": "dv1", "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [646], "hp": 130, "types": ["Dragon"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Dragon Claw", "damage": 60}, {"cost": ["Water", "Psychic", "Colorless", "Colorless"], "name": "Blizzard", "effect": "Does 10 damage to each of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 90}], "weaknesses": [{"type": "Dragon", "value": "\u00d72"}], "legal": {"standard": false, "expanded": true}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2025-10-15T00:44:12.000Z", "unit": "EUR", "avg": 39.99, "low": 27, "trend": 55.44, "avg1": 39.99, "avg7": 51.35, "avg30": 45.13, "avg-holo": 24.99, "low-holo": 34.99, "trend-holo": 46.46, "avg1-holo": 24.99, "avg7-holo": 45.98, "avg30-holo": 37.45}, "tcgplayer": {"updated": "2025-10-15T20:07:04.000Z", "unit": "USD", "holofoil": {"lowPrice": 48, "midPrice": 65.5, "highPrice": 199.99, "marketPrice": 56.37, "directLowPrice": null}}}}], "id": "dv1", "legal": {"expanded": true, "standard": false}, "logo": "https://assets.tcgdex.net/en/bw/dv1/logo", "name": "Dragon Vault", "releaseDate": "2012-10-05", "serie": {"id": "bw", "name": "Black & White"}, "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol", "tcgOnline": "DRV", "abbreviation": {"official": "DRV"}}
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 20,
+    "reverse": 0,
+    "total": 21
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "dv1-1",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/1",
+      "localId": "1",
+      "name": "Dratini",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [147],
+      "hp": 40,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass", "Lightning"],
+          "name": "Wrap",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.83,
+          "low": 0.15,
+          "trend": 2.92,
+          "avg1": 6.29,
+          "avg7": 3.79,
+          "avg30": 2.72,
+          "avg-holo": 3.5,
+          "low-holo": 0.4,
+          "trend-holo": 2.13,
+          "avg1-holo": 3.5,
+          "avg7-holo": 2.94,
+          "avg30-holo": 1.8
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1,
+            "midPrice": 2.15,
+            "highPrice": 6.58,
+            "marketPrice": 2.38,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-2",
+      "illustrator": "Naoki Saito",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/2",
+      "localId": "2",
+      "name": "Dratini",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [147],
+      "hp": 40,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Hypnotic Gaze",
+          "effect": "The Defending Pok\u00e9mon is now Asleep."
+        },
+        { "cost": ["Lightning"], "name": "Tail Whap", "damage": 10 }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.83,
+          "low": 0.15,
+          "trend": 2.92,
+          "avg1": 6.29,
+          "avg7": 3.79,
+          "avg30": 2.72,
+          "avg-holo": 3.5,
+          "low-holo": 0.4,
+          "trend-holo": 2.13,
+          "avg1-holo": 3.5,
+          "avg7-holo": 2.94,
+          "avg30-holo": 1.8
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.69,
+            "midPrice": 4.91,
+            "highPrice": 6.99,
+            "marketPrice": 4.81,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-3",
+      "illustrator": "Hajime Kusajima",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/3",
+      "localId": "3",
+      "name": "Dragonair",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [148],
+      "hp": 70,
+      "types": ["Dragon"],
+      "evolveFrom": "Dratini",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Tail Whap",
+          "damage": 20
+        },
+        {
+          "cost": ["Grass", "Lightning", "Colorless"],
+          "name": "Dragon Pulse",
+          "effect": "Discard the top card of your deck.",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 4.24,
+          "low": 0.35,
+          "trend": 3.95,
+          "avg1": 3,
+          "avg7": 4.43,
+          "avg30": 3.28,
+          "avg-holo": 3,
+          "low-holo": 0.4,
+          "trend-holo": 2.43,
+          "avg1-holo": 3,
+          "avg7-holo": 2.2,
+          "avg30-holo": 2.24
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.25,
+            "midPrice": 3.17,
+            "highPrice": 19.95,
+            "marketPrice": 3.21,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-4",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/4",
+      "localId": "4",
+      "name": "Dragonair",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [148],
+      "hp": 70,
+      "types": ["Dragon"],
+      "evolveFrom": "Dratini",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Healing Melody",
+          "effect": "Heal 10 damage from each of your Pok\u00e9mon."
+        },
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Slam",
+          "effect": "Flip 2 coins. This attack does 30 damage times the number of heads.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 4.24,
+          "low": 0.35,
+          "trend": 3.95,
+          "avg1": 3,
+          "avg7": 4.43,
+          "avg30": 3.28,
+          "avg-holo": 3,
+          "low-holo": 0.4,
+          "trend-holo": 2.43,
+          "avg1-holo": 3,
+          "avg7-holo": 2.2,
+          "avg30-holo": 2.24
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4.77,
+            "midPrice": 6.31,
+            "highPrice": 14.95,
+            "marketPrice": 6.24,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-5",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/5",
+      "localId": "5",
+      "name": "Dragonite",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [149],
+      "hp": 150,
+      "types": ["Dragon"],
+      "evolveFrom": "Dragonair",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Hyper Beam",
+          "effect": "Flip a coin. If heads, discard an Energy attached to the Defending Pok\u00e9mon.",
+          "damage": 50
+        },
+        {
+          "cost": ["Grass", "Colorless", "Colorless", "Colorless"],
+          "name": "Hurricane Tail",
+          "effect": "Flip 4 coins. This attack does 60 damage times the number of heads.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 9.73,
+          "low": 0.5,
+          "trend": 9.15,
+          "avg1": 6,
+          "avg7": 6.71,
+          "avg30": 6.57,
+          "avg-holo": null,
+          "low-holo": 1.5,
+          "trend-holo": 2.8,
+          "avg1-holo": 1.39,
+          "avg7-holo": 3.53,
+          "avg30-holo": 3.88
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 5.13,
+            "midPrice": 14.44,
+            "highPrice": 44.95,
+            "marketPrice": 14.15,
+            "directLowPrice": 19.99
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-6",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/6",
+      "localId": "6",
+      "name": "Bagon",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [371],
+      "hp": 50,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Headbutt", "damage": 10 },
+        { "cost": ["Fire", "Water"], "name": "Dragon Claw", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.08,
+          "low": 0.1,
+          "trend": 1.42,
+          "avg1": 0.97,
+          "avg7": 1.73,
+          "avg30": 1.4,
+          "avg-holo": 0.75,
+          "low-holo": 0.15,
+          "trend-holo": 1.61,
+          "avg1-holo": 1,
+          "avg7-holo": 1.55,
+          "avg30-holo": 1.12
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.65,
+            "midPrice": 1.05,
+            "highPrice": 46.17,
+            "marketPrice": 1.16,
+            "directLowPrice": 4.99
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-7",
+      "illustrator": "Akira Komayama",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/7",
+      "localId": "7",
+      "name": "Shelgon",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [372],
+      "hp": 80,
+      "types": ["Dragon"],
+      "evolveFrom": "Bagon",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Knock Away",
+          "effect": "Flip a coin. If heads, this attack does 20 more damage.",
+          "damage": 10
+        },
+        {
+          "cost": ["Fire", "Water", "Colorless"],
+          "name": "Rollout",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.94,
+          "low": 0.15,
+          "trend": 1.96,
+          "avg1": 1.19,
+          "avg7": 1.9,
+          "avg30": 1.61,
+          "avg-holo": null,
+          "low-holo": 0.15,
+          "trend-holo": 1.32,
+          "avg1-holo": 0.45,
+          "avg7-holo": 1.43,
+          "avg30-holo": 1.27
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.59,
+            "midPrice": 1.35,
+            "highPrice": 3.98,
+            "marketPrice": 1.5,
+            "directLowPrice": 0.95
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-8",
+      "illustrator": "BERUBURI",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/8",
+      "localId": "8",
+      "name": "Salamence",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [373],
+      "hp": 140,
+      "types": ["Dragon"],
+      "evolveFrom": "Shelgon",
+      "stage": "Stage2",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Scornful Storm",
+          "effect": "Once during your turn (before your attack), you may have your opponent discard cards from his or her hand until he or she has 4 cards left in his or her hand."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Fire", "Water", "Colorless", "Colorless"],
+          "name": "Shred",
+          "effect": "This attack's damage isn't affected by any effects on the Defending Pok\u00e9mon.",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.47,
+          "low": 0.49,
+          "trend": 3.85,
+          "avg1": 6.9,
+          "avg7": 3.54,
+          "avg30": 3.65,
+          "avg-holo": 4.19,
+          "low-holo": 0.7,
+          "trend-holo": 2.81,
+          "avg1-holo": 4.19,
+          "avg7-holo": 2.7,
+          "avg30-holo": 2.81
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.98,
+            "midPrice": 4,
+            "highPrice": 20,
+            "marketPrice": 4.01,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-9",
+      "illustrator": "Hideaki Hakozaki",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/9",
+      "localId": "9",
+      "name": "Latias",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [380],
+      "hp": 100,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Energy Assist",
+          "effect": "Attach a basic Energy card from your discard pile to 1 of your Benched Pok\u00e9mon."
+        },
+        {
+          "cost": ["Fire", "Psychic"],
+          "name": "Sky Heal",
+          "effect": "If Latios is on your Bench, heal 20 damage from this Pok\u00e9mon.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 6.94,
+          "low": 0.3,
+          "trend": 8.08,
+          "avg1": 9.9,
+          "avg7": 7.42,
+          "avg30": 7,
+          "avg-holo": 1.33,
+          "low-holo": 0.5,
+          "trend-holo": 5.07,
+          "avg1-holo": 0.2,
+          "avg7-holo": 3.69,
+          "avg30-holo": 5.05
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3.04,
+            "midPrice": 4.77,
+            "highPrice": 10.8,
+            "marketPrice": 7.28,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-10",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/10",
+      "localId": "10",
+      "name": "Latios",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [381],
+      "hp": 100,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water", "Colorless"],
+          "name": "Sky Blade",
+          "effect": "If Latias is on your Bench, this attack does 20 more damage.",
+          "damage": 20
+        },
+        {
+          "cost": ["Psychic", "Colorless", "Colorless"],
+          "name": "Speed Wing",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 6.38,
+          "low": 0.4,
+          "trend": 6.78,
+          "avg1": 7.99,
+          "avg7": 6.91,
+          "avg30": 5.55,
+          "avg-holo": 4.32,
+          "low-holo": 1.49,
+          "trend-holo": 3.71,
+          "avg1-holo": 8.5,
+          "avg7-holo": 4.71,
+          "avg30-holo": 4.61
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3.97,
+            "midPrice": 5.97,
+            "highPrice": 19.95,
+            "marketPrice": 6.26,
+            "directLowPrice": 4.39
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-11",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/11",
+      "localId": "11",
+      "name": "Rayquaza",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [384],
+      "hp": 120,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Dragon Pulse",
+          "effect": "Discard the top 2 cards of your deck.",
+          "damage": 40
+        },
+        {
+          "cost": ["Fire", "Lightning", "Colorless"],
+          "name": "Shred",
+          "effect": "This attack's damage isn't affected by any effects on the Defending Pok\u00e9mon.",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 11.78,
+          "low": 1.3,
+          "trend": 12.55,
+          "avg1": 4,
+          "avg7": 12.4,
+          "avg30": 12.54,
+          "avg-holo": 10.38,
+          "low-holo": 3,
+          "trend-holo": 17.96,
+          "avg1-holo": 7,
+          "avg7-holo": 12.72,
+          "avg30-holo": 13.22
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 15,
+            "midPrice": 38.71,
+            "highPrice": 70,
+            "marketPrice": 27,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-12",
+      "illustrator": "Mizue",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/12",
+      "localId": "12",
+      "name": "Axew",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [610],
+      "hp": 40,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fighting"],
+          "name": "Signs of Evolution",
+          "effect": "Flip a coin. If heads, search your deck for Fraxure, reveal it, and put it into your hand. Shuffle your deck afterward."
+        },
+        { "cost": ["Metal"], "name": "Scratch", "damage": 10 }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.77,
+          "low": 0.1,
+          "trend": 2.71,
+          "avg1": 0.25,
+          "avg7": 2.68,
+          "avg30": 1.81,
+          "avg-holo": null,
+          "low-holo": 0.15,
+          "trend-holo": 0.89,
+          "avg1-holo": 0.32,
+          "avg7-holo": 0.92,
+          "avg30-holo": 1.17
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.5,
+            "midPrice": 1.04,
+            "highPrice": 2.44,
+            "marketPrice": 1.29,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-13",
+      "illustrator": "TOKIYA",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/13",
+      "localId": "13",
+      "name": "Axew",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [610],
+      "hp": 50,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fighting", "Metal"],
+          "name": "Lunge",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.77,
+          "low": 0.1,
+          "trend": 2.71,
+          "avg1": 0.25,
+          "avg7": 2.68,
+          "avg30": 1.81,
+          "avg-holo": null,
+          "low-holo": 0.15,
+          "trend-holo": 0.89,
+          "avg1-holo": 0.32,
+          "avg7-holo": 0.92,
+          "avg30-holo": 1.17
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.71,
+            "midPrice": 1.34,
+            "highPrice": 3,
+            "marketPrice": 1.35,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-14",
+      "illustrator": "Shin Nagasawa",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/14",
+      "localId": "14",
+      "name": "Fraxure",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [611],
+      "hp": 70,
+      "types": ["Dragon"],
+      "evolveFrom": "Axew",
+      "stage": "Stage1",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Grit",
+          "effect": "If this Pok\u00e9mon is affected by a Special Condition, each of its attacks does 40 more damage (before applying Weakness and Resistance)."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Fighting", "Metal", "Colorless"],
+          "name": "Dragon Claw",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.31,
+          "low": 0.15,
+          "trend": 2.1,
+          "avg1": 2.95,
+          "avg7": 2.12,
+          "avg30": 1.69,
+          "avg-holo": null,
+          "low-holo": 1,
+          "trend-holo": 1.34,
+          "avg1-holo": 2.5,
+          "avg7-holo": 1.57,
+          "avg30-holo": 1.27
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.65,
+            "midPrice": 1.39,
+            "highPrice": 4.04,
+            "marketPrice": 1.55,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-15",
+      "illustrator": "match",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/15",
+      "localId": "15",
+      "name": "Fraxure",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [611],
+      "hp": 80,
+      "types": ["Dragon"],
+      "evolveFrom": "Axew",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Metal", "Colorless"], "name": "Scratch", "damage": 20 },
+        {
+          "cost": ["Fighting", "Colorless", "Colorless"],
+          "name": "Sharp Fang",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.31,
+          "low": 0.15,
+          "trend": 2.1,
+          "avg1": 2.95,
+          "avg7": 2.12,
+          "avg30": 1.69,
+          "avg-holo": null,
+          "low-holo": 1,
+          "trend-holo": 1.34,
+          "avg1-holo": 2.5,
+          "avg7-holo": 1.57,
+          "avg30-holo": 1.27
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.74,
+            "midPrice": 1.22,
+            "highPrice": 3.56,
+            "marketPrice": 1.25,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-16",
+      "illustrator": "Eske Yoshinob",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/16",
+      "localId": "16",
+      "name": "Haxorus",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [612],
+      "hp": 140,
+      "types": ["Dragon"],
+      "evolveFrom": "Fraxure",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Axe Slugger",
+          "effect": "If the Defending Pok\u00e9mon is a Colorless Pok\u00e9mon, this attack does 60 more damage.",
+          "damage": 60
+        },
+        {
+          "cost": ["Fighting", "Metal", "Colorless", "Colorless"],
+          "name": "Dragon Pulse",
+          "effect": "Discard the top card of your deck.",
+          "damage": 100
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 13,
+          "low": 0.29,
+          "trend": 6.01,
+          "avg1": 0.5,
+          "avg7": 8.27,
+          "avg30": 4.79,
+          "avg-holo": 0.9,
+          "low-holo": 0.93,
+          "trend-holo": 4.11,
+          "avg1-holo": 0.9,
+          "avg7-holo": 3.47,
+          "avg30-holo": 4.74
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.41,
+            "midPrice": 3.03,
+            "highPrice": 5,
+            "marketPrice": 3.09,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-17",
+      "illustrator": "kawayoo",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/17",
+      "localId": "17",
+      "name": "Druddigon",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [621],
+      "hp": 110,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Tight Jaw",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        },
+        {
+          "cost": ["Fire", "Water", "Colorless"],
+          "name": "Dragon Tail",
+          "effect": "Flip 2 coins. This attack does 80 damage times the number of heads.",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 10.93,
+          "low": 0.4,
+          "trend": 8.8,
+          "avg1": 1.25,
+          "avg7": 12.9,
+          "avg30": 5.84,
+          "avg-holo": 2.99,
+          "low-holo": 0.96,
+          "trend-holo": 4.18,
+          "avg1-holo": 1.99,
+          "avg7-holo": 4.42,
+          "avg30-holo": 3.54
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.41,
+            "midPrice": 2.2,
+            "highPrice": 6,
+            "marketPrice": 2.63,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "dv1-18",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/18",
+      "localId": "18",
+      "name": "Exp. Share",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "trainerType": "Tool",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.54,
+          "low": 0.2,
+          "trend": 2.13,
+          "avg1": 2.25,
+          "avg7": 2.31,
+          "avg30": 1.54,
+          "avg-holo": 2.3,
+          "low-holo": 0.25,
+          "trend-holo": 1.65,
+          "avg1-holo": 3.5,
+          "avg7-holo": 1.83,
+          "avg30-holo": 1.16
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.8,
+            "midPrice": 1.42,
+            "highPrice": 4.99,
+            "marketPrice": 1.52,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "dv1-19",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/19",
+      "localId": "19",
+      "name": "First Ticket",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.49,
+          "low": 0.3,
+          "trend": 2.06,
+          "avg1": 5.9,
+          "avg7": 1.95,
+          "avg30": 1.96,
+          "avg-holo": null,
+          "low-holo": 0.3,
+          "trend-holo": 1.12,
+          "avg1-holo": 1.4,
+          "avg7-holo": 0.96,
+          "avg30-holo": 1.18
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.3,
+            "midPrice": 0.75,
+            "highPrice": 5,
+            "marketPrice": 0.63,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "dv1-20",
+      "illustrator": "5ban Graphics",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/20",
+      "localId": "20",
+      "name": "Super Rod",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 4.7,
+          "low": 0.35,
+          "trend": 4.39,
+          "avg1": 7.9,
+          "avg7": 4.3,
+          "avg30": 4.3,
+          "avg-holo": 2.69,
+          "low-holo": 1.99,
+          "trend-holo": 3.14,
+          "avg1-holo": 3.99,
+          "avg7-holo": 3.3,
+          "avg30-holo": 2.16
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.82,
+            "midPrice": 7.78,
+            "highPrice": 16.79,
+            "marketPrice": 7.45,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "dv1-21",
+      "illustrator": "Ryo Ueda",
+      "image": "https://assets.tcgdex.net/en/bw/dv1/21",
+      "localId": "21",
+      "name": "Kyurem",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 20, "total": 21 },
+        "id": "dv1",
+        "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+        "name": "Dragon Vault",
+        "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [646],
+      "hp": 130,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Dragon Claw",
+          "damage": 60
+        },
+        {
+          "cost": ["Water", "Psychic", "Colorless", "Colorless"],
+          "name": "Blizzard",
+          "effect": "Does 10 damage to each of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Dragon", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 39.99,
+          "low": 27,
+          "trend": 55.44,
+          "avg1": 39.99,
+          "avg7": 51.35,
+          "avg30": 45.13,
+          "avg-holo": 24.99,
+          "low-holo": 34.99,
+          "trend-holo": 46.46,
+          "avg1-holo": 24.99,
+          "avg7-holo": 45.98,
+          "avg30-holo": 37.45
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 48,
+            "midPrice": 65.5,
+            "highPrice": 199.99,
+            "marketPrice": 56.37,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "dv1",
+  "legal": { "expanded": true, "standard": false },
+  "logo": "https://assets.tcgdex.net/en/bw/dv1/logo",
+  "name": "Dragon Vault",
+  "releaseDate": "2012-10-05",
+  "serie": { "id": "bw", "name": "Black & White" },
+  "symbol": "https://assets.tcgdex.net/univ/bw/dv1/symbol",
+  "tcgOnline": "DRV",
+  "abbreviation": { "official": "DRV" }
+}

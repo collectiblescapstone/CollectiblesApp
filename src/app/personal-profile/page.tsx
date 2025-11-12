@@ -8,23 +8,16 @@ import Showcase from '@/components/user-profile/Showcase';
 import TradeList from '@/components/user-profile/TradeList';
 import WishList from '@/components/user-profile/WishList';
 
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Icon,
-  Button
-} from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Icon, Button } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 
 const PersonalProfileScreen: React.FC = () => {
-    const router = useRouter();
+  const router = useRouter();
 
-    const editpress = () => {
-        router.push('/personal-profile/edit-profile');
-    };
+  const editpress = () => {
+    router.push('/personal-profile/edit-profile');
+  };
 
   return (
     <Box bg="white" minH="100vh" color="black">
@@ -37,28 +30,20 @@ const PersonalProfileScreen: React.FC = () => {
         position="relative"
         mt={16}
       />
-      <Button 
-        onClick={editpress} 
-        position="absolute" 
-        top={28} 
-        left={2} 
-        zIndex={1} 
+      <Button
+        onClick={editpress}
+        position="absolute"
+        top={28}
+        left={2}
+        zIndex={1}
         size="sm"
         rounded="sm"
         variant="solid"
-        >
-            <FiEdit3 />
-      </Button>
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        gap={2}
       >
-        <Avatar.Root
-          boxSize="100px"
-          shape="rounded"
-          mt={-20}
-        >
+        <FiEdit3 />
+      </Button>
+      <Flex flexDirection="column" alignItems="center" gap={2}>
+        <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
           <Avatar.Fallback> SA </Avatar.Fallback>
         </Avatar.Root>
@@ -76,8 +61,15 @@ const PersonalProfileScreen: React.FC = () => {
             Toronto, ON
           </Text>
         </Flex>
-        <Text fontSize="sm" color="gray.800" textAlign="center" maxW="400px" px={4}>
-          Hi there! My name is Sandra and this is the bio I have written! Isn’t the guy who made this page so talented?
+        <Text
+          fontSize="sm"
+          color="gray.800"
+          textAlign="center"
+          maxW="400px"
+          px={4}
+        >
+          Hi there! My name is Sandra and this is the bio I have written! Isn’t
+          the guy who made this page so talented?
         </Text>
         <Flex mt={1}>
           <SocialLinks />

@@ -7,6 +7,7 @@
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -14,17 +15,60 @@ generator client {
 }
 
 model User {
-  id    Int    @id @default(autoincrement())
-  email String @unique
-  name  String?
-  posts Post[]
+  id        String   @id @db.Uuid
+  username  String?  @unique
+  email     String   @unique
+  collection  CollectionEntry[]
+  wishlist    WishlistEntry[]
 }
 
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  Int?
+model Card {
+  id              String   @id
+  name            String
+  category        String
+  illustrator     String
+  rarity          String
+  variants        String[]
+  dexId           Int[]
+  
+  image_url String
+
+  setId           String
+  set             Set      @relation(fields: [setId], references: [id])
+}
+
+model Set {
+  id     String @id
+  name   String
+  series String
+  cards  Card[] 
+}
+
+model CollectionEntry {
+  id          String   @id @default(cuid())
+  
+  userId      String   @db.Uuid
+  user        User     @relation(fields: [userId], references: [id])
+  cardId      String
+  card        Card     @relation(fields: [cardId], references: [id])
+
+  // Your app-specific data!
+  quantity    Int      @default(1)
+  condition   String?  
+  createdAt   DateTime @default(now())
+
+  @@unique([userId, cardId]) 
+}
+
+model WishlistEntry {
+  id          String   @id @default(cuid())
+  
+  userId      String   @db.Uuid
+  user        User     @relation(fields: [userId], references: [id])
+  cardId      String
+  card        Card     @relation(fields: [cardId], references: [id])
+
+  createdAt   DateTime @default(now())
+
+  @@unique([userId, cardId])
 }

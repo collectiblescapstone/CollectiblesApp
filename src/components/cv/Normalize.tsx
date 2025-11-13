@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { useRef, useEffect } from 'react';
 import { Box, Grid, Text } from '@chakra-ui/react';
 import cvReadyPromise from '@techstark/opencv-js';
 import { CARD_WIDTH_PX, CARD_HEIGHT_PX } from '@/utils/constants';
@@ -11,13 +11,13 @@ interface NormalizeProps {
 }
 
 export default function Normalize({ image }: NormalizeProps) {
-  const originalImageRef = React.useRef<HTMLCanvasElement | null>(null);
-  const greyImageRef = React.useRef<HTMLCanvasElement | null>(null);
-  const BlurredImageRef = React.useRef<HTMLCanvasElement | null>(null);
-  const EdgeImageRef = React.useRef<HTMLCanvasElement | null>(null);
-  const ContoursImageRef = React.useRef<HTMLCanvasElement | null>(null);
-  const BiggestContourImageRef = React.useRef<HTMLCanvasElement | null>(null);
-  const ProcessedImageRef = React.useRef<HTMLCanvasElement | null>(null);
+  const originalImageRef = useRef<HTMLCanvasElement | null>(null);
+  const greyImageRef = useRef<HTMLCanvasElement | null>(null);
+  const BlurredImageRef = useRef<HTMLCanvasElement | null>(null);
+  const EdgeImageRef = useRef<HTMLCanvasElement | null>(null);
+  const ContoursImageRef = useRef<HTMLCanvasElement | null>(null);
+  const BiggestContourImageRef = useRef<HTMLCanvasElement | null>(null);
+  const ProcessedImageRef = useRef<HTMLCanvasElement | null>(null);
 
   const processImage = async (src: string) => {
     // load image from src URL
@@ -149,7 +149,7 @@ export default function Normalize({ image }: NormalizeProps) {
     cvimg.delete();
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (image) {
       processImage(image);
     }

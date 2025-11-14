@@ -14,7 +14,7 @@ import { FiMapPin } from 'react-icons/fi';
 
 const ProfileScreen: React.FC = () => {
   return (
-    <Box bg="white" minH="100vh" color="black">
+    <Box bg="white" minH="100vh" color="black" mb={4}>
       <Box
         bgImage="url('/user-profile/banner_temp.jpg')"
         bgSize="cover"
@@ -22,7 +22,6 @@ const ProfileScreen: React.FC = () => {
         width="100%"
         height="110px"
         position="relative"
-        mt={16}
       />
       <AccountOptions />
       <Flex flexDirection="column" alignItems="center" gap={2}>

@@ -20,7 +20,7 @@ const TradeScreen: React.FC = () => {
   const cardsnum = cards.length;
   return (
     <Box bg="white" minH="100vh" color="black">
-      <Flex flexDirection="column" gap={6} mt={16}>
+      <Flex flexDirection="column" gap={6} mt={4}>
         <Flex
           flexDirection="row"
           justifyContent="center"

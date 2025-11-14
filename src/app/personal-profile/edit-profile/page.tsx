@@ -67,7 +67,6 @@ const PersonalProfileScreen: React.FC = () => {
         width="100%"
         height="110px"
         position="relative"
-        mt={16}
         bgColor="blackAlpha.600"
         backgroundBlendMode="darken"
       />

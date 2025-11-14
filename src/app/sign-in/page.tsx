@@ -8,7 +8,7 @@ export default function SignInPage() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      minHeight="dvh"
+      minHeight="inherit"
       minWidth="dvw"
     >
       <AuthForm type="signin" />

@@ -1,0 +1,547 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 10,
+    "reverse": 0,
+    "total": 10
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latia-1",
+      "illustrator": "Ken Sugimori",
+      "localId": "1",
+      "name": "Bagon",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [371],
+      "hp": 40,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Headbutt", "damage": 10 },
+        { "cost": ["Fire", "Colorless"], "name": "Flare", "damage": 20 }
+      ],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.27,
+            "highPrice": 3.32,
+            "marketPrice": 0.28,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latia-2",
+      "illustrator": "Kouki Saitou",
+      "localId": "2",
+      "name": "Combusken",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [256],
+      "hp": 70,
+      "types": ["Fire"],
+      "evolveFrom": "Torchic",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Fire"], "name": "Flare", "damage": 20 },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Double Kick",
+          "effect": "Flip 2 coins. This attack does 40 damage times the number of heads.",
+          "damage": "40\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.19,
+            "midPrice": 0.44,
+            "highPrice": 2.99,
+            "marketPrice": 0.5,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latia-3",
+      "illustrator": "Midori Harada",
+      "localId": "3",
+      "name": "Delcatty",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [301],
+      "hp": 80,
+      "types": ["Colorless"],
+      "evolveFrom": "Skitty",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless", "Colorless"], "name": "Scratch", "damage": 30 },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Ultra Energy Source",
+          "effect": "Does 10 damage times the number of basic Energy cards attached to all of the Active Pok\u00e9mon (both yours and your opponent\u2019s).",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.16,
+            "midPrice": 0.3,
+            "highPrice": 4.72,
+            "marketPrice": 0.3,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latia-4",
+      "illustrator": "Nakaoka",
+      "localId": "4",
+      "name": "Latias",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [380],
+      "hp": 70,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire"],
+          "name": "Dragon Dew",
+          "effect": "Remove 1 damage counter from 1 of your Pok\u00e9mon.",
+          "damage": 10
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Heat Blast",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.07,
+            "midPrice": 3.98,
+            "highPrice": 10,
+            "marketPrice": 5.71,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latia-5",
+      "illustrator": "Yuka Morii",
+      "localId": "5",
+      "name": "Numel",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [322],
+      "hp": 40,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire"],
+          "name": "Firebreathing",
+          "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage.",
+          "damage": "10+"
+        },
+        { "cost": ["Colorless", "Colorless"], "name": "Tackle", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.29,
+            "highPrice": 1.49,
+            "marketPrice": 0.24,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latia-6",
+      "illustrator": "Atsuko Nishida",
+      "localId": "6",
+      "name": "Skitty",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [300],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Tackle", "damage": 10 },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Lunge",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.31,
+            "highPrice": 9.75,
+            "marketPrice": 0.41,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latia-7",
+      "illustrator": "Hironobu Yoshida",
+      "localId": "7",
+      "name": "Torchic",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [255],
+      "hp": 50,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Firebreathing",
+          "effect": "Flip a coin. If heads, this attack does 20 damage plus 20 more damage.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.09,
+            "midPrice": 0.28,
+            "highPrice": 4.72,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-ex-latia-8",
+      "illustrator": "Keiji Kinebuchi",
+      "localId": "8",
+      "name": "Potion",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Remove 2 damage counters from 1 of your Pok\u00e9mon (remove 1 damage counter if that Pok\u00e9mon has only 1).",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.25,
+            "highPrice": 1.49,
+            "marketPrice": 0.24,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-ex-latia-9",
+      "illustrator": "Kai Ishikawa",
+      "localId": "9",
+      "name": "Energy Search",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward.",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.07,
+            "midPrice": 0.25,
+            "highPrice": 1.49,
+            "marketPrice": 0.21,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-ex-latia-10",
+      "illustrator": "",
+      "localId": "10",
+      "name": "Fire Energy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latia",
+        "name": "EX trainer Kit (Latias)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.25,
+            "highPrice": 1.49,
+            "marketPrice": 0.21,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "tk-ex-latia",
+  "legal": { "expanded": false, "standard": false },
+  "name": "EX trainer Kit (Latias)",
+  "releaseDate": "2004-07-01",
+  "serie": { "id": "tk", "name": "Trainer kits" },
+  "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol",
+  "abbreviation": { "official": "TK1A" }
+}

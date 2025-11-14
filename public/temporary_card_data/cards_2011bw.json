@@ -1,0 +1,596 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 10,
+    "normal": 1,
+    "official": 12,
+    "reverse": 0,
+    "total": 12
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "2011bw-1",
+      "illustrator": "Ken Sugimori",
+      "localId": "1",
+      "name": "Snivy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "It is very intelligent and calm. Being exposed to lots of sunlight makes its movements swifter.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Slam",
+          "effect": "Flip 2 coins. This attack does 20 damage times the number of heads.",
+          "damage": "20\u00d7"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.59,
+            "midPrice": 3.82,
+            "highPrice": 9.99,
+            "marketPrice": 4.35,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-2",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "2",
+      "name": "Maractus",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 80,
+      "types": ["Grass"],
+      "description": "It uses an up-tempo song and dance to drive away the bird Pok\u00e9mon that prey on its flower seeds.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Mega Drain",
+          "effect": "Heal 20 damage from this Pok\u00e9mon.",
+          "damage": 20
+        },
+        {
+          "name": "Pin Missile",
+          "effect": "Flip 4 coins. This attack does 20 damage times the number of heads.",
+          "damage": "20\u00d7"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.35,
+            "midPrice": 5.45,
+            "highPrice": 14.99,
+            "marketPrice": 5.68,
+            "directLowPrice": 2.86
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-3",
+      "illustrator": "Ken Sugimori",
+      "localId": "3",
+      "name": "Tepig",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "hp": 70,
+      "types": ["Fire"],
+      "description": "It blows fire through its nose. When it catches a cold, the fire becomes pitch-black smoke instead.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Ember",
+          "effect": "Discard an Energy attached to this Pok\u00e9mon.",
+          "damage": 30
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.5,
+            "midPrice": 3.8,
+            "highPrice": 6.58,
+            "marketPrice": 5.12,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-4",
+      "illustrator": "Ken Sugimori",
+      "localId": "4",
+      "name": "Oshawott",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Water Pulse",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Asleep.",
+          "damage": 20
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3,
+            "midPrice": 5.71,
+            "highPrice": 14.99,
+            "marketPrice": 4.64,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-5",
+      "illustrator": "sui",
+      "localId": "5",
+      "name": "Alomomola",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 100,
+      "types": ["Water"],
+      "description": "Floating in the open sea is how they live. When they find a wounded Pok\u00e9mon, they embrace it and bring it to shore.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Pound", "damage": 20 },
+        { "name": "Wave Splash", "damage": 60 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.82,
+            "midPrice": 3.2,
+            "highPrice": 9.99,
+            "marketPrice": 3.53,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-6",
+      "illustrator": "Ken Sugimori",
+      "localId": "6",
+      "name": "Blitzle",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 60,
+      "types": ["Lightning"],
+      "description": "Its mane shines when it discharges electricity. They use their flashing manes to communicate with one another.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 20 more damage.",
+          "damage": "10+"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.01,
+            "midPrice": 3.4,
+            "highPrice": 9.99,
+            "marketPrice": 3.72,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-7",
+      "illustrator": "Ken Sugimori",
+      "localId": "7",
+      "name": "Munna",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "hp": 60,
+      "types": ["Psychic"],
+      "description": "It eats the dreams of people and Pok\u00e9mon. When it eats a pleasant dream, it expels pink-colored mist.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Yawn",
+          "effect": "The Defending Pok\u00e9mon is now Asleep."
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.5,
+            "midPrice": 1.96,
+            "highPrice": 14.99,
+            "marketPrice": 3.42,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-8",
+      "illustrator": "Ken Sugimori",
+      "localId": "8",
+      "name": "Sandile",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 70,
+      "types": ["Fighting"],
+      "description": "It moves along below the sand\u2019s surface, except for its nose and eyes. A dark membrane shields its eyes from the sun.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Sand Tomb",
+          "effect": "The Defending Pok\u00e9mon can\u2019t retreat during your opponent\u2019s next turn.",
+          "damage": 30
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.55,
+            "midPrice": 2.71,
+            "highPrice": 14.99,
+            "marketPrice": 2.92,
+            "directLowPrice": 1.47
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-9",
+      "illustrator": "Ken Sugimori",
+      "localId": "9",
+      "name": "Zorua",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 50,
+      "types": ["Darkness"],
+      "description": "It changes into the forms of others to surprise them. Apparently, it often transforms into a silent child.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Scratch", "damage": 10 },
+        {
+          "name": "Fury Swipes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.16,
+            "midPrice": 5.5,
+            "highPrice": 19.98,
+            "marketPrice": 6.98,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-10",
+      "illustrator": "Ken Sugimori",
+      "localId": "10",
+      "name": "Klink",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 50,
+      "types": ["Metal"],
+      "description": "The two minigears that mesh together are predetermined. Each will rebound from other minigears without meshing.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Charge Beam",
+          "effect": "Flip a coin. If heads, attach an Energy card from your discard pile to this Pok\u00e9mon.",
+          "damage": 10
+        },
+        { "name": "Irongrip", "damage": 20 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.79,
+            "midPrice": 1.48,
+            "highPrice": 16.45,
+            "marketPrice": 3.09,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-11",
+      "illustrator": "Ken Sugimori",
+      "localId": "11",
+      "name": "Pidove",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 40,
+      "types": ["Colorless"],
+      "description": "These Pok\u00e9mon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Growl",
+          "effect": "During your opponent\u2019s next turn, any damage done by attacks from the Defending Pok\u00e9mon is reduced by 20 (before applying Weakness and Resistance)."
+        },
+        { "name": "Gust", "damage": 10 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1,
+            "midPrice": 2.47,
+            "highPrice": 14.99,
+            "marketPrice": 2.71,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2011bw-12",
+      "illustrator": "MAHOU",
+      "localId": "12",
+      "name": "Audino",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2011bw",
+        "name": "Macdonald's Collection 2011"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "hp": 80,
+      "types": ["Colorless"],
+      "description": "It touches others with the feelers on its ears, using the sound of their heartbeats to tell how they are feeling.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Double Slap",
+          "effect": "Flip 2 coins. This attack does 30 damage times the number of heads.",
+          "damage": "30\u00d7"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.33,
+            "midPrice": 2.34,
+            "highPrice": 9.99,
+            "marketPrice": 2.34,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "2011bw",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Macdonald's Collection 2011",
+  "releaseDate": "2011-06-17",
+  "serie": { "id": "mc", "name": "McDonald's Collection" },
+  "abbreviation": { "official": "MCD11" }
+}

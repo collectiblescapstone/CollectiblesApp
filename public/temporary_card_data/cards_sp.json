@@ -1,0 +1,17 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 10,
+    "reverse": 0,
+    "total": 10
+  },
+  "cards": [],
+  "id": "sp",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Sample",
+  "releaseDate": "2002-08-01",
+  "serie": { "id": "ecard", "name": "E-Card" },
+  "symbol": "https://assets.tcgdex.net/univ/ecard/sp/symbol"
+}

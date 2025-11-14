@@ -1,0 +1,2469 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 53,
+    "reverse": 0,
+    "total": 53
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "basep-1",
+      "illustrator": "Keiji Kinebuchi",
+      "image": "https://assets.tcgdex.net/en/base/basep/1",
+      "localId": "1",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Growl",
+          "effect": "If the Defending Pok\u00e9mon attacks Pikachu during your opponent's next turn, any damage done by the attack is reduced by 10 (after applying Weakness and Resistance). (Benching either Pok\u00e9mon ends this effect.)"
+        },
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Thundershock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2024-08-25T02:45:45+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-2",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/2",
+      "localId": "2",
+      "name": "Electabuzz",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [125],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Light Screen",
+          "effect": "Whenever an attack does damage to Electabuzz (after applying Weakness and Resistance) during your opponent's next turn, that attack only does half the damage to Electabuzz (rounded down to the nearest 10). (Any other effects still happen.)"
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if tails, this attack does 10 damage.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-3",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/3",
+      "localId": "3",
+      "name": "Mewtwo",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 70,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Energy Absorption",
+          "effect": "Choose up to 2 Energy cards from your discard pile and attach them to Mewtwo."
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Colorless"],
+          "name": "Psyburn",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-4",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/4",
+      "localId": "4",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Recharge",
+          "effect": "Search your deck for a Energy card and attach it to Pikachu. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Lightning"],
+          "name": "Thunderbolt",
+          "effect": "Discard all Energy cards attached to Pikachu in order to use this attack.",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2024-08-25T02:45:45+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-5",
+      "illustrator": "Toshinao Aoki",
+      "image": "https://assets.tcgdex.net/en/base/basep/5",
+      "localId": "5",
+      "name": "Dragonite",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [149],
+      "hp": 90,
+      "types": ["Colorless"],
+      "evolveFrom": "Dragonair",
+      "stage": "Stage2",
+      "abilities": [
+        {
+          "type": "Pokemon Power",
+          "name": "Special Delivery",
+          "effect": "Once during your turn (before your attack), you may draw a card. If you do, choose a card from your hand and put it on top of your deck. This power can't be used if Dragonite is Asleep, Confused, or Paralyzed."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Supersonic Flight",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 60
+        }
+      ],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-6",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/6",
+      "localId": "6",
+      "name": "Arcanine",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [59],
+      "hp": 70,
+      "types": ["Fire"],
+      "evolveFrom": "Growlithe",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if tails, this attack does 10 damage.",
+          "damage": "10+"
+        },
+        {
+          "cost": ["Fire", "Fire"],
+          "name": "Flames of Rage",
+          "effect": "Discard 2 Energy cards attached to Arcanine in order to use this attack. This attack does 40 damage plus 10 more damage for each damage counter on Arcanine.",
+          "damage": "40+"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-7",
+      "illustrator": "Keiji Kinebuchi",
+      "image": "https://assets.tcgdex.net/en/base/basep/7",
+      "localId": "7",
+      "name": "Jigglypuff",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [39],
+      "hp": 70,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "First Aid",
+          "effect": "Remove 1 damage counter from Jigglypuff."
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Double-Edge",
+          "effect": "Jigglypuff does 20 damage to itself.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-8",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/8",
+      "localId": "8",
+      "name": "Mew",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [151],
+      "hp": 50,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Psywave",
+          "effect": "Does 10 damage times the number of Energy cards attached to the Defending Pok\u00e9mon.",
+          "damage": "10\u00d7"
+        },
+        {
+          "cost": ["Psychic", "Psychic"],
+          "name": "Devolution Beam",
+          "effect": "Choose an Evolved Pok\u00e9mon (your own or your opponent's). Return the highest Stage Evolution card on that Pok\u00e9mon to its player's hand. That Pok\u00e9mon is no longer Asleep, Confused, Paralyzed, Poisoned, or anything else that might be the result of an attack (just as if you had evolved it)."
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-9",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/9",
+      "localId": "9",
+      "name": "Mew",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [151],
+      "hp": 50,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Psywave",
+          "effect": "Does 10 damage times the number of Energy cards attached to the Defending Pok\u00e9mon.",
+          "damage": "10\u00d7"
+        },
+        {
+          "cost": ["Psychic", "Psychic"],
+          "name": "Devolution Beam",
+          "effect": "Choose an Evolved Pok\u00e9mon (your own or your opponent's). Return the highest Stage Evolution card on that Pok\u00e9mon to its player's hand. That Pok\u00e9mon is no longer Asleep, Confused, Paralyzed, Poisoned, or anything else that might be the result of an attack (just as if you had evolved it)."
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-10",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/base/basep/10",
+      "localId": "10",
+      "name": "Meowth",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [52],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Cat Punch",
+          "effect": "Flip a coin. If heads, this attack does 20 damage. If tails and if your opponent has any Benched Pok\u00e9mon, he or she chooses 1 of them and this attack does 20 damage to it. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-11",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/base/basep/11",
+      "localId": "11",
+      "name": "Eevee",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [133],
+      "hp": 30,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Chain Reaction",
+          "effect": "This power can only be used when a Pok\u00e9mon evolves. Search your deck for a card that evolves from Eevee and attach it to Eevee. This counts as evolving Eevee. Shuffle your deck afterward. This power can't be used if Eevee is Asleep, Confused, or Paralyzed."
+        }
+      ],
+      "attacks": [{ "cost": ["Colorless"], "name": "Bite", "damage": 20 }],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-12",
+      "illustrator": "Christopher Rush",
+      "image": "https://assets.tcgdex.net/en/base/basep/12",
+      "localId": "12",
+      "name": "Mewtwo",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 60,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Energy Control",
+          "effect": "Flip a coin. If heads, choose a basic Energy card attached to 1 of your opponent's Pok\u00e9mon and attach it to another of your opponent's Pok\u00e9mon of your choice."
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Psychic"],
+          "name": "Telekinesis",
+          "effect": "Choose 1 of your opponent's Pok\u00e9mon. This attack does 30 damage to that Pok\u00e9mon. Don't apply Weakness and Resistance for this attack. (Any other effects that would happen after applying Weakness and Resistance still happen.)",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-13",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/13",
+      "localId": "13",
+      "name": "Venusaur",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [3],
+      "hp": 100,
+      "types": ["Grass"],
+      "evolveFrom": "Ivysaur",
+      "stage": "Stage2",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Solar Power",
+          "effect": "Once during your turn (before your attack), you may use this power. Your Active Pok\u00e9mon and the Defending Pok\u00e9mon are no longer Asleep, Confused, Paralyzed, or Poisoned. This power can't be used if Venusaur is Asleep, Confused, or Paralyzed."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Grass", "Grass", "Grass", "Grass"],
+          "name": "Mega Drain",
+          "effect": "Remove a number of damage counters from Venusaur equal to half the damage done to the Defending Pok\u00e9mon (after applying Weakness and Resistance) (rounded up to the nearest 10). If Venusaur has fewer damage counters than that, remove all of them.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-14",
+      "illustrator": "Benimaru Itoh",
+      "image": "https://assets.tcgdex.net/en/base/basep/14",
+      "localId": "14",
+      "name": "Mewtwo",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 70,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Energy Absorption",
+          "effect": "Choose up to 2 Energy cards from your discard pile and attach them to Mewtwo."
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Colorless"],
+          "name": "Psyburn",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-15",
+      "illustrator": "Hiromichi Sugiyama",
+      "image": "https://assets.tcgdex.net/en/base/basep/15",
+      "localId": "15",
+      "name": "Cool Porygon",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [137],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Texture Magic",
+          "effect": "You may change Cool Porygon's Resistance to a type of your choice other than Colorless. If the Defending Pok\u00e9mon has a Weakness, you may change it to a type of your choice other than Colorless. (Benching either Pok\u00e9mon ends the effect on that Pok\u00e9mon.)"
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "3-D Attack",
+          "effect": "Flip 3 coins. This attack does 20 damage times the number of heads.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "basep-16",
+      "illustrator": "Sumiyoshi Kizuki",
+      "image": "https://assets.tcgdex.net/en/base/basep/16",
+      "localId": "16",
+      "name": "Computer Error",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-17",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/17",
+      "localId": "17",
+      "name": "Dark Persian",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [53],
+      "hp": 60,
+      "types": ["Colorless"],
+      "evolveFrom": "Meowth",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Tempt",
+          "effect": "If your opponent has any Benched Pok\u00e9mon, flip a coin. If heads, choose 1 of your opponent's Benched Pok\u00e9mon and switch it with the Defending Pok\u00e9mon."
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Poison Claws",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Poisoned."
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-18",
+      "illustrator": "Kunihiko Yuyama",
+      "image": "https://assets.tcgdex.net/en/base/basep/18",
+      "localId": "18",
+      "name": "Team Rocket's Meowth",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [52],
+      "hp": 40,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Miraculous Comeback",
+          "effect": "Flip a number of coins equal to the total number of Pok\u00e9mon in play. This attack does 10 damage times the number of heads. Then, Team Rocket's Meowth does 10 damage times the number of tails to itself.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-19",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/base/basep/19",
+      "localId": "19",
+      "name": "Sabrina's Abra",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [63],
+      "hp": 40,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Pound", "damage": 10 },
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Synchronize",
+          "effect": "This attack can't be used unless Sabrina's Abra and the Defending Pok\u00e9mon have the same number of Energy cards attached to them.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-20",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/base/basep/20",
+      "localId": "20",
+      "name": "Psyduck",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [54],
+      "hp": 50,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Headache",
+          "effect": "Your opponent can't play Trainer cards during his or her next turn."
+        },
+        {
+          "cost": ["Water"],
+          "name": "Fury Swipes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-21",
+      "illustrator": "Toshinao Aoki",
+      "image": "https://assets.tcgdex.net/en/base/basep/21",
+      "localId": "21",
+      "name": "Moltres",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [146],
+      "hp": 70,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire", "Fire", "Fire"],
+          "name": "Hyper Flame",
+          "effect": "Flip a coin. If heads, discard 1 Energy card attached to Moltres. If tails, discard all Energy cards attached to Moltres. If you can't discard Energy cards, this attack does nothing.",
+          "damage": 60
+        }
+      ],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-22",
+      "illustrator": "Toshinao Aoki",
+      "image": "https://assets.tcgdex.net/en/base/basep/22",
+      "localId": "22",
+      "name": "Articuno",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [144],
+      "hp": 70,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water", "Water", "Water"],
+          "name": "Diamond Dust",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed, and this attack does 10 damage to each of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 20
+        }
+      ],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-23",
+      "illustrator": "Toshinao Aoki",
+      "image": "https://assets.tcgdex.net/en/base/basep/23",
+      "localId": "23",
+      "name": "Zapdos",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [145],
+      "hp": 70,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Lightning", "Lightning"],
+          "name": "Lightning Burn",
+          "effect": "Flip a coin. If heads, and if your opponent has any Benched Pok\u00e9mon, choose 1 of them. This attack does 30 damage to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.) If tails, Zapdos does 30 damage to itself.",
+          "damage": 30
+        }
+      ],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-24",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/base/basep/24",
+      "localId": "24",
+      "name": "___________'s Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Birthday Surprise",
+          "effect": "If it's not your birthday, this attack does 30 damage. If it is your birthday, flip a coin. If heads, this attack does 30 damage plus 50 more damage; if tails, this attack does 30 damage.",
+          "damage": "30+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2024-08-25T02:45:45+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-25",
+      "illustrator": "Toshinao Aoki",
+      "image": "https://assets.tcgdex.net/en/base/basep/25",
+      "localId": "25",
+      "name": "Flying Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 40,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Thundershock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 10
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Fly",
+          "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to Flying Pikachu; if tails, this attack does nothing (not even damage).",
+          "damage": 30
+        }
+      ],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-26",
+      "illustrator": "Gakuji Nomoto",
+      "image": "https://assets.tcgdex.net/en/base/basep/26",
+      "localId": "26",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 40,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Scratch", "damage": 10 },
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Thunderbolt",
+          "effect": "Discard all Energy cards attached to Pikachu in order to use this attack.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-27",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/base/basep/27",
+      "localId": "27",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 30,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Thundershock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 10
+        },
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Agility",
+          "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to Pikachu.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-28",
+      "illustrator": "Toshinao Aoki",
+      "image": "https://assets.tcgdex.net/en/base/basep/28",
+      "localId": "28",
+      "name": "Surfing Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [{ "cost": ["Water", "Water"], "name": "Surf", "damage": 30 }],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-29",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/29",
+      "localId": "29",
+      "name": "Marill",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [183],
+      "hp": 50,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water", "Water"],
+          "name": "Water Gun",
+          "effect": "Does 20 damage plus 10 more damage for each Energy attached to Marill but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-30",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/30",
+      "localId": "30",
+      "name": "Togepi",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [175],
+      "hp": 30,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Snivel",
+          "effect": "If the Defending Pok\u00e9mon attacks Togepi during your opponent's next turn, any damage done to Togepi is reduced by 20 (before applying Weakness and Resistance). (Benching either Pok\u00e9mon ends this effect.)"
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Mini-Metronome",
+          "effect": "Flip a coin. If heads, choose 1 of the Defending Pok\u00e9mon's attacks. Mini-Metronome copies that attack except for its Energy cost. (You must still do anything else in order to use that attack.) (No matter what type the Defending Pok\u00e9mon is, Togepi's type is still .) Togepi performs that attack."
+        }
+      ],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-31",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/31",
+      "localId": "31",
+      "name": "Cleffa",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [173],
+      "hp": 30,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Eek", "effect": "Draw 2 cards" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-32",
+      "illustrator": "Tomokazu Komiya",
+      "image": "https://assets.tcgdex.net/en/base/basep/32",
+      "localId": "32",
+      "name": "Smeargle",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [235],
+      "hp": 40,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Paint",
+          "effect": "Flip a coin. If heads, choose a type (other than colorless) and put a Coloring counter on the Defending Pok\u00e9mon. That Pok\u00e9mon is now the type you choose. If it already had a Coloring counter, remove the old one. If tails, this attack does nothing."
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-33",
+      "illustrator": "Hironobu Yoshida",
+      "image": "https://assets.tcgdex.net/en/base/basep/33",
+      "localId": "33",
+      "name": "Scizor",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [212],
+      "hp": 70,
+      "types": ["Metal"],
+      "evolveFrom": "Scyther",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Leer",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon can't attack Scizor during your opponent's next turn. (Benching either Pok\u00e9mon ends this effect.)"
+        },
+        {
+          "cost": ["Metal", "Colorless", "Colorless"],
+          "name": "Metal Pincer",
+          "effect": "Flip a coin until you get tails. This attack does 30 damage plus 10 more damage for each heads.",
+          "damage": "30+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Grass", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-34",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/34",
+      "localId": "34",
+      "name": "Entei",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [244],
+      "hp": 80,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Bolt",
+          "effect": "Whenever your opponent's attack damages Entei, unless that attack Knocks Out Entei, flip a coin. If heads, shuffle Entei and all cards attached to it into your deck. This power can't be used if Entei is already Asleep, Confused, or Paralyzed when it is damaged."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Fire", "Fire", "Fire"],
+          "name": "Protective Flame",
+          "effect": "During your opponent's next turn, prevent all effects of attacks, including damage, done to your Benched Pok\u00e9mon.",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-35",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/35",
+      "localId": "35",
+      "name": "Pichu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [172],
+      "hp": 30,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Let's Play!",
+          "effect": "Search your deck for a Baby Pok\u00e9mon card and put it onto your Bench. Shuffle your deck afterward. (You can't use this attack if your Bench is full.)"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-36",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/base/basep/36",
+      "localId": "36",
+      "name": "Igglybuff",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [174],
+      "hp": 30,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Good Night Song",
+          "effect": "The Defending Pok\u00e9mon is now Asleep."
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-37",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/base/basep/37",
+      "localId": "37",
+      "name": "Hitmontop",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [237],
+      "hp": 60,
+      "types": ["Fighting"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fighting", "Fighting"],
+          "name": "Repeating Kick",
+          "effect": "Flip a coin until you get tails. This attack does 20 damage times the number of heads.",
+          "damage": "20\u00d7"
+        },
+        {
+          "cost": ["Fighting", "Fighting", "Colorless"],
+          "name": "Rapid Spin",
+          "effect": "If your opponent has any Benched Pok\u00e9mon, he or she chooses 1 of them and switches it with his or her Active Pok\u00e9mon, then, if you have any Benched Pok\u00e9mon, you switch 1 of them with your Active Pok\u00e9mon. (Do the damage before switching the Pok\u00e9mon.)",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-38",
+      "illustrator": "Hideki Kazama",
+      "image": "https://assets.tcgdex.net/en/base/basep/38",
+      "localId": "38",
+      "name": "Unown [J]",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [201],
+      "hp": 40,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Pokemon Power",
+          "name": "[Join]",
+          "effect": "Once during your turn (before you attack), if you have Unown J, Unown O, Unown I, and Unown N on your Bench, you may search your deck for a Basic Pok\u00e9mon or Evolution Pok\u00e9mon card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
+        }
+      ],
+      "attacks": [
+        { "cost": ["Psychic"], "name": "Hidden Power", "damage": 10 }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-39",
+      "illustrator": "Shin-ichi Yoshida",
+      "image": "https://assets.tcgdex.net/en/base/basep/39",
+      "localId": "39",
+      "name": "Misdreavus",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [200],
+      "hp": 50,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Pain Split",
+          "effect": "Put 1 damage counter on the Defending Pok\u00e9mon for each damage counter on Misdreavus."
+        },
+        {
+          "cost": ["Psychic", "Psychic"],
+          "name": "Confuse Ray",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Confused.",
+          "damage": 10
+        }
+      ],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-11-12T17:07:41+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "basep-40",
+      "image": "https://assets.tcgdex.net/en/base/basep/40",
+      "localId": "40",
+      "name": "Pok\u00e9mon Center",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "basep-41",
+      "image": "https://assets.tcgdex.net/en/base/basep/41",
+      "localId": "41",
+      "name": "Lucky Stadium",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "basep-42",
+      "illustrator": "Keiji Kinebuchi",
+      "image": "https://assets.tcgdex.net/en/base/basep/42",
+      "localId": "42",
+      "name": "Pok\u00e9mon Tower",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-43",
+      "illustrator": "Tomokazu Komiya",
+      "image": "https://assets.tcgdex.net/en/base/basep/43",
+      "localId": "43",
+      "name": "Machamp",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [68],
+      "hp": 90,
+      "types": ["Fighting"],
+      "evolveFrom": "Machoke",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Fighting", "Fighting"],
+          "name": "Seething Anger",
+          "effect": "Flip a number of coins equal to the number of damage counters on Machamp. This attack does 20 damage plus 10 more damage for each heads.",
+          "damage": 20
+        },
+        {
+          "cost": ["Fighting", "Fighting", "Colorless", "Colorless"],
+          "name": "Fling",
+          "effect": "If your opponent has any Benched Pok\u00e9mon, he or she chooses 1 of them and switches it with the Defending Pok\u00e9mon. (Do the damage before switching the Pok\u00e9mon.)",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-44",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/base/basep/44",
+      "localId": "44",
+      "name": "Magmar",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [126],
+      "hp": 60,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire"],
+          "name": "Burning Fire",
+          "effect": "When you use this attack, you may discard any number of Energy cards attached to your Pok\u00e9mon in play. This attack does 10 damage plus 10 more damage for each Energy card you discarded in this way.",
+          "damage": 10
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Magma Punch",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-45",
+      "illustrator": "Hironobu Yoshida",
+      "image": "https://assets.tcgdex.net/en/base/basep/45",
+      "localId": "45",
+      "name": "Scyther",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [123],
+      "hp": 60,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass", "Grass"],
+          "name": "Slashing Strike",
+          "effect": "This attack can't be used during your next turn. (Benching Scyther ends this effect.)",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-46",
+      "illustrator": "Miki Tanaka",
+      "image": "https://assets.tcgdex.net/en/base/basep/46",
+      "localId": "46",
+      "name": "Electabuzz",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [125],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Lightning Rod",
+          "effect": "Choose 1 of your opponent's Pok\u00e9mon and put a Lightning Rod marker on it. (A Pok\u00e9mon can have only 1 Lightning Rod marker on it at a time.)"
+        },
+        {
+          "cost": ["Lightning", "Lightning"],
+          "name": "Lightning Bolt",
+          "effect": "This attack does 20 damage to any Pok\u00e9mon with a Lightning Rod counter on it. Apply Weakness and Resistance.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-47",
+      "illustrator": "Ken Sugimori",
+      "image": "https://assets.tcgdex.net/en/base/basep/47",
+      "localId": "47",
+      "name": "Mew",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [151],
+      "hp": 40,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Neutral Shield",
+          "effect": "Mew is not affected by attacks made by Evolved Pok\u00e9mon. This power turns off if Mew is Asleep, Confused, or Paralyzed."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Psyshock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Confused.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-48",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/base/basep/48",
+      "localId": "48",
+      "name": "Articuno",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [144],
+      "hp": 80,
+      "types": ["Water"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Aurora Veil",
+          "effect": "As long as Articuno is your Active Pok\u00e9mon, you Benched Pok\u00e9mon are not affected by attacks. This power cannot be used if Articuno is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Water", "Water", "Colorless", "Colorless"],
+          "name": "Ice Beam",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 30
+        }
+      ],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-49",
+      "illustrator": "Craig Turvey",
+      "image": "https://assets.tcgdex.net/en/base/basep/49",
+      "localId": "49",
+      "name": "Snorlax",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [143],
+      "hp": 90,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-POWER",
+          "name": "Guard",
+          "effect": "As long as Snorlax is your Active Pok\u00e9mon, the Defending Pok\u00e9mon can't retreat. This power stops working when Snorlax is affected by a Special Condition."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+          "name": "Roll Over",
+          "effect": "Snorlax is now Asleep. Flip a coin, If heads, the Defending Pok\u00e9mon is now Asleep.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-50",
+      "illustrator": "Hajime Kusajima",
+      "image": "https://assets.tcgdex.net/en/base/basep/50",
+      "localId": "50",
+      "name": "Celebi",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [251],
+      "hp": 50,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Leaf Slice",
+          "effect": "Flip 2 coins. This attack does 20 damage times the number of heads.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-51",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/base/basep/51",
+      "localId": "51",
+      "name": "Rapidash",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [78],
+      "hp": 60,
+      "types": ["Fire"],
+      "evolveFrom": "Ponyta",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Jump Over",
+          "effect": "If you opponent has any Benched Pok\u00e9mon, choose 1 of them. Flip a coin. If heads, this attack does 20 damage to that Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        },
+        {
+          "cost": ["Fire", "Colorless", "Colorless"],
+          "name": "Super Singe",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Burned.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-52",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/base/basep/52",
+      "localId": "52",
+      "name": "Ho-oh",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [250],
+      "hp": 80,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire", "Fire", "Colorless", "Colorless"],
+          "name": "Sacred Fire",
+          "effect": "Flip a coin. If tails, this attack's base damage is 20 instead of 60."
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-30" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-05-26T14:51:02+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "basep-53",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/base/basep/53",
+      "localId": "53",
+      "name": "Suicune",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 53, "total": 53 },
+        "id": "basep",
+        "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+        "name": "Wizards Black Star Promos",
+        "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [245],
+      "hp": 70,
+      "types": ["Water"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Pure Body",
+          "effect": "To attach a Water Energy card from your hand to Suicune, you must discard an Energy card attached to Suicune. (Attach the Water Energy, and then discard an Energy card from Suicune.)"
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Water", "Colorless", "Colorless"],
+          "name": "Hypno Wave",
+          "effect": "Flip a coin. If heads, this attack does 30 damage plus 20 more damage. If tails, this attack does 30 damage and the Defending Pok\u00e9mon is now Asleep.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-02-24T16:56:26+01:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    }
+  ],
+  "id": "basep",
+  "legal": { "expanded": false, "standard": false },
+  "logo": "https://assets.tcgdex.net/en/base/basep/logo",
+  "name": "Wizards Black Star Promos",
+  "releaseDate": "1999-07-01",
+  "serie": { "id": "base", "name": "Base" },
+  "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol",
+  "tcgOnline": "PR"
+}

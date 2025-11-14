@@ -1,0 +1,1313 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 7,
+    "normal": 7,
+    "official": 17,
+    "reverse": 0,
+    "total": 17
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "pop6-1",
+      "illustrator": "Kazuyuki Kano",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/1",
+      "localId": "1",
+      "name": "Bastiodon",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [411],
+      "hp": 130,
+      "types": ["Metal"],
+      "evolveFrom": "Shieldon",
+      "description": "Any frontal attack is repulsed. It is a docile Pok\u00e9mon that feeds on grass and berries.",
+      "stage": "Stage2",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Protective Wall",
+          "effect": "Prevent all damage done to your Benched Pok\u00e9mon by your opponent\u2019s attacks."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Metal", "Metal", "Colorless"],
+          "name": "Anger Revenge",
+          "effect": "If Bastiodon was damaged by an attack during your opponent\u2019s last turn, this attack does 40 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+40" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.9,
+          "low": 0.75,
+          "trend": 1.4,
+          "avg1": 0.99,
+          "avg7": 1.15,
+          "avg30": 1.48,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1.1,
+            "midPrice": 1.35,
+            "highPrice": 4.99,
+            "marketPrice": 1.58,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-2",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/2",
+      "localId": "2",
+      "name": "Lucario",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [448],
+      "hp": 90,
+      "types": ["Fighting"],
+      "evolveFrom": "Riolu",
+      "description": "It has the ability to sense the auras of all things. It understands human speech.",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Feint",
+          "effect": "This attack\u2019s damage isn\u2019t affected by Resistance.",
+          "damage": 30
+        },
+        {
+          "cost": ["Fighting", "Fighting"],
+          "name": "Aura Sphere",
+          "effect": "Does 20 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "+20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 9.99,
+          "low": 2.49,
+          "trend": 6.77,
+          "avg1": 9.99,
+          "avg7": 7.55,
+          "avg30": 6.9,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 4,
+            "midPrice": 4.99,
+            "highPrice": 5.58,
+            "marketPrice": 5.78,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-3",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/3",
+      "localId": "3",
+      "name": "Manaphy",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [490],
+      "hp": 70,
+      "types": ["Water"],
+      "description": "Born on a cold seafloor, it will swim great distances to return to its birthplace.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Call for Family",
+          "effect": "Search your deck for a Basic Pok\u00e9mon and put it onto your Bench. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Water", "Water"],
+          "name": "Aqua Ring",
+          "effect": "Switch Manaphy with 1 of your Benched Pok\u00e9mon.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.74,
+          "low": 0.79,
+          "trend": 2.86,
+          "avg1": 1.49,
+          "avg7": 1.64,
+          "avg30": 3.36,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0.19,
+          "avg1-holo": 0.19,
+          "avg7-holo": 0.79,
+          "avg30-holo": 0.79
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.8,
+            "midPrice": 1.87,
+            "highPrice": 3,
+            "marketPrice": 1.31,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 2.21,
+            "midPrice": 7.05,
+            "highPrice": 9,
+            "marketPrice": 7.78,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-4",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/4",
+      "localId": "4",
+      "name": "Pachirisu",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [417],
+      "hp": 70,
+      "types": ["Lightning"],
+      "description": "It makes fur balls that crackle with static electricity. It stores them with berries in tree holes.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Minor Errand-Running",
+          "effect": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Lightning"],
+          "name": "Thunder Jolt",
+          "effect": "Flip a coin. If tails, Pachirisu does 10 damage to itself.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+20" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.02,
+          "low": 0.3,
+          "trend": 1.6,
+          "avg1": 0.29,
+          "avg7": 1.02,
+          "avg30": 1.43,
+          "avg-holo": null,
+          "low-holo": 19.99,
+          "trend-holo": 0.86,
+          "avg1-holo": 1.95,
+          "avg7-holo": 0.96,
+          "avg30-holo": 0.8
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1,
+            "midPrice": 2.32,
+            "highPrice": 3.69,
+            "marketPrice": 2.5,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-5",
+      "illustrator": "Kazuyuki Kano",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/5",
+      "localId": "5",
+      "name": "Rampardos",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [409],
+      "hp": 120,
+      "types": ["Fighting"],
+      "evolveFrom": "Cherrim",
+      "description": "Its powerful head butt has enough power to shatter even the most durable things upon impact.",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Fighting", "Colorless"],
+          "name": "Assurance",
+          "effect": "As long as the Defending Pok\u00e9mon\u2019s remaining HP is 60 or less, this attack\u2019s base damage is 60 instead of 30.",
+          "damage": 30
+        },
+        {
+          "cost": ["Fighting", "Fighting", "Fighting"],
+          "name": "Hasty Headbutt",
+          "effect": "Rampardos does 20 damage to itself. This attack\u2019s damage isn\u2019t affected by Weakness, Resistance, Pok\u00e9-Powers, Pok\u00e9-Bodies, or any other effects on the Defending Pok\u00e9mon.",
+          "damage": 100
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "+30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.93,
+          "low": 0.49,
+          "trend": 0.95,
+          "avg1": 1.25,
+          "avg7": 0.79,
+          "avg30": 0.96,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.86,
+            "midPrice": 1.37,
+            "highPrice": 3.25,
+            "marketPrice": 1.32,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-6",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/6",
+      "localId": "6",
+      "name": "Drifloon",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [425],
+      "hp": 60,
+      "types": ["Psychic"],
+      "description": "A Pok\u00e9mon formed by the spirits of people and Pok\u00e9mon. It loves damp, humid seasons.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Blowing Wind",
+          "effect": "Flip a coin. If heads, put 1 of your Benched Pok\u00e9mon and all cards attached to it on top of your deck. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Ominous Wind",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Confused and can\u2019t retreat during your opponent\u2019s next turn.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Darkness", "value": "+10" }],
+      "resistances": [{ "type": "Colorless", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 35,
+          "low": 28,
+          "trend": 22.92,
+          "avg1": 40,
+          "avg7": 28.57,
+          "avg30": 15.14,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-7",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/7",
+      "localId": "7",
+      "name": "Gible",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [443],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Surprise Attack",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Colorless", "value": "+10" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.48,
+          "low": 2.5,
+          "trend": 7.05,
+          "avg1": 2,
+          "avg7": 6.59,
+          "avg30": 6.4,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 4.25,
+          "avg1-holo": 7,
+          "avg7-holo": 2.4,
+          "avg30-holo": 1.83
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 3.43,
+            "midPrice": 3.97,
+            "highPrice": 5.52,
+            "marketPrice": 4.69,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 3,
+            "midPrice": 5.5,
+            "highPrice": 6.97,
+            "marketPrice": 6.4,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-8",
+      "illustrator": "Kouki Saitou",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/8",
+      "localId": "8",
+      "name": "Riolu",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [447],
+      "hp": 60,
+      "types": ["Fighting"],
+      "description": "The aura that emanates from its body intensifies to alert others if it is afraid or sad.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fighting"],
+          "name": "Wild Kick",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "+10" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 14.95,
+          "low": 40,
+          "trend": 24.73,
+          "avg1": 14.95,
+          "avg7": 22.04,
+          "avg30": 16.05,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3,
+          "avg1-holo": 3,
+          "avg7-holo": 2.2,
+          "avg30-holo": 2.2
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 3.01,
+            "midPrice": 3.01,
+            "highPrice": 4.86,
+            "marketPrice": 3.01,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 3.34,
+            "midPrice": 5.5,
+            "highPrice": 16.82,
+            "marketPrice": 3.86,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-9",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/9",
+      "localId": "9",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Spark",
+          "effect": "Does 10 damage to 2 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+10" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 18.48,
+          "low": 4,
+          "trend": 18.71,
+          "avg1": 50,
+          "avg7": 20.72,
+          "avg30": 16.37,
+          "avg-holo": 22.5,
+          "low-holo": 7.99,
+          "trend-holo": 11.95,
+          "avg1-holo": 22.5,
+          "avg7-holo": 9,
+          "avg30-holo": 4.69
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 24.59,
+            "midPrice": 25,
+            "highPrice": 39.99,
+            "marketPrice": 36.67,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 31.27,
+            "midPrice": 40,
+            "highPrice": 72.99,
+            "marketPrice": 39.76,
+            "directLowPrice": 33.95
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-10",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/10",
+      "localId": "10",
+      "name": "Staravia",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [397],
+      "hp": 70,
+      "types": ["Colorless"],
+      "evolveFrom": "Starly",
+      "description": "It flies around forests and fields in search of bug Pok\u00e9mon. It stays within a huge flock.",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Whirlwind",
+          "effect": "Your opponent switches the Defending Pok\u00e9mon with 1 of his or her Benched Pok\u00e9mon.",
+          "damage": 20
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Clutch",
+          "effect": "The Defending Pok\u00e9mon can\u2019t retreat during your opponent\u2019s next turn.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+20" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 0,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 9.38,
+          "low": 15,
+          "trend": 11.28,
+          "avg1": 10,
+          "avg7": 12.37,
+          "avg30": 8.15,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 6.69,
+            "midPrice": 6.85,
+            "highPrice": 7,
+            "marketPrice": 7.99,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-11",
+      "illustrator": "Mitsuhiro Arita",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/11",
+      "localId": "11",
+      "name": "Bidoof",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "dexId": [399],
+      "hp": 50,
+      "types": ["Colorless"],
+      "description": "With nerves of steel, nothing can perturb it. It is more agile and active than it appears.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Amnesia",
+          "effect": "Choose 1 of the Defending Pok\u00e9mon\u2019s attacks. That Pok\u00e9mon can\u2019t use that attack during your opponent\u2019s next turn."
+        },
+        {
+          "cost": ["Colorless"],
+          "name": "Scavenge",
+          "effect": "Search your discard pile for a Trainer card, show it to your opponent, and put it into your hand."
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+10" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 9,
+          "low": 3,
+          "trend": 7.91,
+          "avg1": 9,
+          "avg7": 7.89,
+          "avg30": 7.5,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 9.33,
+            "midPrice": 9.66,
+            "highPrice": 9.69,
+            "marketPrice": 9.66,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-12",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/12",
+      "localId": "12",
+      "name": "Buneary",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [427],
+      "hp": 50,
+      "types": ["Colorless"],
+      "description": "It slams foes by sharply uncoiling is rolled ears. It stings enough to make a grown-up cry in pain.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Splash", "damage": 10 },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Jump Kick",
+          "effect": "Does 10 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "+10" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.85,
+          "low": 0.74,
+          "trend": 0.9,
+          "avg1": 0.75,
+          "avg7": 0.83,
+          "avg30": 1.12,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1.48,
+            "midPrice": 2.11,
+            "highPrice": 3.82,
+            "marketPrice": 2.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-13",
+      "illustrator": "Atsuko Nishida",
+      "localId": "13",
+      "name": "Cherubi",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "dexId": [420],
+      "hp": 50,
+      "types": ["Grass"],
+      "description": "The small ball holds the nutrients needed for evolution. Apparently, it is very sweet and tasty.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Sleep Powder",
+          "effect": "The Defending Pok\u00e9mon is now Asleep."
+        },
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Leech Seed",
+          "effect": "If this attack does any damage to the Defending Pok\u00e9mon (after applying Weakness and Resistance), remove 1 damage counter from Cherubi.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+10" }],
+      "resistances": [{ "type": "Water", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.33,
+          "low": 0.99,
+          "trend": 1.2,
+          "avg1": 1.99,
+          "avg7": 1.08,
+          "avg30": 1.04,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 2.5,
+            "midPrice": 3.3,
+            "highPrice": 3.99,
+            "marketPrice": 3.3,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-14",
+      "illustrator": "Kagemaru Himeno",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/14",
+      "localId": "14",
+      "name": "Chimchar",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [390],
+      "hp": 50,
+      "types": ["Fire"],
+      "description": "It agilely scales cliffs to live atop craggy mountains. Its fire is put out when it sleeps.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Scratch", "damage": 10 },
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Ember",
+          "effect": "Flip a coin. If tails, discard a Fire Energy attached to Chimchar.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "+10" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.45,
+          "low": 0.5,
+          "trend": 0.71,
+          "avg1": 0.45,
+          "avg7": 0.78,
+          "avg30": 1.09,
+          "avg-holo": null,
+          "low-holo": 1.75,
+          "trend-holo": 2.12,
+          "avg1-holo": 2,
+          "avg7-holo": 0.87,
+          "avg30-holo": 0.67
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1.2,
+            "midPrice": 1.38,
+            "highPrice": 2.49,
+            "marketPrice": 1.49,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 1.99,
+            "midPrice": 2.55,
+            "highPrice": 8,
+            "marketPrice": 2.81,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-15",
+      "illustrator": "Atsuko Nishida",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/15",
+      "localId": "15",
+      "name": "Piplup",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [393],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "Because it is very proud, it hates accepting food from people. Its thick down guards it from cold.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Peck", "damage": 10 },
+        {
+          "cost": ["Water", "Colorless"],
+          "name": "Water Splash",
+          "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+10" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.54,
+          "low": 0.25,
+          "trend": 1.75,
+          "avg1": 2.5,
+          "avg7": 1.54,
+          "avg30": 1.77,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 1.79,
+          "avg1-holo": 2.99,
+          "avg7-holo": 1.23,
+          "avg30-holo": 1.14
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 4.67,
+            "midPrice": 5.59,
+            "highPrice": 6.58,
+            "marketPrice": 7.42,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 5.01,
+            "midPrice": 9,
+            "highPrice": 9,
+            "marketPrice": 4.92,
+            "directLowPrice": 5.01
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-16",
+      "illustrator": "Masakazu Fukuda",
+      "image": "https://assets.tcgdex.net/en/pop/pop6/16",
+      "localId": "16",
+      "name": "Starly",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [396],
+      "hp": 50,
+      "types": ["Colorless"],
+      "description": "They flock in great numbers. Though small, they flap their wings with great power.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Gust", "damage": 10 },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "+10" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.64,
+          "low": 0.5,
+          "trend": 1.21,
+          "avg1": 1.49,
+          "avg7": 1.47,
+          "avg30": 1.99,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 2.23,
+            "midPrice": 2.75,
+            "highPrice": 3.69,
+            "marketPrice": 2.75,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "pop6-17",
+      "illustrator": "Masakazu Fukuda",
+      "localId": "17",
+      "name": "Turtwig",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 17, "total": 17 },
+        "id": "pop6",
+        "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+        "name": "POP Series 6",
+        "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [387],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "Made from soil, the shell on its back hardens when it drinks water. It lives along lakes.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Tackle", "damage": 10 },
+        { "cost": ["Grass"], "name": "Razor Leaf", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "+10" }],
+      "resistances": [{ "type": "Water", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1.13,
+          "low": 0.2,
+          "trend": 0.27,
+          "avg1": 0.69,
+          "avg7": 0.98,
+          "avg30": 1.53,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 1.26,
+          "avg1-holo": 1,
+          "avg7-holo": 0.92,
+          "avg30-holo": 0.8
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1.14,
+            "midPrice": 3.13,
+            "highPrice": 4.19,
+            "marketPrice": 3.27,
+            "directLowPrice": null
+          },
+          "holofoil": {
+            "lowPrice": 2.49,
+            "midPrice": 6.3,
+            "highPrice": 9,
+            "marketPrice": 4,
+            "directLowPrice": 6.29
+          }
+        }
+      }
+    }
+  ],
+  "id": "pop6",
+  "legal": { "expanded": false, "standard": false },
+  "logo": "https://assets.tcgdex.net/en/pop/pop6/logo",
+  "name": "POP Series 6",
+  "releaseDate": "2007-09-01",
+  "serie": { "id": "pop", "name": "POP" },
+  "symbol": "https://assets.tcgdex.net/univ/pop/pop6/symbol",
+  "abbreviation": { "official": "P6" }
+}

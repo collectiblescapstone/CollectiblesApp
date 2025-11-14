@@ -1,0 +1,16 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 7,
+    "reverse": 0,
+    "total": 7
+  },
+  "cards": [],
+  "id": "wp",
+  "legal": { "expanded": false, "standard": false },
+  "name": "W Promotional",
+  "releaseDate": "1999-09-01",
+  "serie": { "id": "base", "name": "Base" }
+}

@@ -1,0 +1,72 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 30,
+    "reverse": 0,
+    "total": 30
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "tk-hs-g-20",
+      "illustrator": "Mitsuhiro Arita",
+      "localId": "20",
+      "name": "Gyarados",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-hs-g",
+        "name": "HS trainer Kit (Gyarados)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-hs-g/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [130],
+      "description": "Once it appears, it goes on a rampage. It remains enraged until it demolishes everything around it.",
+      "stage": "Stage1",
+      "attacks": [
+        { "name": "Hydro Splash", "damage": 50 },
+        {
+          "name": "Hyper Beam",
+          "effect": "Discard an Energy card attached to the Defending Pok\u00e9mon.",
+          "damage": 80
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 2.43,
+            "midPrice": 3.86,
+            "highPrice": 9.99,
+            "marketPrice": 3,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "tk-hs-g",
+  "legal": { "expanded": false, "standard": false },
+  "name": "HS trainer Kit (Gyarados)",
+  "releaseDate": "2010-05-01",
+  "serie": { "id": "tk", "name": "Trainer kits" },
+  "symbol": "https://assets.tcgdex.net/univ/tk/tk-hs-g/symbol",
+  "abbreviation": { "official": "TK4G" }
+}

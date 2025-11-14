@@ -1,0 +1,1050 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 25,
+    "normal": 25,
+    "official": 25,
+    "reverse": 0,
+    "total": 25
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-1",
+      "illustrator": "Mizue",
+      "localId": "1",
+      "name": "Bulbasaur",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [1],
+      "hp": 70,
+      "types": ["Grass"],
+      "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pok\u00e9mon.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Grass", "Colorless"], "name": "Razor Leaf", "damage": 30 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "x2" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-2",
+      "illustrator": "sowsow",
+      "localId": "2",
+      "name": "Chikorita",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [152],
+      "hp": 70,
+      "types": ["Grass"],
+      "description": "It uses the leaf on its head to determine the temperature and humidity. It loves to sunbathe.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Mini Drain",
+          "effect": "Heal 10 damage from this Pok\u00e9mon.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "x2" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-3",
+      "illustrator": "Akira Komayama",
+      "localId": "3",
+      "name": "Treecko",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [252],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "Small hooks on the bottom of its feet catch on walls and ceilings. That is how it can hang from above.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 10 more damage.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "x2" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-4",
+      "illustrator": "OOYAMA",
+      "localId": "4",
+      "name": "Turtwig",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [1],
+      "hp": 80,
+      "types": ["Grass"],
+      "description": "It undertakes photosynthesis with its body, making oxygen. The leaf on its head wilts if it is thirsty.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless", "Colorless"], "name": "Tackle", "damage": 20 },
+        {
+          "cost": ["Grass", "Grass", "Colorless"],
+          "name": "Razor Leaf",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "x2" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-5",
+      "illustrator": "Ken Sugimori",
+      "localId": "5",
+      "name": "Snivy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [495],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "It is very intelligent and calm. Being exposed to lots of sunlight makes its movements swifter.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Slam",
+          "effect": "Flip 2 coins. This attack does 20 damage times the number of heads.",
+          "damage": "20\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "resistances": [{ "type": "Water", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-6",
+      "illustrator": "5ban Graphics",
+      "localId": "6",
+      "name": "Chespin",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [650],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "The quills on its head are usually soft. When it flexes them, the points become so hard and sharp that they can pierce rock.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Grass"], "name": "Vine Whip", "damage": 10 },
+        { "cost": ["Grass", "Colorless"], "name": "Seed Bomb", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-7",
+      "illustrator": "Megumi Mizutani",
+      "localId": "7",
+      "name": "Rowlet",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [722],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "This wary Pok\u00e9mon uses photosynthesis to store up energy during the day, while becoming active at night.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Tackle", "damage": 10 },
+        { "cost": ["Grass", "Colorless"], "name": "Leafage", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-8",
+      "illustrator": "kirisAki",
+      "localId": "8",
+      "name": "Grookey",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [810],
+      "hp": 60,
+      "types": ["Grass"],
+      "description": "When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Grass", "Colorless"], "name": "Branch Poke", "damage": 30 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2024-06-18T00:34:39+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-9",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "9",
+      "name": "Charmander",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [4],
+      "hp": 70,
+      "types": ["Fire"],
+      "description": "The flame on its tail indicates Charmander\u2019s life force. If it is healthy, the flame burns brightly.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Scratch", "damage": 10 },
+        { "cost": ["Fire", "Colorless"], "name": "Flame Tail", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-10",
+      "illustrator": "kirisAki",
+      "localId": "10",
+      "name": "Cyndaquil",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [155],
+      "hp": 70,
+      "types": ["Fire"],
+      "description": "It has a timid nature. If it is startled, the flames on its back burn more vigorously.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Hammer In",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-11",
+      "illustrator": "sui",
+      "localId": "11",
+      "name": "Torchic",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [255],
+      "hp": 60,
+      "types": ["Fire"],
+      "description": "A fire burns inside, so it feels very warm to hug. It launches fireballs of 1,800 degrees Fahrenheit.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire"],
+          "name": "Ember",
+          "effect": "Flip a coin. If tails, discard a Fire Energy attached to this Pok\u00e9mon.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-12",
+      "illustrator": "Kouki Saitou",
+      "localId": "12",
+      "name": "Chimchar",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [391],
+      "hp": 60,
+      "types": ["Fire"],
+      "evolveFrom": "Chimchar",
+      "description": "The gas made in its belly burns from its rear end. The fire burns weakly when it feels sick.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire"],
+          "name": "Fury Swipes",
+          "effect": "Flip 3 coins. This attack does 10 damage for each heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-13",
+      "illustrator": "Ken Sugimori",
+      "localId": "13",
+      "name": "Tepig",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [498],
+      "hp": 70,
+      "types": ["Fire"],
+      "description": "It blows fire through its nose. When it catches a cold, the fire becomes pitch-black smoke instead.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Ember",
+          "effect": "Discard an Energy attached to this Pok\u00e9mon.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-14",
+      "illustrator": "5ban Graphics",
+      "localId": "14",
+      "name": "Fennekin",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [653],
+      "hp": 60,
+      "types": ["Fire"],
+      "description": "Eating a twig fills it with energy, and its roomy ears give vent to air hotter than 390 degrees Fahrenheit.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fire"], "name": "Scratch", "damage": 10 },
+        { "cost": ["Fire", "Colorless"], "name": "Live Coal", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-15",
+      "illustrator": "Akira Komayama",
+      "localId": "15",
+      "name": "Litten",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [725],
+      "hp": 70,
+      "types": ["Fire"],
+      "description": "While grooming itself, it builds up fur inside its stomach. It sets the fur alight and spews fiery attacks, which change based on how it coughs.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fire"], "name": "Bite", "damage": 10 },
+        { "cost": ["Fire", "Colorless"], "name": "Flare", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-16",
+      "illustrator": "Hitoshi Ariga",
+      "localId": "16",
+      "name": "Scorbunny",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [813],
+      "hp": 60,
+      "types": ["Fire"],
+      "description": "A warm-up of running around gets fire energy coursing through this Pok\u00e9mon\u2019s body. Once that happens, it\u2019s ready to fight at full power.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire"],
+          "name": "Super Singe",
+          "effect": "Flip a coin. If heads, your opponent\u2019s Active Pok\u00e9mon is now Burned.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2024-06-18T00:34:39+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-17",
+      "illustrator": "tetsuya koizumi",
+      "localId": "17",
+      "name": "Squirtle",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [7],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "It shelters itself in its shell, then strikes back with spouts of water at every opportunity.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water"],
+          "name": "Bubble",
+          "effect": "Flip a coin. If heads, your opponent\u2019s Active Pok\u00e9mon is now Paralyzed.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-18",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "18",
+      "name": "Totodile",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [158],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "It is small but rough and tough. It won\u2019t hesitate to take a bite out of anything that moves.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water"],
+          "name": "Fury Strikes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-19",
+      "illustrator": "Aya Kusube",
+      "localId": "19",
+      "name": "Mudkip",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [258],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "To alert it, the fin on its head senses the flow of water. It has the strength to heft boulders.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Water"], "name": "Tackle", "damage": 10 },
+        { "cost": ["Water", "Colorless"], "name": "Mud-Slap", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-20",
+      "illustrator": "Shibuzoh.",
+      "localId": "20",
+      "name": "Piplup",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [393],
+      "hp": 70,
+      "types": ["Water"],
+      "description": "Because it is very proud, it hates accepting food from people. Its thick down guards it from cold.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Peck", "damage": 10 },
+        { "cost": ["Water", "Colorless"], "name": "Wave Splash", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-21",
+      "illustrator": "Ken Sugimori",
+      "localId": "21",
+      "name": "Oshawott",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [501],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water", "Colorless"],
+          "name": "Water Pulse",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Asleep.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-22",
+      "illustrator": "5ban Graphics",
+      "localId": "22",
+      "name": "Froakie",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [656],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "It secretes flexible bubbles from its chest and back. The bubbles reduce the damage it would otherwise take when attacked.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Water"], "name": "Pound", "damage": 10 },
+        { "cost": ["Water", "Colorless"], "name": "Water Drip", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-23",
+      "illustrator": "Kouki Saitou",
+      "localId": "23",
+      "name": "Popplio",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [728],
+      "hp": 70,
+      "types": ["Water"],
+      "description": "This Pok\u00e9mon snorts body fluids from its nose, blowing balloons to smash into its foes. It\u2019s famous for being a hard worker.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Water"], "name": "Pound", "damage": 10 },
+        { "cost": ["Water", "Colorless"], "name": "Water Gun", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-24",
+      "illustrator": "Mizue",
+      "localId": "24",
+      "name": "Sobble",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [816],
+      "hp": 60,
+      "types": ["Water"],
+      "description": "When scared, this Pok\u00e9mon cries. Its tears pack the chemical punch of 100 onions, and attackers won\u2019t be able to resist weeping.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water", "Colorless"],
+          "name": "Bind",
+          "effect": "Flip a coin. If heads, your opponent\u2019s Active Pok\u00e9mon is now Paralyzed.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2024-06-18T00:34:39+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2021swsh-25",
+      "illustrator": "Sanosuke Sakuma",
+      "localId": "25",
+      "name": "Pikachu",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 25, "total": 25 },
+        "id": "2021swsh",
+        "name": "Macdonald's Collection 2021",
+        "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 60,
+      "types": ["Lightning"],
+      "description": "Its nature is to store up electricity. Forests where nests of Pikachu live are dangerous, since the trees are so often struck by lightning.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Meal Time",
+          "effect": "Flip a coin until you get tails. For each heads, draw a card."
+        },
+        { "cost": ["Lightning", "Colorless"], "name": "Gnaw", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T09:53:07+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    }
+  ],
+  "id": "2021swsh",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Macdonald's Collection 2021",
+  "releaseDate": "2021-02-09",
+  "serie": { "id": "mc", "name": "McDonald's Collection" },
+  "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol",
+  "abbreviation": { "official": "MCD21" }
+}

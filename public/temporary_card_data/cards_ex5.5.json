@@ -1,0 +1,343 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 5,
+    "reverse": 0,
+    "total": 5
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "ex5.5-1",
+      "illustrator": "Mark Kraus",
+      "localId": "1",
+      "name": "Treecko",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 5, "total": 5 },
+        "id": "ex5.5",
+        "name": "Pok\u00e9 Card Creator Pack"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [252],
+      "hp": 60,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Tackle", "damage": 10 },
+        {
+          "cost": ["Grass", "Colorless", "Colorless"],
+          "name": "Poison Claws",
+          "effect": "The Defending Pok\u00e9mon is now Poisoned. ",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Fire" }],
+      "resistances": [{ "type": "Water", "value": "-30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 500,
+          "low": 2400,
+          "trend": 528.93,
+          "avg1": 500,
+          "avg7": 431.25,
+          "avg30": 431.25,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "ex5.5-2",
+      "illustrator": "Katie Gross",
+      "localId": "2",
+      "name": "Wurmple",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 5, "total": 5 },
+        "id": "ex5.5",
+        "name": "Pok\u00e9 Card Creator Pack"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [265],
+      "hp": 50,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Gooey Thread",
+          "effect": "The Defending Pok\u00e9mon can't retreat until the end of your opponent's next turn.",
+          "damage": 10
+        },
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Poison Claws",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fire" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 147.5,
+          "low": 349.95,
+          "trend": 147.51,
+          "avg1": 249.99,
+          "avg7": 181.66,
+          "avg30": 181.66,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "ex5.5-3",
+      "illustrator": "May Do",
+      "localId": "3",
+      "name": "Torchic",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 5, "total": 5 },
+        "id": "ex5.5",
+        "name": "Pok\u00e9 Card Creator Pack"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [255],
+      "hp": 50,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fire"],
+          "name": "Super Singe",
+          "effect": "The Defending Pok\u00e9mon is now Burned.",
+          "damage": 10
+        },
+        {
+          "cost": ["Fire", "Colorless", "Colorless"],
+          "name": "Flamethrower",
+          "effect": "Discard a Fire Energy card attached to Torchic.",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Water" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 1499,
+          "low": 450,
+          "trend": 600,
+          "avg1": 600,
+          "avg7": 450,
+          "avg30": 450,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "ex5.5-4",
+      "illustrator": "Rowan Laidlaw",
+      "localId": "4",
+      "name": "Mudkip",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 5, "total": 5 },
+        "id": "ex5.5",
+        "name": "Pok\u00e9 Card Creator Pack"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [258],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Tail Rap",
+          "effect": "Flip 2 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        },
+        {
+          "cost": ["Water", "Colorless", "Colorless"],
+          "name": "Hypno Splash",
+          "effect": "The Defending Pok\u00e9mon is now Asleep.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 500,
+          "low": null,
+          "trend": 500,
+          "avg1": 500,
+          "avg7": 396.25,
+          "avg30": 396.25,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "ex5.5-5",
+      "illustrator": "Sylvia Forrest",
+      "localId": "5",
+      "name": "Pikachu",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 5, "total": 5 },
+        "id": "ex5.5",
+        "name": "Pok\u00e9 Card Creator Pack"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Thundershock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 10
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Hypno Splash",
+          "effect": "Discard all Lightning Energy cards attached to Pikachu or this attack does nothing.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 400,
+          "low": 2200,
+          "trend": 400,
+          "avg1": 400,
+          "avg7": 400,
+          "avg30": 400,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 0,
+          "avg1-holo": null,
+          "avg7-holo": null,
+          "avg30-holo": null
+        },
+        "tcgplayer": null
+      }
+    }
+  ],
+  "id": "ex5.5",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Pok\u00e9 Card Creator Pack",
+  "releaseDate": "2004-07-01",
+  "serie": { "id": "ex", "name": "EX" }
+}

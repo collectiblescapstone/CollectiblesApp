@@ -1,0 +1,1449 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 30,
+    "reverse": 0,
+    "total": 30
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-1",
+      "localId": "1",
+      "name": "Glameow",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [431],
+      "hp": 60,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.25,
+            "highPrice": 1,
+            "marketPrice": 0.28,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-2",
+      "localId": "2",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.24,
+            "highPrice": 1.24,
+            "marketPrice": 0.05,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-3",
+      "localId": "3",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.18,
+            "highPrice": 0.88,
+            "marketPrice": 0.05,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-4",
+      "localId": "4",
+      "name": "Electivire",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [466],
+      "hp": 110,
+      "types": ["Lightning"],
+      "evolveFrom": "Electabuzz",
+      "stage": "Stage1",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.15,
+            "midPrice": 0.25,
+            "highPrice": 1,
+            "marketPrice": 0.19,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-5",
+      "localId": "5",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.23,
+            "highPrice": 1.01,
+            "marketPrice": 0.05,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-6",
+      "localId": "6",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.2,
+            "highPrice": 1.01,
+            "marketPrice": 0.05,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-7",
+      "illustrator": "Atsuko Nishida",
+      "localId": "7",
+      "name": "Taillow",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [276],
+      "hp": 50,
+      "types": ["Colorless"],
+      "description": "It dislikes cold seasons. They migrate to other lands in search of warmth, flying over 180 miles a day.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Double Peck",
+          "effect": "Flip 2 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.15,
+            "midPrice": 0.21,
+            "highPrice": 1.41,
+            "marketPrice": 0.19,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-8",
+      "localId": "8",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.14,
+            "highPrice": 1.01,
+            "marketPrice": 0.32,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-9",
+      "localId": "9",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.17,
+            "highPrice": 0.88,
+            "marketPrice": 0.05,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-10",
+      "localId": "10",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.22,
+            "highPrice": 1.01,
+            "marketPrice": 0.22,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-11",
+      "illustrator": "Akira Komayama",
+      "localId": "11",
+      "name": "Electrike",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [309],
+      "hp": 60,
+      "types": ["Lightning"],
+      "description": "It stores static electricity in its fur for discharging. It gives off sparks if a storm approaches.",
+      "stage": "Basic",
+      "attacks": [{ "name": "Bite", "damage": 10 }],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.06,
+            "midPrice": 0.2,
+            "highPrice": 1,
+            "marketPrice": 0.2,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-12",
+      "localId": "12",
+      "name": "Blitzle",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [522],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.07,
+            "midPrice": 0.2,
+            "highPrice": 1.38,
+            "marketPrice": 0.1,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-13",
+      "illustrator": "match",
+      "localId": "13",
+      "name": "Manectric",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [310],
+      "hp": 90,
+      "types": ["Lightning"],
+      "evolveFrom": "Electrike",
+      "description": "It discharges electricity from its mane. It creates a thundercloud overhead to drop lightning bolts.",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "name": "Random Spark",
+          "effect": "This attack does 30 damage to 1 of your opponent\u2019s Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        },
+        { "name": "Bite", "damage": 40 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.12,
+            "midPrice": 0.25,
+            "highPrice": 1,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-14",
+      "illustrator": "Yoshinobu Saito",
+      "localId": "14",
+      "name": "Pikachu Libre",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 80,
+      "types": ["Lightning"],
+      "description": "It has small electric sacs on both its cheeks. If threatened, it looses electric charges from the sacs.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 30 more damage.",
+          "damage": "10+"
+        },
+        { "name": "Flying Elekick", "damage": 50 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 2.35,
+            "midPrice": 5.1,
+            "highPrice": 8.35,
+            "marketPrice": 8.6,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-15",
+      "localId": "15",
+      "name": "Electabuzz",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [125],
+      "hp": 70,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.13,
+            "midPrice": 0.25,
+            "highPrice": 2,
+            "marketPrice": 0.49,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-16",
+      "illustrator": "Kanako Eo",
+      "localId": "16",
+      "name": "Fletchling",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [661],
+      "hp": 40,
+      "types": ["Colorless"],
+      "description": "Despite the beauty of its lilting voice, it\u2019s merciless to intruders that enter its territory.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Acrobatics",
+          "effect": "Flip 2 coins. This attack does 10 more damage for each heads.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.15,
+            "highPrice": 1,
+            "marketPrice": 0.18,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-17",
+      "localId": "17",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.04,
+            "midPrice": 0.2,
+            "highPrice": 0.88,
+            "marketPrice": 0.1,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-18",
+      "localId": "18",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.25,
+            "highPrice": 0.88,
+            "marketPrice": 0.25,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-19",
+      "localId": "19",
+      "name": "Purugly",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [432],
+      "hp": 100,
+      "types": ["Colorless"],
+      "evolveFrom": "Glameow",
+      "stage": "Stage1",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.12,
+            "midPrice": 0.25,
+            "highPrice": 1,
+            "marketPrice": 0.22,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-xy-p-20",
+      "localId": "20",
+      "name": "Tierno",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Draw 3 cards.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.22,
+            "highPrice": 0.88,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-xy-p-21",
+      "localId": "21",
+      "name": "Potion",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Heal 30 damage from 1 of your Pok\u00e9mon.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.24,
+            "highPrice": 1.36,
+            "marketPrice": 0.27,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-22",
+      "illustrator": "match",
+      "localId": "22",
+      "name": "Manectric",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [310],
+      "hp": 90,
+      "types": ["Lightning"],
+      "evolveFrom": "Electrike",
+      "description": "It discharges electricity from its mane. It creates a thundercloud overhead to drop lightning bolts.",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "name": "Random Spark",
+          "effect": "This attack does 30 damage to 1 of your opponent\u2019s Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        },
+        { "name": "Bite", "damage": 40 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.25,
+            "highPrice": 1.49,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-23",
+      "localId": "23",
+      "name": "Electabuzz",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [125],
+      "hp": 70,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.09,
+            "midPrice": 0.25,
+            "highPrice": 1,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-24",
+      "localId": "24",
+      "name": "Purugly",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [432],
+      "hp": 100,
+      "types": ["Colorless"],
+      "evolveFrom": "Glameow",
+      "stage": "Stage1",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.25,
+            "highPrice": 3,
+            "marketPrice": 0.23,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-25",
+      "localId": "25",
+      "name": "Electivire",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [466],
+      "hp": 110,
+      "types": ["Lightning"],
+      "evolveFrom": "Electabuzz",
+      "stage": "Stage1",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.3,
+            "highPrice": 1,
+            "marketPrice": 0.33,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-26",
+      "localId": "26",
+      "name": "Blitzle",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [522],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.09,
+            "midPrice": 0.24,
+            "highPrice": 1.49,
+            "marketPrice": 0.25,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-27",
+      "localId": "27",
+      "name": "Glameow",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [431],
+      "hp": 60,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.2,
+            "highPrice": 0.88,
+            "marketPrice": 0.2,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-28",
+      "illustrator": "Akira Komayama",
+      "localId": "28",
+      "name": "Electrike",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [309],
+      "hp": 60,
+      "types": ["Lightning"],
+      "description": "It stores static electricity in its fur for discharging. It gives off sparks if a storm approaches.",
+      "stage": "Basic",
+      "attacks": [{ "name": "Bite", "damage": 10 }],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.25,
+            "highPrice": 0.88,
+            "marketPrice": 0.32,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-xy-p-29",
+      "localId": "29",
+      "name": "Lightning Energy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.08,
+            "midPrice": 0.25,
+            "highPrice": 1.24,
+            "marketPrice": 0.13,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-xy-p-30",
+      "illustrator": "Yoshinobu Saito",
+      "localId": "30",
+      "name": "Pikachu Libre",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "tk-xy-p",
+        "name": "XY trainer Kit (Pikachu Libre)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 80,
+      "types": ["Lightning"],
+      "description": "It has small electric sacs on both its cheeks. If threatened, it looses electric charges from the sacs.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 30 more damage.",
+          "damage": "10+"
+        },
+        { "name": "Flying Elekick", "damage": 50 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 22.01,
+            "midPrice": 29.99,
+            "highPrice": 110,
+            "marketPrice": 34.67,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "tk-xy-p",
+  "legal": { "expanded": false, "standard": false },
+  "name": "XY trainer Kit (Pikachu Libre)",
+  "releaseDate": "2016-04-27",
+  "serie": { "id": "tk", "name": "Trainer kits" },
+  "symbol": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol",
+  "abbreviation": { "official": "TK9P" }
+}

@@ -37,7 +37,9 @@ const Demo = () => {
                 {/* Right: form fields stacked vertically; take remaining width */}
                 <Stack as="div" gap="4" align="flex-start" w={{ base: '100%', md: '60%' }}>
                     <Field.Root invalid={!!errors.ItemName}>
-                        <Field.Label>Item name</Field.Label>
+                        <Field.Label>
+                            Item name <Field.RequiredIndicator />
+                        </Field.Label>
                         <Input
                             placeholder="Item name"
                             {...register("ItemName", { required: "Item name is required" })}
@@ -46,7 +48,9 @@ const Demo = () => {
                     </Field.Root>
 
                     <Field.Root invalid={!!errors.ItemSet}>
-                        <Field.Label>Item set</Field.Label>
+                        <Field.Label>
+                            Item set <Field.RequiredIndicator />
+                        </Field.Label>
                         <Input
                             placeholder="Item set"
                             {...register("ItemSet", { required: "Item set is required" })}

@@ -1,0 +1,5977 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 73,
+    "reverse": 0,
+    "total": 78
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-1",
+      "illustrator": "Mizue",
+      "localId": "1",
+      "name": "Bulbasaur",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [1],
+      "hp": 70,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Grass", "Colorless"], "name": "Razor Leaf", "damage": 30 }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.15,
+          "low": 0.02,
+          "trend": 0.11,
+          "avg1": 0.02,
+          "avg7": 0.14,
+          "avg30": 0.14,
+          "avg-holo": 1.58,
+          "low-holo": 0.2,
+          "trend-holo": 1.56,
+          "avg1-holo": 1.5,
+          "avg7-holo": 1.71,
+          "avg30-holo": 1.34
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.18,
+            "midPrice": 0.39,
+            "highPrice": 2,
+            "marketPrice": 0.38,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.7,
+            "midPrice": 1.03,
+            "highPrice": 3.34,
+            "marketPrice": 1.06,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-2",
+      "illustrator": "Kouki Saitou",
+      "localId": "2",
+      "name": "Ivysaur",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [2],
+      "hp": 100,
+      "types": ["Grass"],
+      "evolveFrom": "Bulbasaur",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Grass", "Colorless"], "name": "Razor Leaf", "damage": 30 },
+        {
+          "cost": ["Grass", "Grass", "Colorless", "Colorless"],
+          "name": "Toxic Whip",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Confused and Poisoned.",
+          "damage": 50
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 4,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.14,
+          "low": 0.02,
+          "trend": 0.16,
+          "avg1": 0.02,
+          "avg7": 0.18,
+          "avg30": 0.13,
+          "avg-holo": 0.88,
+          "low-holo": 0.1,
+          "trend-holo": 0.84,
+          "avg1-holo": 1.5,
+          "avg7-holo": 0.9,
+          "avg30-holo": 0.73
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.08,
+            "midPrice": 0.34,
+            "highPrice": 2.99,
+            "marketPrice": 0.31,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.29,
+            "midPrice": 1.08,
+            "highPrice": 4.99,
+            "marketPrice": 1.24,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-3",
+      "illustrator": "Eske Yoshinob",
+      "localId": "3",
+      "name": "Venusaur",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [3],
+      "hp": 160,
+      "types": ["Grass"],
+      "evolveFrom": "Ivysaur",
+      "stage": "Stage2",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Jungle Totem",
+          "effect": "Each basic Grass Energy attached to your Pok\u00e9mon provides GrassGrass Energy. You can\u2019t apply more than 1 Jungle Totem Ability at a time."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Grass", "Grass", "Colorless", "Colorless"],
+          "name": "Solar Beam",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 4,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.6,
+          "low": 0.02,
+          "trend": 0.74,
+          "avg1": 0.02,
+          "avg7": 0.68,
+          "avg30": 0.53,
+          "avg-holo": 1.51,
+          "low-holo": 0.15,
+          "trend-holo": 1.75,
+          "avg1-holo": 1.2,
+          "avg7-holo": 1.23,
+          "avg30-holo": 1.6
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.49,
+            "midPrice": 0.87,
+            "highPrice": 4,
+            "marketPrice": 0.7,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 1.09,
+            "midPrice": 2.18,
+            "highPrice": 4.99,
+            "marketPrice": 2.16,
+            "directLowPrice": 2.27
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-4",
+      "illustrator": "kawayoo",
+      "localId": "4",
+      "name": "Shroomish",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [285],
+      "hp": 60,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Absorb",
+          "effect": "Heal 20 damage from this Pok\u00e9mon.",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.06,
+          "low": 0.02,
+          "trend": 0.06,
+          "avg1": 0.05,
+          "avg7": 0.05,
+          "avg30": 0.06,
+          "avg-holo": 0.26,
+          "low-holo": 0.07,
+          "trend-holo": 0.24,
+          "avg1-holo": 0.29,
+          "avg7-holo": 0.3,
+          "avg30-holo": 0.31
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.17,
+            "highPrice": 1.5,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.27,
+            "highPrice": 2,
+            "marketPrice": 0.25,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-5",
+      "illustrator": "Mizue",
+      "localId": "5",
+      "name": "Breloom",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [286],
+      "hp": 110,
+      "types": ["Grass"],
+      "evolveFrom": "Shroomish",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Hibernation Spore",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Asleep. Your opponent flips 2 coins instead of 1 between turns. If either of them is tails, that Pok\u00e9mon is still Asleep."
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Magnum Punch",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.06,
+          "low": 0.02,
+          "trend": 0.06,
+          "avg1": 0.09,
+          "avg7": 0.06,
+          "avg30": 0.07,
+          "avg-holo": 0.42,
+          "low-holo": 0.03,
+          "trend-holo": 0.43,
+          "avg1-holo": 0.4,
+          "avg7-holo": 0.46,
+          "avg30-holo": 0.35
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.2,
+            "highPrice": 1.49,
+            "marketPrice": 0.16,
+            "directLowPrice": 0.1
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.2,
+            "midPrice": 0.38,
+            "highPrice": 2,
+            "marketPrice": 0.38,
+            "directLowPrice": 0.25
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-6",
+      "illustrator": "Tomokazu Komiya",
+      "localId": "6",
+      "name": "Carnivine",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [455],
+      "hp": 100,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Flick Poison",
+          "effect": "Switch 1 of your opponent\u2019s Benched Pok\u00e9mon with their Active Pok\u00e9mon. The new Active Pok\u00e9mon is now Poisoned."
+        },
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Crunch",
+          "effect": "Discard an Energy from your opponent\u2019s Active Pok\u00e9mon.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.22,
+          "low": 0.02,
+          "trend": 0.21,
+          "avg1": 0.02,
+          "avg7": 0.29,
+          "avg30": 0.21,
+          "avg-holo": 0.32,
+          "low-holo": 0.1,
+          "trend-holo": 0.33,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.33,
+          "avg30-holo": 0.39
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.24,
+            "highPrice": 1.49,
+            "marketPrice": 0.23,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.24,
+            "midPrice": 0.5,
+            "highPrice": 2,
+            "marketPrice": 0.5,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-7",
+      "illustrator": "Mizue",
+      "localId": "7",
+      "name": "Shaymin",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [492],
+      "hp": 70,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Flippity Flap",
+          "effect": "Shuffle your hand into your deck. Then, draw 6 cards."
+        },
+        {
+          "cost": ["Grass", "Colorless"],
+          "name": "Rally Back",
+          "effect": "If any of your Pok\u00e9mon were Knocked Out by damage from an opponent\u2019s attack during their last turn, this attack does 90 more damage.",
+          "damage": "30+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.46,
+          "low": 0.05,
+          "trend": 0.4,
+          "avg1": 0.2,
+          "avg7": 0.4,
+          "avg30": 0.44,
+          "avg-holo": 0.87,
+          "low-holo": 0.1,
+          "trend-holo": 0.9,
+          "avg1-holo": 3.5,
+          "avg7-holo": 1.05,
+          "avg30-holo": 0.81
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.13,
+            "midPrice": 0.33,
+            "highPrice": 2,
+            "marketPrice": 0.31,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.2,
+            "midPrice": 0.57,
+            "highPrice": 4,
+            "marketPrice": 0.66,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-8",
+      "illustrator": "kawayoo",
+      "localId": "8",
+      "name": "Virizion",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [640],
+      "hp": 110,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Grass"],
+          "name": "Wrapped in Wind",
+          "effect": "You may attach a basic Energy card from your hand to this Pok\u00e9mon.",
+          "damage": 30
+        },
+        {
+          "cost": ["Grass", "Grass", "Colorless"],
+          "name": "Pike",
+          "effect": "This attack does 30 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.31,
+          "low": 0.05,
+          "trend": 0.36,
+          "avg1": 0.35,
+          "avg7": 0.35,
+          "avg30": 0.33,
+          "avg-holo": 0.42,
+          "low-holo": 0.1,
+          "trend-holo": 0.32,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.56,
+          "avg30-holo": 0.47
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.3,
+            "highPrice": 3,
+            "marketPrice": 0.28,
+            "directLowPrice": 0.3
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.01,
+            "midPrice": 0.4,
+            "highPrice": 3,
+            "marketPrice": 0.38,
+            "directLowPrice": 0.36
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-9",
+      "illustrator": "Hitoshi Ariga",
+      "localId": "9",
+      "name": "Shining Genesect",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [649],
+      "hp": 130,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Energy Reload",
+          "effect": "Once during your turn (before your attack), you may move a Grass Energy from 1 of your other Pok\u00e9mon to this Pok\u00e9mon."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless"],
+          "name": "Gaia Blaster",
+          "effect": "This attack does 20 more damage times the amount of Grass Energy attached to this Pok\u00e9mon.",
+          "damage": "50+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fire", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 8.84,
+          "low": 4.5,
+          "trend": 8.54,
+          "avg1": 7,
+          "avg7": 8.02,
+          "avg30": 8.77,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 24.37,
+          "avg1-holo": 11,
+          "avg7-holo": 18.54,
+          "avg30-holo": 24.02
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 6.69,
+            "midPrice": 12.84,
+            "highPrice": 112,
+            "marketPrice": 12.84,
+            "directLowPrice": 8.34
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-10",
+      "illustrator": "5ban Graphics",
+      "localId": "10",
+      "name": "Entei GX",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [244],
+      "hp": 180,
+      "types": ["Fire"],
+      "suffix": "GX",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Combustion", "damage": 50 },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Fire Fang",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Burned.",
+          "damage": 100
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Brave Burn GX",
+          "effect": "This attack does 150 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.) (You can\u2019t use more than 1 GX attack in a game.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.15,
+          "low": 0.5,
+          "trend": 3.46,
+          "avg1": 2.65,
+          "avg7": 3.7,
+          "avg30": 3.04,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3.04,
+          "avg1-holo": 3.99,
+          "avg7-holo": 2.94,
+          "avg30-holo": 2.98
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.5,
+            "midPrice": 3,
+            "highPrice": 64.77,
+            "marketPrice": 2.97,
+            "directLowPrice": 2.31
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-11",
+      "illustrator": "Suwama Chiaki",
+      "localId": "11",
+      "name": "Torkoal",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [324],
+      "hp": 110,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "High-Pressure Heat",
+          "effect": "During your next turn, this Pok\u00e9mon\u2019s High-Pressure Heat attack does 50 more damage (before applying Weakness and Resistance).",
+          "damage": 30
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Flamethrower",
+          "effect": "Discard an Energy from this Pok\u00e9mon.",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.04,
+          "low": 0.02,
+          "trend": 0.04,
+          "avg1": 0.02,
+          "avg7": 0.05,
+          "avg30": 0.05,
+          "avg-holo": 0.3,
+          "low-holo": 0.07,
+          "trend-holo": 0.26,
+          "avg1-holo": 0.2,
+          "avg7-holo": 0.29,
+          "avg30-holo": 0.35
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.17,
+            "highPrice": 2.03,
+            "marketPrice": 0.13,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.29,
+            "highPrice": 2,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-12",
+      "illustrator": "kawayoo",
+      "localId": "12",
+      "name": "Larvesta",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [636],
+      "hp": 80,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Flare", "damage": 30 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.1,
+          "low": 0.02,
+          "trend": 0.13,
+          "avg1": 0.08,
+          "avg7": 0.15,
+          "avg30": 0.08,
+          "avg-holo": 0.16,
+          "low-holo": 0.02,
+          "trend-holo": 0.17,
+          "avg1-holo": 0.2,
+          "avg7-holo": 0.13,
+          "avg30-holo": 0.22
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.17,
+            "highPrice": 1.49,
+            "marketPrice": 0.16,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.13,
+            "midPrice": 0.3,
+            "highPrice": 2,
+            "marketPrice": 0.28,
+            "directLowPrice": 0.27
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-13",
+      "illustrator": "nagimiso",
+      "localId": "13",
+      "name": "Volcarona",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [637],
+      "hp": 120,
+      "types": ["Fire"],
+      "evolveFrom": "Larvesta",
+      "stage": "Stage1",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Heat Cyclone",
+          "effect": "Once during your turn (before your attack), you may have your opponent switch their Active Pok\u00e9mon with 1 of their Benched Pok\u00e9mon."
+        }
+      ],
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Heat Blast", "damage": 60 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.13,
+          "low": 0.02,
+          "trend": 0.12,
+          "avg1": 0.05,
+          "avg7": 0.15,
+          "avg30": 0.11,
+          "avg-holo": 0.38,
+          "low-holo": 0.09,
+          "trend-holo": 0.36,
+          "avg1-holo": 1,
+          "avg7-holo": 0.42,
+          "avg30-holo": 0.34
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.04,
+            "midPrice": 0.2,
+            "highPrice": 1.49,
+            "marketPrice": 0.16,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.19,
+            "midPrice": 0.35,
+            "highPrice": 3,
+            "marketPrice": 0.33,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-14",
+      "illustrator": "TOKIYA",
+      "localId": "14",
+      "name": "Reshiram",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [643],
+      "hp": 130,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Outrage",
+          "effect": "This attack does 10 more damage for each damage counter on this Pok\u00e9mon.",
+          "damage": "20+"
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Scorching Breath",
+          "effect": "This Pok\u00e9mon can\u2019t attack during your next turn.",
+          "damage": 130
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.52,
+          "low": 0.1,
+          "trend": 0.52,
+          "avg1": 0.35,
+          "avg7": 0.43,
+          "avg30": 0.53,
+          "avg-holo": 1.72,
+          "low-holo": 0.1,
+          "trend-holo": 1.72,
+          "avg1-holo": 1.5,
+          "avg7-holo": 1.74,
+          "avg30-holo": 2.02
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.2,
+            "midPrice": 0.42,
+            "highPrice": 3.95,
+            "marketPrice": 0.43,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.45,
+            "midPrice": 0.64,
+            "highPrice": 4,
+            "marketPrice": 0.55,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-15",
+      "illustrator": "Mitsuhiro Arita",
+      "localId": "15",
+      "name": "Litten",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [725],
+      "hp": 60,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [{ "cost": ["Fire"], "name": "Live Coal", "damage": 20 }],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.05,
+          "low": 0.02,
+          "trend": 0.06,
+          "avg1": 0.1,
+          "avg7": 0.08,
+          "avg30": 0.07,
+          "avg-holo": 0.4,
+          "low-holo": 0.04,
+          "trend-holo": 0.46,
+          "avg1-holo": 0.6,
+          "avg7-holo": 0.4,
+          "avg30-holo": 0.43
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.19,
+            "highPrice": 2,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.36,
+            "highPrice": 2,
+            "marketPrice": 0.35,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-16",
+      "illustrator": "Shin Nagasawa",
+      "localId": "16",
+      "name": "Torracat",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [726],
+      "hp": 90,
+      "types": ["Fire"],
+      "evolveFrom": "Litten",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Swagger",
+          "effect": "Flip a coin. If heads, discard an Energy from your opponent\u2019s Active Pok\u00e9mon."
+        },
+        { "cost": ["Fire", "Colorless"], "name": "Fire Claws", "damage": 30 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.07,
+          "low": 0.02,
+          "trend": 0.08,
+          "avg1": 0.11,
+          "avg7": 0.1,
+          "avg30": 0.08,
+          "avg-holo": 0.33,
+          "low-holo": 0.02,
+          "trend-holo": 0.32,
+          "avg1-holo": 0.25,
+          "avg7-holo": 0.32,
+          "avg30-holo": 0.39
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.2,
+            "highPrice": 2.03,
+            "marketPrice": 0.13,
+            "directLowPrice": 0.1
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.18,
+            "midPrice": 0.36,
+            "highPrice": 2,
+            "marketPrice": 0.36,
+            "directLowPrice": 0.3
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-17",
+      "illustrator": "Emi Ando",
+      "localId": "17",
+      "name": "Incineroar",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [727],
+      "hp": 170,
+      "types": ["Fire"],
+      "evolveFrom": "Torracat",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Profane Punch",
+          "effect": "If your Benched Pok\u00e9mon have any damage counters on them, this attack does 80 more damage.",
+          "damage": "50+"
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Flare Blitz",
+          "effect": "Discard all Fire Energy from this Pok\u00e9mon.",
+          "damage": 180
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.16,
+          "low": 0.02,
+          "trend": 0.16,
+          "avg1": 0.09,
+          "avg7": 0.09,
+          "avg30": 0.15,
+          "avg-holo": 0.69,
+          "low-holo": 0.07,
+          "trend-holo": 0.47,
+          "avg1-holo": 1.39,
+          "avg7-holo": 0.65,
+          "avg30-holo": 0.47
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.02,
+            "midPrice": 0.23,
+            "highPrice": 1.6,
+            "marketPrice": 0.17,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.08,
+            "midPrice": 0.49,
+            "highPrice": 4.95,
+            "marketPrice": 0.47,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-18",
+      "illustrator": "TOKIYA",
+      "localId": "18",
+      "name": "Totodile",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [158],
+      "hp": 70,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Water"], "name": "Water Gun", "damage": 10 },
+        { "cost": ["Water", "Colorless"], "name": "Bite", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.12,
+          "low": 0.02,
+          "trend": 0.17,
+          "avg1": 0.6,
+          "avg7": 0.12,
+          "avg30": 0.1,
+          "avg-holo": 0.6,
+          "low-holo": 0.2,
+          "trend-holo": 0.56,
+          "avg1-holo": 0.19,
+          "avg7-holo": 0.53,
+          "avg30-holo": 0.57
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.25,
+            "highPrice": 3.99,
+            "marketPrice": 0.3,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.2,
+            "midPrice": 0.84,
+            "highPrice": 3,
+            "marketPrice": 0.92,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-19",
+      "illustrator": "Naoki Saito",
+      "localId": "19",
+      "name": "Croconaw",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [159],
+      "hp": 90,
+      "types": ["Water"],
+      "evolveFrom": "Totodile",
+      "stage": "Stage1",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Plunge",
+          "effect": "Once during your turn (before your attack), if this Pok\u00e9mon is on your Bench, you may move all Energy from your Active Pok\u00e9mon to this Pok\u00e9mon. If you do, switch it with your Active Pok\u00e9mon."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Water", "Colorless", "Colorless"],
+          "name": "Bite",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.18,
+          "low": 0.02,
+          "trend": 0.19,
+          "avg1": 0.1,
+          "avg7": 0.31,
+          "avg30": 0.16,
+          "avg-holo": 0.66,
+          "low-holo": 0.08,
+          "trend-holo": 0.53,
+          "avg1-holo": 0.75,
+          "avg7-holo": 0.73,
+          "avg30-holo": 0.56
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.09,
+            "midPrice": 0.25,
+            "highPrice": 2,
+            "marketPrice": 0.23,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.24,
+            "midPrice": 0.47,
+            "highPrice": 2,
+            "marketPrice": 0.47,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-20",
+      "illustrator": "nagimiso",
+      "localId": "20",
+      "name": "Feraligatr",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [160],
+      "hp": 160,
+      "types": ["Water"],
+      "evolveFrom": "Croconaw",
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Water", "Colorless", "Colorless"],
+          "name": "Crunch",
+          "effect": "Discard an Energy from your opponent\u2019s Active Pok\u00e9mon.",
+          "damage": 80
+        },
+        {
+          "cost": ["Water", "Colorless", "Colorless", "Colorless"],
+          "name": "Hydro Splash",
+          "damage": 130
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.19,
+          "low": 0.02,
+          "trend": 0.2,
+          "avg1": 0.45,
+          "avg7": 0.27,
+          "avg30": 0.2,
+          "avg-holo": 1.03,
+          "low-holo": 0.3,
+          "trend-holo": 0.99,
+          "avg1-holo": 0.4,
+          "avg7-holo": 1.1,
+          "avg30-holo": 0.78
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.37,
+            "highPrice": 1.49,
+            "marketPrice": 0.38,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.45,
+            "midPrice": 0.86,
+            "highPrice": 4,
+            "marketPrice": 0.86,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-21",
+      "illustrator": "Shin Nagasawa",
+      "localId": "21",
+      "name": "Qwilfish",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [211],
+      "hp": 90,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Poison Sting",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Poisoned."
+        },
+        {
+          "cost": ["Water", "Colorless"],
+          "name": "Shocking Sting",
+          "effect": "If your opponent\u2019s Active Pok\u00e9mon is affected by a Special Condition, this attack does 50 more damage.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.04,
+          "low": 0.02,
+          "trend": 0.05,
+          "avg1": 0.04,
+          "avg7": 0.05,
+          "avg30": 0.05,
+          "avg-holo": 0.29,
+          "low-holo": 0.07,
+          "trend-holo": 0.25,
+          "avg1-holo": 0.2,
+          "avg7-holo": 0.31,
+          "avg30-holo": 0.3
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.15,
+            "highPrice": 1.5,
+            "marketPrice": 0.12,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.29,
+            "highPrice": 2,
+            "marketPrice": 0.25,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-22",
+      "illustrator": "Sekio",
+      "localId": "22",
+      "name": "Buizel",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [418],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Razor Fin", "damage": 10 },
+        {
+          "cost": ["Water", "Colorless", "Colorless"],
+          "name": "Water Gun",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.08,
+          "low": 0.02,
+          "trend": 0.11,
+          "avg1": 0.05,
+          "avg7": 0.11,
+          "avg30": 0.1,
+          "avg-holo": 0.3,
+          "low-holo": 0.07,
+          "trend-holo": 0.36,
+          "avg1-holo": 0.4,
+          "avg7-holo": 0.34,
+          "avg30-holo": 0.28
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.19,
+            "highPrice": 1.49,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.13,
+            "midPrice": 0.34,
+            "highPrice": 2,
+            "marketPrice": 0.34,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-23",
+      "illustrator": "Suwama Chiaki",
+      "localId": "23",
+      "name": "Floatzel",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [419],
+      "hp": 100,
+      "types": ["Water"],
+      "evolveFrom": "Buizel",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Razor Fin", "damage": 20 },
+        {
+          "cost": ["Water", "Colorless", "Colorless"],
+          "name": "Aqua Bomb",
+          "effect": "This Pok\u00e9mon does 30 damage to itself.",
+          "damage": 120
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.09,
+          "low": 0.02,
+          "trend": 0.11,
+          "avg1": 0.06,
+          "avg7": 0.14,
+          "avg30": 0.08,
+          "avg-holo": 0.28,
+          "low-holo": 0.07,
+          "trend-holo": 0.28,
+          "avg1-holo": 0.5,
+          "avg7-holo": 0.31,
+          "avg30-holo": 0.32
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.2,
+            "highPrice": 1.64,
+            "marketPrice": 0.13,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.12,
+            "midPrice": 0.25,
+            "highPrice": 2,
+            "marketPrice": 0.19,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-24",
+      "illustrator": "Eske Yoshinob",
+      "localId": "24",
+      "name": "Palkia",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [484],
+      "hp": 130,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Spiral Drain",
+          "effect": "Heal 30 damage from this Pok\u00e9mon.",
+          "damage": 30
+        },
+        {
+          "cost": ["Water", "Water", "Colorless"],
+          "name": "Aqua Blade",
+          "damage": 100
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.53,
+          "low": 0.06,
+          "trend": 0.53,
+          "avg1": 0.15,
+          "avg7": 0.54,
+          "avg30": 0.51,
+          "avg-holo": 1.71,
+          "low-holo": 0.15,
+          "trend-holo": 1.62,
+          "avg1-holo": 4.89,
+          "avg7-holo": 1.7,
+          "avg30-holo": 0.87
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.12,
+            "midPrice": 0.39,
+            "highPrice": 4,
+            "marketPrice": 0.35,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.11,
+            "midPrice": 0.49,
+            "highPrice": 3,
+            "marketPrice": 0.45,
+            "directLowPrice": 0.44
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-25",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "25",
+      "name": "Manaphy",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [490],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Blessings of the Deep",
+          "effect": "Once during your turn (before your attack), you may heal 20 damage from 1 of your Pok\u00e9mon that has any Water Energy attached to it."
+        }
+      ],
+      "attacks": [
+        { "cost": ["Water", "Colorless"], "name": "Wave Splash", "damage": 30 }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.42,
+          "low": 0.03,
+          "trend": 0.28,
+          "avg1": 0.2,
+          "avg7": 0.32,
+          "avg30": 0.41,
+          "avg-holo": 0.29,
+          "low-holo": 0.05,
+          "trend-holo": 0.29,
+          "avg1-holo": 0.54,
+          "avg7-holo": 0.37,
+          "avg30-holo": 0.42
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.03,
+            "midPrice": 0.35,
+            "highPrice": 2,
+            "marketPrice": 0.36,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.09,
+            "midPrice": 0.44,
+            "highPrice": 3,
+            "marketPrice": 0.36,
+            "directLowPrice": 0.32
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-26",
+      "illustrator": "kodama",
+      "localId": "26",
+      "name": "Keldeo",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [647],
+      "hp": 110,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Bail Out",
+          "effect": "Put a Water Pok\u00e9mon from your discard pile into your hand."
+        },
+        {
+          "cost": ["Water", "Water"],
+          "name": "Resolute Blade",
+          "effect": "This attack does 20 more damage for each of your opponent\u2019s Benched Pok\u00e9mon.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.5,
+          "low": 0.05,
+          "trend": 0.32,
+          "avg1": 0.3,
+          "avg7": 0.35,
+          "avg30": 0.45,
+          "avg-holo": 0.61,
+          "low-holo": 0.1,
+          "trend-holo": 0.5,
+          "avg1-holo": 0.49,
+          "avg7-holo": 0.62,
+          "avg30-holo": 0.87
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.09,
+            "midPrice": 0.3,
+            "highPrice": 3,
+            "marketPrice": 0.27,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.2,
+            "midPrice": 0.6,
+            "highPrice": 1.5,
+            "marketPrice": 0.65,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-27",
+      "illustrator": "Hitoshi Ariga",
+      "localId": "27",
+      "name": "Shining Volcanion",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [721],
+      "hp": 130,
+      "types": ["Water"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Water", "Water", "Water"],
+          "name": "Dual Pump",
+          "effect": "This attack does 50 damage to 2 of your opponent\u2019s Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        },
+        {
+          "cost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+          "name": "Quad Smash",
+          "effect": "Flip 4 coins. This attack does 50 damage for each heads.",
+          "damage": "50\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 7.87,
+          "low": 1.49,
+          "trend": 8.63,
+          "avg1": 4.5,
+          "avg7": 8.61,
+          "avg30": 7.32,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 15.46,
+          "avg1-holo": 12.23,
+          "avg7-holo": 13.53,
+          "avg30-holo": 18.53
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3.5,
+            "midPrice": 7.91,
+            "highPrice": 96.18,
+            "marketPrice": 7.61,
+            "directLowPrice": 3.99
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-28",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "28",
+      "name": "Pikachu",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Iron Tail",
+          "effect": "Flip a coin until you get tails. This attack does 20 damage for each heads.",
+          "damage": "20\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.76,
+          "low": 0.02,
+          "trend": 0.72,
+          "avg1": 0.42,
+          "avg7": 0.67,
+          "avg30": 0.86,
+          "avg-holo": 3.27,
+          "low-holo": 0.1,
+          "trend-holo": 3.84,
+          "avg1-holo": 3,
+          "avg7-holo": 3.93,
+          "avg30-holo": 2.77
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.6,
+            "highPrice": 3,
+            "marketPrice": 0.67,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.82,
+            "midPrice": 1.99,
+            "highPrice": 4.99,
+            "marketPrice": 1.91,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-29",
+      "illustrator": "5ban Graphics",
+      "localId": "29",
+      "name": "Raichu GX",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [26],
+      "hp": 210,
+      "types": ["Lightning"],
+      "evolveFrom": "Pikachu",
+      "suffix": "GX",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Powerful Spark",
+          "effect": "This attack does 20 more damage times the amount of Lightning Energy attached to your Pok\u00e9mon.",
+          "damage": "20+"
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Thunder",
+          "effect": "This Pok\u00e9mon does 30 damage to itself.",
+          "damage": 160
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Voltail GX",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Paralyzed. (You can\u2019t use more than 1 GX attack in a game.)",
+          "damage": 120
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.26,
+          "low": 1.29,
+          "trend": 3.19,
+          "avg1": 2.97,
+          "avg7": 3.15,
+          "avg30": 3.23,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 2.76,
+          "avg1-holo": 2.25,
+          "avg7-holo": 2.48,
+          "avg30-holo": 3.04
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.25,
+            "midPrice": 4.39,
+            "highPrice": 99.99,
+            "marketPrice": 4.04,
+            "directLowPrice": 9.27
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-30",
+      "illustrator": "match",
+      "localId": "30",
+      "name": "Voltorb",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [100],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Lightning"], "name": "Electro Ball", "damage": 10 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.06,
+          "low": 0.02,
+          "trend": 0.08,
+          "avg1": 0.04,
+          "avg7": 0.05,
+          "avg30": 0.07,
+          "avg-holo": 0.29,
+          "low-holo": 0.05,
+          "trend-holo": 0.3,
+          "avg1-holo": 0.5,
+          "avg7-holo": 0.31,
+          "avg30-holo": 0.28
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.15,
+            "highPrice": 2,
+            "marketPrice": 0.11,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.31,
+            "highPrice": 2,
+            "marketPrice": 0.29,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-31",
+      "illustrator": "Kyoko Umemoto",
+      "localId": "31",
+      "name": "Electrode",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [101],
+      "hp": 90,
+      "types": ["Lightning"],
+      "evolveFrom": "Voltorb",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Swift",
+          "effect": "This attack\u2019s damage isn\u2019t affected by Weakness, Resistance, or any other effects on your opponent\u2019s Active Pok\u00e9mon.",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 0,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.12,
+          "low": 0.02,
+          "trend": 0.12,
+          "avg1": 0.05,
+          "avg7": 0.15,
+          "avg30": 0.13,
+          "avg-holo": 0.42,
+          "low-holo": 0.07,
+          "trend-holo": 0.37,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.58,
+          "avg30-holo": 0.4
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.04,
+            "midPrice": 0.2,
+            "highPrice": 1.5,
+            "marketPrice": 0.16,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.33,
+            "highPrice": 2,
+            "marketPrice": 0.28,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-32",
+      "illustrator": "Mitsuhiro Arita",
+      "localId": "32",
+      "name": "Raikou",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [243],
+      "hp": 120,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Booming Thunder",
+          "effect": "Attach a Lightning Energy card from your discard pile to 1 of your Benched Pok\u00e9mon.",
+          "damage": 30
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Electric Ball",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.87,
+          "low": 0.2,
+          "trend": 0.77,
+          "avg1": 1,
+          "avg7": 0.76,
+          "avg30": 0.83,
+          "avg-holo": 1.34,
+          "low-holo": 0.45,
+          "trend-holo": 1.06,
+          "avg1-holo": 0.49,
+          "avg7-holo": 1.34,
+          "avg30-holo": 1.61
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.49,
+            "midPrice": 0.9,
+            "highPrice": 3,
+            "marketPrice": 0.84,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.89,
+            "midPrice": 1.51,
+            "highPrice": 4.99,
+            "marketPrice": 1.51,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-33",
+      "illustrator": "Tomokazu Komiya",
+      "localId": "33",
+      "name": "Plusle",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [311],
+      "hp": 70,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Tag Team Boost",
+          "effect": "If Minun is on your Bench, this attack does 50 more damage.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.15,
+          "low": 0.02,
+          "trend": 0.16,
+          "avg1": 0.05,
+          "avg7": 0.16,
+          "avg30": 0.14,
+          "avg-holo": 0.75,
+          "low-holo": 0.08,
+          "trend-holo": 0.78,
+          "avg1-holo": 1.99,
+          "avg7-holo": 0.95,
+          "avg30-holo": 0.6
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.25,
+            "highPrice": 1.5,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.58,
+            "midPrice": 0.75,
+            "highPrice": 2,
+            "marketPrice": 0.62,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-34",
+      "illustrator": "nagimiso",
+      "localId": "34",
+      "name": "Minun",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [312],
+      "hp": 70,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Collect", "effect": "Draw a card." },
+        {
+          "cost": ["Lightning"],
+          "name": "Spark",
+          "effect": "This attack does 20 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.09,
+          "low": 0.02,
+          "trend": 0.06,
+          "avg1": 0.02,
+          "avg7": 0.1,
+          "avg30": 0.09,
+          "avg-holo": 0.36,
+          "low-holo": 0.08,
+          "trend-holo": 0.36,
+          "avg1-holo": 0.18,
+          "avg7-holo": 0.37,
+          "avg30-holo": 0.34
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.24,
+            "highPrice": 1.75,
+            "marketPrice": 0.23,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.39,
+            "highPrice": 1.49,
+            "marketPrice": 0.34,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-35",
+      "illustrator": "nagimiso",
+      "localId": "35",
+      "name": "Zekrom",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [644],
+      "hp": 130,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Outrage",
+          "effect": "This attack does 10 more damage for each damage counter on this Pok\u00e9mon.",
+          "damage": "20+"
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Storm Blade",
+          "effect": "Discard 2 Energy from this Pok\u00e9mon.",
+          "damage": 130
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.41,
+          "low": 0.02,
+          "trend": 0.35,
+          "avg1": 0.49,
+          "avg7": 0.44,
+          "avg30": 0.39,
+          "avg-holo": 0.4,
+          "low-holo": 0.15,
+          "trend-holo": 0.38,
+          "avg1-holo": 0.42,
+          "avg7-holo": 0.42,
+          "avg30-holo": 0.52
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.07,
+            "midPrice": 0.42,
+            "highPrice": 2,
+            "marketPrice": 0.39,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.41,
+            "highPrice": 3,
+            "marketPrice": 0.39,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-36",
+      "illustrator": "DemizuPosuka",
+      "localId": "36",
+      "name": "Ekans",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [23],
+      "hp": 70,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Poison Sting",
+          "effect": "Flip a coin. If heads, your opponent\u2019s Active Pok\u00e9mon is now Poisoned.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.19,
+          "low": 0.02,
+          "trend": 0.26,
+          "avg1": 0.02,
+          "avg7": 0.23,
+          "avg30": 0.11,
+          "avg-holo": 0.31,
+          "low-holo": 0.02,
+          "trend-holo": 0.35,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.43,
+          "avg30-holo": 0.29
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.17,
+            "highPrice": 1.49,
+            "marketPrice": 0.11,
+            "directLowPrice": 0.12
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.31,
+            "highPrice": 2,
+            "marketPrice": 0.31,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-37",
+      "illustrator": "kodama",
+      "localId": "37",
+      "name": "Arbok",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [24],
+      "hp": 120,
+      "types": ["Psychic"],
+      "evolveFrom": "Ekans",
+      "stage": "Stage1",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Intimidating Pattern",
+          "effect": "As long as this Pok\u00e9mon is your Active Pok\u00e9mon, your opponent\u2019s Active Pok\u00e9mon\u2019s attacks do 30 less damage (before applying Weakness and Resistance)."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Colorless", "Colorless"],
+          "name": "Venomous Fang",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Poisoned.",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.11,
+          "low": 0.02,
+          "trend": 0.11,
+          "avg1": 0.18,
+          "avg7": 0.07,
+          "avg30": 0.12,
+          "avg-holo": 0.4,
+          "low-holo": 0.08,
+          "trend-holo": 0.41,
+          "avg1-holo": 0.5,
+          "avg7-holo": 0.43,
+          "avg30-holo": 0.42
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.08,
+            "midPrice": 0.23,
+            "highPrice": 1.49,
+            "marketPrice": 0.2,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.06,
+            "midPrice": 0.63,
+            "highPrice": 3.95,
+            "marketPrice": 0.63,
+            "directLowPrice": 0.77
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-38",
+      "illustrator": "Tomokazu Komiya",
+      "localId": "38",
+      "name": "Jynx",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [124],
+      "hp": 90,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Whiny Voice",
+          "effect": "Choose a random card from your opponent\u2019s hand. Your opponent reveals that card and shuffles it into their deck."
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Feverish Kiss",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Confused.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.14,
+          "low": 0.02,
+          "trend": 0.13,
+          "avg1": 0.24,
+          "avg7": 0.14,
+          "avg30": 0.14,
+          "avg-holo": 0.4,
+          "low-holo": 0.1,
+          "trend-holo": 0.48,
+          "avg1-holo": 0.26,
+          "avg7-holo": 0.37,
+          "avg30-holo": 0.44
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.24,
+            "highPrice": 1.49,
+            "marketPrice": 0.24,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.13,
+            "midPrice": 0.36,
+            "highPrice": 2,
+            "marketPrice": 0.35,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-39",
+      "illustrator": "5ban Graphics",
+      "localId": "39",
+      "name": "Mewtwo GX",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 190,
+      "types": ["Psychic"],
+      "suffix": "GX",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Full Burst",
+          "effect": "This attack does 30 damage times the amount of Energy attached to this Pok\u00e9mon.",
+          "damage": "30\u00d7"
+        },
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Super Absorption",
+          "effect": "Heal 30 damage from this Pok\u00e9mon.",
+          "damage": 60
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Psychic"],
+          "name": "Psystrike GX",
+          "effect": "This attack\u2019s damage isn\u2019t affected by any effects on your opponent\u2019s Active Pok\u00e9mon. (You can\u2019t use more than 1 GX attack in a game.)",
+          "damage": 200
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 6.04,
+          "low": 0.99,
+          "trend": 5.53,
+          "avg1": 5.25,
+          "avg7": 5.81,
+          "avg30": 5.98,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 8.3,
+          "avg1-holo": 8,
+          "avg7-holo": 6.64,
+          "avg30-holo": 8.39
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 6.7,
+            "midPrice": 8.25,
+            "highPrice": 65.99,
+            "marketPrice": 7.61,
+            "directLowPrice": 7.16
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-40",
+      "illustrator": "Sanosuke Sakuma",
+      "localId": "40",
+      "name": "Shining Mew",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [151],
+      "hp": 30,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Legendary Guidance",
+          "effect": "Search your deck for up to 2 Energy cards and attach them to your Pok\u00e9mon in any way you like. Then, shuffle your deck."
+        },
+        { "cost": ["Psychic"], "name": "Beam", "damage": 10 }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 0,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 53.67,
+          "low": 23.87,
+          "trend": 56.15,
+          "avg1": 44.99,
+          "avg7": 59.62,
+          "avg30": 52.43,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 58.36,
+          "avg1-holo": 74.95,
+          "avg7-holo": 63.51,
+          "avg30-holo": 78.4
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 70,
+            "midPrice": 103.15,
+            "highPrice": 149.99,
+            "marketPrice": 86.78,
+            "directLowPrice": 103.1
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-41",
+      "illustrator": "Mitsuhiro Arita",
+      "localId": "41",
+      "name": "Latios",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [381],
+      "hp": 110,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Break Through",
+          "effect": "This attack does 30 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 30
+        },
+        {
+          "cost": ["Psychic", "Colorless", "Colorless"],
+          "name": "Lagoon Flight",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.51,
+          "low": 0.07,
+          "trend": 0.41,
+          "avg1": 0.3,
+          "avg7": 0.43,
+          "avg30": 0.5,
+          "avg-holo": 1.74,
+          "low-holo": 0.1,
+          "trend-holo": 1.76,
+          "avg1-holo": 1.54,
+          "avg7-holo": 1.86,
+          "avg30-holo": 1.27
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.25,
+            "midPrice": 0.58,
+            "highPrice": 2.95,
+            "marketPrice": 0.6,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.37,
+            "midPrice": 0.92,
+            "highPrice": 5,
+            "marketPrice": 0.92,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-42",
+      "illustrator": "Shigenori Negishi",
+      "localId": "42",
+      "name": "Shining Jirachi",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [385],
+      "hp": 70,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Stellar Reign",
+          "effect": "If your opponent\u2019s Active Pok\u00e9mon is an evolved Pok\u00e9mon, devolve it by putting all of the Evolution cards on it into your opponent\u2019s hand.",
+          "damage": 10
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 14.87,
+          "low": 5,
+          "trend": 12.51,
+          "avg1": 14.31,
+          "avg7": 12.6,
+          "avg30": 13.17,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 24.04,
+          "avg1-holo": 26.95,
+          "avg7-holo": 24.11,
+          "avg30-holo": 27.7
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 24.75,
+            "midPrice": 45.14,
+            "highPrice": 99.97,
+            "marketPrice": 30.07,
+            "directLowPrice": 26.37
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-43",
+      "illustrator": "Kyoko Umemoto",
+      "localId": "43",
+      "name": "Golett",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [622],
+      "hp": 90,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic", "Colorless", "Colorless"],
+          "name": "Mega Punch",
+          "damage": 60
+        }
+      ],
+      "weaknesses": [{ "type": "Darkness", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.07,
+          "low": 0.02,
+          "trend": 0.09,
+          "avg1": 0.02,
+          "avg7": 0.09,
+          "avg30": 0.06,
+          "avg-holo": 0.24,
+          "low-holo": 0.07,
+          "trend-holo": 0.24,
+          "avg1-holo": 0.14,
+          "avg7-holo": 0.23,
+          "avg30-holo": 0.23
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.15,
+            "highPrice": 1.49,
+            "marketPrice": 0.11,
+            "directLowPrice": 0.05
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.09,
+            "midPrice": 0.26,
+            "highPrice": 2,
+            "marketPrice": 0.21,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-44",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "44",
+      "name": "Golurk",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [623],
+      "hp": 140,
+      "types": ["Psychic"],
+      "evolveFrom": "Golett",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Psychic", "Colorless", "Colorless"],
+          "name": "Triple Smash",
+          "effect": "Flip 3 coins. This attack does 60 more damage for each heads.",
+          "damage": "10+"
+        },
+        {
+          "cost": ["Psychic", "Colorless", "Colorless", "Colorless"],
+          "name": "Golurk Hammer",
+          "damage": 120
+        }
+      ],
+      "weaknesses": [{ "type": "Darkness", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 4,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.12,
+          "low": 0.02,
+          "trend": 0.14,
+          "avg1": 0.04,
+          "avg7": 0.13,
+          "avg30": 0.11,
+          "avg-holo": 0.26,
+          "low-holo": 0.05,
+          "trend-holo": 0.25,
+          "avg1-holo": 0.5,
+          "avg7-holo": 0.3,
+          "avg30-holo": 0.34
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.2,
+            "highPrice": 1.56,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.2,
+            "midPrice": 0.38,
+            "highPrice": 2,
+            "marketPrice": 0.4,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-45",
+      "illustrator": "Emi Ando",
+      "localId": "45",
+      "name": "Marshadow",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [802],
+      "hp": 70,
+      "types": ["Psychic"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Let Loose",
+          "effect": "When you play this Pok\u00e9mon from your hand onto your Bench during your turn, you may have each player shuffle their hand into their deck and draw 4 cards."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Shadow Punch",
+          "effect": "This attack\u2019s damage isn\u2019t affected by Resistance.",
+          "damage": 30
+        }
+      ],
+      "weaknesses": [{ "type": "Darkness", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.46,
+          "low": 0.02,
+          "trend": 0.46,
+          "avg1": 0.53,
+          "avg7": 0.37,
+          "avg30": 0.44,
+          "avg-holo": 0.61,
+          "low-holo": 0.1,
+          "trend-holo": 0.55,
+          "avg1-holo": 1.18,
+          "avg7-holo": 0.63,
+          "avg30-holo": 0.61
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.2,
+            "midPrice": 0.54,
+            "highPrice": 2.95,
+            "marketPrice": 0.54,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 1.25,
+            "midPrice": 1.66,
+            "highPrice": 5.24,
+            "marketPrice": 1.72,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-46",
+      "illustrator": "Naoyo Kimura",
+      "localId": "46",
+      "name": "Stunfisk",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [618],
+      "hp": 110,
+      "types": ["Fighting"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Thunder Shock",
+          "effect": "Flip a coin. If heads, your opponent\u2019s Active Pok\u00e9mon is now Paralyzed.",
+          "damage": 30
+        },
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Head Bolt",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Grass", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.11,
+          "low": 0.02,
+          "trend": 0.1,
+          "avg1": 0.02,
+          "avg7": 0.11,
+          "avg30": 0.07,
+          "avg-holo": 0.77,
+          "low-holo": 0.05,
+          "trend-holo": 0.71,
+          "avg1-holo": 1.25,
+          "avg7-holo": 0.84,
+          "avg30-holo": 0.57
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.02,
+            "midPrice": 0.15,
+            "highPrice": 1.49,
+            "marketPrice": 0.12,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.08,
+            "midPrice": 0.25,
+            "highPrice": 2,
+            "marketPrice": 0.21,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-47",
+      "illustrator": "Kouki Saitou",
+      "localId": "47",
+      "name": "Spiritomb",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [442],
+      "hp": 60,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Cursed Whirlpool",
+          "effect": "As long as this Pok\u00e9mon is your Active Pok\u00e9mon, your opponent\u2019s Active Pok\u00e9mon can\u2019t retreat."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Darkness", "Colorless"],
+          "name": "Cursed Drop",
+          "effect": "Put 3 damage counters on your opponent\u2019s Pok\u00e9mon in any way you like."
+        }
+      ],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.11,
+          "low": 0.02,
+          "trend": 0.11,
+          "avg1": 0.02,
+          "avg7": 0.13,
+          "avg30": 0.09,
+          "avg-holo": 0.31,
+          "low-holo": 0.05,
+          "trend-holo": 0.3,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.35,
+          "avg30-holo": 0.34
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.2,
+            "highPrice": 3,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.09,
+            "midPrice": 0.28,
+            "highPrice": 2,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-48",
+      "illustrator": "Naoyo Kimura",
+      "localId": "48",
+      "name": "Purrloin",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [509],
+      "hp": 60,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Scratch", "damage": 10 },
+        {
+          "cost": ["Darkness", "Colorless"],
+          "name": "Tail Rap",
+          "effect": "Flip 2 coins. This attack does 20 damage for each heads.",
+          "damage": "20\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.08,
+          "low": 0.02,
+          "trend": 0.1,
+          "avg1": 0.12,
+          "avg7": 0.09,
+          "avg30": 0.06,
+          "avg-holo": 0.28,
+          "low-holo": 0.09,
+          "trend-holo": 0.26,
+          "avg1-holo": 0.2,
+          "avg7-holo": 0.31,
+          "avg30-holo": 0.28
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.17,
+            "highPrice": 2.28,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.29,
+            "highPrice": 2,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-49",
+      "illustrator": "kawayoo",
+      "localId": "49",
+      "name": "Liepard",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [510],
+      "hp": 90,
+      "types": ["Darkness"],
+      "evolveFrom": "Purrloin",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Darkness"],
+          "name": "Torment",
+          "effect": "Choose 1 of your opponent\u2019s Active Pok\u00e9mon\u2019s attacks. That Pok\u00e9mon can\u2019t use that attack during your opponent\u2019s next turn.",
+          "damage": 30
+        },
+        { "cost": ["Darkness", "Colorless"], "name": "Slash", "damage": 60 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.08,
+          "low": 0.02,
+          "trend": 0.08,
+          "avg1": 0.1,
+          "avg7": 0.11,
+          "avg30": 0.09,
+          "avg-holo": 0.28,
+          "low-holo": 0.05,
+          "trend-holo": 0.28,
+          "avg1-holo": 0.15,
+          "avg7-holo": 0.36,
+          "avg30-holo": 0.3
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.2,
+            "highPrice": 1.5,
+            "marketPrice": 0.16,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.29,
+            "highPrice": 4,
+            "marketPrice": 0.28,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-50",
+      "illustrator": "Sekio",
+      "localId": "50",
+      "name": "Scraggy",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [559],
+      "hp": 60,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Darkness"],
+          "name": "Call for Family",
+          "effect": "Search your deck for a Basic Pok\u00e9mon and put it onto your Bench. Then, shuffle your deck."
+        },
+        { "cost": ["Colorless", "Colorless"], "name": "Headbutt", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.07,
+          "low": 0.02,
+          "trend": 0.09,
+          "avg1": 0.1,
+          "avg7": 0.13,
+          "avg30": 0.07,
+          "avg-holo": 0.27,
+          "low-holo": 0.05,
+          "trend-holo": 0.24,
+          "avg1-holo": 0.2,
+          "avg7-holo": 0.26,
+          "avg30-holo": 0.29
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.16,
+            "highPrice": 1.5,
+            "marketPrice": 0.11,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.3,
+            "highPrice": 2,
+            "marketPrice": 0.27,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-51",
+      "illustrator": "Mitsuhiro Arita",
+      "localId": "51",
+      "name": "Scrafty",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [560],
+      "hp": 110,
+      "types": ["Darkness"],
+      "evolveFrom": "Scraggy",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Dangerous Head",
+          "effect": "If your opponent\u2019s Active Pok\u00e9mon is a Basic Pok\u00e9mon, this attack does 50 more damage.",
+          "damage": "20+"
+        },
+        {
+          "cost": ["Darkness", "Colorless", "Colorless"],
+          "name": "Hammer In",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.11,
+          "low": 0.02,
+          "trend": 0.12,
+          "avg1": 0.02,
+          "avg7": 0.12,
+          "avg30": 0.09,
+          "avg-holo": 0.33,
+          "low-holo": 0.1,
+          "trend-holo": 0.32,
+          "avg1-holo": 0.25,
+          "avg7-holo": 0.44,
+          "avg30-holo": 0.34
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.2,
+            "highPrice": 1.49,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.3,
+            "highPrice": 2,
+            "marketPrice": 0.29,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-52",
+      "illustrator": "kodama",
+      "localId": "52",
+      "name": "Zorua",
+      "rarity": "Common",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [570],
+      "hp": 60,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Darkness"], "name": "Stampede", "damage": 10 },
+        { "cost": ["Colorless", "Colorless"], "name": "Ram", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.11,
+          "low": 0.02,
+          "trend": 0.14,
+          "avg1": 0.08,
+          "avg7": 0.18,
+          "avg30": 0.1,
+          "avg-holo": 0.52,
+          "low-holo": 0.05,
+          "trend-holo": 0.45,
+          "avg1-holo": 0.05,
+          "avg7-holo": 0.47,
+          "avg30-holo": 0.49
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.25,
+            "highPrice": 2,
+            "marketPrice": 0.25,
+            "directLowPrice": 0.24
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.42,
+            "midPrice": 0.99,
+            "highPrice": 3.98,
+            "marketPrice": 0.98,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-53",
+      "illustrator": "5ban Graphics",
+      "localId": "53",
+      "name": "Zoroark GX",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [571],
+      "hp": 210,
+      "types": ["Darkness"],
+      "evolveFrom": "Zorua",
+      "suffix": "GX",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Trade",
+          "effect": "Once during your turn (before your attack), you may discard a card from your hand. If you do, draw 2 cards."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Riotous Beating",
+          "effect": "This attack does 20 damage for each of your Pok\u00e9mon in play.",
+          "damage": "20\u00d7"
+        },
+        {
+          "cost": ["Darkness", "Darkness"],
+          "name": "Trickster GX",
+          "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon\u2019s attacks and use it as this attack. (You can\u2019t use more than 1 GX attack in a game.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.96,
+          "low": 1,
+          "trend": 2.49,
+          "avg1": 1.75,
+          "avg7": 2.12,
+          "avg30": 2.59,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 1.74,
+          "avg1-holo": 1.7,
+          "avg7-holo": 2.06,
+          "avg30-holo": 2.28
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.16,
+            "midPrice": 3,
+            "highPrice": 16.38,
+            "marketPrice": 2.82,
+            "directLowPrice": 2.6
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-54",
+      "illustrator": "Shin Nagasawa",
+      "localId": "54",
+      "name": "Yveltal",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [717],
+      "hp": 120,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Strafe",
+          "effect": "You may switch this Pok\u00e9mon with 1 of your Benched Pok\u00e9mon.",
+          "damage": 30
+        },
+        {
+          "cost": ["Darkness", "Colorless", "Colorless"],
+          "name": "Oblivion Wing",
+          "effect": "Attach a Darkness Energy card from your discard pile to 1 of your Benched Pok\u00e9mon.",
+          "damage": 90
+        }
+      ],
+      "weaknesses": [{ "type": "Lightning", "value": "\u00d72" }],
+      "resistances": [{ "type": "Fighting", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.45,
+          "low": 0.05,
+          "trend": 0.37,
+          "avg1": 0.72,
+          "avg7": 0.35,
+          "avg30": 0.4,
+          "avg-holo": 0.66,
+          "low-holo": 0.1,
+          "trend-holo": 0.75,
+          "avg1-holo": 0.7,
+          "avg7-holo": 0.84,
+          "avg30-holo": 0.89
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.09,
+            "midPrice": 0.34,
+            "highPrice": 3.31,
+            "marketPrice": 0.35,
+            "directLowPrice": 0.3
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.29,
+            "midPrice": 0.63,
+            "highPrice": 3,
+            "marketPrice": 0.6,
+            "directLowPrice": 0.85
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-55",
+      "illustrator": "TOKIYA",
+      "localId": "55",
+      "name": "Hoopa",
+      "rarity": "Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [720],
+      "hp": 120,
+      "types": ["Darkness"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Scoundrel Guard",
+          "effect": "Prevent all effects of attacks, including damage, done to this Pok\u00e9mon by your opponent\u2019s Pok\u00e9mon-GX or Pok\u00e9mon-EX."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Darkness", "Colorless", "Colorless"],
+          "name": "Super Psy Bolt",
+          "damage": 80
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.3,
+          "low": 0.05,
+          "trend": 0.4,
+          "avg1": 0.3,
+          "avg7": 0.33,
+          "avg30": 0.29,
+          "avg-holo": 0.69,
+          "low-holo": 0.15,
+          "trend-holo": 0.66,
+          "avg1-holo": 0.35,
+          "avg7-holo": 0.72,
+          "avg30-holo": 0.67
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.31,
+            "highPrice": 3,
+            "marketPrice": 0.31,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.21,
+            "midPrice": 0.7,
+            "highPrice": 3,
+            "marketPrice": 0.75,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-56",
+      "illustrator": "Naoki Saito",
+      "localId": "56",
+      "name": "Shining Rayquaza",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [384],
+      "hp": 120,
+      "types": ["Dragon"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Dragon Pulse",
+          "effect": "Discard the top 2 cards of your deck.",
+          "damage": 40
+        },
+        {
+          "cost": ["Fire", "Lightning", "Lightning", "Colorless"],
+          "name": "Sky Judgment",
+          "effect": "Discard 3 Energy from this Pok\u00e9mon.",
+          "damage": 190
+        }
+      ],
+      "weaknesses": [{ "type": "Fairy", "value": "\u00d72" }],
+      "retreat": 3,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 42.13,
+          "low": 17,
+          "trend": 50.64,
+          "avg1": 44.12,
+          "avg7": 47.71,
+          "avg30": 41.26,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 53.16,
+          "avg1-holo": 75,
+          "avg7-holo": 61.74,
+          "avg30-holo": 61.27
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 46.11,
+            "midPrice": 92.6,
+            "highPrice": 940.6,
+            "marketPrice": 77.17,
+            "directLowPrice": 65.62
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-57",
+      "illustrator": "Kouki Saitou",
+      "localId": "57",
+      "name": "Shining Arceus",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [493],
+      "hp": 130,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Fabled Defense",
+          "effect": "As long as this Pok\u00e9mon is your Active Pok\u00e9mon, prevent all damage done to your Benched Pok\u00e9mon by your opponent\u2019s attacks."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+          "name": "Ultimate Arrow",
+          "effect": "This attack does 30 damage to each of your opponent\u2019s Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 18.51,
+          "low": 9,
+          "trend": 16.25,
+          "avg1": 14.95,
+          "avg7": 16.41,
+          "avg30": 18.82,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 27.12,
+          "avg1-holo": 28,
+          "avg7-holo": 29.65,
+          "avg30-holo": 33.49
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 16,
+            "midPrice": 33.12,
+            "highPrice": 44.16,
+            "marketPrice": 27.44,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-58",
+      "illustrator": "Toyste Beach",
+      "localId": "58",
+      "name": "Damage Mover",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Move 3 damage counters from 1 of your Pok\u00e9mon to another of your Pok\u00e9mon.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.12,
+          "low": 0.02,
+          "trend": 0.15,
+          "avg1": 0.04,
+          "avg7": 0.11,
+          "avg30": 0.15,
+          "avg-holo": 0.31,
+          "low-holo": 0.07,
+          "trend-holo": 0.32,
+          "avg1-holo": 0.06,
+          "avg7-holo": 0.3,
+          "avg30-holo": 0.33
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.2,
+            "highPrice": 1.5,
+            "marketPrice": 0.15,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.07,
+            "midPrice": 0.25,
+            "highPrice": 2,
+            "marketPrice": 0.21,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-59",
+      "illustrator": "Toyste Beach",
+      "localId": "59",
+      "name": "Energy Retrieval",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Put 2 basic Energy cards from your discard pile into your hand.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.19,
+          "low": 0.02,
+          "trend": 0.22,
+          "avg1": 0.15,
+          "avg7": 0.21,
+          "avg30": 0.14,
+          "avg-holo": 0.38,
+          "low-holo": 0.05,
+          "trend-holo": 0.44,
+          "avg1-holo": 1,
+          "avg7-holo": 0.4,
+          "avg30-holo": 0.37
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.2,
+            "highPrice": 3.05,
+            "marketPrice": 0.16,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.05,
+            "midPrice": 0.35,
+            "highPrice": 2,
+            "marketPrice": 0.35,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-60",
+      "illustrator": "Ryo Ueda",
+      "localId": "60",
+      "name": "Great Ball",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Look at the top 7 cards of your deck. You may reveal a Pok\u00e9mon you find there and put it into your hand. Shuffle the other cards back into your deck.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.11,
+          "low": 0.02,
+          "trend": 0.11,
+          "avg1": 0.05,
+          "avg7": 0.1,
+          "avg30": 0.11,
+          "avg-holo": 0.36,
+          "low-holo": 0.02,
+          "trend-holo": 0.37,
+          "avg1-holo": 0.99,
+          "avg7-holo": 0.38,
+          "avg30-holo": 0.37
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.02,
+            "midPrice": 0.2,
+            "highPrice": 1.49,
+            "marketPrice": 0.13,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.17,
+            "midPrice": 0.31,
+            "highPrice": 2,
+            "marketPrice": 0.3,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-61",
+      "illustrator": "Ken Sugimori",
+      "localId": "61",
+      "name": "Hau",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Draw 3 cards.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.18,
+          "low": 0.02,
+          "trend": 0.21,
+          "avg1": 0.02,
+          "avg7": 0.16,
+          "avg30": 0.12,
+          "avg-holo": 0.38,
+          "low-holo": 0.05,
+          "trend-holo": 0.37,
+          "avg1-holo": 0.2,
+          "avg7-holo": 0.38,
+          "avg30-holo": 0.35
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.02,
+            "midPrice": 0.2,
+            "highPrice": 3.37,
+            "marketPrice": 0.1,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.05,
+            "midPrice": 0.28,
+            "highPrice": 2,
+            "marketPrice": 0.19,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-62",
+      "illustrator": "Ken Sugimori",
+      "localId": "62",
+      "name": "Lillie",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Draw cards until you have 6 cards in your hand. If it\u2019s your first turn, draw cards until you have 8 cards in your hand.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.17,
+          "low": 0.02,
+          "trend": 0.18,
+          "avg1": 0.15,
+          "avg7": 0.13,
+          "avg30": 0.14,
+          "avg-holo": 0.47,
+          "low-holo": 0.09,
+          "trend-holo": 0.43,
+          "avg1-holo": 0.43,
+          "avg7-holo": 0.51,
+          "avg30-holo": 0.38
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.2,
+            "highPrice": 1.49,
+            "marketPrice": 0.16,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.39,
+            "highPrice": 2,
+            "marketPrice": 0.39,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-63",
+      "illustrator": "Kanako Eo",
+      "localId": "63",
+      "name": "Pok\u00e9mon Breeder",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Draw 2 cards and heal 20 damage from your Active Pok\u00e9mon. If you have no cards in your deck, you can\u2019t play this card.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.15,
+          "low": 0.02,
+          "trend": 0.12,
+          "avg1": 0.15,
+          "avg7": 0.11,
+          "avg30": 0.12,
+          "avg-holo": 0.42,
+          "low-holo": 0.08,
+          "trend-holo": 0.43,
+          "avg1-holo": 0.49,
+          "avg7-holo": 0.54,
+          "avg30-holo": 0.35
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-64",
+      "illustrator": "Toyste Beach",
+      "localId": "64",
+      "name": "Pok\u00e9mon Catcher",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Flip a coin. If heads, switch 1 of your opponent\u2019s Benched Pok\u00e9mon with their Active Pok\u00e9mon.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.15,
+          "low": 0.02,
+          "trend": 0.23,
+          "avg1": 0.04,
+          "avg7": 0.13,
+          "avg30": 0.13,
+          "avg-holo": 0.31,
+          "low-holo": 0.03,
+          "trend-holo": 0.39,
+          "avg1-holo": 0.06,
+          "avg7-holo": 0.31,
+          "avg30-holo": 0.34
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-65",
+      "illustrator": "Ken Sugimori",
+      "localId": "65",
+      "name": "Sophocles",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Discard 2 cards from your hand. If you do, draw 4 cards.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.05,
+          "low": 0.02,
+          "trend": 0.06,
+          "avg1": 0.1,
+          "avg7": 0.04,
+          "avg30": 0.06,
+          "avg-holo": 0.27,
+          "low-holo": 0.04,
+          "trend-holo": 0.27,
+          "avg1-holo": 0.3,
+          "avg7-holo": 0.29,
+          "avg30-holo": 0.29
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.01,
+            "midPrice": 0.19,
+            "highPrice": 1.49,
+            "marketPrice": 0.08,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.1,
+            "midPrice": 0.25,
+            "highPrice": 2.5,
+            "marketPrice": 0.22,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-66",
+      "illustrator": "Toyste Beach",
+      "localId": "66",
+      "name": "Super Scoop Up",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Flip a coin. If heads, put 1 of your Pok\u00e9mon and all cards attached to it into your hand.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.09,
+          "low": 0.02,
+          "trend": 0.1,
+          "avg1": 0.02,
+          "avg7": 0.04,
+          "avg30": 0.07,
+          "avg-holo": 0.31,
+          "low-holo": 0.02,
+          "trend-holo": 0.33,
+          "avg1-holo": 0.2,
+          "avg7-holo": 0.37,
+          "avg30-holo": 0.32
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.03,
+            "midPrice": 0.18,
+            "highPrice": 1.49,
+            "marketPrice": 0.1,
+            "directLowPrice": 0.06
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.15,
+            "midPrice": 0.29,
+            "highPrice": 2,
+            "marketPrice": 0.26,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-67",
+      "illustrator": "Ryo Ueda",
+      "localId": "67",
+      "name": "Switch",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.21,
+          "low": 0.02,
+          "trend": 0.12,
+          "avg1": 0.05,
+          "avg7": 0.12,
+          "avg30": 0.14,
+          "avg-holo": 0.33,
+          "low-holo": 0.05,
+          "trend-holo": 0.38,
+          "avg1-holo": 1,
+          "avg7-holo": 0.41,
+          "avg30-holo": 0.35
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.06,
+            "midPrice": 0.25,
+            "highPrice": 1.49,
+            "marketPrice": 0.23,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.25,
+            "midPrice": 0.47,
+            "highPrice": 2,
+            "marketPrice": 0.5,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-68",
+      "illustrator": "Ryo Ueda",
+      "localId": "68",
+      "name": "Ultra Ball",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Discard 2 cards from your hand. If you do, search your deck for a Pok\u00e9mon, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "trainerType": "Item",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.41,
+          "low": 0.02,
+          "trend": 0.37,
+          "avg1": 0.4,
+          "avg7": 0.27,
+          "avg30": 0.31,
+          "avg-holo": 0.68,
+          "low-holo": 0.02,
+          "trend-holo": 0.77,
+          "avg1-holo": 0.99,
+          "avg7-holo": 0.76,
+          "avg30-holo": 0.81
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.07,
+            "midPrice": 0.28,
+            "highPrice": 1.53,
+            "marketPrice": 0.29,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.39,
+            "midPrice": 1.05,
+            "highPrice": 4.25,
+            "marketPrice": 1.08,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "sm3.5-69",
+      "localId": "69",
+      "name": "Double Colorless Energy",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Double Colorless Energy provides ColorlessColorless Energy.",
+      "energyType": "Special",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.48,
+          "low": 0.02,
+          "trend": 0.42,
+          "avg1": 0.28,
+          "avg7": 0.47,
+          "avg30": 0.66,
+          "avg-holo": 0.84,
+          "low-holo": 0.4,
+          "trend-holo": 0.77,
+          "avg1-holo": 0.5,
+          "avg7-holo": 0.93,
+          "avg30-holo": 0.87
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.29,
+            "midPrice": 0.6,
+            "highPrice": 2.45,
+            "marketPrice": 0.6,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.47,
+            "midPrice": 1.15,
+            "highPrice": 5,
+            "marketPrice": 1.16,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "sm3.5-70",
+      "localId": "70",
+      "name": "Warp Energy",
+      "rarity": "Uncommon",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "This card provides Colorless Energy. \n\nWhen you attach this card from your hand to your Active Pok\u00e9mon, switch that Pok\u00e9mon with 1 of your Benched Pok\u00e9mon.",
+      "energyType": "Special",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.11,
+          "low": 0.02,
+          "trend": 0.13,
+          "avg1": 0.1,
+          "avg7": 0.13,
+          "avg30": 0.12,
+          "avg-holo": 0.54,
+          "low-holo": 0.1,
+          "trend-holo": 0.59,
+          "avg1-holo": 0.99,
+          "avg7-holo": 0.69,
+          "avg30-holo": 0.47
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.05,
+            "midPrice": 0.25,
+            "highPrice": 1.5,
+            "marketPrice": 0.2,
+            "directLowPrice": null
+          },
+          "reverse-holofoil": {
+            "lowPrice": 0.07,
+            "midPrice": 0.32,
+            "highPrice": 4,
+            "marketPrice": 0.28,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-71",
+      "illustrator": "5ban Graphics",
+      "localId": "71",
+      "name": "Entei GX",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [244],
+      "hp": 180,
+      "types": ["Fire"],
+      "suffix": "GX",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Combustion", "damage": 50 },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Fire Fang",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Burned.",
+          "damage": 100
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Brave Burn GX",
+          "effect": "This attack does 150 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.) (You can\u2019t use more than 1 GX attack in a game.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.15,
+          "low": 0.5,
+          "trend": 3.46,
+          "avg1": 2.65,
+          "avg7": 3.7,
+          "avg30": 3.04,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3.04,
+          "avg1-holo": 3.99,
+          "avg7-holo": 2.94,
+          "avg30-holo": 2.98
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4.08,
+            "midPrice": 9.22,
+            "highPrice": 116.18,
+            "marketPrice": 8.32,
+            "directLowPrice": 9.98
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-72",
+      "illustrator": "5ban Graphics",
+      "localId": "72",
+      "name": "Mewtwo GX",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 190,
+      "types": ["Psychic"],
+      "suffix": "GX",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Full Burst",
+          "effect": "This attack does 30 damage times the amount of Energy attached to this Pok\u00e9mon.",
+          "damage": "30\u00d7"
+        },
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Super Absorption",
+          "effect": "Heal 30 damage from this Pok\u00e9mon.",
+          "damage": 60
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Psychic"],
+          "name": "Psystrike GX",
+          "effect": "This attack\u2019s damage isn\u2019t affected by any effects on your opponent\u2019s Active Pok\u00e9mon. (You can\u2019t use more than 1 GX attack in a game.)",
+          "damage": 200
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 6.04,
+          "low": 0.99,
+          "trend": 5.53,
+          "avg1": 5.25,
+          "avg7": 5.81,
+          "avg30": 5.98,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 8.3,
+          "avg1-holo": 8,
+          "avg7-holo": 6.64,
+          "avg30-holo": 8.39
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 13.16,
+            "midPrice": 24.3,
+            "highPrice": 99.99,
+            "marketPrice": 24.3,
+            "directLowPrice": 24.42
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "sm3.5-73",
+      "illustrator": "Sanosuke Sakuma",
+      "localId": "73",
+      "name": "Pok\u00e9mon Breeder",
+      "rarity": "Ultra Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Draw 2 cards and heal 20 damage from your Active Pok\u00e9mon. If you have no cards in your deck, you can\u2019t play this card.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 0.15,
+          "low": 0.02,
+          "trend": 0.12,
+          "avg1": 0.15,
+          "avg7": 0.11,
+          "avg30": 0.12,
+          "avg-holo": 0.42,
+          "low-holo": 0.08,
+          "trend-holo": 0.43,
+          "avg1-holo": 0.49,
+          "avg7-holo": 0.54,
+          "avg30-holo": 0.35
+        },
+        "tcgplayer": null
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-74",
+      "illustrator": "5ban Graphics",
+      "localId": "74",
+      "name": "Entei GX",
+      "rarity": "Secret Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [244],
+      "hp": 180,
+      "types": ["Fire"],
+      "suffix": "GX",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Combustion", "damage": 50 },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Fire Fang",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Burned.",
+          "damage": 100
+        },
+        {
+          "cost": ["Fire", "Fire", "Colorless"],
+          "name": "Brave Burn GX",
+          "effect": "This attack does 150 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.) (You can\u2019t use more than 1 GX attack in a game.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.15,
+          "low": 0.5,
+          "trend": 3.46,
+          "avg1": 2.65,
+          "avg7": 3.7,
+          "avg30": 3.04,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 3.04,
+          "avg1-holo": 3.99,
+          "avg7-holo": 2.94,
+          "avg30-holo": 2.98
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 15.76,
+            "midPrice": 25.23,
+            "highPrice": 129.95,
+            "marketPrice": 24.99,
+            "directLowPrice": 17.44
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-75",
+      "illustrator": "5ban Graphics",
+      "localId": "75",
+      "name": "Raichu GX",
+      "rarity": "Secret Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [26],
+      "hp": 210,
+      "types": ["Lightning"],
+      "evolveFrom": "Pikachu",
+      "suffix": "GX",
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Powerful Spark",
+          "effect": "This attack does 20 more damage times the amount of Lightning Energy attached to your Pok\u00e9mon.",
+          "damage": "20+"
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Thunder",
+          "effect": "This Pok\u00e9mon does 30 damage to itself.",
+          "damage": 160
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Voltail GX",
+          "effect": "Your opponent\u2019s Active Pok\u00e9mon is now Paralyzed. (You can\u2019t use more than 1 GX attack in a game.)",
+          "damage": 120
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Metal", "value": "-20" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 3.26,
+          "low": 1.29,
+          "trend": 3.19,
+          "avg1": 2.97,
+          "avg7": 3.15,
+          "avg30": 3.23,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 2.76,
+          "avg1-holo": 2.25,
+          "avg7-holo": 2.48,
+          "avg30-holo": 3.04
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 35.07,
+            "midPrice": 41.37,
+            "highPrice": 66.58,
+            "marketPrice": 41.36,
+            "directLowPrice": 45.99
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-76",
+      "illustrator": "5ban Graphics",
+      "localId": "76",
+      "name": "Mewtwo GX",
+      "rarity": "Secret Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 190,
+      "types": ["Psychic"],
+      "suffix": "GX",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Full Burst",
+          "effect": "This attack does 30 damage times the amount of Energy attached to this Pok\u00e9mon.",
+          "damage": "30\u00d7"
+        },
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Super Absorption",
+          "effect": "Heal 30 damage from this Pok\u00e9mon.",
+          "damage": 60
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Psychic"],
+          "name": "Psystrike GX",
+          "effect": "This attack\u2019s damage isn\u2019t affected by any effects on your opponent\u2019s Active Pok\u00e9mon. (You can\u2019t use more than 1 GX attack in a game.)",
+          "damage": 200
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 6.04,
+          "low": 0.99,
+          "trend": 5.53,
+          "avg1": 5.25,
+          "avg7": 5.81,
+          "avg30": 5.98,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 8.3,
+          "avg1-holo": 8,
+          "avg7-holo": 6.64,
+          "avg30-holo": 8.39
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 67.72,
+            "midPrice": 80,
+            "highPrice": 99.99,
+            "marketPrice": 64.5,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-77",
+      "illustrator": "5ban Graphics",
+      "localId": "77",
+      "name": "Zoroark GX",
+      "rarity": "Secret Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [571],
+      "hp": 210,
+      "types": ["Darkness"],
+      "evolveFrom": "Zorua",
+      "suffix": "GX",
+      "abilities": [
+        {
+          "type": "Ability",
+          "name": "Trade",
+          "effect": "Once during your turn (before your attack), you may discard a card from your hand. If you do, draw 2 cards."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Riotous Beating",
+          "effect": "This attack does 20 damage for each of your Pok\u00e9mon in play.",
+          "damage": "20\u00d7"
+        },
+        {
+          "cost": ["Darkness", "Darkness"],
+          "name": "Trickster GX",
+          "effect": "Choose 1 of your opponent\u2019s Pok\u00e9mon\u2019s attacks and use it as this attack. (You can\u2019t use more than 1 GX attack in a game.)"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "\u00d72" }],
+      "resistances": [{ "type": "Psychic", "value": "-20" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 2.96,
+          "low": 1,
+          "trend": 2.49,
+          "avg1": 1.75,
+          "avg7": 2.12,
+          "avg30": 2.59,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 1.74,
+          "avg1-holo": 1.7,
+          "avg7-holo": 2.06,
+          "avg30-holo": 2.28
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 12.96,
+            "midPrice": 19.42,
+            "highPrice": 32,
+            "marketPrice": 15.63,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "sm3.5-78",
+      "illustrator": "Mitsuhiro Arita",
+      "localId": "78",
+      "name": "Mewtwo GX",
+      "rarity": "Secret Rare",
+      "set": {
+        "cardCount": { "official": 73, "total": 78 },
+        "id": "sm3.5",
+        "name": "Shining Legends"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [150],
+      "hp": 190,
+      "types": ["Psychic"],
+      "suffix": "GX",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Full Burst",
+          "effect": "This attack does 30 damage times the amount of Energy attached to this Pok\u00e9mon.",
+          "damage": "30\u00d7"
+        },
+        {
+          "cost": ["Psychic", "Colorless"],
+          "name": "Super Absorption",
+          "effect": "Heal 30 damage from this Pok\u00e9mon.",
+          "damage": 60
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Psychic"],
+          "name": "Psystrike GX",
+          "effect": "This attack\u2019s damage isn\u2019t affected by any effects on your opponent\u2019s Active Pok\u00e9mon. (You can\u2019t use more than 1 GX attack in a game.)",
+          "damage": 200
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "\u00d72" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 6.04,
+          "low": 0.99,
+          "trend": 5.53,
+          "avg1": 5.25,
+          "avg7": 5.81,
+          "avg30": 5.98,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 8.3,
+          "avg1-holo": 8,
+          "avg7-holo": 6.64,
+          "avg30-holo": 8.39
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 319,
+            "midPrice": 381.25,
+            "highPrice": 530.6,
+            "marketPrice": 524.01,
+            "directLowPrice": 377.58
+          }
+        }
+      }
+    }
+  ],
+  "id": "sm3.5",
+  "legal": { "expanded": true, "standard": false },
+  "name": "Shining Legends",
+  "releaseDate": "2017-10-06",
+  "serie": { "id": "sm", "name": "Sun & Moon" },
+  "tcgOnline": "SLG",
+  "abbreviation": { "official": "SLG" }
+}

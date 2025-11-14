@@ -1,0 +1,559 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 12,
+    "reverse": 0,
+    "total": 12
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "2016xy-1",
+      "illustrator": "kirisAki",
+      "localId": "1",
+      "name": "Vulpix",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "While young, it has six gorgeous tails. When it grows, several new tails are sprouted.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Roar",
+          "effect": "Your opponent switches his or her Active Pok\u00e9mon with 1 of his or her Benched Pok\u00e9mon."
+        },
+        { "name": "Gnaw", "damage": 10 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-2",
+      "illustrator": "sui",
+      "localId": "2",
+      "name": "Torchic",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "A fire burns inside, so it feels very warm to hug. It launches fireballs of 1,800 degrees Fahrenheit.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Ember",
+          "effect": "Flip a coin. If tails, discard a Fire Energy attached to this Pok\u00e9mon.",
+          "damage": 20
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 9,
+            "midPrice": 12,
+            "highPrice": 15,
+            "marketPrice": 3.99,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-3",
+      "illustrator": "5ban Graphics",
+      "localId": "3",
+      "name": "Fennekin",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "Eating a twig fills it with energy, and its roomy ears give vent to air hotter than 390 degrees Fahrenheit.",
+      "stage": "Basic",
+      "attacks": [{ "name": "Will-O-Wisp", "damage": 20 }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 18,
+            "midPrice": 18,
+            "highPrice": 18,
+            "marketPrice": null,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-4",
+      "illustrator": "Akira Komayama",
+      "localId": "4",
+      "name": "Magikarp",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "In the distant past, it was somewhat stronger than the horribly weak descendants that exist today.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Epic Splash",
+          "effect": "Flip 2 coins. If either of them is tails, this attack does nothing.",
+          "damage": 30
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-5",
+      "illustrator": "Kagemaru Himeno",
+      "localId": "5",
+      "name": "Totodile",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "It is small but rough and tough. It won\u2019t hesitate to take a bite out of anything that moves.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Fury Strikes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 15,
+            "midPrice": 15,
+            "highPrice": 15,
+            "marketPrice": 0.18,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-6",
+      "illustrator": "Naoki Saito",
+      "localId": "6",
+      "name": "Pikachu",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "It raises its tail to check its surroundings. The tail is sometimes struck by lightning in this pose.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Tail Whip",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon can\u2019t attack during your opponent\u2019s next turn."
+        },
+        { "name": "Electro Ball", "damage": 30 }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 14.99,
+            "midPrice": 14.99,
+            "highPrice": 14.99,
+            "marketPrice": 8.99,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-7",
+      "illustrator": "Tomokazu Komiya",
+      "localId": "7",
+      "name": "Scraggy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "Its skin has a rubbery elasticity, so it can reduce damage by defensively pulling it skin up to its neck.",
+      "stage": "Basic",
+      "attacks": [{ "name": "Corkscrew Punch", "damage": 30 }],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 9,
+            "midPrice": 14,
+            "highPrice": 19,
+            "marketPrice": 29,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-8",
+      "illustrator": "Kanako Eo",
+      "localId": "8",
+      "name": "Jigglypuff",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "It captivates foes with its huge, round eyes, then lulls them to sleep by singing a soothing melody.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Rollout", "damage": 10 },
+        {
+          "name": "Heartfelt Song",
+          "effect": "Discard a Darkness Energy attached to your opponent\u2019s Active Pok\u00e9mon."
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 24,
+            "midPrice": 24,
+            "highPrice": 24,
+            "marketPrice": 10,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-9",
+      "illustrator": "HiRON",
+      "localId": "9",
+      "name": "Togepi",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "A proverb claims that happiness will come to anyone who can make a sleeping Togepi stand up.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Sweet Kiss",
+          "effect": "Your opponent draws a card.",
+          "damage": 10
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-10",
+      "illustrator": "5ban Graphics",
+      "localId": "10",
+      "name": "Dedenne",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "Its whiskers serve as antennas. By sending and receiving electrical waves, it can communicate with others over vast distances.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Nuzzle",
+          "effect": "Flip a coin. If heads, your opponent\u2019s Active Pok\u00e9mon is now Paralyzed."
+        },
+        {
+          "name": "Spiral Drain",
+          "effect": "Heal 20 damage from this Pok\u00e9mon.",
+          "damage": 60
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 35,
+            "midPrice": 35,
+            "highPrice": 35,
+            "marketPrice": 35,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-11",
+      "illustrator": "Kanako Eo",
+      "localId": "11",
+      "name": "Meowth",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "Adores round objects. It wanders the streets on a nightly basis to look for dropped loose change.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "name": "Act Tough",
+          "effect": "If this Pok\u00e9mon has any Darkness Energy attached to it, this attack does 20 more damage.",
+          "damage": "10+"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 18.99,
+            "midPrice": 18.99,
+            "highPrice": 18.99,
+            "marketPrice": 19.99,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2016xy-12",
+      "illustrator": "Kouki Saitou",
+      "localId": "12",
+      "name": "Eevee",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2016xy",
+        "name": "Macdonald's Collection 2016"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "description": "Thanks to its unstable genetic makeup, this special Pok\u00e9mon conceals many different possible evolutions.",
+      "stage": "Basic",
+      "attacks": [
+        { "name": "Tackle", "damage": 10 },
+        {
+          "name": "Lunge",
+          "effect": "Flip a coin. If tails, this attack does nothing.",
+          "damage": 30
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    }
+  ],
+  "id": "2016xy",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Macdonald's Collection 2016",
+  "releaseDate": "2016-08-20",
+  "serie": { "id": "mc", "name": "McDonald's Collection" },
+  "abbreviation": { "official": "MCD16" }
+}

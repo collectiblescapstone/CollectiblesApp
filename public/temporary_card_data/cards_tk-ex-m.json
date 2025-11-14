@@ -1,0 +1,472 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 12,
+    "reverse": 0,
+    "total": 12
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-m-1",
+      "illustrator": "Ken Sugimori",
+      "localId": "1",
+      "name": "Arcanine",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [59],
+      "hp": 90,
+      "types": ["Fire"],
+      "evolveFrom": "Growlithe",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Fire"], "name": "Flare", "damage": 20 },
+        {
+          "cost": ["Fire", "Colorless", "Colorless", "Colorless"],
+          "name": "Heat Tackle",
+          "effect": "Arcanine does 10 damage to itself.",
+          "damage": 70
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-m-2",
+      "illustrator": "Midori Harada",
+      "localId": "2",
+      "name": "Charmander",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [4],
+      "hp": 50,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Headbutt", "damage": 10 },
+        { "cost": ["Colorless", "Colorless"], "name": "Slash", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-m-3",
+      "illustrator": "Kouki Saitou",
+      "localId": "3",
+      "name": "Charmeleon",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [5],
+      "hp": 70,
+      "types": ["Fire"],
+      "evolveFrom": "Charmander",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Fire", "Colorless"], "name": "Flare", "damage": 30 },
+        {
+          "cost": ["Fire", "Colorless", "Colorless"],
+          "name": "Damage Burn",
+          "effect": "If the Defending Pok\u00e9mon already has any damage counters on it, this attack does 40 damage plus 20 more damage.",
+          "damage": "40+"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-m-4",
+      "illustrator": "Ken Sugimori",
+      "localId": "4",
+      "name": "Growlithe",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [58],
+      "hp": 60,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Bite", "damage": 10 },
+        {
+          "cost": ["Fire", "Colorless", "Colorless"],
+          "name": "Flame Tail",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 2,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-m-5",
+      "illustrator": "Naoyo Kimura",
+      "localId": "5",
+      "name": "Mareep",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [179],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Minor Errand-Running",
+          "effect": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Quick Attack",
+          "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage.",
+          "damage": "10+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-m-6",
+      "illustrator": "Katsura Tabata",
+      "localId": "6",
+      "name": "Minun",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [312],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Drawup Power",
+          "effect": "Search your deck for an Energy card, show it to your opponent, and put into your hand. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Front Spark",
+          "effect": "Does 10 damage to 1 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+          "damage": 20
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "resistances": [{ "type": "Metal", "value": "-30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-m-7",
+      "illustrator": "Midori Harada",
+      "localId": "7",
+      "name": "Vulpix",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [37],
+      "hp": 50,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Bite", "damage": 10 },
+        {
+          "cost": ["Fire", "Colorless"],
+          "name": "Firebreathing",
+          "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Water", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-ex-m-8",
+      "illustrator": "Ken Sugimori",
+      "localId": "8",
+      "name": "Celio's Network",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Search your deck for a Basic Pok\u00e9mon or Evolution card (excluding Pok\u00e9mon-ex), show it to your opponent, and put it into your hand. Shuffle your deck afterward.",
+      "trainerType": "Supporter",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-ex-m-9",
+      "illustrator": "Kai Ishikawa",
+      "localId": "9",
+      "name": "Energy Search",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward.",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-ex-m-10",
+      "illustrator": "Keiji Kinebuchi",
+      "localId": "10",
+      "name": "Potion",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Remove 2 damage counters from 1 of your Pok\u00e9mon (remove 1 damage counter if that Pok\u00e9mon has only 1).",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-ex-m-11",
+      "illustrator": "",
+      "localId": "11",
+      "name": "Fire Energy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-ex-m-12",
+      "illustrator": "",
+      "localId": "12",
+      "name": "Lightning Energy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "tk-ex-m",
+        "name": "EX trainer Kit 2 (Minun)"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-05-04T00:37:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    }
+  ],
+  "id": "tk-ex-m",
+  "legal": { "expanded": false, "standard": false },
+  "name": "EX trainer Kit 2 (Minun)",
+  "releaseDate": "2006-03-01",
+  "serie": { "id": "tk", "name": "Trainer kits" },
+  "abbreviation": { "official": "TK2M" }
+}

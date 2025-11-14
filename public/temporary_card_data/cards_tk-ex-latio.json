@@ -1,0 +1,545 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 10,
+    "reverse": 0,
+    "total": 10
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latio-1",
+      "illustrator": "Ken Sugimori",
+      "localId": "1",
+      "name": "Electrike",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [309],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [{ "cost": ["Colorless"], "name": "Headbutt", "damage": 10 }],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "resistances": [{ "type": "Metal", "value": "-30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.07,
+            "midPrice": 0.26,
+            "highPrice": 4.72,
+            "marketPrice": 0.3,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latio-2",
+      "illustrator": "Kyoko Koizumi",
+      "localId": "2",
+      "name": "Latios",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [381],
+      "hp": 80,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Gather Energy",
+          "effect": "Flip a coin. If heads, search your deck for a basic Energy card and attach it to 1 of your Pok\u00e9mon. Shuffle your deck afterward.",
+          "damage": 20
+        },
+        {
+          "cost": ["Lightning", "Lightning", "Colorless"],
+          "name": "Dragon Claw",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Psychic", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3,
+            "midPrice": 6.9,
+            "highPrice": 10.99,
+            "marketPrice": 7.14,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latio-3",
+      "illustrator": "Ken Sugimori",
+      "localId": "3",
+      "name": "Linoone",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [264],
+      "hp": 70,
+      "types": ["Colorless"],
+      "evolveFrom": "Zigzagoon",
+      "stage": "Stage1",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Seek Out",
+          "effect": "Search your deck for up to 2 cards and put them into your hand. Shuffle your deck afterward."
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Continuous Headbutt",
+          "effect": "Flip a coin until you get tails. This attack does 40 damage times the number of heads.",
+          "damage": "40\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.23,
+            "midPrice": 0.5,
+            "highPrice": 1.49,
+            "marketPrice": 0.54,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latio-4",
+      "illustrator": "Tomokazu Komiya",
+      "localId": "4",
+      "name": "Magnemite",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [81],
+      "hp": 40,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Rollout", "damage": 10 },
+        { "cost": ["Colorless", "Colorless"], "name": "Hook", "damage": 20 }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "resistances": [{ "type": "Metal", "value": "-30" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.12,
+            "midPrice": 0.25,
+            "highPrice": 4.24,
+            "marketPrice": 0.22,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latio-5",
+      "illustrator": "Kyoko Umemoto",
+      "localId": "5",
+      "name": "Magneton",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [82],
+      "hp": 80,
+      "types": ["Lightning"],
+      "evolveFrom": "Magnemite",
+      "stage": "Stage1",
+      "attacks": [
+        { "cost": ["Colorless", "Colorless"], "name": "Ram", "damage": 20 },
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Triple Smash",
+          "effect": "Flip 3 coins. This attack does 20 damage plus 20 more damage for each heads.",
+          "damage": "20+"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.35,
+            "highPrice": 3.99,
+            "marketPrice": 0.42,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latio-6",
+      "illustrator": "Mitsuhiro Arita",
+      "localId": "6",
+      "name": "Pikachu",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [25],
+      "hp": 50,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Colorless"], "name": "Scratch", "damage": 10 },
+        {
+          "cost": ["Lightning", "Colorless", "Colorless"],
+          "name": "Pika Bolt",
+          "damage": 40
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 1,
+            "midPrice": 2.5,
+            "highPrice": 13.75,
+            "marketPrice": 2.28,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "tk-ex-latio-7",
+      "illustrator": "Atsuko Nishida",
+      "localId": "7",
+      "name": "Zigzagoon",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [263],
+      "hp": 40,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Fury Swipes",
+          "effect": "Flip 3 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "weaknesses": [{ "type": "Fighting", "value": "2x" }],
+      "retreat": 1,
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.09,
+            "midPrice": 0.32,
+            "highPrice": 1.49,
+            "marketPrice": 0.38,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-ex-latio-8",
+      "illustrator": "Keiji Kinebuchi",
+      "localId": "8",
+      "name": "Potion",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Remove 2 damage counters from 1 of your Pok\u00e9mon (remove 1 damage counter if that Pok\u00e9mon has only 1).",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.1,
+            "midPrice": 0.25,
+            "highPrice": 1.49,
+            "marketPrice": 0.24,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "tk-ex-latio-9",
+      "illustrator": "Kai Ishikawa",
+      "localId": "9",
+      "name": "Energy Search",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward.",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.07,
+            "midPrice": 0.25,
+            "highPrice": 1.49,
+            "marketPrice": 0.21,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Energy",
+      "id": "tk-ex-latio-10",
+      "illustrator": "",
+      "localId": "10",
+      "name": "Lightning Energy",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 10, "total": 10 },
+        "id": "tk-ex-latio",
+        "name": "EX trainer Kit (Latios)",
+        "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "energyType": "Normal",
+      "legal": { "standard": true, "expanded": true },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 0.15,
+            "midPrice": 0.33,
+            "highPrice": 1.49,
+            "marketPrice": 0.41,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "tk-ex-latio",
+  "legal": { "expanded": false, "standard": false },
+  "name": "EX trainer Kit (Latios)",
+  "releaseDate": "2004-07-01",
+  "serie": { "id": "tk", "name": "Trainer kits" },
+  "symbol": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol",
+  "abbreviation": { "official": "TK1O" }
+}

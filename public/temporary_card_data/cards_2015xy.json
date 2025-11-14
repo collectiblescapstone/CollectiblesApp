@@ -1,0 +1,496 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 9,
+    "normal": 1,
+    "official": 12,
+    "reverse": 0,
+    "total": 12
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "2015xy-1",
+      "localId": "1",
+      "name": "Treecko",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [252],
+      "hp": 60,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4,
+            "midPrice": 4.46,
+            "highPrice": 9.99,
+            "marketPrice": 4.06,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-2",
+      "localId": "2",
+      "name": "Lotad",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [270],
+      "hp": 60,
+      "types": ["Grass"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.28,
+            "midPrice": 6.4,
+            "highPrice": 14.99,
+            "marketPrice": 8.52,
+            "directLowPrice": 4.73
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-3",
+      "localId": "3",
+      "name": "Torchic",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": true,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "normal", "size": "standard" }],
+      "dexId": [255],
+      "hp": 60,
+      "types": ["Fire"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4.87,
+            "midPrice": 5.78,
+            "highPrice": 14.99,
+            "marketPrice": 11.27,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-4",
+      "localId": "4",
+      "name": "Staryu",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [120],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 9.92,
+            "midPrice": 14.9,
+            "highPrice": 14.91,
+            "marketPrice": 9.89,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-5",
+      "localId": "5",
+      "name": "Mudkip",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [258],
+      "hp": 60,
+      "types": ["Water"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 7,
+            "midPrice": 8.73,
+            "highPrice": 42.99,
+            "marketPrice": 14.58,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-6",
+      "localId": "6",
+      "name": "Pikachu",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [25],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 17.4,
+            "midPrice": 26.79,
+            "highPrice": 59.43,
+            "marketPrice": 42.53,
+            "directLowPrice": 18.89
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-7",
+      "localId": "7",
+      "name": "Electrike",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": false,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "dexId": [309],
+      "hp": 60,
+      "types": ["Lightning"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.88,
+            "midPrice": 4,
+            "highPrice": 9.99,
+            "marketPrice": 4.6,
+            "directLowPrice": 2.4
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-8",
+      "localId": "8",
+      "name": "Rhyhorn",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [111],
+      "hp": 80,
+      "types": ["Fighting"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.95,
+            "midPrice": 3.42,
+            "highPrice": 6.5,
+            "marketPrice": 4.9,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-9",
+      "localId": "9",
+      "name": "Meditite",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [307],
+      "hp": 50,
+      "types": ["Fighting"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 2.21,
+            "midPrice": 3.19,
+            "highPrice": 9.99,
+            "marketPrice": 2.91,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-10",
+      "localId": "10",
+      "name": "Marill",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [183],
+      "hp": 70,
+      "types": ["Fairy"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 1.94,
+            "midPrice": 5.42,
+            "highPrice": 14.98,
+            "marketPrice": 7.43,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-11",
+      "localId": "11",
+      "name": "Zigzagoon",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [263],
+      "hp": 60,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 3.76,
+            "midPrice": 5.6,
+            "highPrice": 16.99,
+            "marketPrice": 5.25,
+            "directLowPrice": 5.69
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "2015xy-12",
+      "localId": "12",
+      "name": "Skitty",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 12, "total": 12 },
+        "id": "2015xy",
+        "name": "Macdonald's Collection 2015"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": false,
+        "reverse": false,
+        "wPromo": false
+      },
+      "variants_detailed": [{ "type": "holo", "size": "standard" }],
+      "dexId": [300],
+      "hp": 50,
+      "types": ["Colorless"],
+      "stage": "Basic",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": null,
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "holofoil": {
+            "lowPrice": 4.85,
+            "midPrice": 8.4,
+            "highPrice": 27.99,
+            "marketPrice": 12.39,
+            "directLowPrice": null
+          }
+        }
+      }
+    }
+  ],
+  "id": "2015xy",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Macdonald's Collection 2015",
+  "releaseDate": "2015-11-27",
+  "serie": { "id": "mc", "name": "McDonald's Collection" },
+  "abbreviation": { "official": "MCD15" }
+}

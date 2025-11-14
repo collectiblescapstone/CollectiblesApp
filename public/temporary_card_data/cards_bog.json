@@ -1,0 +1,532 @@
+{
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 9,
+    "reverse": 0,
+    "total": 9
+  },
+  "cards": [
+    {
+      "category": "Pokemon",
+      "id": "bog-1",
+      "illustrator": "Ken Sugimori",
+      "localId": "1",
+      "name": "Electabuzz",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [125],
+      "description": "Normally found near power plants, it can wander away and cause major blackouts in cities.",
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Lightning"],
+          "name": "Thundershock",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+          "damage": 10
+        },
+        {
+          "cost": ["Lightning", "Colorless"],
+          "name": "Thunderpunch",
+          "effect": "Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if tails, the attack does 30 damage and Electabuzz does 10 damage to itself.",
+          "damage": "30+"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 27.84,
+          "low": 19.99,
+          "trend": 29.72,
+          "avg1": 22.67,
+          "avg7": 27.21,
+          "avg30": 22.94,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 17.01,
+          "avg1-holo": 20,
+          "avg7-holo": 19.16,
+          "avg30-holo": 11.11
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "reverse-holofoil": {
+            "lowPrice": 18.87,
+            "midPrice": 22.47,
+            "highPrice": 29.99,
+            "marketPrice": 18.72,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "bog-2",
+      "illustrator": "Ken Sugimori",
+      "localId": "2",
+      "name": "Hitmonchan",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "dexId": [107],
+      "description": "While seeming to do nothing, it fires punches in lightning-fast volleys that are impossible to see.",
+      "stage": "Basic",
+      "attacks": [
+        { "cost": ["Fighting"], "name": "Jab", "damage": 20 },
+        {
+          "cost": ["Fighting", "Fighting", "Colorless"],
+          "name": "Special Punch",
+          "damage": 40
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 18.82,
+          "low": 18,
+          "trend": 27.19,
+          "avg1": 26.9,
+          "avg7": 22.73,
+          "avg30": 24.28,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 23.14,
+          "avg1-holo": 48,
+          "avg7-holo": 20.05,
+          "avg30-holo": 10.99
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "reverse-holofoil": {
+            "lowPrice": 25,
+            "midPrice": 30,
+            "highPrice": 37.99,
+            "marketPrice": 24.41,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Trainer",
+      "id": "bog-3",
+      "illustrator": "Ken Sugimori",
+      "localId": "3",
+      "name": "Professor Elm",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "effect": "Shuffle your hand into your deck. Then, draw 7 cards. You can\u2019t play any more Trainer cards this turn.",
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 28.32,
+          "low": 14.9,
+          "trend": 13.72,
+          "avg1": 15,
+          "avg7": 15.39,
+          "avg30": 15.74,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 15.1,
+          "avg1-holo": 19.97,
+          "avg7-holo": 15.21,
+          "avg30-holo": 9.89
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "reverse-holofoil": {
+            "lowPrice": 9.05,
+            "midPrice": 10.41,
+            "highPrice": 14.99,
+            "marketPrice": 13.41,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "bog-4",
+      "illustrator": "K. Hoshiba",
+      "localId": "4",
+      "name": "Rocket\u2019s Scizor",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Colorless"],
+          "name": "Focus",
+          "effect": "During your next turn, Rocket\u2019s Scizor\u2019s Agility attack\u2019s damage is doubled."
+        },
+        {
+          "cost": ["Metal", "Colorless", "Colorless"],
+          "name": "Agility",
+          "effect": "Flip a coin. If heads, during your opponent\u2019s next turn, prevent all effects of attacks, including damage, done to Rocket\u2019s Scizor.",
+          "damage": 20
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T11:59:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "bog-5",
+      "illustrator": "Katsura Tabata",
+      "localId": "5",
+      "name": "Rocket\u2019s Sneasel",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Darkness"],
+          "name": "Entrap",
+          "effect": "The Defending Pok\u00e9mon can\u2019t retreat during your opponent\u2019s next turn."
+        },
+        {
+          "cost": ["Colorless", "Colorless"],
+          "name": "Continuous Scratch",
+          "effect": "Flip 4 coins. This attack does 10 damage times the number of heads.",
+          "damage": "10\u00d7"
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T11:59:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "bog-6",
+      "illustrator": "Shin-ichi Yoshida",
+      "localId": "6",
+      "name": "Dark Ivysaur",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Stage1",
+      "abilities": [
+        {
+          "type": "Poke-BODY",
+          "name": "Vine Pull",
+          "effect": "Once during your turn when Dark Ivysaur retreats, choose 1 of your opponent\u2019s Benched Pok\u00e9mon and switch it with his or her Active Pok\u00e9mon."
+        }
+      ],
+      "attacks": [
+        {
+          "cost": ["Grass", "Grass"],
+          "name": "Fury Strikes",
+          "effect": "Your opponent puts 3 markers onto his or her Pok\u00e9mon (divided as he or she chooses). (More than 1 marker can be put on the same Pok\u00e9mon.) Then, this attack does 10 damage to each Pok\u00e9mon for each marker on it. Don\u2019t apply Weakness and Resistance. Remove the markers at the end of the turn."
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 12.3,
+          "low": 10,
+          "trend": 12.15,
+          "avg1": 14.95,
+          "avg7": 11.97,
+          "avg30": 11.19,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 1.99,
+          "avg1-holo": 1.99,
+          "avg7-holo": 2.37,
+          "avg30-holo": 2.37
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 17.34,
+            "midPrice": 28.22,
+            "highPrice": 55.55,
+            "marketPrice": 23.95,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "bog-7",
+      "illustrator": "Shin-ichi Yoshida",
+      "localId": "7",
+      "name": "Dark Venusaur",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Stage2",
+      "attacks": [
+        {
+          "cost": ["Grass", "Grass", "Grass"],
+          "name": "Horrid Pollen",
+          "effect": "Flip 2 coins. If 1 is heads, the Defending Pok\u00e9mon is now Asleep and Poisoned. If both are heads, the Defending Pok\u00e9mon is now Confused and Poisoned. If both are tails, the Defending Pok\u00e9mon is now Paralyzed and Poisoned.",
+          "damage": 30
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2025-08-16T20:39:55Z",
+      "pricing": {
+        "cardmarket": {
+          "updated": "2025-10-15T00:44:12.000Z",
+          "unit": "EUR",
+          "avg": 87.98,
+          "low": 34.95,
+          "trend": 67.18,
+          "avg1": 180,
+          "avg7": 62.28,
+          "avg30": 35.82,
+          "avg-holo": null,
+          "low-holo": null,
+          "trend-holo": 42.57,
+          "avg1-holo": 29.5,
+          "avg7-holo": 23.44,
+          "avg30-holo": 23.44
+        },
+        "tcgplayer": {
+          "updated": "2025-10-15T20:07:04.000Z",
+          "unit": "USD",
+          "normal": {
+            "lowPrice": 95,
+            "midPrice": 105,
+            "highPrice": 111.29,
+            "marketPrice": 94.06,
+            "directLowPrice": null
+          }
+        }
+      }
+    },
+    {
+      "category": "Pokemon",
+      "id": "bog-8",
+      "illustrator": "Shin-ichi Yoshida",
+      "localId": "8",
+      "name": "Rocket\u2019s Mewtwo",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Psychic"],
+          "name": "Juxtapose",
+          "effect": "Flip a coin. If heads, switch the number of damage counters on Rocket\u2019s Mewtwo with the number of damage counters on the Defending Pok\u00e9mon (even if it would Knock Out either Pok\u00e9mon). (It\u2019s okay if 1 of the Pok\u00e9mon has no damage counters on it.)"
+        },
+        {
+          "cost": ["Psychic", "Psychic"],
+          "name": "Hypnoblast",
+          "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Asleep.",
+          "damage": 20
+        },
+        {
+          "cost": ["Psychic", "Psychic", "Psychic", "Colorless"],
+          "name": "Psyburn",
+          "damage": 60
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T11:59:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    },
+    {
+      "category": "Pokemon",
+      "id": "bog-9",
+      "illustrator": "Ken Sugimori",
+      "localId": "9",
+      "name": "Rocket\u2019s Hitmonchan",
+      "rarity": "None",
+      "set": {
+        "cardCount": { "official": 9, "total": 9 },
+        "id": "bog",
+        "name": "Best of game",
+        "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+      },
+      "variants": {
+        "firstEdition": false,
+        "holo": true,
+        "normal": true,
+        "reverse": true,
+        "wPromo": false
+      },
+      "variants_detailed": [
+        { "type": "normal", "size": "standard" },
+        { "type": "reverse", "size": "standard" },
+        { "type": "holo", "size": "standard" }
+      ],
+      "stage": "Basic",
+      "attacks": [
+        {
+          "cost": ["Fighting"],
+          "name": "Crosscounter",
+          "effect": "If an attack does damage to Rocket\u2019s Hitmonchan during your opponent\u2019s next turn (even if Rocket\u2019s Hitmonchan is Knocked Out), flip a coin. If heads, Rocket\u2019s Hitmonchan attacks your opponent\u2019s Active Pok\u00e9mon for double that amount of damage. (If Rocket\u2019s Hitmonchan takes 20 damage, it does 40 damage to that Pok\u00e9mon.)"
+        },
+        {
+          "cost": ["Fighting", "Fighting", "Colorless"],
+          "name": "Magnum Punch",
+          "damage": 50
+        }
+      ],
+      "legal": { "standard": false, "expanded": false },
+      "updated": "2021-10-18T11:59:30+02:00",
+      "pricing": { "cardmarket": null, "tcgplayer": null }
+    }
+  ],
+  "id": "bog",
+  "legal": { "expanded": false, "standard": false },
+  "name": "Best of game",
+  "releaseDate": "2002-12-01",
+  "serie": { "id": "ecard", "name": "E-Card" },
+  "symbol": "https://assets.tcgdex.net/univ/ecard/bog/symbol"
+}

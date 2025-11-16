@@ -1,14 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-import { Box, Grid, Heading, Spinner, Text, Button } from '@chakra-ui/react';
+import { useSearchParams } from 'next/navigation';
+import { Box, Grid, Heading, Spinner, Text } from '@chakra-ui/react';
 import PokemonCardMini from '@/components/pokemonCardMini/PokemonCardMini';
 import { PokemonCard } from '@/types/pokemon-card';
 
 export default function FilterCardsPage() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const type = searchParams.get('type');
   const name = searchParams.get('name');
 

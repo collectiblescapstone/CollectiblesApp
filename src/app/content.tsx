@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Header from '@/components/navbar/Header';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Spinner } from '@chakra-ui/react';
 import Footer from '@/components/navbar/Footer';
 import { Capacitor } from '@capacitor/core';
 import Sidebar from '@/components/navbar/Sidebar';
@@ -36,18 +36,20 @@ const Content = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return isMobileView ? (
-    <>
+    <Suspense fallback={<Spinner size="xl" />}>
       <Header />
       <Box minHeight="84dvh">{children}</Box>
       <Footer />
-    </>
+    </Suspense>
   ) : (
-    <Flex flexDirection="row">
-      <Sidebar />
-      <Flex minWidth="75dvw" minHeight="dvh" justifyContent="center">
-        <Box maxWidth="40dvw">{children}</Box>
+    <Suspense fallback={<Spinner size="xl" />}>
+      <Flex flexDirection="row">
+        <Sidebar />
+        <Flex minWidth="75dvw" minHeight="dvh" justifyContent="center">
+          <Box maxWidth="40dvw">{children}</Box>
+        </Flex>
       </Flex>
-    </Flex>
+    </Suspense>
   );
 };
 

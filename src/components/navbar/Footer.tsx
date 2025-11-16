@@ -2,17 +2,11 @@
 
 import { Box, Flex } from '@chakra-ui/react';
 import { usePathname, useRouter } from 'next/navigation';
-import { LuCamera, LuLibrary, LuUser } from 'react-icons/lu';
+import { MENU_ITEMS } from './constants';
 
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
-
-  const menuItems: { icon: React.ReactNode; path: string }[] = [
-    { icon: <LuLibrary size={36} />, path: '/pokemon-grid' },
-    { icon: <LuCamera size={36} />, path: '/camera' },
-    { icon: <LuUser size={36} />, path: '/personal-profile' },
-  ];
 
   return (
     <Flex
@@ -28,16 +22,24 @@ const Footer = () => {
       justifyContent="space-between"
       px={16}
     >
-      {menuItems.map((item) => (
+      {MENU_ITEMS.map((item) => (
         <Box
           key={item.path}
           onClick={() => router.push(item.path)}
           bgColor={
-            pathname.includes(item.path) ? 'whiteAlpha.400' : 'transparent'
+            pathname.startsWith(`${item.path}`)
+              ? 'whiteAlpha.400'
+              : 'transparent'
           }
           padding={2}
           borderRadius={8}
           cursor="pointer"
+          role="button"
+          aria-label={`Navigate to ${item.name}`}
+          tabIndex={0}
+          onKeyDown={(e) =>
+            (e.key === 'Enter' || e.key === ' ') && router.push(item.path)
+          }
         >
           {item.icon}
         </Box>

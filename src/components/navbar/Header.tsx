@@ -4,15 +4,14 @@ import { Flex, Heading } from '@chakra-ui/react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
 import { LuStepBack } from 'react-icons/lu';
+import { MAIN_PAGES } from './constants';
 
 const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const mainPages = ['/', '/pokemon-grid', '/camera', '/personal-profile'];
-
   const isMainPage = useMemo(() => {
-    return mainPages.includes(pathname);
+    return MAIN_PAGES.includes(pathname);
   }, [pathname]);
 
   return (
@@ -30,7 +29,18 @@ const Header = () => {
       justifyContent={isMainPage ? 'center' : 'space-between'}
       px={2}
     >
-      {!isMainPage && <LuStepBack size={24} onClick={() => router.back()} />}
+      {!isMainPage && (
+        <LuStepBack
+          size={24}
+          onClick={() => router.back()}
+          role="button"
+          aria-label="Go back"
+          tabIndex={0}
+          onKeyDown={(e) =>
+            (e.key === 'Enter' || e.key === ' ') && router.back()
+          }
+        />
+      )}
       {isMainPage && <Heading size="lg">Collectibles App</Heading>}
       {!isMainPage && <Heading size="md">Collectibles App</Heading>}
     </Flex>

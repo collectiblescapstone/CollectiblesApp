@@ -2,21 +2,11 @@
 
 import { Flex, Heading } from '@chakra-ui/react';
 import { usePathname, useRouter } from 'next/navigation';
-import { LuCamera, LuLibrary, LuUser } from 'react-icons/lu';
+import { MENU_ITEMS } from './constants';
 
 const Sidebar = () => {
   const router = useRouter();
   const pathname = usePathname();
-
-  const menuItems: { icon: React.ReactNode; path: string; name: string }[] = [
-    {
-      icon: <LuLibrary size={36} />,
-      path: '/pokemon-grid',
-      name: 'Collections',
-    },
-    { icon: <LuCamera size={36} />, path: '/camera', name: 'Camera' },
-    { icon: <LuUser size={36} />, path: '/personal-profile', name: 'Profile' },
-  ];
 
   return (
     <Flex
@@ -31,12 +21,14 @@ const Sidebar = () => {
       <Heading size="2xl" mb={16}>
         Collectibles App
       </Heading>
-      {menuItems.map((item) => (
+      {MENU_ITEMS.map((item) => (
         <Flex
           key={item.path}
           onClick={() => router.push(item.path)}
           bgColor={
-            pathname.includes(item.path) ? 'whiteAlpha.400' : 'transparent'
+            pathname.startsWith(`${item.path}`)
+              ? 'whiteAlpha.400'
+              : 'transparent'
           }
           padding={2}
           borderRadius={8}
@@ -44,6 +36,12 @@ const Sidebar = () => {
           cursor="pointer"
           width="100%"
           mb={5}
+          role="button"
+          aria-label={`Navigate to ${item.name}`}
+          tabIndex={0}
+          onKeyDown={(e) =>
+            (e.key === 'Enter' || e.key === ' ') && router.push(item.path)
+          }
         >
           {item.icon}
           <Heading size="2xl" ml={4}>

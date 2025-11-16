@@ -7,13 +7,25 @@ import Footer from '@/components/navbar/Footer';
 import { Capacitor } from '@capacitor/core';
 import Sidebar from '@/components/navbar/Sidebar';
 
+export const CHAKRA_UI_LG_BREAKPOINT = 992;
+
 const Content = ({ children }: { children: React.ReactNode }) => {
-  const [isMobileView, setIsMobileView] = useState<boolean>(true);
+  const [isMobileView, setIsMobileView] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+    return (
+      Capacitor.isNativePlatform() ||
+      window.innerWidth <= CHAKRA_UI_LG_BREAKPOINT
+    );
+  });
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleResize = () => {
       const innerWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-      setIsMobileView(Capacitor.isNativePlatform() || innerWidth <= 992);
+      setIsMobileView(
+        Capacitor.isNativePlatform() || innerWidth <= CHAKRA_UI_LG_BREAKPOINT
+      );
     };
     handleResize();
 

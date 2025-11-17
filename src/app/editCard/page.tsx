@@ -310,17 +310,29 @@ const Demo = () => {
                         </Listbox.Content>
                     </Listbox.Root>
 
-                    <Listbox.Root collection={foils} deselectable maxW="320px">
-                        <Listbox.Label>Card Foil Pattern</Listbox.Label>
-                        <Listbox.Content>
-                            {foils.items.map((foil) => (
-                                <Listbox.Item item={foil} key={foil.value}>
-                                    <Listbox.ItemText>{foil.label}</Listbox.ItemText>
-                                    <Listbox.ItemIndicator />
-                                </Listbox.Item>
-                            ))}
-                        </Listbox.Content>
-                    </Listbox.Root>
+                    <Controller
+                        name="FoilPattern"
+                        control={control}
+                        render={({ field }) => (
+                            <Listbox.Root
+                                collection={foils}
+                                deselectable
+                                maxW="320px"
+                                selectedKey={field.value}
+                                onSelectionChange={field.onChange}
+                            >
+                                <Listbox.Label>Card Foil Pattern</Listbox.Label>
+                                <Listbox.Content>
+                                    {foils.items.map((foil) => (
+                                        <Listbox.Item item={foil} key={foil.value}>
+                                            <Listbox.ItemText>{foil.label}</Listbox.ItemText>
+                                            <Listbox.ItemIndicator />
+                                        </Listbox.Item>
+                                    ))}
+                                </Listbox.Content>
+                            </Listbox.Root>
+                        )}
+                    />
 
                      <Field.Root>
                          <TagsInput.Root name="tags">

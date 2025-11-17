@@ -6,6 +6,7 @@ import { Box, Flex, Spinner } from '@chakra-ui/react';
 import Footer from '@/components/navbar/Footer';
 import { Capacitor } from '@capacitor/core';
 import Sidebar from '@/components/navbar/Sidebar';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 export const CHAKRA_UI_LG_BREAKPOINT = 992;
 
@@ -20,6 +21,8 @@ const Content = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+
+    defineCustomElements(window);
 
     const handleResize = () => {
       const innerWidth = typeof window !== 'undefined' ? window.innerWidth : 0;

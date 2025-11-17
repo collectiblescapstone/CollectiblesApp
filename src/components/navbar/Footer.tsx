@@ -25,7 +25,9 @@ const Footer = () => {
       {MENU_ITEMS.map((item) => (
         <Box
           key={item.path}
-          onClick={() => router.push(item.path)}
+          onClick={() =>
+            item.onClick ? item.onClick(router) : router.push(item.path)
+          }
           bgColor={
             pathname.startsWith(`${item.path}`)
               ? 'whiteAlpha.400'
@@ -38,7 +40,9 @@ const Footer = () => {
           aria-label={`Navigate to ${item.name}`}
           tabIndex={0}
           onKeyDown={(e) =>
-            (e.key === 'Enter' || e.key === ' ') && router.push(item.path)
+            (e.key === 'Enter' || e.key === ' ') && item.onClick
+              ? item.onClick(router)
+              : router.push(item.path)
           }
         >
           {item.icon}

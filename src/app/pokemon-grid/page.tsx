@@ -217,12 +217,7 @@ export default function PokemonGridPage() {
 
           {/* Filtered Pokémon Grid */}
           <Grid
-            templateColumns={{
-              base: 'repeat(2, 1fr)',
-              md: 'repeat(3, 1fr)',
-              lg: 'repeat(4, 1fr)',
-              xl: 'repeat(6, 1fr)',
-            }}
+            templateColumns="repeat(2, 1fr)"
             gap="2vw"
             justifyItems="center"
             mt={4}
@@ -282,16 +277,7 @@ export default function PokemonGridPage() {
 
           {/* Display sets */}
           {selectedEra && groupedSets[selectedEra] && (
-            <Grid
-              mt="30px"
-              templateColumns={{
-                base: 'repeat(1, 1fr)',
-                md: 'repeat(2, 1fr)',
-                lg: 'repeat(3, 1fr)',
-                xl: 'repeat(4, 1fr)',
-              }}
-              gap="20px"
-            >
+            <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
               {groupedSets[selectedEra].map((set) => {
                 const imageSrc = set.logo || set.symbol;
                 const setID = set.id;

@@ -13,6 +13,12 @@ jest.mock('../../context/AuthProvider', () => ({
     <div data-testid="auth-provider">{children}</div>
   ),
 }));
+jest.mock('../content', () => ({
+  __esModule: true,
+  default: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="content">{children}</div>
+  ),
+}));
 jest.mock('next/font/google', () => ({
   Geist: () => ({ variable: 'geist-sans-variable' }),
   Geist_Mono: () => ({ variable: 'geist-mono-variable' }),
@@ -26,9 +32,12 @@ describe('RootLayout', () => {
       </RootLayout>
     );
 
-    // // Check ChakraUIProvider and AuthContextProvider are rendered
+    // Check ChakraUIProvider and AuthContextProvider are rendered
     expect(getByTestId('chakra-provider')).toBeInTheDocument();
     expect(getByTestId('auth-provider')).toBeInTheDocument();
+
+    // Check Content is rendered
+    expect(getByTestId('content')).toBeInTheDocument();
 
     // Check children are rendered
     expect(getByTestId('child')).toBeInTheDocument();

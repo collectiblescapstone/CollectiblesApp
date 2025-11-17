@@ -1,7 +1,7 @@
 # run inside src/ai_dev/datasets/pokemon with `python run.py`
 #
 # estimated times:
-# metadata download time: ~40 minutes
+# metadata download time: ~8 minutes
 # image download time: 5-6 hours
 # dataset generation time: ~8 minutes * variants per card (default 4)
 

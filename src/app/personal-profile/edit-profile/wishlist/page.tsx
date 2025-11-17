@@ -27,7 +27,7 @@ const WishScreen: React.FC = () => {
 
   return (
     <Box bg="white" minH="100vh" color="black">
-      <Flex flexDirection="column" gap={6} mt={16}>
+      <Flex flexDirection="column" gap={6} mt={6}>
         <Flex
           flexDirection="row"
           justifyContent="center"

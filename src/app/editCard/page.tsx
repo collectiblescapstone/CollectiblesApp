@@ -77,21 +77,12 @@ const Demo = () => {
         resolver: zodResolver(formSchema),
     })
 
-    // watch the two fields so we can display their runtime values for debugging
-    const watched = watch(["CardGrade", "CardGradeDetail"]) as (string[] | undefined)[]
-
     // keep track of the currently selected top-level grade so we can
     // enable/disable and populate the second select accordingly
     const [selectedGrade, setSelectedGrade] = useState<string>('ungraded')
 
     // memoize the second-select collection items for performance
     const detailOptions = useMemo(() => gradeDetailsMap[selectedGrade] ?? [], [selectedGrade])
-
-    // compute the human-readable label for the currently selected top-level grade
-    const selectedLabel = useMemo(() => {
-        const found = grades.items.find((g) => g.value === selectedGrade)
-        return found ? found.label : ''
-    }, [selectedGrade])
 
     const onSubmit = handleSubmit((data) => console.log(data))
 

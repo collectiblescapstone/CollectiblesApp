@@ -16,14 +16,15 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@capacitor-community/camera-preview": "^7.0.2",
     "@capacitor/android": "^7.4.3",
+    "@capacitor/camera": "^7.0.2",
     "@capacitor/core": "^7.4.3",
     "@capacitor/ios": "^7.4.3",
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^3.28.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@ionic/pwa-elements": "^3.3.0",
     "@prisma/client": "^6.18.0",
     "@supabase/supabase-js": "^2.76.1",
     "@techstark/opencv-js": "^4.11.0-release.1",

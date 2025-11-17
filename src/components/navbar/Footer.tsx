@@ -25,7 +25,9 @@ const Footer = () => {
       {MENU_ITEMS.map((item) => (
         <Box
           key={item.path}
-          onClick={() => router.push(item.path)}
+          onClick={() =>
+            item.onClick ? item.onClick() : router.push(item.path)
+          }
           bgColor={
             pathname.startsWith(`${item.path}`)
               ? 'whiteAlpha.400'

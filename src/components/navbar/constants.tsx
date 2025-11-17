@@ -1,11 +1,13 @@
 import { LuCamera, LuLibrary, LuUser } from 'react-icons/lu';
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 const takePicture = async () => {
   await Camera.getPhoto({
     quality: 90,
     allowEditing: true,
     resultType: CameraResultType.Uri,
+    webUseInput: !CameraSource.Camera,
+    saveToGallery: false,
   });
 
   // image.webPath will contain a path that can be set as an image src.

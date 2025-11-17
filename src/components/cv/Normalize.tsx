@@ -156,34 +156,39 @@ export default function Normalize({ image }: NormalizeProps) {
   }, [image]);
 
   return (
-    <Grid templateColumns="repeat(4, 1fr)" gap={2}>
-      <Box w="20vw" h="30vw">
+    <Grid
+      templateColumns="repeat(2, 1fr)"
+      gap={2}
+      minH="inherit"
+      minWidth="inherit"
+    >
+      <Box>
         <Text>Original Image</Text>
         <canvas ref={originalImageRef} style={{ width: '100%' }} />
       </Box>
-      <Box w="20vw" h="30vw">
+      <Box>
         <Text>Grey Image</Text>
         <canvas ref={greyImageRef} style={{ width: '100%' }} />
       </Box>
-      <Box w="20vw" h="30vw">
+      <Box>
         <Text>Blurred Image</Text>
         <canvas ref={BlurredImageRef} style={{ width: '100%' }} />
       </Box>
-      <Box w="20vw" h="30vw">
+      <Box>
         <Text>Edge Image</Text>
         <canvas ref={EdgeImageRef} style={{ width: '100%' }} />
       </Box>
-      <Box w="20vw" h="30vw">
+      <Box>
         <Text>Contours Image</Text>
         <canvas ref={ContoursImageRef} style={{ width: '100%' }} />
       </Box>
-      <Box w="20vw" h="30vw">
+      <Box>
         <Text>Biggest Contour Image</Text>
         <canvas ref={BiggestContourImageRef} style={{ width: '100%' }} />
       </Box>
-      <Box w="20vw" h="30vw">
+      <Box>
         <Text>Processed Image</Text>
-        <canvas ref={ProcessedImageRef} style={{ height: '100%' }} />
+        <canvas ref={ProcessedImageRef} style={{ width: '100%' }} />
       </Box>
     </Grid>
   );

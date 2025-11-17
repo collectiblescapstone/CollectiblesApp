@@ -20,7 +20,7 @@ const Showcase: React.FC = () => {
       justifyContent="flex-start"
       alignItems="flex-start"
       w="100%"
-      px={6}
+      px={4}
     >
       <Divider />
       <Flex mt={1}>
@@ -33,7 +33,7 @@ const Showcase: React.FC = () => {
         justifyContent="center"
         alignItems="center"
         wrap="wrap"
-        gap={7}
+        gap={5}
       >
         {cards.map((card, index) => (
           <Flex key={index}>

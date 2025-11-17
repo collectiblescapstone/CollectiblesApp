@@ -55,10 +55,10 @@ export default function AuthForm({ type }: AuthFormProps) {
 
   return (
     <VStack
-      gap="10"
-      width="1/3"
+      gap={{ base: '6', lg: '10' }}
+      width={{ base: '2/3', lg: '1/3' }}
       backgroundColor="blackAlpha.300"
-      padding={16}
+      padding={{ base: '8', lg: '16' }}
       rounded="xl"
     >
       <Heading size="5xl">{name}</Heading>

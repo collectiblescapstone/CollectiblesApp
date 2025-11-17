@@ -54,7 +54,7 @@ const TradeList: React.FC = () => {
         {display.map((card: PokemonCardImage, index: number) => (
           <Flex key={index}>
             <Image
-              src={`${card.image}/high.png`}
+              src={`${card.image}/low.png`}
               alt={card.name}
               w="105px"
               h="auto"
@@ -63,7 +63,7 @@ const TradeList: React.FC = () => {
           </Flex>
         ))}
         <Image
-          src={`${hardcodedCard.image}/high.png`}
+          src={`${hardcodedCard.image}/low.png`}
           alt={hardcodedCard.name}
           w="105px"
           h="auto"

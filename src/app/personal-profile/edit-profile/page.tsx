@@ -70,10 +70,7 @@ const PersonalProfileScreen: React.FC = () => {
         bgColor="blackAlpha.600"
         backgroundBlendMode="darken"
       />
-      <Flex position="absolute" top={3} right={3}>
-        <FiEdit3 size={24} color="white" />
-      </Flex>
-      <Flex position="absolute" top={32} right={9}>
+      <Flex position="relative" top={5} right={7} justifyContent="flex-end">
         <Button
           variant="solid"
           colorPalette="black"
@@ -93,7 +90,7 @@ const PersonalProfileScreen: React.FC = () => {
         >
           <Avatar.Root boxSize="100%" shape="rounded">
             <Avatar.Image src="/user-profile/pfp_temp.jpg" />
-            <Avatar.Fallback>SA</Avatar.Fallback>
+            <Avatar.Fallback> SA </Avatar.Fallback>
           </Avatar.Root>
           <Box
             position="absolute"

@@ -337,24 +337,32 @@ const Demo = () => {
                     />
 
                      <Field.Root>
-                         <TagsInput.Root name="tags">
-                            <TagsInput.Label>Tags</TagsInput.Label>
-                            {/* Make the tags control and its input use a dark background and light text so they match the other inputs */}
-                            <TagsInput.Control className="tags-control" style={{borderRadius: 6, padding: '6px' }}>
-                                <TagsInput.Items style={{color:'black'}}/>
-                                <TagsInput.Input
-                                    placeholder="Add tag..."
-                                    style={{ background: 'transparent', outline: 'none', border: 'none' }}
-                                />
-                            </TagsInput.Control>
-
-                            <TagsInput.HiddenInput />
-                        </TagsInput.Root>
-                        <Field.HelperText>
-                            Add your own tags to better categorize your item!
-                        </Field.HelperText>
-                    </Field.Root>
-
+                         <Controller
+                             name="Tags"
+                             control={control}
+                             render={({ field }) => (
+                                 <TagsInput.Root
+                                     name="Tags"
+                                     value={field.value || []}
+                                     onChange={field.onChange}
+                                 >
+                                     <TagsInput.Label>Tags</TagsInput.Label>
+                                     {/* Make the tags control and its input use a dark background and light text so they match the other inputs */}
+                                     <TagsInput.Control className="tags-control" style={{borderRadius: 6, padding: '6px' }}>
+                                         <TagsInput.Items style={{color:'black'}}/>
+                                         <TagsInput.Input
+                                             placeholder="Add tag..."
+                                             style={{ background: 'transparent', outline: 'none', border: 'none' }}
+                                         />
+                                     </TagsInput.Control>
+                                     <TagsInput.HiddenInput />
+                                 </TagsInput.Root>
+                             )}
+                         />
+                         <Field.HelperText>
+                             Add your own tags to better categorize your item!
+                         </Field.HelperText>
+                     </Field.Root>
                     <Stack direction="row" gap={2}>
                         <Button bg="red" onClick={reset}>Discard Changes</Button>
                         <Button type="submit">Save</Button>

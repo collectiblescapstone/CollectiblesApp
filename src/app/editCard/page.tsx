@@ -19,17 +19,23 @@ import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 
 interface FormValues {
-    ItemName: string
-    ItemSet: string
+    CardName: string
+    CardSet: string
     CardGrade: string[]
     CardGradeDetail?: string[]
+    Condition?: string
+    FoilPattern?: string
+    Tags?: string[]
 }
 
 const formSchema = z.object({
-    ItemName: z.string().min(1, "Item name is required"),
-    ItemSet: z.string().min(1, "Item set is required"),
+    CardName: z.string().min(1, "Item name is required"),
+    CardSet: z.string().min(1, "Item set is required"),
     CardGrade: z.array(z.string()).min(1, "Card Grade is required"),
     CardGradeDetail: z.array(z.string()).optional(),
+    Condition: z.string().optional(),
+    FoilPattern: z.string().optional(),
+    Tags: z.array(z.string()).optional(),
 })
 
 const grades = createListCollection({
@@ -92,6 +98,11 @@ const foils = createListCollection({
     ],
 })
 
+function reset() {
+    // Placeholder reset function - implement form reset logic as needed
+    console.log('Reset form called')
+}
+
 const Demo = () => {
     const {
         register,
@@ -134,38 +145,36 @@ const Demo = () => {
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}
-                    <Stack direction="column" spacing={2} width="170px">
+                    <Stack direction="column" gap={2} width="170px">
                         <Button size="sm" variant="outline">Add to Showcase</Button>
-                        <Button size="sm" variant="ghost">Mark For Trade</Button>
-                        {/* placeholder for any other quick buttons you want under the card */}
+                        <Button size="sm" variant="outline">Mark For Trade</Button>
                     </Stack>
                 </Box>
 
                 {/* Right: form fields stacked vertically; take remaining width */}
                 <Stack as="div" gap="4" align="flex-start" flexGrow={1} minWidth={0}>
-                    <Field.Root invalid={!!errors.ItemName}>
+                    <Field.Root invalid={!!errors.CardName}>
                         <Field.Label>
                             Card name <Field.RequiredIndicator/>
                         </Field.Label>
                         <Input
                             placeholder="Item name"
-                            {...register("ItemName", { required: "Item name is required" })}
+                            {...register("CardName", { required: "Card name is required" })}
                         />
-                        <Field.ErrorText>{errors.ItemName?.message}</Field.ErrorText>
+                        <Field.ErrorText>{errors.CardName?.message}</Field.ErrorText>
                     </Field.Root>
 
-                    <Field.Root invalid={!!errors.ItemSet}>
+                    <Field.Root invalid={!!errors.CardSet}>
                         <Field.Label>
                             Card set <Field.RequiredIndicator/>
                         </Field.Label>
                         <Input
                             placeholder="Item set"
-                            {...register("ItemSet", { required: "Item set is required" })}
+                            {...register("CardSet", { required: "Card set is required" })}
                         />
-                        <Field.ErrorText>{errors.ItemSet?.message}</Field.ErrorText>
+                        <Field.ErrorText>{errors.CardSet?.message}</Field.ErrorText>
                     </Field.Root>
 
-                    {/* Keep the two selects small and side-by-side on all screen sizes */}
                     <Stack direction="row" gap="3" align="flex-start" wrap="nowrap">
                         <Field.Root invalid={!!errors.CardGrade} width="150px">
                             <Field.Label>Card Grade</Field.Label>
@@ -174,39 +183,29 @@ const Demo = () => {
                                 name="CardGrade"
                                 defaultValue={["ungraded"]}
                                 render={({ field }) => {
-                                    // The form field stores an array (for compatibility), but the UI Select
-                                    // expects a single selected value. Extract the first item to display.
-                                    const currentValue: string[] = Array.isArray(field.value)
-                                        ? field.value
-                                        : [(field.value as string | undefined) ?? "ungraded"]
-                                    const selectedValue = currentValue[0] ?? 'ungraded'
+                                    // single selected value derived from the form's array value
+                                    const selected = Array.isArray(field.value) ? (field.value[0] ?? 'ungraded') : (field.value ?? 'ungraded')
+
+                                    const handleChange = (payload: any) => {
+                                        const raw = payload?.value
+                                        const arr = Array.isArray(raw) ? raw : [raw]
+                                        field.onChange(arr)
+                                        setSelectedGrade(arr[0])
+                                    }
 
                                     return (
-                                        // Control the Select directly from the form field value (array), so visual
-                                        // selection is always in sync with form state.
                                         <Select.Root
                                             name={field.name}
                                             width="150px"
-                                            value={Array.isArray(field.value) ? field.value : [field.value ?? selectedValue]}
-                                            onValueChange={(payload) => {
-                                                // payload.value will be an array of selected values; keep it as-is for the form
-                                                const raw = (payload as any).value
-                                                const arr = Array.isArray(raw) ? raw : [raw]
-                                                // debug log for troubleshooting
-                                                console.log('Select change payload:', payload, 'asArray:', arr)
-                                                // update the form field with the array the Select uses
-                                                field.onChange(arr)
-                                                // update local state so the second select can respond
-                                                setSelectedGrade(arr[0])
-                                            }}
-                                            onInteractOutside={() => field.onBlur()}
+                                            value={[selected]}
+                                            onValueChange={handleChange}
+                                            onInteractOutside={field.onBlur}
                                             collection={grades}
                                         >
                                             <Select.HiddenSelect />
-                                            {/* ensure the control uses a white background and black text and a fixed width so it doesn't expand */}
-                                            <Select.Control bg="white" color="black" style={{ width: 150, boxSizing: 'border-box' }}>
+                                            <Select.Control bg="white" color="black" style={{ width: 150, boxSizing: 'border-box', fontSize: 16 }}>
                                                 <Select.Trigger>
-                                                    <Select.ValueText style={{ color: 'black', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 120 }} placeholder="Select card grade" />
+                                                    <Select.ValueText style={{ maxWidth: 120, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="Select card grade" />
                                                 </Select.Trigger>
                                                 <Select.IndicatorGroup>
                                                     <Select.Indicator />
@@ -214,15 +213,9 @@ const Demo = () => {
                                             </Select.Control>
                                             <Portal>
                                                 <Select.Positioner>
-                                                    {/* constrain dropdown width so it matches the control */}
                                                     <Select.Content style={{ width: 150, maxWidth: '100%', boxSizing: 'border-box' }}>
                                                         {grades.items.map((grade) => (
-                                                            <Select.Item
-                                                                item={grade}
-                                                                key={grade.value}
-                                                                _hover={{ bg: 'gray.100' }}
-                                                                _selected={{ bg: 'black', color: 'white' }}
-                                                            >
+                                                            <Select.Item item={grade} key={grade.value} _hover={{ bg: 'gray.100' }} _selected={{ bg: 'black', color: 'white' }}>
                                                                 {grade.label}
                                                                 <Select.ItemIndicator />
                                                             </Select.Item>
@@ -238,67 +231,48 @@ const Demo = () => {
                         </Field.Root>
 
                         {/* Second select: Grade Detail - disabled when ungraded */}
-                        <Field.Root invalid={!!errors.CardGradeDetail} width="150px">
-                            <Field.Label>Grade detail</Field.Label>
+                        <Field.Root invalid={!!errors.CardGradeDetail} width="50px">
+                            <Field.Label>Number</Field.Label>
                             <Controller
                                 control={control}
                                 name="CardGradeDetail"
                                 defaultValue={[]}
                                 render={({ field }) => {
-                                    // while the form stores an array, the UI is a single-select
-                                    const currentValue: string[] = Array.isArray(field.value)
-                                        ? field.value
-                                        : [(field.value as string | undefined) ?? ""]
-
-                                    // If the top-level grade is ungraded, keep the second select disabled
+                                    const selected = Array.isArray(field.value) ? (field.value[0] ?? '') : (field.value ?? '')
                                     const disabled = selectedGrade === 'ungraded' || detailOptions.length === 0
 
-                                    // create a collection for the project's Select when enabled
-                                    const detailCollection = createListCollection({ items: detailOptions })
-
                                     if (disabled) {
-                                        // Disabled: render a native select for predictable behaviour
                                         return (
                                             <select
                                                 name={field.name}
-                                                value={currentValue[0] ?? ''}
+                                                value={selected}
                                                 onChange={(e) => field.onChange([e.target.value])}
                                                 onBlur={field.onBlur}
                                                 disabled
-                                                style={{
-                                                    width: '100%',
-                                                    maxWidth: 150,
-                                                    padding: '8px 10px',
-                                                    borderRadius: 6,
-                                                    background: '#f0f0f0',
-                                                    border: '1px solid #ccc',
-                                                    color: '#666',
-                                                    boxSizing: 'border-box',
-                                                }}
+                                                style={{ width: '100%', maxWidth: 50, padding: '8px 10px', borderRadius: 6, background: '#f0f0f0', border: '1px solid #ccc', color: '#666', fontSize: 16, boxSizing: 'border-box' }}
                                             >
-                                                <option value="" disabled>Disabled</option>
+                                                <option value="" disabled></option>
                                             </select>
                                         )
                                     }
 
-                                    // Enabled: use the project's Select component to match CardGrade visuals and dropdown sizing
+                                    const detailCollection = createListCollection({ items: detailOptions })
+
                                     return (
                                         <Select.Root
                                             name={field.name}
                                             collection={detailCollection}
-                                            width="150px" // keep width consistent with CardGrade control
-                                            // control using the form field's array value
-                                            value={Array.isArray(field.value) ? field.value : [field.value ?? '']}
-                                            onValueChange={(payload) => {
-                                                const raw = (payload as any).value
+                                            value={[selected]}
+                                            onValueChange={(payload: any) => {
+                                                const raw = payload?.value
                                                 const arr = Array.isArray(raw) ? raw : [raw]
                                                 field.onChange(arr)
                                             }}
                                         >
                                             <Select.HiddenSelect />
-                                            <Select.Control bg="white" color="black" style={{ width: 150, boxSizing: 'border-box' }}>
+                                            <Select.Control bg="white" color="black" style={{ width: 80, boxSizing: 'border-box', fontSize: 16 }}>
                                                 <Select.Trigger>
-                                                    <Select.ValueText style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 120 }} placeholder="Select detail" />
+                                                    <Select.ValueText style={{ maxWidth: 80, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="#" />
                                                 </Select.Trigger>
                                                 <Select.IndicatorGroup>
                                                     <Select.Indicator />
@@ -306,7 +280,6 @@ const Demo = () => {
                                             </Select.Control>
                                             <Portal>
                                                 <Select.Positioner>
-                                                    {/* constrain dropdown width to match control */}
                                                     <Select.Content style={{ width: 150, maxWidth: '100%', boxSizing: 'border-box' }}>
                                                         {detailOptions.map((opt) => (
                                                             <Select.Item key={opt.value} item={opt} _hover={{ bg: 'gray.100' }} _selected={{ bg: 'black', color: 'white' }}>
@@ -323,7 +296,7 @@ const Demo = () => {
                             />
                             <Field.ErrorText>{errors.CardGradeDetail?.message}</Field.ErrorText>
                         </Field.Root>
-                    </Stack>
+                     </Stack>
 
                     <Listbox.Root collection={conditions} deselectable maxW="320px">
                         <Listbox.Label>Card condition</Listbox.Label>
@@ -367,7 +340,11 @@ const Demo = () => {
                             Add your own tags to better categorize your item!
                         </Field.HelperText>
                     </Field.Root>
-                    <Button type="submit">Save</Button>
+
+                    <Stack direction="row" gap={2}>
+                        <Button bg="red" onClick={reset}>Discard Changes</Button>
+                        <Button type="submit">Save</Button>
+                    </Stack>
                 </Stack>
             </Stack>
         </form>

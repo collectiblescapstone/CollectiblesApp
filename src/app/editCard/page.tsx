@@ -104,6 +104,8 @@ function reset() {
 }
 
 const Demo = () => {
+    type SelectPayload = { value?: string | string[] }
+
     const {
         register,
         handleSubmit,
@@ -186,11 +188,11 @@ const Demo = () => {
                                     // single selected value derived from the form's array value
                                     const selected = Array.isArray(field.value) ? (field.value[0] ?? 'ungraded') : (field.value ?? 'ungraded')
 
-                                    const handleChange = (payload: any) => {
+                                    const handleChange = (payload: SelectPayload) => {
                                         const raw = payload?.value
-                                        const arr = Array.isArray(raw) ? raw : [raw]
+                                        const arr = raw === undefined ? [] : (Array.isArray(raw) ? raw : [raw])
                                         field.onChange(arr)
-                                        setSelectedGrade(arr[0])
+                                        setSelectedGrade(arr[0] ?? 'ungraded')
                                     }
 
                                     return (
@@ -263,9 +265,9 @@ const Demo = () => {
                                             name={field.name}
                                             collection={detailCollection}
                                             value={[selected]}
-                                            onValueChange={(payload: any) => {
+                                            onValueChange={(payload: SelectPayload) => {
                                                 const raw = payload?.value
-                                                const arr = Array.isArray(raw) ? raw : [raw]
+                                                const arr = raw === undefined ? [] : (Array.isArray(raw) ? raw : [raw])
                                                 field.onChange(arr)
                                             }}
                                         >

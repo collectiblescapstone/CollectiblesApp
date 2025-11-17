@@ -12,6 +12,7 @@ import {
     Portal,
     Box,
     createListCollection,
+    Listbox,
 } from "@chakra-ui/react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
@@ -66,12 +67,36 @@ const gradeDetailsMap: Record<string, { label: string; value: string }[]> = {
     ],
 }
 
+const conditions = createListCollection({
+    items: [
+        { label: "Near Mint", value: "near-mint" },
+        { label: "Lightly Played", value: "lightly-played" },
+        { label: "Moderately Played", value: "moderately-played" },
+        { label: "Heavily Played", value: "heavily-played" },
+        { label: "Damaged", value: "damaged" },
+    ],
+})
+
+const foils = createListCollection({
+    items: [
+        { label: "Starlight", value: "starlight" },
+        { label: "Cosmos", value: "cosmos" },
+        { label: "Tinsel", value: "tinsel" },
+        { label: "Sheen", value: "sheen" },
+        { label: "Cracked Ice", value: "cracked-ice" },
+        { label: "Crosshatch", value: "crosshatch" },
+        { label: "Water Web", value: "water-web" },
+        { label: "Sequin", value: "sequin" },
+        { label: "Pixel", value: "pixel" },
+        { label: "Reverse Holofoil", value: "reverse-holo" },
+    ],
+})
+
 const Demo = () => {
     const {
         register,
         handleSubmit,
         control,
-        watch,
         formState: { errors },
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
@@ -299,6 +324,30 @@ const Demo = () => {
                             <Field.ErrorText>{errors.CardGradeDetail?.message}</Field.ErrorText>
                         </Field.Root>
                     </Stack>
+
+                    <Listbox.Root collection={conditions} deselectable maxW="320px">
+                        <Listbox.Label>Card condition</Listbox.Label>
+                        <Listbox.Content>
+                            {conditions.items.map((condition) => (
+                                <Listbox.Item item={condition} key={condition.value}>
+                                    <Listbox.ItemText>{condition.label}</Listbox.ItemText>
+                                    <Listbox.ItemIndicator />
+                                </Listbox.Item>
+                            ))}
+                        </Listbox.Content>
+                    </Listbox.Root>
+
+                    <Listbox.Root collection={foils} deselectable maxW="320px">
+                        <Listbox.Label>Card Foil Pattern</Listbox.Label>
+                        <Listbox.Content>
+                            {foils.items.map((foil) => (
+                                <Listbox.Item item={foil} key={foil.value}>
+                                    <Listbox.ItemText>{foil.label}</Listbox.ItemText>
+                                    <Listbox.ItemIndicator />
+                                </Listbox.Item>
+                            ))}
+                        </Listbox.Content>
+                    </Listbox.Root>
 
                      <Field.Root>
                          <TagsInput.Root name="tags">

@@ -25,7 +25,7 @@ const Sidebar = () => {
         <Flex
           key={item.path}
           onClick={() =>
-            item.onClick ? item.onClick() : router.push(item.path)
+            item.onClick ? item.onClick(router) : router.push(item.path)
           }
           bgColor={
             pathname.startsWith(`${item.path}`)
@@ -43,7 +43,7 @@ const Sidebar = () => {
           tabIndex={0}
           onKeyDown={(e) =>
             (e.key === 'Enter' || e.key === ' ') && item.onClick
-              ? item.onClick()
+              ? item.onClick(router)
               : router.push(item.path)
           }
         >

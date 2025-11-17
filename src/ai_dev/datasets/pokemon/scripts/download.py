@@ -14,29 +14,30 @@ def download(variants_per_card:int = 4, filters:bool = True, transformations:boo
     # the options are to select where in the script to start/resume the download/generation process,
     # this is necessary for us to be able to resume after potential errors
     #
-    #  1 for downloading metadata
-    #  2 for downloading images
-    #  3 for generating dataset using base images
-
-    selection = input("(1) for metadata download \n(2) start at image download if metadata exists \n(3) start at dataset generation if metadata and images exist \n-> ").strip()
-    if len(selection) < 1:
-        print("no selection made, aborting")
-        return
-    selection = selection[0]
+    # 1 for downloading metadata
+    # 2 for downloading images
+    # 3 for generating dataset using base images
+    selection = input('\n'.join([
+        '(1) for metadata download',
+        '(2) for image download (using current metadata)',
+        '(3) for generating image variants',
+        '> '
+    ])).strip()
 
     if "1" in selection:
         print("downloading metadata...")
         download_metadata()
-        return
     elif "2" in selection:
         print("downloading images...")
         sanitize_ids()
         download_images()
+    elif "3" in selection:
+        input(f"will generate ~{int(variants_per_card*4)}GB of image variations for training, make sure you have enough disk space. Press Enter to continue...")
+        print("generating image variations...")
+        generate_variations(variants_per_card, filters, transformations, occlusions)
+    else:
+        print("no selection made, aborting")
 
-    input(f"will generate ~{int(variants_per_card*4)}GB of image variations for training, make sure you have enough disk space. Press Enter to continue...")
-
-    print("generating image variations...")
-    generate_variations(variants_per_card, filters, transformations, occlusions)
 
 client = TCGDexAPI("en")
 

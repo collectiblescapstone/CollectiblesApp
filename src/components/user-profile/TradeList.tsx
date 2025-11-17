@@ -5,24 +5,29 @@ import Divider from '@/components/user-profile/Divider';
 import { useRouter } from 'next/navigation';
 import { Button, Flex, Image, Text } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
-import { CardType } from '@/types/user-profile';
+import { useRandomCards } from '@/components/personal-profile/RandomCard';
+import { PokemonCardImage } from '@/types/personal-profile';
 
-const cards: CardType[] = [
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
+const hardcodedCards: PokemonCardImage[] = [
+  { name: 'Mareep', image: 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG34' },
+  { name: 'Riolu', image: 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG26' },
 ];
 
 const TradeList: React.FC = () => {
   const router = useRouter();
 
-  const display = cards.slice(0, 3);
-  const viewmore = cards.length > 3;
+  const { cards, loading } = useRandomCards('pl4', 4);
+  if (loading) return <Text>Loading cards...</Text>;
+
+  const display = cards.slice(0, 2);
+  const viewmore = cards.length > 2;
 
   const press = () => {
     router.push('/user-profile/trade');
   };
+
+  const hardcodedCard =
+    hardcodedCards[Math.floor(Math.random() * hardcodedCards.length)];
 
   return (
     <Flex
@@ -46,17 +51,24 @@ const TradeList: React.FC = () => {
         wrap="wrap"
         gap={5}
       >
-        {display.map((card, index) => (
+        {display.map((card: PokemonCardImage, index: number) => (
           <Flex key={index}>
             <Image
-              src={card.imageSrc}
-              alt="Trade List Card"
+              src={`${card.image}/high.png`}
+              alt={card.name}
               w="105px"
               h="auto"
               borderRadius="none"
             />
           </Flex>
         ))}
+        <Image
+          src={`${hardcodedCard.image}/high.png`}
+          alt={hardcodedCard.name}
+          w="105px"
+          h="auto"
+          borderRadius="none"
+        />
       </Flex>
       <Flex mt={3}>
         {viewmore && (

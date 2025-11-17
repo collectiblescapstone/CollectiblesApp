@@ -146,8 +146,7 @@ export default function Normalize({ image }: NormalizeProps) {
 
       // get most similar card
       if (getSimilarCards) {
-        const predictions = getSimilarCards(warped)
-        console.log(predictions)
+        const predictions = getSimilarCards(warped);
         setPredictedCard(predictions[0]);
       }
 

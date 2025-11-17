@@ -300,17 +300,29 @@ const Demo = () => {
                         </Field.Root>
                      </Stack>
 
-                    <Listbox.Root collection={conditions} deselectable maxW="320px">
-                        <Listbox.Label>Card condition</Listbox.Label>
-                        <Listbox.Content>
-                            {conditions.items.map((condition) => (
-                                <Listbox.Item item={condition} key={condition.value}>
-                                    <Listbox.ItemText>{condition.label}</Listbox.ItemText>
-                                    <Listbox.ItemIndicator />
-                                </Listbox.Item>
-                            ))}
-                        </Listbox.Content>
-                    </Listbox.Root>
+                    <Controller
+                        name="Condition"
+                        control={control}
+                        render={({ field }) => (
+                            <Listbox.Root
+                                collection={conditions}
+                                deselectable
+                                maxW="320px"
+                                selectedKey={field.value}
+                                onSelectionChange={field.onChange}
+                            >
+                                <Listbox.Label>Card condition</Listbox.Label>
+                                <Listbox.Content>
+                                    {conditions.items.map((condition) => (
+                                        <Listbox.Item item={condition} key={condition.value}>
+                                            <Listbox.ItemText>{condition.label}</Listbox.ItemText>
+                                            <Listbox.ItemIndicator />
+                                        </Listbox.Item>
+                                    ))}
+                                </Listbox.Content>
+                            </Listbox.Root>
+                        )}
+                    />
 
                     <Controller
                         name="FoilPattern"

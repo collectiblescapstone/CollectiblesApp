@@ -1,10 +1,11 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Box, Grid, Text } from '@chakra-ui/react';
 import cvReadyPromise from '@techstark/opencv-js';
 import { CARD_WIDTH_PX, CARD_HEIGHT_PX } from '@/utils/constants';
 import { biggestContour, drawRectangle, reorderCorners } from '@/utils/cvutils';
+import { CardClassifier, CardData } from '@/utils/classification';
 
 interface NormalizeProps {
   image?: string;
@@ -18,6 +19,12 @@ export default function Normalize({ image }: NormalizeProps) {
   const ContoursImageRef = useRef<HTMLCanvasElement | null>(null);
   const BiggestContourImageRef = useRef<HTMLCanvasElement | null>(null);
   const ProcessedImageRef = useRef<HTMLCanvasElement | null>(null);
+
+  const [predictedCard, setPredictedCard] = useState<CardData>();
+  const [getSimilarCards, setGetSimilarCards] = useState<(image: cvReadyPromise.Mat, k?: number) => CardData[]>();
+  useEffect(() => {
+    CardClassifier().then((fn) => setGetSimilarCards(() => fn));
+  }, [])
 
   const processImage = async (src: string) => {
     // load image from src URL
@@ -44,30 +51,34 @@ export default function Normalize({ image }: NormalizeProps) {
 
     // read image from canvas
     const origImg = cv.imread(originalImageRef.current!);
-    cv.cvtColor(origImg, origImg, cv.COLOR_BGRA2BGR);
+    cv.cvtColor(origImg, origImg, cv.COLOR_RGBA2RGB);
 
     // deep copy so changes to cvimg won't affect origImg
     const cvimg = new cv.Mat();
     origImg.copyTo(cvimg);
 
     // make greyscale
-    cv.cvtColor(cvimg, cvimg, cv.COLOR_BGR2GRAY);
+    cv.cvtColor(cvimg, cvimg, cv.COLOR_RGB2GRAY);
 
+    // show greyscaled image
     cv.imshow(greyImageRef.current!, cvimg);
 
     // blur image
     const ksize = new cv.Size(3, 3);
     cv.GaussianBlur(cvimg, cvimg, ksize, 0);
 
+    // show blurred image
     cv.imshow(BlurredImageRef.current!, cvimg);
 
     // edge detection
     cv.Canny(cvimg, cvimg, 75, 100);
+
     // clean up edges
     const kernel = cv.Mat.ones(3, 3, cv.CV_8U);
     cv.dilate(cvimg, cvimg, kernel);
     cv.erode(cvimg, cvimg, kernel);
 
+    // show edge-detected image
     cv.imshow(EdgeImageRef.current!, cvimg);
 
     // find contours
@@ -132,6 +143,14 @@ export default function Normalize({ image }: NormalizeProps) {
         new cv.Size(CARD_WIDTH_PX, CARD_HEIGHT_PX)
       );
       cv.imshow(ProcessedImageRef.current!, warped);
+
+      // get most similar card
+      if (getSimilarCards) {
+        const predictions = getSimilarCards(warped)
+        console.log(predictions)
+        setPredictedCard(predictions[0]);
+      }
+
       pts1.delete();
       pts2.delete();
       Matrix.delete();
@@ -153,7 +172,7 @@ export default function Normalize({ image }: NormalizeProps) {
     if (image) {
       processImage(image);
     }
-  }, [image]);
+  }, [image, getSimilarCards]);
 
   return (
     <Grid
@@ -189,6 +208,9 @@ export default function Normalize({ image }: NormalizeProps) {
       <Box>
         <Text>Processed Image</Text>
         <canvas ref={ProcessedImageRef} style={{ width: '100%' }} />
+      </Box>
+      <Box>
+        <Text>Predicted card: {predictedCard?.card.name} ({predictedCard?.card.id}) from set {predictedCard?.card.set.name} ({predictedCard?.card.set.id})</Text>
       </Box>
     </Grid>
   );

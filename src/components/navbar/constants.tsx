@@ -3,17 +3,32 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
 const takePicture = async (router: AppRouterInstance) => {
-  const isCameraAvailable = await navigator.mediaDevices?.getUserMedia({
-    video: true,
-  });
+  let isCameraAvailable;
+  try {
+    await navigator.mediaDevices?.getUserMedia({
+      video: true,
+    });
+    isCameraAvailable = true;
+  } catch (error) {
+    // Suppress errors if camera is not available
+    console.log('Error accessing camera:', error);
+    isCameraAvailable = false;
+  }
 
-  const image = await Camera.getPhoto({
-    quality: 100,
-    allowEditing: true,
-    resultType: CameraResultType.Uri,
-    webUseInput: isCameraAvailable ? false : true,
-    saveToGallery: false,
-  });
+  let image;
+  try {
+    image = await Camera.getPhoto({
+      quality: 100,
+      allowEditing: true,
+      resultType: CameraResultType.Uri,
+      webUseInput: isCameraAvailable ? false : true,
+      saveToGallery: false,
+    });
+  } catch (error) {
+    // Suppress user cancellation errors
+    console.log('Error taking picture:', error);
+    return;
+  }
 
   if (image && image.webPath) {
     router.push(`/camera?img=${encodeURIComponent(image.webPath)}`);

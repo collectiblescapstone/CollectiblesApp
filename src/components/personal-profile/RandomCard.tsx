@@ -16,7 +16,7 @@ export const useRandomCards = (filename: string, count: number) => {
       if (!response.ok) throw new Error(`Failed to fetch ${url}`);
       const data: PokemonCard = await response.json();
 
-      // Randomly select 4 cards to display
+      // Randomly select count number of cards to display
       const randomPokemonCards = [...data.cards]
         .sort(() => 0.5 - Math.random())
         .slice(0, count);

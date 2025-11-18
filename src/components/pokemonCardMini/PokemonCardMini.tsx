@@ -45,7 +45,7 @@ export default function PokemonCardMini({
         alignItems="center"
       >
         <Image
-          src={image + '/high.png'}
+          src={image + '/low.jpg'}
           alt={cardName}
           objectFit="contain"
           width="100%"

@@ -1,23 +1,17 @@
 'use client';
 
 import React from 'react';
-import { CardType } from '@/types/user-profile';
 
 import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
-
-const cards: CardType[] = [
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-];
+import { useRandomCards } from '@/components/personal-profile/RandomCard';
+import { PokemonCardImage } from '@/types/personal-profile';
 
 const TradeScreen: React.FC = () => {
+  const { cards, loading } = useRandomCards('sv06', 7);
+  if (loading) return <Text>Loading cards...</Text>;
   const cardsnum = cards.length;
+
   return (
     <Box bg="white" minH="100vh" color="black">
       <Flex flexDirection="column" gap={6} mt={4}>
@@ -56,11 +50,11 @@ const TradeScreen: React.FC = () => {
           wrap="wrap"
           gap={7}
         >
-          {cards.map((card, index) => (
+          {cards.map((card: PokemonCardImage, index: number) => (
             <Flex key={index}>
               <Image
-                src={card.imageSrc}
-                alt="Trade List Card"
+                src={`${card.image}/high.png`}
+                alt={card.name}
                 w="105px"
                 h="auto"
                 borderRadius="none"

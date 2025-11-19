@@ -177,8 +177,8 @@ const Demo = () => {
                         <Field.ErrorText>{errors.CardSet?.message}</Field.ErrorText>
                     </Field.Root>
 
-                    <Stack direction="row" gap="3" align="flex-start" wrap="nowrap">
-                        <Field.Root invalid={!!errors.CardGrade} width="150px">
+                    <Stack direction="row" gap="3" align="flex-start" wrap="nowrap" width="-webkit-fill-available">
+                        <Field.Root invalid={!!errors.CardGrade}>
                             <Field.Label>Card Grade</Field.Label>
                             <Controller
                                 control={control}
@@ -198,14 +198,13 @@ const Demo = () => {
                                     return (
                                         <Select.Root
                                             name={field.name}
-                                            width="150px"
                                             value={[selected]}
                                             onValueChange={handleChange}
                                             onInteractOutside={field.onBlur}
                                             collection={grades}
                                         >
                                             <Select.HiddenSelect />
-                                            <Select.Control bg="white" color="black" style={{ width: 150, boxSizing: 'border-box', fontSize: 16 }}>
+                                            <Select.Control bg="white" color="black" style={{ boxSizing: 'border-box', fontSize: 16 }}>
                                                 <Select.Trigger>
                                                     <Select.ValueText style={{ maxWidth: 120, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="Select card grade" />
                                                 </Select.Trigger>
@@ -215,7 +214,7 @@ const Demo = () => {
                                             </Select.Control>
                                             <Portal>
                                                 <Select.Positioner>
-                                                    <Select.Content style={{ width: 150, maxWidth: '100%', boxSizing: 'border-box' }}>
+                                                    <Select.Content style={{ maxWidth: '100%', boxSizing: 'border-box' }}>
                                                         {grades.items.map((grade) => (
                                                             <Select.Item item={grade} key={grade.value} _hover={{ bg: 'gray.100' }} _selected={{ bg: 'black', color: 'white' }}>
                                                                 {grade.label}
@@ -375,7 +374,7 @@ const Demo = () => {
                              Add your own tags to better categorize your item!
                          </Field.HelperText>
                      </Field.Root>
-                    <Stack direction="row" gap={2}>
+                    <Stack direction="column" gap={2}>
                         <Button bg="red" onClick={reset}>Discard Changes</Button>
                         <Button type="submit">Save</Button>
                     </Stack>

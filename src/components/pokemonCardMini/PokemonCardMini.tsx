@@ -37,7 +37,7 @@ export default function PokemonCardMini({
       {/* Card Image */}
       <Box
         bg="gray.50"
-        w={{ base: '40vw', md: '150%' }}
+        w={{ base: '40vw', md: '100%' }}
         borderRadius="md"
         overflow="hidden"
         display="flex"

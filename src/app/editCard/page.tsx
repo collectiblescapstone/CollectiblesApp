@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 import {
     Button,
@@ -106,6 +107,12 @@ function reset() {
 const Demo = () => {
     type SelectPayload = { value?: string | string[] }
 
+    const searchParams = useSearchParams();
+    
+    let imageUrl = searchParams.get('imageUrl') ?? "";
+    let cardName = searchParams.get('cardName') ?? "";
+    let cardSet = searchParams.get('cardSet') ?? "";
+
     const {
         register,
         handleSubmit,
@@ -113,6 +120,15 @@ const Demo = () => {
         formState: { errors },
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
+        defaultValues: {
+            CardName: cardName,
+            CardSet: cardSet,
+            CardGrade: ["ungraded"],
+            CardGradeDetail: [],
+            Condition: undefined,
+            FoilPattern: undefined,
+            Tags: [],
+        },
     })
 
     // keep track of the currently selected top-level grade so we can
@@ -142,8 +158,13 @@ const Demo = () => {
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
+                        style={{
+                            backgroundImage: imageUrl ? `url(${imageUrl}/low.jpg)` : undefined,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                        }}
                     >
-                        CARD IMAGE
+                        {!imageUrl && "CARD IMAGE"}
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}
@@ -183,7 +204,6 @@ const Demo = () => {
                             <Controller
                                 control={control}
                                 name="CardGrade"
-                                defaultValue={["ungraded"]}
                                 render={({ field }) => {
                                     // single selected value derived from the form's array value
                                     const selected = Array.isArray(field.value) ? (field.value[0] ?? 'ungraded') : (field.value ?? 'ungraded')
@@ -237,7 +257,6 @@ const Demo = () => {
                             <Controller
                                 control={control}
                                 name="CardGradeDetail"
-                                defaultValue={[]}
                                 render={({ field }) => {
                                     const selected = Array.isArray(field.value) ? (field.value[0] ?? '') : (field.value ?? '')
                                     const disabled = selectedGrade === 'ungraded' || detailOptions.length === 0

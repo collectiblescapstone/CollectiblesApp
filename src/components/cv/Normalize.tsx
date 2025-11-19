@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import cvReadyPromise from '@techstark/opencv-js';
 import { CARD_WIDTH_PX, CARD_HEIGHT_PX } from '@/utils/constants';
 import { biggestContour, drawRectangle, reorderCorners } from '@/utils/cvutils';
@@ -160,14 +161,14 @@ export default function Normalize({ image }: NormalizeProps) {
       <Box style={{ display: 'none' }}>
         <canvas ref={originalImageRef} />
       </Box>
-      <Flex flexDirection='column'>
-        <Box maxHeight='40vh' justifyItems='center'>
+      <Flex flexDirection="column">
+        <Box maxHeight="40vh" justifyItems="center">
           <Text>Found Card</Text>
-          <canvas ref={ProcessedImageRef} style={{height: '30vh'}}/>
+          <canvas ref={ProcessedImageRef} style={{ height: '30vh' }} />
         </Box>
-        <Box maxHeight='40vh' justifyItems='center'>
+        <Box maxHeight="40vh" justifyItems="center">
           <Text>Identified Card</Text>
-          <Image src={predictedCardImage} maxHeight='30vh'></Image>
+          <Image src={predictedCardImage} maxHeight="30vh"></Image>
         </Box>
       </Flex>
       <Flex
@@ -184,7 +185,18 @@ export default function Normalize({ image }: NormalizeProps) {
         <Text>
           From: {predictedCard?.card.set.name} ({predictedCard?.card.set.id})
         </Text>
-        <Button maxW="40vw">Add To Collection</Button>
+        <Link
+          href={{
+            pathname: '/editCard',
+            query: {
+              imageUrl: predictedCard?.card.image ?? '',
+              cardName: `${predictedCard?.card.name ?? ''} (${predictedCard?.card.id.split('-')[1]})`,
+              cardSet: predictedCard?.card.set.name ?? '',
+            },
+          }}
+        >
+          <Button maxW="40vw">Add To Collection</Button>
+        </Link>
       </Flex>
     </Box>
   );

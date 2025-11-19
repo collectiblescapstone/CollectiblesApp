@@ -3,16 +3,15 @@
 import React from 'react';
 import Divider from '@/components/user-profile/Divider';
 import { Flex, Image, Text } from '@chakra-ui/react';
-import { CardType } from '@/types/user-profile';
-
-const cards: CardType[] = [
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-];
+import { useRandomCards } from '@/components/personal-profile/RandomCard';
+import { PokemonCardImage } from '@/types/personal-profile';
 
 const Showcase: React.FC = () => {
+  const { cards, loading } = useRandomCards('ex5', 3);
+
+  if (loading) return <Text>Loading cards...</Text>;
   if (cards.length === 0) return null;
+
   return (
     <Flex
       flexDirection="column"
@@ -20,7 +19,7 @@ const Showcase: React.FC = () => {
       justifyContent="flex-start"
       alignItems="flex-start"
       w="100%"
-      px={6}
+      px={4}
     >
       <Divider />
       <Flex mt={1}>
@@ -33,13 +32,13 @@ const Showcase: React.FC = () => {
         justifyContent="center"
         alignItems="center"
         wrap="wrap"
-        gap={7}
+        gap={5}
       >
-        {cards.map((card, index) => (
+        {cards.map((card: PokemonCardImage, index: number) => (
           <Flex key={index}>
             <Image
-              src={card.imageSrc}
-              alt="Showcase Card"
+              src={`${card.image}/high.png`}
+              alt={card.name}
               w="105px"
               h="auto"
               borderRadius="none"

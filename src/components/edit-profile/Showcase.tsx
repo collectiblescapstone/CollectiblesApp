@@ -2,46 +2,46 @@
 
 import React from 'react';
 import { Box, Flex, Image, Text, Button } from '@chakra-ui/react';
-
 import { FiXCircle } from 'react-icons/fi';
-import { CardType } from '../../types/user-profile';
-
-const cards: CardType[] = [
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-];
+import { useRandomCards } from '@/components/personal-profile/RandomCard';
+import { PokemonCardImage } from '@/types/personal-profile';
 
 const Showcase: React.FC = () => {
   const removecard = () => {
     // Edit remove card item logic here
   };
 
+  const { cards, loading } = useRandomCards('ex5', 3);
+  if (loading) return <Text>Loading cards...</Text>;
+
   return (
-    <Flex
-      flexDirection="column"
-      gap={2}
-      justifyContent="flex-start"
-      alignItems="flex-start"
-      w="100%"
-    >
-      <Text fontSize="sm" color="gray.700" fontWeight="semibold" mb={2}>
-        Showcase
-      </Text>
+    <Flex flexDirection="column" gap={2}>
+      <Flex justifyContent="flex-start" alignItems="flex-start" w="100%">
+        <Text fontSize="sm" color="gray.700" fontWeight="semibold" mb={2}>
+          Showcase
+        </Text>
+      </Flex>
       <Flex
         flexDirection="row"
         justifyContent="center"
         alignItems="center"
         wrap="wrap"
-        gap={7}
+        gap={6}
+        px={1}
       >
-        {cards.map((card, index) => (
-          <Flex key={index}>
-            <Box position="relative" w="105px" h="auto" overflow="hidden">
+        {cards.map((card: PokemonCardImage, index: number) => (
+          <Flex key={index} position="relative">
+            <Box
+              position="relative"
+              w="97px"
+              h="auto"
+              overflow="hidden"
+              alignItems={'center'}
+            >
               <Image
-                src={card.imageSrc}
-                alt="Showcase Card"
-                w="105px"
+                src={`${card.image}/high.png`}
+                alt={card.name}
+                w="97px"
                 h="auto"
                 borderRadius="none"
               />

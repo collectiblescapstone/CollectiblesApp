@@ -1,20 +1,11 @@
 'use client';
 
 import React from 'react';
-import { CardType } from '@/types/user-profile';
 
-import { Box, Flex, Image, Button } from '@chakra-ui/react';
-
+import { Box, Flex, Image, Button, Text } from '@chakra-ui/react';
 import { FiPlusCircle, FiXCircle } from 'react-icons/fi';
-
-const cards: CardType[] = [
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-  { imageSrc: '/user-profile/card_temp.png' },
-];
+import { useRandomCards } from '@/components/personal-profile/RandomCard';
+import { PokemonCardImage } from '@/types/personal-profile';
 
 const WishScreen: React.FC = () => {
   const removecard = () => {
@@ -25,15 +16,18 @@ const WishScreen: React.FC = () => {
     // Edit add card item logic here
   };
 
+  const { cards, loading } = useRandomCards('pop1', 7);
+  if (loading) return <Text>Loading cards...</Text>;
+
   return (
     <Box bg="white" minH="100vh" color="black">
-      <Flex flexDirection="column" gap={6} mt={16}>
+      <Flex flexDirection="column" gap={6} mt={6}>
         <Flex
           flexDirection="row"
           justifyContent="center"
           alignItems="center"
           wrap="wrap"
-          gap={7}
+          gap={5}
         >
           <Box
             position="relative"
@@ -71,12 +65,12 @@ const WishScreen: React.FC = () => {
               </Button>
             </Flex>
           </Box>
-          {cards.map((card, index) => (
+          {cards.map((card: PokemonCardImage, index: number) => (
             <Flex key={index}>
               <Box position="relative" w="105px" h="auto" overflow="hidden">
                 <Image
-                  src={card.imageSrc}
-                  alt="Showcase Card"
+                  src={`${card.image}/high.png`}
+                  alt={card.name}
                   w="105px"
                   h="auto"
                   borderRadius="none"

@@ -1,9 +1,10 @@
 from .tcgdex_api import TCGDexAPI
 from .util import read_image_paths
 from .generate_variations import generate_variations
+from multiprocessing import Pool
+from tqdm import tqdm
 import os
 import json
-import tqdm
 import re
 
 # downloads metadata, images, and generates image variations for dataset
@@ -13,34 +14,51 @@ def download(variants_per_card:int = 4, filters:bool = True, transformations:boo
     # the options are to select where in the script to start/resume the download/generation process,
     # this is necessary for us to be able to resume after potential errors
     #
-    #  1 for downloading metadata
-    #  2 for downloading images
-    #  3 for generating dataset using base images
-
-    selection = input("(1) for metadata download \n (2) start at image download if metadata exists \n (3) start at dataset generation if metadata and images exist \n->").strip()
-    if len(selection) < 1:
-        print("no selection made, aborting")
-        return
-    selection = selection[0]
+    # 1 for downloading metadata
+    # 2 for downloading images
+    # 3 for generating dataset using base images
+    selection = input('\n'.join([
+        '(1) for metadata download',
+        '(2) for image download (using current metadata)',
+        '(3) for generating image variants',
+        '> '
+    ])).strip()
 
     if "1" in selection:
         print("downloading metadata...")
         download_metadata()
-
-    if "1" in selection or "2" in selection:
+    elif "2" in selection:
         print("downloading images...")
         sanitize_ids()
         download_images()
+    elif "3" in selection:
+        input(f"will generate ~{int(variants_per_card*4)}GB of image variations for training, make sure you have enough disk space. Press Enter to continue...")
+        print("generating image variations...")
+        generate_variations(variants_per_card, filters, transformations, occlusions)
+    else:
+        print("no selection made, aborting")
 
-    input(f"will generate ~{int(variants_per_card*4)}GB of image variations for training, make sure you have enough disk space. Press Enter to continue...")
 
-    print("generating image variations...")
-    generate_variations(variants_per_card, filters, transformations, occlusions)
+client = TCGDexAPI("en")
+
+def download_cards(s):
+    set_id = s["id"]
+
+    set_file = f"data/cards_{set_id}.json"
+    
+    # skip if already downloaded
+    if os.path.exists(set_file):
+        print(f"cards for set {set_id} already downloaded, skipping...")
+        return
+
+    # download cards for set
+    cards = client.cards_from_set_id(set_id)
+
+    with open(set_file, "w", encoding="utf-8") as f:
+        json.dump(cards, f)
 
 # uses the tcgdex api to download all card metadata with pricing information
 def download_metadata():
-    client = TCGDexAPI("en")
-
     # create data directory
     print("creating data directory...")
     os.makedirs("data", exist_ok=True)
@@ -51,21 +69,10 @@ def download_metadata():
         json.dump(sets, f)
 
     # download cards for each set
-    for s in tqdm.tqdm(sets, desc="Downloading cards for sets"):
-        set_id = s["id"]
-
-        set_file = f"data/cards_{set_id}.json"
-        
-        # skip if already downloaded
-        if os.path.exists(set_file):
-            print(f"cards for set {set_id} already downloaded, skipping...")
-            continue
-
-        # download cards for set
-        cards = client.cards_from_set_id(set_id)
-    
-        with open(set_file, "w", encoding="utf-8") as f:
-            json.dump(cards, f)
+    pool = Pool(8)
+    list(tqdm(pool.imap(download_cards, sets), desc="Downloading cards for sets", total=len(sets)))
+    pool.close()
+    pool.join()
 
     print("Downloaded metadata, saved to ai_dev/datasets/pokemon/data/")
 
@@ -102,7 +109,7 @@ def download_images():
     api_client = TCGDexAPI("en")
 
     # download images
-    for image_info in tqdm.tqdm(image_paths, desc="Downloading card images"):
+    for image_info in tqdm(image_paths, desc="Downloading card images"):
         image_id = image_info["id"]
         image_url = image_info["url"]
         images_dir = image_info["dir"]

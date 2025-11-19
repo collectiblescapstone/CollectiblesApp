@@ -11,7 +11,7 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      minHeight="dvh"
+      minHeight="inherit"
     >
       <Heading>Welcome to Collectibles App!</Heading>
       {session ? (

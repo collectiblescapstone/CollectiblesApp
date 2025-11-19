@@ -7,3 +7,12 @@ export interface FormValues {
   facebook: string;
   visibility: string;
 }
+
+export interface PokemonCardImage {
+  image: string;
+  name: string;
+}
+
+export interface PokemonCard {
+  cards: PokemonCardImage[];
+}

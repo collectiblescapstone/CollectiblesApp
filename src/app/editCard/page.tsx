@@ -127,7 +127,7 @@ const Demo = () => {
     return (
         <form onSubmit={onSubmit}>
             {/* Keep the card image to the left at all screen sizes and the form on the right */}
-            <Stack direction="row" gap="6" align="flex-start" w="100%" flexWrap="nowrap">
+            <Stack direction="row" gap="6" align="flex-start" w="100%" flexWrap="nowrap" p={2}>
                 {/* Left column: card image (playing-card shape) with buttons underneath */}
                 <Box display="flex" flexDirection="column" alignItems="center" gap={3}>
                     {/* Playing-card shaped preview */}
@@ -272,9 +272,9 @@ const Demo = () => {
                                             }}
                                         >
                                             <Select.HiddenSelect />
-                                            <Select.Control bg="white" color="black" style={{ width: 80, boxSizing: 'border-box', fontSize: 16 }}>
+                                            <Select.Control bg="white" color="black" style={{ width: 50, boxSizing: 'border-box', fontSize: 16 }}>
                                                 <Select.Trigger>
-                                                    <Select.ValueText style={{ maxWidth: 80, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="#" />
+                                                    <Select.ValueText style={{ maxWidth: 50, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="#" />
                                                 </Select.Trigger>
                                                 <Select.IndicatorGroup>
                                                     <Select.Indicator />

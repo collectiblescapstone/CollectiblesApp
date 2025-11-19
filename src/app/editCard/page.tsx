@@ -109,9 +109,9 @@ const Demo = () => {
 
     const searchParams = useSearchParams();
     
-    let imageUrl = searchParams.get('imageUrl') ?? "";
-    let cardName = searchParams.get('cardName') ?? "";
-    let cardSet = searchParams.get('cardSet') ?? "";
+    const imageUrl = searchParams.get('imageUrl') ?? "";
+    const cardName = searchParams.get('cardName') ?? "";
+    const cardSet = searchParams.get('cardSet') ?? "";
 
     const {
         register,

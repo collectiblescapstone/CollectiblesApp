@@ -308,8 +308,8 @@ const Demo = () => {
                                 collection={conditions}
                                 deselectable
                                 maxW="320px"
-                                selectedKey={field.value}
-                                onSelectionChange={field.onChange}
+                                value={field.value ? [field.value] : []}
+                                onValueChange={({ value }) => field.onChange(value[0] || "")}
                             >
                                 <Listbox.Label>Card condition</Listbox.Label>
                                 <Listbox.Content>
@@ -332,8 +332,8 @@ const Demo = () => {
                                 collection={foils}
                                 deselectable
                                 maxW="320px"
-                                selectedKey={field.value}
-                                onSelectionChange={field.onChange}
+                                value={field.value ? [field.value] : []}
+                                onValueChange={({ value }) => field.onChange(value[0] || "")}
                             >
                                 <Listbox.Label>Card Foil Pattern</Listbox.Label>
                                 <Listbox.Content>

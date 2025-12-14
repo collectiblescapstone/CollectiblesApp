@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { IdentifyCardInImage } from '@/utils/identification/identify';
 import { ProcessedImageResult, CardData } from '@/types/identification';
 import cvReadyPromise from '@techstark/opencv-js';
-import { de } from 'zod/v4/locales';
 
 interface NormalizeProps {
   image?: string;

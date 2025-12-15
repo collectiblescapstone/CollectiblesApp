@@ -11,7 +11,7 @@ export type CardDataObj = {
   [id: string]: CardData;
 };
 
-export interface ProcessedImageResult {
+export interface PredictedImageResult {
   predictedCard?: CardData;
   foundCardImage?: cvReadyPromise.Mat;
   corners?: [number, number][];
@@ -20,4 +20,11 @@ export interface ProcessedImageResult {
 export interface NormalizeCardResult {
   image: cvReadyPromise.Mat;
   corners: [number, number][];
+}
+
+export enum rotation {
+  NONE,
+  CLOCKWISE,
+  COUNTERCLOCKWISE,
+  UPSIDE_DOWN,
 }

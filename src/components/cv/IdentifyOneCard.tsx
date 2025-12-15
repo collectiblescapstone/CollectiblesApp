@@ -5,14 +5,14 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import { IdentifyCardInImage } from '@/utils/identification/identify';
-import { ProcessedImageResult, CardData } from '@/types/identification';
+import { PredictedImageResult, CardData } from '@/types/identification';
 import cvReadyPromise from '@techstark/opencv-js';
 
 interface NormalizeProps {
   image?: string;
 }
 
-export default function IdentifyOneCard({ image }: NormalizeProps) {
+export const IdentifyOneCard = ({ image }: NormalizeProps) => {
   const originalImageRef = useRef<HTMLCanvasElement | null>(null);
   const ProcessedImageRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -20,26 +20,23 @@ export default function IdentifyOneCard({ image }: NormalizeProps) {
   const [predictedCardImage, setPredictedCardImage] = useState<string>();
 
   const processImage = async (src: string) => {
-    const result: ProcessedImageResult | undefined =
+    const result: PredictedImageResult | undefined =
       await IdentifyCardInImage(src);
 
     if (!result) {
       return;
     }
 
-    console.log(result.corners)
-
     if (result.foundCardImage) {
       // show processed image in canvas
       const cv = await cvReadyPromise;
       cv.imshow(ProcessedImageRef.current!, result.foundCardImage!);
-      
+
       setPredictedCard(result.predictedCard);
       setPredictedCardImage(result.predictedCard?.card.image + '/low.jpg');
-      
+
       result.foundCardImage!.delete();
     }
-
   };
 
   useEffect(() => {
@@ -96,4 +93,4 @@ export default function IdentifyOneCard({ image }: NormalizeProps) {
       </Flex>
     </Box>
   );
-}
+};

@@ -2,20 +2,25 @@ import cvReadyPromise from '@techstark/opencv-js';
 import { biggestContour, reorderCorners } from '@/utils/identification/cvutils';
 import { CARD_WIDTH_PX, CARD_HEIGHT_PX } from '@/utils/constants';
 
-import { NormalizeCardResult, CardData } from '@/types/identification';
+import { NormalizeCardResult, rotation } from '@/types/identification';
 
-export interface ProcessedImageResult {
-  predictedCard?: CardData;
-  foundCardImage?: cvReadyPromise.Mat;
-  corners?: [number, number][];
-}
 export const locateWithEdgeDetectionContour = async (
-  imgCVMat: cvReadyPromise.Mat
+  imgCVMat: cvReadyPromise.Mat,
+  rot: rotation = rotation.NONE
 ): Promise<NormalizeCardResult | undefined> => {
   // adapted from NolanAmblard/Pokemon-Card-Scanner/blob/main/main.py
 
   // get openCV instance
   const cv = await cvReadyPromise;
+
+  // rotate image if needed
+  if (rot === rotation.CLOCKWISE) {
+    cv.rotate(imgCVMat, imgCVMat, cv.ROTATE_90_CLOCKWISE);
+  } else if (rot === rotation.COUNTERCLOCKWISE) {
+    cv.rotate(imgCVMat, imgCVMat, cv.ROTATE_90_COUNTERCLOCKWISE);
+  } else if (rot === rotation.UPSIDE_DOWN) {
+    cv.rotate(imgCVMat, imgCVMat, cv.ROTATE_180);
+  }
 
   // copy imgCVMat to prevent modifying original
   const origImg = new cv.Mat();

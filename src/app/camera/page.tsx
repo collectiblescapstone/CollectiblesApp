@@ -1,6 +1,6 @@
 'use client';
 
-import IdentifyOneCard from '@/components/cv/IdentifyOneCard';
+import { IdentifyOneCard } from '@/components/cv/IdentifyOneCard';
 import { Box } from '@chakra-ui/react';
 import { useSearchParams } from 'next/navigation';
 

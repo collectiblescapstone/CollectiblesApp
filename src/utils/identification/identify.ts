@@ -2,23 +2,23 @@ import { locateWithEdgeDetectionContour } from '@/utils/identification/locateWit
 import { CardClassifier } from '@/utils/identification/classifyNormalizedCard';
 import cvReadyPromise from '@techstark/opencv-js';
 
-import { ProcessedImageResult } from '@/types/identification';
-
+import { PredictedImageResult, rotation } from '@/types/identification';
 
 export const IdentifyCardInImage = async (
-  src: string
-): Promise<ProcessedImageResult | undefined> => {
+  src: string,
+  rot: rotation = rotation.NONE
+): Promise<PredictedImageResult | undefined> => {
   /**
    * DELETE foundCardImage after use to free up memory
-   * 
+   *
    * Identifies the card in the image at the given src URL
    * returns undefined if no card found, otherwise returns ProcessedImageResult
-   * 
+   *
    * @param src - URL of the image to identify the card in
    * @returns ProcessedImageResult | undefined
    */
 
-  const result: ProcessedImageResult = {};
+  const result: PredictedImageResult = {};
 
   // load image from src URL
   const img = new window.Image();
@@ -39,7 +39,7 @@ export const IdentifyCardInImage = async (
   const origImg = cv.imread(img);
 
   // current method to normalize card
-  const warped = await locateWithEdgeDetectionContour(origImg);
+  const warped = await locateWithEdgeDetectionContour(origImg, rot);
 
   if (!warped) {
     return undefined;

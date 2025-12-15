@@ -44,6 +44,9 @@ next-env.d.ts
 # prisma
 /src/generated/prisma
 
+#vscode
+/.vscode/
+
 # python
 __pycache__/
 

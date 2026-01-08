@@ -258,7 +258,7 @@ const Demo = () => {
                         </Field.Root>
 
                         {/* Second select: Grade Detail - disabled when ungraded */}
-                        <Field.Root invalid={!!errors.CardGradeDetail} width="50px">
+                        <Field.Root invalid={!!errors.CardGradeDetail} width="50%">
                             <Field.Label>Number</Field.Label>
                             <Controller
                                 control={control}
@@ -296,7 +296,7 @@ const Demo = () => {
                                             }}
                                         >
                                             <Select.HiddenSelect />
-                                            <Select.Control bg="white" color="black" style={{ width: 50, boxSizing: 'border-box', fontSize: 16 }}>
+                                            <Select.Control bg="white" color="black" style={{ width: 60, boxSizing: 'border-box', fontSize: 16 }}>
                                                 <Select.Trigger>
                                                     <Select.ValueText style={{ maxWidth: 50, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="#" />
                                                 </Select.Trigger>

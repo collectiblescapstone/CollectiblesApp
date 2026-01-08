@@ -6,6 +6,7 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 import {
     Button,
@@ -111,6 +112,12 @@ function reset() {
 const Demo = () => {
     type SelectPayload = { value?: string | string[] }
 
+    const searchParams = useSearchParams();
+
+    const imageUrl = searchParams.get('imageUrl') ?? "";
+    const cardName = searchParams.get('cardName') ?? "";
+    const cardSet = searchParams.get('cardSet') ?? "";
+
     const {
         register,
         handleSubmit,
@@ -118,6 +125,15 @@ const Demo = () => {
         formState: { errors },
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
+        defaultValues: {
+            CardName: cardName,
+            CardSet: cardSet,
+            CardGrade: ["ungraded"],
+            CardGradeDetail: [],
+            Condition: undefined,
+            FoilPattern: undefined,
+            Tags: [],
+        },
     })
 
     // keep track of the currently selected top-level grade so we can
@@ -147,8 +163,13 @@ const Demo = () => {
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
+                        style={{
+                            backgroundImage: imageUrl ? `url(${imageUrl}/low.jpg)` : undefined,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                        }}
                     >
-                        CARD IMAGE
+                        {!imageUrl && "CARD IMAGE"}
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}
@@ -182,13 +203,12 @@ const Demo = () => {
                         <Field.ErrorText>{errors.CardSet?.message}</Field.ErrorText>
                     </Field.Root>
 
-                    <Stack direction="row" gap="3" align="flex-start" wrap="nowrap">
-                        <Field.Root invalid={!!errors.CardGrade} width="80%">
+                    <Stack direction="row" gap="3" align="flex-start" wrap="nowrap" width="-webkit-fill-available">
+                        <Field.Root invalid={!!errors.CardGrade}>
                             <Field.Label>Card Grade</Field.Label>
                             <Controller
                                 control={control}
                                 name="CardGrade"
-                                defaultValue={["ungraded"]}
                                 render={({ field }) => {
                                     // single selected value derived from the form's array value
                                     const selected = Array.isArray(field.value) ? (field.value[0] ?? 'ungraded') : (field.value ?? 'ungraded')
@@ -210,7 +230,7 @@ const Demo = () => {
                                             collection={grades}
                                         >
                                             <Select.HiddenSelect />
-                                            <Select.Control bg="white" color="black" style={{ width: 150, boxSizing: 'border-box', fontSize: 16 }}>
+                                            <Select.Control bg="white" color="black" style={{ boxSizing: 'border-box', fontSize: 16 }}>
                                                 <Select.Trigger>
                                                     <Select.ValueText style={{ maxWidth: 120, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="Select card grade" />
                                                 </Select.Trigger>
@@ -220,7 +240,7 @@ const Demo = () => {
                                             </Select.Control>
                                             <Portal>
                                                 <Select.Positioner>
-                                                    <Select.Content style={{ width: 150, maxWidth: '100%', boxSizing: 'border-box' }}>
+                                                    <Select.Content style={{ maxWidth: '100%', boxSizing: 'border-box' }}>
                                                         {grades.items.map((grade) => (
                                                             <Select.Item item={grade} key={grade.value} _hover={{ bg: 'gray.100' }} _selected={{ bg: 'black', color: 'white' }}>
                                                                 {grade.label}
@@ -243,7 +263,6 @@ const Demo = () => {
                             <Controller
                                 control={control}
                                 name="CardGradeDetail"
-                                defaultValue={[]}
                                 render={({ field }) => {
                                     const selected = Array.isArray(field.value) ? (field.value[0] ?? '') : (field.value ?? '')
                                     const disabled = selectedGrade === 'ungraded' || detailOptions.length === 0
@@ -380,7 +399,7 @@ const Demo = () => {
                              Add your own tags to better categorize your item!
                          </Field.HelperText>
                      </Field.Root>
-                    <Stack direction="row" gap={2}>
+                    <Stack direction="column" gap={2}>
                         <Button bg="red" onClick={reset}>Discard Changes</Button>
                         <Button type="submit">Save</Button>
                     </Stack>

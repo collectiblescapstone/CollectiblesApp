@@ -1,7 +1,8 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { Box, Grid, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import cvReadyPromise from '@techstark/opencv-js';
 import { CARD_WIDTH_PX, CARD_HEIGHT_PX } from '@/utils/constants';
 import { biggestContour, drawRectangle, reorderCorners } from '@/utils/cvutils';
@@ -13,18 +14,15 @@ interface NormalizeProps {
 
 export default function Normalize({ image }: NormalizeProps) {
   const originalImageRef = useRef<HTMLCanvasElement | null>(null);
-  const greyImageRef = useRef<HTMLCanvasElement | null>(null);
-  const BlurredImageRef = useRef<HTMLCanvasElement | null>(null);
-  const EdgeImageRef = useRef<HTMLCanvasElement | null>(null);
-  const ContoursImageRef = useRef<HTMLCanvasElement | null>(null);
-  const BiggestContourImageRef = useRef<HTMLCanvasElement | null>(null);
   const ProcessedImageRef = useRef<HTMLCanvasElement | null>(null);
 
   const [predictedCard, setPredictedCard] = useState<CardData>();
-  const [getSimilarCards, setGetSimilarCards] = useState<(image: cvReadyPromise.Mat, k?: number) => CardData[]>();
+  const [getSimilarCards, setGetSimilarCards] =
+    useState<(image: cvReadyPromise.Mat, k?: number) => CardData[]>();
   useEffect(() => {
     CardClassifier().then((fn) => setGetSimilarCards(() => fn));
-  }, [])
+  }, []);
+  const [predictedCardImage, setPredictedCardImage] = useState<string>();
 
   const processImage = async (src: string) => {
     // load image from src URL
@@ -60,15 +58,9 @@ export default function Normalize({ image }: NormalizeProps) {
     // make greyscale
     cv.cvtColor(cvimg, cvimg, cv.COLOR_RGB2GRAY);
 
-    // show greyscaled image
-    cv.imshow(greyImageRef.current!, cvimg);
-
     // blur image
     const ksize = new cv.Size(3, 3);
     cv.GaussianBlur(cvimg, cvimg, ksize, 0);
-
-    // show blurred image
-    cv.imshow(BlurredImageRef.current!, cvimg);
 
     // edge detection
     cv.Canny(cvimg, cvimg, 75, 100);
@@ -77,9 +69,6 @@ export default function Normalize({ image }: NormalizeProps) {
     const kernel = cv.Mat.ones(3, 3, cv.CV_8U);
     cv.dilate(cvimg, cvimg, kernel);
     cv.erode(cvimg, cvimg, kernel);
-
-    // show edge-detected image
-    cv.imshow(EdgeImageRef.current!, cvimg);
 
     // find contours
     const contourFrame = new cv.Mat();
@@ -97,9 +86,6 @@ export default function Normalize({ image }: NormalizeProps) {
       cv.CHAIN_APPROX_SIMPLE
     );
 
-    cv.drawContours(contourFrame, contours, -1, new cv.Scalar(0, 255, 0), 5);
-    cv.imshow(ContoursImageRef.current!, contourFrame);
-
     // find biggest contour
     const { biggest: corners } = biggestContour(cv, contours);
 
@@ -107,10 +93,6 @@ export default function Normalize({ image }: NormalizeProps) {
     const warped = cv.Mat.zeros(CARD_HEIGHT_PX, CARD_WIDTH_PX, cv.CV_8UC3);
     if (corners && corners.rows === 4) {
       const reorderedCorners = reorderCorners(cv, corners);
-
-      // draw contour
-      drawRectangle(cv, bigContour, reorderedCorners);
-      cv.imshow(BiggestContourImageRef.current!, bigContour);
 
       // set up matrices for perspective transform
       const pts1 = cv.matFromArray(4, 1, cv.CV_32FC2, [
@@ -148,6 +130,7 @@ export default function Normalize({ image }: NormalizeProps) {
       if (getSimilarCards) {
         const predictions = getSimilarCards(warped);
         setPredictedCard(predictions[0]);
+        setPredictedCardImage(predictions[0].card.image + '/low.jpg');
       }
 
       pts1.delete();
@@ -174,43 +157,47 @@ export default function Normalize({ image }: NormalizeProps) {
   }, [image, getSimilarCards]);
 
   return (
-    <Grid
-      templateColumns="repeat(2, 1fr)"
-      gap={2}
-      minH="inherit"
-      minWidth="inherit"
-    >
-      <Box>
-        <Text>Original Image</Text>
-        <canvas ref={originalImageRef} style={{ width: '100%' }} />
+    <Box>
+      <Box style={{ display: 'none' }}>
+        <canvas ref={originalImageRef} />
       </Box>
-      <Box>
-        <Text>Grey Image</Text>
-        <canvas ref={greyImageRef} style={{ width: '100%' }} />
-      </Box>
-      <Box>
-        <Text>Blurred Image</Text>
-        <canvas ref={BlurredImageRef} style={{ width: '100%' }} />
-      </Box>
-      <Box>
-        <Text>Edge Image</Text>
-        <canvas ref={EdgeImageRef} style={{ width: '100%' }} />
-      </Box>
-      <Box>
-        <Text>Contours Image</Text>
-        <canvas ref={ContoursImageRef} style={{ width: '100%' }} />
-      </Box>
-      <Box>
-        <Text>Biggest Contour Image</Text>
-        <canvas ref={BiggestContourImageRef} style={{ width: '100%' }} />
-      </Box>
-      <Box>
-        <Text>Processed Image</Text>
-        <canvas ref={ProcessedImageRef} style={{ width: '100%' }} />
-      </Box>
-      <Box>
-        <Text>Predicted card: {predictedCard?.card.name} ({predictedCard?.card.id}) from set {predictedCard?.card.set.name} ({predictedCard?.card.set.id})</Text>
-      </Box>
-    </Grid>
+      <Flex flexDirection="column">
+        <Box maxHeight="40vh" justifyItems="center">
+          <Text>Found Card</Text>
+          <canvas ref={ProcessedImageRef} style={{ height: '30vh' }} />
+        </Box>
+        <Box maxHeight="40vh" justifyItems="center">
+          <Text>Identified Card</Text>
+          <Image src={predictedCardImage} maxHeight="30vh"></Image>
+        </Box>
+      </Flex>
+      <Flex
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        textAlign="center"
+        mt={1}
+        gap={1}
+      >
+        <Text>
+          {predictedCard?.card.name} ({predictedCard?.card.id.split('-')[1]})
+        </Text>
+        <Text>
+          From: {predictedCard?.card.set.name} ({predictedCard?.card.set.id})
+        </Text>
+        <Link
+          href={{
+            pathname: '/editCard',
+            query: {
+              imageUrl: predictedCard?.card.image ?? '',
+              cardName: `${predictedCard?.card.name ?? ''} (${predictedCard?.card.id.split('-')[1]})`,
+              cardSet: predictedCard?.card.set.name ?? '',
+            },
+          }}
+        >
+          <Button maxW="40vw">Add To Collection</Button>
+        </Link>
+      </Flex>
+    </Box>
   );
 }

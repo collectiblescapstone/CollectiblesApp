@@ -152,7 +152,7 @@ const Demo = () => {
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}
-                    <Stack direction="column" gap={2} width="170px">
+                    <Stack direction="column" gap={2} width="100%">
                         <Button size="sm" variant="outline">Add to Showcase</Button>
                         <Button size="sm" variant="outline">Mark For Trade</Button>
                     </Stack>
@@ -183,7 +183,7 @@ const Demo = () => {
                     </Field.Root>
 
                     <Stack direction="row" gap="3" align="flex-start" wrap="nowrap">
-                        <Field.Root invalid={!!errors.CardGrade} width="150px">
+                        <Field.Root invalid={!!errors.CardGrade} width="80%">
                             <Field.Label>Card Grade</Field.Label>
                             <Controller
                                 control={control}
@@ -203,7 +203,7 @@ const Demo = () => {
                                     return (
                                         <Select.Root
                                             name={field.name}
-                                            width="150px"
+                                            width="80%"
                                             value={[selected]}
                                             onValueChange={handleChange}
                                             onInteractOutside={field.onBlur}

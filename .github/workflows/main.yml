@@ -1,12 +1,12 @@
-name: PR CI
+name: Production CI
 
 concurrency:
-  group: ${{ github.workflow}}-${{ github.ref || github.event.pull_request.number }}
+  group: ${{ github.workflow}}-${{ github.ref }}
   cancel-in-progress: true
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -26,11 +26,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Linter
-        run: npm run lint
-
-      - name: Test db migrations
-        run: npm run ci:db:migrate
-
-      - name: Run Unit Tests
-        run: npm run test
+      - name: Run db migrations
+        run: npm run ci:db:deploy

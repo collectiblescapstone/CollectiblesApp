@@ -1,4 +1,4 @@
-name: Production CI
+name: PROD - Deploy Schema Changes
 
 concurrency:
   group: ${{ github.workflow}}-${{ github.ref }}
@@ -9,6 +9,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'prisma/migrations/**' # Only run if migrations are updated
 
 jobs:
   lint-and-test:
@@ -28,3 +30,5 @@ jobs:
 
       - name: Run db migrations
         run: npm run ci:db:deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}

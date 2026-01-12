@@ -30,10 +30,9 @@ jobs:
         run: npm run lint
 
       - name: Test db migrations
-        run: npm run ci:db:migrate
+        run: npm run ci:db:deploy
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL_STAGING }}
-          DIRECT_URL: ${{ secrets.DIRECT_URL_STAGING }}
 
       - name: Run Unit Tests
         run: npm run test

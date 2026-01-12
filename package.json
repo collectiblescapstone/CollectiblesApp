@@ -16,7 +16,6 @@
     "test:watch": "jest --watch",
     "db:migrate": "npx prisma migrate dev",
     "db:studio": "npx prisma studio",
-    "ci:db:migrate": "npx prisma migrate dev --create-only",
     "ci:db:deploy": "npx prisma migrate deploy"
   },
   "dependencies": {

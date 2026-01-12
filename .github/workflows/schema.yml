@@ -13,9 +13,9 @@ on:
       - 'prisma/migrations/**' # Only run if migrations are updated
 
 jobs:
-  lint-and-test:
+  deploy-schema-changes:
     runs-on: ubuntu-latest
-
+    environment: Production
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -31,4 +31,5 @@ jobs:
       - name: Run db migrations
         run: npm run ci:db:deploy
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}

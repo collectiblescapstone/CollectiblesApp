@@ -2,7 +2,7 @@
 #
 # estimated times:
 # metadata download time: ~8 minutes
-# image download time: 5-6 hours
+# image download time: ~20 minutes
 # dataset generation time: ~8 minutes * variants per card (default 4)
 
 from scripts.download import download

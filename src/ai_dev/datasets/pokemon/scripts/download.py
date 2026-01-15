@@ -100,26 +100,27 @@ def sanitize_ids():
         with open(set_file, "w", encoding="utf-8") as f:
             json.dump(data, f)
 
+def download_image(image_info):
+    image_id = image_info["id"]
+    image_url = image_info["url"]
+    images_dir = image_info["dir"]
+    image_file = os.path.join(images_dir, f"{image_id}.jpg")
+
+    # skip if already exists
+    if os.path.exists(image_file):
+        return
+
+    # download image
+    client.save_image_to(image_url, image_file)
+
 def download_images():
-
     print("reading image urls...")
-
     image_paths = read_image_paths()
 
-    api_client = TCGDexAPI("en")
-
-    # download images
-    for image_info in tqdm(image_paths, desc="Downloading card images"):
-        image_id = image_info["id"]
-        image_url = image_info["url"]
-        images_dir = image_info["dir"]
-        image_file = os.path.join(images_dir, f"{image_id}.jpg")
-
-        # skip if already exists
-        if os.path.exists(image_file):
-            continue
-
-        # download image
-        api_client.save_image_to(image_url, image_file)
+    # download cards for each set
+    pool = Pool(32)
+    list(tqdm(pool.imap(download_image, image_paths), desc="Downloading card images", total=len(image_paths)))
+    pool.close()
+    pool.join()
 
     print("Downloaded images, saved to src/ai_dev/datasets/pokemon/data/images/")

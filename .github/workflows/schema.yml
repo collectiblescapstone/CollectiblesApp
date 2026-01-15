@@ -1,19 +1,21 @@
-name: PR CI
+name: PROD - Deploy Schema Changes
 
 concurrency:
-  group: ${{ github.workflow}}-${{ github.ref || github.event.pull_request.number }}
+  group: ${{ github.workflow}}-${{ github.ref }}
   cancel-in-progress: true
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
       - main
+    paths:
+      - 'prisma/migrations/**' # Only run if migrations are updated
 
 jobs:
-  lint-migrate-test:
+  deploy-schema-changes:
     runs-on: ubuntu-latest
-    environment: Preview
+    environment: Production
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -26,14 +28,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Linter
-        run: npm run lint
-
-      - name: Deploy db migrations to Preview
+      - name: Run db migrations
         run: npm run ci:db:deploy
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DIRECT_URL: ${{ secrets.DIRECT_URL }}
-
-      - name: Run Unit Tests
-        run: npm run test

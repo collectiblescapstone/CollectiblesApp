@@ -35,13 +35,16 @@ export const LabelCards = () => {
   const [rot, setRot] = useState<rotation>(rotation.NONE);
   const [backImageOption, setBackImageOption] = useState<number>(0);
 
-  const updateCardId = (fileId: string, cardId: string) => {
+  const updateCardId = (fileId: string, cardId: string): void => {
     setFiles((prevFiles) =>
       prevFiles.map((item) => (item.id === fileId ? { ...item, cardId } : item))
     );
   };
 
-  const updateFoundCard = (fileId: string, foundCard: PredictedImageResult) => {
+  const updateFoundCard = (
+    fileId: string,
+    foundCard: PredictedImageResult
+  ): void => {
     setFiles((prevFiles) =>
       prevFiles.map((item) =>
         item.id === fileId ? { ...item, foundCard } : item
@@ -147,7 +150,6 @@ export const LabelCards = () => {
               if (!ctx) return reject(new Error('Canvas not supported'));
               ctx.drawImage(img, 0, 0, w, h);
               if (isBackImage) {
-
                 // threshold filter
                 const imgData = ctx.getImageData(0, 0, w, h);
                 for (let i = 0; i < imgData.data.length; i += 4) {
@@ -170,7 +172,6 @@ export const LabelCards = () => {
                   }
                 }
                 ctx.putImageData(imgData, 0, 0);
-
               }
               try {
                 resolve(canvas.toDataURL());
@@ -192,7 +193,6 @@ export const LabelCards = () => {
         const result: PredictedImageResult | undefined =
           await IdentifyCardInImage(imgSrc, rot);
         if (result && result.predictedCard) {
-
           // set id
           if (isBackImage) {
             updateCardId(id, 'back');
@@ -245,7 +245,7 @@ export const LabelCards = () => {
         <NativeSelect.Field
           value={rot}
           onChange={(e) => setRot(Number(e.target.value) as rotation)}
-          >
+        >
           <option value={rotation.NONE}>No Rotation</option>
           <option value={rotation.CLOCKWISE}>Rotate Clockwise</option>
           <option value={rotation.COUNTERCLOCKWISE}>
@@ -260,7 +260,7 @@ export const LabelCards = () => {
         <NativeSelect.Field
           value={backImageOption}
           onChange={(e) => setBackImageOption(Number(e.target.value))}
-          >
+        >
           <option value={0}>No Back Images</option>
           <option value={1}>Odds</option>
           <option value={2}>Evens</option>
@@ -276,7 +276,7 @@ export const LabelCards = () => {
         accept="image/*"
         onChange={onFilesSelected}
         style={{ display: 'none' }}
-        />
+      />
       <label htmlFor="fileInput">
         <Button as="span" variant="outline" size="sm">
           <HiUpload /> Upload file

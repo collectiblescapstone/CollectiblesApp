@@ -1,3 +1,8 @@
+// ISSUES TO FIX IN THIS PR
+// CENTER ANYTHING UNDER THE CARD IMAGE (SAVE/DISCARD BUTTONS, FOIL/CONDITION, TAGS)
+// MAKE WIDTHS % NOT PIXELS
+// FIX THAT ISSUE WHERE FOR SOME REASON IT ZOOMS IN WHEN YOU SELECT UNGRADED
+// IMPLEMENT RESET??
 'use client';
 
 import React, { useMemo, useState } from 'react';
@@ -108,7 +113,7 @@ const Demo = () => {
     type SelectPayload = { value?: string | string[] }
 
     const searchParams = useSearchParams();
-    
+
     const imageUrl = searchParams.get('imageUrl') ?? "";
     const cardName = searchParams.get('cardName') ?? "";
     const cardSet = searchParams.get('cardSet') ?? "";
@@ -168,7 +173,7 @@ const Demo = () => {
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}
-                    <Stack direction="column" gap={2} width="170px">
+                    <Stack direction="column" gap={2} width="100%">
                         <Button size="sm" variant="outline">Add to Showcase</Button>
                         <Button size="sm" variant="outline">Mark For Trade</Button>
                     </Stack>
@@ -218,6 +223,7 @@ const Demo = () => {
                                     return (
                                         <Select.Root
                                             name={field.name}
+                                            width="80%"
                                             value={[selected]}
                                             onValueChange={handleChange}
                                             onInteractOutside={field.onBlur}
@@ -252,7 +258,7 @@ const Demo = () => {
                         </Field.Root>
 
                         {/* Second select: Grade Detail - disabled when ungraded */}
-                        <Field.Root invalid={!!errors.CardGradeDetail} width="50px">
+                        <Field.Root invalid={!!errors.CardGradeDetail} width="50%">
                             <Field.Label>Number</Field.Label>
                             <Controller
                                 control={control}
@@ -290,7 +296,7 @@ const Demo = () => {
                                             }}
                                         >
                                             <Select.HiddenSelect />
-                                            <Select.Control bg="white" color="black" style={{ width: 50, boxSizing: 'border-box', fontSize: 16 }}>
+                                            <Select.Control bg="white" color="black" style={{ width: 60, boxSizing: 'border-box', fontSize: 16 }}>
                                                 <Select.Trigger>
                                                     <Select.ValueText style={{ maxWidth: 50, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} placeholder="#" />
                                                 </Select.Trigger>

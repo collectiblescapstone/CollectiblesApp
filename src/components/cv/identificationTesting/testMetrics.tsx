@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Text,
-  Flex,
   Badge,
   VStack,
   ScrollArea,
@@ -34,6 +33,7 @@ export const TestMetrics = () => {
   const [precision, setPrecision] = useState<number>(0);
   const [recall, setRecall] = useState<number>(0);
   const [f1Score, setF1Score] = useState<number>(0);
+  const [speeds, setSpeeds] = useState<number[]>([]);
 
   const updateCardId = (fileId: string, cardId: string): void => {
     setFiles((prevFiles) =>
@@ -89,9 +89,19 @@ export const TestMetrics = () => {
           reader.readAsDataURL(file);
         });
 
+        // start timing
+        const startTime = performance.now();
+
         // identify card in image
         const result: PredictedImageResult | undefined =
           await IdentifyCardInImage(imgSrc, rotation.NONE);
+
+        // end timing
+        const endTime = performance.now();
+        const duration = endTime - startTime;
+        setSpeeds((prevSpeeds) => [...prevSpeeds, duration]);
+
+        // update with results
         if (result && result.predictedCard) {
           updateCardId(id, result.predictedCard.card.id);
 
@@ -164,8 +174,7 @@ export const TestMetrics = () => {
     <HStack width="100%">
       <Box maxW="90vw" fontFamily="sans-serif" flex="1">
         <Text display="inline-flex">
-          1. Upload a series of test images named with the format
-          "setid-cardnumber.jpg
+          1. Upload a series of test images named with the format &quot;setid-cardnumber.jpg&quot; or &quot;NoCardxx.jpg&quot; for images without cards.
         </Text>
 
         <input
@@ -264,6 +273,8 @@ export const TestMetrics = () => {
         </Text>
         <Button onClick={updateMetrics}>Update</Button>
         <Box>
+          <Text fontWeight="semibold">Results:</Text>
+          <Text>Speed (ms per image): {speeds.length > 0 ? (speeds.reduce((a, b) => a + b, 0) / speeds.length).toFixed(2) : 'N/A'}</Text>
           <Text>Accuracy: {accuracy.toFixed(2)}</Text>
           <Text>Precision: {precision.toFixed(2)}</Text>
           <Text>Recall: {recall.toFixed(2)}</Text>

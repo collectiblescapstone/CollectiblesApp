@@ -4,9 +4,13 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// ENSURE THAT YOUR .env FILE HAS VALUES POINTING TO YOUR LOCAL DATABASE, AND NOT THE LIVE DATABASE
+// BEFORE RUNNING `npx prisma migrate dev`. MUST NOT EDIT THE LIVE DATABASE DIRECTLY!! Thank you!
+
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  directUrl         = env("DIRECT_URL")
 }
 
 generator client {
@@ -14,17 +18,60 @@ generator client {
 }
 
 model User {
-  id    Int    @id @default(autoincrement())
-  email String @unique
-  name  String?
-  posts Post[]
+  id         String            @id @db.Uuid
+  username   String?           @unique
+  email      String            @unique
+  collection CollectionEntry[]
+  wishlist   WishlistEntry[]
 }
 
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  Int?
+model Card {
+  id          String @id
+  name        String
+  category    String
+  illustrator String?
+  rarity      String
+  variants    String[]
+  dexId       Int[]
+
+  image_url String
+
+  setId           String
+  set             Set @relation(fields: [setId], references: [id])
+  CollectionEntry CollectionEntry[]
+  WishlistEntry   WishlistEntry[]
+}
+
+model Set {
+  id     String @id
+  name   String
+  series String
+  cards  Card[]
+}
+
+model CollectionEntry {
+  id        String @id @default(cuid())
+  userId    String @db.Uuid
+  user      User   @relation(fields: [userId], references: [id])
+  cardId    String
+  card      Card @relation(fields: [cardId], references: [id])
+  quantity  Int @default(1)
+  condition String?
+  variant   String?
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, cardId, condition, variant])
+}
+
+model WishlistEntry {
+  id        String @id @default(cuid())
+  userId    String @db.Uuid
+  user      User @relation(fields: [userId], references: [id])
+  cardId    String
+  card      Card @relation(fields: [cardId], references: [id])
+  variant   String?
+
+  @@unique([userId, cardId, variant])
 }

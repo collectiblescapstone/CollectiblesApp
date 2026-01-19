@@ -210,4 +210,5 @@ const config: Config = {
   // watchman: true,
 };
 
+// @ts-ignore
 export default createJestConfig(config);

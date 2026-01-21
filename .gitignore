@@ -52,3 +52,7 @@ __pycache__/
 
 # dataset downloads
 /src/ai_dev/datasets/pokemon/data/
+/src/ai_dev/datasets/YOLO_training/
+/src/ai_dev/notebooks/datasets/
+/src/ai_dev/notebooks/runs/
+/src/ai_dev/notebooks/yolo26n-obb.pt

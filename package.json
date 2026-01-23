@@ -36,6 +36,7 @@
     "dotenv": "^17.2.3",
     "framer-motion": "^12.23.24",
     "next": "15.5.9",
+    "onnxruntime-web": "^1.23.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.66.0",

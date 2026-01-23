@@ -52,3 +52,6 @@ __pycache__/
 
 # dataset downloads
 /src/ai_dev/datasets/pokemon/data/
+
+# workspace settings
+.vscode/

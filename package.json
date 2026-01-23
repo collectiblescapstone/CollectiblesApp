@@ -13,7 +13,10 @@
     "lint:fix": "eslint --fix src",
     "prettier": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "db:migrate": "npx prisma migrate dev",
+    "db:studio": "npx prisma studio",
+    "ci:db:deploy": "npx prisma migrate deploy"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",

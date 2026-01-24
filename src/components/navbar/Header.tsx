@@ -23,6 +23,7 @@ const Header = () => {
       zIndex={999}
       color="white"
       bgColor="purple.600"
+      w="full"
       minHeight="8dvh"
       flexDir="row"
       alignItems="center"

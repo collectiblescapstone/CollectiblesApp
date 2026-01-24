@@ -17,6 +17,7 @@ const Footer = () => {
       bottom={0}
       left={0}
       right={0}
+      w="full"
       flexDir="row"
       alignItems="center"
       justifyContent="space-between"

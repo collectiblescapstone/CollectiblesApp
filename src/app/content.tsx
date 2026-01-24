@@ -41,7 +41,9 @@ const Content = ({ children }: { children: React.ReactNode }) => {
   return isMobileView ? (
     <Suspense fallback={<Spinner size="xl" />}>
       <Header />
-      <Box minHeight="84dvh">{children}</Box>
+      <Box minHeight="84dvh" w="full">
+        {children}
+      </Box>
       <Footer />
     </Suspense>
   ) : (

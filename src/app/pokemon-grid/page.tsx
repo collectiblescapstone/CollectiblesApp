@@ -9,9 +9,10 @@ import {
   Select,
   createListCollection,
 } from '@chakra-ui/react';
-import PokemonPolaroid from '@/components/pokemon-polaroid/PokemonPolaroid';
-import PokemonSet from '@/components/pokemon-set/PokemonSet';
+import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid';
+import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
 import CardFilter from '@/components/card-filter/CardFilter';
+
 import { PokemonSetType } from '@/types/pokemon-grid';
 
 export default function PokemonGridPage() {

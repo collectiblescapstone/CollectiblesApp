@@ -9,11 +9,11 @@ interface PokemonPolaroidProps {
   grandmasterSet: number;
 }
 
-export default function PokemonPolaroid({
+const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
   id,
   masterSet,
   grandmasterSet,
-}: PokemonPolaroidProps) {
+}: PokemonPolaroidProps) => {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   return (
@@ -81,4 +81,5 @@ export default function PokemonPolaroid({
       </Box>
     </Box>
   );
-}
+};
+export default PokemonPolaroid;

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Box, Grid, Heading, Spinner, Text } from '@chakra-ui/react';
-import PokemonCardMini from '@/components/pokemonCardMini/PokemonCardMini';
+import PokemonCardMini from '@/components/pokemon-card-mini/PokemonCardMini';
 import { PokemonCard } from '@/types/pokemon-card';
 
 export default function FilterCardsPage() {

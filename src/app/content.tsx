@@ -7,10 +7,12 @@ import Footer from '@/components/navbar/Footer';
 import { Capacitor } from '@capacitor/core';
 import Sidebar from '@/components/navbar/Sidebar';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { useAuth } from '@/context/AuthProvider';
 
 export const CHAKRA_UI_LG_BREAKPOINT = 992;
 
 const Content = ({ children }: { children: React.ReactNode }) => {
+  const { session } = useAuth();
   const [isMobileView, setIsMobileView] = useState<boolean>(() => {
     if (typeof window === 'undefined') return true;
     return (
@@ -38,7 +40,7 @@ const Content = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
-  return isMobileView ? (
+  const authenticatedLayout = isMobileView ? (
     <Suspense fallback={<Spinner size="xl" />}>
       <Header />
       <Box minHeight="84dvh" w="full">
@@ -56,6 +58,8 @@ const Content = ({ children }: { children: React.ReactNode }) => {
       </Flex>
     </Suspense>
   );
+
+  return session ? authenticatedLayout : <>{children}</>;
 };
 
 export default Content;

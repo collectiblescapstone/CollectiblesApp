@@ -80,7 +80,7 @@ export const IdentifyOneCard = ({ image }: NormalizeProps) => {
         </Text>
         <Link
           href={{
-            pathname: '/editCard',
+            pathname: '/edit-card',
             query: {
               imageUrl: predictedCard?.card.image ?? '',
               cardName: `${predictedCard?.card.name ?? ''} (${predictedCard?.card.id.split('-')[1]})`,

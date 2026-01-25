@@ -5,8 +5,11 @@ import { useSearchParams } from 'next/navigation';
 import { Box, Grid, Heading, Spinner, Text } from '@chakra-ui/react';
 import PokemonCardMini from '@/components/pokemonCardMini/PokemonCardMini';
 import { PokemonCard } from '@/types/pokemon-card';
+import { useAuth } from '@/context/AuthProvider';
 
 export default function FilterCardsPage() {
+  const { session, loading: authLoading } = useAuth();
+
   const searchParams = useSearchParams();
   const type = searchParams.get('type');
   const name = searchParams.get('name');
@@ -14,6 +17,14 @@ export default function FilterCardsPage() {
   const [cards, setCards] = useState<PokemonCard[]>([]);
   const [loading, setLoading] = useState(true);
   const [mainSet, setMainSet] = useState(0);
+
+  if (authLoading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   useEffect(() => {
     if (!type || !name) return;

@@ -2,15 +2,26 @@
 
 import React from 'react';
 
-import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Image, Spinner } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
+import { useAuth } from '@/context/AuthProvider';
 
 const WishScreen: React.FC = () => {
-  const { cards, loading } = useRandomCards('pop1', 7);
-  if (loading) return <Text>Loading cards...</Text>;
+  const { session, loading } = useAuth();
+  const { cards, loading: cardLoading } = useRandomCards('pop1', 7);
+
+  if (cardLoading) return <Text>Loading cards...</Text>;
   const cardsnum = cards.length;
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black">

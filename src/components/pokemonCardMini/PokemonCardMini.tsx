@@ -22,7 +22,7 @@ export default function PokemonCardMini({
   return (
     <Link
       href={{
-        pathname: '/editCard',
+        pathname: '/edit-card',
         query: {
           imageUrl: image,
           cardName: cardName,

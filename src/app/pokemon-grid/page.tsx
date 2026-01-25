@@ -7,13 +7,17 @@ import {
   GridItem,
   Portal,
   Select,
+  Spinner,
   createListCollection,
 } from '@chakra-ui/react';
 import PokemonPolaroid from '@/components/pokemonPolaroid/PokemonPolaroid';
 import PokemonSet from '@/components/pokemonSet/PokemonSet';
 import { PokemonSetType } from '@/types/pokemon-grid';
+import { useAuth } from '@/context/AuthProvider';
 
 export default function PokemonGridPage() {
+  const { session, loading } = useAuth();
+
   const [selected, setSelected] = useState('set');
   const [selectedEra, setSelectedEra] = useState('sv');
   const [groupedSets, setGroupedSets] = useState<
@@ -117,6 +121,14 @@ export default function PokemonGridPage() {
           const endId = pokemonGen[genIndex];
           return id >= startId && id <= endId;
         });
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black">

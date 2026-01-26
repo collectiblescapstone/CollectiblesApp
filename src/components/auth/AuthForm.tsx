@@ -1,108 +1,125 @@
 'use client';
-import {
-  Button,
-  Field,
-  Heading,
-  Input,
-  VStack,
-  Text,
-  Link as ChakraLink,
-} from '@chakra-ui/react';
+import { Button, Field, Heading, Input, VStack, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { PasswordInput } from '@/components/ui/password-input';
 import { useAuth } from '@/context/AuthProvider';
 import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { LoginFormValues } from '@/types/auth';
 
-export type AuthFormProps = {
-  type: 'signin' | 'signup';
-};
-
-export default function AuthForm({ type }: AuthFormProps) {
+export default function AuthForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const { signIn, signUp } = useAuth();
+  const { signIn } = useAuth();
   const { push } = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (values: LoginFormValues) => {
     setIsLoading(true);
-
-    if (type === 'signin') {
-      const result = await signIn(email, password);
-      if (!result.success) {
-        alert(`Login failed: ${result.error}`);
-      } else {
-        alert('Login successful!');
-        push('/');
-      }
+    const res = await signIn(values.email, values.password);
+    if (res.success) {
+      push('/');
     } else {
-      const result = await signUp(email, password);
-      if (!result.success) {
-        alert(`Sign-up failed: ${result.error?.message}`);
-      } else {
-        alert(
-          'Sign-up successful! Please check your email to confirm your account.'
-        );
-        push('/sign-in');
-      }
+      setError('root', {
+        type: 'custom',
+        message:
+          "An account doesn't exist with this email and password combination. \
+          Please create an account or reset your password.",
+      });
     }
-
     setIsLoading(false);
   };
 
-  const name = type === 'signin' ? 'Sign In' : 'Sign Up';
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm<LoginFormValues>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
 
   return (
-    <VStack
-      gap={{ base: '6', lg: '10' }}
-      width={{ base: '2/3', lg: '1/3' }}
-      backgroundColor="blackAlpha.300"
-      padding={{ base: '8', lg: '16' }}
-      rounded="xl"
-    >
-      <Heading size="5xl">{name}</Heading>
-      <Field.Root required>
-        <Field.Label>
-          Email <Field.RequiredIndicator />
-        </Field.Label>
-        <Input
-          value={email}
-          variant="subtle"
-          color="black"
-          onChange={(e) => setEmail(e.currentTarget.value)}
-          placeholder="me@example.com"
-          disabled={isLoading}
-        />
-      </Field.Root>
-      <Field.Root required>
-        <Field.Label>
-          Password <Field.RequiredIndicator />
-        </Field.Label>
-        <PasswordInput
-          value={password}
-          variant="subtle"
-          color="black"
-          onChange={(e) => setPassword(e.currentTarget.value)}
-          placeholder="Enter your password"
-          disabled={isLoading}
-        />
-      </Field.Root>
-      {type === 'signin' && (
-        <Text>
-          Don&apos;t have an account?{' '}
-          <ChakraLink color="teal" href="/sign-up">
-            Sign up!
-          </ChakraLink>
-        </Text>
-      )}
-      <Button
-        backgroundColor="teal"
-        width="3/4"
-        onClick={(e) => handleSubmit(e)}
+    <form style={{ all: 'inherit' }} onSubmit={handleSubmit(onSubmit)}>
+      <VStack
+        gap={{ base: '6', lg: '10' }}
+        width={{ base: 'full', lg: '1/3' }}
+        padding={{ base: '8', lg: '16' }}
       >
-        {name}
-      </Button>
-    </VStack>
+        <Heading size="5xl" pb={12}>
+          Kollec {/* LOGO PLACEHOLDER */}
+        </Heading>
+        <Heading size="lg">Sign In to your account</Heading>
+        <Field.Root invalid={!!errors.root}>
+          <Field.Root invalid={!!errors.email} required>
+            <Field.Label>
+              Email <Field.RequiredIndicator />
+            </Field.Label>
+            <Input
+              {...register('email', { required: 'Email is required' })}
+              variant="subtle"
+              color="black"
+              placeholder="me@example.com"
+              disabled={isLoading}
+            />
+            {errors.email && errors.email.type === 'required' && (
+              <Field.ErrorText>{errors.email.message}</Field.ErrorText>
+            )}
+          </Field.Root>
+          <Field.Root invalid={!!errors.password} required>
+            <Field.Label>
+              Password <Field.RequiredIndicator />
+            </Field.Label>
+            <PasswordInput
+              {...register('password', { required: 'Password is required' })}
+              variant="subtle"
+              color="black"
+              placeholder="Enter your password"
+              disabled={isLoading}
+            />
+            {errors.password && errors.password.type === 'required' && (
+              <Field.ErrorText>{errors.password.message}</Field.ErrorText>
+            )}
+            <Field.HelperText
+              onClick={() => alert('Redirect to password recovery')}
+              cursor="pointer"
+              color="teal"
+            >
+              Forgot your password?
+            </Field.HelperText>
+          </Field.Root>
+          <Field.ErrorText textAlign="center">
+            {errors.root && errors.root.message}
+          </Field.ErrorText>
+        </Field.Root>
+        <Button backgroundColor="teal" width="3/4" type="submit">
+          Sign In
+        </Button>
+        <Text>OR</Text>
+        <Button
+          backgroundColor="teal"
+          width="3/4"
+          onClick={() => alert('Redirect to Google Sign-In')}
+        >
+          Sign In With Google
+        </Button>
+        <Button
+          backgroundColor="teal"
+          width="3/4"
+          onClick={() => alert('Redirect to Apple Sign-In')}
+        >
+          Sign In With Apple
+        </Button>
+        <Text>OR</Text>
+        <Button
+          backgroundColor="teal"
+          width="3/4"
+          onClick={() => push('/sign-up')}
+        >
+          Sign Up
+        </Button>
+      </VStack>
+    </form>
   );
 }

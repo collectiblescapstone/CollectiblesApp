@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 import {
   Button,
@@ -16,7 +16,7 @@ import {
 
 import imgPuller from '@/utils/imgPuller';
 
-import { useFilters } from '@/hooks/useFilters';
+// import { useFilters } from '@/hooks/useFilters';
 
 const CardFilter: React.FC = () => {
   const GENERATION: number[] = Array.from({ length: 9 }, (_, i) => i + 1);

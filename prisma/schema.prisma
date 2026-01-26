@@ -29,6 +29,7 @@ model Card {
   id          String @id
   name        String
   category    String
+  types       String[]
   illustrator String?
   rarity      String
   variants    String[]

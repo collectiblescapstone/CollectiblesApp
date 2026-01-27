@@ -29,6 +29,7 @@ model Card {
   id          String @id
   name        String
   category    String
+  types       String[]
   illustrator String?
   rarity      String
   variants    String[]
@@ -58,6 +59,9 @@ model CollectionEntry {
   quantity  Int @default(1)
   condition String?
   variant   String?
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   @@unique([userId, cardId, condition, variant])
 }

@@ -11,9 +11,9 @@ on:
       - main
 
 jobs:
-  lint-and-test:
+  lint-migrate-test:
     runs-on: ubuntu-latest
-
+    environment: Preview
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -28,6 +28,12 @@ jobs:
 
       - name: Run Linter
         run: npm run lint
+
+      - name: Deploy db migrations to Preview
+        run: npm run ci:db:deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
 
       - name: Run Unit Tests
         run: npm run test

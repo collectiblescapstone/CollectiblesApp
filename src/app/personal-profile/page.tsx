@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useHeader } from '@/context/HeaderProvider';
 
 import SocialLinks from '@/components/user-profile/SocialLinks';
 import Showcase from '@/components/user-profile/Showcase';
@@ -14,10 +15,18 @@ import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
+  const headerContext = useHeader();
+  const setProfileID = headerContext?.setProfileID;
 
   const editpress = () => {
     router.push('/personal-profile/edit-profile');
   };
+
+  useEffect(() => {
+    if (setProfileID) {
+      setProfileID('smithsonian_collection');
+    }
+  }, [setProfileID]);
 
   return (
     <Box bg="white" minH="100vh" color="black" mb={4}>

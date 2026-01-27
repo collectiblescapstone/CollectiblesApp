@@ -55,9 +55,9 @@ export const MENU_ITEMS: {
   { icon: <LuUser size={36} />, path: '/personal-profile', name: 'Profile' },
 ];
 
-export const MAIN_PAGES = [
-  '/',
-  '/pokemon-grid',
-  '/camera',
-  '/personal-profile',
-];
+export const PAGE_HEADINGS: Record<string, string> = {
+  '/': 'kollec',
+  '/pokemon-grid': 'kollections',
+  '/camera': 'camera',
+  '/personal-profile': 'profile',
+};

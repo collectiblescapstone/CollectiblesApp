@@ -5,6 +5,8 @@ import { useSearchParams } from 'next/navigation';
 import { Box, Grid, Heading, Spinner, Text } from '@chakra-ui/react';
 import PokemonCardMini from '@/components/pokemon-cards/pokemon-card-mini/PokemonCardMini';
 import { PokemonCard } from '@/types/pokemon-card';
+import { FiltersProvider } from '@/hooks/useFilters';
+import CardFilter from '@/components/card-filter/CardFilter';
 
 export default function FilterCardsPage() {
   const searchParams = useSearchParams();
@@ -103,37 +105,40 @@ export default function FilterCardsPage() {
     );
 
   return (
-    <Box p={6}>
-      <Heading mb={6}>
-        {type === 'set' ? `${name} Card Set` : `${name} Cards`}
-      </Heading>
+    <FiltersProvider>
+      <CardFilter />
+      <Box p={6}>
+        <Heading mb={6}>
+          {type === 'set' ? `${name} Card Set` : `${name} Cards`}
+        </Heading>
 
-      {cards.length === 0 ? (
-        <Text>No cards found.</Text>
-      ) : (
-        <Grid
-          templateColumns={{
-            base: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-            lg: 'repeat(4, 1fr)',
-            xl: 'repeat(6, 1fr)',
-          }}
-          gap="2vw"
-          justifyItems="center"
-          mt={4}
-        >
-          {cards.map((card, index) => (
-            <PokemonCardMini
-              key={index}
-              cardName={card.name}
-              cardId={card.localId + '/' + mainSet}
-              image={card.image}
-              // rarity={card.rarity}
-              // illustrator={card.illustrator}
-            />
-          ))}
-        </Grid>
-      )}
-    </Box>
+        {cards.length === 0 ? (
+          <Text>No cards found.</Text>
+        ) : (
+          <Grid
+            templateColumns={{
+              base: 'repeat(2, 1fr)',
+              md: 'repeat(3, 1fr)',
+              lg: 'repeat(4, 1fr)',
+              xl: 'repeat(6, 1fr)',
+            }}
+            gap="2vw"
+            justifyItems="center"
+            mt={4}
+          >
+            {cards.map((card, index) => (
+              <PokemonCardMini
+                key={index}
+                cardName={card.name}
+                cardId={card.localId + '/' + mainSet}
+                image={card.image}
+                // rarity={card.rarity}
+                // illustrator={card.illustrator}
+              />
+            ))}
+          </Grid>
+        )}
+      </Box>
+    </FiltersProvider>
   );
 }

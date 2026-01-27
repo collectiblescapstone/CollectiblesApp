@@ -16,7 +16,8 @@ import { LuSparkle, LuSparkles } from 'react-icons/lu';
 
 interface PokemonSetProps {
   label: string;
-  image: string;
+  primaryLogo: string;
+  fallbackLogo: string;
   setID: string;
   masterSet: number;
   grandmasterSet: number;
@@ -24,7 +25,8 @@ interface PokemonSetProps {
 
 export default function PokemonSet({
   label,
-  image,
+  primaryLogo,
+  fallbackLogo,
   setID,
   masterSet,
   grandmasterSet,
@@ -63,7 +65,7 @@ export default function PokemonSet({
             borderColor="gray.200"
           >
             <Image
-              src={image}
+              src={primaryLogo || fallbackLogo}
               alt={label}
               objectFit="contain"
               maxH="100%"

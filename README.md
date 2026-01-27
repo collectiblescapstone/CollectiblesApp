@@ -103,7 +103,7 @@ Now, you should see the app build, then your emulator will boot up and open the 
 NEXT_PUBLIC_SUPABASE_URL="http://127.0.0.1:xxxxx"
 DATABASE_URL="postgresql://postgres:postgres@127.0.0.1:xxxxx/postgres"
 DIRECT_URL="postgresql://postgres:postgres@127.0.0.1:xxxxx/postgres"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="[insert anon key]" 
+NEXT_PUBLIC_SUPABASE_ANON_KEY="[insert anon key]"
 ```
 
 On Supabase startup, you should find the values you use to fill in the .env file. `NEXT_PUBLIC_SUPABASE_URL` corresponds to `API URL`, `DATABASE_URL` and `DIRECT_URL` corresponds to `Database URL`, and `NEXT_PUBLIC_SUPABASE_ANON_KEY` corresponds to either `anon key` or `Publishable key`.
@@ -122,8 +122,9 @@ npx prisma db seed
 #### Database Workflow
 
 1. Turn on Docker
-2. Run `git pull origin main` 
+2. Run `git pull origin main`
 3. Run these commands:
+
 ```
 npx supabase start
 npx prisma migrate dev

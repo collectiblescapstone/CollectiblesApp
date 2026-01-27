@@ -3,17 +3,26 @@
 import React from 'react';
 
 import { Flex, Icon, Text } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter /*, FaFacebook*/ } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { SocialsType } from '@/types/user-profile';
 
-const socials: SocialsType[] = [
-  { icon: FaInstagram, handle: '@anneofinstagables' },
-  { icon: FaTwitter, handle: '@not_sandra_bullock' },
-  // { icon: FaFacebook, handle: '@sandra.smith.anne' },
-];
+interface SocialLinksProps {
+  instagram?: string;
+  twitter?: string;
+  facebook?: string;
+}
 
-const SocialLinks: React.FC = () => {
-  if (socials.length === 0) return null;
+const SocialLinks = ({ instagram, twitter, facebook }: SocialLinksProps) => {
+  const socials: SocialsType[] = [
+    instagram && { icon: FaInstagram, handle: instagram },
+    twitter && { icon: FaTwitter, handle: twitter },
+    facebook && { icon: FaFacebook, handle: facebook },
+  ].filter(Boolean) as SocialsType[];
+
+  if (socials.length === 0) {
+    return null;
+  }
+
   return (
     <Flex
       flexDirection="row"

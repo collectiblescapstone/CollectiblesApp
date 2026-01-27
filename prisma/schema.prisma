@@ -19,8 +19,15 @@ generator client {
 
 model User {
   id         String            @id @db.Uuid
-  username   String?           @unique
+  username   String            @unique
+  firstName  String
+  lastName   String
   email      String            @unique
+  bio        String?
+  location   String
+  instagram  String?
+  twitter    String?
+  facebook   String?
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 }

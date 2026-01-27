@@ -1,23 +1,54 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import SocialLinks from '@/components/user-profile/SocialLinks';
 import Showcase from '@/components/user-profile/Showcase';
 import TradeList from '@/components/user-profile/TradeList';
 import WishList from '@/components/user-profile/WishList';
+import { UserProfile } from '@/types/personal-profile';
 
 import { Box, Flex, Heading, Text, Icon, Button } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 
-const PersonalProfileScreen: React.FC = () => {
+const PersonalProfileScreen = ({ userId }: { userId: string }) => {
   const router = useRouter();
+
+  const [user, setUser] = useState<UserProfile | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const editpress = () => {
     router.push('/personal-profile/edit-profile');
   };
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await fetch(`/api/profiles/${userId}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch user profile');
+        }
+        const data = await response.json();
+        setUser(data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    };
+
+    fetchUserProfile();
+  }, [userId]);
+
+  if (loading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (!user) {
+    return <Text>User not found</Text>;
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black" mb={4}>
@@ -47,7 +78,7 @@ const PersonalProfileScreen: React.FC = () => {
           <Avatar.Fallback> SA </Avatar.Fallback>
         </Avatar.Root>
         <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-          Sandra Smith Anne
+          {user.firstName} {user.lastName}
         </Heading>
         <Flex
           flexDirection="row"
@@ -57,7 +88,7 @@ const PersonalProfileScreen: React.FC = () => {
         >
           <Icon as={FiMapPin} boxSize={4} />
           <Text fontSize="xs" color="gray.600" fontWeight={'semibold'}>
-            Toronto, ON
+            {user.location}
           </Text>
         </Flex>
         <Text
@@ -67,11 +98,14 @@ const PersonalProfileScreen: React.FC = () => {
           maxW="400px"
           px={4}
         >
-          Hi there! My name is Sandra and this is the bio I have written! Isn’t
-          the guy who made this page so talented?
+          {user.bio}
         </Text>
         <Flex mt={1}>
-          <SocialLinks />
+          <SocialLinks
+            instagram={user.instagram}
+            twitter={user.twitter}
+            facebook={user.facebook}
+          />
         </Flex>
       </Flex>
       <Showcase />

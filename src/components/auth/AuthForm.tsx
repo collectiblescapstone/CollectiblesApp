@@ -14,16 +14,32 @@ export default function AuthForm() {
 
   const onSubmit = async (values: LoginFormValues) => {
     setIsLoading(true);
+
+    // Supabase Auth sign in user
     const res = await signIn(values.email, values.password);
+    console.log(res);
+
+    // Handle Supabase Auth successful sign in
     if (res.success) {
       push('/');
-    } else {
-      setError('root', {
-        type: 'custom',
-        message:
-          "An account doesn't exist with this email and password combination. \
+    }
+
+    // Handle Supabase Auth sign in error
+    else if (res.error) {
+      if (res.error === 'Invalid login credentials') {
+        setError('root', {
+          type: 'invalid_credentials',
+          message:
+            "An account doesn't exist with this email and password combination. \
           Please create an account or reset your password.",
-      });
+        });
+      } else if (res.error === 'Email not confirmed') {
+        setError('root', {
+          type: 'email_not_confirmed',
+          message:
+            'Your email address has not been confirmed. Please check your inbox for a confirmation email.',
+        });
+      }
     }
     setIsLoading(false);
   };

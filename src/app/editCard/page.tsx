@@ -62,20 +62,67 @@ const gradeDetailsMap: Record<string, { label: string; value: string }[]> = {
         { label: '10', value: 'psa-10' },
         { label: '9', value: 'psa-9' },
         { label: '8', value: 'psa-8' },
+        { label: '7', value: 'psa-7' },
+        { label: '6', value: 'psa-6' },
+        { label: '5', value: 'psa-5' },
+        { label: '4', value: 'psa-4' },
+        { label: '3', value: 'psa-3' },
+        { label: '2', value: 'psa-2' },
+        { label: '1', value: 'psa-1' },
+        { label: 'N0', value: 'psa-N0' },
+        { label: 'AA', value: 'psa-AA' },
     ],
     tag: [
+        { label: 'Pristine 10', value: 'tag-pristine-10' },
         { label: '10', value: 'tag-10' },
         { label: '9', value: 'tag-9' },
+        { label: '8', value: 'tag-8' },
+        { label: '7', value: 'tag-7' },
+        { label: '6', value: 'tag-6' },
+        { label: '5', value: 'tag-5' },
+        { label: '4', value: 'tag-4' },
+        { label: '3', value: 'tag-3' },
+        { label: '2', value: 'tag-2' },
+        { label: '1', value: 'tag-1' },
     ],
     cgc: [
+        { label: 'Pristine 10', value: 'cgc-pristine-10' },
         { label: '10', value: 'cgc-10' },
-        { label: '9.5', value: 'cgc-9.5' },
+        { label: '9', value: 'cgc-9' },
+        { label: '8', value: 'cgc-8' },
+        { label: '7', value: 'cgc-7' },
+        { label: '6', value: 'cgc-6' },
+        { label: '5', value: 'cgc-5' },
+        { label: '4', value: 'cgc-4' },
+        { label: '3', value: 'cgc-3' },
+        { label: '2', value: 'cgc-2' },
+        { label: '1', value: 'cgc-1' },
     ],
     beckett: [
+        { label: 'Pristine 10', value: 'beckett-pristine-10' },
         { label: '10', value: 'beckett-10' },
+        { label: 'Gem Mint 9.5', value: 'beckett-9.5' },
+        { label: '9', value: 'beckett-9' },
+        { label: '8', value: 'beckett-8' },
+        { label: '7', value: 'beckett-7' },
+        { label: '6', value: 'beckett-6' },
+        { label: '5', value: 'beckett-5' },
+        { label: '4', value: 'beckett-4' },
+        { label: '3', value: 'beckett-3' },
+        { label: '2', value: 'beckett-2' },
+        { label: '1', value: 'beckett-1' },
     ],
     ace: [
         { label: '10', value: 'ace-10' },
+        { label: '9', value: 'ace-9' },
+        { label: '8', value: 'ace-8' },
+        { label: '7', value: 'ace-7' },
+        { label: '6', value: 'ace-6' },
+        { label: '5', value: 'ace-5' },
+        { label: '4', value: 'ace-4' },
+        { label: '3', value: 'ace-3' },
+        { label: '2', value: 'ace-2' },
+        { label: '1', value: 'ace-1' },
     ],
 }
 
@@ -107,6 +154,11 @@ const foils = createListCollection({
 function reset() {
     // Placeholder reset function - implement form reset logic as needed
     console.log('Reset form called')
+}
+
+function saveChanges(){
+    //implement save changes
+    console.log('Save changes called')
 }
 
 const Demo = () => {
@@ -223,7 +275,7 @@ const Demo = () => {
                                     return (
                                         <Select.Root
                                             name={field.name}
-                                            width="80%"
+                                            width="90%"
                                             value={[selected]}
                                             onValueChange={handleChange}
                                             onInteractOutside={field.onBlur}
@@ -258,7 +310,7 @@ const Demo = () => {
                         </Field.Root>
 
                         {/* Second select: Grade Detail - disabled when ungraded */}
-                        <Field.Root invalid={!!errors.CardGradeDetail} width="50%">
+                        <Field.Root invalid={!!errors.CardGradeDetail} width="60%">
                             <Field.Label>Number</Field.Label>
                             <Controller
                                 control={control}
@@ -275,7 +327,7 @@ const Demo = () => {
                                                 onChange={(e) => field.onChange([e.target.value])}
                                                 onBlur={field.onBlur}
                                                 disabled
-                                                style={{ width: '100%', maxWidth: 50, padding: '8px 10px', borderRadius: 6, background: '#f0f0f0', border: '1px solid #ccc', color: '#666', fontSize: 16, boxSizing: 'border-box' }}
+                                                style={{ width: '150%', maxWidth: 50, padding: '8px 10px', borderRadius: 6, background: '#f0f0f0', border: '1px solid #ccc', color: '#666', fontSize: 16, boxSizing: 'border-box' }}
                                             >
                                                 <option value="" disabled></option>
                                             </select>
@@ -306,7 +358,7 @@ const Demo = () => {
                                             </Select.Control>
                                             <Portal>
                                                 <Select.Positioner>
-                                                    <Select.Content style={{ width: 150, maxWidth: '100%', boxSizing: 'border-box' }}>
+                                                    <Select.Content style={{ width: 150, maxWidth: '150%', boxSizing: 'border-box' }}>
                                                         {detailOptions.map((opt) => (
                                                             <Select.Item key={opt.value} item={opt} _hover={{ bg: 'gray.100' }} _selected={{ bg: 'black', color: 'white' }}>
                                                                 {opt.label}
@@ -401,7 +453,7 @@ const Demo = () => {
                      </Field.Root>
                     <Stack direction="column" gap={2}>
                         <Button bg="red" onClick={reset}>Discard Changes</Button>
-                        <Button type="submit">Save</Button>
+                        <Button type="submit" onClick={saveChanges}>Save</Button>
                     </Stack>
                 </Stack>
             </Stack>
@@ -410,3 +462,4 @@ const Demo = () => {
 }
 
 export default Demo
+

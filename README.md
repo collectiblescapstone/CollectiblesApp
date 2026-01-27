@@ -9,6 +9,7 @@ First, have the following installed in your machine:
 1. [Node version 22](https://nodejs.org/en/download)
 2. [Android Studio](https://developer.android.com/studio) for Android Development
 3. [Xcode](https://developer.apple.com/xcode/) for iOS Development
+4. [Docker Desktop](https://www.docker.com/)
 
 Then, run the following commands to get it up and running on the web:
 
@@ -30,7 +31,7 @@ NEXT_PUBLIC_SUPABASE_URL=<thesupabasepublicurl>
 NEXT_PUBLIC_SUPABASE_ANON_KEY=<thesupabaseanonkey>
 ```
 
-The values above can be found in our supabase dashboard under `Connect (top bar) -> App Frameworks (Options: Next.js, App Router, supabase-js)`
+On Supabase startup (`npx supabase start`), you should find the values you use to fill in the .env file. (If this step does not work, ensure your Docker is running.) The value `NEXT_PUBLIC_SUPABASE_URL` corresponds to `API URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` corresponds to either `anon key` or `Publishable key`.
 
 At this point, the application should be available on http://localhost:3000
 
@@ -90,3 +91,42 @@ Now, you should see the app build, then your emulator will boot up and open the 
 
 - [Android Studio Docs](https://developer.android.com/studio/run)
 - [XCode Emulator Docs](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)
+
+### Running your own local database
+
+#### First-Time Setup
+
+1. Make sure Docker is up and running.
+2. Add the following values to the `.env` file, you can obtain these values by running `npx supabase start` in your terminal:
+
+```
+NEXT_PUBLIC_SUPABASE_URL="http://127.0.0.1:xxxxx"
+DATABASE_URL="postgresql://postgres:postgres@127.0.0.1:xxxxx/postgres"
+DIRECT_URL="postgresql://postgres:postgres@127.0.0.1:xxxxx/postgres"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="[insert anon key]" 
+```
+
+On Supabase startup, you should find the values you use to fill in the .env file. `NEXT_PUBLIC_SUPABASE_URL` corresponds to `API URL`, `DATABASE_URL` and `DIRECT_URL` corresponds to `Database URL`, and `NEXT_PUBLIC_SUPABASE_ANON_KEY` corresponds to either `anon key` or `Publishable key`.
+
+IT IS VERY IMPORTANT THAT THESE VARIABLES POINT TO YOUR LOCAL DATABASE, NOT THE LIVE ONE. DO NOT USE THE API URL FOUND ON THE LIVE SUPABASE.
+
+(Make sure your .env file is in the gitignore)
+
+3. Run the following commands:
+
+```
+npx prisma migrate dev
+npx prisma db seed
+```
+
+#### Database Workflow
+
+1. Turn on Docker
+2. Run `git pull origin main` 
+3. Run these commands:
+```
+npx supabase start
+npx prisma migrate dev
+```
+
+You should now have access to the database. At this step, you should be able to run `npx prisma studio` to access the prisma studio GUI, and access the database as you please.

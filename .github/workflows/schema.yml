@@ -1,0 +1,35 @@
+name: PROD - Deploy Schema Changes
+
+concurrency:
+  group: ${{ github.workflow}}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'prisma/migrations/**' # Only run if migrations are updated
+
+jobs:
+  deploy-schema-changes:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run db migrations
+        run: npm run ci:db:deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}

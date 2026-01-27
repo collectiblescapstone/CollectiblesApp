@@ -44,8 +44,14 @@ next-env.d.ts
 # prisma
 /src/generated/prisma
 
+#vscode
+/.vscode/
+
 # python
 __pycache__/
 
 # dataset downloads
 /src/ai_dev/datasets/pokemon/data/
+
+# workspace settings
+.vscode/

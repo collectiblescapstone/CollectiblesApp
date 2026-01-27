@@ -1,8 +1,7 @@
 'use client';
 
-import Normalize from '@/components/cv/Normalize';
+import { IdentifyOneCard } from '@/components/cv/IdentifyOneCard';
 import { Box } from '@chakra-ui/react';
-import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 const CameraPage = () => {
@@ -11,7 +10,7 @@ const CameraPage = () => {
 
   return (
     <Box position="relative" minW="40dvw" minH="dvh">
-      {imgUrl ? <Normalize image={imgUrl} /> : <Box>No image captured.</Box>}
+      {imgUrl ? <IdentifyOneCard image={imgUrl} /> : <Box>No image captured.</Box>}
     </Box>
   );
 };

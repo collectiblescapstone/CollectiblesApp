@@ -1,17 +1,10 @@
-import { PokemonCard } from '@/types/pokemon-card';
 import cvReadyPromise from '@techstark/opencv-js';
 
-export type CardData = {
-  hash: string;
-  hashBits: string;
-  card: PokemonCard;
-};
+import { CardData, CardDataObj } from '@/types/identification';
 
-type CardDataObj = {
-  [id: string]: CardData;
-};
-
-export const CardClassifier = async () => {
+export const CardClassifier = async (): Promise<
+  (image: cvReadyPromise.Mat, k?: number) => CardData[]
+> => {
   const cv = await cvReadyPromise;
 
   /**
@@ -95,7 +88,7 @@ export const CardClassifier = async () => {
     }
 
     distances.sort((a, b) => a[0] - b[0]);
-    return distances.slice(0, k).map(([_, id]) => cardData[id]);
+    return distances.slice(0, k).map(([, id]) => cardData[id]);
   };
 
   return getSimilarCards;

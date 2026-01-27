@@ -4,10 +4,10 @@
 import { MatVector, Mat, CV } from '@techstark/opencv-js';
 
 //  Returns the corners & area of the biggest contour
-export function biggestContour(
+export const biggestContour = (
   cv: CV,
   contours: MatVector
-): { biggest: Mat | null; maxArea: number } {
+): { biggest: Mat | null; maxArea: number } => {
   let biggest: Mat | null = null;
   let maxArea = 0;
 
@@ -34,11 +34,11 @@ export function biggestContour(
     cnt.delete();
   }
   return { biggest, maxArea };
-}
+};
 
 // reorderCorners: input may be a contour approximation (Mat) or nested arrays.
 // Returns corners in format [[topleft],[topright],[bottomleft],[bottomright]]
-export function reorderCorners(cv: CV, cornersInput: Mat): [number, number][] {
+export const reorderCorners = (cornersInput: Mat): [number, number][] => {
   // Normalize input into an array of 4 points [x,y]
   const corners: [number, number][] = [];
 
@@ -126,12 +126,14 @@ export function reorderCorners(cv: CV, cornersInput: Mat): [number, number][] {
   }
 
   return [topleft, topright, bottomleft, bottomright];
-}
+};
 
-export function sortVals(vals: number[]): {
+export const sortVals = (
+  vals: number[]
+): {
   vals: number[];
   indexes: number[];
-} {
+} => {
   const indexes = Array.from({ length: vals.length }, (_, i) => i);
   for (let i = 0; i < vals.length; i++) {
     let index = i;
@@ -146,16 +148,20 @@ export function sortVals(vals: number[]): {
     swap(indexes, i, index);
   }
   return { vals, indexes };
-}
+};
 
-export function swap<T>(arr: T[], ind1: number, ind2: number): void {
+export const swap = <T>(arr: T[], ind1: number, ind2: number): void => {
   const temp = arr[ind1];
   arr[ind1] = arr[ind2];
   arr[ind2] = temp;
-}
+};
 
 // drawRectangle: draws lines between 4 corners on img (cv.Mat). corners in same format as reorderCorners output.
-export function drawRectangle(cv: CV, img: Mat, corners: [number, number][]) {
+export const drawRectangle = (
+  cv: CV,
+  img: Mat,
+  corners: [number, number][]
+) => {
   const thickness = 10;
   try {
     const c0 = corners[0];
@@ -194,4 +200,4 @@ export function drawRectangle(cv: CV, img: Mat, corners: [number, number][]) {
   } catch {
     // ignore drawing errors
   }
-}
+};

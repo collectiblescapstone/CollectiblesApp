@@ -10,8 +10,8 @@ const Footer = () => {
 
   return (
     <Flex
-      color="white"
-      background="purple.600"
+      color="brand.turtiose"
+      background="brand.marigold"
       minHeight="8dvh"
       position="sticky"
       bottom={0}
@@ -30,7 +30,7 @@ const Footer = () => {
           }
           bgColor={
             pathname.startsWith(`${item.path}`)
-              ? 'whiteAlpha.400'
+              ? 'brand.marigoldAlpha'
               : 'transparent'
           }
           padding={2}

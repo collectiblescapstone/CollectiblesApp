@@ -4,15 +4,22 @@ import { Flex, Heading } from '@chakra-ui/react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
 import { LuStepBack } from 'react-icons/lu';
-import { MAIN_PAGES } from './constants';
+import { PAGE_HEADINGS } from './constants';
+import { useHeader } from '@/context/HeaderProvider';
 
 const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const context = useHeader();
+  const profileId = context?.profileId;
 
   const isMainPage = useMemo(() => {
-    return MAIN_PAGES.includes(pathname);
+    return Object.keys(PAGE_HEADINGS).includes(pathname);
   }, [pathname]);
+
+  const pageHeading = pathname.toLowerCase().includes('profile')
+    ? profileId
+    : PAGE_HEADINGS[pathname];
 
   return (
     <Flex
@@ -21,8 +28,8 @@ const Header = () => {
       left={0}
       right={0}
       zIndex={999}
-      color="white"
-      bgColor="purple.600"
+      color="brand.turtiose"
+      bgColor="brand.marigold"
       minHeight="8dvh"
       flexDir="row"
       alignItems="center"
@@ -41,8 +48,9 @@ const Header = () => {
           }
         />
       )}
-      {isMainPage && <Heading size="lg">Collectibles App</Heading>}
-      {!isMainPage && <Heading size="md">Collectibles App</Heading>}
+      <Heading size="lg" fontFamily="var(--font-sans)" color="brand.turtiose">
+        {pageHeading}
+      </Heading>
     </Flex>
   );
 };

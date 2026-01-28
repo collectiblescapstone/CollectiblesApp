@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useHeader } from '@/context/HeaderProvider';
 
 import SocialLinks from '@/components/user-profile/SocialLinks';
 import Showcase from '@/components/user-profile/Showcase';
@@ -12,9 +13,12 @@ import { UserProfile } from '@/types/personal-profile';
 import { Box, Flex, Heading, Text, Icon, Button } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
+import { set } from 'zod';
 
 const PersonalProfileScreen = ({ userId }: { userId: string }) => {
   const router = useRouter();
+  const headerContext = useHeader();
+  const setProfileID = headerContext?.setProfileID;
 
   // This is a temporary userId for testing purposes.
   const tempUserId = userId ?? '052d7fdf-d30c-4606-a0dc-621b8f27c57b';
@@ -44,6 +48,10 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
 
     fetchUserProfile();
   }, [tempUserId]);
+
+  if (setProfileID) {
+    setProfileID(tempUserId);
+  }
 
   if (loading) {
     return <Text>Loading...</Text>;

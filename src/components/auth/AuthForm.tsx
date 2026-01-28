@@ -21,7 +21,7 @@ export default function AuthForm() {
 
     // Handle Supabase Auth successful sign in
     if (res.success) {
-      push('/');
+      push('/home');
     }
 
     // Handle Supabase Auth sign in error

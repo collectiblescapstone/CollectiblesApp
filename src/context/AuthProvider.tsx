@@ -108,6 +108,8 @@ export const AuthContextProvider = ({
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session === null && !publicRoutes.includes(pathname)) {
         router.push('/unauthorized');
+      } else if (session && publicRoutes.includes(pathname)) {
+        router.push('/home');
       }
       setSession(session);
       setLoading(false);
@@ -116,6 +118,8 @@ export const AuthContextProvider = ({
     supabase.auth.onAuthStateChange((_event, session) => {
       if (session === null && !publicRoutes.includes(pathname)) {
         router.push('/unauthorized');
+      } else if (session && publicRoutes.includes(pathname)) {
+        router.push('/home');
       }
       setSession(session);
       setLoading(false);
@@ -127,6 +131,8 @@ export const AuthContextProvider = ({
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error('Error signing out:', error);
+    } else {
+      router.push('/');
     }
   };
 

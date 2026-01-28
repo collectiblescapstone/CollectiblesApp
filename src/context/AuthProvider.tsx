@@ -44,7 +44,6 @@ const publicRoutes = [
   '/unauthorized',
   '/',
   '/forget-password',
-  '/reset-password',
 ];
 
 const AuthContext = createContext<AuthContextData | undefined>(undefined);

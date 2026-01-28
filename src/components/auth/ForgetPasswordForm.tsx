@@ -14,7 +14,7 @@ export default function ForgetPasswordForm() {
 
     // Supabase Auth reset password
     const res = await supabase.auth.resetPasswordForEmail(values.email, {
-      redirectTo: `${window.location.origin}/reset-password`,
+      redirectTo: `http://localhost:3000/reset-password`,
     });
 
     if (res.error) {

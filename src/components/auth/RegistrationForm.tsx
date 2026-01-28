@@ -113,7 +113,9 @@ const RegistrationForm = () => {
         <Heading size="5xl" pb={12}>
           Kollec {/* LOGO PLACEHOLDER */}
         </Heading>
-        <Heading size="lg">Sign In to your account</Heading>
+
+        <Heading size="lg">Sign Up for an account</Heading>
+
         <Field.Root invalid={!!errors.root}>
           <Field.Root invalid={!!errors.email} required>
             <Field.Label>

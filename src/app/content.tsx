@@ -8,11 +8,14 @@ import { Capacitor } from '@capacitor/core';
 import Sidebar from '@/components/navbar/Sidebar';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { useAuth } from '@/context/AuthProvider';
+import { usePathname } from 'next/navigation';
 
 export const CHAKRA_UI_LG_BREAKPOINT = 992;
 
 const Content = ({ children }: { children: React.ReactNode }) => {
+  const pathname = usePathname();
   const { session } = useAuth();
+
   const [isMobileView, setIsMobileView] = useState<boolean>(() => {
     if (typeof window === 'undefined') return true;
     return (
@@ -59,7 +62,11 @@ const Content = ({ children }: { children: React.ReactNode }) => {
     </Suspense>
   );
 
-  return session ? authenticatedLayout : <>{children}</>;
+  return session && pathname !== '/reset-password' ? (
+    authenticatedLayout
+  ) : (
+    <>{children}</>
+  );
 };
 
 export default Content;

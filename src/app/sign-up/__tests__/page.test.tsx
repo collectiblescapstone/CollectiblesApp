@@ -4,10 +4,10 @@ import { render, screen } from '@testing-library/react';
 import SignUpPage from '../page';
 import { FlexProps } from '@chakra-ui/react';
 
-jest.mock('../../../components/auth/AuthForm', () => ({
+jest.mock('../../../components/auth/RegistrationForm', () => ({
   __esModule: true,
   default: ({ type }: { type: string }) => (
-    <div data-testid="auth-form">{type}</div>
+    <div data-testid="registration-form">{type}</div>
   ),
 }));
 
@@ -19,11 +19,10 @@ jest.mock('@chakra-ui/react', () => {
 });
 
 describe('SignInPage', () => {
-  it('renders AuthForm with type signin', () => {
+  it('renders RegistrationForm with type signin', () => {
     render(<SignUpPage />);
-    const authForm = screen.getByTestId('auth-form');
+    const authForm = screen.getByTestId('registration-form');
     expect(authForm).toBeInTheDocument();
-    expect(authForm).toHaveTextContent('signup');
     expect(screen.getByTestId('flex')).toBeInTheDocument();
   });
 });

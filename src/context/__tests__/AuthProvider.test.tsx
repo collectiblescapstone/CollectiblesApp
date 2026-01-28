@@ -4,6 +4,16 @@ import React from 'react';
 import { supabase } from '@/utils/supabase';
 import { Session } from '@supabase/supabase-js';
 
+const pushMock = jest.fn();
+const pathnameMock = jest.fn();
+
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: pushMock,
+  }),
+  usePathname: () => pathnameMock(),
+}));
+
 jest.mock('../../utils/supabase', () => ({
   supabase: {
     auth: {

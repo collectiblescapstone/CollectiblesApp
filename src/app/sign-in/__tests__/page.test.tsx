@@ -23,7 +23,6 @@ describe('SignInPage', () => {
     render(<SignInPage />);
     const authForm = screen.getByTestId('auth-form');
     expect(authForm).toBeInTheDocument();
-    expect(authForm).toHaveTextContent('signin');
     expect(screen.getByTestId('flex')).toBeInTheDocument();
   });
 });

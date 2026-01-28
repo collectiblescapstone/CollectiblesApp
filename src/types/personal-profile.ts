@@ -19,6 +19,12 @@ export interface UserProfile {
   instagram?: string;
   twitter?: string;
   facebook?: string;
+  wishlist: {
+    card: {
+      name: string;
+      image_url: string;
+    };
+  }[];
 }
 
 export interface PokemonCardImage {

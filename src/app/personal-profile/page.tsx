@@ -16,6 +16,9 @@ import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 const PersonalProfileScreen = ({ userId }: { userId: string }) => {
   const router = useRouter();
 
+  // This is a temporary userId for testing purposes.
+  const tempUserId = userId ?? '052d7fdf-d30c-4606-a0dc-621b8f27c57b';
+
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -26,7 +29,7 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch(`/api/profiles/${userId}`);
+        const response = await fetch(`/api/profiles?userId=${tempUserId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
         }
@@ -40,7 +43,7 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
     };
 
     fetchUserProfile();
-  }, [userId]);
+  }, [tempUserId]);
 
   if (loading) {
     return <Text>Loading...</Text>;
@@ -110,7 +113,12 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
       </Flex>
       <Showcase />
       <TradeList />
-      <WishList />
+      <WishList
+        wishlist={user.wishlist.map((item) => ({
+          name: item.card.name,
+          image: item.card.image_url,
+        }))}
+      />
     </Box>
   );
 };

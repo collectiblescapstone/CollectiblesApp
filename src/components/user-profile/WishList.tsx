@@ -5,29 +5,21 @@ import Divider from '@/components/user-profile/Divider';
 import { useRouter } from 'next/navigation';
 import { Button, Flex, Image, Text } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
-import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
 
-const hardcodedCards: PokemonCardImage[] = [
-  { name: 'Mareep', image: 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG34' },
-  { name: 'Riolu', image: 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG26' },
-];
+interface WishListProps {
+  wishlist: PokemonCardImage[];
+}
 
-const WishList: React.FC = () => {
+const WishList: React.FC<WishListProps> = ({ wishlist }) => {
   const router = useRouter();
 
-  const { cards, loading } = useRandomCards('pop1', 4);
-  if (loading) return <Text>Loading cards...</Text>;
-
-  const display = cards.slice(0, 2);
-  const viewmore = cards.length > 2;
+  const display = wishlist.slice(0, 3);
+  const viewmore = wishlist.length > 3;
 
   const press = () => {
     router.push('/user-profile/wish');
   };
-
-  const hardcodedCard =
-    hardcodedCards[Math.floor(Math.random() * hardcodedCards.length)];
 
   return (
     <Flex
@@ -51,24 +43,17 @@ const WishList: React.FC = () => {
         wrap="wrap"
         gap={5}
       >
-        {display.map((card: PokemonCardImage, index: number) => (
+        {display.map((item, index: number) => (
           <Flex key={index}>
             <Image
-              src={`${card.image}/high.png`}
-              alt={card.name}
+              src={`${item.image}`}
+              alt={item.name}
               w="105px"
               h="auto"
               borderRadius="none"
             />
           </Flex>
         ))}
-        <Image
-          src={`${hardcodedCard.image}/high.png`}
-          alt={hardcodedCard.name}
-          w="105px"
-          h="auto"
-          borderRadius="none"
-        />
       </Flex>
       <Flex mt={3}>
         {viewmore && (

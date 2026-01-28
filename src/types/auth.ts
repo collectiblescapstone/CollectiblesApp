@@ -12,3 +12,12 @@ export type SignupFormValues = {
   password: string;
   confirmPassword: string;
 };
+
+export type ForgetPasswordFormValues = {
+  email: string;
+};
+
+export type ResetPasswordFormValues = {
+  password: string;
+  confirmPassword: string;
+};

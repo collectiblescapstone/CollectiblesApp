@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { SignupFormValues } from '@/types/auth';
 
-export default function AuthForm() {
+const RegistrationForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { signUp } = useAuth();
   const { push } = useRouter();
@@ -216,4 +216,6 @@ export default function AuthForm() {
       </VStack>
     </form>
   );
-}
+};
+
+export default RegistrationForm;

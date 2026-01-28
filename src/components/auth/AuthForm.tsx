@@ -17,7 +17,6 @@ export default function AuthForm() {
 
     // Supabase Auth sign in user
     const res = await signIn(values.email, values.password);
-    console.log(res);
 
     // Handle Supabase Auth successful sign in
     if (res.success) {
@@ -98,7 +97,7 @@ export default function AuthForm() {
               <Field.ErrorText>{errors.password.message}</Field.ErrorText>
             )}
             <Field.HelperText
-              onClick={() => alert('Redirect to password recovery')}
+              onClick={() => push('/forget-password')}
               cursor="pointer"
               color="teal"
             >

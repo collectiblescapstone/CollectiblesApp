@@ -38,7 +38,14 @@ interface AuthContextData {
   loading: boolean;
 }
 
-const publicRoutes = ['/sign-in', '/sign-up', '/unauthorized', '/'];
+const publicRoutes = [
+  '/sign-in',
+  '/sign-up',
+  '/unauthorized',
+  '/',
+  '/forget-password',
+  '/reset-password',
+];
 
 const AuthContext = createContext<AuthContextData | undefined>(undefined);
 

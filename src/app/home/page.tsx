@@ -20,7 +20,6 @@ const HomePage = () => {
       alignItems="center"
       minHeight="inherit"
     >
-      {/** Change to a redirect to home page */}
       <Heading size="md" mt={4}>
         Logged in as: {session.user.email}
       </Heading>

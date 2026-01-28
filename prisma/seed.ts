@@ -13,6 +13,7 @@ const prisma = new PrismaClient();
 type CardFromFile = {
   id: string;
   name: string;
+  types?: string[];
   category: string;
   illustrator: string | null;
   rarity: string;
@@ -123,6 +124,7 @@ async function main() {
         id: card.id,
         name: card.name,
         category: card.category,
+        types: card.types || [],
         illustrator: card.illustrator ?? 'Unknown', // 'Unknown' if null
         rarity: card.rarity,
         variants: cardVariants,

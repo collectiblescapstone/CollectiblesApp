@@ -12,13 +12,13 @@ interface PokemonCardMiniProps {
   // rarity?: string;
 }
 
-export default function PokemonCardMini({
+const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
   cardName,
   image,
   cardId,
   // illustrator,
   // rarity,
-}: PokemonCardMiniProps) {
+}: PokemonCardMiniProps) => {
   return (
     <Link
       href={{
@@ -83,4 +83,6 @@ export default function PokemonCardMini({
       </Box>
     </Link>
   );
-}
+};
+
+export default PokemonCardMini;

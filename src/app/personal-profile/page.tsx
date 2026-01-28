@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useHeader } from '@/context/HeaderProvider';
 
 import SocialLinks from '@/components/user-profile/SocialLinks';
 import Showcase from '@/components/user-profile/Showcase';
@@ -23,11 +24,19 @@ import { useAuth } from '@/context/AuthProvider';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
+  const headerContext = useHeader();
+  const setProfileID = headerContext?.setProfileID;
   const { session, loading } = useAuth();
 
   const editpress = () => {
     router.push('/personal-profile/edit-profile');
   };
+
+  useEffect(() => {
+    if (setProfileID) {
+      setProfileID('smithsonian_collection');
+    }
+  }, [setProfileID]);
 
   if (loading || !session) {
     return (

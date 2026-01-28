@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Box, Grid, Flex, Heading, Spinner, Text } from '@chakra-ui/react';
 
@@ -91,38 +91,33 @@ function FilterCardsContent() {
   }, [type, pId]);
 
   // Filter cards based on FiltersContext
-  const filteredCards = useMemo(() =>
-    cards.filter(
-      (card) => {
-        // CATEGORY
-        if (
-          !filters.categories.includes(card.category) &&
-          !(
-            card.category === 'Pokemon' &&
-            filters.categories.includes('Pokémon')
-          )
-        )
-          return false;
+  const filteredCards = cards.filter(
+    (card) => {
+      // CATEGORY
+      if (
+        !filters.categories.includes(card.category) &&
+        !(card.category === 'Pokemon' && filters.categories.includes('Pokémon'))
+      )
+        return false;
 
-        // TYPE
-        if (card.types?.length) {
-          const hasEnabledType = card.types.some((type) => filters.types[type]);
-          if (!hasEnabledType) return false;
-        }
+      // TYPE
+      if (card.types?.length) {
+        const hasEnabledType = card.types.some((type) => filters.types[type]);
+        if (!hasEnabledType) return false;
+      }
 
-        // GENERATION
-        if (card.dexId?.length) {
-          const matchesGeneration = card.dexId.some((dexNumber) => {
-            const generation = getGeneration(dexNumber);
-            return filters.generations.includes(generation);
-          });
-          if (!matchesGeneration) return false;
-        }
+      // GENERATION
+      if (card.dexId?.length) {
+        const matchesGeneration = card.dexId.some((dexNumber) => {
+          const generation = getGeneration(dexNumber);
+          return filters.generations.includes(generation);
+        });
+        if (!matchesGeneration) return false;
+      }
 
-        return true;
-      },
-      [filters, cards]
-    )
+      return true;
+    },
+    [filters]
   );
 
   console.log(filteredCards);

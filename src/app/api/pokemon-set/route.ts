@@ -7,6 +7,7 @@ export const dynamic = 'force-static';
 export async function GET() {
   try {
     // Fetch all cards (or add filters here)
+
     const specifiedSets: Set[] = await prisma.set.findMany({});
     // const specifiedCards: Card[] = await prisma.card.findMany({
     //   where: {
@@ -15,8 +16,6 @@ export async function GET() {
     //     },
     //   },
     // });
-
-    console.log(specifiedSets);
 
     return NextResponse.json(specifiedSets);
   } catch (err) {

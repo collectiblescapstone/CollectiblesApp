@@ -19,6 +19,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
   // illustrator,
   // rarity,
 }: PokemonCardMiniProps) => {
+  console.log(image);
   return (
     <Link
       href={{
@@ -56,7 +57,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
           alignItems="center"
         >
           <Image
-            src={image + '/low.jpg'}
+            src={image}
             alt={cardName}
             objectFit="contain"
             width="100%"

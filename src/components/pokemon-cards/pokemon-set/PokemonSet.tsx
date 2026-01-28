@@ -16,18 +16,18 @@ import { LuSparkle, LuSparkles } from 'react-icons/lu';
 
 interface PokemonSetProps {
   label: string;
-  primaryLogo: string;
-  fallbackLogo: string;
+  image: string;
   setID: string;
+  setName: string;
   masterSet: number;
   grandmasterSet: number;
 }
 
 export default function PokemonSet({
   label,
-  primaryLogo,
-  fallbackLogo,
+  image,
   setID,
+  setName,
   masterSet,
   grandmasterSet,
 }: PokemonSetProps) {
@@ -36,15 +36,15 @@ export default function PokemonSet({
       <Link
         href={{
           pathname: '/filter-cards',
-          query: { type: 'set', name: setID },
+          query: { type: 'set', setId: setID, setName: setName },
         }}
         style={{ textDecoration: 'none' }}
       >
         <Card.Root
           direction="column"
           overflow="hidden"
-          w="100%"
-          h="400px"
+          w="full"
+          h="200px"
           bg="white"
           borderRadius="lg"
           boxShadow="md"
@@ -59,13 +59,14 @@ export default function PokemonSet({
           <Flex
             align="center"
             justify="center"
-            h="60%"
+            h="50%"
             bg="gray.50"
             borderBottom="1px solid"
             borderColor="gray.200"
+            width="full"
           >
             <Image
-              src={primaryLogo || fallbackLogo}
+              src={image}
               alt={label}
               objectFit="contain"
               maxH="100%"
@@ -80,7 +81,7 @@ export default function PokemonSet({
 
           {/* Text + Progress bars */}
           <Card.Body
-            h="40%"
+            h="30%"
             display="flex"
             flexDirection="column"
             justifyContent="center"

@@ -13,7 +13,6 @@ import { UserProfile } from '@/types/personal-profile';
 import { Box, Flex, Heading, Text, Icon, Button } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
-import { set } from 'zod';
 
 const PersonalProfileScreen = ({ userId }: { userId: string }) => {
   const router = useRouter();
@@ -39,6 +38,9 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
         }
         const data = await response.json();
         setUser(data);
+        if (setProfileID) {
+          setProfileID(data.username);
+        }
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -47,11 +49,7 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
     };
 
     fetchUserProfile();
-  }, [tempUserId]);
-
-  if (setProfileID) {
-    setProfileID(tempUserId);
-  }
+  }, [tempUserId, setProfileID]);
 
   if (loading) {
     return <Text>Loading...</Text>;

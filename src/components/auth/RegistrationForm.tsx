@@ -212,7 +212,12 @@ const RegistrationForm = () => {
             {errors.root && errors.root.message}
           </Field.ErrorText>
         </Field.Root>
-        <Button backgroundColor="teal" width="3/4" type="submit">
+        <Button
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
+          width="3/4"
+          type="submit"
+        >
           Sign Up
         </Button>
       </VStack>

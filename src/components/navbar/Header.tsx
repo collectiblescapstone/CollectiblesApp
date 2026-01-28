@@ -28,7 +28,7 @@ const Header = () => {
       left={0}
       right={0}
       zIndex={999}
-      color="brand.turtiose"
+      color="brand.turtoise"
       bgColor="brand.marigold"
       w="full"
       minHeight="8dvh"
@@ -49,7 +49,7 @@ const Header = () => {
           }
         />
       )}
-      <Heading size="lg" fontFamily="var(--font-sans)" color="brand.turtiose">
+      <Heading size="lg" fontFamily="var(--font-sans)" color="brand.turtoise">
         {pageHeading}
       </Heading>
     </Flex>

@@ -23,7 +23,12 @@ const HomePage = () => {
       <Heading size="md" mt={4}>
         Logged in as: {session.user.email}
       </Heading>
-      <Button mt={4} onClick={() => signOut()}>
+      <Button
+        backgroundColor="brand.marigold"
+        color="brand.turtoise"
+        mt={4}
+        onClick={() => signOut()}
+      >
         Sign Out
       </Button>
     </Flex>

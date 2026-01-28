@@ -99,7 +99,7 @@ export default function AuthForm() {
             <Field.HelperText
               onClick={() => push('/forget-password')}
               cursor="pointer"
-              color="teal"
+              color="purple.600"
             >
               Forgot your password?
             </Field.HelperText>
@@ -108,19 +108,26 @@ export default function AuthForm() {
             {errors.root && errors.root.message}
           </Field.ErrorText>
         </Field.Root>
-        <Button backgroundColor="teal" width="3/4" type="submit">
+        <Button
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
+          width="3/4"
+          type="submit"
+        >
           Sign In
         </Button>
         <Text>OR</Text>
         <Button
-          backgroundColor="teal"
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
           width="3/4"
           onClick={() => alert('Redirect to Google Sign-In')}
         >
           Sign In With Google
         </Button>
         <Button
-          backgroundColor="teal"
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
           width="3/4"
           onClick={() => alert('Redirect to Apple Sign-In')}
         >
@@ -128,7 +135,8 @@ export default function AuthForm() {
         </Button>
         <Text>OR</Text>
         <Button
-          backgroundColor="teal"
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
           width="3/4"
           onClick={() => push('/sign-up')}
         >

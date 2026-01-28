@@ -12,7 +12,9 @@ export default function Landing() {
     >
       <Heading>Welcome to Collectibles App!</Heading>
       <Link href="/sign-in">
-        <Button mt={4}>Go to Login</Button>
+        <Button backgroundColor="brand.marigold" color="brand.turtoise" mt={4}>
+          Go to Login
+        </Button>
       </Link>
     </Flex>
   );

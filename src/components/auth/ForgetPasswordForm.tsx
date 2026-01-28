@@ -77,7 +77,12 @@ export default function ForgetPasswordForm() {
           </Field.Root>
         </Field.Root>
 
-        <Button backgroundColor="teal" width="3/4" type="submit">
+        <Button
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
+          width="3/4"
+          type="submit"
+        >
           Send Reset Link
         </Button>
       </VStack>

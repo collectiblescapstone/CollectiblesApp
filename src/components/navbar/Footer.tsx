@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <Flex
-      color="brand.turtiose"
+      color="brand.turtoise"
       background="brand.marigold"
       minHeight="8dvh"
       position="sticky"

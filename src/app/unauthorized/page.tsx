@@ -26,8 +26,8 @@ const Unauthorized: React.FC = () => {
         </Text>
         <Button
           onClick={handleLoginRedirect}
-          bg="blue.600"
-          color="white"
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
           px={6}
           py={3}
           fontWeight="semibold"

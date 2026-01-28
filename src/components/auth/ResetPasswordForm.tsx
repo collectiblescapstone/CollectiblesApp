@@ -135,7 +135,12 @@ export default function ResetPasswordForm() {
           </Field.ErrorText>
         </Field.Root>
 
-        <Button backgroundColor="teal" width="3/4" type="submit">
+        <Button
+          backgroundColor="brand.marigold"
+          color="brand.turtoise"
+          width="3/4"
+          type="submit"
+        >
           Reset Password
         </Button>
       </VStack>

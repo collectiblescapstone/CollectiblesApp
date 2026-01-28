@@ -1,13 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Box, Flex, Image, Button, Text, Spinner } from '@chakra-ui/react';
 import { FiPlusCircle, FiXCircle } from 'react-icons/fi';
 import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
 import { useAuth } from '@/context/AuthProvider';
-import { useRouter } from 'next/navigation';
 
 const WishScreen: React.FC = () => {
   const { session, loading } = useAuth();
@@ -20,6 +19,9 @@ const WishScreen: React.FC = () => {
     // Edit add card item logic here
   };
 
+  const { cards, loading: cardsLoading } = useRandomCards('pop1', 7);
+  if (cardsLoading) return <Text>Loading cards...</Text>;
+
   if (loading || !session) {
     return (
       <Box textAlign="center" mt={10}>
@@ -27,9 +29,6 @@ const WishScreen: React.FC = () => {
       </Box>
     );
   }
-
-  const { cards, loading: cardsLoading } = useRandomCards('pop1', 7);
-  if (cardsLoading) return <Text>Loading cards...</Text>;
 
   return (
     <Box bg="white" minH="100vh" color="black">

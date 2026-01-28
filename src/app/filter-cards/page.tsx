@@ -18,14 +18,6 @@ export default function FilterCardsPage() {
   const [loading, setLoading] = useState(true);
   const [mainSet, setMainSet] = useState(0);
 
-  if (authLoading || !session) {
-    return (
-      <Box textAlign="center" mt={10}>
-        <Spinner size="xl" />
-      </Box>
-    );
-  }
-
   useEffect(() => {
     if (!type || !name) return;
 
@@ -106,7 +98,7 @@ export default function FilterCardsPage() {
     loadData();
   }, [type, name]);
 
-  if (loading)
+  if (loading || authLoading || !session)
     return (
       <Box textAlign="center" mt={10}>
         <Spinner size="xl" />

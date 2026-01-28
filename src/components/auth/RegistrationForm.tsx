@@ -12,6 +12,23 @@ const RegistrationForm = () => {
   const { signUp } = useAuth();
   const { push } = useRouter();
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm<SignupFormValues>({
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      username: '',
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+  });
+
   const onSubmit = async (values: SignupFormValues) => {
     setIsLoading(true);
 
@@ -85,23 +102,6 @@ const RegistrationForm = () => {
 
     setIsLoading(false);
   };
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setError,
-  } = useForm<SignupFormValues>({
-    defaultValues: {
-      firstName: '',
-      lastName: '',
-      username: '',
-      name: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-    },
-  });
 
   return (
     <form style={{ all: 'inherit' }} onSubmit={handleSubmit(onSubmit)}>

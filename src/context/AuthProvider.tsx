@@ -130,7 +130,7 @@ export const AuthContextProvider = ({
       setSession(session);
       setLoading(false);
     });
-  }, []);
+  }, [pathname, router]);
 
   // Sign out
   const signOut = async () => {

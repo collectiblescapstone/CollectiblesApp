@@ -9,6 +9,17 @@ export default function ForgetPasswordForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm<ForgetPasswordFormValues>({
+    defaultValues: {
+      email: '',
+    },
+  });
+
   const onSubmit = async (values: ForgetPasswordFormValues) => {
     setIsLoading(true);
 
@@ -30,17 +41,6 @@ export default function ForgetPasswordForm() {
     }
     setIsLoading(false);
   };
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setError,
-  } = useForm<ForgetPasswordFormValues>({
-    defaultValues: {
-      email: '',
-    },
-  });
 
   return (
     <form style={{ all: 'inherit' }} onSubmit={handleSubmit(onSubmit)}>

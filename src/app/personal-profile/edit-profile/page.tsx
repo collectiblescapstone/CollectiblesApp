@@ -30,14 +30,6 @@ const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
   const { session, loading } = useAuth();
 
-  if (loading || !session) {
-    return (
-      <Box textAlign="center" mt={10}>
-        <Spinner size="xl" />
-      </Box>
-    );
-  }
-
   const {
     register,
     handleSubmit,
@@ -68,6 +60,14 @@ const PersonalProfileScreen: React.FC = () => {
   const signout = () => {
     // Sign out logic here
   };
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black">

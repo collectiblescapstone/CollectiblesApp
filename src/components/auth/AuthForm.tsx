@@ -12,6 +12,18 @@ export default function AuthForm() {
   const { signIn } = useAuth();
   const { push } = useRouter();
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm<LoginFormValues>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
+
   const onSubmit = async (values: LoginFormValues) => {
     setIsLoading(true);
 
@@ -42,18 +54,6 @@ export default function AuthForm() {
     }
     setIsLoading(false);
   };
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setError,
-  } = useForm<LoginFormValues>({
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  });
 
   return (
     <form style={{ all: 'inherit' }} onSubmit={handleSubmit(onSubmit)}>

@@ -120,6 +120,7 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
       <Showcase />
       <TradeList />
       <WishList
+        userId={tempUserId}
         wishlist={user.wishlist.map((item) => ({
           name: item.card.name,
           image: item.card.image_url,

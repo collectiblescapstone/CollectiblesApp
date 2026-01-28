@@ -1,16 +1,46 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
-import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
+import { useSearchParams } from 'next/navigation';
+import { UserProfile } from '@/types/personal-profile';
 
 const WishScreen: React.FC = () => {
-  const { cards, loading } = useRandomCards('pop1', 7);
-  if (loading) return <Text>Loading cards...</Text>;
-  const cardsnum = cards.length;
+  const searchParams = useSearchParams();
+  const [user, setUser] = useState<UserProfile | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const userId = searchParams.get('userID');
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await fetch(`/api/profiles?userId=${userId}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch user profile');
+        }
+        const data = await response.json();
+        setUser(data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    };
+
+    fetchUserProfile();
+  }, [userId]);
+
+  const cards = user?.wishlist.map((item) => ({
+    name: item.card.name,
+    image: item.card.image_url,
+  })) as PokemonCardImage[];
+
+  if (loading) {
+    return <Text>Loading...</Text>;
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black">
@@ -33,10 +63,10 @@ const WishScreen: React.FC = () => {
             gap={2}
           >
             <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-              Sandra Smith Anne
+              {user?.firstName} {user?.lastName}
             </Heading>
             <Text fontSize="md" color="gray.600" fontWeight={'semibold'}>
-              Wish List - {cardsnum} Items
+              Wish List - {cards.length} Items
             </Text>
           </Flex>
         </Flex>
@@ -53,7 +83,7 @@ const WishScreen: React.FC = () => {
           {cards.map((card: PokemonCardImage, index: number) => (
             <Flex key={index}>
               <Image
-                src={`${card.image}/high.png`}
+                src={`${card.image}`}
                 alt={card.name}
                 w="105px"
                 h="auto"

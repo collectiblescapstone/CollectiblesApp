@@ -33,7 +33,7 @@ function FilterCardsContent() {
   const pId = searchParams.get('pId');
   const setName = searchParams.get('setName');
 
-  const { filters } = useFilters(); // ✅ Safe to call here
+  const { filters } = useFilters();
   const [pokemonName, setPokemonName] = useState<string | null>(null);
   const [cards, setCards] = useState<CardData[]>([]);
   const [loading, setLoading] = useState(true);
@@ -91,34 +91,31 @@ function FilterCardsContent() {
   }, [type, pId]);
 
   // Filter cards based on FiltersContext
-  const filteredCards = cards.filter(
-    (card) => {
-      // CATEGORY
-      if (
-        !filters.categories.includes(card.category) &&
-        !(card.category === 'Pokemon' && filters.categories.includes('Pokémon'))
-      )
-        return false;
+  const filteredCards = cards.filter((card) => {
+    // CATEGORY
+    if (
+      !filters.categories.includes(card.category) &&
+      !(card.category === 'Pokemon' && filters.categories.includes('Pokémon'))
+    )
+      return false;
 
-      // TYPE
-      if (card.types?.length) {
-        const hasEnabledType = card.types.some((type) => filters.types[type]);
-        if (!hasEnabledType) return false;
-      }
+    // TYPE
+    if (card.types?.length) {
+      const hasEnabledType = card.types.some((type) => filters.types[type]);
+      if (!hasEnabledType) return false;
+    }
 
-      // GENERATION
-      if (card.dexId?.length) {
-        const matchesGeneration = card.dexId.some((dexNumber) => {
-          const generation = getGeneration(dexNumber);
-          return filters.generations.includes(generation);
-        });
-        if (!matchesGeneration) return false;
-      }
+    // GENERATION
+    if (card.dexId?.length) {
+      const matchesGeneration = card.dexId.some((dexNumber) => {
+        const generation = getGeneration(dexNumber);
+        return filters.generations.includes(generation);
+      });
+      if (!matchesGeneration) return false;
+    }
 
-      return true;
-    },
-    [filters]
-  );
+    return true;
+  });
 
   console.log(filteredCards);
 

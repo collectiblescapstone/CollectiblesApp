@@ -1,15 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { LuFilter, LuFilterX } from 'react-icons/lu';
 import {
   Button,
-  Popover,
-  HStack,
-  Text,
   Checkbox,
+  HStack,
+  IconButton,
+  Popover,
   Separator,
-  Stack,
   SimpleGrid,
+  Stack,
+  Text,
 } from '@chakra-ui/react';
 
 import imgPuller from '@/utils/imgPuller';
@@ -70,9 +72,9 @@ const CardFilter: React.FC = () => {
   return (
     <Popover.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
       <Popover.Trigger asChild>
-        <Button variant="outline" size="sm">
-          Filters
-        </Button>
+        <IconButton aria-label="Filter" size="lg" variant="ghost">
+          {filters === defaultFilters ? <LuFilter /> : <LuFilterX />}
+        </IconButton>
       </Popover.Trigger>
 
       <Popover.Positioner>

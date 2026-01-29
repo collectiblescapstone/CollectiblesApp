@@ -1,7 +1,10 @@
 import type { NextConfig } from 'next';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  ...(process.env.NODE_ENV === 'development' ? {} : { output: 'export' }),
   experimental: {
     optimizePackageImports: ['@chakra-ui/react'],
   },
@@ -15,7 +18,7 @@ const nextConfig: NextConfig = {
     };
 
     return config;
-  }
+  },
 };
 
 export default nextConfig;

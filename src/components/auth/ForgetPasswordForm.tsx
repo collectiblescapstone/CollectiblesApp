@@ -10,8 +10,7 @@ export default function ForgetPasswordForm() {
   const [message, setMessage] = useState<string>('');
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL ??
-    process.env.VERCEL_PROJECT_PRODUCTION_URL;
+    process.env.NEXT_PUBLIC_BASE_URL ?? `https://${process.env.VERCEL_URL}`;
 
   const {
     register,

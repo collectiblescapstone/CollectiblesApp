@@ -130,7 +130,8 @@ export const AuthContextProvider = ({
       setSession(session);
       setLoading(false);
     });
-  }, [pathname, router]);
+    // Empty dependency array to run only once on mount
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Sign out
   const signOut = async () => {

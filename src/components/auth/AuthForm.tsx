@@ -41,8 +41,7 @@ export default function AuthForm() {
         setError('root', {
           type: 'invalid_credentials',
           message:
-            "An account doesn't exist with this email and password combination. \
-          Please create an account or reset your password.",
+            "An account doesn't exist with this email and password combination. Please create an account or reset your password.",
         });
       } else if (res.error === 'Email not confirmed') {
         setError('root', {

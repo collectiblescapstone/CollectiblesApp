@@ -14,13 +14,13 @@ import { Box, Flex, Heading, Text, Icon, Button } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 
-const PersonalProfileScreen = ({ userId }: { userId: string }) => {
+const PersonalProfileScreen = ({ username }: { username: string }) => {
   const router = useRouter();
   const headerContext = useHeader();
   const setProfileID = headerContext?.setProfileID;
 
   // This is a temporary userId for testing purposes.
-  const tempUserId = userId ?? '052d7fdf-d30c-4606-a0dc-621b8f27c57b';
+  const tempUsername = username ?? 'Habibi_George_Bush';
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -32,7 +32,7 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch(`/api/profiles?userId=${tempUserId}`);
+        const response = await fetch(`/api/profiles?username=${tempUsername}`);
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
         }
@@ -49,7 +49,7 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
     };
 
     fetchUserProfile();
-  }, [tempUserId, setProfileID]);
+  }, [tempUsername, setProfileID]);
 
   if (loading) {
     return <Text>Loading...</Text>;
@@ -120,7 +120,7 @@ const PersonalProfileScreen = ({ userId }: { userId: string }) => {
       <Showcase />
       <TradeList />
       <WishList
-        userId={tempUserId}
+        username={tempUsername}
         wishlist={user.wishlist.map((item) => ({
           name: item.card.name,
           image: item.card.image_url,

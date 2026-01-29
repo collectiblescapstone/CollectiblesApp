@@ -5,17 +5,17 @@ export const dynamic = 'force-static';
 
 export const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url);
-  const userId = searchParams.get('userId');
+  const username = searchParams.get('username');
 
-  if (!userId) {
+  if (!username) {
     return NextResponse.json(
-      { error: 'No userID given, fetch terminated' },
+      { error: 'No username given, fetch terminated' },
       { status: 400 }
     );
   }
 
   const user = await prisma.user.findUnique({
-    where: { id: userId },
+    where: { username: username },
     select: {
       id: true,
       username: true,

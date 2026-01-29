@@ -8,18 +8,18 @@ import { FiPlus } from 'react-icons/fi';
 import { PokemonCardImage } from '@/types/personal-profile';
 
 interface WishListProps {
-  userId: string;
+  username: string;
   wishlist: PokemonCardImage[];
 }
 
-const WishList: React.FC<WishListProps> = ({ userId, wishlist }) => {
+const WishList: React.FC<WishListProps> = ({ username, wishlist }) => {
   const router = useRouter();
 
   const display = wishlist.slice(0, 3);
   const viewmore = wishlist.length > 3;
 
   const press = () => {
-    router.push(`/user-profile/wish?userID=${userId}`);
+    router.push(`/user-profile/wish?username=${username}`);
   };
 
   return (

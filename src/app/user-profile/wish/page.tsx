@@ -12,12 +12,12 @@ const WishScreen: React.FC = () => {
   const searchParams = useSearchParams();
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const userId = searchParams.get('userID');
+  const username = searchParams.get('username');
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch(`/api/profiles?userId=${userId}`);
+        const response = await fetch(`/api/profiles?username=${username}`);
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
         }
@@ -31,7 +31,7 @@ const WishScreen: React.FC = () => {
     };
 
     fetchUserProfile();
-  }, [userId]);
+  }, [username]);
 
   const cards = user?.wishlist.map((item) => ({
     name: item.card.name,

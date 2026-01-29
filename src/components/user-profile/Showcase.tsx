@@ -23,7 +23,7 @@ const Showcase: React.FC = () => {
     >
       <Divider />
       <Flex mt={1}>
-        <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={2}>
+        <Text fontSize="md" color="gray.900" fontWeight="semibold" mb={2}>
           Showcase
         </Text>
       </Flex>

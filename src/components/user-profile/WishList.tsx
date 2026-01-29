@@ -33,7 +33,7 @@ const WishList: React.FC<WishListProps> = ({ username, wishlist }) => {
     >
       <Divider />
       <Flex mt={1}>
-        <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={2}>
+        <Text fontSize="md" color="gray.900" fontWeight="semibold" mb={2}>
           Wish List
         </Text>
       </Flex>
@@ -58,7 +58,13 @@ const WishList: React.FC<WishListProps> = ({ username, wishlist }) => {
       </Flex>
       <Flex mt={3}>
         {viewmore && (
-          <Button variant="solid" colorScheme="black" size="sm" onClick={press}>
+          <Button
+            variant="solid"
+            bg="brand.turtiose"
+            color="white"
+            size="sm"
+            onClick={press}
+          >
             <FiPlus /> View more
           </Button>
         )}

@@ -40,7 +40,7 @@ const SocialLinks = ({ instagram, twitter, facebook }: SocialLinksProps) => {
           gap={1}
         >
           <Icon as={social.icon} boxSize={4} />
-          <Text fontSize="xs" color="gray.500" fontWeight="semibold">
+          <Text fontSize="xs" color="gray.600" fontWeight="semibold">
             {social.handle}
           </Text>
         </Flex>

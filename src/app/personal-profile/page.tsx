@@ -78,6 +78,8 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
         size="sm"
         rounded="sm"
         variant="solid"
+        bg="brand.turtiose"
+        color="white"
       >
         <FiEdit3 />
       </Button>

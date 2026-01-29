@@ -1,77 +1,101 @@
 'use client';
 
-import React, { useState } from 'react';
-// import Image from 'next/image';
-
+import React, { useState, useEffect } from 'react';
+import { LuFilter, LuFilterX } from 'react-icons/lu';
 import {
   Button,
-  Popover,
-  HStack,
-  Text,
   Checkbox,
+  HStack,
+  IconButton,
+  Popover,
   Separator,
-  Stack,
   SimpleGrid,
+  Stack,
+  Text,
 } from '@chakra-ui/react';
 
 import imgPuller from '@/utils/imgPuller';
-
-// import { useFilters } from '@/hooks/useFilters';
+import { useFilters, defaultFilters, Filters } from '@/hooks/useFilters';
 
 const CardFilter: React.FC = () => {
-  const GENERATION: number[] = Array.from({ length: 9 }, (_, i) => i + 1);
+  const { filters, setFilters } = useFilters();
 
-  const TYPE: string[] = [
-    'Grass',
-    'Fire',
-    'Water',
-    'Lightning',
-    'Psychic',
-    'Fighting',
-    'Darkness',
-    'Metal',
-    'Fairy',
-    'Dragon',
-    'Colorless',
-  ];
+  // Popover control
+  const [open, setOpen] = useState(false);
 
-  const CATEGORY: string[] = ['Pokémon', 'Item', 'Trainer', 'Energy'];
+  // Draft state (local changes before confirm)
+  const [draft, setDraft] = useState<Filters>(filters);
 
-  const [checkedGenerations, setCheckedGenerations] =
-    useState<number[]>(GENERATION);
-  const [checkedTypes, setCheckedTypes] = useState<string[]>(TYPE);
+  // Sync draft from global filters when popover opens
+  useEffect(() => {
+    if (open) {
+      setDraft(filters);
+    }
+  }, [open, filters]);
 
-  const [checkedCategories, setCheckedCategories] =
-    useState<string[]>(CATEGORY);
+  // Toggle generation (array)
+  const toggleGeneration = (gen: number, checked: boolean) => {
+    setDraft((prev) => ({
+      ...prev,
+      generations: checked
+        ? [...prev.generations, gen]
+        : prev.generations.filter((g) => g !== gen),
+    }));
+  };
+
+  // Toggle type (boolean map)
+  const toggleType = (type: string, checked: boolean) => {
+    setDraft((prev) => ({
+      ...prev,
+      types: {
+        ...prev.types,
+        [type]: checked,
+      },
+    }));
+  };
+
+  // Toggle category (array)
+  const toggleCategory = (category: string, checked: boolean) => {
+    setDraft((prev) => ({
+      ...prev,
+      categories: checked
+        ? [...prev.categories, category]
+        : prev.categories.filter((c) => c !== category),
+    }));
+  };
+
+  // Reset draft to default
+  const resetDraft = () => {
+    setDraft(defaultFilters);
+  };
 
   return (
-    <Popover.Root>
+    <Popover.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
       <Popover.Trigger asChild>
-        <Button variant="outline" size="sm">
-          Filters
-        </Button>
+        <IconButton aria-label="Filter" size="lg" variant="ghost">
+          {filters === defaultFilters ? <LuFilter /> : <LuFilterX />}
+        </IconButton>
       </Popover.Trigger>
+
       <Popover.Positioner>
         <Popover.Content>
           <Popover.Header textAlign="center" fontWeight="bold" fontSize="lg">
             Filters
           </Popover.Header>
+
           <Popover.Body>
-            <Stack>
+            <Stack gap={4}>
+              {/* Generation */}
               <Text textAlign="center" fontWeight="bold">
                 Generation
               </Text>
               <HStack justify="center" gap={4} flexWrap="wrap">
-                {GENERATION.map((gen) => (
+                {defaultFilters.generations.map((gen) => (
                   <Checkbox.Root
                     key={gen}
-                    checked={checkedGenerations.includes(gen)}
-                    onCheckedChange={(details) =>
-                      setCheckedGenerations((prev) =>
-                        details.checked
-                          ? [...prev, gen]
-                          : prev.filter((g) => g !== gen)
-                      )
+                    checked={draft.generations.includes(gen)}
+                    onCheckedChange={(d) =>
+                      toggleGeneration(gen, d.checked === true)
                     }
                   >
                     <Checkbox.HiddenInput />
@@ -80,54 +104,50 @@ const CardFilter: React.FC = () => {
                   </Checkbox.Root>
                 ))}
               </HStack>
+
               <Separator />
+
+              {/* Types */}
               <Text textAlign="center" fontWeight="bold">
                 Types
               </Text>
               <HStack justify="center" gap={4} flexWrap="wrap">
-                {TYPE.map((type) => (
+                {Object.keys(defaultFilters.types).map((type) => (
                   <Checkbox.Root
                     key={type}
-                    checked={checkedTypes.includes(type)}
-                    onCheckedChange={(details) =>
-                      setCheckedTypes((prev) =>
-                        details.checked
-                          ? [...prev, type]
-                          : prev.filter((t) => t !== type)
-                      )
+                    checked={draft.types[type]}
+                    onCheckedChange={(d) =>
+                      toggleType(type, d.checked === true)
                     }
                   >
                     <Checkbox.HiddenInput />
                     <Checkbox.Control />
                     <Checkbox.Label>
-                      <HStack gap={2}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={imgPuller('PokemonTypes', type.toLowerCase())}
-                          alt={type}
-                          width={24}
-                          height={24}
-                        />
-                      </HStack>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={imgPuller('PokemonTypes', type.toLowerCase())}
+                        alt={type}
+                        width={24}
+                        height={24}
+                      />
                     </Checkbox.Label>
                   </Checkbox.Root>
                 ))}
               </HStack>
+
               <Separator />
+
+              {/* Categories */}
               <Text textAlign="center" fontWeight="bold">
                 Category
               </Text>
-              <SimpleGrid columns={2} gap={4} justifyItems="stretch">
-                {CATEGORY.map((category) => (
+              <SimpleGrid columns={2} gap={4}>
+                {defaultFilters.categories.map((category) => (
                   <Checkbox.Root
                     key={category}
-                    checked={checkedCategories.includes(category)}
-                    onCheckedChange={(details) =>
-                      setCheckedCategories((prev) =>
-                        details.checked
-                          ? [...prev, category]
-                          : prev.filter((c) => c !== category)
-                      )
+                    checked={draft.categories.includes(category)}
+                    onCheckedChange={(d) =>
+                      toggleCategory(category, d.checked === true)
                     }
                   >
                     <Checkbox.HiddenInput />
@@ -136,23 +156,37 @@ const CardFilter: React.FC = () => {
                   </Checkbox.Root>
                 ))}
               </SimpleGrid>
+
               <Separator />
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => {
-                  setCheckedGenerations(GENERATION);
-                  setCheckedTypes(TYPE);
-                  setCheckedCategories(CATEGORY);
-                }}
-              >
+
+              {/* Reset draft */}
+              <Button variant="outline" size="sm" onClick={resetDraft}>
                 Reset
               </Button>
-              <HStack justify="center" width="100%" gap={1}>
-                <Button flex={1} variant="outline" size="sm">
+
+              {/* Actions */}
+              <HStack width="100%" gap={1}>
+                <Button
+                  flex={1}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setDraft(filters); // revert changes
+                    setOpen(false); // close popover
+                  }}
+                >
                   Cancel
                 </Button>
-                <Button flex={1} variant="outline" size="sm">
+
+                <Button
+                  flex={1}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setFilters(draft); // save changes globally
+                    setOpen(false); // close popover
+                  }}
+                >
                   Confirm
                 </Button>
               </HStack>

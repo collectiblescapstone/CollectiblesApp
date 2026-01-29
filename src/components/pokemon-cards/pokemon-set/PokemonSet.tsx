@@ -18,6 +18,7 @@ interface PokemonSetProps {
   label: string;
   image: string;
   setID: string;
+  setName: string;
   masterSet: number;
   grandmasterSet: number;
 }
@@ -26,6 +27,7 @@ export default function PokemonSet({
   label,
   image,
   setID,
+  setName,
   masterSet,
   grandmasterSet,
 }: PokemonSetProps) {
@@ -34,15 +36,15 @@ export default function PokemonSet({
       <Link
         href={{
           pathname: '/filter-cards',
-          query: { type: 'set', name: setID },
+          query: { type: 'set', setId: setID, setName: setName },
         }}
         style={{ textDecoration: 'none' }}
       >
         <Card.Root
           direction="column"
           overflow="hidden"
-          w="100%"
-          h="400px"
+          w={{ base: '100%', md: '300px' }}
+          h="200px"
           bg="white"
           borderRadius="lg"
           boxShadow="md"
@@ -57,10 +59,12 @@ export default function PokemonSet({
           <Flex
             align="center"
             justify="center"
-            h="60%"
+            h="50%"
             bg="gray.50"
             borderBottom="1px solid"
             borderColor="gray.200"
+            width="100%"
+            padding={2}
           >
             <Image
               src={image}
@@ -68,17 +72,18 @@ export default function PokemonSet({
               objectFit="contain"
               maxH="100%"
               maxW="90%"
-              p={4}
+              // p={4}
               style={{
                 imageRendering: 'pixelated',
                 transform: 'translateZ(0)',
               }}
+              align="center"
             />
           </Flex>
 
           {/* Text + Progress bars */}
           <Card.Body
-            h="40%"
+            h="30%"
             display="flex"
             flexDirection="column"
             justifyContent="center"

@@ -75,6 +75,10 @@ export default function ForgetPasswordForm() {
               {message}
             </Field.HelperText>
           </Field.Root>
+
+          <Field.ErrorText>
+            {errors.root && errors.root.message}
+          </Field.ErrorText>
         </Field.Root>
 
         <Button

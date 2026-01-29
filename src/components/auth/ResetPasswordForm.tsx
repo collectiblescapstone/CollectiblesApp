@@ -95,7 +95,7 @@ export default function ResetPasswordForm() {
         <Field.Root invalid={!!errors.root}>
           <Field.Root invalid={!!errors.password} required>
             <Field.Label>
-              Password <Field.RequiredIndicator />
+              New Password <Field.RequiredIndicator />
             </Field.Label>
             <PasswordInput
               {...register('password', { required: 'Password is required' })}
@@ -111,7 +111,7 @@ export default function ResetPasswordForm() {
 
           <Field.Root invalid={!!errors.confirmPassword} required>
             <Field.Label>
-              Retype Password <Field.RequiredIndicator />
+              Retype New Password <Field.RequiredIndicator />
             </Field.Label>
             <PasswordInput
               {...register('confirmPassword', {

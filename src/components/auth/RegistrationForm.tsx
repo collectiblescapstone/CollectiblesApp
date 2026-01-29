@@ -84,7 +84,7 @@ const RegistrationForm = () => {
         setError('root', {
           type: 'user_already_exists',
           message:
-            'An account with this email already exists. Please signing in or reset your password.',
+            'An account with this email already exists. Please sign in or reset your password.',
         });
       } else if (res.error.code === 'weak_password') {
         setError('root', {

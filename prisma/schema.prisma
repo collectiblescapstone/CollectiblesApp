@@ -21,6 +21,12 @@ model User {
   id         String            @id @db.Uuid
   username   String?           @unique
   email      String            @unique
+  bio        String?
+  location   String?
+  instagram  String?
+  twitter    String?
+  facebook   String?
+  visibility String?           @default("Public")
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 }

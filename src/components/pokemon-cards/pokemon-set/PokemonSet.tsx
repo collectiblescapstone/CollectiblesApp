@@ -43,7 +43,7 @@ export default function PokemonSet({
         <Card.Root
           direction="column"
           overflow="hidden"
-          w="full"
+          w={{ base: '100%', md: '300px' }}
           h="200px"
           bg="white"
           borderRadius="lg"
@@ -63,7 +63,8 @@ export default function PokemonSet({
             bg="gray.50"
             borderBottom="1px solid"
             borderColor="gray.200"
-            width="full"
+            width="100%"
+            padding={2}
           >
             <Image
               src={image}
@@ -71,11 +72,12 @@ export default function PokemonSet({
               objectFit="contain"
               maxH="100%"
               maxW="90%"
-              p={4}
+              // p={4}
               style={{
                 imageRendering: 'pixelated',
                 transform: 'translateZ(0)',
               }}
+              align="center"
             />
           </Flex>
 

@@ -24,7 +24,7 @@ export const getPokemonName = async (id: number): Promise<string> => {
   return pokedexData[id - 1];
 };
 
-const POKEMONGEN = [151, 251, 386, 493, 649, 721, 809, 905, 1025];
+export const POKEMONGEN = [151, 251, 386, 493, 649, 721, 809, 905, 1025];
 
 export const getGeneration = (dexNumber: number) => {
   for (let i = 0; i < POKEMONGEN.length; i++) {

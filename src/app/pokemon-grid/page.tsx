@@ -14,7 +14,6 @@ import {
 // Child Components
 import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid';
 import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
-// import CardFilter from '@/components/card-filter/CardFilter';
 
 // Hooks
 import { FiltersProvider } from '@/hooks/useFilters';
@@ -22,7 +21,7 @@ import { FiltersProvider } from '@/hooks/useFilters';
 // Types
 import { PokemonSetType } from '@/types/pokemon-grid';
 
-export default function PokemonGridPage() {
+const PokemonGridPage: React.FC = () => {
   const [selected, setSelected] = useState('set');
   const [selectedEra, setSelectedEra] = useState('sv');
   const [groupedSets, setGroupedSets] = useState<
@@ -333,9 +332,12 @@ export default function PokemonGridPage() {
             mt={4}
           >
             {filteredPokemon.map((id) => (
-              <GridItem key={id}>
-                <PokemonPolaroid id={id} masterSet={100} grandmasterSet={100} />
-              </GridItem>
+              <PokemonPolaroid
+                key={id}
+                id={id}
+                masterSet={100}
+                grandmasterSet={100}
+              />
             ))}
           </Grid>
         )}
@@ -366,4 +368,6 @@ export default function PokemonGridPage() {
       </Box>
     </FiltersProvider>
   );
-}
+};
+
+export default PokemonGridPage;

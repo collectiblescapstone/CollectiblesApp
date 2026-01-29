@@ -2,7 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Box, Grid, Flex, Heading, Spinner, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  HStack,
+  Heading,
+  IconButton,
+  Spinner,
+  Text,
+} from '@chakra-ui/react';
+import { LuChevronUp, LuChevronDown } from 'react-icons/lu';
 
 // Child Components
 import PokemonCardMini from '@/components/pokemon-cards/pokemon-card-mini/PokemonCardMini';
@@ -32,6 +41,7 @@ const FilterCardsContent: React.FC = () => {
   const [pokemonName, setPokemonName] = useState<string | null>(null);
   const [cards, setCards] = useState<CardData[]>([]);
   const [loading, setLoading] = useState(true);
+  const [ascending, setAscending] = useState(true);
 
   // Fetch cards based on type & params
   useEffect(() => {
@@ -85,6 +95,12 @@ const FilterCardsContent: React.FC = () => {
     }
   }, [type, pId]);
 
+  // Reverse card order
+  const toggleSortOrder = () => {
+    setAscending((prev) => !prev);
+    setCards((prevCards) => [...prevCards].reverse());
+  };
+
   // Filter cards based on FiltersContext
   const filteredCards = cards.filter((card) => {
     // CATEGORY
@@ -120,30 +136,30 @@ const FilterCardsContent: React.FC = () => {
     );
 
   return (
-    <Box p={6}>
-      <Flex mb={6} justify="space-between" align="center">
+    <Box>
+      <Flex mb={6} justify="space-between" align="center" pl={5} pr={5} pt={5}>
         <Heading>
           {type === 'set'
             ? `${setName} Card Set`
             : `${type === 'set' ? setName : pokemonName} Cards`}
         </Heading>
-        <CardFilter />
+        <Flex gap={1} align="right">
+          <IconButton
+            aria-label="Toggle sort order"
+            size="lg"
+            variant="ghost"
+            onClick={toggleSortOrder}
+          >
+            {ascending ? <LuChevronUp /> : <LuChevronDown />}
+          </IconButton>
+          <CardFilter />
+        </Flex>
       </Flex>
 
       {filteredCards.length === 0 ? (
         <Text>No cards match the selected filters.</Text>
       ) : (
-        <Grid
-          templateColumns={{
-            base: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-            lg: 'repeat(4, 1fr)',
-            xl: 'repeat(6, 1fr)',
-          }}
-          gap="2vw"
-          justifyItems="center"
-          mt={4}
-        >
+        <HStack justify="center" gap={4} flexWrap="wrap" mb={4}>
           {filteredCards.map((card, index) => (
             <PokemonCardMini
               key={index}
@@ -155,7 +171,7 @@ const FilterCardsContent: React.FC = () => {
               image={card.image_url}
             />
           ))}
-        </Grid>
+        </HStack>
       )}
     </Box>
   );

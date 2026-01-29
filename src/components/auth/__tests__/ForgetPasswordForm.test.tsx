@@ -13,6 +13,9 @@ jest.mock('../../../lib/supabase', () => ({
   },
 }));
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ?? `https://${process.env.VERCEL_URL}`;
+
 describe('ForgetPasswordForm', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -45,7 +48,7 @@ describe('ForgetPasswordForm', () => {
       expect(supabase.auth.resetPasswordForEmail).toHaveBeenCalledWith(
         'test@example.com',
         {
-          redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password`,
+          redirectTo: `${baseUrl}/reset-password`,
         }
       );
       expect(
@@ -68,7 +71,7 @@ describe('ForgetPasswordForm', () => {
       expect(supabase.auth.resetPasswordForEmail).toHaveBeenCalledWith(
         'test@example.com',
         {
-          redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password`,
+          redirectTo: `${baseUrl}/reset-password`,
         }
       );
       expect(

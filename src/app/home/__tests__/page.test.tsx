@@ -8,7 +8,6 @@ import {
   ButtonProps,
   FlexProps,
   HeadingProps,
-  SpinnerProps,
 } from '@chakra-ui/react';
 
 jest.mock('@chakra-ui/react', () => {
@@ -20,9 +19,7 @@ jest.mock('@chakra-ui/react', () => {
       <button onClick={props.onClick}>{props.children}</button>
     ),
     Box: (props: BoxProps) => <div>{props.children}</div>,
-    Spinner: (props: SpinnerProps) => (
-      <div data-testid="loading-spinner">Loading...</div>
-    ),
+    Spinner: () => <div data-testid="loading-spinner">Loading...</div>,
   };
 });
 

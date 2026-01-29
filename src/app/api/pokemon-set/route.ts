@@ -11,7 +11,7 @@ export async function GET() {
   } catch (err) {
     console.error('Fetch error:', err);
     return NextResponse.json(
-      { error: 'Failed to fetch specified cards' },
+      { error: 'Failed to fetch sets' },
       { status: 500 }
     );
   }

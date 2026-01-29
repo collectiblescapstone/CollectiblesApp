@@ -33,7 +33,6 @@ const Header = () => {
       minHeight="8dvh"
       flexDir="row"
       alignItems="center"
-      justifyContent={isMainPage ? 'center' : 'space-between'}
       px={2}
     >
       {!isMainPage && (
@@ -48,7 +47,14 @@ const Header = () => {
           }
         />
       )}
-      <Heading size="lg" fontFamily="var(--font-sans)" color="brand.turtiose">
+      <Heading
+        size="lg"
+        fontFamily="var(--font-sans)"
+        color="brand.turtiose"
+        position="absolute"
+        left="50%"
+        transform="translateX(-50%)"
+      >
         {pageHeading}
       </Heading>
     </Flex>

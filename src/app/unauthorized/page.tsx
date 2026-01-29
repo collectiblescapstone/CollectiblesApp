@@ -4,7 +4,7 @@ import { Flex, VStack, Heading, Text, Button } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const Unauthorized: React.FC = () => {
+const UnauthorizedPage: React.FC = () => {
   const router = useRouter();
 
   const handleLoginRedirect = () => {
@@ -31,7 +31,6 @@ const Unauthorized: React.FC = () => {
           px={6}
           py={3}
           fontWeight="semibold"
-          _hover={{ bg: 'blue.700' }}
         >
           Go to Login
         </Button>
@@ -40,4 +39,4 @@ const Unauthorized: React.FC = () => {
   );
 };
 
-export default Unauthorized;
+export default UnauthorizedPage;

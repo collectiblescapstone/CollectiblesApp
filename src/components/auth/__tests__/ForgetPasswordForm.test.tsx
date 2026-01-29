@@ -44,7 +44,9 @@ describe('ForgetPasswordForm', () => {
     await waitFor(() => {
       expect(supabase.auth.resetPasswordForEmail).toHaveBeenCalledWith(
         'test@example.com',
-        { redirectTo: 'http://localhost:3000/reset-password' }
+        {
+          redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password`,
+        }
       );
       expect(
         screen.getByText(/if an account with that email exists/i)
@@ -65,7 +67,9 @@ describe('ForgetPasswordForm', () => {
     await waitFor(() => {
       expect(supabase.auth.resetPasswordForEmail).toHaveBeenCalledWith(
         'test@example.com',
-        { redirectTo: 'http://localhost:3000/reset-password' }
+        {
+          redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password`,
+        }
       );
       expect(
         screen.getByText(/There was an error sending the password reset email/i)

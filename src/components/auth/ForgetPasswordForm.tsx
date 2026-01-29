@@ -9,6 +9,10 @@ export default function ForgetPasswordForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL ??
+    process.env.VERCEL_PROJECT_PRODUCTION_URL;
+
   const {
     register,
     handleSubmit,
@@ -25,7 +29,7 @@ export default function ForgetPasswordForm() {
 
     // Supabase Auth reset password
     const res = await supabase.auth.resetPasswordForEmail(values.email, {
-      redirectTo: `http://localhost:3000/reset-password`,
+      redirectTo: `${baseUrl}/reset-password`,
     });
 
     if (res.error) {

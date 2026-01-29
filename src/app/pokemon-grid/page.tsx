@@ -39,27 +39,6 @@ const PokemonGridPage: React.FC = () => {
     ],
   });
 
-  // const {
-  //   data: pokemonCards,
-  //   error: cardsError,
-  //   isLoading: cardsLoading,
-  // } = useSWR<Card[]>('/api/pokemon-card', fetcher);
-
-  // if (cardsError) console.error('Error fetching cards:', cardsError);
-
-  useEffect(() => {
-    const fetchSpecifiedCards = async () => {
-      try {
-        const specifiedCards = await fetch('/api/pokemon-card');
-        console.log('Pokémon Cards Data:', specifiedCards);
-      } catch (err) {
-        console.error('Fetch error:', err);
-      }
-    };
-    // console.log('Pokémon Cards Data:', fetchSpecifiedCards);
-    fetchSpecifiedCards();
-  }, []);
-
   const fetchPokemonCards = async () => {
     try {
       const res = await fetch('/api/pokemon-card');
@@ -71,7 +50,6 @@ const PokemonGridPage: React.FC = () => {
     }
   };
 
-  console.log('Fetching Pokémon cards...');
   useEffect(() => {
     fetchPokemonCards();
   }, []);

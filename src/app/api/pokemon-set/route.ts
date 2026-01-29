@@ -6,17 +6,7 @@ export const dynamic = 'force-static';
 
 export async function GET() {
   try {
-    // Fetch all cards (or add filters here)
-
     const specifiedSets: Set[] = await prisma.set.findMany({});
-    // const specifiedCards: Card[] = await prisma.card.findMany({
-    //   where: {
-    //     name: {
-    //       contains: 'Rowlet',
-    //     },
-    //   },
-    // });
-
     return NextResponse.json(specifiedSets);
   } catch (err) {
     console.error('Fetch error:', err);

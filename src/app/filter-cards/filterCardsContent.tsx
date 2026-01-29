@@ -53,28 +53,35 @@ const FilterCardsContent: React.FC = () => {
 
       setLoading(true);
       try {
-        let url = '';
-        if (type === 'set') {
-          url = `/api/pokemon-card?type=set&setId=${setId}`;
-        } else if (type === 'pokemon') {
-          url = `/api/pokemon-card?type=pokemon&pId=${pId}`;
-        }
+        const response = await fetch('/api/pokemon-card');
+        if (!response.ok) throw new Error(`Failed to fetch /api/pokemon-card`);
+        const cards: CardData[] = await response.json();
 
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Failed to fetch ${url}`);
+        const filteredCards = cards.filter((card) => {
+          if (type === 'set') {
+            return card.setId === setId;
+          }
 
-        const data = await response.json();
+          if (type === 'pokemon') {
+            return (
+              Array.isArray(card.dexId) && card.dexId.includes(Number(pId))
+            );
+          }
 
+          return true;
+        });
         // Clean up the id (remove prefix before hyphen)
-        data.forEach((card: CardData) => {
+        filteredCards.forEach((card: CardData) => {
           const idParts = card.id.split('-');
           card.id = idParts[idParts.length - 1];
         });
 
         // Sort by numeric id
-        data.sort((a: CardData, b: CardData) => Number(a.id) - Number(b.id));
+        filteredCards.sort(
+          (a: CardData, b: CardData) => Number(a.id) - Number(b.id)
+        );
 
-        setCards(Array.isArray(data) ? data : []);
+        setCards(Array.isArray(filteredCards) ? filteredCards : []);
       } catch (error) {
         console.error('Error loading data:', error);
         setCards([]);

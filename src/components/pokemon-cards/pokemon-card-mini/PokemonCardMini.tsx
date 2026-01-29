@@ -19,7 +19,6 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
   // illustrator,
   // rarity,
 }: PokemonCardMiniProps) => {
-  console.log(image);
   return (
     <Link
       href={{

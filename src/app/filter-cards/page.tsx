@@ -5,10 +5,12 @@ import FilterCardsContent from './filterCardsContent';
 // Hooks
 import { FiltersProvider } from '@/hooks/useFilters';
 
-export default function FilterCardsPage() {
+const FilterCardsPage: React.FC = () => {
   return (
     <FiltersProvider>
       <FilterCardsContent />
     </FiltersProvider>
   );
-}
+};
+
+export default FilterCardsPage;

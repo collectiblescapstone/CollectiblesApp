@@ -9,7 +9,7 @@ import PokemonCardMini from '@/components/pokemon-cards/pokemon-card-mini/Pokemo
 import CardFilter from '@/components/card-filter/CardFilter';
 
 // Hooks
-import { FiltersProvider, useFilters } from '@/hooks/useFilters';
+import { useFilters } from '@/hooks/useFilters';
 
 // Utils
 import { getPokemonName, getGeneration } from '@/utils/pokedex';
@@ -17,23 +17,18 @@ import { getPokemonName, getGeneration } from '@/utils/pokedex';
 // Types
 import type { CardData } from '@/types/pokemon-card';
 
-export default function FilterCardsPage() {
-  // Page-level provider wraps the content
-  return (
-    <FiltersProvider>
-      <FilterCardsContent />
-    </FiltersProvider>
-  );
-}
-
-function FilterCardsContent() {
+const FilterCardsContent: React.FC = () => {
+  // Search Params
   const searchParams = useSearchParams();
   const type = searchParams.get('type');
   const setId = searchParams.get('setId');
   const pId = searchParams.get('pId');
   const setName = searchParams.get('setName');
 
+  // Filters from context
   const { filters } = useFilters();
+
+  // Local States
   const [pokemonName, setPokemonName] = useState<string | null>(null);
   const [cards, setCards] = useState<CardData[]>([]);
   const [loading, setLoading] = useState(true);
@@ -117,8 +112,6 @@ function FilterCardsContent() {
     return true;
   });
 
-  console.log(filteredCards);
-
   if (loading)
     return (
       <Box textAlign="center" mt={10}>
@@ -166,4 +159,6 @@ function FilterCardsContent() {
       )}
     </Box>
   );
-}
+};
+
+export default FilterCardsContent;

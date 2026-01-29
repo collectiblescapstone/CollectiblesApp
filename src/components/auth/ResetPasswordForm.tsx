@@ -4,7 +4,7 @@ import { PasswordInput } from '@/components/ui/password-input';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ResetPasswordFormValues } from '@/types/auth';
-import { supabase } from '@/utils/supabase';
+import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthProvider';
 import { useRouter } from 'next/navigation';
 

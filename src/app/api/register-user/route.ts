@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma';
-import { supabaseAdmin } from '@/utils/supabaseAdmin';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
 export const POST = async (request: Request) => {
   const { id, email, username, firstName, lastName } = await request.json();

@@ -1,5 +1,5 @@
 'use client';
-import { supabase } from '@/utils/supabase';
+import { supabase } from '@/lib/supabase';
 import type {
   User,
   Session,

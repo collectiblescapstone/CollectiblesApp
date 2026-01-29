@@ -19,7 +19,7 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
   const headerContext = useHeader();
   const setProfileID = headerContext?.setProfileID;
 
-  // This is a temporary userId for testing purposes.
+  // This is a temporary username for testing purposes.
   const tempUsername = username ?? 'Habibi_George_Bush';
 
   const [user, setUser] = useState<UserProfile | null>(null);

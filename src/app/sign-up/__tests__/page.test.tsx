@@ -6,9 +6,7 @@ import { FlexProps } from '@chakra-ui/react';
 
 jest.mock('../../../components/auth/RegistrationForm', () => ({
   __esModule: true,
-  default: ({ type }: { type: string }) => (
-    <div data-testid="registration-form">{type}</div>
-  ),
+  default: () => <div data-testid="registration-form" />,
 }));
 
 jest.mock('@chakra-ui/react', () => {

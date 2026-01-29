@@ -65,7 +65,9 @@ export default function AuthForm() {
         <Heading size="5xl" pb={12}>
           Kollec {/* LOGO PLACEHOLDER */}
         </Heading>
+
         <Heading size="lg">Sign In to your account</Heading>
+
         <Field.Root invalid={!!errors.root}>
           <Field.Root invalid={!!errors.email} required>
             <Field.Label>
@@ -82,6 +84,7 @@ export default function AuthForm() {
               <Field.ErrorText>{errors.email.message}</Field.ErrorText>
             )}
           </Field.Root>
+
           <Field.Root invalid={!!errors.password} required>
             <Field.Label>
               Password <Field.RequiredIndicator />
@@ -104,10 +107,12 @@ export default function AuthForm() {
               Forgot your password?
             </Field.HelperText>
           </Field.Root>
+
           <Field.ErrorText textAlign="center">
             {errors.root && errors.root.message}
           </Field.ErrorText>
         </Field.Root>
+
         <Button
           backgroundColor="brand.marigold"
           color="brand.turtoise"
@@ -116,7 +121,9 @@ export default function AuthForm() {
         >
           Sign In
         </Button>
+
         <Text>OR</Text>
+
         <Button
           backgroundColor="brand.marigold"
           color="brand.turtoise"
@@ -125,6 +132,7 @@ export default function AuthForm() {
         >
           Sign In With Google
         </Button>
+
         <Button
           backgroundColor="brand.marigold"
           color="brand.turtoise"
@@ -133,7 +141,9 @@ export default function AuthForm() {
         >
           Sign In With Apple
         </Button>
+
         <Text>OR</Text>
+
         <Button
           backgroundColor="brand.marigold"
           color="brand.turtoise"

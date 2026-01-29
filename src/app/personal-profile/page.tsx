@@ -10,7 +10,15 @@ import TradeList from '@/components/user-profile/TradeList';
 import WishList from '@/components/user-profile/WishList';
 import { UserProfile } from '@/types/personal-profile';
 
-import { Box, Flex, Heading, Text, Icon, Button } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Icon,
+  Button,
+  Spinner,
+} from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 
@@ -52,7 +60,12 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
   }, [tempUsername, setProfileID]);
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
+        <Spinner color="black" />
+        <Text>Loading...</Text>
+      </Flex>
+    );
   }
 
   if (!user) {
@@ -73,17 +86,16 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
         onClick={editpress}
         position="relative"
         top={3}
-        left={2}
         zIndex={1}
-        size="sm"
+        size="lg"
         rounded="sm"
         variant="solid"
-        bg="brand.turtiose"
-        color="white"
+        bg="white"
+        color="black"
       >
         <FiEdit3 />
       </Button>
-      <Flex flexDirection="column" alignItems="center" gap={2}>
+      <Flex flexDirection="column" alignItems="center" gap={2} px={4}>
         <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
           <Avatar.Fallback> SA </Avatar.Fallback>
@@ -111,7 +123,7 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
         >
           {user.bio}
         </Text>
-        <Flex mt={1}>
+        <Flex mt={1} px={4}>
           <SocialLinks
             instagram={user.instagram}
             twitter={user.twitter}

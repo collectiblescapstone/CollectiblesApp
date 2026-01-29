@@ -2,14 +2,22 @@
 
 import React from 'react';
 import Divider from '@/components/user-profile/Divider';
-import { Flex, Image, Text } from '@chakra-ui/react';
+import { Flex, Image, Text, Spinner, SimpleGrid } from '@chakra-ui/react';
 import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
 
 const Showcase: React.FC = () => {
   const { cards, loading } = useRandomCards('ex5', 3);
 
-  if (loading) return <Text>Loading cards...</Text>;
+  if (loading) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
+        <Spinner color="black" />
+        <Text>Loading...</Text>
+      </Flex>
+    );
+  }
+
   if (cards.length === 0) return null;
 
   return (
@@ -27,13 +35,7 @@ const Showcase: React.FC = () => {
           Showcase
         </Text>
       </Flex>
-      <Flex
-        flexDirection="row"
-        justifyContent="center"
-        alignItems="center"
-        wrap="wrap"
-        gap={5}
-      >
+      <SimpleGrid columns={{ base: 3 }} w="100%" gap={10}>
         {cards.map((card: PokemonCardImage, index: number) => (
           <Flex key={index}>
             <Image
@@ -45,7 +47,7 @@ const Showcase: React.FC = () => {
             />
           </Flex>
         ))}
-      </Flex>
+      </SimpleGrid>
     </Flex>
   );
 };

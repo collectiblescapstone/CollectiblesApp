@@ -3,7 +3,14 @@
 import React from 'react';
 import Divider from '@/components/user-profile/Divider';
 import { useRouter } from 'next/navigation';
-import { Button, Flex, Image, Text } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Image,
+  Text,
+  Spinner,
+  SimpleGrid,
+} from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
 import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
@@ -17,7 +24,15 @@ const TradeList: React.FC = () => {
   const router = useRouter();
 
   const { cards, loading } = useRandomCards('pl4', 4);
-  if (loading) return <Text>Loading cards...</Text>;
+
+  if (loading) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
+        <Spinner color="black" />
+        <Text>Loading...</Text>
+      </Flex>
+    );
+  }
 
   const display = cards.slice(0, 2);
   const viewmore = cards.length > 2;
@@ -44,13 +59,7 @@ const TradeList: React.FC = () => {
           Trade List
         </Text>
       </Flex>
-      <Flex
-        flexDirection="row"
-        justifyContent="center"
-        alignItems="center"
-        wrap="wrap"
-        gap={5}
-      >
+      <SimpleGrid columns={{ base: 3 }} w="100%" gap={10}>
         {display.map((card: PokemonCardImage, index: number) => (
           <Flex key={index}>
             <Image
@@ -69,7 +78,7 @@ const TradeList: React.FC = () => {
           h="auto"
           borderRadius="none"
         />
-      </Flex>
+      </SimpleGrid>
       <Flex mt={3}>
         {viewmore && (
           <Button

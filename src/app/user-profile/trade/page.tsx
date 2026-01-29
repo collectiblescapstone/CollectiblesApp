@@ -2,15 +2,31 @@
 
 import React from 'react';
 
-import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Spinner,
+  SimpleGrid,
+} from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
 
 const TradeScreen: React.FC = () => {
   const { cards, loading } = useRandomCards('sv06', 7);
-  if (loading) return <Text>Loading cards...</Text>;
   const cardsnum = cards.length;
+
+  if (loading) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
+        <Spinner color="black" />
+        <Text>Loading...</Text>
+      </Flex>
+    );
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black">
@@ -41,15 +57,9 @@ const TradeScreen: React.FC = () => {
           </Flex>
         </Flex>
         <Flex justifyContent="center" alignItems="center" mt={-4}>
-          <Box height="2px" width="90%" bg="gray.500" mt={5} />
+          <Box height="2px" width="90%" bg="gray.600" mt={5} />
         </Flex>
-        <Flex
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          wrap="wrap"
-          gap={7}
-        >
+        <SimpleGrid columns={{ base: 3 }} w="100%" gap={10} px={6}>
           {cards.map((card: PokemonCardImage, index: number) => (
             <Flex key={index}>
               <Image
@@ -61,7 +71,7 @@ const TradeScreen: React.FC = () => {
               />
             </Flex>
           ))}
-        </Flex>
+        </SimpleGrid>
       </Flex>
     </Box>
   );

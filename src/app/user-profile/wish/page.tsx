@@ -2,7 +2,15 @@
 
 import React, { useEffect, useState } from 'react';
 
-import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Spinner,
+  SimpleGrid,
+} from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { PokemonCardImage } from '@/types/personal-profile';
 import { useSearchParams } from 'next/navigation';
@@ -39,7 +47,12 @@ const WishScreen: React.FC = () => {
   })) as PokemonCardImage[];
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
+        <Spinner color="black" />
+        <Text>Loading...</Text>
+      </Flex>
+    );
   }
 
   return (
@@ -71,15 +84,9 @@ const WishScreen: React.FC = () => {
           </Flex>
         </Flex>
         <Flex justifyContent="center" alignItems="center" mt={-4}>
-          <Box height="2px" width="90%" bg="gray.500" mt={5} />
+          <Box height="2px" width="90%" bg="gray.600" mt={5} />
         </Flex>
-        <Flex
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          wrap="wrap"
-          gap={7}
-        >
+        <SimpleGrid columns={{ base: 3 }} w="100%" gap={10} px={6}>
           {cards.map((card: PokemonCardImage, index: number) => (
             <Flex key={index}>
               <Image
@@ -91,7 +98,7 @@ const WishScreen: React.FC = () => {
               />
             </Flex>
           ))}
-        </Flex>
+        </SimpleGrid>
       </Flex>
     </Box>
   );

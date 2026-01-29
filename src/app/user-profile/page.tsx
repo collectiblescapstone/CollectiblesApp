@@ -10,7 +10,7 @@ import WishList from '@/components/user-profile/WishList';
 import AccountOptions from '@/components/user-profile/AccountOptions';
 import { UserProfile } from '@/types/personal-profile';
 
-import { Box, Flex, Heading, Text, Icon } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Icon, Spinner } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin } from 'react-icons/fi';
 
@@ -47,7 +47,12 @@ const ProfileScreen = ({ username }: { username: string }) => {
   }, [tempUsername, setProfileID]);
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
+        <Spinner color="black" />
+        <Text>Loading...</Text>
+      </Flex>
+    );
   }
 
   if (!user) {

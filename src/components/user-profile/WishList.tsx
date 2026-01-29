@@ -3,7 +3,7 @@
 import React from 'react';
 import Divider from '@/components/user-profile/Divider';
 import { useRouter } from 'next/navigation';
-import { Button, Flex, Image, Text } from '@chakra-ui/react';
+import { Button, Flex, Image, Text, SimpleGrid } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
 import { PokemonCardImage } from '@/types/personal-profile';
 
@@ -37,13 +37,7 @@ const WishList: React.FC<WishListProps> = ({ username, wishlist }) => {
           Wish List
         </Text>
       </Flex>
-      <Flex
-        flexDirection="row"
-        justifyContent="center"
-        alignItems="center"
-        wrap="wrap"
-        gap={5}
-      >
+      <SimpleGrid columns={{ base: 3 }} w="100%" gap={10}>
         {display.map((item, index: number) => (
           <Flex key={index}>
             <Image
@@ -55,7 +49,7 @@ const WishList: React.FC<WishListProps> = ({ username, wishlist }) => {
             />
           </Flex>
         ))}
-      </Flex>
+      </SimpleGrid>
       <Flex mt={3}>
         {viewmore && (
           <Button

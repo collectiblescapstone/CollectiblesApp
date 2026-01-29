@@ -33,23 +33,33 @@ type SetFromFile = {
   serie?: {
     name: string;
   };
+  logo?: string;
+  symbol?: string;
+  cardCount: {
+    official: number;
+    total: number;
+  };
 };
 
 async function main() {
   console.log(`Start seeding process...`);
   const dataPath = path.join(process.cwd(), 'public', 'temporary_card_data');
-  
+
   console.log('Seeding Sets from sets.json...');
   try {
     const setsPath = path.join(dataPath, 'sets.json');
     const setsFileContents = fs.readFileSync(setsPath, 'utf-8');
     const allSetsFromFile: SetFromFile[] = JSON.parse(setsFileContents);
 
-    const setList = allSetsFromFile.map(set => {
+    const setList = allSetsFromFile.map((set) => {
       return {
         id: set.id,
         name: set.name,
         series: set.serie?.name || 'Other', // Default to 'Other' if serie info is missing
+        logo: set.logo || '', // Default to empty string if logo is missing
+        symbol: set.symbol || '', // Default to empty string if symbol is missing
+        official: set.cardCount.official,
+        total: set.cardCount.total,
       };
     });
 
@@ -58,8 +68,8 @@ async function main() {
       skipDuplicates: true,
     });
     console.log(`Processed ${setList.length} sets.`);
-
   } catch (err) {
+    console.error('Error reading sets.json:', err);
     console.error("Please make sure 'prisma/data/sets.json' exists.");
     return;
   }
@@ -70,9 +80,10 @@ async function main() {
 
   try {
     // Get all card json files
-    cardFilenames = fs.readdirSync(dataPath)
-      .filter(f => f.endsWith('.json') && f !== 'sets.json');
-    
+    cardFilenames = fs
+      .readdirSync(dataPath)
+      .filter((f) => f.endsWith('.json') && f !== 'sets.json');
+
     console.log(`Found ${cardFilenames.length} card data files.`);
   } catch (err) {
     console.error('Error reading data directory:', err);
@@ -98,17 +109,21 @@ async function main() {
     return;
   }
 
-  const validCards = allCards.filter(card => {
+  const validCards = allCards.filter((card) => {
     if (!card.set || !card.set.id) {
-      console.warn(`- Skipping card "${card.name}" (id: ${card.id}) - missing 'set' information.`);
+      console.warn(
+        `- Skipping card "${card.name}" (id: ${card.id}) - missing 'set' information.`
+      );
       return false;
     }
     return true;
   });
 
-  console.log(`Found ${validCards.length} valid cards with set information to process.`);
+  console.log(
+    `Found ${validCards.length} valid cards with set information to process.`
+  );
 
-   console.log('Processing Cards');
+  console.log('Processing Cards');
 
   const batchSize = 1000;
   for (let i = 0; i < validCards.length; i += batchSize) {
@@ -117,9 +132,11 @@ async function main() {
     // Map the batch to the Prisma schema
     const cardData = batch.map((card: CardFromFile) => {
       const cardVariants = card.variants
-        ? Object.keys(card.variants).filter(key => card.variants && card.variants[key] === true)
+        ? Object.keys(card.variants).filter(
+            (key) => card.variants && card.variants[key] === true
+          )
         : [];
-      
+
       return {
         id: card.id,
         name: card.name,
@@ -130,7 +147,7 @@ async function main() {
         variants: cardVariants,
         dexId: card.dexId || [],
         setId: card.set.id, // This links to the Set we seeded
-        image_url: `https://assets.tcgdex.net${card.image}/low.png`, // Construct low quality image URL
+        image_url: `${card.image}/low.png`, // Construct low quality image URL
       };
     });
 
@@ -139,7 +156,9 @@ async function main() {
       data: cardData,
       skipDuplicates: true,
     });
-    console.log(`- Inserted batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(validCards.length / batchSize)}. ${result.count} new cards added.`);
+    console.log(
+      `- Inserted batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(validCards.length / batchSize)}. ${result.count} new cards added.`
+    );
   }
 
   console.log(`Seeding finished.`);

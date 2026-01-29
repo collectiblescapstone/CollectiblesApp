@@ -56,7 +56,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
           alignItems="center"
         >
           <Image
-            src={image + '/low.jpg'}
+            src={image}
             alt={cardName}
             objectFit="contain"
             width="100%"

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useHeader } from '@/context/HeaderProvider';
+import { useAuth } from '@/context/AuthProvider';
 
 import SocialLinks from '@/components/user-profile/SocialLinks';
 import Showcase from '@/components/user-profile/Showcase';
@@ -22,13 +23,14 @@ import {
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 
-const PersonalProfileScreen = ({ username }: { username: string }) => {
+const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
   const headerContext = useHeader();
   const setProfileID = headerContext?.setProfileID;
+  const { session } = useAuth();
 
-  // This is a temporary username for testing purposes.
-  const tempUsername = username ?? 'Habibi_George_Bush';
+  // This is a temporary userID for testing purposes.
+  const tempUserID = session?.user.id ?? 'd9475eab-5cb4-4e86-a7e7-a35225aa93f7';
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -40,7 +42,9 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch(`/api/profiles?username=${tempUsername}`);
+        const response = await fetch(
+          `/api/get-user-by-userID?userID=${tempUserID}`
+        );
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
         }
@@ -57,7 +61,7 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
     };
 
     fetchUserProfile();
-  }, [tempUsername, setProfileID]);
+  }, [tempUserID, setProfileID]);
 
   if (loading) {
     return (
@@ -98,7 +102,6 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
       <Flex flexDirection="column" alignItems="center" gap={2} px={4}>
         <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
-          <Avatar.Fallback> SA </Avatar.Fallback>
         </Avatar.Root>
         <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
           {user.firstName} {user.lastName}
@@ -134,7 +137,8 @@ const PersonalProfileScreen = ({ username }: { username: string }) => {
       <Showcase />
       <TradeList />
       <WishList
-        username={tempUsername}
+        type={'personal'}
+        username={''}
         wishlist={user.wishlist.map((item) => ({
           name: item.card.name,
           image: item.card.image_url,

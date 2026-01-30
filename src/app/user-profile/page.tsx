@@ -27,7 +27,9 @@ const ProfileScreen = ({ username }: { username: string }) => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch(`/api/profiles?username=${tempUsername}`);
+        const response = await fetch(
+          `/api/get-user-by-username?username=${tempUsername}`
+        );
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
         }
@@ -109,6 +111,7 @@ const ProfileScreen = ({ username }: { username: string }) => {
       <Showcase />
       <TradeList />
       <WishList
+        type={'user'}
         username={tempUsername}
         wishlist={user.wishlist.map((item) => ({
           name: item.card.name,

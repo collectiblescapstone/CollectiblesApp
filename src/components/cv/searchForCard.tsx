@@ -25,7 +25,6 @@ export const SearchForCard: React.FC = () => {
     const init = async () => {
       cardSearch.current = await CardSearcher();
       setCSReady(true);
-      console.log('ready');
     };
 
     init();
@@ -40,7 +39,6 @@ export const SearchForCard: React.FC = () => {
       if (evt.key === 'Enter') {
         cardSearch.current(evt.currentTarget.value).then((data) => {
           setMatches(data);
-          console.log(data);
         });
       }
     },

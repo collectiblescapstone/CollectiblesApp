@@ -19,6 +19,7 @@ const ProfileScreen = ({ username }: { username: string }) => {
   const setProfileID = headerContext?.setProfileID;
 
   // This is a temporary username for testing purposes.
+  // Change the specific username to match the profile you have in your local database.
   const tempUsername = username ?? 'Habibi_George_Bush';
 
   const [user, setUser] = useState<UserProfile | null>(null);
@@ -75,7 +76,6 @@ const ProfileScreen = ({ username }: { username: string }) => {
       <Flex flexDirection="column" alignItems="center" gap={2}>
         <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
-          <Avatar.Fallback> SA </Avatar.Fallback>
         </Avatar.Root>
         <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
           {user.firstName} {user.lastName}

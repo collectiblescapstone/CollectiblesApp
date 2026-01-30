@@ -30,7 +30,8 @@ const PersonalProfileScreen: React.FC = () => {
   const { session } = useAuth();
 
   // This is a temporary userID for testing purposes.
-  const tempUserID = session?.user.id ?? 'd9475eab-5cb4-4e86-a7e7-a35225aa93f7';
+  // Change the specific userID to match the profile you have in your local database.
+  const tempUserID = session?.user.id ?? '052d7fdf-d30c-4606-a0dc-621b8f27c57b';
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);

@@ -20,6 +20,7 @@ const WishScreen: React.FC = () => {
   const searchParams = useSearchParams();
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const username = searchParams.get('username');
 
   useEffect(() => {
@@ -34,6 +35,7 @@ const WishScreen: React.FC = () => {
         setLoading(false);
       } catch (error) {
         console.error(error);
+        setError('Failed to fetch user profile');
         setLoading(false);
       }
     };
@@ -52,6 +54,22 @@ const WishScreen: React.FC = () => {
       <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
         <Spinner color="black" />
         <Text>Loading...</Text>
+      </Flex>
+    );
+  }
+
+  if (error) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh">
+        <Text>{error}</Text>
+      </Flex>
+    );
+  }
+
+  if (!user) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh">
+        <Text>User not found</Text>
       </Flex>
     );
   }

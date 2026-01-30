@@ -24,6 +24,7 @@ const ProfileScreen = ({ username }: { username: string }) => {
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -42,6 +43,7 @@ const ProfileScreen = ({ username }: { username: string }) => {
         setLoading(false);
       } catch (error) {
         console.error(error);
+        setError('Failed to fetch user profile');
         setLoading(false);
       }
     };
@@ -58,8 +60,20 @@ const ProfileScreen = ({ username }: { username: string }) => {
     );
   }
 
+  if (error) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh">
+        <Text>{error}</Text>
+      </Flex>
+    );
+  }
+
   if (!user) {
-    return <Text>User not found</Text>;
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh">
+        <Text>User not found</Text>
+      </Flex>
+    );
   }
 
   return (

@@ -55,8 +55,8 @@ model Set {
   cards    Card[]
   logo     String?
   symbol   String?
-  official Int
-  total    Int
+  official Int     @default(0)
+  total    Int     @default(0)
 }
 
 model CollectionEntry {

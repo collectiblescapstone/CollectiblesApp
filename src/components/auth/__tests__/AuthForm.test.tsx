@@ -128,6 +128,29 @@ describe('AuthForm', () => {
     });
   });
 
+  it('shows error message on unconfirmed email', async () => {
+    signInMock.mockResolvedValue({
+      success: false,
+      error: 'Any other error',
+    });
+
+    renderWithTheme(<AuthForm />);
+    fireEvent.change(screen.getByPlaceholderText(/me@example.com/i), {
+      target: { value: 'wrong@example.com' },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/enter your password/i), {
+      target: { value: 'wrongpass' },
+    });
+    fireEvent.click(screen.getByRole('button', { name: /^sign in$/i }));
+
+    await waitFor(() => {
+      expect(pushMock).not.toHaveBeenCalled();
+      expect(
+        screen.getByText(/an unknown error occurred during sign in./i)
+      ).toBeInTheDocument();
+    });
+  });
+
   it('redirects to sign-up page on Sign Up button click', async () => {
     renderWithTheme(<AuthForm />);
     fireEvent.click(screen.getByRole('button', { name: /^sign up$/i }));

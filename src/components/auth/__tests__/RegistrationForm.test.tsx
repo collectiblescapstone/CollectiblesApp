@@ -3,6 +3,7 @@ import { screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom'; // Needed for the "toBeInTheDocument" matcher
 import RegistrationForm from '../RegistrationForm';
 import { renderWithTheme } from '../../../utils/testing-utils';
+import { CapacitorHttp } from '@capacitor/core';
 
 // Mock Auth context and Next.js router
 const signUpMock = jest.fn();
@@ -18,6 +19,12 @@ jest.mock('next/navigation', () => ({
   useRouter: () => ({
     push: pushMock,
   }),
+}));
+
+jest.mock('@capacitor/core', () => ({
+  CapacitorHttp: {
+    post: jest.fn(),
+  },
 }));
 
 describe('RegistrationForm', () => {
@@ -46,9 +53,9 @@ describe('RegistrationForm', () => {
       success: true,
       data: { user: { id: 'user-id' } },
     });
-    global.fetch = jest.fn().mockResolvedValue({
+    (CapacitorHttp.post as jest.Mock).mockResolvedValue({
       ok: true,
-      json: async () => ({}),
+      data: { success: true },
     });
 
     renderWithTheme(<RegistrationForm />);
@@ -106,12 +113,12 @@ describe('RegistrationForm', () => {
       success: true,
       data: { user: { id: 'user-id' } },
     });
-    global.fetch = jest.fn().mockResolvedValue({
+    (CapacitorHttp.post as jest.Mock).mockResolvedValue({
       ok: true,
-      json: async () => ({
+      data: {
         error: true,
         message: { code: 'P2002' },
-      }),
+      },
     });
 
     renderWithTheme(<RegistrationForm />);

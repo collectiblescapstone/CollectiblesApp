@@ -9,7 +9,7 @@ export const GET = async (request: Request) => {
 
   if (!userID) {
     return NextResponse.json(
-      { error: 'No username given, fetch terminated' },
+      { error: 'No userID given, fetch terminated' },
       { status: 400 }
     );
   }

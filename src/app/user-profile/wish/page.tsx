@@ -41,10 +41,11 @@ const WishScreen: React.FC = () => {
     fetchUserProfile();
   }, [username]);
 
-  const cards = user?.wishlist.map((item) => ({
-    name: item.card.name,
-    image: item.card.image_url,
-  })) as PokemonCardImage[];
+  const cards =
+    user?.wishlist.map((item) => ({
+      name: item.card.name,
+      image: item.card.image_url,
+    })) ?? [];
 
   if (loading) {
     return (

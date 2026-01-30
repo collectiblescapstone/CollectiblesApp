@@ -23,13 +23,13 @@ const WishScreen: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const { session } = useAuth();
 
-  const tempUserID = session?.user.id ?? 'd9475eab-5cb4-4e86-a7e7-a35225aa93f7';
+  const tempUserID = session?.user.id ?? '052d7fdf-d30c-4606-a0dc-621b8f27c57b';
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
         const response = await fetch(
-          `/api/get-user-by-userID?username=${tempUserID}`
+          `/api/get-user-by-userID?userID=${tempUserID}`
         );
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
@@ -46,10 +46,11 @@ const WishScreen: React.FC = () => {
     fetchUserProfile();
   }, [tempUserID]);
 
-  const cards = user?.wishlist.map((item) => ({
-    name: item.card.name,
-    image: item.card.image_url,
-  })) as PokemonCardImage[];
+  const cards =
+    user?.wishlist.map((item) => ({
+      name: item.card.name,
+      image: item.card.image_url,
+    })) ?? [];
 
   if (loading) {
     return (

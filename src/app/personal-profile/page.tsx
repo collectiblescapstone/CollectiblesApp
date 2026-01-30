@@ -9,14 +9,24 @@ import Showcase from '@/components/user-profile/Showcase';
 import TradeList from '@/components/user-profile/TradeList';
 import WishList from '@/components/user-profile/WishList';
 
-import { Box, Flex, Heading, Text, Icon, Button } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Icon,
+  Button,
+  Spinner,
+} from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
+import { useAuth } from '@/context/AuthProvider';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
   const headerContext = useHeader();
   const setProfileID = headerContext?.setProfileID;
+  const { session, loading } = useAuth();
 
   const editpress = () => {
     router.push('/personal-profile/edit-profile');
@@ -27,6 +37,14 @@ const PersonalProfileScreen: React.FC = () => {
       setProfileID('smithsonian_collection');
     }
   }, [setProfileID]);
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black" mb={4}>

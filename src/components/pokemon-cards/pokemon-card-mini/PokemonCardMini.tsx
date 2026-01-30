@@ -22,7 +22,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
   return (
     <Link
       href={{
-        pathname: '/editCard',
+        pathname: '/edit-card',
         query: {
           imageUrl: image,
           cardName: cardName,

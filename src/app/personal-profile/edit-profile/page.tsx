@@ -18,14 +18,17 @@ import {
   InputGroup,
   Text,
   NativeSelect,
+  Spinner,
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiEdit3, FiCheck, FiEdit2 } from 'react-icons/fi';
+import { useAuth } from '@/context/AuthProvider';
 
 const MAX_CHARACTERS = 110;
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
+  const { session, loading } = useAuth();
 
   const {
     register,
@@ -57,6 +60,14 @@ const PersonalProfileScreen: React.FC = () => {
   const signout = () => {
     // Sign out logic here
   };
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black">

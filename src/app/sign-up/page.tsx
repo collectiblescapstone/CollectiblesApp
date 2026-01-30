@@ -1,6 +1,6 @@
 import React from 'react';
-import AuthForm from '@/components/auth/AuthForm';
 import { Flex } from '@chakra-ui/react';
+import RegistrationForm from '@/components/auth/RegistrationForm';
 
 export default function SignUpPage() {
   return (
@@ -11,7 +11,7 @@ export default function SignUpPage() {
       minHeight="inherit"
       minWidth="dvw"
     >
-      <AuthForm type="signup" />
+      <RegistrationForm />
     </Flex>
   );
 }

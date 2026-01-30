@@ -33,7 +33,7 @@ const config: Config = {
     '!src/**/*.d.ts', // Exclude declaration files
     '!src/components/ui/**/*', // Exclude Chakra UI components
     '!src/context/ChakraUIProvider.tsx', // Exclude Chakra UI provider
-    '!src/utils/supabase.ts', // Exclude Supabase client setup
+    '!src/lib/*', // Exclude library files
   ],
 
   // The directory where Jest should output its coverage files
@@ -151,7 +151,7 @@ const config: Config = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -160,7 +160,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},

@@ -11,7 +11,7 @@ export default function SignInPage() {
       minHeight="inherit"
       minWidth="dvw"
     >
-      <AuthForm type="signin" />
+      <AuthForm />
     </Flex>
   );
 }

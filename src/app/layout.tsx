@@ -4,6 +4,8 @@ import { ChakraUIProvider } from '@/context/ChakraUIProvider';
 import { AuthContextProvider } from '@/context/AuthProvider';
 import { HeaderProvider } from '@/context/HeaderProvider';
 import Content from './content';
+import { Suspense } from 'react';
+import { Spinner } from '@chakra-ui/react';
 
 export const metadata: Metadata = {
   title: 'Collectibles App',
@@ -21,7 +23,9 @@ export default function RootLayout({
         <HeaderProvider>
           <ChakraUIProvider>
             <AuthContextProvider>
-              <Content>{children}</Content>
+              <Suspense fallback={<Spinner size="xl" />}>
+                <Content>{children}</Content>
+              </Suspense>
             </AuthContextProvider>
           </ChakraUIProvider>
         </HeaderProvider>

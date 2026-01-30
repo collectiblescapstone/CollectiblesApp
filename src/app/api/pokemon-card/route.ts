@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import prisma from '@/lib/prisma';
 import type { Card } from '@prisma/client';
 
 export const dynamic = 'force-static';

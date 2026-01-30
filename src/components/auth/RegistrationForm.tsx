@@ -6,6 +6,8 @@ import { useAuth } from '@/context/AuthProvider';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { SignupFormValues } from '@/types/auth';
+import { CapacitorHttp } from '@capacitor/core';
+import { baseUrl } from '@/utils/constants';
 
 const RegistrationForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -48,19 +50,17 @@ const RegistrationForm = () => {
     // Handle Supabase Auth successful sign up
     if (res.success) {
       // Call API to register user in database
-      const response = await fetch('/api/register-user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      const response = await CapacitorHttp.post({
+        url: `${baseUrl}/api/register-user`,
+        headers: { 'Content-Type': 'application/json' },
+        data: {
           id: res.data.user?.id,
           email: values.email,
           username: values.username,
           firstName: values.firstName,
           lastName: values.lastName,
-        }),
-      }).then((res) => res.json());
+        },
+      }).then((res) => res.data);
 
       // Check for username uniqueness error
       if (

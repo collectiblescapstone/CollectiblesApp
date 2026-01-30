@@ -4,13 +4,11 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ForgetPasswordFormValues } from '@/types/auth';
 import { supabase } from '@/lib/supabase';
+import { baseUrl } from '@/utils/constants';
 
 export default function ForgetPasswordForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
-
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL ?? `https://${process.env.VERCEL_URL}`;
 
   const {
     register,

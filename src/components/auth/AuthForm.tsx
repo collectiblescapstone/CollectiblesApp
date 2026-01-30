@@ -49,6 +49,12 @@ export default function AuthForm() {
           message:
             'Your email address has not been confirmed. Please check your inbox for a confirmation email.',
         });
+      } else {
+        setError('root', {
+          type: 'unknown_error',
+          message:
+            'An unknown error occurred during sign in. Please try again later.',
+        });
       }
     }
     setIsLoading(false);

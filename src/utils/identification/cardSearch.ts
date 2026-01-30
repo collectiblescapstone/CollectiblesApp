@@ -37,7 +37,6 @@ export const CardSearcher = async () => {
 
   const search = async (query: string) => {
     // Convert query text to vector
-    console.log(`hello: ${query}`);
     const inputs = tokenizer(query);
     const { text_embeds } = await textModel(inputs);
     const queryVector = text_embeds.data;

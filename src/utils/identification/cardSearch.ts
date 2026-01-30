@@ -54,7 +54,6 @@ export const CardSearcher = async () => {
 
     // Sort
     const sorted = matches.sort((a, b) => b.score - a.score).slice(0, 15);
-
     return sorted;
   };
 

@@ -2,7 +2,7 @@ import cvReadyPromise from '@techstark/opencv-js';
 import { biggestContour, reorderCorners } from '@/utils/identification/cvutils';
 import { CARD_WIDTH_PX, CARD_HEIGHT_PX } from '@/utils/constants';
 
-import { NormalizeCardResult, rotation } from '@/types/identification';
+import { corners, NormalizeCardResult, rotation } from '@/types/identification';
 
 export const locateWithEdgeDetectionContour = async (
   imgCVMat: cvReadyPromise.Mat,
@@ -84,7 +84,7 @@ export const locateWithEdgeDetectionContour = async (
   // draw found contour and warp card
   const warped = cv.Mat.zeros(CARD_HEIGHT_PX, CARD_WIDTH_PX, cv.CV_8UC3);
   if (corners && corners.rows === 4) {
-    const reorderedCorners = reorderCorners(corners);
+    const reorderedCorners = reorderCorners(corners) as corners;
 
     // set up matrices for perspective transform
     const pts1 = cv.matFromArray(4, 1, cv.CV_32FC2, [

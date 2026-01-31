@@ -11,16 +11,20 @@ export type CardDataObj = {
   [id: string]: CardData;
 };
 
-export interface PredictedImageResult {
+export type corners = [[number, number], [number, number], [number, number], [number, number]];
+
+export type PredictedImageResult ={
   predictedCard?: CardData;
   foundCardImage?: cvReadyPromise.Mat;
-  corners?: [number, number][];
+  corners?: corners;
 }
 
-export interface NormalizeCardResult {
+export type NormalizeCardResult = {
   image: cvReadyPromise.Mat;
-  corners: [number, number][];
+  corners: corners;
 }
+
+// make a new result type
 
 export enum rotation {
   NONE,

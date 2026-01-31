@@ -3,6 +3,7 @@ import { CardClassifier } from '@/utils/identification/classifyNormalizedCard';
 import cvReadyPromise from '@techstark/opencv-js';
 
 import { PredictedImageResult, rotation } from '@/types/identification';
+import { locateWithYOLO } from './locateWithYOLO';
 
 export const IdentifyCardInImage = async (
   src: string,
@@ -39,7 +40,8 @@ export const IdentifyCardInImage = async (
   const origImg = cv.imread(img);
 
   // current method to normalize card
-  const warped = await locateWithEdgeDetectionContour(origImg, rot);
+  // const warped = await locateWithEdgeDetectionContour(origImg, rot);
+  const warped = await locateWithYOLO(origImg, rot);
 
   if (!warped) {
     return undefined;

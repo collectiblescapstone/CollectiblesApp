@@ -50,7 +50,7 @@ export const MENU_ITEMS: {
     icon: <LuCamera size={36} />,
     path: '/camera',
     name: 'Camera',
-    onClick: takePicture,
+    // onClick: takePicture,
   },
   { icon: <LuUser size={36} />, path: '/personal-profile', name: 'Profile' },
 ];

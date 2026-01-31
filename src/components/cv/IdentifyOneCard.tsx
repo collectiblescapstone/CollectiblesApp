@@ -5,45 +5,75 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import { IdentifyCardInImage } from '@/utils/identification/identify';
-import { PredictedImageResult, CardData } from '@/types/identification';
+import { PredictedImageResult, CardData, rotation } from '@/types/identification';
 import cvReadyPromise from '@techstark/opencv-js';
+import { locateWithYOLO } from '@/utils/identification/locateWithYOLO';
 
-interface NormalizeProps {
+interface IdentifyOneCardProps {
   image?: string;
+  onProcessed: () => void;
 }
 
-export const IdentifyOneCard = ({ image }: NormalizeProps) => {
+export const IdentifyOneCard = ({ image, onProcessed }: IdentifyOneCardProps) => {
   const originalImageRef = useRef<HTMLCanvasElement | null>(null);
   const ProcessedImageRef = useRef<HTMLCanvasElement | null>(null);
 
   const [predictedCard, setPredictedCard] = useState<CardData>();
   const [predictedCardImage, setPredictedCardImage] = useState<string>();
 
-  const processImage = async (src: string) => {
-    const result: PredictedImageResult | undefined =
-      await IdentifyCardInImage(src);
+  const processImage = async (src: string, onProcessed: () => void) => {
 
-    if (!result) {
-      return;
-    }
-
-    if (result.foundCardImage) {
-      // show processed image in canvas
+    const img = new window.Image();
+      img.crossOrigin = 'anonymous';
+      img.src = src;
+    
+      // wait for image to load and be drawn to canvas
+      await new Promise((resolve) => {
+        img.onload = () => {
+          resolve(true);
+        };
+      });
+    
+      // get openCV instance
       const cv = await cvReadyPromise;
-      cv.imshow(ProcessedImageRef.current!, result.foundCardImage!);
+    
+      // read image
+      const origImg = cv.imread(img);
 
-      setPredictedCard(result.predictedCard);
-      setPredictedCardImage(result.predictedCard?.card.image + '/low.jpg');
+      const annotated = await locateWithYOLO(origImg, rotation.NONE);
 
-      result.foundCardImage!.delete();
-    }
+      if (annotated) {
+        cv.imshow(ProcessedImageRef.current!, annotated);
+      }
+
+    // const result: PredictedImageResult | undefined =
+    //   await IdentifyCardInImage(src);
+
+    // if (!result) {
+    //   onProcessed();
+    //   return;
+    // }
+
+    // if (result.foundCardImage) {
+    //   // show processed image in canvas
+    //   const cv = await cvReadyPromise;
+    //   cv.imshow(ProcessedImageRef.current!, result.foundCardImage!);
+
+    //   setPredictedCard(result.predictedCard);
+    //   setPredictedCardImage(result.predictedCard?.card.image + '/low.jpg');
+
+    //   result.foundCardImage!.delete();
+    // }
+    onProcessed();
   };
 
   useEffect(() => {
     if (image) {
-      processImage(image);
+      processImage(image,onProcessed);
     }
-  }, [image]);
+  }, [image, onProcessed]);
+
+  
 
   return (
     <Box>

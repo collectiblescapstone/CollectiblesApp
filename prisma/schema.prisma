@@ -21,6 +21,8 @@ model User {
   id         String            @id @db.Uuid
   username   String?           @unique
   email      String            @unique
+  whatsapp   String?
+  discord    String?
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 }

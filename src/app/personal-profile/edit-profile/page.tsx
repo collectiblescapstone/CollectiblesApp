@@ -1,12 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues } from '@/types/personal-profile';
+import { supabase } from '@/utils/supabase';
 
 import {
   Box,
@@ -32,6 +33,7 @@ const PersonalProfileScreen: React.FC = () => {
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm<FormValues>({
     defaultValues: {
       name: '',
@@ -44,11 +46,67 @@ const PersonalProfileScreen: React.FC = () => {
     },
   });
 
+  const [isSaving, setIsSaving] = useState(false);
+  const [userId, setUserId] = useState<string | null>(null);
+
   const bioVal = watch('bio');
 
-  const handleSave = handleSubmit(() => {
-    // Save profile logic here
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUserId(user?.id || null);
+    };
+    getUser();
+  }, []);
+
+  const handleSave = handleSubmit(async (data) => {
+    if (!userId) return;
+    setIsSaving(true);
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: userId, ...data }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        console.error(err);
+      } else {
+        router.push('/personal-profile');
+      }
+    } catch (err) {
+      console.error('Save failed', err);
+    } finally {
+      setIsSaving(false);
+    }
   });
+
+  // Fetch existing profile data
+  useEffect(() => {
+    if (!userId) return;
+    async function fetchProfile() {
+      try {
+        const res = await fetch(`/api/profile?id=${userId}`);
+        if (res.ok) {
+          const data = await res.json();
+          reset({
+            name: data.name ?? '',
+            bio: data.bio ?? '',
+            location: data.location ?? '',
+            instagram: data.instagram ?? '',
+            twitter: data.twitter ?? '',
+            facebook: data.facebook ?? '',
+            visibility: data.visibility ?? 'Public',
+          });
+        }
+      } catch (err) {
+        console.error('Error loading profile', err);
+      }
+    }
+
+    fetchProfile();
+  }, [userId, reset]);
 
   const wishlist = () => {
     router.push('/personal-profile/edit-profile/wishlist');
@@ -76,8 +134,9 @@ const PersonalProfileScreen: React.FC = () => {
           colorPalette="black"
           size="md"
           onClick={handleSave}
+          disabled={isSaving}
         >
-          <FiCheck /> Save
+          <FiCheck /> {isSaving ? 'Saving...' : 'Save'}
         </Button>
       </Flex>
       <Flex flexDirection="column" alignItems="flex-start" gap={5} px={5}>

@@ -28,6 +28,8 @@ model User {
   x          String?
   facebook   String?
   bio        String?
+  whatsapp   String?
+  discord    String?
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 }
@@ -68,11 +70,13 @@ model CollectionEntry {
   quantity  Int     @default(1)
   condition String?
   variant   String?
+  forTrade  Boolean @default(false)
+  showcase  Boolean @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@unique([userId, cardId, condition, variant])
+  @@unique([userId, cardId, condition, variant]) 
 }
 
 model WishlistEntry {

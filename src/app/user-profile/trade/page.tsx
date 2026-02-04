@@ -14,17 +14,20 @@ import {
 import { Avatar } from '@chakra-ui/react';
 import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
+import { useAuth } from '@/context/AuthProvider';
 
 const TradeScreen: React.FC = () => {
-  const { cards, loading } = useRandomCards('sv06', 7);
+  const { session, loading } = useAuth();
+
+  const { cards, loading: cardLoading } = useRandomCards('sv06', 7);
+  if (cardLoading) return <Text>Loading cards...</Text>;
   const cardsnum = cards.length;
 
-  if (loading) {
+  if (loading || !session) {
     return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
-      </Flex>
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
     );
   }
 

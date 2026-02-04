@@ -28,8 +28,9 @@ const Header = () => {
       left={0}
       right={0}
       zIndex={999}
-      color="brand.turtiose"
+      color="brand.turtoise"
       bgColor="brand.marigold"
+      w="full"
       minHeight="8dvh"
       flexDir="row"
       alignItems="center"

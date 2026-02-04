@@ -1,11 +1,12 @@
 'use client';
-import { supabase } from '@/utils/supabase';
+import { supabase } from '@/lib/supabase';
 import type {
   User,
   Session,
   AuthError,
   WeakPassword,
 } from '@supabase/supabase-js';
+import { usePathname, useRouter } from 'next/navigation';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 interface AuthContextData {
@@ -34,7 +35,16 @@ interface AuthContextData {
   }>;
   signOut: () => Promise<void>;
   session: Session | null;
+  loading: boolean;
 }
+
+const publicRoutes = [
+  '/sign-in',
+  '/sign-up',
+  '/unauthorized',
+  '/',
+  '/forget-password',
+];
 
 const AuthContext = createContext<AuthContextData | undefined>(undefined);
 
@@ -43,6 +53,10 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const [loading, setLoading] = useState(true);
   const [session, setSession] = useState<Session | null>(null);
 
   // Sign up
@@ -98,24 +112,39 @@ export const AuthContextProvider = ({
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session === null && !publicRoutes.includes(pathname)) {
+        router.push('/unauthorized');
+      } else if (session && publicRoutes.includes(pathname)) {
+        router.push('/home');
+      }
       setSession(session);
+      setLoading(false);
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
+      if (session === null && !publicRoutes.includes(pathname)) {
+        router.push('/unauthorized');
+      } else if (session && publicRoutes.includes(pathname)) {
+        router.push('/home');
+      }
       setSession(session);
+      setLoading(false);
     });
-  }, []);
+    // Empty dependency array to run only once on mount
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Sign out
   const signOut = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error('Error signing out:', error);
+    } else {
+      router.push('/');
     }
   };
 
   return (
-    <AuthContext.Provider value={{ signUp, signIn, signOut, session }}>
+    <AuthContext.Provider value={{ signUp, signIn, signOut, session, loading }}>
       {children}
     </AuthContext.Provider>
   );

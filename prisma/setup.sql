@@ -7,8 +7,8 @@ LANGUAGE plpgsql
 SECURITY DEFINER
 AS $$
 BEGIN
-  INSERT INTO public."User" (id, email, name)
-  VALUES (NEW.id, NEW.email, NEW.name);
+  INSERT INTO public."User" (id, email)
+  VALUES (NEW.id, NEW.email);
   RETURN NEW;
 END;
 $$;

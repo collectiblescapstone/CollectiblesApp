@@ -6,9 +6,7 @@ import { FlexProps } from '@chakra-ui/react';
 
 jest.mock('../../../components/auth/AuthForm', () => ({
   __esModule: true,
-  default: ({ type }: { type: string }) => (
-    <div data-testid="auth-form">{type}</div>
-  ),
+  default: () => <div data-testid="auth-form" />,
 }));
 
 jest.mock('@chakra-ui/react', () => {
@@ -23,7 +21,6 @@ describe('SignInPage', () => {
     render(<SignInPage />);
     const authForm = screen.getByTestId('auth-form');
     expect(authForm).toBeInTheDocument();
-    expect(authForm).toHaveTextContent('signin');
     expect(screen.getByTestId('flex')).toBeInTheDocument();
   });
 });

@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useHeader } from '@/context/HeaderProvider';
-import { useAuth } from '@/context/AuthProvider';
 
 import SocialLinks from '@/components/user-profile/SocialLinks';
 import Showcase from '@/components/user-profile/Showcase';
@@ -22,6 +21,7 @@ import {
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
+import { useAuth } from '@/context/AuthProvider';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
@@ -88,6 +88,14 @@ const PersonalProfileScreen: React.FC = () => {
       <Flex justifyContent="center" alignItems="center" height="50vh">
         <Text>User not found</Text>
       </Flex>
+    );
+  }
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
     );
   }
 

@@ -27,7 +27,7 @@ npm run dev
 Then, to make sure user authentication works, add the following environment variables to your .env file:
 
 ```
-NODE_ENV="developmment"
+NODE_ENV="development"
 NEXT_PUBLIC_BASE_URL="http://localhost:3000"
 NEXT_PUBLIC_SUPABASE_URL=<thesupabasepublicurl>
 NEXT_PUBLIC_SUPABASE_ANON_KEY=<thesupabaseanonkey>
@@ -40,7 +40,7 @@ Make sure you run the following command on first setup or whenever you have to r
 npx prisma db execute --file prisma/setup.sql --schema prisma/schema.prisma
 ```
 
-On Supabase startup (`npx supabase start`), you should find the values you use to fill in the .env file. (If this step does not work, ensure your Docker is running.) The value `NEXT_PUBLIC_SUPABASE_URL` corresponds to `API URL`,`NEXT_PUBLIC_SUPABASE_ANON_KEY` corresponds to either `anon key` or `Publishable key`, and `SUPABASE_SERVICE_ROLE_KEY` corresponds to `secret key`.
+On Supabase startup (`npx supabase start`), you should find the values you use to fill in the .env file. (If this step does not work, ensure your Docker is running.) The value `NEXT_PUBLIC_SUPABASE_URL` corresponds to `API URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` corresponds to either `anon key` or `Publishable key`, and `SUPABASE_SERVICE_ROLE_KEY` corresponds to `secret key`.
 
 At this point, the application should be available on http://localhost:3000
 

@@ -25,6 +25,7 @@ import { getPokemonName, getGeneration } from '@/utils/pokedex';
 
 // Types
 import type { CardData } from '@/types/pokemon-card';
+import { useAuth } from '@/context/AuthProvider';
 
 const FilterCardsContent: React.FC = () => {
   // Search Params
@@ -36,6 +37,7 @@ const FilterCardsContent: React.FC = () => {
 
   // Filters from context
   const { filters } = useFilters();
+  const { session, loading: authLoading } = useAuth();
 
   // Local States
   const [pokemonName, setPokemonName] = useState<string | null>(null);
@@ -135,7 +137,7 @@ const FilterCardsContent: React.FC = () => {
     return true;
   });
 
-  if (loading)
+  if (loading || authLoading || !session)
     return (
       <Box textAlign="center" mt={10}>
         <Spinner size="xl" />

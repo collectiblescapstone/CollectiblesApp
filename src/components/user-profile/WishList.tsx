@@ -27,6 +27,31 @@ const WishList: React.FC<WishListProps> = ({ type, username, wishlist }) => {
     router.push(`/user-profile/wish?username=${username}`);
   };
 
+  if (wishlist.length === 0) {
+    return (
+      <Flex
+        flexDirection="column"
+        gap={2}
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        w="100%"
+        px={4}
+      >
+        <Divider />
+        <Flex mt={1}>
+          <Text fontSize="md" color="gray.900" fontWeight="semibold" mb={2}>
+            Wish List
+          </Text>
+        </Flex>
+        <Flex w="100%" justifyContent="center" alignItems="center" py={3}>
+          <Text fontSize="md" color="gray.600" fontWeight="semibold" mb={2}>
+            User has not added any cards...yet
+          </Text>
+        </Flex>
+      </Flex>
+    );
+  }
+
   return (
     <Flex
       flexDirection="column"

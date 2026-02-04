@@ -15,20 +15,23 @@ import { Avatar } from '@chakra-ui/react';
 import { PokemonCardImage } from '@/types/personal-profile';
 import { UserProfile } from '@/types/personal-profile';
 import { useAuth } from '@/context/AuthProvider';
+import { useHeader } from '@/context/HeaderProvider';
 
 const WishScreen: React.FC = () => {
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const headerContext = useHeader();
+  const setProfileID = headerContext?.setProfileID;
   const { session } = useAuth();
 
-  const tempUserID = session?.user.id ?? '052d7fdf-d30c-4606-a0dc-621b8f27c57b';
+  const userID = session?.user.id;
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
         const response = await fetch(
-          `/api/get-user-by-userID?userID=${tempUserID}`
+          `/api/get-user-by-userID?userID=${userID}`
         );
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
@@ -36,6 +39,9 @@ const WishScreen: React.FC = () => {
         const data = await response.json();
         setUser(data);
         setLoading(false);
+        if (setProfileID) {
+          setProfileID(data.username);
+        }
       } catch (error) {
         console.error(error);
         setError('Failed to fetch user profile');
@@ -44,7 +50,7 @@ const WishScreen: React.FC = () => {
     };
 
     fetchUserProfile();
-  }, [tempUserID]);
+  }, [userID, setProfileID]);
 
   const cards =
     user?.wishlist.map((item) => ({
@@ -52,12 +58,11 @@ const WishScreen: React.FC = () => {
       image: item.card.image_url,
     })) ?? [];
 
-  if (loading) {
+  if (loading || !session) {
     return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
-      </Flex>
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
     );
   }
 

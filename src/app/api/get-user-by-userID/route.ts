@@ -25,7 +25,7 @@ export const GET = async (request: Request) => {
       bio: true,
       location: true,
       instagram: true,
-      twitter: true,
+      x: true,
       facebook: true,
       wishlist: {
         select: {

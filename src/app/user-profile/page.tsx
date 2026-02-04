@@ -20,7 +20,7 @@ const ProfileScreen = ({ username }: { username: string }) => {
 
   // This is a temporary username for testing purposes.
   // Change the specific username to match the profile you have in your local database.
-  const tempUsername = username ?? 'Habibi_George_Bush';
+  const tempUsername = username ?? 'habibi_george_bush';
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -53,10 +53,9 @@ const ProfileScreen = ({ username }: { username: string }) => {
 
   if (loading) {
     return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
-      </Flex>
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
     );
   }
 

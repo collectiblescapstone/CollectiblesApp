@@ -29,9 +29,7 @@ const PersonalProfileScreen: React.FC = () => {
   const setProfileID = headerContext?.setProfileID;
   const { session } = useAuth();
 
-  // This is a temporary userID for testing purposes.
-  // Change the specific userID to match the profile you have in your local database.
-  const tempUserID = session?.user.id ?? '052d7fdf-d30c-4606-a0dc-621b8f27c57b';
+  const userID = session?.user.id;
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -45,7 +43,7 @@ const PersonalProfileScreen: React.FC = () => {
     const fetchUserProfile = async () => {
       try {
         const response = await fetch(
-          `/api/get-user-by-userID?userID=${tempUserID}`
+          `/api/get-user-by-userID?userID=${userID}`
         );
         if (!response.ok) {
           throw new Error('Failed to fetch user profile');
@@ -64,16 +62,7 @@ const PersonalProfileScreen: React.FC = () => {
     };
 
     fetchUserProfile();
-  }, [tempUserID, setProfileID]);
-
-  if (loading) {
-    return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
-      </Flex>
-    );
-  }
+  }, [userID, setProfileID]);
 
   if (error) {
     return (
@@ -126,29 +115,36 @@ const PersonalProfileScreen: React.FC = () => {
         <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
         </Avatar.Root>
-        <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-          {user.firstName} {user.lastName}
-        </Heading>
-        <Flex
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          gap={1}
-        >
-          <Icon as={FiMapPin} boxSize={4} />
-          <Text fontSize="xs" color="gray.600" fontWeight={'semibold'}>
-            {user.location}
+        {user.firstName ||
+          (user.lastName && (
+            <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+              {user.firstName} {user.lastName}
+            </Heading>
+          ))}
+        {user.location && (
+          <Flex
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+            gap={1}
+          >
+            <Icon as={FiMapPin} boxSize={4} />
+            <Text fontSize="xs" color="gray.600" fontWeight={'semibold'}>
+              {user.location}
+            </Text>
+          </Flex>
+        )}
+        {user.bio && (
+          <Text
+            fontSize="sm"
+            color="gray.800"
+            textAlign="center"
+            maxW="400px"
+            px={4}
+          >
+            {user.bio}
           </Text>
-        </Flex>
-        <Text
-          fontSize="sm"
-          color="gray.800"
-          textAlign="center"
-          maxW="400px"
-          px={4}
-        >
-          {user.bio}
-        </Text>
+        )}
         <Flex mt={1} px={4}>
           <SocialLinks
             instagram={user.instagram}

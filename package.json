@@ -37,7 +37,7 @@
     "@xenova/transformers": "^2.17.2",
     "dotenv": "^17.2.3",
     "framer-motion": "^12.23.24",
-    "next": "15.5.9",
+    "next": "^15.5.12",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.66.0",
@@ -45,7 +45,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@capacitor/cli": "^7.4.3",
+    "@capacitor/cli": "^8.0.2",
     "@chakra-ui/cli": "^2.5.8",
     "@eslint/eslintrc": "^3",
     "@swc/core": "^1.15.1",

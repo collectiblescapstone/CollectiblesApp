@@ -21,7 +21,7 @@ const Footer = () => {
       flexDir="row"
       alignItems="center"
       justifyContent="space-between"
-      px={16}
+      px={8}
     >
       {MENU_ITEMS.map((item) => (
         <Box
@@ -31,7 +31,7 @@ const Footer = () => {
           }
           bgColor={
             pathname.startsWith(`${item.path}`)
-              ? 'brand.marigoldAlpha'
+              ? 'whiteAlpha.400'
               : 'transparent'
           }
           padding={2}

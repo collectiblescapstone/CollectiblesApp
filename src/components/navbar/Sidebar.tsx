@@ -10,8 +10,8 @@ const Sidebar = () => {
 
   return (
     <Flex
-      color="white"
-      background="purple.600"
+      color="brand.turtoise"
+      background="brand.marigold"
       minWidth="25dvw"
       minHeight="dvh"
       flexDir="column"

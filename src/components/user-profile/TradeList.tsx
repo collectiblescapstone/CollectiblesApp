@@ -3,41 +3,32 @@
 import React from 'react';
 import Divider from '@/components/user-profile/Divider';
 import { useRouter } from 'next/navigation';
-import {
-  Button,
-  Flex,
-  Image,
-  Text,
-  Spinner,
-  SimpleGrid,
-} from '@chakra-ui/react';
+import { Button, Flex, Image, Text, SimpleGrid } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
 import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
 
-const hardcodedCards: PokemonCardImage[] = [
-  { name: 'Mareep', image: 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG34' },
-  { name: 'Riolu', image: 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG26' },
-];
+interface TradeListProps {
+  type?: 'personal' | 'user';
+  username: string;
+  tradelist: PokemonCardImage[];
+}
 
-const TradeList: React.FC = () => {
+const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
   const router = useRouter();
 
-  const { cards, loading } = useRandomCards('pl4', 4);
+  const display = tradelist.slice(0, 3);
+  const viewmore = tradelist.length > 3;
 
-  if (loading) {
-    return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
-      </Flex>
-    );
-  }
+  const press = () => {
+    if (type === 'personal') {
+      router.push('/personal-profile/trade');
+      return;
+    }
+    router.push(`/user-profile/trade?username=${username}`);
+  };
 
-  const display = cards.slice(0, 2);
-  const viewmore = cards.length > 2;
-
-  if (cards.length === 0) {
+  if (tradelist.length === 0) {
     return (
       <Flex
         flexDirection="column"
@@ -62,13 +53,6 @@ const TradeList: React.FC = () => {
     );
   }
 
-  const press = () => {
-    router.push('/user-profile/trade');
-  };
-
-  const hardcodedCard =
-    hardcodedCards[Math.floor(Math.random() * hardcodedCards.length)];
-
   return (
     <Flex
       flexDirection="column"
@@ -85,24 +69,17 @@ const TradeList: React.FC = () => {
         </Text>
       </Flex>
       <SimpleGrid columns={{ base: 3 }} w="100%" gap={10}>
-        {display.map((card: PokemonCardImage, index: number) => (
+        {display.map((item, index: number) => (
           <Flex key={index}>
             <Image
-              src={`${card.image}/low.png`}
-              alt={card.name}
+              src={`${item.image}`}
+              alt={item.name}
               w="105px"
               h="auto"
               borderRadius="none"
             />
           </Flex>
         ))}
-        <Image
-          src={`${hardcodedCard.image}/low.png`}
-          alt={hardcodedCard.name}
-          w="105px"
-          h="auto"
-          borderRadius="none"
-        />
       </SimpleGrid>
       <Flex mt={3}>
         {viewmore && (

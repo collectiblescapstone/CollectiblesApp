@@ -40,6 +40,11 @@ const PersonalProfileScreen: React.FC = () => {
   };
 
   useEffect(() => {
+    if (!userID) {
+      setError('No user ID found in session');
+      setLoading(false);
+      return;
+    }
     const fetchUserProfile = async () => {
       try {
         const response = await fetch(
@@ -154,7 +159,14 @@ const PersonalProfileScreen: React.FC = () => {
         </Flex>
       </Flex>
       <Showcase />
-      <TradeList />
+      <TradeList
+        type={'personal'}
+        username={''}
+        tradeCards={user.tradeCards.map((item) => ({
+          name: item.card.name,
+          image: item.card.image_url,
+        }))}
+      />
       <WishList
         type={'personal'}
         username={''}

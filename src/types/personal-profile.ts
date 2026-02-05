@@ -25,6 +25,12 @@ export interface UserProfile {
       image_url: string;
     };
   }[];
+  tradeCards: {
+    card: {
+      name: string;
+      image_url: string;
+    };
+  }[];
 }
 
 export interface PokemonCardImage {

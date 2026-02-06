@@ -9,6 +9,7 @@ import Showcase from '@/components/user-profile/Showcase';
 import TradeList from '@/components/user-profile/TradeList';
 import WishList from '@/components/user-profile/WishList';
 import { UserProfile } from '@/types/personal-profile';
+import { fetchUserProfile } from '@/utils/userIDProfilePuller';
 
 import {
   Box,
@@ -41,19 +42,13 @@ const PersonalProfileScreen: React.FC = () => {
 
   useEffect(() => {
     if (!userID) {
-      setError('No user ID found in session');
+      setError('No user ID found');
       setLoading(false);
       return;
     }
-    const fetchUserProfile = async () => {
+    const loadUserProfile = async () => {
       try {
-        const response = await fetch(
-          `/api/get-user-by-userID?userID=${userID}`
-        );
-        if (!response.ok) {
-          throw new Error('Failed to fetch user profile');
-        }
-        const data = await response.json();
+        const data = await fetchUserProfile(userID);
         setUser(data);
         if (setProfileID) {
           setProfileID(data.username);
@@ -62,11 +57,12 @@ const PersonalProfileScreen: React.FC = () => {
       } catch (error) {
         console.error(error);
         setError('Failed to fetch user profile');
+      } finally {
         setLoading(false);
       }
     };
 
-    fetchUserProfile();
+    loadUserProfile();
   }, [userID, setProfileID]);
 
   if (error) {
@@ -162,7 +158,7 @@ const PersonalProfileScreen: React.FC = () => {
       <TradeList
         type={'personal'}
         username={''}
-        tradeCards={user.tradeCards.map((item) => ({
+        tradelist={user.tradeList.map((item) => ({
           name: item.card.name,
           image: item.card.image_url,
         }))}

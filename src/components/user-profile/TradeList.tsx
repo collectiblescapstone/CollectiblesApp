@@ -5,7 +5,6 @@ import Divider from '@/components/user-profile/Divider';
 import { useRouter } from 'next/navigation';
 import { Button, Flex, Image, Text, SimpleGrid } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
-import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
 
 interface TradeListProps {

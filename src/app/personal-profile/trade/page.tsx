@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Box,
@@ -12,18 +12,73 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
-import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
+import { UserProfile } from '@/types/personal-profile';
+import { useAuth } from '@/context/AuthProvider';
+import { useHeader } from '@/context/HeaderProvider';
+import { fetchUserProfile } from '@/utils/userIDProfilePuller';
 
 const TradeScreen: React.FC = () => {
-  const { cards, loading } = useRandomCards('sv06', 7);
-  const cardsnum = cards.length;
+  const [user, setUser] = useState<UserProfile | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const headerContext = useHeader();
+  const setProfileID = headerContext?.setProfileID;
+  const { session } = useAuth();
 
-  if (loading) {
+  const userID = session?.user.id;
+
+  useEffect(() => {
+    if (!userID) {
+      setError('No user ID found');
+      setLoading(false);
+      return;
+    }
+    const loadUserProfile = async () => {
+      try {
+        const data = await fetchUserProfile(userID);
+        setUser(data);
+        setLoading(false);
+        if (setProfileID) {
+          setProfileID(data.username);
+        }
+      } catch (error) {
+        console.error(error);
+        setError('Failed to fetch user profile');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadUserProfile();
+  }, [userID, setProfileID]);
+
+  const cards =
+    user?.tradeList.map((item) => ({
+      name: item.card.name,
+      image: item.card.image_url,
+    })) ?? [];
+
+  if (loading || !session) {
     return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh">
+        <Text>{error}</Text>
+      </Flex>
+    );
+  }
+
+  if (!user) {
+    return (
+      <Flex justifyContent="center" alignItems="center" height="50vh">
+        <Text>User not found</Text>
       </Flex>
     );
   }
@@ -47,11 +102,17 @@ const TradeScreen: React.FC = () => {
             alignItems="flex-start"
             gap={2}
           >
-            <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-              Sandra Smith Anne
-            </Heading>
+            {user.firstName || user.lastName ? (
+              <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+                {user?.firstName} {user?.lastName}
+              </Heading>
+            ) : (
+              <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+                {user?.username}
+              </Heading>
+            )}
             <Text fontSize="md" color="gray.600" fontWeight={'semibold'}>
-              Trade List - {cardsnum} Items
+              Trade List - {cards.length} Items
             </Text>
           </Flex>
         </Flex>
@@ -62,7 +123,7 @@ const TradeScreen: React.FC = () => {
           {cards.map((card: PokemonCardImage, index: number) => (
             <Flex key={index}>
               <Image
-                src={`${card.image}/high.png`}
+                src={`${card.image}`}
                 alt={card.name}
                 w="105px"
                 h="auto"

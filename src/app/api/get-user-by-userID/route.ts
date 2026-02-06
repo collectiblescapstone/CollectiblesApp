@@ -44,7 +44,7 @@ export const GET = async (request: Request) => {
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
   }
 
-  const tradeCards = await prisma.collectionEntry.findMany({
+  const tradeList = await prisma.collectionEntry.findMany({
     where: {
       userId: userID,
       forTrade: true,
@@ -59,5 +59,5 @@ export const GET = async (request: Request) => {
     },
   });
 
-  return NextResponse.json({ ...user, tradeCards });
+  return NextResponse.json({ ...user, tradeList });
 };

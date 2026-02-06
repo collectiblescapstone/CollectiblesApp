@@ -25,7 +25,7 @@ export interface UserProfile {
       image_url: string;
     };
   }[];
-  tradeCards: {
+  tradeList: {
     card: {
       name: string;
       image_url: string;

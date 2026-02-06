@@ -16,6 +16,7 @@ import { PokemonCardImage } from '@/types/personal-profile';
 import { UserProfile } from '@/types/personal-profile';
 import { useAuth } from '@/context/AuthProvider';
 import { useHeader } from '@/context/HeaderProvider';
+import { fetchUserProfile } from '@/utils/userIDProfilePuller';
 
 const WishScreen: React.FC = () => {
   const [user, setUser] = useState<UserProfile | null>(null);
@@ -28,15 +29,14 @@ const WishScreen: React.FC = () => {
   const userID = session?.user.id;
 
   useEffect(() => {
-    const fetchUserProfile = async () => {
+    if (!userID) {
+      setError('No user ID found');
+      setLoading(false);
+      return;
+    }
+    const loadUserProfile = async () => {
       try {
-        const response = await fetch(
-          `/api/get-user-by-userID?userID=${userID}`
-        );
-        if (!response.ok) {
-          throw new Error('Failed to fetch user profile');
-        }
-        const data = await response.json();
+        const data = await fetchUserProfile(userID);
         setUser(data);
         setLoading(false);
         if (setProfileID) {
@@ -45,11 +45,12 @@ const WishScreen: React.FC = () => {
       } catch (error) {
         console.error(error);
         setError('Failed to fetch user profile');
+      } finally {
         setLoading(false);
       }
     };
 
-    fetchUserProfile();
+    loadUserProfile();
   }, [userID, setProfileID]);
 
   const cards =
@@ -101,9 +102,15 @@ const WishScreen: React.FC = () => {
             alignItems="flex-start"
             gap={2}
           >
-            <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-              {user?.firstName} {user?.lastName}
-            </Heading>
+            {user.firstName || user.lastName ? (
+              <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+                {user?.firstName} {user?.lastName}
+              </Heading>
+            ) : (
+              <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+                {user?.username}
+              </Heading>
+            )}
             <Text fontSize="md" color="gray.600" fontWeight={'semibold'}>
               Wish List - {cards.length} Items
             </Text>

@@ -15,33 +15,42 @@ import { Avatar } from '@chakra-ui/react';
 import { PokemonCardImage } from '@/types/personal-profile';
 import { useSearchParams } from 'next/navigation';
 import { UserProfile } from '@/types/personal-profile';
+import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
+import { useHeader } from '@/context/HeaderProvider';
 
 const WishScreen: React.FC = () => {
   const searchParams = useSearchParams();
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const username = searchParams.get('username');
+  const userName = searchParams.get('username');
+  const headerContext = useHeader();
+  const setProfileID = headerContext?.setProfileID;
 
   useEffect(() => {
-    const fetchUserProfile = async () => {
+    if (!userName) {
+      setError('No user name found');
+      setLoading(false);
+      return;
+    }
+    const loadUserProfile = async () => {
       try {
-        const response = await fetch(`/api/profiles?username=${username}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch user profile');
-        }
-        const data = await response.json();
+        const data = await fetchUserProfile(userName);
         setUser(data);
         setLoading(false);
+        if (setProfileID) {
+          setProfileID(data.username);
+        }
       } catch (error) {
         console.error(error);
         setError('Failed to fetch user profile');
+      } finally {
         setLoading(false);
       }
     };
 
-    fetchUserProfile();
-  }, [username]);
+    loadUserProfile();
+  }, [userName, setProfileID]);
 
   const cards =
     user?.wishlist.map((item) => ({
@@ -86,7 +95,6 @@ const WishScreen: React.FC = () => {
         >
           <Avatar.Root boxSize="75px" shape="rounded">
             <Avatar.Image src="/user-profile/pfp_temp.jpg" />
-            <Avatar.Fallback> SA </Avatar.Fallback>
           </Avatar.Root>
           <Flex
             flexDirection="column"
@@ -94,9 +102,15 @@ const WishScreen: React.FC = () => {
             alignItems="flex-start"
             gap={2}
           >
-            <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-              {user?.firstName} {user?.lastName}
-            </Heading>
+            {user.firstName || user.lastName ? (
+              <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+                {user?.firstName} {user?.lastName}
+              </Heading>
+            ) : (
+              <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+                {user?.username}
+              </Heading>
+            )}
             <Text fontSize="md" color="gray.600" fontWeight={'semibold'}>
               Wish List - {cards.length} Items
             </Text>

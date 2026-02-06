@@ -13,6 +13,7 @@ import { UserProfile } from '@/types/personal-profile';
 import { Box, Flex, Heading, Text, Icon, Spinner } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin } from 'react-icons/fi';
+import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
 
 const ProfileScreen = ({ username }: { username: string }) => {
   const headerContext = useHeader();
@@ -20,22 +21,21 @@ const ProfileScreen = ({ username }: { username: string }) => {
 
   // This is a temporary username for testing purposes.
   // Change the specific username to match the profile you have in your local database.
-  const tempUsername = username ?? 'habibi_george_bush';
+  const userName = username ?? 'habibi_george_bush';
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchUserProfile = async () => {
+    if (!userName) {
+      setError('No user name found');
+      setLoading(false);
+      return;
+    }
+    const loadUserProfile = async () => {
       try {
-        const response = await fetch(
-          `/api/get-user-by-username?username=${tempUsername}`
-        );
-        if (!response.ok) {
-          throw new Error('Failed to fetch user profile');
-        }
-        const data = await response.json();
+        const data = await fetchUserProfile(userName);
         setUser(data);
         if (setProfileID) {
           setProfileID(data.username);
@@ -44,12 +44,13 @@ const ProfileScreen = ({ username }: { username: string }) => {
       } catch (error) {
         console.error(error);
         setError('Failed to fetch user profile');
+      } finally {
         setLoading(false);
       }
     };
 
-    fetchUserProfile();
-  }, [tempUsername, setProfileID]);
+    loadUserProfile();
+  }, [userName, setProfileID]);
 
   if (loading) {
     return (
@@ -90,29 +91,36 @@ const ProfileScreen = ({ username }: { username: string }) => {
         <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
         </Avatar.Root>
-        <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-          {user.firstName} {user.lastName}
-        </Heading>
-        <Flex
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          gap={1}
-        >
-          <Icon as={FiMapPin} boxSize={4} />
-          <Text fontSize="xs" color="gray.600" fontWeight={'semibold'}>
-            {user.location}
+        {user.firstName ||
+          (user.lastName && (
+            <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+              {user.firstName} {user.lastName}
+            </Heading>
+          ))}
+        {user.location && (
+          <Flex
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+            gap={1}
+          >
+            <Icon as={FiMapPin} boxSize={4} />
+            <Text fontSize="xs" color="gray.600" fontWeight={'semibold'}>
+              {user.location}
+            </Text>
+          </Flex>
+        )}
+        {user.bio && (
+          <Text
+            fontSize="sm"
+            color="gray.800"
+            textAlign="center"
+            maxW="400px"
+            px={4}
+          >
+            {user.bio}
           </Text>
-        </Flex>
-        <Text
-          fontSize="sm"
-          color="gray.800"
-          textAlign="center"
-          maxW="400px"
-          px={4}
-        >
-          {user.bio}
-        </Text>
+        )}
         <Flex mt={1}>
           <SocialLinks
             instagram={user.instagram}
@@ -121,11 +129,23 @@ const ProfileScreen = ({ username }: { username: string }) => {
           />
         </Flex>
       </Flex>
-      <Showcase />
-      <TradeList />
+      <Showcase
+        showcaseList={user.showcaseList.map((item) => ({
+          name: item.card.name,
+          image: item.card.image_url,
+        }))}
+      />
+      <TradeList
+        type={'user'}
+        username={userName}
+        tradelist={user.tradeList.map((item) => ({
+          name: item.card.name,
+          image: item.card.image_url,
+        }))}
+      />
       <WishList
         type={'user'}
-        username={tempUsername}
+        username={userName}
         wishlist={user.wishlist.map((item) => ({
           name: item.card.name,
           image: item.card.image_url,

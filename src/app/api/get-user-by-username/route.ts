@@ -5,17 +5,17 @@ export const dynamic = 'force-static';
 
 export const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url);
-  const username = searchParams.get('username');
+  const userName = searchParams.get('userName');
 
-  if (!username) {
+  if (!userName) {
     return NextResponse.json(
-      { error: 'No username given, fetch terminated' },
+      { error: 'No userName given, fetch terminated' },
       { status: 400 }
     );
   }
 
   const user = await prisma.user.findUnique({
-    where: { username: username },
+    where: { username: userName },
     select: {
       id: true,
       username: true,
@@ -44,5 +44,35 @@ export const GET = async (request: Request) => {
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
   }
 
-  return NextResponse.json(user);
+  const tradeList = await prisma.collectionEntry.findMany({
+    where: {
+      userId: user.id,
+      forTrade: true,
+    },
+    select: {
+      card: {
+        select: {
+          name: true,
+          image_url: true,
+        },
+      },
+    },
+  });
+
+  const showcaseList = await prisma.collectionEntry.findMany({
+    where: {
+      userId: user.id,
+      showcase: true,
+    },
+    select: {
+      card: {
+        select: {
+          name: true,
+          image_url: true,
+        },
+      },
+    },
+  });
+
+  return NextResponse.json({ ...user, tradeList, showcaseList });
 };

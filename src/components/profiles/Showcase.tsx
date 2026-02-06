@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Divider from '@/components/profiles/Divider';
-import { Flex, Image, Text, Spinner, SimpleGrid } from '@chakra-ui/react';
+import { Flex, Image, Text, SimpleGrid } from '@chakra-ui/react';
 import { PokemonCardImage } from '@/types/personal-profile';
 
 interface ShowcaseProps {

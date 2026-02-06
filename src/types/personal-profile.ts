@@ -17,8 +17,10 @@ export interface UserProfile {
   bio?: string | null;
   location: string;
   instagram?: string;
-  twitter?: string;
+  x?: string;
   facebook?: string;
+  discord?: string;
+  whatsapp?: string;
   wishlist: {
     card: {
       name: string;

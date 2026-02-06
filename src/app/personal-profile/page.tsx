@@ -65,6 +65,14 @@ const PersonalProfileScreen: React.FC = () => {
     loadUserProfile();
   }, [userID, setProfileID]);
 
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
+
   if (error) {
     return (
       <Flex justifyContent="center" alignItems="center" height="50vh">
@@ -78,14 +86,6 @@ const PersonalProfileScreen: React.FC = () => {
       <Flex justifyContent="center" alignItems="center" height="50vh">
         <Text>User not found</Text>
       </Flex>
-    );
-  }
-
-  if (loading || !session) {
-    return (
-      <Box textAlign="center" mt={10}>
-        <Spinner size="xl" />
-      </Box>
     );
   }
 
@@ -149,8 +149,10 @@ const PersonalProfileScreen: React.FC = () => {
         <Flex mt={1} px={4}>
           <SocialLinks
             instagram={user.instagram}
-            twitter={user.twitter}
+            x={user.x}
             facebook={user.facebook}
+            discord={user.discord}
+            whatsapp={user.whatsapp}
           />
         </Flex>
       </Flex>

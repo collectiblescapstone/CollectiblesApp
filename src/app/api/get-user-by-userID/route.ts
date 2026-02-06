@@ -27,6 +27,8 @@ export const GET = async (request: Request) => {
       instagram: true,
       x: true,
       facebook: true,
+      discord: true,
+      whatsapp: true,
       wishlist: {
         select: {
           card: {

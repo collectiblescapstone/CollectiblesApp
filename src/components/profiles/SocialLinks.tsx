@@ -3,20 +3,31 @@
 import React from 'react';
 
 import { Flex, Icon, Text } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaDiscord, FaWhatsapp } from 'react-icons/fa';
+import { RiTwitterXLine } from 'react-icons/ri';
 import { SocialsType } from '@/types/user-profile';
 
 interface SocialLinksProps {
   instagram?: string;
-  twitter?: string;
+  x?: string;
   facebook?: string;
+  discord?: string;
+  whatsapp?: string;
 }
 
-const SocialLinks = ({ instagram, twitter, facebook }: SocialLinksProps) => {
+const SocialLinks = ({
+  instagram,
+  x,
+  facebook,
+  discord,
+  whatsapp,
+}: SocialLinksProps) => {
   const socials: SocialsType[] = [
     instagram && { icon: FaInstagram, handle: instagram },
-    twitter && { icon: FaTwitter, handle: twitter },
+    x && { icon: RiTwitterXLine, handle: x },
     facebook && { icon: FaFacebook, handle: facebook },
+    discord && { icon: FaDiscord, handle: discord },
+    whatsapp && { icon: FaWhatsapp, handle: whatsapp },
   ].filter(Boolean) as SocialsType[];
 
   if (socials.length === 0) {

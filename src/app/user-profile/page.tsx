@@ -121,11 +121,13 @@ const ProfileScreen = ({ username }: { username: string }) => {
             {user.bio}
           </Text>
         )}
-        <Flex mt={1}>
+        <Flex mt={1} px={4}>
           <SocialLinks
             instagram={user.instagram}
-            twitter={user.twitter}
+            x={user.x}
             facebook={user.facebook}
+            discord={user.discord}
+            whatsapp={user.whatsapp}
           />
         </Flex>
       </Flex>

@@ -31,6 +31,12 @@ export interface UserProfile {
       image_url: string;
     };
   }[];
+  showcaseList: {
+    card: {
+      name: string;
+      image_url: string;
+    };
+  }[];
 }
 
 export interface PokemonCardImage {

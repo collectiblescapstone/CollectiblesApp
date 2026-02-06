@@ -4,12 +4,12 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useHeader } from '@/context/HeaderProvider';
 
-import SocialLinks from '@/components/user-profile/SocialLinks';
-import Showcase from '@/components/user-profile/Showcase';
-import TradeList from '@/components/user-profile/TradeList';
-import WishList from '@/components/user-profile/WishList';
+import SocialLinks from '@/components/profiles/SocialLinks';
+import Showcase from '@/components/profiles/Showcase';
+import TradeList from '@/components/profiles/TradeList';
+import WishList from '@/components/profiles/WishList';
 import { UserProfile } from '@/types/personal-profile';
-import { fetchUserProfile } from '@/utils/userIDProfilePuller';
+import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
 
 import {
   Box,
@@ -154,7 +154,12 @@ const PersonalProfileScreen: React.FC = () => {
           />
         </Flex>
       </Flex>
-      <Showcase />
+      <Showcase
+        showcaseList={user.showcaseList.map((item) => ({
+          name: item.card.name,
+          image: item.card.image_url,
+        }))}
+      />
       <TradeList
         type={'personal'}
         username={''}

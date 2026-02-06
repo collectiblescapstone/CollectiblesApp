@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import { useHeader } from '@/context/HeaderProvider';
 
-import SocialLinks from '@/components/user-profile/SocialLinks';
-import Showcase from '@/components/user-profile/Showcase';
-import TradeList from '@/components/user-profile/TradeList';
-import WishList from '@/components/user-profile/WishList';
-import AccountOptions from '@/components/user-profile/AccountOptions';
+import SocialLinks from '@/components/profiles/SocialLinks';
+import Showcase from '@/components/profiles/Showcase';
+import TradeList from '@/components/profiles/TradeList';
+import WishList from '@/components/profiles/WishList';
+import AccountOptions from '@/components/profiles/AccountOptions';
 import { UserProfile } from '@/types/personal-profile';
 
 import { Box, Flex, Heading, Text, Icon, Spinner } from '@chakra-ui/react';

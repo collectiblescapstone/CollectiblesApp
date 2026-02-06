@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Divider from '@/components/user-profile/Divider';
+import Divider from '@/components/profiles/Divider';
 import { useRouter } from 'next/navigation';
 import { Button, Flex, Image, Text, SimpleGrid } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
@@ -84,7 +84,7 @@ const WishList: React.FC<WishListProps> = ({ type, username, wishlist }) => {
         {viewmore && (
           <Button
             variant="solid"
-            bg="brand.turtiose"
+            bg="brand.turtoise"
             color="white"
             size="sm"
             onClick={press}

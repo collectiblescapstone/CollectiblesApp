@@ -16,7 +16,7 @@ import { PokemonCardImage } from '@/types/personal-profile';
 import { UserProfile } from '@/types/personal-profile';
 import { useAuth } from '@/context/AuthProvider';
 import { useHeader } from '@/context/HeaderProvider';
-import { fetchUserProfile } from '@/utils/userIDProfilePuller';
+import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
 
 const WishScreen: React.FC = () => {
   const [user, setUser] = useState<UserProfile | null>(null);

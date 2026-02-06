@@ -1,24 +1,18 @@
 'use client';
 
 import React from 'react';
-import Divider from '@/components/user-profile/Divider';
+import Divider from '@/components/profiles/Divider';
 import { Flex, Image, Text, Spinner, SimpleGrid } from '@chakra-ui/react';
-import { useRandomCards } from '@/components/personal-profile/RandomCard';
 import { PokemonCardImage } from '@/types/personal-profile';
 
-const Showcase: React.FC = () => {
-  const { cards, loading } = useRandomCards('ex5', 3);
+interface ShowcaseProps {
+  showcaseList: PokemonCardImage[];
+}
 
-  if (loading) {
-    return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
-      </Flex>
-    );
-  }
+const Showcase: React.FC<ShowcaseProps> = ({ showcaseList }) => {
+  const display = showcaseList.slice(0, 3);
 
-  if (cards.length === 0) {
+  if (showcaseList.length === 0) {
     return (
       <Flex
         flexDirection="column"
@@ -59,11 +53,11 @@ const Showcase: React.FC = () => {
         </Text>
       </Flex>
       <SimpleGrid columns={{ base: 3 }} w="100%" gap={10}>
-        {cards.map((card: PokemonCardImage, index: number) => (
+        {display.map((item: PokemonCardImage, index: number) => (
           <Flex key={index}>
             <Image
-              src={`${card.image}/high.png`}
-              alt={card.name}
+              src={`${item.image}`}
+              alt={item.name}
               w="105px"
               h="auto"
               borderRadius="none"

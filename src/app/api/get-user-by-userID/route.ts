@@ -59,5 +59,20 @@ export const GET = async (request: Request) => {
     },
   });
 
-  return NextResponse.json({ ...user, tradeList });
+  const showcaseList = await prisma.collectionEntry.findMany({
+    where: {
+      userId: userID,
+      showcase: true,
+    },
+    select: {
+      card: {
+        select: {
+          name: true,
+          image_url: true,
+        },
+      },
+    },
+  });
+
+  return NextResponse.json({ ...user, tradeList, showcaseList });
 };

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import prisma from '@/lib/prisma';
 
 export const dynamic = 'force-static';
 
@@ -20,7 +20,7 @@ export async function GET(request: Request) {
       bio: true,
       location: true,
       instagram: true,
-      twitter: true,
+      x: true,
       facebook: true,
       visibility: true,
     },
@@ -36,7 +36,7 @@ export async function GET(request: Request) {
     bio: user.bio ?? '',
     location: user.location ?? '',
     instagram: user.instagram ?? '',
-    twitter: user.twitter ?? '',
+    xit: user.x ?? '',
     facebook: user.facebook ?? '',
     visibility: user.visibility ?? 'Public',
     email: user.email ?? null,
@@ -47,10 +47,22 @@ export async function GET(request: Request) {
 export async function PATCH(request: Request) {
   try {
     const body = await request.json();
-    const { id: identifier, name, bio, location, instagram, twitter, facebook, visibility } = body;
+    const {
+      id: identifier,
+      name,
+      bio,
+      location,
+      instagram,
+      twitter,
+      facebook,
+      visibility,
+    } = body;
 
     if (!identifier) {
-      return NextResponse.json({ error: 'Missing identifier (id)' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Missing identifier (id)' },
+        { status: 400 }
+      );
     }
 
     const data: any = {};
@@ -72,6 +84,9 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ success: true, user: updated });
   } catch (err: any) {
     console.error('Error updating profile', err);
-    return NextResponse.json({ error: err.message ?? 'Unknown error' }, { status: 500 });
+    return NextResponse.json(
+      { error: err.message ?? 'Unknown error' },
+      { status: 500 }
+    );
   }
 }

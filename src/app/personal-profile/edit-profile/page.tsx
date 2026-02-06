@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues } from '@/types/personal-profile';
-import { supabase } from '@/utils/supabase';
 
 import {
   Box,
@@ -29,7 +28,7 @@ const MAX_CHARACTERS = 110;
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
-  const { session, loading } = useAuth();
+  const { session, loading, signOut } = useAuth();
 
   const {
     register,
@@ -50,26 +49,17 @@ const PersonalProfileScreen: React.FC = () => {
   });
 
   const [isSaving, setIsSaving] = useState(false);
-  const [userId, setUserId] = useState<string | null>(null);
 
   const bioVal = watch('bio');
 
-  useEffect(() => {
-    const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      setUserId(user?.id || null);
-    };
-    getUser();
-  }, []);
-
   const handleSave = handleSubmit(async (data) => {
-    if (!userId) return;
+    if (!session?.user?.id) return;
     setIsSaving(true);
     try {
       const res = await fetch('/api/profile', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: userId, ...data }),
+        body: JSON.stringify({ id: session?.user?.id, ...data }),
       });
 
       if (!res.ok) {
@@ -87,10 +77,10 @@ const PersonalProfileScreen: React.FC = () => {
 
   // Fetch existing profile data
   useEffect(() => {
-    if (!userId) return;
+    if (!session?.user?.id) return;
     async function fetchProfile() {
       try {
-        const res = await fetch(`/api/profile?id=${userId}`);
+        const res = await fetch(`/api/profile?id=${session?.user?.id}`);
         if (res.ok) {
           const data = await res.json();
           reset({
@@ -109,14 +99,10 @@ const PersonalProfileScreen: React.FC = () => {
     }
 
     fetchProfile();
-  }, [userId, reset]);
+  }, [session?.user?.id, reset]);
 
   const wishlist = () => {
     router.push('/personal-profile/edit-profile/wishlist');
-  };
-
-  const signout = () => {
-    // Sign out logic here
   };
 
   if (loading || !session) {
@@ -291,7 +277,12 @@ const PersonalProfileScreen: React.FC = () => {
         </Field.Root>
       </Flex>
       <Flex justifyContent="center" alignItems="center" w="100%" mt={7}>
-        <Button variant="solid" colorScheme="black" size="xl" onClick={signout}>
+        <Button
+          variant="solid"
+          colorScheme="black"
+          size="xl"
+          onClick={() => signOut()}
+        >
           Sign out
         </Button>
       </Flex>

@@ -8,6 +8,7 @@ interface PokemonCardMiniProps {
   cardName: string;
   image: string;
   cardId: string; // actual card ID, e.g., "sv01-001"
+  setId: string;
   // illustrator?: string;
   // rarity?: string;
 }
@@ -16,17 +17,18 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
   cardName,
   image,
   cardId,
+  setId
   // illustrator,
   // rarity,
 }: PokemonCardMiniProps) => {
+` `
+
   return (
     <Link
       href={{
         pathname: '/edit-card',
         query: {
-          imageUrl: image,
-          cardName: cardName,
-          cardSet: cardId,
+          card: cardId,
         },
       }}
     >
@@ -77,7 +79,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
 
           {/* Show the actual card ID */}
           <Text fontSize="sm" color="gray.600">
-            {cardId}
+            {setId}
           </Text>
         </VStack>
       </Box>

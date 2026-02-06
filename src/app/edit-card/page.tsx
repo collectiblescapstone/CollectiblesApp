@@ -1,12 +1,10 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-
 import {
   Button,
   Field,
-  Input,
   Stack,
   TagsInput,
   Select,
@@ -15,11 +13,22 @@ import {
   createListCollection,
   Listbox,
   Spinner,
+  Text
 } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
+
+// Context
 import { useAuth } from '@/context/AuthProvider';
+
+// Utils
+import { getCardInformation } from '@/utils/pokemonCards';
+import { getSetInformation } from '@/utils/pokemonSet';
+
+// Types
+import type { PokemonSet } from '@/utils/pokemonSet';
+import type { PokemonCard } from '@/utils/pokemonCards';
 
 interface FormValues {
   CardName: string;
@@ -41,35 +50,32 @@ const formSchema = z.object({
   Tags: z.array(z.string()).optional(),
 });
 
+const companies: Record<string, string> = { "ungraded": "Ungraded", "psa": "PSA", "tag": "TAG", "cgc": "CGC", "beckett": "Beckett", "ace": "ACE" };
+
+const gradeItems: { label: string; value: string }[] = Object.entries(companies).map(([value, label]) => ({ label, value }));
+
 const grades = createListCollection({
-  items: [
-    { label: 'Ungraded', value: 'ungraded' },
-    { label: 'PSA', value: 'psa' },
-    { label: 'TAG', value: 'tag' },
-    { label: 'CGC', value: 'cgc' },
-    { label: 'Beckett', value: 'beckett' },
-    { label: 'ACE', value: 'ace' },
-  ],
+  items: gradeItems
 });
+
+const labels = (company: string, increment: number) => {
+  const gradeItems = [];
+  for (let i = 10; i >= 1; i = i - increment) {
+    gradeItems.push({ label: `${i}`, value: `${company}-${i}` });
+  }
+  return gradeItems;
+};
+
+
 
 // Mapping for the second select's options depending on the selected grade
 const gradeDetailsMap: Record<string, { label: string; value: string }[]> = {
   ungraded: [],
-  psa: [
-    { label: '10', value: 'psa-10' },
-    { label: '9', value: 'psa-9' },
-    { label: '8', value: 'psa-8' },
-  ],
-  tag: [
-    { label: '10', value: 'tag-10' },
-    { label: '9', value: 'tag-9' },
-  ],
-  cgc: [
-    { label: '10', value: 'cgc-10' },
-    { label: '9.5', value: 'cgc-9.5' },
-  ],
-  beckett: [{ label: '10', value: 'beckett-10' }],
-  ace: [{ label: '10', value: 'ace-10' }],
+  psa: labels('psa', 1),
+  tag: labels('tag', 1),
+  cgc: labels('cgc', 0.5),
+  beckett: labels('beckett', 1),
+  ace: labels('ace', 1),
 };
 
 const conditions = createListCollection({
@@ -102,34 +108,15 @@ function reset() {
   console.log('Reset form called');
 }
 
-const EditCardPage = () => {
+const EditCardPage: React.FC = () => {
   type SelectPayload = { value?: string | string[] };
 
   const { session, loading } = useAuth();
 
   const searchParams = useSearchParams();
 
-  const imageUrl = searchParams.get('imageUrl') ?? '';
-  const cardName = searchParams.get('cardName') ?? '';
-  const cardSet = searchParams.get('cardSet') ?? '';
+  const cardId = searchParams.get('card') ?? '';
 
-  const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      CardName: cardName,
-      CardSet: cardSet,
-      CardGrade: ['ungraded'],
-      CardGradeDetail: [],
-      Condition: undefined,
-      FoilPattern: undefined,
-      Tags: [],
-    },
-  });
 
   // keep track of the currently selected top-level grade so we can
   // enable/disable and populate the second select accordingly
@@ -141,9 +128,49 @@ const EditCardPage = () => {
     [selectedGrade]
   );
 
+
+
+
+  const [selectedCard, setSelectedCard] = useState<PokemonCard | null>(null);
+  const [selectedSetInfo, setSelectedSetInfo] = useState<PokemonSet | null>(null);
+
+  const [load, setLoading] = useState(true);
+
+
+  // Fetch cards based on type & params
+  useEffect(() => {
+    const loadData = async () => {
+      setLoading(true);
+      setSelectedCard(await getCardInformation(cardId) ?? null);
+      console.log(selectedCard);
+      setSelectedSetInfo(await getSetInformation(selectedCard?.setId ?? '') ?? null);
+      setLoading(false);
+    };
+
+    loadData();
+  }, [cardId, selectedCard]);
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      CardName: selectedCard?.name,
+      CardSet: selectedCard?.setId,
+      CardGrade: ['ungraded'],
+      CardGradeDetail: [],
+      Condition: undefined,
+      FoilPattern: undefined,
+      Tags: [],
+    },
+  });
+
   const onSubmit = handleSubmit((data) => console.log(data));
 
-  if (loading || !session) {
+  if (loading || !session || load) {
     return (
       <Box textAlign="center" mt={10}>
         <Spinner size="xl" />
@@ -177,14 +204,14 @@ const EditCardPage = () => {
             alignItems="center"
             justifyContent="center"
             style={{
-              backgroundImage: imageUrl
-                ? `url(${imageUrl}/low.jpg)`
+              backgroundImage: selectedCard && selectedCard["image_url"]
+                ? `url(${selectedCard["image_url"]})`
                 : undefined,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
           >
-            {!imageUrl && 'CARD IMAGE'}
+            {!selectedCard && 'CARD IMAGE'}
           </Box>
 
           {/* Buttons under the card image for quick actions */}
@@ -200,28 +227,15 @@ const EditCardPage = () => {
 
         {/* Right: form fields stacked vertically; take remaining width */}
         <Stack as="div" gap="4" align="flex-start" flexGrow={1} minWidth={0}>
-          <Field.Root invalid={!!errors.CardName}>
-            <Field.Label>
-              Card name <Field.RequiredIndicator />
-            </Field.Label>
-            <Input
-              placeholder="Item name"
-              {...register('CardName', { required: 'Card name is required' })}
-            />
-            <Field.ErrorText>{errors.CardName?.message}</Field.ErrorText>
-          </Field.Root>
+          <Text textStyle="sm" fontWeight="bold">
+            Card Name
+          </Text>
+          <Text textStyle="sm">{selectedCard?.name || " "}</Text>
 
-          <Field.Root invalid={!!errors.CardSet}>
-            <Field.Label>
-              Card set <Field.RequiredIndicator />
-            </Field.Label>
-            <Input
-              placeholder="Item set"
-              {...register('CardSet', { required: 'Card set is required' })}
-            />
-            <Field.ErrorText>{errors.CardSet?.message}</Field.ErrorText>
-          </Field.Root>
-
+          <Text textStyle="sm" fontWeight="bold">
+            Card Set
+          </Text>
+          <Text textStyle="sm">{selectedSetInfo?.name || " "}</Text>
           <Stack
             direction="row"
             gap="3"

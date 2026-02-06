@@ -173,7 +173,8 @@ const FilterCardsContent: React.FC = () => {
             <PokemonCardMini
               key={index}
               cardName={card.name}
-              cardId={
+              cardId={setId + "-" + card.id}
+              setId={
                 card.id +
                 (Number(card.set.official) > 0 ? '/' + card.set.official : '')
               }

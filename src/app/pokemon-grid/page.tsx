@@ -159,11 +159,11 @@ const PokemonGridPage: React.FC = () => {
     selectedGen === 'ALL'
       ? pokemon
       : pokemon.filter((id) => {
-          const genIndex = parseInt(selectedGen) - 1;
-          const startId = genIndex === 0 ? 1 : pokemonGen[genIndex - 1] + 1;
-          const endId = pokemonGen[genIndex];
-          return id >= startId && id <= endId;
-        });
+        const genIndex = parseInt(selectedGen) - 1;
+        const startId = genIndex === 0 ? 1 : pokemonGen[genIndex - 1] + 1;
+        const endId = pokemonGen[genIndex];
+        return id >= startId && id <= endId;
+      });
 
   if (loading || !session) {
     return (

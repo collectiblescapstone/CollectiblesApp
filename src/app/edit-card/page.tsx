@@ -58,24 +58,22 @@ const grades = createListCollection({
   items: gradeItems
 });
 
-const labels = (company: string, increment: number) => {
+const labels = (company: string, increment: number, startNumber: number = 10) => {
   const gradeItems = [];
-  for (let i = 10; i >= 1; i = i - increment) {
+  for (let i = startNumber; i >= 1; i = i - increment) {
     gradeItems.push({ label: `${i}`, value: `${company}-${i}` });
   }
   return gradeItems;
 };
 
-
-
 // Mapping for the second select's options depending on the selected grade
 const gradeDetailsMap: Record<string, { label: string; value: string }[]> = {
   ungraded: [],
-  psa: labels('psa', 1),
-  tag: labels('tag', 1),
-  cgc: labels('cgc', 0.5),
-  beckett: labels('beckett', 1),
-  ace: labels('ace', 1),
+  psa: labels('psa', 1).sort((a, b) => parseFloat(b.label) - parseFloat(a.label)),
+  tag: [{ label: "P10", value: "tag-pristine-10" }, { label: "10", value: "tag-10" }].concat(labels('tag', 0.5, 9).sort((a, b) => parseFloat(b.label) - parseFloat(a.label))),
+  cgc: labels('cgc', 0.5).sort((a, b) => parseFloat(b.label) - parseFloat(a.label)),
+  beckett: [{ label: "BL10", value: "beckett-black-label-10" }].concat([{ label: "9.5", value: "beckett-9.5" }].concat(labels('beckett', 1))).sort((a, b) => parseFloat(b.label) - parseFloat(a.label)),
+  ace: labels('ace', 1).sort((a, b) => parseFloat(b.label) - parseFloat(a.label)),
 };
 
 const conditions = createListCollection({
@@ -85,21 +83,6 @@ const conditions = createListCollection({
     { label: 'Moderately Played', value: 'moderately-played' },
     { label: 'Heavily Played', value: 'heavily-played' },
     { label: 'Damaged', value: 'damaged' },
-  ],
-});
-
-const foils = createListCollection({
-  items: [
-    { label: 'Starlight', value: 'starlight' },
-    { label: 'Cosmos', value: 'cosmos' },
-    { label: 'Tinsel', value: 'tinsel' },
-    { label: 'Sheen', value: 'sheen' },
-    { label: 'Cracked Ice', value: 'cracked-ice' },
-    { label: 'Crosshatch', value: 'crosshatch' },
-    { label: 'Water Web', value: 'water-web' },
-    { label: 'Sequin', value: 'sequin' },
-    { label: 'Pixel', value: 'pixel' },
-    { label: 'Reverse Holofoil', value: 'reverse-holo' },
   ],
 });
 
@@ -128,9 +111,6 @@ const EditCardPage: React.FC = () => {
     [selectedGrade]
   );
 
-
-
-
   const [selectedCard, setSelectedCard] = useState<PokemonCard | null>(null);
   const [selectedSetInfo, setSelectedSetInfo] = useState<PokemonSet | null>(null);
 
@@ -149,6 +129,21 @@ const EditCardPage: React.FC = () => {
 
     loadData();
   }, [cardId, selectedCard]);
+
+  const foils = createListCollection({
+    items: [
+      { label: 'Starlight', value: 'starlight' },
+      { label: 'Cosmos', value: 'cosmos' },
+      { label: 'Tinsel', value: 'tinsel' },
+      { label: 'Sheen', value: 'sheen' },
+      { label: 'Cracked Ice', value: 'cracked-ice' },
+      { label: 'Crosshatch', value: 'crosshatch' },
+      { label: 'Water Web', value: 'water-web' },
+      { label: 'Sequin', value: 'sequin' },
+      { label: 'Pixel', value: 'pixel' },
+      { label: 'Reverse Holofoil', value: 'reverse-holo' },
+    ],
+  });
 
   const {
     register,

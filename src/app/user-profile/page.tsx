@@ -8,11 +8,22 @@ import TradeList from '@/components/user-profile/TradeList';
 import WishList from '@/components/user-profile/WishList';
 import AccountOptions from '@/components/user-profile/AccountOptions';
 
-import { Box, Flex, Heading, Text, Icon } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Icon, Spinner } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin } from 'react-icons/fi';
+import { useAuth } from '@/context/AuthProvider';
 
 const ProfileScreen: React.FC = () => {
+  const { session, loading } = useAuth();
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
+
   return (
     <Box bg="white" minH="100vh" color="black" mb={4}>
       <Box

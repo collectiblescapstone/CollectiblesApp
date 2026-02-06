@@ -20,13 +20,15 @@ generator client {
 model User {
   id         String            @id @db.Uuid
   username   String?           @unique
+  firstName  String?
+  lastName   String?
   email      String            @unique
-  bio        String?
   location   String?
   instagram  String?
-  twitter    String?
+  x          String?
   facebook   String?
-  visibility String?           @default("Public")
+  bio        String?
+  visibility String            @default("public")
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 }
@@ -54,8 +56,8 @@ model Set {
   cards    Card[]
   logo     String?
   symbol   String?
-  official Int
-  total    Int
+  official Int     @default(0)
+  total    Int     @default(0)
 }
 
 model CollectionEntry {

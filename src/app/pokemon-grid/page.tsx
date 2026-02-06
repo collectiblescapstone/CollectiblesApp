@@ -8,6 +8,7 @@ import {
   GridItem,
   Portal,
   Select,
+  Spinner,
   createListCollection,
 } from '@chakra-ui/react';
 
@@ -20,8 +21,11 @@ import { FiltersProvider } from '@/hooks/useFilters';
 
 // Types
 import { PokemonSetType } from '@/types/pokemon-grid';
+import { useAuth } from '@/context/AuthProvider';
 
 const PokemonGridPage: React.FC = () => {
+  const { session, loading } = useAuth();
+
   const [selected, setSelected] = useState('set');
   const [selectedEra, setSelectedEra] = useState('sv');
   const [groupedSets, setGroupedSets] = useState<
@@ -160,6 +164,14 @@ const PokemonGridPage: React.FC = () => {
           const endId = pokemonGen[genIndex];
           return id >= startId && id <= endId;
         });
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <FiltersProvider>

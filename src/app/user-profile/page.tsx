@@ -91,12 +91,11 @@ const ProfileScreen = ({ username }: { username: string }) => {
         <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
           <Avatar.Image src="/user-profile/pfp_temp.jpg" />
         </Avatar.Root>
-        {user.firstName ||
-          (user.lastName && (
-            <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-              {user.firstName} {user.lastName}
-            </Heading>
-          ))}
+        {(user.firstName || user.lastName) && (
+          <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+            {user.firstName} {user.lastName}
+          </Heading>
+        )}
         {user.location && (
           <Flex
             flexDirection="row"

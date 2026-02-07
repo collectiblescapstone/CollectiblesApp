@@ -11,11 +11,11 @@ export interface FormValues {
 export interface UserProfile {
   id: string;
   username: string;
-  firstName: string;
-  lastName: string;
+  firstName?: string | null;
+  lastName?: string | null;
   email: string;
   bio?: string | null;
-  location: string;
+  location?: string | null;
   instagram?: string;
   x?: string;
   facebook?: string;

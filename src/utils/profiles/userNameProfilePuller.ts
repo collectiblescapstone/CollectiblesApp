@@ -4,7 +4,7 @@ export const fetchUserProfile = async (
   userName: string
 ): Promise<UserProfile> => {
   const response = await fetch(
-    `/api/get-user-by-username?userName=${userName}`
+    `/api/get-user-by-username?userName=${encodeURIComponent(userName)}`
   );
 
   if (!response.ok) {

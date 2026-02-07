@@ -76,7 +76,7 @@ model CollectionEntry {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@unique([userId, cardId, condition, variant]) 
+  @@unique([userId, cardId, condition, variant])
 }
 
 model WishlistEntry {

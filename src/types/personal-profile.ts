@@ -1,10 +1,16 @@
 export interface FormValues {
-  name: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  username: string;
   bio: string;
   location: string;
   instagram: string;
-  twitter: string;
+  x: string;
   facebook: string;
+  whatsapp: string;
+  discord: string;
+  profilePic: number;
   visibility: string;
 }
 
@@ -21,6 +27,7 @@ export interface UserProfile {
   facebook?: string;
   discord?: string;
   whatsapp?: string;
+  profile_pic: number;
   wishlist: {
     card: {
       name: string;

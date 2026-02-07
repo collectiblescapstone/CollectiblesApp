@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '@/context/AuthProvider';
 import Link from 'next/link';
 import {
   Box,
@@ -13,6 +14,8 @@ import {
   Icon,
 } from '@chakra-ui/react';
 import { LuSparkle, LuSparkles } from 'react-icons/lu';
+import { CapacitorHttp } from '@capacitor/core';
+import { baseUrl } from '@/utils/constants';
 
 interface PokemonSetProps {
   label: string;
@@ -23,14 +26,42 @@ interface PokemonSetProps {
   grandmasterSet: number;
 }
 
-export default function PokemonSet({
+const PokemonSet = ({
   label,
   image,
   setID,
   setName,
   masterSet,
   grandmasterSet,
-}: PokemonSetProps) {
+}: PokemonSetProps) => {
+  const { session } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!session?.user?.id) return;
+
+    const fetchCards = async () => {
+      setLoading(true);
+
+      const res = await CapacitorHttp.get({
+        url: `${baseUrl}/api/set-counts`,
+        params: {
+          userId: session.user.id,
+          setId: setID,
+          masterSet: 'true',
+        },
+      });
+
+      setCount(res.data.count);
+      setLoading(false);
+    };
+
+    fetchCards();
+  }, [session?.user?.id, setID]);
+
+  console.log(setID, count);
+
   return (
     <Box w="100%" maxW="300px" mx="auto">
       <Link
@@ -134,4 +165,6 @@ export default function PokemonSet({
       </Link>
     </Box>
   );
-}
+};
+
+export default PokemonSet;

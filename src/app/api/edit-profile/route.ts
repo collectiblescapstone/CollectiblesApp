@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import { FormValues } from '@/types/personal-profile';
 
 export const dynamic = 'force-static';
 
@@ -30,7 +31,9 @@ export async function PATCH(request: Request) {
       );
     }
 
-    const data: any = {};
+    const data: Partial<
+      Omit<FormValues, 'profilePic'> & { profile_pic?: number }
+    > = {};
 
     // name in the form maps to username in DB
     if (typeof firstName === 'string') data.firstName = firstName;
@@ -52,11 +55,8 @@ export async function PATCH(request: Request) {
     });
 
     return NextResponse.json({ success: true, user: updated });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error updating profile', err);
-    return NextResponse.json(
-      { error: err.message ?? 'Unknown error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: err }, { status: 500 });
   }
 }

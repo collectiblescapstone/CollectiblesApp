@@ -36,7 +36,10 @@ const PokemonSet = ({
 }: PokemonSetProps) => {
   const { session } = useAuth();
   const [loading, setLoading] = useState(true);
-  const [count, setCount] = useState<number | null>(null);
+  const [masterSetCount, setMasterSetCount] = useState<number | null>(null);
+  const [grandmasterSetCount, setGrandmasterSetCount] = useState<number | null>(
+    null
+  );
 
   useEffect(() => {
     if (!session?.user?.id) return;
@@ -49,18 +52,24 @@ const PokemonSet = ({
         params: {
           userId: session.user.id,
           setId: setID,
-          masterSet: 'true',
         },
       });
 
-      setCount(res.data.count);
+      setMasterSetCount(res.data.masterSetCount);
+      setGrandmasterSetCount(res.data.grandmasterSetCount);
       setLoading(false);
     };
 
     fetchCards();
   }, [session?.user?.id, setID]);
 
-  console.log(setID, count);
+  console.log(
+    setID,
+    '| Master Set: ',
+    masterSetCount,
+    ' | Grandmaster Set: ',
+    grandmasterSetCount
+  );
 
   return (
     <Box w="100%" maxW="300px" mx="auto">

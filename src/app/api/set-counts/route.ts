@@ -7,7 +7,6 @@ export const GET = async (request: Request) => {
 
   const userId = searchParams.get('userId');
   const setId = searchParams.get('setId');
-  const masterSet = searchParams.get('masterSet') === 'true';
 
   if (!userId || !setId) {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), {
@@ -16,7 +15,7 @@ export const GET = async (request: Request) => {
   }
 
   try {
-    const count = (
+    const masterSetCount = (
       await prisma.collectionEntry.findMany({
         where: {
           userId,
@@ -27,12 +26,29 @@ export const GET = async (request: Request) => {
       })
     ).length;
 
-    console.log(setId, count);
+    const grandmasterSetCount = (
+      await prisma.collectionEntry.findMany({
+        where: {
+          userId,
+          setId,
+        },
+        distinct: ['cardId', 'variant'],
+        select: { cardId: true },
+      })
+    ).length;
+
+    console.log(
+      setId,
+      '| Master Set: ',
+      masterSetCount,
+      ' | Grandmaster Set: ',
+      grandmasterSetCount
+    );
 
     return new Response(
       JSON.stringify({
-        count,
-        masterSet,
+        masterSetCount,
+        grandmasterSetCount,
       }),
       {
         status: 200,

@@ -28,6 +28,8 @@ import { FiEdit3, FiCheck, FiEdit2 } from 'react-icons/fi';
 import { useAuth } from '@/context/AuthProvider';
 import { pfp_image_mapping, visibilityOptions } from './constants';
 import AvatarPopup from '@/components/ui/PopupUI';
+import { CapacitorHttp } from '@capacitor/core';
+import { baseUrl } from '@/utils/constants';
 
 const MAX_CHARACTERS = 110;
 
@@ -56,7 +58,7 @@ const PersonalProfileScreen: React.FC = () => {
       whatsapp: '',
       discord: '',
       profilePic: 0,
-      visibility: 'Public',
+      visibility: 'public',
     },
   });
 
@@ -69,14 +71,15 @@ const PersonalProfileScreen: React.FC = () => {
     if (!session?.user?.id) return;
     setIsSaving(true);
     try {
-      const res = await fetch('/api/profile', {
+      const res = await CapacitorHttp.patch({
+        url: `${baseUrl}/api/edit-profile`,
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: session?.user?.id, ...data }),
+        data: JSON.stringify({ id: session?.user?.id, ...data }),
       });
 
-      if (!res.ok) {
-        const err = await res.json();
+      if (res.status !== 200) {
+        const err = res.data.error;
         console.error(err);
       } else {
         router.push('/personal-profile');
@@ -339,10 +342,10 @@ const PersonalProfileScreen: React.FC = () => {
           </InputGroup>
         </Field.Root>
         <Field.Root>
-          <Field.Label>Twitter</Field.Label>
+          <Field.Label>Twitter/X</Field.Label>
           <InputGroup startAddon={<Span color="gray.800">@</Span>}>
             <Input
-              placeholder="Twitter handle"
+              placeholder="Twitter/X handle"
               fontWeight="normal"
               {...register('x')}
             />
@@ -355,6 +358,26 @@ const PersonalProfileScreen: React.FC = () => {
               placeholder="Facebook handle"
               fontWeight="normal"
               {...register('facebook')}
+            />
+          </InputGroup>
+        </Field.Root>
+        <Field.Root>
+          <Field.Label>WhatsApp</Field.Label>
+          <InputGroup startAddon={<Span color="gray.800">#</Span>}>
+            <Input
+              placeholder="WhatsApp nummber"
+              fontWeight="normal"
+              {...register('whatsapp')}
+            />
+          </InputGroup>
+        </Field.Root>
+        <Field.Root>
+          <Field.Label>Discord</Field.Label>
+          <InputGroup startAddon={<Span color="gray.800">@</Span>}>
+            <Input
+              placeholder="Discord handle"
+              fontWeight="normal"
+              {...register('discord')}
             />
           </InputGroup>
         </Field.Root>

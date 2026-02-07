@@ -15,7 +15,11 @@ import { Avatar } from '@chakra-ui/react';
 import { FiMapPin } from 'react-icons/fi';
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
 
-const ProfileScreen = ({ username }: { username: string }) => {
+interface userNameProps {
+  username: string;
+}
+
+const ProfileScreen = ({ username }: userNameProps) => {
   const headerContext = useHeader();
   const setProfileID = headerContext?.setProfileID;
 

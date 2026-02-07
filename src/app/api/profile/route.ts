@@ -3,58 +3,23 @@ import prisma from '@/lib/prisma';
 
 export const dynamic = 'force-static';
 
-// GET /api/profile?id=userId
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const id = searchParams.get('id');
-
-  if (!id) {
-    return NextResponse.json({ error: 'No such user' }, { status: 400 });
-  }
-
-  const user = await prisma.user.findUnique({
-    where: { id },
-    select: {
-      username: true,
-      email: true,
-      bio: true,
-      location: true,
-      instagram: true,
-      x: true,
-      facebook: true,
-      visibility: true,
-    },
-  });
-
-  if (!user) {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
-  }
-
-  // Map DB fields to client FormValues shape (name -> username)
-  return NextResponse.json({
-    name: user.username ?? '',
-    bio: user.bio ?? '',
-    location: user.location ?? '',
-    instagram: user.instagram ?? '',
-    xit: user.x ?? '',
-    facebook: user.facebook ?? '',
-    visibility: user.visibility ?? 'Public',
-    email: user.email ?? null,
-  });
-}
-
 // PATCH /api/profile
 export async function PATCH(request: Request) {
   try {
     const body = await request.json();
     const {
       id: identifier,
-      name,
+      firstName,
+      lastName,
+      username,
       bio,
       location,
       instagram,
-      twitter,
+      x,
       facebook,
+      whatsapp,
+      discord,
+      profilePic,
       visibility,
     } = body;
 
@@ -68,12 +33,17 @@ export async function PATCH(request: Request) {
     const data: any = {};
 
     // name in the form maps to username in DB
-    if (typeof name === 'string') data.username = name;
+    if (typeof firstName === 'string') data.firstName = firstName;
+    if (typeof lastName === 'string') data.lastName = lastName;
+    if (typeof username === 'string') data.username = username;
     if (typeof bio === 'string') data.bio = bio;
     if (typeof location === 'string') data.location = location;
     if (typeof instagram === 'string') data.instagram = instagram;
-    if (typeof twitter === 'string') data.twitter = twitter;
+    if (typeof x === 'string') data.x = x;
     if (typeof facebook === 'string') data.facebook = facebook;
+    if (typeof whatsapp === 'string') data.whatsapp = whatsapp;
+    if (typeof discord === 'string') data.discord = discord;
+    if (typeof profilePic === 'number') data.profile_pic = profilePic;
     if (typeof visibility === 'string') data.visibility = visibility;
 
     const updated = await prisma.user.update({

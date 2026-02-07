@@ -18,19 +18,20 @@ generator client {
 }
 
 model User {
-  id         String            @id @db.Uuid
-  username   String?           @unique
-  firstName  String?
-  lastName   String?
-  email      String            @unique
-  location   String?
-  instagram  String?
-  x          String?
-  facebook   String?
-  bio        String?
-  whatsapp   String?
-  discord    String?
-  visibility String            @default("public")
+  id          String            @id @db.Uuid
+  username    String?           @unique
+  firstName   String?
+  lastName    String?
+  email       String            @unique
+  location    String?
+  instagram   String?
+  x           String?
+  facebook    String?
+  bio         String?
+  whatsapp    String?
+  discord     String?
+  visibility  String           @default("public")
+  profile_pic Int              @default(0)
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 }

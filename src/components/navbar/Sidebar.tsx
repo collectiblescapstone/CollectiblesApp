@@ -10,7 +10,7 @@ const Sidebar = () => {
 
   return (
     <Flex
-      color="brand.turtiose"
+      color="brand.turtoise"
       background="brand.marigold"
       minWidth="25dvw"
       minHeight="dvh"

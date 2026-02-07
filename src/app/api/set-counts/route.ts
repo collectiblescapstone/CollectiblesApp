@@ -2,43 +2,84 @@ import prisma from '@/lib/prisma';
 
 export const dynamic = 'force-static';
 
-export const GET = async (request: Request) => {
-  const { searchParams } = new URL(request.url);
+export const POST = async (request: Request) => {
+  const { userId, setId, pId } = await request.json();
 
-  const userId = searchParams.get('userId');
-  const setId = searchParams.get('setId');
-
-  if (!userId || !setId) {
+  if (!userId || (!setId && !pId)) {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), {
       status: 400,
     });
   }
 
   try {
-    const masterSetCount = (
-      await prisma.collectionEntry.findMany({
-        where: {
-          userId,
-          setId,
-        },
-        distinct: ['cardId'],
-        select: { cardId: true },
-      })
-    ).length;
+    let masterSetCount;
+    let grandmasterSetCount;
 
-    const grandmasterSetCount = (
-      await prisma.collectionEntry.findMany({
-        where: {
-          userId,
-          setId,
-        },
-        distinct: ['cardId', 'variant'],
-        select: { cardId: true },
-      })
-    ).length;
+    if (setId) {
+      masterSetCount = (
+        await prisma.collectionEntry.findMany({
+          where: {
+            userId,
+            card: {
+              setId,
+            },
+          },
+          distinct: ['cardId'],
+          select: { cardId: true },
+        })
+      ).length;
+
+      grandmasterSetCount = (
+        await prisma.collectionEntry.findMany({
+          where: {
+            userId,
+            card: {
+              setId,
+            },
+          },
+          distinct: ['cardId', 'variant'],
+          select: { cardId: true },
+        })
+      ).length;
+    } else if (pId) {
+      const dexNumber = Number(pId);
+
+      if (Number.isNaN(dexNumber)) {
+        throw new Error(`Invalid pId: ${pId}`);
+      }
+
+      masterSetCount = (
+        await prisma.collectionEntry.findMany({
+          where: {
+            userId,
+            card: {
+              dexId: {
+                has: dexNumber,
+              },
+            },
+          },
+          distinct: ['cardId'],
+        })
+      ).length;
+
+      grandmasterSetCount = (
+        await prisma.collectionEntry.findMany({
+          where: {
+            userId,
+            card: {
+              dexId: {
+                has: dexNumber,
+              },
+            },
+          },
+          distinct: ['cardId', 'variant'],
+          select: { cardId: true },
+        })
+      ).length;
+    }
 
     console.log(
-      setId,
+      setId || pId,
       '| Master Set: ',
       masterSetCount,
       ' | Grandmaster Set: ',

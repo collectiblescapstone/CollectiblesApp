@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Set" ALTER COLUMN "official" SET DEFAULT 0,
+ALTER COLUMN "total" SET DEFAULT 0;

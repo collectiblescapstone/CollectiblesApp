@@ -426,9 +426,6 @@ const PokemonGridPage: React.FC = () => {
                 masterSet: 0,
                 grandmasterSet: 0,
               };
-              // console.log(
-              //   set.id + ': ' + counts.masterSet + '|' + counts.grandmasterSet
-              // );
               return (
                 <GridItem key={set.id}>
                   <PokemonSet

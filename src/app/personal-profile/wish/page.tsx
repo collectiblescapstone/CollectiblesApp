@@ -13,29 +13,30 @@ import {
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { PokemonCardImage } from '@/types/personal-profile';
-import { useSearchParams } from 'next/navigation';
 import { UserProfile } from '@/types/personal-profile';
-import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
+import { useAuth } from '@/context/AuthProvider';
 import { useHeader } from '@/context/HeaderProvider';
+import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
 
 const WishScreen: React.FC = () => {
-  const searchParams = useSearchParams();
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const userName = searchParams.get('username');
   const headerContext = useHeader();
   const setProfileID = headerContext?.setProfileID;
+  const { session } = useAuth();
+
+  const userID = session?.user.id;
 
   useEffect(() => {
-    if (!userName) {
-      setError('No user name found');
+    if (!userID) {
+      setError('No user ID found');
       setLoading(false);
       return;
     }
     const loadUserProfile = async () => {
       try {
-        const data = await fetchUserProfile(userName);
+        const data = await fetchUserProfile(userID);
         setUser(data);
         setLoading(false);
         if (setProfileID) {
@@ -50,7 +51,7 @@ const WishScreen: React.FC = () => {
     };
 
     loadUserProfile();
-  }, [userName, setProfileID]);
+  }, [userID, setProfileID]);
 
   const cards =
     user?.wishlist.map((item) => ({
@@ -58,12 +59,11 @@ const WishScreen: React.FC = () => {
       image: item.card.image_url,
     })) ?? [];
 
-  if (loading) {
+  if (loading || !session) {
     return (
-      <Flex justifyContent="center" alignItems="center" height="50vh" gap={3}>
-        <Spinner color="black" />
-        <Text>Loading...</Text>
-      </Flex>
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
     );
   }
 

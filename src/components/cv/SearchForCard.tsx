@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import { Flex, Image, Input } from '@chakra-ui/react';
 import { CardSearcher } from '@/utils/identification/cardSearch';
-import Divider from '@/components/user-profile/Divider';
+import Divider from '@/components/profiles/Divider';
 
 export const SearchForCard: React.FC = () => {
   const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null);

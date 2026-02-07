@@ -13,7 +13,7 @@ const Header = () => {
   const context = useHeader();
   const profileId = context?.profileId;
 
-  const isMainPage = useMemo(() => {
+  const showBackButton = useMemo(() => {
     return Object.keys(PAGE_HEADINGS).includes(pathname);
   }, [pathname]);
 
@@ -34,10 +34,9 @@ const Header = () => {
       minHeight="8dvh"
       flexDir="row"
       alignItems="center"
-      justifyContent={isMainPage ? 'center' : 'space-between'}
       px={2}
     >
-      {!isMainPage && (
+      {!showBackButton && (
         <LuStepBack
           size={24}
           onClick={() => router.back()}
@@ -49,7 +48,14 @@ const Header = () => {
           }
         />
       )}
-      <Heading size="lg" fontFamily="var(--font-sans)" color="brand.turtoise">
+      <Heading
+        size="lg"
+        fontFamily="var(--font-sans)"
+        color="brand.turtiose"
+        position="absolute"
+        left="50%"
+        transform="translateX(-50%)"
+      >
         {pageHeading}
       </Heading>
     </Flex>

@@ -81,7 +81,7 @@ model CollectionEntry {
   condition  String?
   grade      String   @default("Ungraded")
   gradeLevel String?
-  variant    String?
+  variant    String   @default("normal")
   tags       String[] @default([])
 
   createdAt DateTime @default(now())

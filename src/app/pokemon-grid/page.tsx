@@ -337,6 +337,7 @@ const PokemonGridPage: React.FC = () => {
           <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
             {groupedSets[selectedEra].map((set) => {
               const imageSrc = set.logo || set.symbol;
+              set.id;
 
               return (
                 <GridItem key={set.id}>

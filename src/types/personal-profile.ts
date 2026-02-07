@@ -27,6 +27,7 @@ export interface UserProfile {
   facebook?: string;
   discord?: string;
   whatsapp?: string;
+  profile_pic: number;
   wishlist: {
     card: {
       name: string;

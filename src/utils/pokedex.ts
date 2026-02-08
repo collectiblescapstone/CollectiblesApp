@@ -3,6 +3,8 @@ interface PokemonJSON {
   name: string;
 }
 
+export const MAXPOKEDEXVALUE = 1025;
+
 const pokedexData: string[] = [];
 const fetchPokedex = async () => {
   try {

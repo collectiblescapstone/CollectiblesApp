@@ -2,7 +2,7 @@
 import type { Card, Set } from '@prisma/client';
 
 // Utils
-import { getPokemonName, MAXPOKEDEXVALUE } from '@/utils/pokedex';
+import { MAXPOKEDEXVALUE } from '@/utils/pokedex';
 
 export type PokemonCard = {
   name: string;
@@ -28,8 +28,8 @@ export type PokemonSet = {
 const pokemonCards: Record<string, PokemonCard> = {};
 const pokemonSets: Record<string, PokemonSet> = {};
 let grandmasterSetCounts: Record<string, number> = {};
-let pokemonMasterCounts: Record<string, number> = {};
-let pokemonGrandmasterCounts: Record<string, number> = {};
+let pokemonMasterCounts: number[] = [];
+let pokemonGrandmasterCounts: number[] = [];
 
 // Track whether we've already fetched cards
 let pokemonCardsInit: Promise<void> | null = null;
@@ -46,8 +46,8 @@ const fetchPokemonCards = async (): Promise<void> => {
       const cards: Card[] = await response.json();
 
       // Clear counts first
-      pokemonMasterCounts = {};
-      pokemonGrandmasterCounts = {};
+      pokemonMasterCounts = [];
+      pokemonGrandmasterCounts = [];
       grandmasterSetCounts = {};
 
       for (const pokemonCard of cards) {
@@ -65,13 +65,13 @@ const fetchPokemonCards = async (): Promise<void> => {
 
         const setId = pokemonCard.setId;
 
-        if (!pokemonGrandmasterCounts[setId]) {
-          pokemonGrandmasterCounts[setId] = 0;
+        if (!grandmasterSetCounts[setId]) {
+          grandmasterSetCounts[setId] = 0;
         }
 
         // Add the variant count, defaulting to 1 if empty
         const variantCount = pokemonCard.variants?.length ?? 0;
-        pokemonGrandmasterCounts[setId] +=
+        grandmasterSetCounts[setId] +=
           variantCount > 0 ? Number(variantCount) : 1;
       }
 
@@ -80,25 +80,31 @@ const fetchPokemonCards = async (): Promise<void> => {
       // I might add substring parsing to make this faster in the future, but not now
 
       for (let i = 0; i < MAXPOKEDEXVALUE; i++) {
-        const pokemonName = await getPokemonName(i + 1);
-        if (!pokemonMasterCounts[pokemonName])
-          pokemonMasterCounts[pokemonName] = 0;
-        if (!pokemonGrandmasterCounts[pokemonName])
-          pokemonGrandmasterCounts[pokemonName] = 0;
+        const pokedexValue = i + 1;
 
-        for (const pId in Object.values(pokemonCards)) {
-          if (pokemonCards[pId].name.includes(pokemonName)) {
+        if (!pokemonMasterCounts[i]) pokemonMasterCounts.push(0);
+        if (!pokemonGrandmasterCounts[i]) pokemonGrandmasterCounts.push(0);
+
+        for (const [, cardInfo] of Object.entries(pokemonCards)) {
+          // console.log(pokemonCards[pId], cardInfo);
+          if (cardInfo.dexId.includes(pokedexValue)) {
             // Add the values to the arrays
-            pokemonGrandmasterCounts = editSetCounts(
-              pokemonGrandmasterCounts,
-              pokemonName,
-              pokemonCards[pId].variants?.length ?? 0
-            );
-            pokemonMasterCounts = editSetCounts(
-              pokemonMasterCounts,
-              pokemonName,
-              1
-            );
+            if (!pokemonGrandmasterCounts[i]) {
+              pokemonGrandmasterCounts[i] = 0;
+            }
+
+            // Add the variant count, defaulting to 1 if empty
+            const variantCount = cardInfo.variants?.length ?? 0;
+            pokemonGrandmasterCounts[i] +=
+              variantCount > 0 ? Number(variantCount) : 1;
+
+            if (!pokemonMasterCounts[i]) {
+              pokemonMasterCounts[i] = 0;
+            }
+
+            // Add the variant count, defaulting to 1 if empty
+
+            pokemonMasterCounts[i] += 1;
           }
         }
       }
@@ -109,22 +115,22 @@ const fetchPokemonCards = async (): Promise<void> => {
   return pokemonCardsInit;
 };
 
-/**
- * Edits the set counts
- * @param set
- * @param index
- * @param value
- * @returns
- */
-const editSetCounts = (
-  set: Record<string, number>,
-  index: string,
-  value: number
-) => {
-  if (!set[index]) set[index] = 0;
-  set[index] += value > 0 ? value : 1;
-  return set;
-};
+// /**
+//  * Edits the set counts
+//  * @param set
+//  * @param index
+//  * @param value
+//  * @returns
+//  */
+// const editSetCounts = (
+//   set: Record<string, number>,
+//   index: string,
+//   value: number
+// ) => {
+//   if (!set[index]) set[index] = 0;
+//   set[index] += value > 0 ? value : 1;
+//   return set;
+// };
 
 const fetchPokemonSets = async (): Promise<void> => {
   if (pokemonSetsInit) return pokemonSetsInit;
@@ -217,22 +223,20 @@ export const masterSetCount = async (
  * @returns
  */
 export const grandmasterSetCount = async (setId: string): Promise<number> => {
-  if (Object.keys(pokemonGrandmasterCounts).length === 0)
-    await fetchPokemonCards();
-  return pokemonGrandmasterCounts[setId] ?? 0;
+  if (Object.keys(grandmasterSetCount).length === 0) await fetchPokemonCards();
+  return grandmasterSetCounts[setId] ?? 0;
 };
 
 export const pokemonMasterSetCount = async (
-  pokemonName: string
+  pokedexId: number
 ): Promise<number> => {
-  if (Object.keys(pokemonMasterCounts).length === 0) await fetchPokemonCards();
-  return pokemonMasterCounts[pokemonName] ?? 0;
+  if (pokemonMasterCounts.length === 0) await fetchPokemonCards();
+  return pokemonMasterCounts[pokedexId - 1] ?? 0;
 };
 
 export const pokemonGrandmasterSetCount = async (
-  pokemonName: string
+  pokedexId: number
 ): Promise<number> => {
-  if (Object.keys(pokemonGrandmasterCounts).length === 0)
-    await fetchPokemonCards();
-  return pokemonGrandmasterCounts[pokemonName] ?? 0;
+  if (pokemonGrandmasterCounts.length === 0) await fetchPokemonCards();
+  return pokemonGrandmasterCounts[pokedexId - 1] ?? 0;
 };

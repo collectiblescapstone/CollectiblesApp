@@ -23,6 +23,7 @@ import {
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 import { useAuth } from '@/context/AuthProvider';
+import { pfp_image_mapping, visibilityOptions } from './edit-profile/constants';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
@@ -114,7 +115,7 @@ const PersonalProfileScreen: React.FC = () => {
       </Button>
       <Flex flexDirection="column" alignItems="center" gap={2} px={4}>
         <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
-          <Avatar.Image src="/user-profile/pfp_temp.jpg" />
+          <Avatar.Image src={pfp_image_mapping[user.profile_pic]} />
         </Avatar.Root>
         {(user.firstName || user.lastName) && (
           <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>

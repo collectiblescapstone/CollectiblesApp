@@ -23,15 +23,22 @@ import { FiltersProvider } from '@/hooks/useFilters';
 import { PokemonSetType } from '@/types/pokemon-grid';
 import { useAuth } from '@/context/AuthProvider';
 
+// Utils
+import { masterSetCount, grandmasterSetCount } from '@/utils/pokemonCard';
+
 const PokemonGridPage: React.FC = () => {
   const { session, loading } = useAuth();
-
+  const [load, setLoad] = useState(true);
   const [selected, setSelected] = useState('set');
   const [selectedEra, setSelectedEra] = useState('sv');
   const [groupedSets, setGroupedSets] = useState<
     Record<string, PokemonSetType[]>
   >({});
   const [selectedGen, setSelectedGen] = useState('ALL');
+
+  const [setCounts, setSetCounts] = useState<
+    Record<string, { masterSet: number; grandmasterSet: number }>
+  >({});
 
   const TOTAL_POKEMON = 1025;
   const pokemon = Array.from({ length: TOTAL_POKEMON }, (_, i) => i + 1);
@@ -165,7 +172,38 @@ const PokemonGridPage: React.FC = () => {
           return id >= startId && id <= endId;
         });
 
-  if (loading || !session) {
+  useEffect(() => {
+    if (!selectedEra || !groupedSets[selectedEra]) return;
+
+    const fetchCounts = async () => {
+      setLoad(true);
+
+      const counts: Record<
+        string,
+        { masterSet: number; grandmasterSet: number }
+      > = {};
+
+      await Promise.all(
+        groupedSets[selectedEra].map(async (set) => {
+          const master = await masterSetCount(set.id);
+          const grandmaster = await grandmasterSetCount(set.id);
+          console.log(grandmaster);
+
+          counts[set.id] = {
+            masterSet: master ?? 0,
+            grandmasterSet: grandmaster ?? 0,
+          };
+        })
+      );
+
+      setSetCounts(counts);
+      setLoad(false);
+    };
+
+    fetchCounts();
+  }, [selectedEra, groupedSets]);
+
+  if (loading || !session || load) {
     return (
       <Box textAlign="center" mt={10}>
         <Spinner size="xl" />
@@ -337,8 +375,14 @@ const PokemonGridPage: React.FC = () => {
           <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
             {groupedSets[selectedEra].map((set) => {
               const imageSrc = set.logo || set.symbol;
-              set.id;
+              const counts = setCounts[set.id] || {
+                masterSet: 0,
+                grandmasterSet: 0,
+              };
 
+              console.log(
+                set.id + ': ' + counts.masterSet + '|' + counts.grandmasterSet
+              );
               return (
                 <GridItem key={set.id}>
                   <PokemonSet
@@ -348,8 +392,8 @@ const PokemonGridPage: React.FC = () => {
                     }
                     setName={set.name}
                     setID={set.id}
-                    masterSet={100}
-                    grandmasterSet={100}
+                    masterSet={counts.masterSet}
+                    grandmasterSet={counts.grandmasterSet}
                   />
                 </GridItem>
               );

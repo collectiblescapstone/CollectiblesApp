@@ -12,6 +12,7 @@ import {
   Progress,
   HStack,
   Icon,
+  Spinner,
 } from '@chakra-ui/react';
 import { LuSparkle, LuSparkles } from 'react-icons/lu';
 import { CapacitorHttp } from '@capacitor/core';
@@ -63,13 +64,25 @@ const PokemonSet = ({
     fetchCards();
   }, [session?.user?.id, setID]);
 
-  console.log(
-    setID,
-    '| Master Set: ',
-    masterSetCount,
-    ' | Grandmaster Set: ',
-    grandmasterSetCount
-  );
+  // console.log(
+  //   setID,
+  //   '| Master Set: ',
+  //   masterSetCount,
+  //   '/',
+  //   masterSet,
+  //   ' | Grandmaster Set: ',
+  //   grandmasterSetCount,
+  //   '/',
+  //   grandmasterSet
+  // );
+
+  if (loading) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box w="100%" maxW="300px" mx="auto">
@@ -140,7 +153,7 @@ const PokemonSet = ({
               <HStack mb={2}>
                 <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
                 <Progress.Root
-                  value={masterSet}
+                  value={((masterSetCount || 0) / (masterSet || 1)) * 100}
                   max={100}
                   w="100%"
                   h="6px"
@@ -156,7 +169,9 @@ const PokemonSet = ({
               <HStack>
                 <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
                 <Progress.Root
-                  value={grandmasterSet}
+                  value={
+                    ((grandmasterSetCount || 0) / (grandmasterSet || 1)) * 100
+                  }
                   max={100}
                   w="100%"
                   h="6px"

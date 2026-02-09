@@ -72,12 +72,13 @@ model Card {
 // --------------------------------------
 
 model CollectionEntry {
-  id         String   @id @default(cuid())
-  userId     String   @db.Uuid
-  user       User     @relation(fields: [userId], references: [id])
-  cardId     String
-  card       Card     @relation(fields: [cardId], references: [id])
-  quantity   Int      @default(1)
+  id     String @id @default(cuid())
+  userId String @db.Uuid
+  cardId String
+
+  user User @relation(fields: [userId], references: [id])
+  card Card @relation(fields: [cardId], references: [id])
+
   condition  String?
   variant    String   @default("normal")
   forTrade   Boolean  @default(false)

@@ -1,8 +1,19 @@
 'use client';
-
-import { LuSparkle, LuSparkles } from 'react-icons/lu';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Box, Image, Icon, Progress, HStack } from '@chakra-ui/react';
+import { Box, Image, Icon, Progress, HStack, Spinner } from '@chakra-ui/react';
+
+// Capacitor
+import { CapacitorHttp } from '@capacitor/core';
+
+// Context
+import { useAuth } from '@/context/AuthProvider';
+
+// Icons
+import { LuSparkle, LuSparkles } from 'react-icons/lu';
+
+// Utils
+import { baseUrl } from '@/utils/constants';
 
 interface PokemonPolaroidProps {
   id: number;
@@ -16,6 +27,56 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
   grandmasterSet,
 }: PokemonPolaroidProps) => {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+  const { session } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [masterSetCount, setMasterSetCount] = useState<number | null>(null);
+  const [grandmasterSetCount, setGrandmasterSetCount] = useState<number | null>(
+    null
+  );
+
+  useEffect(() => {
+    if (!session?.user?.id) return;
+
+    const fetchCards = async () => {
+      setLoading(true);
+
+      const res = await CapacitorHttp.get({
+        url: `${baseUrl}/api/set-counts`,
+        params: {
+          userId: session.user.id,
+          pId: String(id),
+        },
+      });
+
+      setMasterSetCount(res.data.masterSetCount);
+      setGrandmasterSetCount(res.data.grandmasterSetCount);
+      setLoading(false);
+    };
+
+    fetchCards();
+  }, [session?.user?.id, id]);
+
+  if (loading) {
+    return (
+      <Box
+        as="button"
+        bg="white"
+        boxShadow="lg"
+        borderRadius="md"
+        w={{ base: '45vw', md: '200px' }}
+        p={3}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="space-between"
+        transition="transform 0.2s"
+        _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
+        _active={{ transform: 'scale(0.98)' }}
+      >
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Link
@@ -58,8 +119,8 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
           <HStack mb={1}>
             <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
             <Progress.Root
-              value={masterSet}
-              max={100}
+              value={masterSetCount || 0}
+              max={masterSet || 1}
               w="100%"
               h="6px"
               borderRadius="full"
@@ -74,8 +135,8 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
           <HStack>
             <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
             <Progress.Root
-              value={grandmasterSet}
-              max={100}
+              value={grandmasterSetCount || 0}
+              max={grandmasterSet || 1}
               w="100%"
               h="6px"
               borderRadius="full"

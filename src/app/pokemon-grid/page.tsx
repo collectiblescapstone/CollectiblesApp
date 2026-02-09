@@ -211,18 +211,17 @@ const PokemonGridPage: React.FC = () => {
       setLoad(true);
 
       const counts: Record<
-        string,
+        number,
         { masterSet: number; grandmasterSet: number }
       > = {};
 
       for (const id of filteredPokemon) {
-        const pokemonName = await getPokemonName(id);
         if (cancelled) return;
 
         const master = await pokemonMasterSetCount(id);
         const grandmaster = await pokemonGrandmasterSetCount(id);
         if (cancelled) return;
-        counts[pokemonName] = {
+        counts[id] = {
           masterSet: master ?? 0,
           grandmasterSet: grandmaster ?? 0,
         };
@@ -404,13 +403,17 @@ const PokemonGridPage: React.FC = () => {
             mt={4}
           >
             {filteredPokemon.map((id) => {
-              // console.log('ROWLET: ' + pokemonCounts['Rowlet'].masterSet);
+              console.log(id);
+              const counts = pokemonCounts[id] || {
+                masterSet: 1,
+                grandmasterSet: 1,
+              };
               return (
                 <PokemonPolaroid
                   key={id}
                   id={id}
-                  masterSet={100}
-                  grandmasterSet={100}
+                  masterSet={counts.masterSet}
+                  grandmasterSet={counts.grandmasterSet}
                 />
               );
             })}
@@ -423,8 +426,8 @@ const PokemonGridPage: React.FC = () => {
             {groupedSets[selectedEra].map((set) => {
               const imageSrc = set.logo || set.symbol;
               const counts = setCounts[set.id] || {
-                masterSet: 0,
-                grandmasterSet: 0,
+                masterSet: 1,
+                grandmasterSet: 1,
               };
               // console.log(
               //   set.id + ': ' + counts.masterSet + '|' + counts.grandmasterSet

@@ -64,7 +64,7 @@ model Card {
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 
-  @@id([id, setId])
+  @@id([id])
 }
 
 // --------------------------------------
@@ -73,10 +73,9 @@ model CollectionEntry {
   id     String @id @default(cuid())
   userId String @db.Uuid
   cardId String
-  setId  String
 
   user User @relation(fields: [userId], references: [id])
-  card Card @relation(fields: [cardId, setId], references: [id, setId])
+  card Card @relation(fields: [cardId], references: [id])
 
   condition  String?
   grade      String   @default("Ungraded")
@@ -88,7 +87,7 @@ model CollectionEntry {
   updatedAt DateTime @updatedAt
 
   @@index([userId])
-  @@index([cardId, setId])
+  @@index([cardId])
 }
 
 // --------------------------------------
@@ -97,13 +96,12 @@ model WishlistEntry {
   id     String @id @default(cuid())
   userId String @db.Uuid
   cardId String
-  setId  String
 
   user User @relation(fields: [userId], references: [id])
-  card Card @relation(fields: [cardId, setId], references: [id, setId])
+  card Card @relation(fields: [cardId], references: [id])
 
   variant String?
 
-  @@unique([userId, cardId, setId, variant])
+  @@unique([userId, cardId, variant])
   @@index([userId])
 }

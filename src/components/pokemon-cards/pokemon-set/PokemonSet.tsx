@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '@/context/AuthProvider';
 import Link from 'next/link';
 import {
   Box,
@@ -14,8 +13,17 @@ import {
   Icon,
   Spinner,
 } from '@chakra-ui/react';
-import { LuSparkle, LuSparkles } from 'react-icons/lu';
+
+// Capacitor
 import { CapacitorHttp } from '@capacitor/core';
+
+// Context
+import { useAuth } from '@/context/AuthProvider';
+
+// Icons
+import { LuSparkle, LuSparkles } from 'react-icons/lu';
+
+// Utils
 import { baseUrl } from '@/utils/constants';
 
 interface PokemonSetProps {
@@ -153,8 +161,8 @@ const PokemonSet = ({
               <HStack mb={2}>
                 <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
                 <Progress.Root
-                  value={((masterSetCount || 0) / (masterSet || 1)) * 100}
-                  max={100}
+                  value={masterSetCount || 0}
+                  max={masterSet || 1}
                   w="100%"
                   h="6px"
                   borderRadius="full"
@@ -169,10 +177,8 @@ const PokemonSet = ({
               <HStack>
                 <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
                 <Progress.Root
-                  value={
-                    ((grandmasterSetCount || 0) / (grandmasterSet || 1)) * 100
-                  }
-                  max={100}
+                  value={grandmasterSetCount || 0}
+                  max={grandmasterSet || 1}
                   w="100%"
                   h="6px"
                   borderRadius="full"

@@ -20,6 +20,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useAuth } from '@/context/AuthProvider';
+import { CapacitorHttp } from '@capacitor/core';
+import { baseUrl } from '@/utils/constants';
 
 interface FormValues {
   CardName: string;
@@ -112,7 +114,7 @@ const EditCardPage = () => {
   const imageUrl = searchParams.get('imageUrl') ?? '';
   const cardName = searchParams.get('cardName') ?? '';
   const cardSet = searchParams.get('cardSet') ?? '';
-
+  const cardId = searchParams.get('cardId') ?? '';  
   const {
     register,
     handleSubmit,
@@ -141,7 +143,40 @@ const EditCardPage = () => {
     [selectedGrade]
   );
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      const payload = {
+        cardName: data.CardName,
+        condition: data.Condition ?? undefined,
+        variant: data.FoilPattern ?? 'normal',
+        grade: data.CardGrade?.[0] ?? 'Ungraded',
+        gradeLevel: data.CardGradeDetail?.[0] ?? undefined,
+        tags: data.Tags ?? [],
+        cardId: cardId || undefined,
+      };
+
+      const res = await CapacitorHttp.post({
+        url: `${baseUrl}/api/collection/save`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${session?.access_token}`,
+        },
+        data: JSON.stringify(payload),
+      });
+
+      if (res.status !== 200) {
+        console.error('Save failed', res);
+        alert(res.data.error || 'Failed to save card');
+        return;
+      }
+
+      alert('Card saved to your collection');
+    } catch (err) {
+      console.error('Unexpected error saving card', err);
+      alert('Unexpected error saving card');
+    }
+  });
 
   if (loading || !session) {
     return (
@@ -478,7 +513,7 @@ const EditCardPage = () => {
                 <TagsInput.Root
                   name="Tags"
                   value={field.value || []}
-                  onChange={field.onChange}
+                  onValueChange={field.onChange}
                 >
                   <TagsInput.Label>Tags</TagsInput.Label>
                   {/* Make the tags control and its input use a dark background and light text so they match the other inputs */}

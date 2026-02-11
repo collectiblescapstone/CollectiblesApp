@@ -1,14 +1,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
-const getDynamicOption = () => {
-  if (process.env.NODE_ENV === 'development') {
-    return 'force-static';
-  } else {
-    return 'force-dynamic';
-  }
-};
-export const dynamic = getDynamicOption();
+export const dynamic = 'error';
 
 export const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url);

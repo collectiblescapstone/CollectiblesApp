@@ -23,7 +23,7 @@ import {
 import { Avatar } from '@chakra-ui/react';
 import { FiMapPin, FiEdit3 } from 'react-icons/fi';
 import { useAuth } from '@/context/AuthProvider';
-import { pfp_image_mapping, visibilityOptions } from './edit-profile/constants';
+import { pfp_image_mapping } from './edit-profile/constants';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();

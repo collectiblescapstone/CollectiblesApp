@@ -1,14 +1,20 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import type { Card } from '@prisma/client';
+import { CardData } from '@/types/pokemon-card';
 
 export const dynamic = 'force-static';
 
-export async function GET() {
+export const GET = async (request: Request) => {
   try {
     // Fetch all cards (or add filters here)
-
-    const specifiedCards: Card[] = await prisma.card.findMany({
+    const { searchParams } = new URL(request.url);
+    const ids = JSON.parse(searchParams.get('ids') ?? '[]');
+    const specifiedCards: CardData[] = await prisma.card.findMany({
+      ...(ids.length ? { where: {
+        id: {
+          in: ids
+        }
+      }} : {}),
       select: {
         id: true,
         name: true,

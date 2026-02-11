@@ -10,6 +10,7 @@ import React, {
 import { Flex, Image, Input } from '@chakra-ui/react';
 import { CardSearcher } from '@/utils/identification/cardSearch';
 import Divider from '@/components/profiles/Divider';
+import { type CardData } from '@/types/pokemon-card';
 
 export const SearchForCard: React.FC = () => {
   const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null);
@@ -18,6 +19,7 @@ export const SearchForCard: React.FC = () => {
     {
       id: string;
       score: number;
+      card?: CardData;
     }[]
   >();
 
@@ -37,8 +39,18 @@ export const SearchForCard: React.FC = () => {
       }
 
       if (evt.key === 'Enter') {
-        cardSearch.current(evt.currentTarget.value).then((data) => {
-          setMatches(data);
+        cardSearch.current(evt.currentTarget.value).then(async (data) => {
+          const res = await fetch(
+            `/api/pokemon-card?ids=${encodeURIComponent(JSON.stringify(data.map(({ id }) => id)))}`
+          );
+          if (!res.ok) throw new Error('Failed to fetch Pokémon cards');
+          const cards: CardData[] = await res.json();
+          setMatches(
+            data.map((match) => ({
+              ...match,
+              card: cards.find((card) => card.id === match.id),
+            }))
+          );
         });
       }
     },
@@ -63,32 +75,18 @@ export const SearchForCard: React.FC = () => {
         wrap="wrap"
         gap={5}
       >
-        {matches?.map((match, index) => {
-          // TODO: fetch image url with id
-          const idParts = match.id
-            .split(/(?<=[a-z])(\d.*)-/)
-            .map((a) => a.split('-'))
-            .flat();
-          let url = '';
-          if (idParts.length === 3) {
-            url = `${idParts[0]}/${idParts[0]}${idParts[1]}/${idParts[2]}`;
-          } else {
-            url = `${idParts[0].substring(0, Math.max(idParts[0].length - 1, 2))}/${idParts[0]}/${idParts[1]}`;
-          }
-
-          return (
-            <Flex key={index} flexDirection={'column'} alignItems={'center'}>
-              <div>Score: {Math.round(match.score * 1000) / 1000}</div>
-              <Image
-                src={`https://assets.tcgdex.net/en/${url}/low.png`}
-                alt={match.id}
-                w="105px"
-                h="auto"
-                borderRadius="none"
-              />
-            </Flex>
-          );
-        })}
+        {matches?.map((match, index) => (
+          <Flex key={index} flexDirection={'column'} alignItems={'center'}>
+            <div>Score: {Math.round(match.score * 1000) / 1000}</div>
+            <Image
+              src={match.card?.image_url}
+              alt={match.id}
+              w="105px"
+              h="auto"
+              borderRadius="none"
+            />
+          </Flex>
+        ))}
       </Flex>
     </Flex>
   );

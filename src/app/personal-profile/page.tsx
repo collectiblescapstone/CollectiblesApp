@@ -41,6 +41,9 @@ const PersonalProfileScreen: React.FC = () => {
     router.push('/personal-profile/edit-profile');
   };
 
+  console.log(`VERCEL_URL: ${process.env.VERCEL_URL}`);
+  console.log(`VERCEL_BRANCH_URL: ${process.env.VERCEL_BRANCH_URL}`);
+
   useEffect(() => {
     if (!userID) {
       setError('No user ID found');

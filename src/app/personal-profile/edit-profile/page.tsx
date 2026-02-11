@@ -72,7 +72,6 @@ const PersonalProfileScreen: React.FC = () => {
     if (!session?.user?.id) return;
     setIsSaving(true);
     try {
-      console.log('baseUrl in edit-profile page', baseUrl);
       const res = await CapacitorHttp.patch({
         url: `${baseUrl}/api/edit-profile`,
         method: 'PATCH',

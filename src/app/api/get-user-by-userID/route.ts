@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
-export const dynamic =
-  process.env.NODE_ENV === 'development' ? 'force-static' : 'auto';
+const dynamicOption: 'force-static' | 'force-dynamic' =
+  process.env.NODE_ENV === 'development' ? 'force-static' : 'force-dynamic';
+export const dynamic = dynamicOption;
 
 export const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url);

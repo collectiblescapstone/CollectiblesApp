@@ -1,11 +1,12 @@
 import { UserProfile } from '@/types/personal-profile';
 import { CapacitorHttp } from '@capacitor/core';
+import { baseUrl } from '../constants';
 
 export const fetchUserProfile = async (
   userID: string
 ): Promise<UserProfile> => {
   const response = await CapacitorHttp.post({
-    url: `/api/get-user-by-userID`,
+    url: `${baseUrl}/api/get-user-by-userID`,
     data: { userID },
     headers: {
       'Content-Type': 'application/json',

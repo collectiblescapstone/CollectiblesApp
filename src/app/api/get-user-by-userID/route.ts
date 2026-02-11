@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
-export const dynamic = 'error';
-
-export const GET = async (request: Request) => {
-  const { searchParams } = new URL(request.url);
-  const userID = searchParams.get('userID');
+export const POST = async (request: Request) => {
+  const { userID } = await request.json();
 
   if (!userID) {
     return NextResponse.json(

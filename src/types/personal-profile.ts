@@ -28,6 +28,7 @@ export interface UserProfile {
   discord?: string;
   whatsapp?: string;
   profile_pic: number;
+  visibility: string;
   wishlist: {
     card: {
       name: string;

@@ -8,9 +8,9 @@
 // BEFORE RUNNING `npx prisma migrate dev`. MUST NOT EDIT THE LIVE DATABASE DIRECTLY!! Thank you!
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-  directUrl         = env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -18,61 +18,76 @@ generator client {
 }
 
 model User {
-  id         String            @id @db.Uuid
-  username   String?           @unique
-  email      String            @unique
+  id          String            @id @db.Uuid
+  username    String?           @unique
+  firstName   String?
+  lastName    String?
+  email       String            @unique
+  location    String?
+  instagram   String?
+  x           String?
+  facebook    String?
+  bio         String?
+  whatsapp    String?
+  discord     String?
+  visibility  String           @default("public")
+  profile_pic Int              @default(0)
   collection CollectionEntry[]
   wishlist   WishlistEntry[]
 }
 
 model Card {
-  id          String @id
-  name        String
-  category    String
-  types       String[]
-  illustrator String?
-  rarity      String
-  variants    String[]
-  dexId       Int[]
-
-  image_url String
-
+  id              String            @id
+  name            String
+  category        String
+  types           String[]
+  illustrator     String?
+  rarity          String
+  variants        String[]
+  dexId           Int[]
+  image_url       String
   setId           String
-  set             Set @relation(fields: [setId], references: [id])
+  set             Set               @relation(fields: [setId], references: [id])
   CollectionEntry CollectionEntry[]
   WishlistEntry   WishlistEntry[]
 }
 
 model Set {
-  id     String @id
-  name   String
-  series String
-  cards  Card[]
+  id       String  @id
+  name     String
+  series   String
+  cards    Card[]
+  logo     String?
+  symbol   String?
+  official Int     @default(0)
+  total    Int     @default(0)
 }
 
 model CollectionEntry {
-  id        String @id @default(cuid())
-  userId    String @db.Uuid
-  user      User   @relation(fields: [userId], references: [id])
+  id        String  @id @default(cuid())
+  userId    String  @db.Uuid
+  user      User    @relation(fields: [userId], references: [id])
   cardId    String
-  card      Card @relation(fields: [cardId], references: [id])
-  quantity  Int @default(1)
+  card      Card    @relation(fields: [cardId], references: [id])
+  quantity  Int     @default(1)
   condition String?
   variant   String?
+  forTrade  Boolean @default(false)
+  showcase  Boolean @default(false)
 
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@unique([userId, cardId, condition, variant])
 }
 
 model WishlistEntry {
-  id        String @id @default(cuid())
-  userId    String @db.Uuid
-  user      User @relation(fields: [userId], references: [id])
-  cardId    String
-  card      Card @relation(fields: [cardId], references: [id])
-  variant   String?
+  id      String  @id @default(cuid())
+  userId  String  @db.Uuid
+  user    User    @relation(fields: [userId], references: [id])
+  cardId  String
+  card    Card    @relation(fields: [cardId], references: [id])
+  variant String?
 
   @@unique([userId, cardId, variant])
 }

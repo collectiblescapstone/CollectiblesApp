@@ -30,8 +30,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'cardName or cardId is required' }, { status: 400 });
     }
 
-    let result;
-    result = await prisma.collectionEntry.create({
+    const result = await prisma.collectionEntry.create({
       data: {
         userId: userId,
         cardId: cardId ?? null,

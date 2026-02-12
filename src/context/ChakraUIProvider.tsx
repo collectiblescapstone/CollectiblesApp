@@ -11,7 +11,7 @@ export function ChakraUIProvider({ children }: { children: React.ReactNode }) {
         colors: {
           brand: {
             marigold: { value: '#F2C75C' },
-            turtiose: { value: '#003B49' },
+            turtoise: { value: '#003B49' },
             marigoldAlpha: { value: 'rgba(242, 199, 92, 0.7)' },
           },
         },

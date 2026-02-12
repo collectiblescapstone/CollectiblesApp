@@ -1,12 +1,12 @@
 'use client';
 
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
-import { FormValues } from '@/types/personal-profile';
+import { FormValues, VisibilityValues } from '@/types/personal-profile';
 
 import {
   Box,
@@ -18,45 +18,154 @@ import {
   InputGroup,
   Text,
   NativeSelect,
+  Spinner,
+  SimpleGrid,
+  RadioCard,
+  Fieldset,
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react';
 import { FiEdit3, FiCheck, FiEdit2 } from 'react-icons/fi';
+import { useAuth } from '@/context/AuthProvider';
+import { pfp_image_mapping, visibilityOptions } from './constants';
+import AvatarPopup from '@/components/ui/PopupUI';
+import { CapacitorHttp } from '@capacitor/core';
+import { baseUrl } from '@/utils/constants';
+import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
 
 const MAX_CHARACTERS = 110;
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
+  const { session, loading, signOut } = useAuth();
 
   const {
+    control,
     register,
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm<FormValues>({
     defaultValues: {
-      name: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      username: '',
       bio: '',
       location: '',
       instagram: '',
-      twitter: '',
+      x: '',
       facebook: '',
-      visibility: 'Public',
+      whatsapp: '',
+      discord: '',
+      profilePic: 0,
+      visibility: VisibilityValues.Public,
     },
   });
 
-  const bioVal = watch('bio');
+  const [isSaving, setIsSaving] = useState(false);
 
-  const handleSave = handleSubmit(() => {
-    // Save profile logic here
+  const bioVal = watch('bio');
+  const profilePicVal = watch('profilePic');
+
+  const handleSave = handleSubmit(async (data) => {
+    if (!session?.user?.id) return;
+    setIsSaving(true);
+    try {
+      const res = await CapacitorHttp.patch({
+        url: `${baseUrl}/api/edit-profile`,
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        data: JSON.stringify({ id: session?.user?.id, ...data }),
+      });
+
+      if (res.status !== 200) {
+        const err = res.data.error;
+        console.error(err);
+      } else {
+        router.push('/personal-profile');
+      }
+    } catch (err) {
+      console.error('Save failed', err);
+    } finally {
+      setIsSaving(false);
+    }
   });
+
+  // Fetch existing profile data
+  useEffect(() => {
+    if (!session?.user?.id) return;
+    async function fetchProfile() {
+      try {
+        const data = await fetchUserProfile(session?.user.id ?? '');
+        reset({
+          firstName: data.firstName ?? '',
+          lastName: data.lastName ?? '',
+          username: data.username ?? '',
+          email: data.email ?? '',
+          bio: data.bio ?? '',
+          location: data.location ?? '',
+          instagram: data.instagram ?? '',
+          x: data.x ?? '',
+          facebook: data.facebook ?? '',
+          whatsapp: data.whatsapp ?? '',
+          discord: data.discord ?? '',
+          profilePic: data.profile_pic ?? 0,
+          visibility: data.visibility ?? VisibilityValues.Public,
+        });
+      } catch (err) {
+        console.error('Error loading profile', err);
+      }
+    }
+
+    fetchProfile();
+  }, [session?.user?.id, reset]);
 
   const wishlist = () => {
     router.push('/personal-profile/edit-profile/wishlist');
   };
 
-  const signout = () => {
-    // Sign out logic here
+  const AvatarPicker = () => {
+    return (
+      <Fieldset.Root invalid={!!errors.profilePic}>
+        <Controller
+          name="profilePic"
+          control={control}
+          render={({ field }) => (
+            <RadioCard.Root
+              value={field.value.toString()}
+              onValueChange={({ value }) => field.onChange(Number(value))}
+              name={field.name}
+            >
+              <SimpleGrid columns={{ base: 2, md: 3 }} gap={4}>
+                {Object.entries(pfp_image_mapping).map(([key, src]) => (
+                  <RadioCard.Item key={key} value={key}>
+                    <RadioCard.ItemHiddenInput />
+                    <RadioCard.ItemControl>
+                      <RadioCard.ItemIndicator />
+                      <RadioCard.ItemContent>
+                        <Avatar.Root boxSize="100px" shape="rounded">
+                          <Avatar.Image src={src} />
+                        </Avatar.Root>
+                      </RadioCard.ItemContent>
+                    </RadioCard.ItemControl>
+                  </RadioCard.Item>
+                ))}
+              </SimpleGrid>
+            </RadioCard.Root>
+          )}
+        />
+      </Fieldset.Root>
+    );
   };
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box bg="white" minH="100vh" color="black">
@@ -76,21 +185,28 @@ const PersonalProfileScreen: React.FC = () => {
           colorPalette="black"
           size="md"
           onClick={handleSave}
+          disabled={isSaving}
         >
-          <FiCheck /> Save
+          <FiCheck /> {isSaving ? 'Saving...' : 'Save'}
         </Button>
       </Flex>
       <Flex flexDirection="column" alignItems="flex-start" gap={5} px={5}>
-        <Box
+        <Button
           position="relative"
           boxSize="100px"
           mt={-9}
           borderRadius="lg"
           overflow="hidden"
+          onClick={() =>
+            AvatarPopup.open('avatar', {
+              title: 'Pick an Avatar',
+              content: <AvatarPicker />,
+              onClickClose: () => AvatarPopup.close('avatar'),
+            })
+          }
         >
-          <Avatar.Root boxSize="100%" shape="rounded">
-            <Avatar.Image src="/user-profile/pfp_temp.jpg" />
-            <Avatar.Fallback> SA </Avatar.Fallback>
+          <Avatar.Root boxSize="100px" shape="rounded">
+            <Avatar.Image src={pfp_image_mapping[profilePicVal]} />
           </Avatar.Root>
           <Box
             position="absolute"
@@ -112,21 +228,70 @@ const PersonalProfileScreen: React.FC = () => {
           >
             <FiEdit3 size={24} color="white" />
           </Flex>
-        </Box>
-        <Field.Root required invalid={!!errors.name}>
+        </Button>
+        <AvatarPopup.Viewport />
+        <Field.Root required invalid={!!errors.firstName}>
           <Field.Label>
-            Name <Field.RequiredIndicator />
+            First Name <Field.RequiredIndicator />
           </Field.Label>
           <Input
-            placeholder="Enter your name"
+            placeholder="Enter your first name"
             fontWeight="normal"
-            {...register('name', { required: 'Name is required' })}
+            {...register('firstName', { required: 'First name is required' })}
           />
           <Field.HelperText>
-            The name displayed on your profile.
+            Your first name displayed on your profile.
           </Field.HelperText>
-          {errors.name && (
-            <Field.ErrorText>{errors.name.message}</Field.ErrorText>
+          {errors.firstName && (
+            <Field.ErrorText>{errors.firstName.message}</Field.ErrorText>
+          )}
+        </Field.Root>
+        <Field.Root required invalid={!!errors.lastName}>
+          <Field.Label>
+            Last Name <Field.RequiredIndicator />
+          </Field.Label>
+          <Input
+            placeholder="Enter your last name"
+            fontWeight="normal"
+            {...register('lastName', { required: 'Last name is required' })}
+          />
+          <Field.HelperText>
+            Your last name displayed on your profile.
+          </Field.HelperText>
+          {errors.lastName && (
+            <Field.ErrorText>{errors.lastName.message}</Field.ErrorText>
+          )}
+        </Field.Root>
+        <Field.Root required invalid={!!errors.username}>
+          <Field.Label>
+            Username <Field.RequiredIndicator />
+          </Field.Label>
+          <Input
+            placeholder="Enter your username"
+            fontWeight="normal"
+            {...register('username', { required: 'Username is required' })}
+          />
+          <Field.HelperText>
+            Your username must be unique and contain only letters, numbers, and
+            underscores.
+          </Field.HelperText>
+          {errors.username && (
+            <Field.ErrorText>{errors.username.message}</Field.ErrorText>
+          )}
+        </Field.Root>
+        <Field.Root disabled>
+          <Field.Label>
+            Email <Field.RequiredIndicator />
+          </Field.Label>
+          <Input
+            disabled
+            placeholder="your email"
+            fontWeight="normal"
+            {...register('email')}
+          />
+          <Field.HelperText>Your email cannot be changed.</Field.HelperText>
+          {errors.email && (
+            <Field.ErrorText>{errors.email.message}</Field.ErrorText>
           )}
         </Field.Root>
         <Field.Root>
@@ -173,12 +338,12 @@ const PersonalProfileScreen: React.FC = () => {
           </InputGroup>
         </Field.Root>
         <Field.Root>
-          <Field.Label>Twitter</Field.Label>
+          <Field.Label>Twitter/X</Field.Label>
           <InputGroup startAddon={<Span color="gray.800">@</Span>}>
             <Input
-              placeholder="Twitter handle"
+              placeholder="Twitter/X handle"
               fontWeight="normal"
-              {...register('twitter')}
+              {...register('x')}
             />
           </InputGroup>
         </Field.Root>
@@ -189,6 +354,26 @@ const PersonalProfileScreen: React.FC = () => {
               placeholder="Facebook handle"
               fontWeight="normal"
               {...register('facebook')}
+            />
+          </InputGroup>
+        </Field.Root>
+        <Field.Root>
+          <Field.Label>WhatsApp</Field.Label>
+          <InputGroup startAddon={<Span color="gray.800">#</Span>}>
+            <Input
+              placeholder="WhatsApp nummber"
+              fontWeight="normal"
+              {...register('whatsapp')}
+            />
+          </InputGroup>
+        </Field.Root>
+        <Field.Root>
+          <Field.Label>Discord</Field.Label>
+          <InputGroup startAddon={<Span color="gray.800">@</Span>}>
+            <Input
+              placeholder="Discord handle"
+              fontWeight="normal"
+              {...register('discord')}
             />
           </InputGroup>
         </Field.Root>
@@ -209,9 +394,9 @@ const PersonalProfileScreen: React.FC = () => {
           <Field.Label>Public Visibility</Field.Label>
           <NativeSelect.Root>
             <NativeSelect.Field {...register('visibility')}>
-              {['Public', 'Friends Only', 'Private'].map((item) => (
-                <option key={item} value={item}>
-                  {item}
+              {visibilityOptions.map((item) => (
+                <option key={item.label} value={item.value}>
+                  {item.label}
                 </option>
               ))}
             </NativeSelect.Field>
@@ -221,7 +406,12 @@ const PersonalProfileScreen: React.FC = () => {
         </Field.Root>
       </Flex>
       <Flex justifyContent="center" alignItems="center" w="100%" mt={7}>
-        <Button variant="solid" colorScheme="black" size="xl" onClick={signout}>
+        <Button
+          variant="solid"
+          colorScheme="black"
+          size="xl"
+          onClick={() => signOut()}
+        >
           Sign out
         </Button>
       </Flex>

@@ -11,7 +11,13 @@ export interface FormValues {
   whatsapp: string;
   discord: string;
   profilePic: number;
-  visibility: string;
+  visibility: VisibilityValues;
+}
+
+export enum VisibilityValues {
+  Public = 'public',
+  Private = 'private',
+  FriendsOnly = 'friends_only',
 }
 
 export interface UserProfile {
@@ -28,6 +34,7 @@ export interface UserProfile {
   discord?: string;
   whatsapp?: string;
   profile_pic: number;
+  visibility: VisibilityValues;
   wishlist: {
     card: {
       name: string;

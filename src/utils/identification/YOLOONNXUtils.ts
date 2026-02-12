@@ -78,7 +78,7 @@ const scaleYoloBoundingBox = (
   box.bounding_box.width /= scale_ratio;
   box.bounding_box.height /= scale_ratio;
 
-  clipBox(box.bounding_box, originalFrameSize); // UNSURE: does this modify in place?
+  clipBox(box.bounding_box, originalFrameSize);
 
   return box;
 };

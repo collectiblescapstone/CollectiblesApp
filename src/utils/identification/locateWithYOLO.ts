@@ -26,12 +26,9 @@ export const locateWithYOLO = async (
   // const dsize = new cv.Size(MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT);
   // const resizedMat = new cv.Mat();
   // cv.resize(imgCVMat, resizedMat, dsize, 0, 0, cv.INTER_CUBIC);
-  const resizedMat = new cv.Mat();
-  // copy imgCVMat to resizedMat
-  imgCVMat.copyTo(resizedMat);
 
   if (logging) console.log('converting matrix to tensor format');
-  cv.cvtColor(resizedMat, resizedMat, cv.COLOR_RGBA2RGB);
+  cv.cvtColor(imgCVMat, imgCVMat, cv.COLOR_RGBA2RGB);
 
   // // split
   // const channels = new cv.MatVector();
@@ -51,7 +48,7 @@ export const locateWithYOLO = async (
   //   MODEL_INPUT_WIDTH,
   // ]);
 
-  const blob = cv.blobFromImage(resizedMat, 1.0 / 255.0, new cv.Size(MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT), new cv.Scalar(0, 0, 0), true, false, cv.CV_32F);
+  const blob = cv.blobFromImage(imgCVMat, 1.0 / 255.0, new cv.Size(MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT), new cv.Scalar(0, 0, 0), true, false, cv.CV_32F);
   const tensorShape = [1, 3, MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH];
   const inputTensor = new ort.Tensor('float32', blob.data32F, tensorShape);
 
@@ -82,7 +79,7 @@ export const locateWithYOLO = async (
     logging
   );
 
-  resizedMat.delete();
+  blob.delete();
   // chwMats.delete();
   // for (let i = 0; i < channels.size(); i++) {
   //   channels.get(i).delete();

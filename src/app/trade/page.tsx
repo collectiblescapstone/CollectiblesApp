@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React from 'react';
 import {
     Avatar,
     Card, Flex,
@@ -10,11 +10,11 @@ import {
     Box,
     Heading,
     Slider,
-} from "@chakra-ui/react"
-import TradingCards from "@/components/trading/TradingCards";
+} from '@chakra-ui/react';
+import TradingCards from '@/components/trading/TradingCards';
 import {
     LuStar,
-} from 'react-icons/lu'
+} from 'react-icons/lu';
 
 
 type TradeCardProps = {
@@ -45,11 +45,14 @@ const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
                         <HStack gap="1" align="center">
                             <Box>
                                 {(() => {
-                                    let color = '#ff3b30'
-                                    if (rating <= 2.5) color = '#ff3b30';
-                                    else if (rating < 4.0) color = '#ffd60a';
-                                    else if (rating < 5) color = '#32d74b';
-                                    else color = '#08a9c6';
+                                    const color =
+                                        rating <= 2.5
+                                            ? '#ff3b30'
+                                            : rating < 4.0
+                                                ? '#ffd60a'
+                                                : rating < 5
+                                                    ? '#32d74b'
+                                                    : '#08a9c6';
                                     return <LuStar color={color} size={20} />;
                                 })()}
                             </Box>
@@ -62,7 +65,7 @@ const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
      )
  };
 
-const tradePage = () => {
+const TradePage = () => {
     const users: TradeCardProps[] = [
         { username: 'Nate Foss', rating: 4.5 },
         { username: 'Ava Johnson', rating: 4.0 },
@@ -110,4 +113,4 @@ const tradePage = () => {
     )
 };
 
-export default tradePage;
+export default TradePage;

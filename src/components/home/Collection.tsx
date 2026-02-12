@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Divider from '@/components/user-profile/Divider';
-import {Flex, Grid, GridItem, Image, Text} from '@chakra-ui/react';
+import Divider from '@/components/profiles/Divider';
+import {Flex, Image, Text} from '@chakra-ui/react';
 import { useRandomCards } from '@/components/personal-profile/RandomCard'; // update to use sets rather than cards
-import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
+// import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
 import { PokemonCardImage } from '@/types/personal-profile';
 
 const Collection: React.FC = () => {
@@ -25,7 +25,7 @@ const Collection: React.FC = () => {
             <Divider />
             <Flex mt={1}>
                 <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={2}>
-                    Popular This Month
+                    Your collection at a glance
                 </Text>
             </Flex>
             <Flex

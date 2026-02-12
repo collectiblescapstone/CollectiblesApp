@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Divider from '@/components/user-profile/Divider';
+import Divider from '@/components/profiles/Divider';
 import {
     Flex,
     Image,

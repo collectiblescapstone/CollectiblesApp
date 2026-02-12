@@ -47,7 +47,8 @@ export async function PATCH(request: Request) {
     if (typeof whatsapp === 'string') data.whatsapp = whatsapp;
     if (typeof discord === 'string') data.discord = discord;
     if (typeof profilePic === 'number') data.profile_pic = profilePic;
-    if (typeof visibility === 'string') data.visibility = visibility;
+    if (typeof visibility === 'string')
+      data.visibility = visibility as FormValues['visibility'];
 
     const updated = await prisma.user.update({
       where: { id: identifier },

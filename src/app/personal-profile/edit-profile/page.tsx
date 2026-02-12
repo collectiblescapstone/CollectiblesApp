@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
-import { FormValues } from '@/types/personal-profile';
+import { FormValues, VisibilityValues } from '@/types/personal-profile';
 
 import {
   Box,
@@ -59,7 +59,7 @@ const PersonalProfileScreen: React.FC = () => {
       whatsapp: '',
       discord: '',
       profilePic: 0,
-      visibility: 'public',
+      visibility: VisibilityValues.Public,
     },
   });
 
@@ -111,7 +111,7 @@ const PersonalProfileScreen: React.FC = () => {
           whatsapp: data.whatsapp ?? '',
           discord: data.discord ?? '',
           profilePic: data.profile_pic ?? 0,
-          visibility: data.visibility ?? 'Public',
+          visibility: data.visibility ?? VisibilityValues.Public,
         });
       } catch (err) {
         console.error('Error loading profile', err);

@@ -10,11 +10,10 @@ export const fetchUserProfile = async (
     data: { userID },
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*.vercel.app',
     },
   });
 
-  if (response.status !== 200) {
+  if (response.status < 200 || response.status >= 300) {
     throw new Error('Failed to fetch user profile');
   }
 

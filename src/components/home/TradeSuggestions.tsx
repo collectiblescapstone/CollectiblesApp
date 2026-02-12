@@ -54,7 +54,7 @@ const TradeSuggestions: React.FC = () => {
                 ))}
                 <Text>[USERNAME]</Text>
             </Flex>
-        {/*add a button here to take you to page trade\page.tsx*/}
+        {/* Button below navigates to /trade/page.tsx */}
             <Button size="xs" aria-label="See more trade suggestions" onClick={() => router.push('/trade')}>+ Go to TadePost</Button>
 
         </Flex>

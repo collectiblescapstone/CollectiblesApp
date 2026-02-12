@@ -10,6 +10,7 @@ export const fetchUserProfile = async (
     data: { userName },
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*.vercel.app',
     },
   });
 

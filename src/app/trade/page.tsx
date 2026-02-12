@@ -45,6 +45,7 @@ const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
                         <HStack gap="1" align="center">
                             <Box>
                                 {(() => {
+                                    let color = '#ff3b30'
                                     if (rating <= 2.5) color = '#ff3b30';
                                     else if (rating < 4.0) color = '#ffd60a';
                                     else if (rating < 5) color = '#32d74b';

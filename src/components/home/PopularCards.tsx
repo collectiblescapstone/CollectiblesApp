@@ -2,9 +2,15 @@
 
 import React from 'react';
 import Divider from '@/components/user-profile/Divider';
-import { Flex, Image, Text } from '@chakra-ui/react';
+import {
+    Flex,
+    Image,
+    Text,
+    HStack,
+} from '@chakra-ui/react';
 import { useRandomCards } from '@/components/personal-profile/RandomCard'; // for now, change later
 import { PokemonCardImage } from '@/types/personal-profile';
+import {LuFlame} from 'react-icons/lu';
 
 const PopularCards: React.FC = () => {
     const { cards, loading } = useRandomCards('ex5', 3);
@@ -23,9 +29,12 @@ const PopularCards: React.FC = () => {
         >
             <Divider />
             <Flex mt={1}>
-                <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={2}>
-                    Popular This Month
-                </Text>
+                <HStack gap={1} alignItems="center">
+                    <LuFlame color="#d35400" />
+                    <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={0}>
+                        Popular This Month
+                    </Text>
+                </HStack>
             </Flex>
             <Flex
                 flexDirection="row"

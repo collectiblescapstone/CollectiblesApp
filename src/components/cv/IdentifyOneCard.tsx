@@ -5,46 +5,68 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import { IdentifyCardInImage } from '@/utils/identification/identify';
-import { PredictedImageResult, CardData, rotation } from '@/types/identification';
-import cvReadyPromise from '@techstark/opencv-js';
+import {
+  PredictedImageResult,
+  CardData,
+  rotation,
+} from '@/types/identification';
+import cvReadyPromise, { CV, Mat } from '@techstark/opencv-js';
 import { locateWithYOLO } from '@/utils/identification/locateWithYOLO';
+import { styleText } from 'util';
 
 interface IdentifyOneCardProps {
   image?: string;
   onProcessed: () => void;
 }
 
-export const IdentifyOneCard = ({ image, onProcessed }: IdentifyOneCardProps) => {
+export const IdentifyOneCard = ({
+  image,
+  onProcessed,
+}: IdentifyOneCardProps) => {
   const originalImageRef = useRef<HTMLCanvasElement | null>(null);
   const ProcessedImageRef = useRef<HTMLCanvasElement | null>(null);
+  const isProcessing = useRef<boolean>(false);
+  const cv = useRef<CV>(null);
 
   const [predictedCard, setPredictedCard] = useState<CardData>();
   const [predictedCardImage, setPredictedCardImage] = useState<string>();
 
   const processImage = async (src: string, onProcessed: () => void) => {
+    if (isProcessing.current) return;
+    isProcessing.current = true;
+
+    // get openCV instance
+    if (!cv.current) {
+      const cvInstance = await cvReadyPromise;
+      cv.current = cvInstance;
+    }
 
     const img = new window.Image();
-      img.crossOrigin = 'anonymous';
-      img.src = src;
-    
-      // wait for image to load and be drawn to canvas
-      await new Promise((resolve) => {
-        img.onload = () => {
-          resolve(true);
-        };
-      });
-    
-      // get openCV instance
-      const cv = await cvReadyPromise;
-    
-      // read image
-      const origImg = cv.imread(img);
+    img.crossOrigin = 'anonymous';
+    img.src = src;
 
-      const annotated = await locateWithYOLO(origImg, rotation.NONE);
+    // wait for image to load and be drawn to canvas
+    await new Promise((resolve) => {
+      img.onload = () => {
+        resolve(true);
+      };
+    });
 
-      if (annotated) {
-        cv.imshow(ProcessedImageRef.current!, annotated);
-      }
+    // read image
+    const origImg = cv.current!.imread(img);
+
+    const annotated = await locateWithYOLO(
+      origImg,
+      cv.current!,
+      false
+    );
+
+    if (annotated && !annotated.isDeleted()) {
+      cv.current!.imshow(ProcessedImageRef.current!, annotated);
+    }
+
+    // cleanup
+    origImg.delete();
 
     // const result: PredictedImageResult | undefined =
     //   await IdentifyCardInImage(src);
@@ -56,24 +78,22 @@ export const IdentifyOneCard = ({ image, onProcessed }: IdentifyOneCardProps) =>
 
     // if (result.foundCardImage) {
     //   // show processed image in canvas
-    //   const cv = await cvReadyPromise;
-    //   cv.imshow(ProcessedImageRef.current!, result.foundCardImage!);
+    //   cv.current!.imshow(ProcessedImageRef.current!, result.foundCardImage!);
 
     //   setPredictedCard(result.predictedCard);
     //   setPredictedCardImage(result.predictedCard?.card.image + '/low.jpg');
 
     //   result.foundCardImage!.delete();
     // }
+    isProcessing.current = false;
     onProcessed();
   };
 
   useEffect(() => {
     if (image) {
-      processImage(image,onProcessed);
+      processImage(image, onProcessed);
     }
   }, [image, onProcessed]);
-
-  
 
   return (
     <Box>

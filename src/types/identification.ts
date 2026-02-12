@@ -11,18 +11,23 @@ export type CardDataObj = {
   [id: string]: CardData;
 };
 
-export type corners = [[number, number], [number, number], [number, number], [number, number]];
+export type corners = [
+  [number, number],
+  [number, number],
+  [number, number],
+  [number, number],
+];
 
-export type PredictedImageResult ={
+export type PredictedImageResult = {
   predictedCard?: CardData;
   foundCardImage?: cvReadyPromise.Mat;
   corners?: corners;
-}
+};
 
 export type NormalizeCardResult = {
   image: cvReadyPromise.Mat;
   corners: corners;
-}
+};
 
 // make a new result type
 

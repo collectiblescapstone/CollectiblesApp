@@ -30,17 +30,38 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'cardName or cardId is required' }, { status: 400 });
     }
 
-    const result = await prisma.collectionEntry.create({
-      data: {
+    let result;
+    const existingEntry = await prisma.collectionEntry.findFirst({
+      where: {
         userId: userId,
-        cardId: cardId ?? null,
-        condition: condition ?? null,
-        variant: variant ?? null,
-        grade: grade ?? null,
-        gradeLevel: gradeLevel ?? null,
-        tags: tags ?? [],
+        cardId: cardId,
       },
     });
+
+    if (existingEntry) {
+      result = await prisma.collectionEntry.update({
+        where: { id: existingEntry.id },
+        data: {
+          condition: condition ?? null,
+          variant: variant ?? null,
+          grade: grade ?? null,
+          gradeLevel: gradeLevel ?? null,
+          tags: tags ?? [],
+        },
+      });
+    } else {
+      result = await prisma.collectionEntry.create({
+        data: {
+          userId: userId,
+          cardId: cardId ?? null,
+          condition: condition ?? null,
+          variant: variant ?? null,
+          grade: grade ?? null,
+          gradeLevel: gradeLevel ?? null,
+          tags: tags ?? [],
+        },
+      });
+    }
 
     return NextResponse.json({ message: 'Saved to collection', data: result }, { status: 200 });
   } catch (err) {

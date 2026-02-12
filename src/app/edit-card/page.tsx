@@ -512,8 +512,10 @@ const EditCardPage = () => {
               render={({ field }) => (
                 <TagsInput.Root
                   name="Tags"
-                  value={field.value || []}
-                  onValueChange={field.onChange}
+                  value={Array.isArray(field.value) ? field.value : []}
+                  onValueChange={(details) => {
+                    field.onChange(details.value);
+                  }}
                 >
                   <TagsInput.Label>Tags</TagsInput.Label>
                   {/* Make the tags control and its input use a dark background and light text so they match the other inputs */}

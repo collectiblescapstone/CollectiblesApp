@@ -2,12 +2,19 @@
 
 import React from 'react';
 import Divider from '@/components/user-profile/Divider';
-import { Flex, Image, Text } from '@chakra-ui/react';
+import {
+    Flex,
+    Image,
+    Text,
+    Button,
+} from '@chakra-ui/react';
 import { useRandomCards } from '@/components/personal-profile/RandomCard'; // for now, change later
 import { PokemonCardImage } from '@/types/personal-profile';
+import { useRouter } from 'next/navigation';
 
 const TradeSuggestions: React.FC = () => {
     const { cards, loading } = useRandomCards('ex5', 3);
+    const router = useRouter();
 
     if (loading) return <Text>Loading cards...</Text>;
     if (cards.length === 0) return null;
@@ -45,8 +52,11 @@ const TradeSuggestions: React.FC = () => {
                         />
                     </Flex>
                 ))}
-                <text>[USERNAME]</text>
+                <Text>[USERNAME]</Text>
             </Flex>
+        {/*add a button here to take you to page trade\page.tsx*/}
+            <Button size="xs" aria-label="See more trade suggestions" onClick={() => router.push('/trade')}>+ Go to TadePost</Button>
+
         </Flex>
     );
 };

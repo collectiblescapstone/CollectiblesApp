@@ -9,8 +9,11 @@ import React, {
 } from 'react';
 import { Flex, Image, Input } from '@chakra-ui/react';
 import { CardSearcher } from '@/utils/identification/cardSearch';
+import { CapacitorHttp } from '@capacitor/core';
+import { baseUrl } from '@/utils/constants';
 import Divider from '@/components/profiles/Divider';
 import { type CardData } from '@/types/pokemon-card';
+import { getPokemonCards } from '@/utils/pokemonCard';
 
 export const SearchForCard: React.FC = () => {
   const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null);
@@ -40,11 +43,9 @@ export const SearchForCard: React.FC = () => {
 
       if (evt.key === 'Enter') {
         cardSearch.current(evt.currentTarget.value).then(async (data) => {
-          const res = await fetch(
-            `/api/pokemon-card?ids=${encodeURIComponent(JSON.stringify(data.map(({ id }) => id)))}`
-          );
-          if (!res.ok) throw new Error('Failed to fetch Pokémon cards');
-          const cards: CardData[] = await res.json();
+          const ids = data.map(({ id }) => id);
+          const cards = await getPokemonCards({ ids });
+
           setMatches(
             data.map((match) => ({
               ...match,

@@ -43,21 +43,6 @@ const PokemonGridPage: React.FC = () => {
     ],
   });
 
-  const fetchPokemonCards = async () => {
-    try {
-      const res = await fetch('/api/pokemon-card');
-      if (!res.ok) throw new Error('Failed to fetch Pokémon cards');
-      const data = await res.json();
-      console.log('Fetched Pokémon cards:', data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchPokemonCards();
-  }, []);
-
   // Final Pokédex numbers for each generation
   const pokemonGen = [151, 251, 386, 493, 649, 721, 809, 905, 1025];
 

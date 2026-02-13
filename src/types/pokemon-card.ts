@@ -72,7 +72,7 @@ export interface CardData {
   name: string;
   category: string;
   types: string[];
-  illustrator?: string;
+  illustrator?: string | null;
   rarity: string;
   variants: string[];
   dexId: number[];

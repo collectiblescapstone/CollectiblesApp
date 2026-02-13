@@ -59,6 +59,7 @@ export const POST = async (request: Request) => {
             },
           },
           distinct: ['cardId'],
+          select: { cardId: true },
         })
       ).length;
 
@@ -78,13 +79,13 @@ export const POST = async (request: Request) => {
       ).length;
     }
 
-    console.log(
-      setId || pId,
-      '| Master Set: ',
-      masterSetCount,
-      ' | Grandmaster Set: ',
-      grandmasterSetCount
-    );
+    // console.log(
+    //   setId || pId,
+    //   '| Master Set: ',
+    //   masterSetCount,
+    //   ' | Grandmaster Set: ',
+    //   grandmasterSetCount
+    // );
 
     return new Response(
       JSON.stringify({

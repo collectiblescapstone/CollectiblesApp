@@ -184,7 +184,6 @@ const PokemonGridPage = () => {
         groupedSets[selectedEra].map(async (set) => {
           const master = await masterSetCount(set.id);
           const grandmaster = await grandmasterSetCount(set.id);
-          // console.log(grandmaster);
           counts[set.id] = {
             masterSet: master ?? 0,
             grandmasterSet: grandmaster ?? 0,

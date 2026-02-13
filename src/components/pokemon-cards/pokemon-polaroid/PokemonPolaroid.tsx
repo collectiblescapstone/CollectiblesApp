@@ -14,6 +14,7 @@ import { LuSparkle, LuSparkles } from 'react-icons/lu';
 
 // Utils
 import { baseUrl } from '@/utils/constants';
+import { getDynamicColour } from '@/utils/dynamicColours';
 
 interface PokemonPolaroidProps {
   id: number;
@@ -45,7 +46,8 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
         headers: { 'Content-Type': 'application/json' },
         data: {
           userId: session.user.id,
-          pId: String(id),
+          setId: null,
+          pId: id,
         },
       });
 
@@ -118,7 +120,7 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
         {/* Stats Section */}
         <Box w="100%" mb={2}>
           <HStack mb={1}>
-            <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
+            <Icon as={LuSparkle} color={getDynamicColour(masterSetCount || 0, masterSet || 1, 45, 51)} boxSize={4} />
             <Progress.Root
               value={masterSetCount || 0}
               max={masterSet || 1}
@@ -128,13 +130,13 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
               overflow="hidden"
             >
               <Progress.Track bg="gray.100">
-                <Progress.Range bg="yellow.400" />
+                <Progress.Range bg={getDynamicColour(masterSetCount || 0, masterSet || 1, 45, 51)} />
               </Progress.Track>
             </Progress.Root>
           </HStack>
 
           <HStack>
-            <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
+            <Icon as={LuSparkles} color={getDynamicColour(grandmasterSetCount || 0, grandmasterSet || 1, 182, 50)} boxSize={4} />
             <Progress.Root
               value={grandmasterSetCount || 0}
               max={grandmasterSet || 1}
@@ -144,7 +146,7 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
               overflow="hidden"
             >
               <Progress.Track bg="gray.100">
-                <Progress.Range bg="yellow.400" />
+                <Progress.Range bg={getDynamicColour(grandmasterSetCount || 0, grandmasterSet || 1, 182, 50)} />
               </Progress.Track>
             </Progress.Root>
           </HStack>

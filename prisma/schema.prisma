@@ -90,8 +90,7 @@ model CollectionEntry {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([userId])
-  @@index([cardId])
+  @@index([userId, cardId])
 }
 
 // --------------------------------------
@@ -107,5 +106,5 @@ model WishlistEntry {
   variant String?
 
   @@unique([userId, cardId, variant])
-  @@index([userId])
+  @@index([userId, cardId])
 }

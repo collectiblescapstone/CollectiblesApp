@@ -9,8 +9,6 @@ import React, {
 } from 'react';
 import { Flex, Image, Input } from '@chakra-ui/react';
 import { CardSearcher } from '@/utils/identification/cardSearch';
-import { CapacitorHttp } from '@capacitor/core';
-import { baseUrl } from '@/utils/constants';
 import Divider from '@/components/profiles/Divider';
 import { type CardData } from '@/types/pokemon-card';
 import { getPokemonCards } from '@/utils/pokemonCard';

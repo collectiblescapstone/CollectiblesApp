@@ -1,7 +1,5 @@
 import prisma from '@/lib/prisma';
 
-export const dynamic = 'force-static';
-
 export const POST = async (request: Request) => {
   const { userId, setId, pId } = await request.json();
 

@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
-export const dynamic = 'force-static';
-
-export const GET = async (request: Request) => {
-  const { searchParams } = new URL(request.url);
-  const userName = searchParams.get('userName');
+export const POST = async (request: Request) => {
+  const { userName } = await request.json();
 
   if (!userName) {
     return NextResponse.json(
@@ -29,6 +26,8 @@ export const GET = async (request: Request) => {
       facebook: true,
       discord: true,
       whatsapp: true,
+      profile_pic: true,
+      visibility: true,
       wishlist: {
         select: {
           card: {

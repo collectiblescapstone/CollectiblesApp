@@ -1,14 +1,19 @@
 'use client';
 import { useAuth } from '@/context/AuthProvider';
-import { Box, Button, Flex, Heading, Spinner } from '@chakra-ui/react';
+
+import PopularCards from '@/components/home/PopularCards';
+import Collection from '@/components/home/Collection';
+import TradeSuggestions from '@/components/home/TradeSuggestions';
+
+import { Box, Flex, Heading, Text, Spinner } from '@chakra-ui/react';
 
 const HomePage = () => {
-  const { loading, session, signOut } = useAuth();
+  const { loading, session } = useAuth();
 
   if (loading || !session) {
     return (
       <Box textAlign="center" mt={10}>
-        <Spinner size="xl" />
+        Loading... <Spinner size="xl" />
       </Box>
     );
   }
@@ -19,18 +24,57 @@ const HomePage = () => {
       justifyContent="center"
       alignItems="center"
       minHeight="inherit"
+      py={2}
     >
-      <Heading size="md" mt={4}>
-        Logged in as: {session.user.email}
-      </Heading>
-      <Button
-        backgroundColor="brand.marigold"
-        color="brand.turtoise"
-        mt={4}
-        onClick={() => signOut()}
+      <Heading
+        mt={1}
+        fontSize="2xl"
+        textAlign="center"
+        fontWeight={'Bold'}
+        fontFamily="var(--font-sans)"
       >
-        Sign Out
-      </Button>
+        Welcome back [USERNAME]!
+      </Heading>
+
+      <Flex
+        mt={4}
+        px={4}
+        w="100%"
+        justifyContent="space-around"
+        flexWrap="wrap"
+        gap={6}
+      >
+        <Flex direction="column" alignItems="center" minW="180px">
+          <Text fontSize="2xl" fontWeight="bold">
+            0
+          </Text>
+          <Text fontSize="sm" color="gray.600">
+            cards logged this month
+          </Text>
+        </Flex>
+
+        <Flex direction="column" alignItems="center" minW="180px">
+          <Text fontSize="2xl" fontWeight="bold">
+            0
+          </Text>
+          <Text fontSize="sm" color="gray.600">
+            total cards in collection
+          </Text>
+        </Flex>
+
+        <Flex direction="column" alignItems="center" minW="180px">
+          <Text fontSize="2xl" fontWeight="bold">
+            0
+          </Text>
+          <Text fontSize="sm" color="gray.600">
+            cards up for trade
+          </Text>
+        </Flex>
+      </Flex>
+
+      <PopularCards />
+      <Collection />
+      <TradeSuggestions />
     </Flex>
   );
 };

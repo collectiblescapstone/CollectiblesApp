@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
-import { FormValues } from '@/types/personal-profile';
+import { FormValues, VisibilityValues } from '@/types/personal-profile';
 
 import {
   Box,
@@ -30,6 +30,7 @@ import { pfp_image_mapping, visibilityOptions } from './constants';
 import AvatarPopup from '@/components/ui/PopupUI';
 import { CapacitorHttp } from '@capacitor/core';
 import { baseUrl } from '@/utils/constants';
+import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
 
 const MAX_CHARACTERS = 110;
 
@@ -58,7 +59,7 @@ const PersonalProfileScreen: React.FC = () => {
       whatsapp: '',
       discord: '',
       profilePic: 0,
-      visibility: 'public',
+      visibility: VisibilityValues.Public,
     },
   });
 
@@ -96,27 +97,22 @@ const PersonalProfileScreen: React.FC = () => {
     if (!session?.user?.id) return;
     async function fetchProfile() {
       try {
-        const res = await fetch(
-          `/api/get-user-by-userID?userID=${session?.user?.id}`
-        );
-        if (res.ok) {
-          const data = await res.json();
-          reset({
-            firstName: data.firstName ?? '',
-            lastName: data.lastName ?? '',
-            username: data.username ?? '',
-            email: data.email ?? '',
-            bio: data.bio ?? '',
-            location: data.location ?? '',
-            instagram: data.instagram ?? '',
-            x: data.x ?? '',
-            facebook: data.facebook ?? '',
-            whatsapp: data.whatsapp ?? '',
-            discord: data.discord ?? '',
-            profilePic: data.profile_pic ?? 0,
-            visibility: data.visibility ?? 'Public',
-          });
-        }
+        const data = await fetchUserProfile(session?.user.id ?? '');
+        reset({
+          firstName: data.firstName ?? '',
+          lastName: data.lastName ?? '',
+          username: data.username ?? '',
+          email: data.email ?? '',
+          bio: data.bio ?? '',
+          location: data.location ?? '',
+          instagram: data.instagram ?? '',
+          x: data.x ?? '',
+          facebook: data.facebook ?? '',
+          whatsapp: data.whatsapp ?? '',
+          discord: data.discord ?? '',
+          profilePic: data.profile_pic ?? 0,
+          visibility: data.visibility ?? VisibilityValues.Public,
+        });
       } catch (err) {
         console.error('Error loading profile', err);
       }

@@ -82,6 +82,7 @@ export const IdentifyOneCard = ({ image }: NormalizeProps) => {
           href={{
             pathname: '/edit-card',
             query: {
+              cardId: predictedCard?.card.id ?? '', 
               imageUrl: predictedCard?.card.image ?? '',
               cardName: `${predictedCard?.card.name ?? ''} (${predictedCard?.card.id.split('-')[1]})`,
               cardSet: predictedCard?.card.set.name ?? '',

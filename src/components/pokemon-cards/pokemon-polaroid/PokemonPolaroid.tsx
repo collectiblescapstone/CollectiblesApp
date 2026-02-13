@@ -40,9 +40,10 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
     const fetchCards = async () => {
       setLoading(true);
 
-      const res = await CapacitorHttp.get({
+      const res = await CapacitorHttp.post({
         url: `${baseUrl}/api/set-counts`,
-        params: {
+        headers: { 'Content-Type': 'application/json' },
+        data: {
           userId: session.user.id,
           pId: String(id),
         },

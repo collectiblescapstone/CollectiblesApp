@@ -26,9 +26,7 @@ import { useAuth } from '@/context/AuthProvider';
 // Utils
 import {
   POKEMONGEN,
-  MAXPOKEDEXVALUE,
   ALL_POKEMON,
-  getPokemonName,
 } from '@/utils/pokedex';
 import {
   masterSetCount,
@@ -37,7 +35,7 @@ import {
   pokemonGrandmasterSetCount,
 } from '@/utils/pokemonCard';
 
-const PokemonGridPage: React.FC = () => {
+const PokemonGridPage = () => {
   const { session, loading } = useAuth();
   const [load, setLoad] = useState(true);
   const [selected, setSelected] = useState('set');

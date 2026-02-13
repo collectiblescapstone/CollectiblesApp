@@ -2,12 +2,8 @@ import prisma from '@/lib/prisma';
 
 export const dynamic = 'force-static';
 
-export const GET = async (request: Request) => {
-  const { searchParams } = new URL(request.url);
-
-  const userId = searchParams.get('userId');
-  const setId = searchParams.get('setId');
-  const pId = searchParams.get('pId');
+export const POST = async (request: Request) => {
+  const { userId, setId, pId } = await request.json();
 
   if (!userId || (!setId && !pId)) {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), {

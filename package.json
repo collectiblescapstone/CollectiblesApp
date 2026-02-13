@@ -91,6 +91,6 @@
   },
   "homepage": "https://github.com/collectiblescapstone/CollectiblesApp#readme",
   "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
   }
 }

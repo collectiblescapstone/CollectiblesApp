@@ -1,11 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-// ENSURE THAT YOUR .env FILE HAS VALUES POINTING TO YOUR LOCAL DATABASE, AND NOT THE LIVE DATABASE
-// BEFORE RUNNING `npx prisma migrate dev`. MUST NOT EDIT THE LIVE DATABASE DIRECTLY!! Thank you!
+// ======================================
+// Prisma Schema
+// ======================================
 
 datasource db {
   provider  = "postgresql"
@@ -16,6 +11,10 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+// ======================================
+// Models
+// ======================================
 
 model User {
   id          String            @id @db.Uuid
@@ -30,45 +29,56 @@ model User {
   bio         String?
   whatsapp    String?
   discord     String?
-  visibility  String           @default("public")
-  profile_pic Int              @default(0)
-  collection CollectionEntry[]
-  wishlist   WishlistEntry[]
+  visibility  String            @default("public")
+  profile_pic Int               @default(0)
+  collection  CollectionEntry[]
+  wishlist    WishlistEntry[]
 }
 
-model Card {
-  id              String            @id
-  name            String
-  category        String
-  types           String[]
-  illustrator     String?
-  rarity          String
-  variants        String[]
-  dexId           Int[]
-  image_url       String
-  setId           String
-  set             Set               @relation(fields: [setId], references: [id])
-  CollectionEntry CollectionEntry[]
-  WishlistEntry   WishlistEntry[]
-}
+// --------------------------------------
 
 model Set {
   id       String  @id
   name     String
   series   String
-  cards    Card[]
   logo     String?
   symbol   String?
   official Int     @default(0)
   total    Int     @default(0)
+
+  cards Card[]
 }
 
+// --------------------------------------
+
+model Card {
+  id          String
+  setId       String
+  name        String
+  category    String
+  types       String[]
+  illustrator String?
+  rarity      String
+  variants    String[]
+  dexId       Int[]
+  image_url   String
+  set         Set               @relation(fields: [setId], references: [id])
+  collection  CollectionEntry[]
+  wishlist    WishlistEntry[]
+
+  @@id([id])
+}
+
+// --------------------------------------
+
 model CollectionEntry {
-  id         String   @id @default(cuid())
-  userId     String   @db.Uuid
-  user       User     @relation(fields: [userId], references: [id])
-  cardId     String
-  card       Card     @relation(fields: [cardId], references: [id])
+  id     String @id @default(cuid())
+  userId String @db.Uuid
+  cardId String
+
+  user User @relation(fields: [userId], references: [id])
+  card Card @relation(fields: [cardId], references: [id])
+
   condition  String?
   variant    String   @default("normal")
   forTrade   Boolean  @default(false)
@@ -80,17 +90,21 @@ model CollectionEntry {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([userId])
-  @@index([cardId])
+  @@index([userId, cardId])
 }
 
+// --------------------------------------
+
 model WishlistEntry {
-  id      String  @id @default(cuid())
-  userId  String  @db.Uuid
-  user    User    @relation(fields: [userId], references: [id])
-  cardId  String
-  card    Card    @relation(fields: [cardId], references: [id])
+  id     String @id @default(cuid())
+  userId String @db.Uuid
+  cardId String
+
+  user User @relation(fields: [userId], references: [id])
+  card Card @relation(fields: [cardId], references: [id])
+
   variant String?
 
   @@unique([userId, cardId, variant])
+  @@index([userId, cardId])
 }

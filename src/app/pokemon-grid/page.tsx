@@ -1,363 +1,388 @@
-'use client';
+'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import {
-  Box,
-  HStack,
-  Grid,
-  GridItem,
-  Portal,
-  Select,
-  Spinner,
-  createListCollection,
-} from '@chakra-ui/react';
+    Box,
+    HStack,
+    Grid,
+    GridItem,
+    Portal,
+    Select,
+    Spinner,
+    createListCollection
+} from '@chakra-ui/react'
 
 // Child Components
-import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid';
-import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
+import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid'
+import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet'
 
 // Hooks
-import { FiltersProvider } from '@/hooks/useFilters';
+import { FiltersProvider } from '@/hooks/useFilters'
 
 // Types
-import { PokemonSetType } from '@/types/pokemon-grid';
-import { useAuth } from '@/context/AuthProvider';
+import { PokemonSetType } from '@/types/pokemon-grid'
+import { useAuth } from '@/context/AuthProvider'
 
 const PokemonGridPage: React.FC = () => {
-  const { session, loading } = useAuth();
+    const { session, loading } = useAuth()
 
-  const [selected, setSelected] = useState('set');
-  const [selectedEra, setSelectedEra] = useState('sv');
-  const [groupedSets, setGroupedSets] = useState<
-    Record<string, PokemonSetType[]>
-  >({});
-  const [selectedGen, setSelectedGen] = useState('ALL');
+    const [selected, setSelected] = useState('set')
+    const [selectedEra, setSelectedEra] = useState('sv')
+    const [groupedSets, setGroupedSets] = useState<
+        Record<string, PokemonSetType[]>
+    >({})
+    const [selectedGen, setSelectedGen] = useState('ALL')
 
-  const TOTAL_POKEMON = 1025;
-  const pokemon = Array.from({ length: TOTAL_POKEMON }, (_, i) => i + 1);
+    const TOTAL_POKEMON = 1025
+    const pokemon = Array.from({ length: TOTAL_POKEMON }, (_, i) => i + 1)
 
-  const frameworks = createListCollection({
-    items: [
-      { label: 'Set', value: 'set' },
-      { label: 'Pokémon', value: 'pokemon' },
-    ],
-  });
+    const frameworks = createListCollection({
+        items: [
+            { label: 'Set', value: 'set' },
+            { label: 'Pokémon', value: 'pokemon' }
+        ]
+    })
 
-  const fetchPokemonCards = async () => {
-    try {
-      const res = await fetch('/api/pokemon-card');
-      if (!res.ok) throw new Error('Failed to fetch Pokémon cards');
-      const data = await res.json();
-      console.log('Fetched Pokémon cards:', data);
-    } catch (err) {
-      console.log(err);
+    const fetchPokemonCards = async () => {
+        try {
+            const res = await fetch('/api/pokemon-card')
+            if (!res.ok) throw new Error('Failed to fetch Pokémon cards')
+            const data = await res.json()
+            console.log('Fetched Pokémon cards:', data)
+        } catch (err) {
+            console.log(err)
+        }
     }
-  };
 
-  useEffect(() => {
-    fetchPokemonCards();
-  }, []);
+    useEffect(() => {
+        fetchPokemonCards()
+    }, [])
 
-  // Final Pokédex numbers for each generation
-  const pokemonGen = [151, 251, 386, 493, 649, 721, 809, 905, 1025];
+    // Final Pokédex numbers for each generation
+    const pokemonGen = [151, 251, 386, 493, 649, 721, 809, 905, 1025]
 
-  // Generation options
-  const genOptions = [
-    { label: 'ALL', value: 'ALL' },
-    ...pokemonGen.map((last, index) => ({
-      label: `Gen ${index + 1}`,
-      value: (index + 1).toString(),
-    })),
-  ];
+    // Generation options
+    const genOptions = [
+        { label: 'ALL', value: 'ALL' },
+        ...pokemonGen.map((last, index) => ({
+            label: `Gen ${index + 1}`,
+            value: (index + 1).toString()
+        }))
+    ]
 
-  const setEras = [
-    { label: 'Mega Evolution', value: 'me' },
-    { label: 'Scarlet & Violet', value: 'sv' },
-    { label: 'Sword & Shield', value: 'swsh' },
-    { label: 'Sun & Moon', value: 'sm' },
-    { label: 'X & Y', value: 'xy' },
-    { label: 'Black & White', value: 'bw' },
-    { label: 'HeartGold & SoulSilver', value: 'hgss' },
-    { label: 'Platinum', value: 'pl' },
-    { label: 'Diamond & Pearl', value: 'dp' },
-    { label: 'Pop Series', value: 'pop' },
-    { label: 'e-Card', value: 'ecard' },
-    { label: 'EX', value: 'ex' },
-    { label: 'Neo Genesis', value: 'neo' },
-    { label: 'Base', value: 'base' },
-    { label: 'Other', value: 'other' },
-  ];
+    const setEras = [
+        { label: 'Mega Evolution', value: 'me' },
+        { label: 'Scarlet & Violet', value: 'sv' },
+        { label: 'Sword & Shield', value: 'swsh' },
+        { label: 'Sun & Moon', value: 'sm' },
+        { label: 'X & Y', value: 'xy' },
+        { label: 'Black & White', value: 'bw' },
+        { label: 'HeartGold & SoulSilver', value: 'hgss' },
+        { label: 'Platinum', value: 'pl' },
+        { label: 'Diamond & Pearl', value: 'dp' },
+        { label: 'Pop Series', value: 'pop' },
+        { label: 'e-Card', value: 'ecard' },
+        { label: 'EX', value: 'ex' },
+        { label: 'Neo Genesis', value: 'neo' },
+        { label: 'Base', value: 'base' },
+        { label: 'Other', value: 'other' }
+    ]
 
-  const eraOptions = createListCollection({
-    items: setEras.map((era) => ({
-      label: era.label,
-      value: era.value,
-    })),
-  });
+    const eraOptions = createListCollection({
+        items: setEras.map((era) => ({
+            label: era.label,
+            value: era.value
+        }))
+    })
 
-  useEffect(() => {
-    fetch('/api/pokemon-set')
-      .then((res) => res.json())
-      .then((data) => {
-        const sets = Array.isArray(data) ? data : [data];
+    useEffect(() => {
+        fetch('/api/pokemon-set')
+            .then((res) => res.json())
+            .then((data) => {
+                const sets = Array.isArray(data) ? data : [data]
 
-        const groups: Record<string, PokemonSetType[]> = {
-          sv: [],
-          swsh: [],
-          sm: [],
-          xy: [],
-          bw: [],
-          dp: [],
-          me: [],
-          base: [],
-          other: [],
-          ex: [],
-          neo: [],
-          pl: [],
-          hgss: [],
-          pop: [],
-          ecard: [],
-        };
+                const groups: Record<string, PokemonSetType[]> = {
+                    sv: [],
+                    swsh: [],
+                    sm: [],
+                    xy: [],
+                    bw: [],
+                    dp: [],
+                    me: [],
+                    base: [],
+                    other: [],
+                    ex: [],
+                    neo: [],
+                    pl: [],
+                    hgss: [],
+                    pop: [],
+                    ecard: []
+                }
 
-        sets.forEach((set) => {
-          const id = set.id?.toLowerCase() ?? '';
-          if (id.includes('sv')) groups.sv.push(set);
-          else if (id.includes('swsh')) groups.swsh.push(set);
-          else if (id.includes('sm')) groups.sm.push(set);
-          else if (id.includes('xy')) groups.xy.push(set);
-          else if (id.includes('bw')) groups.bw.push(set);
-          else if (id.includes('hgss') || id.includes('tk-hs'))
-            groups.hgss.push(set);
-          else if (id.includes('pl')) groups.pl.push(set);
-          else if (id.includes('dp')) groups.dp.push(set);
-          else if (id.includes('me')) groups.me.push(set);
-          else if (id.includes('ex')) groups.ex.push(set);
-          else if (id.includes('ecard')) groups.ecard.push(set);
-          else if (id.includes('pop')) groups.pop.push(set);
-          else if (id.includes('neo') || id.includes('si'))
-            groups.neo.push(set);
-          else if (id.includes('base')) groups.base.push(set);
-          else groups.other.push(set);
-        });
+                sets.forEach((set) => {
+                    const id = set.id?.toLowerCase() ?? ''
+                    if (id.includes('sv')) groups.sv.push(set)
+                    else if (id.includes('swsh')) groups.swsh.push(set)
+                    else if (id.includes('sm')) groups.sm.push(set)
+                    else if (id.includes('xy')) groups.xy.push(set)
+                    else if (id.includes('bw')) groups.bw.push(set)
+                    else if (id.includes('hgss') || id.includes('tk-hs'))
+                        groups.hgss.push(set)
+                    else if (id.includes('pl')) groups.pl.push(set)
+                    else if (id.includes('dp')) groups.dp.push(set)
+                    else if (id.includes('me')) groups.me.push(set)
+                    else if (id.includes('ex')) groups.ex.push(set)
+                    else if (id.includes('ecard')) groups.ecard.push(set)
+                    else if (id.includes('pop')) groups.pop.push(set)
+                    else if (id.includes('neo') || id.includes('si'))
+                        groups.neo.push(set)
+                    else if (id.includes('base')) groups.base.push(set)
+                    else groups.other.push(set)
+                })
 
-        setGroupedSets(groups);
-      })
-      .catch((err) => console.error('Error loading sets.json:', err));
-  }, []);
+                setGroupedSets(groups)
+            })
+            .catch((err) => console.error('Error loading sets.json:', err))
+    }, [])
 
-  const selectStyles = {
-    bg: 'gray.50',
-    color: 'gray.800',
-    border: '1px solid',
-    borderColor: 'gray.300',
-    _hover: { bg: 'gray.100' },
-    _focusWithin: { borderColor: 'blue.400', boxShadow: '0 0 0 1px #63b3ed' },
-  };
+    const selectStyles = {
+        bg: 'gray.50',
+        color: 'gray.800',
+        border: '1px solid',
+        borderColor: 'gray.300',
+        _hover: { bg: 'gray.100' },
+        _focusWithin: {
+            borderColor: 'blue.400',
+            boxShadow: '0 0 0 1px #63b3ed'
+        }
+    }
 
-  // Filter Pokémon based on selected generation
-  const filteredPokemon =
-    selectedGen === 'ALL'
-      ? pokemon
-      : pokemon.filter((id) => {
-          const genIndex = parseInt(selectedGen) - 1;
-          const startId = genIndex === 0 ? 1 : pokemonGen[genIndex - 1] + 1;
-          const endId = pokemonGen[genIndex];
-          return id >= startId && id <= endId;
-        });
+    // Filter Pokémon based on selected generation
+    const filteredPokemon =
+        selectedGen === 'ALL'
+            ? pokemon
+            : pokemon.filter((id) => {
+                  const genIndex = parseInt(selectedGen) - 1
+                  const startId =
+                      genIndex === 0 ? 1 : pokemonGen[genIndex - 1] + 1
+                  const endId = pokemonGen[genIndex]
+                  return id >= startId && id <= endId
+              })
 
-  if (loading || !session) {
+    if (loading || !session) {
+        return (
+            <Box textAlign="center" mt={10}>
+                <Spinner size="xl" />
+            </Box>
+        )
+    }
+
     return (
-      <Box textAlign="center" mt={10}>
-        <Spinner size="xl" />
-      </Box>
-    );
-  }
-
-  return (
-    <FiltersProvider>
-      <Box bg="white" minH="100vh" color="black">
-        <HStack justify="center" width="100%" gap={1} padding={2}>
-          {/* Sort dropdown */}
-          <Select.Root
-            collection={frameworks}
-            size="sm"
-            width="300px"
-            defaultValue={['set']}
-            onValueChange={(e) => {
-              setSelected(e.value[0]);
-              setSelectedEra('sv');
-            }}
-          >
-            <Select.HiddenSelect />
-            <Select.Label>Sort By</Select.Label>
-            <Select.Control {...selectStyles}>
-              <Select.Trigger>
-                <Select.ValueText placeholder="Select sort" />
-              </Select.Trigger>
-              <Select.IndicatorGroup>
-                <Select.Indicator />
-              </Select.IndicatorGroup>
-            </Select.Control>
-            <Portal>
-              <Select.Positioner>
-                <Select.Content
-                  bg="white"
-                  color="gray.800"
-                  border="1px solid"
-                  borderColor="gray.300"
-                >
-                  {frameworks.items.map((framework) => (
-                    <Select.Item
-                      item={framework}
-                      key={framework.value}
-                      _hover={{ bg: 'gray.100' }}
-                      _selected={{ bg: 'blue.50', color: 'blue.700' }}
+        <FiltersProvider>
+            <Box bg="white" minH="100vh" color="black">
+                <HStack justify="center" width="100%" gap={1} padding={2}>
+                    {/* Sort dropdown */}
+                    <Select.Root
+                        collection={frameworks}
+                        size="sm"
+                        width="300px"
+                        defaultValue={['set']}
+                        onValueChange={(e) => {
+                            setSelected(e.value[0])
+                            setSelectedEra('sv')
+                        }}
                     >
-                      {framework.label}
-                      <Select.ItemIndicator />
-                    </Select.Item>
-                  ))}
-                </Select.Content>
-              </Select.Positioner>
-            </Portal>
-          </Select.Root>
+                        <Select.HiddenSelect />
+                        <Select.Label>Sort By</Select.Label>
+                        <Select.Control {...selectStyles}>
+                            <Select.Trigger>
+                                <Select.ValueText placeholder="Select sort" />
+                            </Select.Trigger>
+                            <Select.IndicatorGroup>
+                                <Select.Indicator />
+                            </Select.IndicatorGroup>
+                        </Select.Control>
+                        <Portal>
+                            <Select.Positioner>
+                                <Select.Content
+                                    bg="white"
+                                    color="gray.800"
+                                    border="1px solid"
+                                    borderColor="gray.300"
+                                >
+                                    {frameworks.items.map((framework) => (
+                                        <Select.Item
+                                            item={framework}
+                                            key={framework.value}
+                                            _hover={{ bg: 'gray.100' }}
+                                            _selected={{
+                                                bg: 'blue.50',
+                                                color: 'blue.700'
+                                            }}
+                                        >
+                                            {framework.label}
+                                            <Select.ItemIndicator />
+                                        </Select.Item>
+                                    ))}
+                                </Select.Content>
+                            </Select.Positioner>
+                        </Portal>
+                    </Select.Root>
 
-          {/* Pokemon Generation dropdown */}
-          {selected === 'pokemon' && (
-            <Select.Root
-              collection={createListCollection({ items: genOptions })}
-              size="sm"
-              width="200px"
-              defaultValue={['ALL']}
-              onValueChange={(val) => setSelectedGen(val.value[0])}
-              textAlign={'right'}
-            >
-              <Select.HiddenSelect />
-              <Select.Label>Generation</Select.Label>
-              <Select.Control {...selectStyles}>
-                <Select.Trigger>
-                  <Select.ValueText placeholder="Select Generation" />
-                </Select.Trigger>
-                <Select.IndicatorGroup>
-                  <Select.Indicator />
-                </Select.IndicatorGroup>
-              </Select.Control>
-              <Portal>
-                <Select.Positioner>
-                  <Select.Content
-                    bg="white"
-                    color="gray.800"
-                    border="1px solid"
-                    borderColor="gray.300"
-                  >
-                    {genOptions.map((gen) => (
-                      <Select.Item
-                        item={gen}
-                        key={gen.value}
-                        _hover={{ bg: 'gray.100' }}
-                        _selected={{ bg: 'blue.50', color: 'blue.700' }}
-                      >
-                        {gen.label}
-                        <Select.ItemIndicator />
-                      </Select.Item>
-                    ))}
-                  </Select.Content>
-                </Select.Positioner>
-              </Portal>
-            </Select.Root>
-          )}
+                    {/* Pokemon Generation dropdown */}
+                    {selected === 'pokemon' && (
+                        <Select.Root
+                            collection={createListCollection({
+                                items: genOptions
+                            })}
+                            size="sm"
+                            width="200px"
+                            defaultValue={['ALL']}
+                            onValueChange={(val) =>
+                                setSelectedGen(val.value[0])
+                            }
+                            textAlign={'right'}
+                        >
+                            <Select.HiddenSelect />
+                            <Select.Label>Generation</Select.Label>
+                            <Select.Control {...selectStyles}>
+                                <Select.Trigger>
+                                    <Select.ValueText placeholder="Select Generation" />
+                                </Select.Trigger>
+                                <Select.IndicatorGroup>
+                                    <Select.Indicator />
+                                </Select.IndicatorGroup>
+                            </Select.Control>
+                            <Portal>
+                                <Select.Positioner>
+                                    <Select.Content
+                                        bg="white"
+                                        color="gray.800"
+                                        border="1px solid"
+                                        borderColor="gray.300"
+                                    >
+                                        {genOptions.map((gen) => (
+                                            <Select.Item
+                                                item={gen}
+                                                key={gen.value}
+                                                _hover={{ bg: 'gray.100' }}
+                                                _selected={{
+                                                    bg: 'blue.50',
+                                                    color: 'blue.700'
+                                                }}
+                                            >
+                                                {gen.label}
+                                                <Select.ItemIndicator />
+                                            </Select.Item>
+                                        ))}
+                                    </Select.Content>
+                                </Select.Positioner>
+                            </Portal>
+                        </Select.Root>
+                    )}
 
-          {/* Set Era dropdown */}
-          {selected === 'set' && (
-            <Select.Root
-              collection={eraOptions}
-              size="sm"
-              width="300px"
-              defaultValue={['sv']}
-              onValueChange={(e) => setSelectedEra(e.value[0])}
-              textAlign={'right'}
-            >
-              <Select.HiddenSelect />
-              <Select.Label>Set Era</Select.Label>
-              <Select.Control {...selectStyles}>
-                <Select.Trigger>
-                  <Select.ValueText placeholder="Select an Era" />
-                </Select.Trigger>
-                <Select.IndicatorGroup>
-                  <Select.Indicator />
-                </Select.IndicatorGroup>
-              </Select.Control>
-              <Portal>
-                <Select.Positioner>
-                  <Select.Content
-                    bg="white"
-                    color="gray.800"
-                    border="1px solid"
-                    borderColor="gray.300"
-                  >
-                    {eraOptions.items.map((era) => (
-                      <Select.Item
-                        item={era}
-                        key={era.value}
-                        _hover={{ bg: 'gray.100' }}
-                        _selected={{ bg: 'blue.50', color: 'blue.700' }}
-                      >
-                        {era.label}
-                        <Select.ItemIndicator />
-                      </Select.Item>
-                    ))}
-                  </Select.Content>
-                </Select.Positioner>
-              </Portal>
-            </Select.Root>
-          )}
-        </HStack>
+                    {/* Set Era dropdown */}
+                    {selected === 'set' && (
+                        <Select.Root
+                            collection={eraOptions}
+                            size="sm"
+                            width="300px"
+                            defaultValue={['sv']}
+                            onValueChange={(e) => setSelectedEra(e.value[0])}
+                            textAlign={'right'}
+                        >
+                            <Select.HiddenSelect />
+                            <Select.Label>Set Era</Select.Label>
+                            <Select.Control {...selectStyles}>
+                                <Select.Trigger>
+                                    <Select.ValueText placeholder="Select an Era" />
+                                </Select.Trigger>
+                                <Select.IndicatorGroup>
+                                    <Select.Indicator />
+                                </Select.IndicatorGroup>
+                            </Select.Control>
+                            <Portal>
+                                <Select.Positioner>
+                                    <Select.Content
+                                        bg="white"
+                                        color="gray.800"
+                                        border="1px solid"
+                                        borderColor="gray.300"
+                                    >
+                                        {eraOptions.items.map((era) => (
+                                            <Select.Item
+                                                item={era}
+                                                key={era.value}
+                                                _hover={{ bg: 'gray.100' }}
+                                                _selected={{
+                                                    bg: 'blue.50',
+                                                    color: 'blue.700'
+                                                }}
+                                            >
+                                                {era.label}
+                                                <Select.ItemIndicator />
+                                            </Select.Item>
+                                        ))}
+                                    </Select.Content>
+                                </Select.Positioner>
+                            </Portal>
+                        </Select.Root>
+                    )}
+                </HStack>
 
-        {/* Pokémon Grid View */}
-        {selected === 'pokemon' && (
-          <Grid
-            templateColumns="repeat(2, 1fr)"
-            gap={1}
-            justifyItems="center"
-            mt={4}
-          >
-            {filteredPokemon.map((id) => (
-              <PokemonPolaroid
-                key={id}
-                id={id}
-                masterSet={100}
-                grandmasterSet={100}
-              />
-            ))}
-          </Grid>
-        )}
+                {/* Pokémon Grid View */}
+                {selected === 'pokemon' && (
+                    <Grid
+                        templateColumns="repeat(2, 1fr)"
+                        gap={1}
+                        justifyItems="center"
+                        mt={4}
+                    >
+                        {filteredPokemon.map((id) => (
+                            <PokemonPolaroid
+                                key={id}
+                                id={id}
+                                masterSet={100}
+                                grandmasterSet={100}
+                            />
+                        ))}
+                    </Grid>
+                )}
 
-        {/* Set Era View */}
-        {selected === 'set' && selectedEra && groupedSets[selectedEra] && (
-          <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
-            {groupedSets[selectedEra].map((set) => {
-              const imageSrc = set.logo || set.symbol;
+                {/* Set Era View */}
+                {selected === 'set' &&
+                    selectedEra &&
+                    groupedSets[selectedEra] && (
+                        <Grid
+                            mt="30px"
+                            templateColumns="repeat(1, 1fr)"
+                            gap="20px"
+                        >
+                            {groupedSets[selectedEra].map((set) => {
+                                const imageSrc = set.logo || set.symbol
 
-              return (
-                <GridItem key={set.id}>
-                  <PokemonSet
-                    label={set.name}
-                    image={
-                      imageSrc ? `${imageSrc}.png` : '/Images/temp_icon.svg'
-                    }
-                    setName={set.name}
-                    setID={set.id}
-                    masterSet={100}
-                    grandmasterSet={100}
-                  />
-                </GridItem>
-              );
-            })}
-          </Grid>
-        )}
-      </Box>
-    </FiltersProvider>
-  );
-};
+                                return (
+                                    <GridItem key={set.id}>
+                                        <PokemonSet
+                                            label={set.name}
+                                            image={
+                                                imageSrc
+                                                    ? `${imageSrc}.png`
+                                                    : '/Images/temp_icon.svg'
+                                            }
+                                            setName={set.name}
+                                            setID={set.id}
+                                            masterSet={100}
+                                            grandmasterSet={100}
+                                        />
+                                    </GridItem>
+                                )
+                            })}
+                        </Grid>
+                    )}
+            </Box>
+        </FiltersProvider>
+    )
+}
 
-export default PokemonGridPage;
+export default PokemonGridPage

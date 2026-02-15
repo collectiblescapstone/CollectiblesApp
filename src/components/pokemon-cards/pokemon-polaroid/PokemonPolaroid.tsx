@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Box, Image, Icon, Progress, HStack, Spinner } from '@chakra-ui/react';
 
-// Capacitor
-import { CapacitorHttp } from '@capacitor/core';
-
 // Context
 import { useAuth } from '@/context/AuthProvider';
 
@@ -13,7 +10,10 @@ import { useAuth } from '@/context/AuthProvider';
 import { LuSparkle, LuSparkles } from 'react-icons/lu';
 
 // Utils
-import { baseUrl } from '@/utils/constants';
+import {
+  userPokemonMasterSetCount,
+  userPokemonGrandmasterSetCount,
+} from '@/utils/userPokemonCard';
 import { getDynamicColour } from '@/utils/dynamicColours';
 
 interface PokemonPolaroidProps {
@@ -41,18 +41,17 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
     const fetchCards = async () => {
       setLoading(true);
 
-      const res = await CapacitorHttp.post({
-        url: `${baseUrl}/api/set-counts`,
-        headers: { 'Content-Type': 'application/json' },
-        data: {
-          userId: session.user.id,
-          setId: null,
-          pId: id,
-        },
-      });
+      const masterSetCount = await userPokemonMasterSetCount(
+        session.user.id,
+        id
+      );
+      const grandmasterSetCount = await userPokemonGrandmasterSetCount(
+        session.user.id,
+        id
+      );
 
-      setMasterSetCount(res.data.masterSetCount);
-      setGrandmasterSetCount(res.data.grandmasterSetCount);
+      setMasterSetCount(masterSetCount);
+      setGrandmasterSetCount(grandmasterSetCount);
       setLoading(false);
     };
 
@@ -120,7 +119,16 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
         {/* Stats Section */}
         <Box w="100%" mb={2}>
           <HStack mb={1}>
-            <Icon as={LuSparkle} color={getDynamicColour(masterSetCount || 0, masterSet || 1, 45, 51)} boxSize={4} />
+            <Icon
+              as={LuSparkle}
+              color={getDynamicColour(
+                masterSetCount || 0,
+                masterSet || 1,
+                45,
+                51
+              )}
+              boxSize={4}
+            />
             <Progress.Root
               value={masterSetCount || 0}
               max={masterSet || 1}
@@ -130,13 +138,29 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
               overflow="hidden"
             >
               <Progress.Track bg="gray.100">
-                <Progress.Range bg={getDynamicColour(masterSetCount || 0, masterSet || 1, 45, 51)} />
+                <Progress.Range
+                  bg={getDynamicColour(
+                    masterSetCount || 0,
+                    masterSet || 1,
+                    45,
+                    51
+                  )}
+                />
               </Progress.Track>
             </Progress.Root>
           </HStack>
 
           <HStack>
-            <Icon as={LuSparkles} color={getDynamicColour(grandmasterSetCount || 0, grandmasterSet || 1, 182, 50)} boxSize={4} />
+            <Icon
+              as={LuSparkles}
+              color={getDynamicColour(
+                grandmasterSetCount || 0,
+                grandmasterSet || 1,
+                182,
+                50
+              )}
+              boxSize={4}
+            />
             <Progress.Root
               value={grandmasterSetCount || 0}
               max={grandmasterSet || 1}
@@ -146,7 +170,14 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
               overflow="hidden"
             >
               <Progress.Track bg="gray.100">
-                <Progress.Range bg={getDynamicColour(grandmasterSetCount || 0, grandmasterSet || 1, 182, 50)} />
+                <Progress.Range
+                  bg={getDynamicColour(
+                    grandmasterSetCount || 0,
+                    grandmasterSet || 1,
+                    182,
+                    50
+                  )}
+                />
               </Progress.Track>
             </Progress.Root>
           </HStack>

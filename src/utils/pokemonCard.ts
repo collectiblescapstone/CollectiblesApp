@@ -223,7 +223,7 @@ export const masterSetCount = async (
  * @returns
  */
 export const grandmasterSetCount = async (setId: string): Promise<number> => {
-  if (Object.keys(grandmasterSetCount).length === 0) await fetchPokemonCards();
+  if (Object.keys(grandmasterSetCounts).length === 0) await fetchPokemonCards();
   return grandmasterSetCounts[setId] ?? 0;
 };
 

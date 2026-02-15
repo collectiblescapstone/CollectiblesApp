@@ -24,10 +24,7 @@ import { PokemonSetType } from '@/types/pokemon-grid';
 import { useAuth } from '@/context/AuthProvider';
 
 // Utils
-import {
-  POKEMONGEN,
-  ALL_POKEMON,
-} from '@/utils/pokedex';
+import { POKEMONGEN, ALL_POKEMON } from '@/utils/pokedex';
 import {
   masterSetCount,
   grandmasterSetCount,
@@ -400,7 +397,6 @@ const PokemonGridPage = () => {
             mt={4}
           >
             {filteredPokemon.map((id) => {
-              console.log(id);
               const counts = pokemonCounts[id] || {
                 masterSet: 1,
                 grandmasterSet: 1,

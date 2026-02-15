@@ -14,9 +14,6 @@ import {
   Spinner,
 } from '@chakra-ui/react';
 
-// Capacitor
-import { CapacitorHttp } from '@capacitor/core';
-
 // Context
 import { useAuth } from '@/context/AuthProvider';
 
@@ -24,7 +21,10 @@ import { useAuth } from '@/context/AuthProvider';
 import { LuSparkle, LuSparkles } from 'react-icons/lu';
 
 // Utils
-import { baseUrl } from '@/utils/constants';
+import {
+  userGrandmasterSetCount,
+  userMasterSetCount,
+} from '@/utils/userPokemonCard';
 import { getDynamicColour } from '@/utils/dynamicColours';
 
 interface PokemonSetProps {
@@ -57,18 +57,14 @@ const PokemonSet = ({
     const fetchCards = async () => {
       setLoading(true);
 
-      const res = await CapacitorHttp.post({
-        url: `${baseUrl}/api/set-counts`,
-        headers: { 'Content-Type': 'application/json' },
-        data: {
-          userId: session.user.id,
-          setId: setID,
-          pId: null,
-        },
-      });
+      const masterSetCount = await userMasterSetCount(session.user.id, setID);
+      const grandmasterSetCount = await userGrandmasterSetCount(
+        session.user.id,
+        setID
+      );
 
-      setMasterSetCount(res.data.masterSetCount);
-      setGrandmasterSetCount(res.data.grandmasterSetCount);
+      setMasterSetCount(masterSetCount);
+      setGrandmasterSetCount(grandmasterSetCount);
       setLoading(false);
     };
 
@@ -162,7 +158,16 @@ const PokemonSet = ({
             {/* Progress bars section */}
             <Box mt={4} w="100%">
               <HStack mb={2}>
-                <Icon as={LuSparkle} color={getDynamicColour(masterSetCount || 0, masterSet || 1, 45, 51)} boxSize={4} />
+                <Icon
+                  as={LuSparkle}
+                  color={getDynamicColour(
+                    masterSetCount || 0,
+                    masterSet || 1,
+                    45,
+                    51
+                  )}
+                  boxSize={4}
+                />
                 <Progress.Root
                   value={masterSetCount || 0}
                   max={masterSet || 1}
@@ -172,13 +177,29 @@ const PokemonSet = ({
                   overflow="hidden"
                 >
                   <Progress.Track bg="gray.100">
-                    <Progress.Range bg={getDynamicColour(masterSetCount || 0, masterSet || 1, 45, 51)} />
+                    <Progress.Range
+                      bg={getDynamicColour(
+                        masterSetCount || 0,
+                        masterSet || 1,
+                        45,
+                        51
+                      )}
+                    />
                   </Progress.Track>
                 </Progress.Root>
               </HStack>
 
               <HStack>
-                <Icon as={LuSparkles} color={getDynamicColour(grandmasterSetCount || 0, grandmasterSet || 1, 182, 50)} boxSize={4} />
+                <Icon
+                  as={LuSparkles}
+                  color={getDynamicColour(
+                    grandmasterSetCount || 0,
+                    grandmasterSet || 1,
+                    182,
+                    50
+                  )}
+                  boxSize={4}
+                />
                 <Progress.Root
                   value={grandmasterSetCount || 0}
                   max={grandmasterSet || 1}
@@ -188,7 +209,14 @@ const PokemonSet = ({
                   overflow="hidden"
                 >
                   <Progress.Track bg="gray.100">
-                    <Progress.Range bg={getDynamicColour(grandmasterSetCount || 0, grandmasterSet || 1, 182, 50)} />
+                    <Progress.Range
+                      bg={getDynamicColour(
+                        grandmasterSetCount || 0,
+                        grandmasterSet || 1,
+                        182,
+                        50
+                      )}
+                    />
                   </Progress.Track>
                 </Progress.Root>
               </HStack>

@@ -26,6 +26,7 @@ import { getPokemonName, getGeneration } from '@/utils/pokedex';
 // Types
 import type { CardData } from '@/types/pokemon-card';
 import { useAuth } from '@/context/AuthProvider';
+import { getPokemonCards } from '@/utils/pokemonCard';
 
 const FilterCardsContent: React.FC = () => {
   // Search Params
@@ -55,10 +56,7 @@ const FilterCardsContent: React.FC = () => {
 
       setLoading(true);
       try {
-        const response = await fetch('/api/pokemon-card');
-        if (!response.ok) throw new Error(`Failed to fetch /api/pokemon-card`);
-        const cards: CardData[] = await response.json();
-
+        const cards = await getPokemonCards();
         const filteredCards = cards.filter((card) => {
           if (type === 'set') {
             return card.setId === setId;

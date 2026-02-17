@@ -1,12 +1,19 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues, VisibilityValues } from '@/types/personal-profile';
+
+// THINGS THAT ARE BROKEN:
+// - Everytime you go to edit the profile, you have to change the location, as it does not read
+// the prexisting coordinates from the database, and thus fails validation.
+// - The longitude and latitude field are not being saved, I think it has something to do with the fact that they are hidden inputs,
+// and thus the values are not being passed to the backend. This is likely also related to the first issue, as the location field is
+// dependent on the longitude and latitude fields for validation.
 
 import {
   Box,
@@ -31,8 +38,15 @@ import AvatarPopup from '@/components/ui/PopupUI';
 import { CapacitorHttp } from '@capacitor/core';
 import { baseUrl } from '@/utils/constants';
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
+import { relative } from 'path';
 
 const MAX_CHARACTERS = 110;
+
+type GeoLocation = {
+  formatted: string;
+  lat: number;
+  lon: number;
+};
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
@@ -45,6 +59,8 @@ const PersonalProfileScreen: React.FC = () => {
     watch,
     formState: { errors },
     reset,
+    setValue,
+    getValues,
   } = useForm<FormValues>({
     defaultValues: {
       firstName: '',
@@ -53,6 +69,8 @@ const PersonalProfileScreen: React.FC = () => {
       username: '',
       bio: '',
       location: '',
+      longitude: 0,
+      latitude: 0,
       instagram: '',
       x: '',
       facebook: '',
@@ -65,18 +83,50 @@ const PersonalProfileScreen: React.FC = () => {
 
   const [isSaving, setIsSaving] = useState(false);
 
+  const [showLocationSuggestions, setShowLocationSuggestions] = useState('');
+  const [predictions, setPredictions] = useState<GeoLocation[]>([]);
+  const [selectedPlace, setSelectedPlace] = useState<GeoLocation | null>(null);
+
   const bioVal = watch('bio');
   const profilePicVal = watch('profilePic');
 
   const handleSave = handleSubmit(async (data) => {
     if (!session?.user?.id) return;
+    const hasValidCoordinates =
+      data.latitude &&
+      data.longitude &&
+      data.latitude !== 0 &&
+      data.longitude !== 0;
+
+    if (data.location && !hasValidCoordinates) {
+      alert('Please select a valid location from the provided suggestions.');
+      return;
+    }
     setIsSaving(true);
     try {
+      const payload = {
+        id: session?.user?.id,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        username: data.username,
+        email: data.email,
+        bio: data.bio,
+        location: data.location,
+        latitude: data.latitude,
+        longitude: data.longitude,
+        instagram: data.instagram,
+        x: data.x,
+        facebook: data.facebook,
+        whatsapp: data.whatsapp,
+        discord: data.discord,
+        profilePic: data.profilePic,
+        visibility: data.visibility,
+      };
       const res = await CapacitorHttp.patch({
         url: `${baseUrl}/api/edit-profile`,
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        data: JSON.stringify({ id: session?.user?.id, ...data }),
+        data: JSON.stringify(payload),
       });
 
       if (res.status !== 200) {
@@ -105,6 +155,8 @@ const PersonalProfileScreen: React.FC = () => {
           email: data.email ?? '',
           bio: data.bio ?? '',
           location: data.location ?? '',
+          longitude: data.longitude ?? 0,
+          latitude: data.latitude ?? 0,
           instagram: data.instagram ?? '',
           x: data.x ?? '',
           facebook: data.facebook ?? '',
@@ -113,6 +165,14 @@ const PersonalProfileScreen: React.FC = () => {
           profilePic: data.profile_pic ?? 0,
           visibility: data.visibility ?? VisibilityValues.Public,
         });
+        if (data.location && data.latitude && data.longitude) {
+          setShowLocationSuggestions(data.location);
+          setSelectedPlace({
+            formatted: data.location,
+            lat: data.latitude,
+            lon: data.longitude,
+          });
+        }
       } catch (err) {
         console.error('Error loading profile', err);
       }
@@ -123,6 +183,56 @@ const PersonalProfileScreen: React.FC = () => {
 
   const wishlist = () => {
     router.push('/personal-profile/edit-profile/wishlist');
+  };
+
+  // Fetching location predictions from Geoapify API
+  useEffect(() => {
+    if (!showLocationSuggestions || showLocationSuggestions.length < 3) {
+      setPredictions([]);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      fetch(
+        `https://api.geoapify.com/v1/geocode/autocomplete?text=${encodeURIComponent(
+          showLocationSuggestions
+        )}&limit=5&apiKey=${process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const places: GeoLocation[] =
+            data.features?.map((f: any) => ({
+              formatted: f.properties.formatted,
+              lat: f.properties.lat,
+              lon: f.properties.lon,
+            })) || [];
+          setPredictions(places);
+        })
+        .catch((err) => console.error(err));
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [showLocationSuggestions]);
+
+  const handleSelect = (place: GeoLocation) => {
+    setSelectedPlace(place);
+    setShowLocationSuggestions(place.formatted);
+    setPredictions([]);
+    setValue('location', place.formatted, { shouldValidate: true });
+    setValue('latitude', place.lat, { shouldValidate: true });
+    setValue('longitude', place.lon, { shouldValidate: true });
+  };
+
+  const handleInputChange = (value: string) => {
+    setShowLocationSuggestions(value);
+    setValue('location', value, { shouldValidate: true });
+
+    if (selectedPlace && value !== selectedPlace.formatted) {
+      console.log('User modified location, resetting coordinates');
+      setSelectedPlace(null);
+      setValue('latitude', 0);
+      setValue('longitude', 0);
+    }
   };
 
   const AvatarPicker = () => {
@@ -311,15 +421,78 @@ const PersonalProfileScreen: React.FC = () => {
             Write a little about yourself for others to see.
           </Field.HelperText>
         </Field.Root>
-        <Field.Root required invalid={!!errors.location}>
+        <Field.Root required invalid={!!errors.location} position="relative">
           <Field.Label>
             Location <Field.RequiredIndicator />
           </Field.Label>
-          <Input
-            placeholder="ex. Toronto, ON"
-            fontWeight="normal"
-            {...register('location', { required: 'Location is required' })}
+          <Controller
+            name="location"
+            control={control}
+            rules={{ required: 'Location is required' }}
+            render={({ field }) => (
+              <Input
+                type="text"
+                placeholder="ex. Toronto, ON"
+                fontWeight="normal"
+                value={field.value}
+                onChange={(e) => {
+                  field.onChange(e.target.value);
+                  handleInputChange(e.target.value);
+                }}
+              />
+            )}
           />
+          <Controller
+            name="latitude"
+            control={control}
+            render={({ field }) => (
+              <input
+                type="hidden"
+                value={field.value}
+                onChange={field.onChange}
+                ref={field.ref}
+              />
+            )}
+          />
+          <Controller
+            name="longitude"
+            control={control}
+            render={({ field }) => (
+              <input
+                type="hidden"
+                value={field.value}
+                onChange={field.onChange}
+                ref={field.ref}
+              />
+            )}
+          />
+          {predictions.length > 0 && !selectedPlace && (
+            <Box
+              border="1px solid"
+              borderColor="gray.300"
+              borderRadius="md"
+              maxH="200px"
+              overflowY="auto"
+              bg="white"
+              zIndex={20}
+              position="relative"
+              w="full"
+            >
+              {predictions.map((place, index) => (
+                <Box
+                  key={`${place.lat}-${place.lon}-${index}`}
+                  p={2}
+                  cursor="pointer"
+                  _hover={{ bg: 'gray.100' }}
+                  onClick={() => {
+                    handleSelect(place);
+                  }}
+                >
+                  {place.formatted}
+                </Box>
+              ))}
+            </Box>
+          )}
           <Field.HelperText>
             Will be displayed on your profile.
           </Field.HelperText>

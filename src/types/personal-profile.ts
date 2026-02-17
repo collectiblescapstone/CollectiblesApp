@@ -1,3 +1,5 @@
+import { float } from '@techstark/opencv-js';
+
 export interface FormValues {
   firstName: string;
   lastName: string;
@@ -5,6 +7,8 @@ export interface FormValues {
   username: string;
   bio: string;
   location: string;
+  longitude: float;
+  latitude: float;
   instagram: string;
   x: string;
   facebook: string;
@@ -28,6 +32,8 @@ export interface UserProfile {
   email: string;
   bio?: string | null;
   location?: string | null;
+  longitude?: float | null;
+  latitude?: float | null;
   instagram?: string;
   x?: string;
   facebook?: string;

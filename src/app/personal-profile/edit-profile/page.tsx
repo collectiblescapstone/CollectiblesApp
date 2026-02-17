@@ -412,6 +412,8 @@ const PersonalProfileScreen: React.FC = () => {
               />
             )}
           />
+          // Only using controller for longitude to validate that a place // was
+          selected from the dropdown, not just typed in
           <Controller
             name="longitude"
             control={control}

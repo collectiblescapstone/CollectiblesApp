@@ -44,6 +44,18 @@ const RegistrationForm = () => {
       return;
     }
 
+    // Check if username is valid (alphanumeric and underscores only)
+    const usernameRegex = /^[a-zA-Z0-9_]+$/;
+    if (!usernameRegex.test(values.username)) {
+      setError('root', {
+        type: 'invalid_username',
+        message:
+          'Username can only contain letters, numbers, and underscores. Please choose a different username.',
+      });
+      setIsLoading(false);
+      return;
+    }
+
     // Supabase Auth sign up user
     const res = await signUp(values.email, values.password);
 

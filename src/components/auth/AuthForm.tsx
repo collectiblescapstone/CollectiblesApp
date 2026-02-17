@@ -6,6 +6,7 @@ import { useAuth } from '@/context/AuthProvider';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { LoginFormValues } from '@/types/auth';
+import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
 
 export default function AuthForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -27,9 +28,15 @@ export default function AuthForm() {
   const onSubmit = async (values: LoginFormValues) => {
     setIsLoading(true);
 
-    // Supabase Auth sign in user
-    const res = await signIn(values.email, values.password);
+    let emailValue = values.email.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailValue)) {
+      const { email } = await fetchUserProfile(emailValue);
+      emailValue = email;
+    }
 
+    // Supabase Auth sign in user
+    const res = await signIn(emailValue, values.password);
     // Handle Supabase Auth successful sign in
     if (res.success) {
       push('/home');
@@ -76,10 +83,10 @@ export default function AuthForm() {
         <Field.Root invalid={!!errors.root}>
           <Field.Root invalid={!!errors.email} required>
             <Field.Label>
-              Email <Field.RequiredIndicator />
+              Email or Username <Field.RequiredIndicator />
             </Field.Label>
             <Input
-              {...register('email', { required: 'Email is required' })}
+              {...register('email', { required: 'Email or Username is required' })}
               variant="subtle"
               color="black"
               placeholder="me@example.com"

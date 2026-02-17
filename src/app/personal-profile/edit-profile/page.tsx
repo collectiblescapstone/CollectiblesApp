@@ -413,17 +413,6 @@ const PersonalProfileScreen: React.FC = () => {
             )}
           />
           <Controller
-            name="latitude"
-            control={control}
-            rules={{
-              validate: () =>
-                selectedPlace
-                  ? true
-                  : 'Please select a valid location from the list',
-            }}
-            render={({ field }) => <input type="hidden" {...field} />}
-          />
-          <Controller
             name="longitude"
             control={control}
             rules={{

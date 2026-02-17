@@ -8,13 +8,6 @@ import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues, VisibilityValues } from '@/types/personal-profile';
 
-// THINGS THAT ARE BROKEN:
-// - Everytime you go to edit the profile, you have to change the location, as it does not read
-// the prexisting coordinates from the database, and thus fails validation.
-// - The longitude and latitude field are not being saved, I think it has something to do with the fact that they are hidden inputs,
-// and thus the values are not being passed to the backend. This is likely also related to the first issue, as the location field is
-// dependent on the longitude and latitude fields for validation.
-
 import {
   Box,
   Flex,
@@ -149,8 +142,6 @@ const PersonalProfileScreen: React.FC = () => {
           email: data.email ?? '',
           bio: data.bio ?? '',
           location: data.location ?? '',
-          longitude: data.longitude ?? undefined,
-          latitude: data.latitude ?? undefined,
           instagram: data.instagram ?? '',
           x: data.x ?? '',
           facebook: data.facebook ?? '',
@@ -159,12 +150,12 @@ const PersonalProfileScreen: React.FC = () => {
           profilePic: data.profile_pic ?? 0,
           visibility: data.visibility ?? VisibilityValues.Public,
         });
-        if (data.location && data.latitude != null && data.longitude != null) {
+        if (data.latitude != null && data.longitude != null) {
           setShowLocationSuggestions(data.location ?? '');
           setValue('latitude', data.latitude);
           setValue('longitude', data.longitude);
           setSelectedPlace({
-            formatted: data.location,
+            formatted: data.location ?? '',
             lat: data.latitude,
             lon: data.longitude,
           });
@@ -424,13 +415,23 @@ const PersonalProfileScreen: React.FC = () => {
           <Controller
             name="latitude"
             control={control}
-            rules={{ required: 'Please select a valid location from the list' }}
+            rules={{
+              validate: () =>
+                selectedPlace
+                  ? true
+                  : 'Please select a valid location from the list',
+            }}
             render={({ field }) => <input type="hidden" {...field} />}
           />
           <Controller
             name="longitude"
             control={control}
-            rules={{ required: 'Please select a valid location from the list' }}
+            rules={{
+              validate: () =>
+                selectedPlace
+                  ? true
+                  : 'Please select a valid location from the list',
+            }}
             render={({ field }) => <input type="hidden" {...field} />}
           />
           {predictions.length > 0 && !selectedPlace && (
@@ -468,15 +469,6 @@ const PersonalProfileScreen: React.FC = () => {
               {errors.location?.message || errors.longitude?.message}
             </Field.ErrorText>
           )}
-          {/* 🔹 DEBUG: Show latitude and longitude values on screen */}
-          <Box mt={2} p={2} bg="gray.100" borderRadius="md">
-            <Text fontSize="sm" color="gray.700">
-              <strong>Latitude:</strong> {watch('latitude') ?? 'not set'}
-            </Text>
-            <Text fontSize="sm" color="gray.700">
-              <strong>Longitude:</strong> {watch('longitude') ?? 'not set'}
-            </Text>
-          </Box>
         </Field.Root>
         <Field.Root>
           <Field.Label>Instagram</Field.Label>

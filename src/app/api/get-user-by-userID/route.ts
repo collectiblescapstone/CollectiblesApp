@@ -21,6 +21,8 @@ export const POST = async (request: Request) => {
       email: true,
       bio: true,
       location: true,
+      latitude: true,
+      longitude: true,
       instagram: true,
       x: true,
       facebook: true,

@@ -257,7 +257,7 @@ const PokemonGridPage = () => {
             collection={frameworks}
             size="sm"
             width="300px"
-            defaultValue={['set']}
+            value={[selected]}
             onValueChange={(e) => {
               setSelected(e.value[0]);
               setSelectedEra('sv');

@@ -176,6 +176,8 @@ const PersonalProfileScreen: React.FC = () => {
 
     const timeout = setTimeout(() => {
       if (abortControllerRef.current) {
+        // Abort helps makes it so when the user retypes before the 300ms is up,
+        // it cancels the previous API call to avoid making unnecessary calls
         abortControllerRef.current.abort();
       }
 

@@ -20,7 +20,7 @@ export default function AuthForm() {
     setError,
   } = useForm<LoginFormValues>({
     defaultValues: {
-      email: '',
+      emailOrUsername: '',
       password: '',
     },
   });
@@ -28,15 +28,14 @@ export default function AuthForm() {
   const onSubmit = async (values: LoginFormValues) => {
     setIsLoading(true);
 
-    let emailValue = values.email.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailValue)) {
-      const { email } = await fetchUserProfile(emailValue);
-      emailValue = email;
+    let emailOrUsernameValue = values.emailOrUsername.trim();
+    if (emailOrUsernameValue.includes('@')) { // Username cannot contain '@', so this must be an email
+      const { email } = await fetchUserProfile(emailOrUsernameValue);
+      emailOrUsernameValue = email;
     }
 
     // Supabase Auth sign in user
-    const res = await signIn(emailValue, values.password);
+    const res = await signIn(emailOrUsernameValue, values.password);
     // Handle Supabase Auth successful sign in
     if (res.success) {
       push('/home');
@@ -81,19 +80,19 @@ export default function AuthForm() {
         <Heading size="lg">Sign In to your account</Heading>
 
         <Field.Root invalid={!!errors.root}>
-          <Field.Root invalid={!!errors.email} required>
+          <Field.Root invalid={!!errors.emailOrUsername} required>
             <Field.Label>
               Email or Username <Field.RequiredIndicator />
             </Field.Label>
             <Input
-              {...register('email', { required: 'Email or Username is required' })}
+              {...register('emailOrUsername', { required: 'Email or Username is required' })}
               variant="subtle"
               color="black"
               placeholder="me@example.com"
               disabled={isLoading}
             />
-            {errors.email && errors.email.type === 'required' && (
-              <Field.ErrorText>{errors.email.message}</Field.ErrorText>
+            {errors.emailOrUsername && errors.emailOrUsername.type === 'required' && (
+              <Field.ErrorText>{errors.emailOrUsername.message}</Field.ErrorText>
             )}
           </Field.Root>
 

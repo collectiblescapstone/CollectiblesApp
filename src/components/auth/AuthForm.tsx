@@ -28,14 +28,14 @@ export default function AuthForm() {
   const onSubmit = async (values: LoginFormValues) => {
     setIsLoading(true);
 
-    let emailOrUsernameValue = values.emailOrUsername.trim();
-    if (emailOrUsernameValue.includes('@')) { // Username cannot contain '@', so this must be an email
-      const { email } = await fetchUserProfile(emailOrUsernameValue);
-      emailOrUsernameValue = email;
+    let emailValue = values.emailOrUsername.trim();
+    if (emailValue.includes('@')) { // Username cannot contain '@', so this must be an email
+      const { email } = await fetchUserProfile(emailValue);
+      emailValue = email;
     }
 
     // Supabase Auth sign in user
-    const res = await signIn(emailOrUsernameValue, values.password);
+    const res = await signIn(emailValue, values.password);
     // Handle Supabase Auth successful sign in
     if (res.success) {
       push('/home');
@@ -47,7 +47,7 @@ export default function AuthForm() {
         setError('root', {
           type: 'invalid_credentials',
           message:
-            "An account doesn't exist with this email and password combination. Please create an account or reset your password.",
+            "An account doesn't exist with this email/username and password combination. Please create an account or reset your password.",
         });
       } else if (res.error === 'Email not confirmed') {
         setError('root', {

@@ -27,6 +27,10 @@ jest.mock('@capacitor/core', () => ({
   },
 }));
 
+jest.mock('../../../utils/profiles/userNameProfilePuller', () => ({
+  fetchUserProfile: jest.fn().mockResolvedValue({ email: 'test@example.com' }),
+}));
+
 describe('RegistrationForm', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -59,7 +63,7 @@ describe('RegistrationForm', () => {
     });
 
     renderWithTheme(<RegistrationForm />);
-    fireEvent.change(screen.getByPlaceholderText(/me@example.com/i), {
+    fireEvent.change(screen.getByPlaceholderText(/enter your username or email/i), {
       target: { value: 'test@email.com' },
     });
     fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
@@ -87,7 +91,7 @@ describe('RegistrationForm', () => {
 
   it('shows error message on password mismatch', async () => {
     renderWithTheme(<RegistrationForm />);
-    fireEvent.change(screen.getByPlaceholderText(/me@example.com/i), {
+    fireEvent.change(screen.getByPlaceholderText(/enter your username or email/i), {
       target: { value: 'test@email.com' },
     });
     fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
@@ -122,7 +126,7 @@ describe('RegistrationForm', () => {
     });
 
     renderWithTheme(<RegistrationForm />);
-    fireEvent.change(screen.getByPlaceholderText(/me@example.com/i), {
+    fireEvent.change(screen.getByPlaceholderText(/enter your username or email/i), {
       target: { value: 'test@email.com' },
     });
     fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
@@ -152,7 +156,7 @@ describe('RegistrationForm', () => {
     });
 
     renderWithTheme(<RegistrationForm />);
-    fireEvent.change(screen.getByPlaceholderText(/me@example.com/i), {
+    fireEvent.change(screen.getByPlaceholderText(/enter your username or email/i), {
       target: { value: 'test@email.com' },
     });
     fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
@@ -182,7 +186,7 @@ describe('RegistrationForm', () => {
     });
 
     renderWithTheme(<RegistrationForm />);
-    fireEvent.change(screen.getByPlaceholderText(/me@example.com/i), {
+    fireEvent.change(screen.getByPlaceholderText(/enter your username or email/i), {
       target: { value: 'test@email.com' },
     });
     fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
@@ -212,7 +216,7 @@ describe('RegistrationForm', () => {
     });
 
     renderWithTheme(<RegistrationForm />);
-    fireEvent.change(screen.getByPlaceholderText(/me@example.com/i), {
+    fireEvent.change(screen.getByPlaceholderText(/enter your username or email/i), {
       target: { value: 'test@email.com' },
     });
     fireEvent.change(screen.getByPlaceholderText(/my_username/i), {

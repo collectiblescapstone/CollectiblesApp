@@ -137,7 +137,7 @@ const RegistrationForm = () => {
               {...register('email', { required: 'Email is required' })}
               variant="subtle"
               color="black"
-              placeholder="Username or Email here"
+              placeholder="Enter your username or email"
               disabled={isLoading}
             />
             {errors.email && errors.email.type === 'required' && (

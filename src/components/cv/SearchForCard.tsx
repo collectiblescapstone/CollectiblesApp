@@ -40,17 +40,19 @@ export const SearchForCard: React.FC = () => {
       }
 
       if (evt.key === 'Enter') {
-        cardSearch.current(evt.currentTarget.value).then(async (data) => {
-          const ids = data.map(({ id }) => id);
-          const cards = await getPokemonCards({ ids });
+        cardSearch.current
+          .search(evt.currentTarget.value)
+          .then(async (data) => {
+            const ids = data.map(({ id }) => id);
+            const cards = await getPokemonCards({ ids });
 
-          setMatches(
-            data.map((match) => ({
-              ...match,
-              card: cards.find((card) => card.id === match.id),
-            }))
-          );
-        });
+            setMatches(
+              data.map((match) => ({
+                ...match,
+                card: cards.find((card) => card.id === match.id),
+              }))
+            );
+          });
       }
     },
     [csReady]

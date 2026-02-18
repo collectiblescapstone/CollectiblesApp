@@ -5,9 +5,20 @@ export const POST = async (request: Request) => {
   const { id, email, username, firstName, lastName } = await request.json();
 
   try {
-    await prisma.user.update({
-      where: { id, email },
-      data: { username, firstName, lastName },
+    const checkUserExists = await supabaseAdmin.auth.admin.getUserById(id);
+
+    if (!checkUserExists.data) {
+      return new Response(
+        JSON.stringify({ error: 'User not found in Supabase Auth' }),
+        {
+          status: 404,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    await prisma.user.create({
+      data: { id, email, username, firstName, lastName },
     });
 
     return new Response(

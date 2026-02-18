@@ -31,7 +31,6 @@ import AvatarPopup from '@/components/ui/PopupUI';
 import { CapacitorHttp } from '@capacitor/core';
 import { baseUrl } from '@/utils/constants';
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
-import { relative } from 'path';
 
 const MAX_CHARACTERS = 110;
 
@@ -39,6 +38,14 @@ type GeoLocation = {
   formatted: string;
   lat: number;
   lon: number;
+};
+
+type GeoFeature = {
+  properties: {
+    formatted: string;
+    lat: number;
+    lon: number;
+  };
 };
 
 const PersonalProfileScreen: React.FC = () => {
@@ -166,7 +173,7 @@ const PersonalProfileScreen: React.FC = () => {
     }
 
     fetchProfile();
-  }, [session?.user?.id, reset]);
+  }, [session?.user?.id, reset, setValue]);
 
   const wishlist = () => {
     router.push('/personal-profile/edit-profile/wishlist');
@@ -188,7 +195,7 @@ const PersonalProfileScreen: React.FC = () => {
         .then((res) => res.json())
         .then((data) => {
           const places: GeoLocation[] =
-            data.features?.map((f: any) => ({
+            data.features?.map((f: GeoFeature) => ({
               formatted: f.properties.formatted,
               lat: f.properties.lat,
               lon: f.properties.lon,

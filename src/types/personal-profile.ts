@@ -1,5 +1,3 @@
-import { float } from '@techstark/opencv-js';
-
 export interface FormValues {
   firstName: string;
   lastName: string;

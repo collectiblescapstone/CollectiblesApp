@@ -23,13 +23,6 @@ interface CardSearchProps {
 export const CardSearch = ({ cards, setFilteredIds }: CardSearchProps) => {
   const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null);
   const [csReady, setCSReady] = useState(false);
-  const [matches, setMatches] = useState<
-    {
-      id: string;
-      score: number;
-      card?: CardData;
-    }[]
-  >();
 
   const searchRef = useRef<HTMLInputElement | null>(null);
   const [searchValue, setSearchValue] = useState('');
@@ -84,13 +77,14 @@ export const CardSearch = ({ cards, setFilteredIds }: CardSearchProps) => {
   });
 
   const handleSelectionChange = useCallback(
-    (details: any) => {
+    (details_: unknown) => {
+      const details = details_ as { value: { name: string; ids: string[] } };
       setSearchValue(details.value.name);
       setFilteredIds(details.value.ids);
       filter(details.value.name);
       setOpen(false);
     },
-    [setFilteredIds]
+    [setFilteredIds, filter]
   );
 
   const handleClear = useCallback(() => {
@@ -99,7 +93,7 @@ export const CardSearch = ({ cards, setFilteredIds }: CardSearchProps) => {
     filter('');
     setFilteredIds();
     setOpen(false);
-  }, []);
+  }, [filter, setFilteredIds]);
 
   const handleSearch = useCallback(async () => {
     searchRef.current?.blur();
@@ -111,7 +105,7 @@ export const CardSearch = ({ cards, setFilteredIds }: CardSearchProps) => {
 
     const matches = await searchForCard(searchValue);
     setFilteredIds(matches.map(({ id }) => id));
-  }, [searchForCard, searchValue]);
+  }, [searchForCard, searchValue, handleClear, setFilteredIds]);
 
   const clearSearch = searchValue ? (
     <CloseButton size="xs" onClick={handleClear} me={-2} />

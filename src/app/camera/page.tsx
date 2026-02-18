@@ -4,11 +4,17 @@ import { IdentifyOneCard } from '@/components/cv/IdentifyOneCard';
 import { Box } from '@chakra-ui/react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT } from '@/utils/constants';
+import { useAuth } from '@/context/AuthProvider';
+import { Box, Spinner } from '@chakra-ui/react';
+import { useSearchParams } from 'next/navigation';
 
 const CameraPage = () => {
   const [sourceImageData, setSourceImageData] = useState<ImageData | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const inputCanvas = useRef<HTMLCanvasElement | null>(null);
+  const params = useSearchParams();
+  const imgUrl = params.get('img');
+  const { session, loading } = useAuth();
 
   // Called by IdentifyOneCard when it's ready for the next frame
   const handleProcessed = useCallback(() => {
@@ -91,6 +97,14 @@ const CameraPage = () => {
       }
     };
   }, [handleProcessed]);
+
+  if (loading || !session) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
 
   return (
     <Box position="relative" minW="40dvw" minH="dvh">

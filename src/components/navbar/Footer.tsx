@@ -10,17 +10,18 @@ const Footer = () => {
 
   return (
     <Flex
-      color="white"
-      background="purple.600"
+      color="brand.turtoise"
+      background="brand.marigold"
       minHeight="8dvh"
       position="sticky"
       bottom={0}
       left={0}
       right={0}
+      w="full"
       flexDir="row"
       alignItems="center"
       justifyContent="space-between"
-      px={16}
+      px={8}
     >
       {MENU_ITEMS.map((item) => (
         <Box

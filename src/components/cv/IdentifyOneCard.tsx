@@ -119,8 +119,9 @@ export const IdentifyOneCard = ({
         </Text>
         <Link
           href={{
-            pathname: '/editCard',
+            pathname: '/edit-card',
             query: {
+              cardId: predictedCard?.card.id ?? '', 
               imageUrl: predictedCard?.card.image ?? '',
               cardName: `${predictedCard?.card.name ?? ''} (${predictedCard?.card.id.split('-')[1]})`,
               cardSet: predictedCard?.card.set.name ?? '',

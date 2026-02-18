@@ -1,4 +1,10 @@
-import { LuCamera, LuLibrary, LuUser } from 'react-icons/lu';
+import {
+  LuCamera,
+  LuLibrary,
+  LuUser,
+  LuHouse,
+  LuArrowRightLeft,
+} from 'react-icons/lu';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
@@ -42,9 +48,14 @@ export const MENU_ITEMS: {
   onClick?: (router: AppRouterInstance) => void;
 }[] = [
   {
-    icon: <LuLibrary size={36} />,
-    path: '/pokemon-grid',
-    name: 'Collections',
+    icon: <LuHouse size={36} />,
+    path: '/home',
+    name: 'Home',
+  },
+  {
+    icon: <LuArrowRightLeft size={36} />,
+    path: '/trade',
+    name: 'Trade Post',
   },
   {
     icon: <LuCamera size={36} />,
@@ -52,12 +63,18 @@ export const MENU_ITEMS: {
     name: 'Camera',
     // onClick: takePicture,
   },
+  {
+    icon: <LuLibrary size={36} />,
+    path: '/pokemon-grid',
+    name: 'Collections',
+  },
   { icon: <LuUser size={36} />, path: '/personal-profile', name: 'Profile' },
 ];
 
-export const MAIN_PAGES = [
-  '/',
-  '/pokemon-grid',
-  '/camera',
-  '/personal-profile',
-];
+export const PAGE_HEADINGS: Record<string, string> = {
+  '/home': 'kollec',
+  '/trade': 'trade post',
+  '/pokemon-grid': 'kollections',
+  '/camera': 'camera',
+  '/personal-profile': 'profile',
+};

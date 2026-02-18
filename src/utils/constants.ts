@@ -3,7 +3,8 @@ const CARD_HEIGHT_PX = 825;
 
 const MODEL_INPUT_WIDTH = 640;
 const MODEL_INPUT_HEIGHT = 640;
-
 const YOLO_NUM_CLASSES = 1;
-
 export { CARD_WIDTH_PX, CARD_HEIGHT_PX, MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT, YOLO_NUM_CLASSES };
+export const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ??
+  `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;

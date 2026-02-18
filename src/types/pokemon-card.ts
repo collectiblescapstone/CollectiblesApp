@@ -66,3 +66,17 @@ export interface PokemonCard {
     tcgplayer: null;
   };
 }
+
+export interface CardData {
+  id: string;
+  name: string;
+  category: string;
+  types: string[];
+  illustrator?: string | null;
+  rarity: string;
+  variants: string[];
+  dexId: number[];
+  image_url: string;
+  setId: string;
+  set: { official: number };
+}

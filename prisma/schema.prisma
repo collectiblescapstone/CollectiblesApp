@@ -1,77 +1,110 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-// ENSURE THAT YOUR .env FILE HAS VALUES POINTING TO YOUR LOCAL DATABASE, AND NOT THE LIVE DATABASE
-// BEFORE RUNNING `npx prisma migrate dev`. MUST NOT EDIT THE LIVE DATABASE DIRECTLY!! Thank you!
+// ======================================
+// Prisma Schema
+// ======================================
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-  directUrl         = env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
 }
 
+// ======================================
+// Models
+// ======================================
+
 model User {
-  id         String            @id @db.Uuid
-  username   String?           @unique
-  email      String            @unique
-  collection CollectionEntry[]
-  wishlist   WishlistEntry[]
+  id          String            @id @db.Uuid
+  username    String?           @unique
+  firstName   String?
+  lastName    String?
+  email       String            @unique
+  location    String?
+  instagram   String?
+  x           String?
+  facebook    String?
+  bio         String?
+  whatsapp    String?
+  discord     String?
+  visibility  String            @default("public")
+  profile_pic Int               @default(0)
+  collection  CollectionEntry[]
+  wishlist    WishlistEntry[]
 }
 
+// --------------------------------------
+
+model Set {
+  id       String  @id
+  name     String
+  series   String
+  logo     String?
+  symbol   String?
+  official Int     @default(0)
+  total    Int     @default(0)
+
+  cards Card[]
+}
+
+// --------------------------------------
+
 model Card {
-  id          String @id
+  id          String
+  setId       String
   name        String
   category    String
+  types       String[]
   illustrator String?
   rarity      String
   variants    String[]
   dexId       Int[]
+  image_url   String
+  set         Set               @relation(fields: [setId], references: [id])
+  collection  CollectionEntry[]
+  wishlist    WishlistEntry[]
 
-  image_url String
-
-  setId           String
-  set             Set @relation(fields: [setId], references: [id])
-  CollectionEntry CollectionEntry[]
-  WishlistEntry   WishlistEntry[]
+  @@id([id])
 }
 
-model Set {
-  id     String @id
-  name   String
-  series String
-  cards  Card[]
-}
+// --------------------------------------
 
 model CollectionEntry {
-  id        String @id @default(cuid())
-  userId    String @db.Uuid
-  user      User   @relation(fields: [userId], references: [id])
-  cardId    String
-  card      Card @relation(fields: [cardId], references: [id])
-  quantity  Int @default(1)
-  condition String?
-  variant   String?
+  id     String @id @default(cuid())
+  userId String @db.Uuid
+  cardId String
 
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id])
+  card Card @relation(fields: [cardId], references: [id])
 
-  @@unique([userId, cardId, condition, variant])
+  condition  String?
+  variant    String   @default("normal")
+  forTrade   Boolean  @default(false)
+  showcase   Boolean  @default(false)
+  grade      String   @default("Ungraded")
+  gradeLevel String?
+  tags       String[] @default([])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, cardId])
 }
 
+// --------------------------------------
+
 model WishlistEntry {
-  id        String @id @default(cuid())
-  userId    String @db.Uuid
-  user      User @relation(fields: [userId], references: [id])
-  cardId    String
-  card      Card @relation(fields: [cardId], references: [id])
-  variant   String?
+  id     String @id @default(cuid())
+  userId String @db.Uuid
+  cardId String
+
+  user User @relation(fields: [userId], references: [id])
+  card Card @relation(fields: [cardId], references: [id])
+
+  variant String?
 
   @@unique([userId, cardId, variant])
+  @@index([userId, cardId])
 }

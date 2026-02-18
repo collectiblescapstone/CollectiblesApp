@@ -1,10 +1,20 @@
 import { renderHook, act } from '@testing-library/react';
 import { AuthContextProvider, useAuth } from '../AuthProvider';
 import React from 'react';
-import { supabase } from '@/utils/supabase';
+import { supabase } from '@/lib/supabase';
 import { Session } from '@supabase/supabase-js';
 
-jest.mock('../../utils/supabase', () => ({
+const pushMock = jest.fn();
+const pathnameMock = jest.fn();
+
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: pushMock,
+  }),
+  usePathname: () => pathnameMock(),
+}));
+
+jest.mock('../../lib/supabase', () => ({
   supabase: {
     auth: {
       signUp: jest.fn(),

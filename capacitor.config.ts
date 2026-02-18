@@ -12,6 +12,11 @@ const config: CapacitorConfig = {
     url: liveReloadUrl ?? undefined,
     cleartext: true,
   },
+  plugins: {
+    CapacitorHttp: {
+      enabled: true,
+    },
+  },
 };
 
 export default config;

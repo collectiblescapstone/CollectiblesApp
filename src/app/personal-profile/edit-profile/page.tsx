@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues, VisibilityValues } from '@/types/personal-profile';
+import { GeoLocation } from '@/types/geolocation';
 
 import {
   Box,
@@ -33,20 +34,6 @@ import { baseUrl } from '@/utils/constants';
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller';
 
 const MAX_CHARACTERS = 110;
-
-type GeoLocation = {
-  formatted: string;
-  lat: number;
-  lon: number;
-};
-
-type GeoFeature = {
-  properties: {
-    formatted: string;
-    lat: number;
-    lon: number;
-  };
-};
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
@@ -83,6 +70,7 @@ const PersonalProfileScreen: React.FC = () => {
   const [showLocationSuggestions, setShowLocationSuggestions] = useState('');
   const [predictions, setPredictions] = useState<GeoLocation[]>([]);
   const [selectedPlace, setSelectedPlace] = useState<GeoLocation | null>(null);
+  const abortControllerRef = React.useRef<AbortController | null>(null);
 
   const handleSelect = (place: GeoLocation) => {
     setSelectedPlace(place);
@@ -149,6 +137,8 @@ const PersonalProfileScreen: React.FC = () => {
           email: data.email ?? '',
           bio: data.bio ?? '',
           location: data.location ?? '',
+          latitude: data.latitude ?? (undefined as unknown as number),
+          longitude: data.longitude ?? (undefined as unknown as number),
           instagram: data.instagram ?? '',
           x: data.x ?? '',
           facebook: data.facebook ?? '',
@@ -159,8 +149,6 @@ const PersonalProfileScreen: React.FC = () => {
         });
         if (data.latitude != null && data.longitude != null) {
           setShowLocationSuggestions(data.location ?? '');
-          setValue('latitude', data.latitude);
-          setValue('longitude', data.longitude);
           setSelectedPlace({
             formatted: data.location ?? '',
             lat: data.latitude,
@@ -179,7 +167,7 @@ const PersonalProfileScreen: React.FC = () => {
     router.push('/personal-profile/edit-profile/wishlist');
   };
 
-  // Fetching location predictions from Geoapify API
+  // Fetching location predictions from API route
   useEffect(() => {
     if (!showLocationSuggestions || showLocationSuggestions.length < 3) {
       setPredictions([]);
@@ -187,25 +175,46 @@ const PersonalProfileScreen: React.FC = () => {
     }
 
     const timeout = setTimeout(() => {
-      fetch(
-        `https://api.geoapify.com/v1/geocode/autocomplete?text=${encodeURIComponent(
-          showLocationSuggestions
-        )}&limit=5&apiKey=${process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          const places: GeoLocation[] =
-            data.features?.map((f: GeoFeature) => ({
-              formatted: f.properties.formatted,
-              lat: f.properties.lat,
-              lon: f.properties.lon,
-            })) || [];
-          setPredictions(places);
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+
+      const abortController = new AbortController();
+      abortControllerRef.current = abortController;
+
+      const url = `/api/get-location-predictions?query=${encodeURIComponent(
+        showLocationSuggestions
+      )}`;
+      console.log('Fetching from:', url);
+
+      fetch(url, { signal: abortController.signal })
+        .then((res) => {
+          console.log('Response status:', res.status);
+          if (!res.ok) {
+            return res.text().then((text) => {
+              throw new Error(`API error: ${res.status} - ${text}`);
+            });
+          }
+          return res.json();
         })
-        .catch((err) => console.error(err));
+        .then((data) => {
+          console.log('API response data:', data);
+          setPredictions(data.predictions || []);
+        })
+        .catch((err) => {
+          if (err.name !== 'AbortError') {
+            console.error('Location prediction error:', err);
+            setPredictions([]);
+          }
+        });
     }, 300);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
   }, [showLocationSuggestions]);
 
   const AvatarPicker = () => {

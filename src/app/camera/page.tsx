@@ -6,9 +6,9 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT } from '@/utils/constants';
 
 const CameraPage = () => {
-  const [imgUrl, setImgUrl] = useState<string | null>(null);
+  const [sourceImageData, setSourceImageData] = useState<ImageData | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const inputCanvas = useRef<HTMLCanvasElement | null>(null);
 
   // Called by IdentifyOneCard when it's ready for the next frame
   const handleProcessed = useCallback(() => {
@@ -18,36 +18,34 @@ const CameraPage = () => {
       const video = videoRef.current;
 
       // create canvas if not exists
-      if (!canvasRef.current) {
-        canvasRef.current = document.createElement('canvas');
+      if (!inputCanvas.current) {
+        inputCanvas.current = document.createElement('canvas');
       }
-      const canvas = canvasRef.current;
-      // canvas.width = video.videoWidth;
-      // canvas.height = video.videoHeight;
-      canvas.width = MODEL_INPUT_WIDTH;
-      canvas.height = MODEL_INPUT_HEIGHT;
+      const canvas = inputCanvas.current;
 
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
 
-      // ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
       // draw video centered while cutting off edges to fit model input size
       const videoAspect = video.videoWidth / video.videoHeight;
-      const canvasAspect = canvas.width / canvas.height;
       let sx = 0,
         sy = 0,
         sWidth = video.videoWidth,
         sHeight = video.videoHeight;
 
-      if (videoAspect > canvasAspect) {
+      if (videoAspect > 1) {
         // video is wider than canvas
-        sWidth = video.videoHeight * canvasAspect;
+        sWidth = video.videoHeight;
         sx = (video.videoWidth - sWidth) / 2;
       } else {
         // video is taller than canvas
-        sHeight = video.videoWidth / canvasAspect;
+        sHeight = video.videoWidth;
         sy = (video.videoHeight - sHeight) / 2;
       }
+      canvas.width = sWidth;
+      canvas.height = sHeight;
+
+      // grab frame from video, cropped to square
       ctx.drawImage(
         video,
         sx,
@@ -60,9 +58,9 @@ const CameraPage = () => {
         canvas.height
       );
 
-      const dataUrl = canvas.toDataURL('image/jpeg');
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-      setImgUrl(dataUrl);
+      setSourceImageData(imageData);
     }, 100);
   }, []);
 
@@ -97,8 +95,8 @@ const CameraPage = () => {
   return (
     <Box position="relative" minW="40dvw" minH="dvh">
       <video ref={videoRef} />
-      {imgUrl ? (
-        <IdentifyOneCard image={imgUrl} onProcessed={handleProcessed} />
+      {sourceImageData ? (
+        <IdentifyOneCard sourceImageData={sourceImageData} onProcessed={handleProcessed} />
       ) : (
         <Box>No image captured.</Box>
       )}

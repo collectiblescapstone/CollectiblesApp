@@ -15,12 +15,12 @@ import { locateWithYOLO } from '@/utils/identification/locateWithYOLO';
 import { styleText } from 'util';
 
 interface IdentifyOneCardProps {
-  image?: string;
+  sourceImageData?: ImageData;
   onProcessed: () => void;
 }
 
 export const IdentifyOneCard = ({
-  image,
+  sourceImageData,
   onProcessed,
 }: IdentifyOneCardProps) => {
   const originalImageRef = useRef<HTMLCanvasElement | null>(null);
@@ -31,7 +31,7 @@ export const IdentifyOneCard = ({
   const [predictedCard, setPredictedCard] = useState<CardData>();
   const [predictedCardImage, setPredictedCardImage] = useState<string>();
 
-  const processImage = async (src: string, onProcessed: () => void) => {
+  const processImage = async (imageData: ImageData, onProcessed: () => void) => {
     if (isProcessing.current) return;
     isProcessing.current = true;
 
@@ -41,32 +41,21 @@ export const IdentifyOneCard = ({
       cv.current = cvInstance;
     }
 
-    const img = new window.Image();
-    img.crossOrigin = 'anonymous';
-    img.src = src;
-
-    // wait for image to load and be drawn to canvas
-    await new Promise((resolve) => {
-      img.onload = () => {
-        resolve(true);
-      };
-    });
-
-    // read image
-    const origImg = cv.current!.imread(img);
-
     const annotated = await locateWithYOLO(
-      origImg,
+      imageData,
       cv.current!,
       false
     );
 
-    if (annotated && !annotated.isDeleted()) {
-      cv.current!.imshow(ProcessedImageRef.current!, annotated);
+    if (annotated) {
+      originalImageRef.current!.width = annotated.width;
+      originalImageRef.current!.height = annotated.height;
+      originalImageRef.current!.getContext('2d')!.putImageData(annotated, 0, 0);
     }
 
-    // cleanup
-    origImg.delete();
+    // if (annotated && !annotated.isDeleted()) {
+    //   cv.current!.imshow(ProcessedImageRef.current!, annotated);
+    // }
 
     // const result: PredictedImageResult | undefined =
     //   await IdentifyCardInImage(src);
@@ -90,15 +79,15 @@ export const IdentifyOneCard = ({
   };
 
   useEffect(() => {
-    if (image) {
-      processImage(image, onProcessed);
+    if (sourceImageData) {
+      processImage(sourceImageData, onProcessed);
     }
-  }, [image, onProcessed]);
+  }, [sourceImageData, onProcessed]);
 
   return (
     <Box>
-      <Box style={{ display: 'none' }}>
-        <canvas ref={originalImageRef} />
+      <Box>
+        <canvas ref={originalImageRef} style={{backgroundColor:"black"}} />
       </Box>
       <Flex flexDirection="column">
         <Box maxHeight="40vh" justifyItems="center">

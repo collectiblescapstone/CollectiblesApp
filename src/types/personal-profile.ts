@@ -5,6 +5,8 @@ export interface FormValues {
   username: string;
   bio: string;
   location: string;
+  longitude: number;
+  latitude: number;
   instagram: string;
   x: string;
   facebook: string;
@@ -28,6 +30,8 @@ export interface UserProfile {
   email: string;
   bio?: string | null;
   location?: string | null;
+  longitude?: number | null;
+  latitude?: number | null;
   instagram?: string;
   x?: string;
   facebook?: string;

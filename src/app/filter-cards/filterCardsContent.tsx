@@ -21,6 +21,7 @@ import CardFilter from '@/components/card-filter/CardFilter';
 import { useFilters } from '@/hooks/useFilters';
 
 // Utils
+import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard';
 import { getPokemonName, getGeneration } from '@/utils/pokedex';
 
 // Types
@@ -50,6 +51,7 @@ const FilterCardsContent: React.FC = () => {
   const [cardNumbers, setCardNumbers] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
   const [ascending, setAscending] = useState(true);
+  const [userCards, setUserCards] = useState<string[]>([]);
 
   // Fetch cards based on type & params
   useEffect(() => {
@@ -76,6 +78,20 @@ const FilterCardsContent: React.FC = () => {
           return true;
         });
 
+        // Get the user card data
+        if (session?.user?.id) {
+          if (type === 'set') {
+            const userCards = await userMasterSet(session.user.id, setId!);
+            setUserCards(userCards);
+          } else {
+            const userCards = await userPokemonMasterSet(
+              session.user.id,
+              Number(pId)
+            );
+            setUserCards(userCards);
+          }
+        }
+
         const cardNums: Record<string, string> = {};
         for (const card of filteredCards) {
           const splitId = card.id.split('-');
@@ -99,7 +115,7 @@ const FilterCardsContent: React.FC = () => {
     };
 
     loadData();
-  }, [type, setId, pId]);
+  }, [type, setId, pId, session?.user?.id]);
 
   // Fetch Pokémon name if viewing a single Pokémon
   useEffect(() => {
@@ -190,6 +206,7 @@ const FilterCardsContent: React.FC = () => {
                 cardNumbers[card.id] +
                 (Number(card.set.official) > 0 ? '/' + card.set.official : '')
               }
+              cardOwned={userCards.includes(card.id)}
               image={card.image_url}
             />
           ))}

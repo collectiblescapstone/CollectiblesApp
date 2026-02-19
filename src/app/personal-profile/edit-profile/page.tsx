@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues, VisibilityValues } from '@/types/personal-profile';
-import { GeoLocation } from '@/types/geolocation';
+import { GeoLocation, GeoFeature } from '@/types/geolocation';
 
 import {
   Box,
@@ -55,8 +55,8 @@ const PersonalProfileScreen: React.FC = () => {
       username: '',
       bio: '',
       location: '',
-      longitude: undefined as unknown as number,
-      latitude: undefined as unknown as number,
+      longitude: NaN,
+      latitude: NaN,
       instagram: '',
       x: '',
       facebook: '',
@@ -86,10 +86,10 @@ const PersonalProfileScreen: React.FC = () => {
     setValue('location', value, { shouldValidate: true });
     if (selectedPlace && value !== selectedPlace.formatted) {
       setSelectedPlace(null);
-      setValue('latitude', undefined as unknown as number, {
+      setValue('latitude', NaN, {
         shouldValidate: false,
       });
-      setValue('longitude', undefined as unknown as number, {
+      setValue('longitude', NaN, {
         shouldValidate: false,
       });
     }
@@ -137,8 +137,8 @@ const PersonalProfileScreen: React.FC = () => {
           email: data.email ?? '',
           bio: data.bio ?? '',
           location: data.location ?? '',
-          latitude: data.latitude ?? (undefined as unknown as number),
-          longitude: data.longitude ?? (undefined as unknown as number),
+          latitude: data.latitude ?? NaN,
+          longitude: data.longitude ?? NaN,
           instagram: data.instagram ?? '',
           x: data.x ?? '',
           facebook: data.facebook ?? '',
@@ -167,7 +167,7 @@ const PersonalProfileScreen: React.FC = () => {
     router.push('/personal-profile/edit-profile/wishlist');
   };
 
-  // Fetching location predictions from API route
+  // Fetching location predictions from Geoapify API
   useEffect(() => {
     if (!showLocationSuggestions || showLocationSuggestions.length < 3) {
       setPredictions([]);
@@ -176,8 +176,7 @@ const PersonalProfileScreen: React.FC = () => {
 
     const timeout = setTimeout(() => {
       if (abortControllerRef.current) {
-        // Abort helps makes it so when the user retypes before the 300ms is up,
-        // it cancels the previous API call to avoid making unnecessary calls
+        // Abort any ongoing request before starting a new one
         abortControllerRef.current.abort();
       }
 
@@ -187,20 +186,17 @@ const PersonalProfileScreen: React.FC = () => {
       const url = `/api/get-location-predictions?query=${encodeURIComponent(
         showLocationSuggestions
       )}`;
-      console.log('Fetching from:', url);
+      console.log('Fetching location predictions...');
 
       fetch(url, { signal: abortController.signal })
         .then((res) => {
-          console.log('Response status:', res.status);
           if (!res.ok) {
-            return res.text().then((text) => {
-              throw new Error(`API error: ${res.status} - ${text}`);
-            });
+            throw new Error(`API error: ${res.statusText}`);
           }
           return res.json();
         })
         .then((data) => {
-          console.log('API response data:', data);
+          console.log('Location predictions:', data.predictions);
           setPredictions(data.predictions || []);
         })
         .catch((err) => {
@@ -431,13 +427,17 @@ const PersonalProfileScreen: React.FC = () => {
             )}
           />
           <Controller
-            name="longitude" // Only using controller for longitude to validate that a place was selected from the dropdown, not just typed in
+            name="longitude" // Only using Controller for validation purposes, don't actually need to render an input for longitude or latitude
             control={control}
             rules={{
-              validate: () =>
-                selectedPlace
+              validate: () => {
+                const locationValue = watch('location');
+                return !locationValue ||
+                  locationValue.length === 0 ||
+                  selectedPlace
                   ? true
-                  : 'Please select a valid location from the provided suggestions',
+                  : 'Please select a valid location from the provided suggestions';
+              },
             }}
             render={({ field }) => <input type="hidden" {...field} />}
           />

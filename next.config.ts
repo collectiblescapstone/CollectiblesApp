@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const nextConfig: NextConfig = {
+  ...(process.env.NODE_ENV === 'development' ? { output: 'export' } : {}),
   experimental: {
     optimizePackageImports: ['@chakra-ui/react'],
   },

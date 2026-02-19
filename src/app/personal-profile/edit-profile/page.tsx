@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import Showcase from '@/components/edit-profile/Showcase';
 import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues, VisibilityValues } from '@/types/personal-profile';
-import { GeoLocation, GeoFeature } from '@/types/geolocation';
+import { GeoLocation } from '@/types/geolocation';
 
 import {
   Box,

@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     const response = await fetch(
       `https://api.geoapify.com/v1/geocode/autocomplete?text=${encodeURIComponent(
         query
-      )}&limit=5&apiKey=${process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY}`
+      )}&limit=5&apiKey=${process.env.GEOAPIFY_API_KEY}`
     );
 
     if (!response.ok) {

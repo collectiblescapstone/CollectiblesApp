@@ -20,6 +20,10 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
+jest.mock('../../../utils/profiles/userNameProfilePuller', () => ({
+  fetchUserProfile: jest.fn().mockResolvedValue({ email: 'test@example.com' }),
+}));
+
 describe('AuthForm', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -99,7 +103,7 @@ describe('AuthForm', () => {
       expect(pushMock).not.toHaveBeenCalled();
       expect(
         screen.getByText(
-          /an account doesn't exist with this email and password combination/i
+          /an account doesn't exist with this email\/username and password combination/i
         )
       ).toBeInTheDocument();
     });

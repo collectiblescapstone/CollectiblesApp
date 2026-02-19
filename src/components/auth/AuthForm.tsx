@@ -29,7 +29,8 @@ export default function AuthForm() {
     setIsLoading(true);
 
     let emailValue = values.emailOrUsername.trim();
-    if (emailValue.includes('@')) { // Username cannot contain '@', so this must be an email
+    if (!emailValue.includes('@')) {
+      // Username cannot contain '@', while email must contain '@'
       const { email } = await fetchUserProfile(emailValue);
       emailValue = email;
     }
@@ -85,15 +86,20 @@ export default function AuthForm() {
               Email or Username <Field.RequiredIndicator />
             </Field.Label>
             <Input
-              {...register('emailOrUsername', { required: 'Email or Username is required' })}
+              {...register('emailOrUsername', {
+                required: 'Email or Username is required',
+              })}
               variant="subtle"
               color="black"
               placeholder="me@example.com"
               disabled={isLoading}
             />
-            {errors.emailOrUsername && errors.emailOrUsername.type === 'required' && (
-              <Field.ErrorText>{errors.emailOrUsername.message}</Field.ErrorText>
-            )}
+            {errors.emailOrUsername &&
+              errors.emailOrUsername.type === 'required' && (
+                <Field.ErrorText>
+                  {errors.emailOrUsername.message}
+                </Field.ErrorText>
+              )}
           </Field.Root>
 
           <Field.Root invalid={!!errors.password} required>

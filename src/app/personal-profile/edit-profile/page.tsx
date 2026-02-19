@@ -185,8 +185,6 @@ const PersonalProfileScreen: React.FC = () => {
       const abortController = new AbortController();
       abortControllerRef.current = abortController;
 
-      console.log('Fetching location predictions...');
-
       try {
         const res = await CapacitorHttp.post({
           url: `${baseUrl}/api/get-location-predictions`,

@@ -29,9 +29,19 @@ export default function AuthForm() {
     setIsLoading(true);
 
     let emailValue = values.emailOrUsername.trim();
-    if (emailValue.includes('@')) { // Username cannot contain '@', so this must be an email
-      const { email } = await fetchUserProfile(emailValue);
-      emailValue = email;
+    if (!emailValue.includes('@')) { // Username cannot contain '@', while email must contain '@'
+      try {
+        const { email } = await fetchUserProfile(emailValue);
+        emailValue = email;
+      } catch {
+        setError('root', {
+          type: 'invalid_credentials',
+          message:
+            "An account doesn't exist with this email/username and password combination. Please create an account or reset your password.",
+        });
+        setIsLoading(false);
+        return;
+      }
     }
 
     // Supabase Auth sign in user

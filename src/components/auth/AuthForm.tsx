@@ -33,7 +33,7 @@ export default function AuthForm() {
       try {
         const { email } = await fetchUserProfile(emailValue);
         emailValue = email;
-      } catch (error) {
+      } catch {
         setError('root', {
           type: 'invalid_credentials',
           message:

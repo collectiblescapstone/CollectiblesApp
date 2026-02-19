@@ -34,7 +34,7 @@ const masterSetCards: Record<string, Set<string>> = {};
 const grandmasterSetCards: Record<string, Record<string, string>> = {};
 
 // Set counts based on Pokedex ID
-const pokemonMasterSetCards: Record<string, Set<string>> = {};
+const pokemonMasterSetCards: Record<number, Set<string>> = {};
 const pokemonGrandmasterSet: Record<number, Record<string, string>> = {};
 
 // Track whether we've already fetched cards

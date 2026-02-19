@@ -21,7 +21,7 @@ import CardFilter from '@/components/card-filter/CardFilter';
 import { useFilters } from '@/hooks/useFilters';
 
 // Utils
-import { userMasterSet } from '@/utils/userPokemonCard';
+import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard';
 import { getPokemonName, getGeneration } from '@/utils/pokedex';
 
 // Types
@@ -84,7 +84,10 @@ const FilterCardsContent: React.FC = () => {
             const userCards = await userMasterSet(session.user.id, setId!);
             setUserCards(userCards);
           } else {
-            const userCards = await userMasterSet(session.user.id, pId!);
+            const userCards = await userPokemonMasterSet(
+              session.user.id,
+              Number(pId)
+            );
             setUserCards(userCards);
           }
         }

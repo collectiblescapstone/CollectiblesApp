@@ -29,7 +29,7 @@ export default function AuthForm() {
     setIsLoading(true);
 
     let emailValue = values.emailOrUsername.trim();
-    if (emailValue.includes('@')) { // Username cannot contain '@', so this must be an email
+    if (!emailValue.includes('@')) { // Username cannot contain '@', while email must contain '@'
       const { email } = await fetchUserProfile(emailValue);
       emailValue = email;
     }

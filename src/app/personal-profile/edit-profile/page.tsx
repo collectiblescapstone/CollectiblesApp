@@ -9,8 +9,6 @@ import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues, VisibilityValues } from '@/types/personal-profile';
 import { GeoLocation } from '@/types/geolocation';
 
-// Change the routing to be PUSH instead of fetch to work around the Vercel deployment issue where API routes are not working properly.
-
 import {
   Box,
   Flex,

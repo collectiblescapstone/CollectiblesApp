@@ -47,6 +47,7 @@ const PersonalProfileScreen: React.FC = () => {
     formState: { errors },
     reset,
     setValue,
+    setError,
   } = useForm<FormValues>({
     defaultValues: {
       firstName: '',
@@ -102,6 +103,13 @@ const PersonalProfileScreen: React.FC = () => {
 
   const handleSave = handleSubmit(async (data) => {
     if (!session?.user?.id) return;
+    if (data.location && (!data.latitude || !data.longitude)) {
+      setError('location', {
+        type: 'invalid',
+        message: 'Please select a valid location from the suggestions.',
+      });
+      return;
+    }
     setIsSaving(true);
     try {
       const res = await CapacitorHttp.patch({
@@ -398,11 +406,7 @@ const PersonalProfileScreen: React.FC = () => {
             Write a little about yourself for others to see.
           </Field.HelperText>
         </Field.Root>
-        <Field.Root
-          required
-          invalid={!!errors.location || !!errors.longitude}
-          position="relative"
-        >
+        <Field.Root required invalid={!!errors.location} position="relative">
           <Field.Label>
             Location <Field.RequiredIndicator />
           </Field.Label>
@@ -422,21 +426,6 @@ const PersonalProfileScreen: React.FC = () => {
                 }}
               />
             )}
-          />
-          <Controller
-            name="longitude" // Only using Controller for validation purposes, don't actually need to render an input for longitude or latitude
-            control={control}
-            rules={{
-              validate: () => {
-                const locationValue = watch('location');
-                return !locationValue ||
-                  locationValue.length === 0 ||
-                  selectedPlace
-                  ? true
-                  : 'Please select a valid location from the provided suggestions';
-              },
-            }}
-            render={({ field }) => <input type="hidden" {...field} />}
           />
           {predictions.length > 0 && !selectedPlace && (
             <Box
@@ -468,10 +457,8 @@ const PersonalProfileScreen: React.FC = () => {
           <Field.HelperText>
             Will be displayed on your profile.
           </Field.HelperText>
-          {(errors.location || errors.longitude) && (
-            <Field.ErrorText>
-              {errors.location?.message || errors.longitude?.message}
-            </Field.ErrorText>
+          {errors.location && (
+            <Field.ErrorText>{errors.location?.message}</Field.ErrorText>
           )}
         </Field.Root>
         <Field.Root>

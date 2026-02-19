@@ -45,8 +45,9 @@ const fetchPokemonCards = async (): Promise<void> => {
 
   pokemonCardsInit = (async () => {
     try {
-      const response = await fetch('/api/pokemon-card');
-      if (!response.ok) throw new Error(`Failed to fetch /api/pokemon-card`);
+      const response = await fetch('/api/pokemon-card-all');
+      if (!response.ok)
+        throw new Error(`Failed to fetch /api/pokemon-card-all`);
       const cards: Card[] = await response.json();
 
       // Clear counts first

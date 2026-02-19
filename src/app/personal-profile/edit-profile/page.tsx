@@ -176,7 +176,7 @@ const PersonalProfileScreen: React.FC = () => {
       return;
     }
 
-    const timeout = setTimeout(() => {
+    const timeout = setTimeout(async () => {
       if (abortControllerRef.current) {
         // Abort any ongoing request before starting a new one
         abortControllerRef.current.abort();
@@ -185,33 +185,27 @@ const PersonalProfileScreen: React.FC = () => {
       const abortController = new AbortController();
       abortControllerRef.current = abortController;
 
-      const url = `/api/get-location-predictions`;
       console.log('Fetching location predictions...');
 
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query: showLocationSuggestions }),
-        signal: abortController.signal,
-      })
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(`API error: ${res.statusText}`);
-          }
-          return res.json();
-        })
-        .then((data) => {
-          console.log('Location predictions:', data.predictions);
-          setPredictions(data.predictions || []);
-        })
-        .catch((err) => {
-          if (err.name !== 'AbortError') {
-            console.error('Location prediction error:', err);
-            setPredictions([]);
-          }
+      try {
+        const res = await CapacitorHttp.post({
+          url: `${baseUrl}/api/get-location-predictions`,
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          data: { query: showLocationSuggestions },
         });
+
+        if (res.status !== 200) {
+          console.error('API error:', res.data.error);
+          setPredictions([]);
+        } else {
+          console.log('Location predictions:', res.data.predictions);
+          setPredictions(res.data.predictions || []);
+        }
+      } catch (err) {
+        console.error('Location prediction error:', err);
+        setPredictions([]);
+      }
     }, 300);
 
     return () => {

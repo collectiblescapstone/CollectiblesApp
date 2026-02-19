@@ -28,9 +28,13 @@ export type PokemonSet = {
 };
 
 const pokemonCards: Record<string, Entry> = {};
-const masterSetCards: Record<string, string[]> = {};
+
+// Set counts based on set
+const masterSetCards: Record<string, Set<string>> = {};
 const grandmasterSetCards: Record<string, Record<string, string>> = {};
-const pokemonMasterSetCards: Record<number, string[]> = {};
+
+// Set counts based on Pokedex ID
+const pokemonMasterSetCards: Record<string, Set<string>> = {};
 const pokemonGrandmasterSet: Record<number, Record<string, string>> = {};
 
 // Track whether we've already fetched cards
@@ -75,8 +79,8 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
         const setId = collectionEntry.card?.setId;
 
         if (setId) {
-          if (!masterSetCards[setId]) masterSetCards[setId] = [];
-          masterSetCards[setId].push(collectionEntry.cardId);
+          if (!masterSetCards[setId]) masterSetCards[setId] = new Set<string>();
+          masterSetCards[setId].add(collectionEntry.cardId);
 
           if (!grandmasterSetCards[setId]) grandmasterSetCards[setId] = {};
           grandmasterSetCards[setId][collectionEntry.cardId] =
@@ -90,8 +94,9 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
         for (const dexId of dexIds) {
           if (dexId > MAXPOKEDEXVALUE) continue;
 
-          if (!pokemonMasterSetCards[dexId]) pokemonMasterSetCards[dexId] = [];
-          pokemonMasterSetCards[dexId].push(collectionEntry.cardId);
+          if (!pokemonMasterSetCards[dexId])
+            pokemonMasterSetCards[dexId] = new Set<string>();
+          pokemonMasterSetCards[dexId].add(collectionEntry.cardId);
 
           if (!pokemonGrandmasterSet[dexId]) pokemonGrandmasterSet[dexId] = {};
           pokemonGrandmasterSet[dexId][collectionEntry.cardId] =
@@ -133,7 +138,23 @@ export const getUserCardsByPokemonId = async (
 };
 
 /**
- * Gets the total cards for the master set
+ * Get the master set cards for a user based on setId
+ * @param userId
+ * @param setId
+ * @returns
+ */
+export const userMasterSet = async (
+  userId: string,
+  setId: string
+): Promise<string[]> => {
+  if (Object.keys(masterSetCards).length === 0) await fetchPokemonCards(userId);
+
+  return Array.from(masterSetCards[setId] ?? new Set<string>());
+};
+
+/**
+ * Gets the total cards for the master set based on setId
+ * @param userId
  * @param setId
  * @returns
  */
@@ -141,13 +162,13 @@ export const userMasterSetCount = async (
   userId: string,
   setId: string
 ): Promise<number> => {
-  if (Object.keys(masterSetCards).length === 0) await fetchPokemonCards(userId);
-
-  return masterSetCards[setId]?.length ?? 0;
+  return userMasterSet(userId, setId).then((cards) => cards.length);
 };
 
 /**
- * Calculates the grandmaster set count based on the variants of cards in the set
+ * Calculates the grandmaster set count based on the setId
+ * WILL NEED TO REFACTOR FOR THE SHOW ALL CARDS PAGE
+ * @param userId
  * @param setId
  * @returns
  */
@@ -165,16 +186,42 @@ export const userGrandmasterSetCount = async (
   return count ?? 0;
 };
 
+/**
+ * Get the master set cards for a user based on pokemonId
+ * @param userId
+ * @param pokemonId
+ * @returns
+ */
+export const userPokemonMasterSet = async (
+  userId: string,
+  pokedexId: number
+): Promise<string[]> => {
+  if (Object.keys(pokemonMasterSetCards).length === 0)
+    await fetchPokemonCards(userId);
+
+  return Array.from(pokemonMasterSetCards[pokedexId] || new Set<string>());
+};
+
+/**
+ * Gets the total cards for the master set based on pokemonId
+ * @param userId
+ * @param pokemonId
+ * @returns
+ */
 export const userPokemonMasterSetCount = async (
   userId: string,
   pokedexId: number
 ): Promise<number> => {
-  if (Object.keys(pokemonMasterSetCards).length === 0)
-    await fetchPokemonCards(userId);
-
-  return pokemonMasterSetCards[pokedexId]?.length ?? 0;
+  return userPokemonMasterSet(userId, pokedexId).then((cards) => cards.length);
 };
 
+/**
+ * Calculates the grandmaster set count based on the pokemonId
+ * WILL NEED TO REFACTOR FOR THE SHOW ALL CARDS PAGE
+ * @param userId
+ * @param pokemonId
+ * @returns
+ */
 export const userPokemonGrandmasterSetCount = async (
   userId: string,
   pokedexId: number

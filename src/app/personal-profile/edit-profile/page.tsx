@@ -9,6 +9,8 @@ import DeleteAccount from '@/components/edit-profile/DeleteAccount';
 import { FormValues, VisibilityValues } from '@/types/personal-profile';
 import { GeoLocation } from '@/types/geolocation';
 
+// Change the routing to be PUSH instead of fetch to work around the Vercel deployment issue where API routes are not working properly.
+
 import {
   Box,
   Flex,
@@ -183,12 +185,17 @@ const PersonalProfileScreen: React.FC = () => {
       const abortController = new AbortController();
       abortControllerRef.current = abortController;
 
-      const url = `/api/get-location-predictions?query=${encodeURIComponent(
-        showLocationSuggestions
-      )}`;
+      const url = `/api/get-location-predictions`;
       console.log('Fetching location predictions...');
 
-      fetch(url, { signal: abortController.signal })
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: showLocationSuggestions }),
+        signal: abortController.signal,
+      })
         .then((res) => {
           if (!res.ok) {
             throw new Error(`API error: ${res.statusText}`);

@@ -1,11 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { GeoLocation, GeoFeature } from '@/types/geolocation';
 
-export const dynamic = 'force-static';
-
-export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams;
-  const query = searchParams.get('query');
+export const POST = async (request: Request) => {
+  const { query } = await request.json();
 
   if (!query || query.length < 3) {
     return NextResponse.json(
@@ -42,4 +39,4 @@ export async function GET(request: NextRequest) {
       { status: 500 }
     );
   }
-}
+};

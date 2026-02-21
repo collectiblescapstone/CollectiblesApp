@@ -18,22 +18,6 @@ export const biggestContour = (
   // loop through contours
   for (let i = 0; i < contours.size(); i++) {
     const cnt = contours.get(i);
-
-    // filter if contour is touching edge of input image
-    let isTouchingEdge = false;
-    for (let j = 0; j < cnt.rows; j++) {
-      const x = cnt.intAt(j, 0);
-      const y = cnt.intAt(j, 1);
-      if (x <= 1 || y <= 1 || x >= MODEL_INPUT_WIDTH-1 || y >= MODEL_INPUT_HEIGHT-1) {
-        isTouchingEdge = true;
-        break;
-      }
-    }
-    if (isTouchingEdge) {
-      cnt.delete();
-      continue;
-    }
-
     const area = cv.contourArea(cnt); // get area of contour
     if (area > 5000) {
       const peri = cv.arcLength(cnt, true); // get perimeter
@@ -67,6 +51,22 @@ export const filterContours = (
   // loop through contours
   for (let i = 0; i < contours.size(); i++) {
     const cnt = contours.get(i);
+
+        // filter if contour is touching edge of input image
+    let isTouchingEdge = false;
+    for (let j = 0; j < cnt.rows; j++) {
+      const x = cnt.intAt(j, 0);
+      const y = cnt.intAt(j, 1);
+      if (x <= 1 || y <= 1 || x >= MODEL_INPUT_WIDTH-1 || y >= MODEL_INPUT_HEIGHT-1) {
+        isTouchingEdge = true;
+        break;
+      }
+    }
+    if (isTouchingEdge) {
+      cnt.delete();
+      continue;
+    }
+
     const area = cv.contourArea(cnt); // get area of contour
     if (area > minimumArea) {
       const peri = cv.arcLength(cnt, true); // get perimeter

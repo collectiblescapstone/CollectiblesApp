@@ -1,12 +1,10 @@
-import cvReadyPromise from '@techstark/opencv-js';
+import {CV, Mat} from '@techstark/opencv-js';
 
 import { CardData, CardDataObj } from '@/types/identification';
 
 export const CardClassifier = async (): Promise<
-  (image: cvReadyPromise.Mat, k?: number) => CardData[]
+  (cv:CV, image: Mat, k?: number) => CardData[]
 > => {
-  const cv = await cvReadyPromise;
-
   /**
    * Converts hexadecimal string to binary string
    */
@@ -48,7 +46,7 @@ export const CardClassifier = async (): Promise<
    * Calculates difference hash
    * Reference: https://github.com/JohannesBuchner/imagehash/blob/4e289ebe056b961aa19fb1b50f5bdc66c87e0d55/imagehash/__init__.py#L304
    */
-  const dhash = (image: cvReadyPromise.Mat, hashSize = 16): string => {
+  const dhash = (cv:CV, image: Mat, hashSize = 16): string => {
     // Convert image to a greyscale (hashSize + 1) x (hashSize) image
     const grayImage = new cv.Mat();
     cv.cvtColor(image, grayImage, cv.COLOR_RGB2GRAY);
@@ -73,8 +71,8 @@ export const CardClassifier = async (): Promise<
   /**
    * Given a card image, returns the (k) most similar card(s)
    */
-  const getSimilarCards = (image: cvReadyPromise.Mat, k = 4) => {
-    const dHash = dhash(image);
+  const getSimilarCards = (cv:CV, image: Mat, k = 4) => {
+    const dHash = dhash(cv, image);
     const distances: [distance: number, id: string][] = [];
     for (const id in cardData) {
       let distance = 0;

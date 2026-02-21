@@ -13,18 +13,18 @@ import {
 import cvReadyPromise, { CV, Mat } from '@techstark/opencv-js';
 import { locateWithYOLO } from '@/utils/identification/locateWithYOLO';
 import { styleText } from 'util';
+import { CardClassifier } from '@/utils/identification/classifyNormalizedCard';
 
-interface IdentifyOneCardProps {
+interface IdentifyCardsProps {
   sourceImageData?: ImageData;
   onProcessed: () => void;
 }
 
-export const IdentifyOneCard = ({
+export const IdentifyCards = ({
   sourceImageData,
   onProcessed,
-}: IdentifyOneCardProps) => {
-  const originalImageRef = useRef<HTMLCanvasElement | null>(null);
-  const ProcessedImageRef = useRef<HTMLCanvasElement | null>(null);
+}: IdentifyCardsProps) => {
+  const overlayRef = useRef<HTMLCanvasElement | null>(null);
   const isProcessing = useRef<boolean>(false);
   const cv = useRef<CV>(null);
 
@@ -41,16 +41,26 @@ export const IdentifyOneCard = ({
       cv.current = cvInstance;
     }
 
-    const annotated = await locateWithYOLO(
+    const res = await locateWithYOLO(
       imageData,
       cv.current!,
       false
     );
 
-    if (annotated) {
-      originalImageRef.current!.width = annotated.width;
-      originalImageRef.current!.height = annotated.height;
-      originalImageRef.current!.getContext('2d')!.putImageData(annotated, 0, 0);
+    if (res && res.results.length > 0) {
+      overlayRef.current!.width = res.overlay.width;
+      overlayRef.current!.height = res.overlay.height;
+      overlayRef.current!.getContext('2d')!.putImageData(res.overlay, 0, 0);
+    }
+
+    const classifier = await CardClassifier();
+    for (const card of res?.results ?? []) {
+      const similarCards = classifier(cv.current!, card.image);
+      if (similarCards.length > 0) {
+        setPredictedCard(similarCards[0]);
+        setPredictedCardImage(similarCards[0].card.image + '/low.jpg');
+        break;
+      }
     }
 
     // if (annotated && !annotated.isDeleted()) {
@@ -86,14 +96,10 @@ export const IdentifyOneCard = ({
 
   return (
     <Box>
-      <Box>
-        <canvas ref={originalImageRef} style={{backgroundColor:"black"}} />
+      <Box style={{position: "absolute", top: "0px", left: "80px"}}>
+        <canvas ref={overlayRef} />
       </Box>
       <Flex flexDirection="column">
-        <Box maxHeight="40vh" justifyItems="center">
-          <Text>Found Card</Text>
-          <canvas ref={ProcessedImageRef} style={{ height: '30vh' }} />
-        </Box>
         <Box maxHeight="40vh" justifyItems="center">
           <Text>Identified Card</Text>
           <Image

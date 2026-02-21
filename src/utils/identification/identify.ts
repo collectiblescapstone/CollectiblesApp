@@ -20,41 +20,6 @@ export const IdentifyCardInImage = async (
    */
 
   const result: PredictedImageResult = {};
-
-  // load image from src URL
-  const img = new window.Image();
-  img.crossOrigin = 'anonymous';
-  img.src = src;
-
-  // wait for image to load and be drawn to canvas
-  await new Promise((resolve) => {
-    img.onload = () => {
-      resolve(true);
-    };
-  });
-
-  // get openCV instance
-  const cv = await cvReadyPromise;
-
-  // read image
-  const origImg = cv.imread(img);
-
-  // current method to normalize card
-  // const warped = await locateWithEdgeDetectionContour(origImg, rot);
-  const warped = await locateWithYOLO(origImg, rot);
-
-  if (!warped) {
-    return undefined;
-  }
-
-  result.foundCardImage = warped.image;
-  result.corners = warped.corners;
-
-  // current method to classify card
-  const getSimilarCards = await CardClassifier();
-  const predictions = getSimilarCards(warped.image);
-
-  result.predictedCard = predictions[0];
-
+  
   return result;
 };

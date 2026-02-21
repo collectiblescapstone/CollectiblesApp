@@ -1,25 +1,23 @@
 'use client';
 
-import { IdentifyOneCard } from '@/components/cv/IdentifyOneCard';
-import { Box } from '@chakra-ui/react';
+import { IdentifyCards } from '@/components/cv/IdentifyCards';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT } from '@/utils/constants';
 import { useAuth } from '@/context/AuthProvider';
-import { Box, Spinner } from '@chakra-ui/react';
+import { Box, Button, Spinner } from '@chakra-ui/react';
 import { useSearchParams } from 'next/navigation';
 
-const CameraPage = () => {
+export const CameraPage = () => {
   const [sourceImageData, setSourceImageData] = useState<ImageData | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const inputCanvas = useRef<HTMLCanvasElement | null>(null);
-  const params = useSearchParams();
-  const imgUrl = params.get('img');
-  const { session, loading } = useAuth();
+  // const { session, loading } = useAuth();
 
-  // Called by IdentifyOneCard when it's ready for the next frame
+  // Called by IdentifyCards when it's ready for the next frame
   const handleProcessed = useCallback(() => {
     setTimeout(() => {
       if (!videoRef.current) return;
+      if (videoRef.current.paused || videoRef.current.ended) return;
 
       const video = videoRef.current;
 
@@ -98,22 +96,36 @@ const CameraPage = () => {
     };
   }, [handleProcessed]);
 
-  if (loading || !session) {
-    return (
-      <Box textAlign="center" mt={10}>
-        <Spinner size="xl" />
-      </Box>
-    );
-  }
+  const pauseResumeCamera = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        handleProcessed();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
+  // if (loading || !session) {
+  //   return (
+  //     <Box textAlign="center" mt={10}>
+  //       <Spinner size="xl" />
+  //     </Box>
+  //   );
+  // }
 
   return (
     <Box position="relative" minW="40dvw" minH="dvh">
       <video ref={videoRef} />
       {sourceImageData ? (
-        <IdentifyOneCard sourceImageData={sourceImageData} onProcessed={handleProcessed} />
+        <IdentifyCards sourceImageData={sourceImageData} onProcessed={handleProcessed} />
       ) : (
         <Box>No image captured.</Box>
       )}
+      <Button onClick={pauseResumeCamera}>
+        Pause/Resume Camera
+      </Button>
     </Box>
   );
 };

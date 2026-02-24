@@ -21,12 +21,14 @@ import CardFilter from '@/components/card-filter/CardFilter';
 import { useFilters } from '@/hooks/useFilters';
 
 // Utils
+import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard';
 import { getPokemonName, getGeneration } from '@/utils/pokedex';
 
 // Types
 import type { CardData } from '@/types/pokemon-card';
 import { useAuth } from '@/context/AuthProvider';
 import { getPokemonCards } from '@/utils/pokemonCard';
+import { CardSearch } from '@/components/card-filter/CardSearch';
 
 const FilterCardsContent: React.FC = () => {
   // Search Params
@@ -40,11 +42,16 @@ const FilterCardsContent: React.FC = () => {
   const { filters } = useFilters();
   const { session, loading: authLoading } = useAuth();
 
+  // Filters from search
+  const [filteredIds, setFilteredIds] = useState<string[]>();
+
   // Local States
   const [pokemonName, setPokemonName] = useState<string | null>(null);
   const [cards, setCards] = useState<CardData[]>([]);
+  const [cardNumbers, setCardNumbers] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
   const [ascending, setAscending] = useState(true);
+  const [userCards, setUserCards] = useState<string[]>([]);
 
   // Fetch cards based on type & params
   useEffect(() => {
@@ -70,18 +77,35 @@ const FilterCardsContent: React.FC = () => {
 
           return true;
         });
-        // Clean up the id (remove prefix before hyphen)
-        filteredCards.forEach((card: CardData) => {
-          const idParts = card.id.split('-');
-          card.id = idParts[idParts.length - 1];
-        });
+
+        // Get the user card data
+        if (session?.user?.id) {
+          if (type === 'set') {
+            const userCards = await userMasterSet(session.user.id, setId!);
+            setUserCards(userCards);
+          } else {
+            const userCards = await userPokemonMasterSet(
+              session.user.id,
+              Number(pId)
+            );
+            setUserCards(userCards);
+          }
+        }
+
+        const cardNums: Record<string, string> = {};
+        for (const card of filteredCards) {
+          const splitId = card.id.split('-');
+          cardNums[card.id] = splitId[splitId.length - 1];
+        }
 
         // Sort by numeric id
         filteredCards.sort(
-          (a: CardData, b: CardData) => Number(a.id) - Number(b.id)
+          (a: CardData, b: CardData) =>
+            Number(cardNums[a.id]) - Number(cardNums[b.id])
         );
 
         setCards(Array.isArray(filteredCards) ? filteredCards : []);
+        setCardNumbers(cardNums);
       } catch (error) {
         console.error('Error loading data:', error);
         setCards([]);
@@ -91,7 +115,7 @@ const FilterCardsContent: React.FC = () => {
     };
 
     loadData();
-  }, [type, setId, pId]);
+  }, [type, setId, pId, session?.user?.id]);
 
   // Fetch Pokémon name if viewing a single Pokémon
   useEffect(() => {
@@ -110,6 +134,11 @@ const FilterCardsContent: React.FC = () => {
 
   // Filter cards based on FiltersContext
   const filteredCards = cards.filter((card) => {
+    // Filtered Ids
+    if (filteredIds) {
+      return filteredIds.includes(card.id);
+    }
+
     // CATEGORY
     if (
       !filters.categories.includes(card.category) &&
@@ -144,25 +173,27 @@ const FilterCardsContent: React.FC = () => {
 
   return (
     <Box>
-      <Flex mb={6} justify="space-between" align="center" pl={5} pr={5} pt={5}>
-        <Heading>
-          {type === 'set'
-            ? `${setName} Card Set`
-            : `${type === 'set' ? setName : pokemonName} Cards`}
-        </Heading>
-        <Flex gap={1} align="right">
-          <IconButton
-            aria-label="Toggle sort order"
-            size="lg"
-            variant="ghost"
-            onClick={toggleSortOrder}
-          >
-            {ascending ? <LuChevronUp /> : <LuChevronDown />}
-          </IconButton>
-          <CardFilter />
+      <Flex mb={6} flexDirection="column" pl={5} pr={5} pt={5}>
+        <Flex justify="space-between" align="center">
+          <Heading>
+            {type === 'set'
+              ? `${setName} Card Set`
+              : `${type === 'set' ? setName : pokemonName} Cards`}
+          </Heading>
+          <Flex gap={1} align="right">
+            <IconButton
+              aria-label="Toggle sort order"
+              size="lg"
+              variant="ghost"
+              onClick={toggleSortOrder}
+            >
+              {ascending ? <LuChevronUp /> : <LuChevronDown />}
+            </IconButton>
+            <CardFilter />
+          </Flex>
         </Flex>
+        <CardSearch cards={cards} setFilteredIds={setFilteredIds} />
       </Flex>
-
       {filteredCards.length === 0 ? (
         <Text>No cards match the selected filters.</Text>
       ) : (
@@ -172,9 +203,10 @@ const FilterCardsContent: React.FC = () => {
               key={index}
               cardName={card.name}
               cardId={
-                card.id +
+                cardNumbers[card.id] +
                 (Number(card.set.official) > 0 ? '/' + card.set.official : '')
               }
+              cardOwned={userCards.includes(card.id)}
               image={card.image_url}
             />
           ))}

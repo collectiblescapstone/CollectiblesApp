@@ -6,6 +6,7 @@ import { useAuth } from '@/context/AuthProvider';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { LoginFormValues } from '@/types/auth';
+import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
 
 export default function AuthForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -19,7 +20,7 @@ export default function AuthForm() {
     setError,
   } = useForm<LoginFormValues>({
     defaultValues: {
-      email: '',
+      emailOrUsername: '',
       password: '',
     },
   });
@@ -27,9 +28,25 @@ export default function AuthForm() {
   const onSubmit = async (values: LoginFormValues) => {
     setIsLoading(true);
 
-    // Supabase Auth sign in user
-    const res = await signIn(values.email, values.password);
+    let emailValue = values.emailOrUsername.trim();
+    if (!emailValue.includes('@')) {
+      // Username cannot contain '@', while email must contain '@'
+      try {
+        const { email } = await fetchUserProfile(emailValue);
+        emailValue = email;
+      } catch {
+        setError('root', {
+          type: 'invalid_credentials',
+          message:
+            "An account doesn't exist with this email/username and password combination. Please create an account or reset your password.",
+        });
+        setIsLoading(false);
+        return;
+      }
+    }
 
+    // Supabase Auth sign in user
+    const res = await signIn(emailValue, values.password);
     // Handle Supabase Auth successful sign in
     if (res.success) {
       push('/home');
@@ -41,7 +58,7 @@ export default function AuthForm() {
         setError('root', {
           type: 'invalid_credentials',
           message:
-            "An account doesn't exist with this email and password combination. Please create an account or reset your password.",
+            "An account doesn't exist with this email/username and password combination. Please create an account or reset your password.",
         });
       } else if (res.error === 'Email not confirmed') {
         setError('root', {
@@ -74,20 +91,25 @@ export default function AuthForm() {
         <Heading size="lg">Sign In to your account</Heading>
 
         <Field.Root invalid={!!errors.root}>
-          <Field.Root invalid={!!errors.email} required>
+          <Field.Root invalid={!!errors.emailOrUsername} required>
             <Field.Label>
-              Email <Field.RequiredIndicator />
+              Email or Username <Field.RequiredIndicator />
             </Field.Label>
             <Input
-              {...register('email', { required: 'Email is required' })}
+              {...register('emailOrUsername', {
+                required: 'Email or Username is required',
+              })}
               variant="subtle"
               color="black"
               placeholder="me@example.com"
               disabled={isLoading}
             />
-            {errors.email && errors.email.type === 'required' && (
-              <Field.ErrorText>{errors.email.message}</Field.ErrorText>
-            )}
+            {errors.emailOrUsername &&
+              errors.emailOrUsername.type === 'required' && (
+                <Field.ErrorText>
+                  {errors.emailOrUsername.message}
+                </Field.ErrorText>
+              )}
           </Field.Root>
 
           <Field.Root invalid={!!errors.password} required>

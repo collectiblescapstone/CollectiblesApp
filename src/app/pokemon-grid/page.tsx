@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import {
   Box,
   HStack,
@@ -23,9 +23,18 @@ import { FiltersProvider } from '@/hooks/useFilters';
 import { PokemonSetType } from '@/types/pokemon-grid';
 import { useAuth } from '@/context/AuthProvider';
 
-const PokemonGridPage: React.FC = () => {
-  const { session, loading } = useAuth();
+// Utils
+import { POKEMONGEN, ALL_POKEMON } from '@/utils/pokedex';
+import {
+  masterSetCount,
+  grandmasterSetCount,
+  pokemonMasterSetCount,
+  pokemonGrandmasterSetCount,
+} from '@/utils/pokemonCard';
 
+const PokemonGridPage = () => {
+  const { session, loading } = useAuth();
+  const [load, setLoad] = useState(true);
   const [selected, setSelected] = useState('set');
   const [selectedEra, setSelectedEra] = useState('sv');
   const [groupedSets, setGroupedSets] = useState<
@@ -33,8 +42,15 @@ const PokemonGridPage: React.FC = () => {
   >({});
   const [selectedGen, setSelectedGen] = useState('ALL');
 
-  const TOTAL_POKEMON = 1025;
-  const pokemon = Array.from({ length: TOTAL_POKEMON }, (_, i) => i + 1);
+  const [setCounts, setSetCounts] = useState<
+    Record<string, { masterSet: number; grandmasterSet: number }>
+  >({});
+
+  const [pokemonCounts, setPokemonCounts] = useState<
+    Record<string, { masterSet: number; grandmasterSet: number }>
+  >({});
+
+  const pokemon = ALL_POKEMON;
 
   const frameworks = createListCollection({
     items: [
@@ -43,13 +59,10 @@ const PokemonGridPage: React.FC = () => {
     ],
   });
 
-  // Final Pokédex numbers for each generation
-  const pokemonGen = [151, 251, 386, 493, 649, 721, 809, 905, 1025];
-
   // Generation options
   const genOptions = [
     { label: 'ALL', value: 'ALL' },
-    ...pokemonGen.map((last, index) => ({
+    ...POKEMONGEN.map((last, index) => ({
       label: `Gen ${index + 1}`,
       value: (index + 1).toString(),
     })),
@@ -140,17 +153,94 @@ const PokemonGridPage: React.FC = () => {
   };
 
   // Filter Pokémon based on selected generation
-  const filteredPokemon =
-    selectedGen === 'ALL'
-      ? pokemon
-      : pokemon.filter((id) => {
-          const genIndex = parseInt(selectedGen) - 1;
-          const startId = genIndex === 0 ? 1 : pokemonGen[genIndex - 1] + 1;
-          const endId = pokemonGen[genIndex];
-          return id >= startId && id <= endId;
-        });
+  const filteredPokemon = useMemo(() => {
+    if (selectedGen === 'ALL') return pokemon;
 
-  if (loading || !session) {
+    const genIndex = parseInt(selectedGen) - 1;
+    const startId = genIndex === 0 ? 1 : POKEMONGEN[genIndex - 1] + 1;
+    const endId = POKEMONGEN[genIndex];
+
+    return pokemon.filter((id) => id >= startId && id <= endId);
+  }, [selectedGen, pokemon]);
+
+  /**
+   * useEffect to fetch set counts
+   */
+  useEffect(() => {
+    if (!selectedEra || !groupedSets[selectedEra] || selected !== 'set') return;
+
+    const fetchCounts = async () => {
+      setLoad(true);
+
+      const counts: Record<
+        string,
+        { masterSet: number; grandmasterSet: number }
+      > = {};
+
+      await Promise.all(
+        groupedSets[selectedEra].map(async (set) => {
+          const master = await masterSetCount(set.id);
+          const grandmaster = await grandmasterSetCount(set.id);
+          counts[set.id] = {
+            masterSet: master ?? 0,
+            grandmasterSet: grandmaster ?? 0,
+          };
+        })
+      );
+
+      setSetCounts(counts);
+      setLoad(false);
+    };
+
+    fetchCounts();
+  }, [selectedEra, groupedSets, selected]);
+
+  /**
+   * Use effect for fetching Pokemon card counts, grouped by Pokedex number.
+   */
+  useEffect(() => {
+    if (!selectedGen || selected !== 'pokemon') return;
+    let cancelled = false;
+    const fetchCounts = async () => {
+      setLoad(true);
+
+      const counts: Record<
+        number,
+        { masterSet: number; grandmasterSet: number }
+      > = {};
+
+      for (const id of filteredPokemon) {
+        if (cancelled) return;
+
+        const master = await pokemonMasterSetCount(id);
+        const grandmaster = await pokemonGrandmasterSetCount(id);
+        if (cancelled) return;
+        counts[id] = {
+          masterSet: master ?? 0,
+          grandmasterSet: grandmaster ?? 0,
+        };
+        // console.log(
+        //   id +
+        //     '|: ' +
+        //     pokemonName +
+        //     '   ' +
+        //     counts[pokemonName].masterSet +
+        //     '|' +
+        //     counts[pokemonName].grandmasterSet
+        // );
+      }
+
+      setPokemonCounts(counts);
+      setLoad(false);
+    };
+
+    fetchCounts();
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedGen, selected, filteredPokemon]);
+
+  if (loading || !session || load) {
     return (
       <Box textAlign="center" mt={10}>
         <Spinner size="xl" />
@@ -167,7 +257,7 @@ const PokemonGridPage: React.FC = () => {
             collection={frameworks}
             size="sm"
             width="300px"
-            defaultValue={['set']}
+            value={[selected]}
             onValueChange={(e) => {
               setSelected(e.value[0]);
               setSelectedEra('sv');
@@ -306,14 +396,20 @@ const PokemonGridPage: React.FC = () => {
             justifyItems="center"
             mt={4}
           >
-            {filteredPokemon.map((id) => (
-              <PokemonPolaroid
-                key={id}
-                id={id}
-                masterSet={100}
-                grandmasterSet={100}
-              />
-            ))}
+            {filteredPokemon.map((id) => {
+              const counts = pokemonCounts[id] || {
+                masterSet: 1,
+                grandmasterSet: 1,
+              };
+              return (
+                <PokemonPolaroid
+                  key={id}
+                  id={id}
+                  masterSet={counts.masterSet}
+                  grandmasterSet={counts.grandmasterSet}
+                />
+              );
+            })}
           </Grid>
         )}
 
@@ -322,7 +418,13 @@ const PokemonGridPage: React.FC = () => {
           <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
             {groupedSets[selectedEra].map((set) => {
               const imageSrc = set.logo || set.symbol;
-
+              const counts = setCounts[set.id] || {
+                masterSet: 1,
+                grandmasterSet: 1,
+              };
+              // console.log(
+              //   set.id + ': ' + counts.masterSet + '|' + counts.grandmasterSet
+              // );
               return (
                 <GridItem key={set.id}>
                   <PokemonSet
@@ -332,8 +434,8 @@ const PokemonGridPage: React.FC = () => {
                     }
                     setName={set.name}
                     setID={set.id}
-                    masterSet={100}
-                    grandmasterSet={100}
+                    masterSet={counts.masterSet}
+                    grandmasterSet={counts.grandmasterSet}
                   />
                 </GridItem>
               );

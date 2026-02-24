@@ -1,5 +1,5 @@
 export type LoginFormValues = {
-  email: string;
+  emailOrUsername: string;
   password: string;
 };
 

@@ -15,6 +15,8 @@ export async function PATCH(request: Request) {
       username,
       bio,
       location,
+      latitude,
+      longitude,
       instagram,
       x,
       facebook,
@@ -41,6 +43,8 @@ export async function PATCH(request: Request) {
     if (typeof username === 'string') data.username = username;
     if (typeof bio === 'string') data.bio = bio;
     if (typeof location === 'string') data.location = location;
+    if (typeof latitude === 'number') data.latitude = latitude;
+    if (typeof longitude === 'number') data.longitude = longitude;
     if (typeof instagram === 'string') data.instagram = instagram;
     if (typeof x === 'string') data.x = x;
     if (typeof facebook === 'string') data.facebook = facebook;

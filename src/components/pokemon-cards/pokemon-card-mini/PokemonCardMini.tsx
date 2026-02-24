@@ -7,6 +7,7 @@ import Link from 'next/link';
 interface PokemonCardMiniProps {
   cardName: string;
   image: string;
+  cardOwned: boolean;
   cardId: string; // actual card ID, e.g., "sv01-001"
   // illustrator?: string;
   // rarity?: string;
@@ -16,6 +17,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
   cardName,
   image,
   cardId,
+  cardOwned,
   // illustrator,
   // rarity,
 }: PokemonCardMiniProps) => {
@@ -27,6 +29,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
           imageUrl: image,
           cardName: cardName,
           cardSet: cardId,
+          cardOwned: cardOwned,
         },
       }}
     >
@@ -60,7 +63,11 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
             alt={cardName}
             objectFit="contain"
             width="100%"
-            style={{ imageRendering: 'auto', transform: 'translateZ(0)' }}
+            style={{
+              imageRendering: 'auto',
+              transform: 'translateZ(0)',
+              opacity: cardOwned ? 1 : 0.4,
+            }}
           />
         </Box>
 

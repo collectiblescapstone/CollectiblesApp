@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   Box,
@@ -11,8 +11,21 @@ import {
   Progress,
   HStack,
   Icon,
+  Spinner,
 } from '@chakra-ui/react';
+
+// Context
+import { useAuth } from '@/context/AuthProvider';
+
+// Icons
 import { LuSparkle, LuSparkles } from 'react-icons/lu';
+
+// Utils
+import {
+  userGrandmasterSetCount,
+  userMasterSetCount,
+} from '@/utils/userPokemonCard';
+import { getDynamicColour } from '@/utils/dynamicColours';
 
 interface PokemonSetProps {
   label: string;
@@ -23,14 +36,61 @@ interface PokemonSetProps {
   grandmasterSet: number;
 }
 
-export default function PokemonSet({
+const PokemonSet = ({
   label,
   image,
   setID,
   setName,
   masterSet,
   grandmasterSet,
-}: PokemonSetProps) {
+}: PokemonSetProps) => {
+  const { session } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [masterSetCount, setMasterSetCount] = useState<number | null>(null);
+  const [grandmasterSetCount, setGrandmasterSetCount] = useState<number | null>(
+    null
+  );
+
+  useEffect(() => {
+    if (!session?.user?.id) return;
+
+    const fetchCards = async () => {
+      setLoading(true);
+
+      const masterSetCount = await userMasterSetCount(session.user.id, setID);
+      const grandmasterSetCount = await userGrandmasterSetCount(
+        session.user.id,
+        setID
+      );
+
+      setMasterSetCount(masterSetCount);
+      setGrandmasterSetCount(grandmasterSetCount);
+      setLoading(false);
+    };
+
+    fetchCards();
+  }, [session?.user?.id, setID]);
+
+  // console.log(
+  //   setID,
+  //   '| Master Set: ',
+  //   masterSetCount,
+  //   '/',
+  //   masterSet,
+  //   ' | Grandmaster Set: ',
+  //   grandmasterSetCount,
+  //   '/',
+  //   grandmasterSet
+  // );
+
+  if (loading) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
+
   return (
     <Box w="100%" maxW="300px" mx="auto">
       <Link
@@ -98,33 +158,65 @@ export default function PokemonSet({
             {/* Progress bars section */}
             <Box mt={4} w="100%">
               <HStack mb={2}>
-                <Icon as={LuSparkle} color="yellow.500" boxSize={4} />
+                <Icon
+                  as={LuSparkle}
+                  color={getDynamicColour(
+                    masterSetCount || 0,
+                    masterSet || 1,
+                    45,
+                    51
+                  )}
+                  boxSize={4}
+                />
                 <Progress.Root
-                  value={masterSet}
-                  max={100}
+                  value={masterSetCount || 0}
+                  max={masterSet || 1}
                   w="100%"
                   h="6px"
                   borderRadius="full"
                   overflow="hidden"
                 >
                   <Progress.Track bg="gray.100">
-                    <Progress.Range bg="yellow.400" />
+                    <Progress.Range
+                      bg={getDynamicColour(
+                        masterSetCount || 0,
+                        masterSet || 1,
+                        45,
+                        51
+                      )}
+                    />
                   </Progress.Track>
                 </Progress.Root>
               </HStack>
 
               <HStack>
-                <Icon as={LuSparkles} color="yellow.500" boxSize={4} />
+                <Icon
+                  as={LuSparkles}
+                  color={getDynamicColour(
+                    grandmasterSetCount || 0,
+                    grandmasterSet || 1,
+                    182,
+                    50
+                  )}
+                  boxSize={4}
+                />
                 <Progress.Root
-                  value={grandmasterSet}
-                  max={100}
+                  value={grandmasterSetCount || 0}
+                  max={grandmasterSet || 1}
                   w="100%"
                   h="6px"
                   borderRadius="full"
                   overflow="hidden"
                 >
                   <Progress.Track bg="gray.100">
-                    <Progress.Range bg="yellow.400" />
+                    <Progress.Range
+                      bg={getDynamicColour(
+                        grandmasterSetCount || 0,
+                        grandmasterSet || 1,
+                        182,
+                        50
+                      )}
+                    />
                   </Progress.Track>
                 </Progress.Root>
               </HStack>
@@ -134,4 +226,6 @@ export default function PokemonSet({
       </Link>
     </Box>
   );
-}
+};
+
+export default PokemonSet;

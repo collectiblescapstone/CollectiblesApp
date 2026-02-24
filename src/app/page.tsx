@@ -96,7 +96,7 @@ const Landing: React.FC = () => {
 
           .content {
             width: 100%; 
-            background: url("https://64.media.tumblr.com/0a6b6cbc520a7a8a61e1589a9aceb776/5b2a64817ef81961-5d/s75x75_c1/453735f0375c32cc69bb6c628bbcf7f0713a40a7.gifv");
+            background: url('/Assets/img/LandingPage/stars.webp');
             border-radius: 10px;
             padding: 20px;
             border: 3px inset #003b49;
@@ -198,7 +198,7 @@ const Landing: React.FC = () => {
           }
 
           .card li {
-            list-style-image: url("https://64.media.tumblr.com/4471dd2a99c2b9a0b859b57133cade52/4af20286f5598c40-66/s75x75_c1/e85029180f4d03017a4d129faec4a6b690c237d9.gifv");
+            list-style-image: url('/Assets/img/LandingPage/pikachu.webp');
             font-size: 1.3em;
             color: #003b49;
           }
@@ -218,21 +218,52 @@ const Landing: React.FC = () => {
           {/* Main content */}
           <div className="main-content">
             {/* Navigation Section */}
-            <nav className="navigation">
+            <nav className="navigation" aria-label="Kollec main navigation">
               <h2>Kollec</h2>
               <div className="nav-actions" style={{ marginBottom: '8px' }}>
-                <a href="#about" onClick={handleAnchorClick} style={{ textDecoration: 'none' }}><Button variant="ghost" color="brand.turtoise">About</Button></a>
-                <a href="#features" onClick={handleAnchorClick} style={{ textDecoration: 'none' }}><Button variant="ghost" color="brand.turtoise">Features</Button></a>
-                <a href="#faq" onClick={handleAnchorClick} style={{ textDecoration: 'none' }}><Button variant="ghost" color="brand.turtoise">FAQ</Button></a>
-                <a href="/sign-up" style={{ textDecoration: 'none' }}><Button variant="ghost" color="brand.turtoise">Sign Up</Button></a>
-                <a href="/sign-in" style={{ textDecoration: 'none' }}><Button variant="ghost" color="brand.turtoise">Login</Button></a>
+                <a
+                  href="#about"
+                  onClick={handleAnchorClick}
+                  style={{ textDecoration: 'none' }}
+                  aria-label="Scroll to About section"
+                >
+                  <Button variant="ghost" color="brand.turtoise">About</Button>
+                </a>
+                <a
+                  href="#features"
+                  onClick={handleAnchorClick}
+                  style={{ textDecoration: 'none' }}
+                  aria-label="Scroll to Features section"
+                >
+                  <Button variant="ghost" color="brand.turtoise">Features</Button>
+                </a>
+                <a
+                  href="#faq"
+                  onClick={handleAnchorClick}
+                  style={{ textDecoration: 'none' }}
+                  aria-label="Scroll to FAQ section"
+                >
+                  <Button variant="ghost" color="brand.turtoise">FAQ</Button>
+                </a>
+                <a
+                  href="/sign-up"
+                  style={{ textDecoration: 'none' }}
+                  aria-label="Go to Sign Up page"
+                >
+                  <Button variant="ghost" color="brand.turtoise">Sign Up</Button>
+                </a>
+                <a
+                  href="/sign-in"
+                  style={{ textDecoration: 'none' }}
+                  aria-label="Go to Login page"
+                >
+                  <Button variant="ghost" color="brand.turtoise">Login</Button>
+                </a>
               </div>
             </nav>
 
             {/* Content Section */}
             <div className="content">
-
-
               {launch ? (
                 <div className='card timer-card'>
                   <h1>Come see our demo at the capstone expo!</h1>

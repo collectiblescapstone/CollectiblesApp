@@ -35,7 +35,7 @@ export const CardSearcher = async () => {
 
   const embeddings = await init();
 
-  const search = async (query: string) => {
+  const search = async (query: string, embeds?: Record<string, number[]>) => {
     // Convert query text to vector
     const inputs = tokenizer(query);
     const { text_embeds } = await textModel(inputs);
@@ -43,7 +43,7 @@ export const CardSearcher = async () => {
 
     // Perform search (dot product)
     const matches = [];
-    for (const [id, vector] of Object.entries(embeddings)) {
+    for (const [id, vector] of Object.entries(embeds ?? embeddings)) {
       let score = 0;
       for (let i = 0; i < queryVector.length; i++) {
         score += queryVector[i] * vector[i];
@@ -57,5 +57,17 @@ export const CardSearcher = async () => {
     return sorted;
   };
 
-  return search;
+  // Avoid searching entire card set
+  const getFilteredSearch = (ids: string[]) => {
+    const embeds: Record<string, number[]> = {};
+    for (const id of ids) {
+      if (embeddings[id]) {
+        embeds[id] = embeddings[id];
+      }
+    }
+
+    return (query: string) => search(query, embeds);
+  };
+
+  return { search, getFilteredSearch };
 };

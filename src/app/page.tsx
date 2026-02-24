@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@chakra-ui/react';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Landing: React.FC = () => {
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -16,6 +16,46 @@ const Landing: React.FC = () => {
       }
     }
   };
+
+  const [launch, setLaunch] = useState(false)
+  const [days, setDays] = useState(0)
+  const [hours, setHours] = useState(0)
+  const [minutes, setMinutes] = useState(0)
+  const [seconds, setSeconds] = useState(0)
+
+  useEffect(() => {
+
+    const target = new Date("04/07/2026 10:00:00")
+
+    const interval = setInterval(() => {
+      const now = new Date();
+      const difference = target.getTime() - now.getTime();
+
+      const d = Math.floor(difference/(1000 * 60 * 60 * 24))
+      setDays(d)
+
+      const h = Math.floor(
+        (difference % (1000 * 60 * 60 * 24))/(1000*60*60)
+      );
+      setHours(h)
+
+      const m = Math.floor(
+        (difference % (1000 * 60 * 60))/(1000*60)
+      );
+      setMinutes(m)
+
+      const s = Math.floor(
+        (difference % (1000 * 60))/(1000)
+      );
+      setSeconds(s)
+
+      if(d <= 0 && h<=0 && m<=0 && s<=0){
+        setLaunch(true)
+      }
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, []);
 
   return (
     <>
@@ -134,8 +174,11 @@ const Landing: React.FC = () => {
 
           /* ensure anchored sections are visible under any sticky header */
           .card { scroll-margin-top: 90px; }
-
           
+          .timer-card {
+            text-align: center;
+          }
+
           .card:focus {
             box-shadow: 0 0 0 3px rgba(0,59,73,0.15);
           }
@@ -169,8 +212,6 @@ const Landing: React.FC = () => {
       </style>
 
       <div className="kollec-body">
-        {/* This is a free template made by tiramisu from electric-tenshi! */}
-
         <div className="container">
 
           {/* Main content */}
@@ -189,12 +230,23 @@ const Landing: React.FC = () => {
 
             {/* Content Section */}
             <div className="content">
+
+
+              {launch ? (
+                <div className='card timer-card'>
+                  <h1>Come see our demo at the capstone expo!</h1>
+                </div>
+              ): (
+              <div className='card timer-card'>
+                <h1>{days}:{hours}:{minutes}:{seconds}</h1>
+                <p>Time until launch!</p>
+              </div>
+              )}
+
               <div className="card" id="about" tabIndex={-1}>
                  <h1>About Us</h1>
                  <p>
-                   This is where we will talk about us aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                   aaaa a a dshadas dasdha aaa a a a a a a aaaaaaaaaaaaaaaaaaa a a aaaaaaaaaaaa a a a a a a a a  a a aaa
-                   a a a a a a a  aaaaa a da sd asd ad sa sd ad as d ad ad a dsa d sad as
+                   Kollec is a final year computer science capstone project created by Tania Da Silva, Norman Liang, Elite Lu, Ishpreet Nagi, James Nickoli, Kenneth Ong, and Geon Youn.
                  </p>
                  <ul>
                    <li>hi</li>

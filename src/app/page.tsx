@@ -17,44 +17,45 @@ const Landing: React.FC = () => {
     }
   };
 
-  const [launch, setLaunch] = useState(false)
-  const [days, setDays] = useState(0)
-  const [hours, setHours] = useState(0)
-  const [minutes, setMinutes] = useState(0)
-  const [seconds, setSeconds] = useState(0)
+  const [launch, setLaunch] = useState(false);
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
 
-    const target = new Date("04/07/2026 10:00:00")
+    const target = new Date(2026, 3, 7, 10, 0, 0); // april 7th, 10:00am
 
     const interval = setInterval(() => {
       const now = new Date();
       const difference = target.getTime() - now.getTime();
 
-      const d = Math.floor(difference/(1000 * 60 * 60 * 24))
-      setDays(d)
+      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+      setDays(d);
 
       const h = Math.floor(
-        (difference % (1000 * 60 * 60 * 24))/(1000*60*60)
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-      setHours(h)
+      setHours(h);
 
       const m = Math.floor(
-        (difference % (1000 * 60 * 60))/(1000*60)
+        (difference % (1000 * 60 * 60)) / (1000 * 60)
       );
-      setMinutes(m)
+      setMinutes(m);
 
       const s = Math.floor(
-        (difference % (1000 * 60))/(1000)
+        (difference % (1000 * 60)) / (1000)
       );
-      setSeconds(s)
+      setSeconds(s);
 
-      if(d <= 0 && h<=0 && m<=0 && s<=0){
-        setLaunch(true)
+      if (d <= 0 && h <= 0 && m <= 0 && s <= 0){
+        setLaunch(true);
+        clearInterval(interval);
       }
-    }, 1000)
+    }, 1000);
 
-    return () => clearInterval(interval)
+    return () => clearInterval(interval);
   }, []);
 
   return (

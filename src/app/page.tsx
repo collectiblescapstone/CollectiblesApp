@@ -238,7 +238,12 @@ const Landing: React.FC = () => {
                 </div>
               ): (
               <div className='card timer-card'>
-                <h1>{days}:{hours}:{minutes}:{seconds}</h1>
+                <h1>
+                  {days}:
+                  {String(hours).padStart(2, '0')}:
+                  {String(minutes).padStart(2, '0')}:
+                  {String(seconds).padStart(2, '0')}
+                </h1>
                 <p>Time until launch!</p>
               </div>
               )}

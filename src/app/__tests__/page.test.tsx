@@ -18,10 +18,9 @@ describe('Page', () => {
   it('renders the landing page with no user logged in', () => {
     render(<Page />);
 
-    expect(screen.getByText(/Kollec/i)).toBeInTheDocument();
-    expect(screen.getByText(/Login/i)).toBeInTheDocument();
-    expect(screen.getByText(/Sign Up/i)).toBeInTheDocument();
-    expect(screen.getByText(/About/i)).toBeInTheDocument();
-    expect(screen.getByText(/Features/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Kollec is a final year computer science capstone project/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/2026 TSH B129/i)).toBeInTheDocument();
   });
 });

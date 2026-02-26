@@ -12,6 +12,7 @@ import { Box, Flex, Text, Button, Spinner } from '@chakra-ui/react';
 import { FiEdit3 } from 'react-icons/fi';
 import { useAuth } from '@/context/AuthProvider';
 import ProfileLayout from '@/components/profiles/ProfileLayout';
+import StarRating from '@/components/profiles/StarRating';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
@@ -91,8 +92,18 @@ const PersonalProfileScreen: React.FC = () => {
     </Button>
   );
 
+  const rightButtonInteractible = (
+    <Box mr={2} mt={2}>
+      <StarRating rating={user.rating} ratingCount={user.rating_count} />
+    </Box>
+  );
+
   return (
-    <ProfileLayout user={user} leftInteractible={leftButtonInteractible} />
+    <ProfileLayout
+      user={user}
+      leftInteractible={leftButtonInteractible}
+      rightInteractible={rightButtonInteractible}
+    />
   );
 };
 

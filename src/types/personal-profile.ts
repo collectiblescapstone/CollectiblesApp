@@ -39,6 +39,8 @@ export interface UserProfile {
   whatsapp?: string;
   profile_pic: number;
   visibility: VisibilityValues;
+  rating: number;
+  rating_count: number;
   wishlist: {
     card: {
       name: string;

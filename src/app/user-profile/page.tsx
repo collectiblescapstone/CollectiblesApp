@@ -9,6 +9,7 @@ import { Box, Flex, Text, Spinner } from '@chakra-ui/react';
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
 import ProfileLayout from '@/components/profiles/ProfileLayout';
 import AccountOptions from '@/components/profiles/AccountOptions';
+import StarRating from '@/components/profiles/StarRating';
 
 const ProfileScreen = () => {
   const { setProfileID } = useHeader();
@@ -70,7 +71,19 @@ const ProfileScreen = () => {
     );
   }
 
-  return <ProfileLayout user={user} leftInteractible={<AccountOptions />} />;
+  const rightButtonInteractible = (
+    <Box mr={2} mt={2}>
+      <StarRating rating={user.rating} ratingCount={user.rating_count} />
+    </Box>
+  );
+
+  return (
+    <ProfileLayout
+      user={user}
+      leftInteractible={<AccountOptions />}
+      rightInteractible={rightButtonInteractible}
+    />
+  );
 };
 
 export default ProfileScreen;

@@ -1,21 +1,53 @@
 'use client';
 
+import { UserProfile } from '@/types/personal-profile';
+import { baseUrl } from '@/utils/constants';
+import { CapacitorHttp } from '@capacitor/core';
 import { Box, Button, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { LuStar, LuStarHalf } from 'react-icons/lu';
 
-const RatingForm = ({
-  closeOnSubmit,
-}: {
+interface RatingFormProps {
+  user: UserProfile;
   closeOnSubmit: (id: string, value?: any) => Promise<void>;
-}) => {
+}
+
+const RatingForm = ({ user, closeOnSubmit }: RatingFormProps) => {
   const [ratings, setRatings] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const router = useRouter();
 
   const handleOnClick = (e: React.MouseEvent, index: number) => {
     const { left, width } = e.currentTarget.getBoundingClientRect();
     const fraction = (e.pageX - left) / width > 0.5 ? 1 : 0.5;
     const currentRatings = index + fraction;
     setRatings(currentRatings);
+  };
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    const res = await CapacitorHttp.post({
+      url: `${baseUrl}/api/rate-user`,
+      data: {
+        username: user.username,
+        rating: ratings,
+      },
+    });
+
+    if (res.status === 400) {
+      setError('Failed to submit rating: Invalid values');
+      setSubmitting(false);
+    } else if (res.status === 404) {
+      setError('Failed to submit rating: User not found');
+      setSubmitting(false);
+    } else {
+      setSubmitting(false);
+      closeOnSubmit('rate-user', ratings);
+      router.refresh();
+    }
   };
 
   return (
@@ -25,7 +57,7 @@ const RatingForm = ({
           {[...Array(5)].map((_, index) => (
             <Box
               key={index}
-              onClick={(e) => handleOnClick(e, index)}
+              onClick={(e) => !submitting && handleOnClick(e, index)}
               width="24px"
               height="24px"
               cursor="pointer"
@@ -38,7 +70,7 @@ const RatingForm = ({
           {[...Array(Math.ceil(ratings))].map((_, index) => (
             <Box
               key={index}
-              onClick={(e) => handleOnClick(e, index)}
+              onClick={(e) => !submitting && handleOnClick(e, index)}
               width="24px"
               height="24px"
               cursor="pointer"
@@ -55,13 +87,12 @@ const RatingForm = ({
       <Text mt={5} fontSize="lg" color="black" fontWeight="semibold">
         Rating: {ratings.toFixed(1)}
       </Text>
-      <Button
-        mt={3}
-        onClick={() => {
-          alert(`You rated this user ${ratings.toFixed(1)} stars!`);
-          closeOnSubmit('rate-user', ratings);
-        }}
-      >
+      {error && (
+        <Text mt={2} fontSize="sm" color="red.500">
+          {error}
+        </Text>
+      )}
+      <Button mt={3} onClick={handleSubmit} disabled={submitting}>
         Submit
       </Button>
     </Box>

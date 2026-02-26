@@ -7,8 +7,13 @@ import { FiMoreVertical, FiSlash, FiUserX } from 'react-icons/fi';
 import { LuStar } from 'react-icons/lu';
 import RatingPopup from '@/components/ui/PopupUI';
 import RatingForm from './RatingForm';
+import { UserProfile } from '@/types/personal-profile';
 
-const AccountOptions: React.FC = () => {
+interface AccountOptionsProps {
+  user: UserProfile;
+}
+
+const AccountOptions = ({ user }: AccountOptionsProps) => {
   return (
     <Box>
       <Menu.Root>
@@ -31,7 +36,12 @@ const AccountOptions: React.FC = () => {
                 onClick={() =>
                   RatingPopup.open('rate-user', {
                     title: 'Rate this User',
-                    content: <RatingForm closeOnSubmit={RatingPopup.close} />,
+                    content: (
+                      <RatingForm
+                        closeOnSubmit={RatingPopup.close}
+                        user={user}
+                      />
+                    ),
                     onClickClose: () => RatingPopup.close('rate-user'),
                   })
                 }

@@ -80,7 +80,7 @@ const ProfileScreen = () => {
   return (
     <ProfileLayout
       user={user}
-      leftInteractible={<AccountOptions />}
+      leftInteractible={<AccountOptions user={user} />}
       rightInteractible={rightButtonInteractible}
     />
   );

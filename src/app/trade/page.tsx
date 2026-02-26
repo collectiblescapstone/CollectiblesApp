@@ -12,9 +12,6 @@ import {
     Slider,
 } from '@chakra-ui/react';
 import TradingCards from '@/components/trading/TradingCards';
-import {
-    LuStar,
-} from 'react-icons/lu';
 import StarRating from '@/components/profiles/StarRating';
 
 

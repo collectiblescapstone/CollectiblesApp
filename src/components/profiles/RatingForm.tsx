@@ -10,7 +10,7 @@ import { LuStar, LuStarHalf } from 'react-icons/lu';
 
 interface RatingFormProps {
   user: UserProfile;
-  closeOnSubmit: (id: string, value?: any) => Promise<void>;
+  closeOnSubmit: (id: string, value?: number) => Promise<void>;
 }
 
 const RatingForm = ({ user, closeOnSubmit }: RatingFormProps) => {

@@ -11,14 +11,16 @@ interface StarRatingProps {
 
 const StarRating = ({ rating, ratingCount }: StarRatingProps) => {
   const colorForRating = useMemo(() => {
-    if (rating <= 2.5) {
-      return '#ff3b30'; // Red
-    } else if (rating < 4.0) {
-      return '#ffd60a'; // Yellow
-    } else if (rating < 5) {
-      return '#32d74b'; // Green
+    if (rating <= 1.5) {
+      return '#580202';
+    } else if (rating <= 2.5) {
+      return '#EF4444';
+    } else if (rating <= 3.5) {
+      return '#FB923C';
+    } else if (rating <= 4.5) {
+      return '#F9CF38';
     } else {
-      return '#08a9c6'; // Blue
+      return '#32D74B';
     }
   }, [rating]);
 

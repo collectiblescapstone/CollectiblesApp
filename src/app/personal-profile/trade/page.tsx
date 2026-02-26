@@ -22,8 +22,7 @@ const TradeScreen: React.FC = () => {
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const headerContext = useHeader();
-  const setProfileID = headerContext?.setProfileID;
+  const { setProfileID } = useHeader();
   const { session } = useAuth();
 
   const userID = session?.user.id;

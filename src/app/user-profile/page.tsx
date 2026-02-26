@@ -16,12 +16,11 @@ import { FiMapPin } from 'react-icons/fi';
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller';
 
 const ProfileScreen = () => {
-  const headerContext = useHeader();
-  const setProfileID = headerContext?.setProfileID;
+  const { setProfileID } = useHeader();
 
   // This is a temporary username for testing purposes.
   // Change the specific username to match the profile you have in your local database.
-  const userName = 'habibi_george_bush';
+  const userName = 'kennethkvs';
 
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);

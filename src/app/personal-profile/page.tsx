@@ -27,8 +27,7 @@ import { pfp_image_mapping } from './edit-profile/constants';
 
 const PersonalProfileScreen: React.FC = () => {
   const router = useRouter();
-  const headerContext = useHeader();
-  const setProfileID = headerContext?.setProfileID;
+  const { setProfileID } = useHeader();
   const { session } = useAuth();
 
   const userID = session?.user.id;

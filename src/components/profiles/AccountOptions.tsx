@@ -9,15 +9,7 @@ const AccountOptions: React.FC = () => {
   return (
     <Menu.Root>
       <Menu.Trigger asChild>
-        <Button
-          position="absolute"
-          top={28}
-          left={2}
-          rounded="sm"
-          variant="ghost"
-          h={'40px'}
-          w={'20px'}
-        >
+        <Button rounded="sm" variant="ghost" h={'40px'} w={'20px'}>
           <FiMoreVertical size={24} />
         </Button>
       </Menu.Trigger>

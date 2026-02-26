@@ -1,10 +1,10 @@
 'use client';
 
+import { useAuth } from '@/context/AuthProvider';
 import { UserProfile } from '@/types/personal-profile';
 import { baseUrl } from '@/utils/constants';
 import { CapacitorHttp } from '@capacitor/core';
 import { Box, Button, Text } from '@chakra-ui/react';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { LuStar, LuStarHalf } from 'react-icons/lu';
 
@@ -18,7 +18,7 @@ const RatingForm = ({ user, closeOnSubmit }: RatingFormProps) => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const router = useRouter();
+  const { session } = useAuth();
 
   const handleOnClick = (e: React.MouseEvent, index: number) => {
     const { left, width } = e.currentTarget.getBoundingClientRect();
@@ -34,19 +34,18 @@ const RatingForm = ({ user, closeOnSubmit }: RatingFormProps) => {
       data: {
         username: user.username,
         rating: ratings,
+        currentUserId: session?.user.id,
       },
     });
 
-    if (res.status === 400) {
-      setError('Failed to submit rating: Invalid values');
-      setSubmitting(false);
-    } else if (res.status === 404) {
-      setError('Failed to submit rating: User not found');
-      setSubmitting(false);
-    } else {
+    if (res.status === 200) {
       setSubmitting(false);
       closeOnSubmit('rate-user', ratings);
-      router.refresh();
+    } else {
+      setError(
+        `Failed to submit rating: ${res.data?.error || 'Unknown error'}`
+      );
+      setSubmitting(false);
     }
   };
 
@@ -92,7 +91,11 @@ const RatingForm = ({ user, closeOnSubmit }: RatingFormProps) => {
           {error}
         </Text>
       )}
-      <Button mt={3} onClick={handleSubmit} disabled={submitting}>
+      <Button
+        mt={3}
+        onClick={handleSubmit}
+        disabled={submitting || ratings === 0}
+      >
         Submit
       </Button>
     </Box>

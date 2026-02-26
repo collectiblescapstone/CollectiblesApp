@@ -2,11 +2,17 @@ import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
 export const POST = async (request: Request) => {
-  const { username, rating } = await request.json();
+  const { username, rating, currentUserId } = await request.json();
 
-  if (!username || rating === undefined) {
+  const isValidRating =
+    typeof rating === 'number' &&
+    rating >= 0 &&
+    rating <= 5 &&
+    rating % 0.5 === 0;
+
+  if (!username || rating === undefined || !isValidRating) {
     return NextResponse.json(
-      { error: 'No username or rating given, fetch terminated' },
+      { error: 'Invalid values provided' },
       { status: 400 }
     );
   }
@@ -22,6 +28,13 @@ export const POST = async (request: Request) => {
 
   if (!user) {
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
+  }
+
+  if (user.id === currentUserId) {
+    return NextResponse.json(
+      { error: 'Users cannot rate themselves' },
+      { status: 400 }
+    );
   }
 
   const newRatingCount = user.rating_count + 1;

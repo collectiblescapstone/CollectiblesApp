@@ -134,7 +134,14 @@ export const CardSearch = ({
 
     const matches = await searchForCard(searchValue);
     setFilteredIds(matches.map(({ id }) => id));
-  }, [searchForCard, searchValue, handleClear, setFilteredIds, filterOnly]);
+  }, [
+    searchForCard,
+    searchValue,
+    handleClear,
+    setFilteredIds,
+    filterOnly,
+    handleSelectionChange,
+  ]);
 
   const clearSearch = searchValue ? (
     <CloseButton size="xs" onClick={handleClear} me={-2} />

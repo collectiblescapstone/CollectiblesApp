@@ -1,7 +1,7 @@
 import { CapacitorHttp } from '@capacitor/core';
 
 // Types
-import type { Card, Set } from '@prisma/client';
+import type { Set } from '@prisma/client';
 import type { CardData } from '@/types/pokemon-card';
 
 // Utils

@@ -168,7 +168,7 @@ const PokemonGridPage = () => {
 
   // Filter Pokémon based on selected generation
   const filteredPokemon = useMemo(() => {
-    let preFilteredPokemon = filteredIds
+    const preFilteredPokemon = filteredIds
       ? pokemon.filter((id) => filteredIds.includes(id.toString()))
       : pokemon;
 
@@ -180,11 +180,9 @@ const PokemonGridPage = () => {
     const startId = genIndex === 0 ? 1 : POKEMONGEN[genIndex - 1] + 1;
     const endId = POKEMONGEN[genIndex];
 
-    let genFilteredPokemon = preFilteredPokemon.filter(
+    return preFilteredPokemon.filter(
       (id) => id >= startId && id <= endId
     );
-
-    return genFilteredPokemon;
   }, [selectedGen, pokemon, filteredIds]);
 
   /**

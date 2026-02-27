@@ -1,55 +1,55 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom'
 
 // implementation of structuredClone polyfill
 
 if (typeof global.structuredClone !== 'function') {
-  global.structuredClone = function structuredClone(value) {
-    if (value === null || value === undefined) {
-      return value;
+    global.structuredClone = function structuredClone(value) {
+        if (value === null || value === undefined) {
+            return value
+        }
+
+        try {
+            // For objects and arrays, use JSON methods
+            if (typeof value === 'object') {
+                return JSON.parse(JSON.stringify(value))
+            }
+
+            // For primitive values, return directly
+            return value
+        } catch (error) {
+            console.warn('structuredClone polyfill failed:', error)
+
+            // Returns a shallow copy as fallback
+            return Array.isArray(value) ? [...value] : { ...value }
+        }
     }
-
-    try {
-      // For objects and arrays, use JSON methods
-      if (typeof value === 'object') {
-        return JSON.parse(JSON.stringify(value));
-      }
-
-      // For primitive values, return directly
-      return value;
-    } catch (error) {
-      console.warn('structuredClone polyfill failed:', error);
-
-      // Returns a shallow copy as fallback
-      return Array.isArray(value) ? [...value] : { ...value };
-    }
-  };
 }
 
 // Window matchMedia mock
 Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation((query) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn()
+    }))
+})
 
 // Error handling
-const originalError = console.error;
+const originalError = console.error
 console.error = (...args) => {
-  // Ignores specific React errors during testing
+    // Ignores specific React errors during testing
 
-  if (
-    typeof args[0] === 'string' &&
-    (args[0].includes('Warning:') || args[0].includes('Error:'))
-  ) {
-    return;
-  }
-  originalError.call(console, ...args);
-};
+    if (
+        typeof args[0] === 'string' &&
+        (args[0].includes('Warning:') || args[0].includes('Error:'))
+    ) {
+        return
+    }
+    originalError.call(console, ...args)
+}

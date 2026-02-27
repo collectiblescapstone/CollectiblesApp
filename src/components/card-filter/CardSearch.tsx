@@ -1,19 +1,19 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import {
-  InputGroup,
-  Input,
-  CloseButton,
-  Popover,
-  useListCollection,
-  useFilter,
-  Listbox,
-  Group,
-  IconButton,
-} from '@chakra-ui/react';
-import { CardData } from '@/types/pokemon-card';
-import { LuSparkles } from 'react-icons/lu';
-import { CardSearcher } from '@/utils/identification/cardSearch';
+    InputGroup,
+    Input,
+    CloseButton,
+    Popover,
+    useListCollection,
+    useFilter,
+    Listbox,
+    Group,
+    IconButton
+} from '@chakra-ui/react'
+import { CardData } from '@/types/pokemon-card'
+import { LuSparkles } from 'react-icons/lu'
+import { CardSearcher } from '@/utils/identification/cardSearch'
 
 type PartialCardData = Partial<CardData> & Pick<CardData, 'id' | 'name'>;
 
@@ -31,10 +31,10 @@ export const CardSearch = ({
   const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null);
   const [csReady, setCSReady] = useState(false);
 
-  const searchRef = useRef<HTMLInputElement | null>(null);
-  const [searchValue, setSearchValue] = useState('');
-  const [listboxValue, setListboxValue] = useState([]);
-  const [open, setOpen] = useState(false);
+    const searchRef = useRef<HTMLInputElement | null>(null)
+    const [searchValue, setSearchValue] = useState('')
+    const [listboxValue, setListboxValue] = useState([])
+    const [open, setOpen] = useState(false)
 
   useEffect(() => {
     if (filterOnly) {
@@ -49,16 +49,16 @@ export const CardSearch = ({
     init();
   }, [filterOnly]);
 
-  const searchForCard = useMemo(() => {
-    if (!csReady || !cards || !cardSearch.current) {
-      return () => [];
-    }
+    const searchForCard = useMemo(() => {
+        if (!csReady || !cards || !cardSearch.current) {
+            return () => []
+        }
 
-    const ids = cards.map(({ id }) => id);
-    return cardSearch.current.getFilteredSearch(ids);
-  }, [csReady, cards]);
+        const ids = cards.map(({ id }) => id)
+        return cardSearch.current.getFilteredSearch(ids)
+    }, [csReady, cards])
 
-  const { contains } = useFilter({ sensitivity: 'base' });
+    const { contains } = useFilter({ sensitivity: 'base' })
 
   const [nameToIds, setNamesToIds] = useState<Record<string, string[]>>({});
   const initialItems = useMemo(() => {
@@ -66,14 +66,14 @@ export const CardSearch = ({
       return [];
     }
 
-    const items: Record<string, string[]> = {};
-    for (const card of cards) {
-      if (!items[card.name]) {
-        items[card.name] = [];
-      }
+        const items: Record<string, string[]> = {}
+        for (const card of cards) {
+            if (!items[card.name]) {
+                items[card.name] = []
+            }
 
-      items[card.name].push(card.id);
-    }
+            items[card.name].push(card.id)
+        }
 
     const lowercasedItems: typeof items = {};
     for (const [name, ids] of Object.entries(items)) {
@@ -90,10 +90,10 @@ export const CardSearch = ({
       .toSorted((a, b) => a.label.localeCompare(b.label));
   }, [cards]);
 
-  const { collection, filter } = useListCollection({
-    initialItems,
-    filter: contains,
-  });
+    const { collection, filter } = useListCollection({
+        initialItems,
+        filter: contains
+    })
 
   const handleSelectionChange = useCallback(
     (details_: unknown) => {
@@ -111,16 +111,16 @@ export const CardSearch = ({
     [setFilteredIds, filter, nameToIds]
   );
 
-  const handleClear = useCallback(() => {
-    setSearchValue('');
-    setListboxValue([]);
-    filter('');
-    setFilteredIds();
-    setOpen(false);
-  }, [filter, setFilteredIds]);
+    const handleClear = useCallback(() => {
+        setSearchValue('')
+        setListboxValue([])
+        filter('')
+        setFilteredIds()
+        setOpen(false)
+    }, [filter, setFilteredIds])
 
-  const handleSearch = useCallback(async () => {
-    searchRef.current?.blur();
+    const handleSearch = useCallback(async () => {
+        searchRef.current?.blur()
 
     if (filterOnly) {
       handleSelectionChange({ value: searchValue });
@@ -143,9 +143,9 @@ export const CardSearch = ({
     handleSelectionChange,
   ]);
 
-  const clearSearch = searchValue ? (
-    <CloseButton size="xs" onClick={handleClear} me={-2} />
-  ) : undefined;
+    const clearSearch = searchValue ? (
+        <CloseButton size="xs" onClick={handleClear} me={-2} />
+    ) : undefined
 
   return (
     <Popover.Root

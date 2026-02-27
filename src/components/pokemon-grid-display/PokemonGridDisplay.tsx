@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react'
 import {
     Box,
     HStack,
@@ -22,11 +22,11 @@ import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
 import { CardSearch } from '@/components/card-filter/CardSearch';
 
 // Hooks
-import { FiltersProvider } from '@/hooks/useFilters';
+import { FiltersProvider } from '@/hooks/useFilters'
 
 // Types
-import { PokemonSetType } from '@/types/pokemon-grid';
-import { useAuth } from '@/context/AuthProvider';
+import { PokemonSetType } from '@/types/pokemon-grid'
+import { useAuth } from '@/context/AuthProvider'
 
 // Utils
 import { POKEMONGEN, ALL_POKEMON, getPokemonName } from '@/utils/pokedex';
@@ -34,13 +34,13 @@ import {
     masterSetCount,
     grandmasterSetCount,
     pokemonMasterSetCount,
-    pokemonGrandmasterSetCount,
-} from '@/utils/pokemonCard';
+    pokemonGrandmasterSetCount
+} from '@/utils/pokemonCard'
 
 const NUM_ITEMS_PER_PAGE = 24;
 
 interface PokemonGridDisplayProps {
-    originalPage: string;
+    originalPage: string
 }
 
 const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
@@ -63,34 +63,34 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     const [selectedEra, setSelectedEra] = useState('sv');
     const [groupedSets, setGroupedSets] = useState<
         Record<string, PokemonSetType[]>
-    >({});
-    const [selectedGen, setSelectedGen] = useState('ALL');
+    >({})
+    const [selectedGen, setSelectedGen] = useState('ALL')
 
     const [setCounts, setSetCounts] = useState<
         Record<string, { masterSet: number; grandmasterSet: number }>
-    >({});
+    >({})
 
     const [pokemonCounts, setPokemonCounts] = useState<
         Record<string, { masterSet: number; grandmasterSet: number }>
-    >({});
+    >({})
 
-    const pokemon = ALL_POKEMON;
+    const pokemon = ALL_POKEMON
 
     const frameworks = createListCollection({
         items: [
             { label: 'Set', value: 'set' },
-            { label: 'Pokémon', value: 'pokemon' },
-        ],
-    });
+            { label: 'Pokémon', value: 'pokemon' }
+        ]
+    })
 
     // Generation options
     const genOptions = [
         { label: 'ALL', value: 'ALL' },
         ...POKEMONGEN.map((last, index) => ({
             label: `Gen ${index + 1}`,
-            value: (index + 1).toString(),
-        })),
-    ];
+            value: (index + 1).toString()
+        }))
+    ]
 
     const setEras = [
         { label: 'Mega Evolution', value: 'me' },
@@ -107,21 +107,21 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         { label: 'EX', value: 'ex' },
         { label: 'Neo Genesis', value: 'neo' },
         { label: 'Base', value: 'base' },
-        { label: 'Other', value: 'other' },
-    ];
+        { label: 'Other', value: 'other' }
+    ]
 
     const eraOptions = createListCollection({
         items: setEras.map((era) => ({
             label: era.label,
-            value: era.value,
-        })),
-    });
+            value: era.value
+        }))
+    })
 
     useEffect(() => {
         fetch('/api/pokemon-set')
             .then((res) => res.json())
             .then((data) => {
-                const sets = Array.isArray(data) ? data : [data];
+                const sets = Array.isArray(data) ? data : [data]
 
                 const groups: Record<string, PokemonSetType[]> = {
                     sv: [],
@@ -138,34 +138,34 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                     pl: [],
                     hgss: [],
                     pop: [],
-                    ecard: [],
-                };
+                    ecard: []
+                }
 
                 sets.forEach((set) => {
-                    const id = set.id?.toLowerCase() ?? '';
-                    if (id.includes('sv')) groups.sv.push(set);
-                    else if (id.includes('swsh')) groups.swsh.push(set);
-                    else if (id.includes('sm')) groups.sm.push(set);
-                    else if (id.includes('xy')) groups.xy.push(set);
-                    else if (id.includes('bw')) groups.bw.push(set);
+                    const id = set.id?.toLowerCase() ?? ''
+                    if (id.includes('sv')) groups.sv.push(set)
+                    else if (id.includes('swsh')) groups.swsh.push(set)
+                    else if (id.includes('sm')) groups.sm.push(set)
+                    else if (id.includes('xy')) groups.xy.push(set)
+                    else if (id.includes('bw')) groups.bw.push(set)
                     else if (id.includes('hgss') || id.includes('tk-hs'))
-                        groups.hgss.push(set);
-                    else if (id.includes('pl')) groups.pl.push(set);
-                    else if (id.includes('dp')) groups.dp.push(set);
-                    else if (id.includes('me')) groups.me.push(set);
-                    else if (id.includes('ex')) groups.ex.push(set);
-                    else if (id.includes('ecard')) groups.ecard.push(set);
-                    else if (id.includes('pop')) groups.pop.push(set);
+                        groups.hgss.push(set)
+                    else if (id.includes('pl')) groups.pl.push(set)
+                    else if (id.includes('dp')) groups.dp.push(set)
+                    else if (id.includes('me')) groups.me.push(set)
+                    else if (id.includes('ex')) groups.ex.push(set)
+                    else if (id.includes('ecard')) groups.ecard.push(set)
+                    else if (id.includes('pop')) groups.pop.push(set)
                     else if (id.includes('neo') || id.includes('si'))
-                        groups.neo.push(set);
-                    else if (id.includes('base')) groups.base.push(set);
-                    else groups.other.push(set);
-                });
+                        groups.neo.push(set)
+                    else if (id.includes('base')) groups.base.push(set)
+                    else groups.other.push(set)
+                })
 
-                setGroupedSets(groups);
+                setGroupedSets(groups)
             })
-            .catch((err) => console.error('Error loading sets.json:', err));
-    }, []);
+            .catch((err) => console.error('Error loading sets.json:', err))
+    }, [])
 
     const selectStyles = {
         bg: 'gray.50',
@@ -173,8 +173,11 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         border: '1px solid',
         borderColor: 'gray.300',
         _hover: { bg: 'gray.100' },
-        _focusWithin: { borderColor: 'blue.400', boxShadow: '0 0 0 1px #63b3ed' },
-    };
+        _focusWithin: {
+            borderColor: 'blue.400',
+            boxShadow: '0 0 0 1px #63b3ed'
+        }
+    }
 
     // Filter Pokémon based on selected generation
     const filteredPokemon = useMemo(() => {
@@ -186,9 +189,9 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
             return preFilteredPokemon;
         }
 
-        const genIndex = parseInt(selectedGen) - 1;
-        const startId = genIndex === 0 ? 1 : POKEMONGEN[genIndex - 1] + 1;
-        const endId = POKEMONGEN[genIndex];
+        const genIndex = parseInt(selectedGen) - 1
+        const startId = genIndex === 0 ? 1 : POKEMONGEN[genIndex - 1] + 1
+        const endId = POKEMONGEN[genIndex]
 
         return preFilteredPokemon.filter(
             (id) => id >= startId && id <= endId
@@ -199,30 +202,31 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
      * useEffect to fetch set counts
      */
     useEffect(() => {
-        if (!selectedEra || !groupedSets[selectedEra] || selected !== 'set') return;
+        if (!selectedEra || !groupedSets[selectedEra] || selected !== 'set')
+            return
 
         const fetchCounts = async () => {
             const counts: Record<
                 string,
                 { masterSet: number; grandmasterSet: number }
-            > = {};
+            > = {}
 
             await Promise.all(
                 groupedSets[selectedEra].map(async (set) => {
-                    const master = await masterSetCount(set.id);
-                    const grandmaster = await grandmasterSetCount(set.id);
+                    const master = await masterSetCount(set.id)
+                    const grandmaster = await grandmasterSetCount(set.id)
                     counts[set.id] = {
                         masterSet: master ?? 0,
-                        grandmasterSet: grandmaster ?? 0,
-                    };
+                        grandmasterSet: grandmaster ?? 0
+                    }
                 })
-            );
+            )
 
             setSetCounts(counts);
         };
 
-        fetchCounts();
-    }, [selectedEra, groupedSets, selected]);
+        fetchCounts()
+    }, [selectedEra, groupedSets, selected])
 
     /**
      * Use effect for fetching Pokemon card counts, grouped by Pokedex number.
@@ -233,7 +237,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
             const counts: Record<
                 number,
                 { masterSet: number; grandmasterSet: number }
-            > = {};
+            > = {}
 
             await Promise.allSettled(
                 filteredPokemon.map(async (id) => {
@@ -272,7 +276,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />
             </Box>
-        );
+        )
     }
 
     return (
@@ -286,8 +290,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                         width="300px"
                         value={[selected]}
                         onValueChange={(e) => {
-                            setSelected(e.value[0]);
-                            setSelectedEra('sv');
+                            setSelected(e.value[0])
+                            setSelectedEra('sv')
                         }}
                     >
                         <Select.HiddenSelect />
@@ -313,7 +317,10 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                             item={framework}
                                             key={framework.value}
                                             _hover={{ bg: 'gray.100' }}
-                                            _selected={{ bg: 'blue.50', color: 'blue.700' }}
+                                            _selected={{
+                                                bg: 'blue.50',
+                                                color: 'blue.700'
+                                            }}
                                         >
                                             {framework.label}
                                             <Select.ItemIndicator />
@@ -327,11 +334,15 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                     {/* Pokemon Generation dropdown */}
                     {selected === 'pokemon' && (
                         <Select.Root
-                            collection={createListCollection({ items: genOptions })}
+                            collection={createListCollection({
+                                items: genOptions
+                            })}
                             size="sm"
                             width="200px"
                             defaultValue={['ALL']}
-                            onValueChange={(val) => setSelectedGen(val.value[0])}
+                            onValueChange={(val) =>
+                                setSelectedGen(val.value[0])
+                            }
                             textAlign={'right'}
                         >
                             <Select.HiddenSelect />
@@ -357,7 +368,10 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                                 item={gen}
                                                 key={gen.value}
                                                 _hover={{ bg: 'gray.100' }}
-                                                _selected={{ bg: 'blue.50', color: 'blue.700' }}
+                                                _selected={{
+                                                    bg: 'blue.50',
+                                                    color: 'blue.700'
+                                                }}
                                             >
                                                 {gen.label}
                                                 <Select.ItemIndicator />
@@ -402,7 +416,10 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                                 item={era}
                                                 key={era.value}
                                                 _hover={{ bg: 'gray.100' }}
-                                                _selected={{ bg: 'blue.50', color: 'blue.700' }}
+                                                _selected={{
+                                                    bg: 'blue.50',
+                                                    color: 'blue.700'
+                                                }}
                                             >
                                                 {era.label}
                                                 <Select.ItemIndicator />
@@ -515,7 +532,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                 )}
             </Box>
         </FiltersProvider>
-    );
-};
+    )
+}
 
-export default PokemonGridDisplay;
+export default PokemonGridDisplay

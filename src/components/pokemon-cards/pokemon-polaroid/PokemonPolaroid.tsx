@@ -3,13 +3,15 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import {
 	Box,
-	Image,
-	Icon,
-	Progress,
+	Heading,
 	HStack,
-	Spinner,
-	Heading
+	Icon,
+	Image,
+	Progress
 } from '@chakra-ui/react'
+
+// Child Components
+import PokemonSetLoading from '../pokemon-set/PokemonSetLoading';
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -80,23 +82,7 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
 
 	if (loading || masterSetCount === null || grandmasterSetCount === null) {
 		return (
-			<Box
-				as="button"
-				bg="white"
-				boxShadow="lg"
-				borderRadius="md"
-				w={{ base: '45vw', md: '200px' }}
-				p={3}
-				display="flex"
-				flexDirection="column"
-				alignItems="center"
-				justifyContent="space-between"
-				transition="transform 0.2s"
-				_hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
-				_active={{ transform: 'scale(0.98)' }}
-			>
-				<Spinner size="xl" />
-			</Box>
+			<PokemonSetLoading />
 		)
 	}
 

@@ -187,13 +187,7 @@ export const userGrandmasterSetCount = async (
     if (Object.keys(grandmasterSetCards).length === 0)
         await fetchPokemonCards(userId)
 
-    let count = 0
-    for (const [, variants] of Object.entries(
-        grandmasterSetCards[setId] || {}
-    )) {
-        count += variants.length
-    }
-    return count ?? 0
+    return Object.keys(grandmasterSetCards[setId] || {}).length
 }
 
 /**
@@ -238,12 +232,5 @@ export const userPokemonGrandmasterSetCount = async (
 ): Promise<number> => {
     if (Object.keys(pokemonGrandmasterSet).length === 0)
         await fetchPokemonCards(userId)
-    let count = 0
-
-    for (const [, variants] of Object.entries(
-        pokemonGrandmasterSet[pokedexId] || {}
-    )) {
-        count += Object.keys(variants).length
-    }
-    return count ?? 0
+    return Object.keys(pokemonGrandmasterSet[pokedexId] || {}).length
 }

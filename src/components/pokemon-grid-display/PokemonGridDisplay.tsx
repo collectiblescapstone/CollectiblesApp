@@ -18,7 +18,9 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 
 // Child Components
 import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid'
+import PokemonPolaroidLoading from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroidLoading'
 import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet'
+import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSetLoading'
 import { CardSearch } from '@/components/card-filter/CardSearch'
 
 // Hooks
@@ -272,8 +274,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         () =>
             filteredIds
                 ? filteredPokemon.filter((id) =>
-                      filteredIds.includes(id.toString())
-                  )
+                    filteredIds.includes(id.toString())
+                )
                 : filteredPokemon,
         [filteredPokemon, filteredIds]
     )
@@ -473,6 +475,11 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                 )
                                 .map((id) => {
                                     const counts = pokemonCounts[id]
+                                    if (!counts) {
+                                        return (
+                                            <PokemonPolaroidLoading key={id} />
+                                        )
+                                    }
                                     return (
                                         <PokemonPolaroid
                                             key={id}
@@ -533,21 +540,23 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                 const imageSrc = set.logo || set.symbol
                                 const counts = setCounts[set.id]
 
+                                if (!counts) {
+                                    return (
+                                        <GridItem key={set.id}>
+                                            <PokemonSetLoading />
+                                        </GridItem>
+                                    )
+                                }
+
                                 return (
                                     <GridItem key={set.id}>
                                         <PokemonSet
                                             label={set.name}
-                                            image={
-                                                imageSrc
-                                                    ? `${imageSrc}.png`
-                                                    : '/Images/temp_icon.svg'
-                                            }
+                                            image={imageSrc ? `${imageSrc}.png` : '/Images/temp_icon.svg'}
                                             setName={set.name}
                                             setID={set.id}
                                             masterSet={counts.masterSet}
-                                            grandmasterSet={
-                                                counts.grandmasterSet
-                                            }
+                                            grandmasterSet={counts.grandmasterSet}
                                             nextPage={nextPage}
                                         />
                                     </GridItem>

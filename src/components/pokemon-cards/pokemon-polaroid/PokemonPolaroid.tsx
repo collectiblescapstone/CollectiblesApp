@@ -29,12 +29,14 @@ interface PokemonPolaroidProps {
   id: number;
   masterSet: number;
   grandmasterSet: number;
+  nextPage: string;
 }
 
 const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
   id,
   masterSet,
   grandmasterSet,
+  nextPage
 }: PokemonPolaroidProps) => {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   const { session } = useAuth();
@@ -101,7 +103,7 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
   return (
     <Link
       href={{
-        pathname: '/filter-cards',
+        pathname: nextPage,
         query: { type: 'pokemon', pId: id },
       }}
       style={{ textDecoration: 'none' }}

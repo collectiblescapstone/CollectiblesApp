@@ -34,6 +34,7 @@ interface PokemonSetProps {
   setName: string;
   masterSet: number;
   grandmasterSet: number;
+  nextPage: string;
 }
 
 const PokemonSet = ({
@@ -43,6 +44,7 @@ const PokemonSet = ({
   setName,
   masterSet,
   grandmasterSet,
+  nextPage,
 }: PokemonSetProps) => {
   const { session } = useAuth();
   const [loading, setLoading] = useState(true);
@@ -95,7 +97,7 @@ const PokemonSet = ({
     <Box w="100%" maxW="300px" mx="auto">
       <Link
         href={{
-          pathname: '/filter-cards',
+          pathname: nextPage,
           query: { type: 'set', setId: setID, setName: setName },
         }}
         style={{ textDecoration: 'none' }}

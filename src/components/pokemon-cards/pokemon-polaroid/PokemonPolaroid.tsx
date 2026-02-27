@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 
 // Child Components
-import PokemonSetLoading from '../pokemon-set/PokemonSetLoading';
+import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSetLoading'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'

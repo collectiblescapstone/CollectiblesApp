@@ -1,72 +1,74 @@
-'use client';
+'use client'
 
-import { useState, useEffect, Suspense } from 'react';
-import Header from '@/components/navbar/Header';
-import { Box, Flex, Spinner } from '@chakra-ui/react';
-import Footer from '@/components/navbar/Footer';
-import { Capacitor } from '@capacitor/core';
-import Sidebar from '@/components/navbar/Sidebar';
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
-import { useAuth } from '@/context/AuthProvider';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect, Suspense } from 'react'
+import Header from '@/components/navbar/Header'
+import { Box, Flex, Spinner } from '@chakra-ui/react'
+import Footer from '@/components/navbar/Footer'
+import { Capacitor } from '@capacitor/core'
+import Sidebar from '@/components/navbar/Sidebar'
+import { defineCustomElements } from '@ionic/pwa-elements/loader'
+import { useAuth } from '@/context/AuthProvider'
+import { usePathname } from 'next/navigation'
 
-export const CHAKRA_UI_LG_BREAKPOINT = 992;
+export const CHAKRA_UI_LG_BREAKPOINT = 992
 
 const Content = ({ children }: { children: React.ReactNode }) => {
-  const pathname = usePathname();
-  const { session } = useAuth();
+    const pathname = usePathname()
+    const { session } = useAuth()
 
-  const [isMobileView, setIsMobileView] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return true;
-    return (
-      Capacitor.isNativePlatform() ||
-      window.innerWidth <= CHAKRA_UI_LG_BREAKPOINT
-    );
-  });
+    const [isMobileView, setIsMobileView] = useState<boolean>(() => {
+        if (typeof window === 'undefined') return true
+        return (
+            Capacitor.isNativePlatform() ||
+            window.innerWidth <= CHAKRA_UI_LG_BREAKPOINT
+        )
+    })
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
+    useEffect(() => {
+        if (typeof window === 'undefined') return
 
-    defineCustomElements(window);
+        defineCustomElements(window)
 
-    const handleResize = () => {
-      const innerWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-      setIsMobileView(
-        Capacitor.isNativePlatform() || innerWidth <= CHAKRA_UI_LG_BREAKPOINT
-      );
-    };
-    handleResize();
+        const handleResize = () => {
+            const innerWidth =
+                typeof window !== 'undefined' ? window.innerWidth : 0
+            setIsMobileView(
+                Capacitor.isNativePlatform() ||
+                    innerWidth <= CHAKRA_UI_LG_BREAKPOINT
+            )
+        }
+        handleResize()
 
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+        window.addEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
-  const authenticatedLayout = isMobileView ? (
-    <Suspense fallback={<Spinner size="xl" />}>
-      <Header />
-      <Box minHeight="84dvh" w="full">
-        {children}
-      </Box>
-      <Footer />
-    </Suspense>
-  ) : (
-    <Suspense fallback={<Spinner size="xl" />}>
-      <Flex flexDirection="row">
-        <Sidebar />
-        <Flex minWidth="75dvw" minHeight="dvh" justifyContent="center">
-          <Box maxWidth="40dvw">{children}</Box>
-        </Flex>
-      </Flex>
-    </Suspense>
-  );
+    const authenticatedLayout = isMobileView ? (
+        <Suspense fallback={<Spinner size="xl" />}>
+            <Header />
+            <Box minHeight="84dvh" w="full">
+                {children}
+            </Box>
+            <Footer />
+        </Suspense>
+    ) : (
+        <Suspense fallback={<Spinner size="xl" />}>
+            <Flex flexDirection="row">
+                <Sidebar />
+                <Flex minWidth="75dvw" minHeight="dvh" justifyContent="center">
+                    <Box maxWidth="40dvw">{children}</Box>
+                </Flex>
+            </Flex>
+        </Suspense>
+    )
 
-  return session && pathname !== '/reset-password' ? (
-    authenticatedLayout
-  ) : (
-    <>{children}</>
-  );
-};
+    return session && pathname !== '/reset-password' ? (
+        authenticatedLayout
+    ) : (
+        <>{children}</>
+    )
+}
 
-export default Content;
+export default Content

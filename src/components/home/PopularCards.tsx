@@ -1,22 +1,17 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Divider from '@/components/profiles/Divider';
-import {
-    Flex,
-    Image,
-    Text,
-    HStack,
-} from '@chakra-ui/react';
-import { useRandomCards } from '@/components/personal-profile/RandomCard'; // for now, change later
-import { PokemonCardImage } from '@/types/personal-profile';
-import {LuFlame} from 'react-icons/lu';
+import React from 'react'
+import Divider from '@/components/profiles/Divider'
+import { Flex, Image, Text, HStack } from '@chakra-ui/react'
+import { useRandomCards } from '@/components/personal-profile/RandomCard' // for now, change later
+import { PokemonCardImage } from '@/types/personal-profile'
+import { LuFlame } from 'react-icons/lu'
 
 const PopularCards: React.FC = () => {
-    const { cards, loading } = useRandomCards('ex5', 3);
+    const { cards, loading } = useRandomCards('ex5', 3)
 
-    if (loading) return <Text>Loading cards...</Text>;
-    if (cards.length === 0) return null;
+    if (loading) return <Text>Loading cards...</Text>
+    if (cards.length === 0) return null
 
     return (
         <Flex
@@ -31,7 +26,12 @@ const PopularCards: React.FC = () => {
             <Flex mt={1}>
                 <HStack gap={1} alignItems="center">
                     <LuFlame color="#d35400" />
-                    <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={0}>
+                    <Text
+                        fontSize="md"
+                        color="gray.700"
+                        fontWeight="semibold"
+                        mb={0}
+                    >
                         Popular This Month
                     </Text>
                 </HStack>
@@ -56,7 +56,7 @@ const PopularCards: React.FC = () => {
                 ))}
             </Flex>
         </Flex>
-    );
-};
+    )
+}
 
-export default PopularCards;
+export default PopularCards

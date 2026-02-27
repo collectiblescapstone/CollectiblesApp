@@ -29,9 +29,20 @@ export default function AuthForm() {
     setIsLoading(true);
 
     let emailValue = values.emailOrUsername.trim();
-    if (emailValue.includes('@')) { // Username cannot contain '@', so this must be an email
-      const { email } = await fetchUserProfile(emailValue);
-      emailValue = email;
+    if (!emailValue.includes('@')) {
+      // Username cannot contain '@', while email must contain '@'
+      try {
+        const { email } = await fetchUserProfile(emailValue);
+        emailValue = email;
+      } catch {
+        setError('root', {
+          type: 'invalid_credentials',
+          message:
+            "An account doesn't exist with this email/username and password combination. Please create an account or reset your password.",
+        });
+        setIsLoading(false);
+        return;
+      }
     }
 
     // Supabase Auth sign in user
@@ -85,15 +96,20 @@ export default function AuthForm() {
               Email or Username <Field.RequiredIndicator />
             </Field.Label>
             <Input
-              {...register('emailOrUsername', { required: 'Email or Username is required' })}
+              {...register('emailOrUsername', {
+                required: 'Email or Username is required',
+              })}
               variant="subtle"
               color="black"
               placeholder="me@example.com"
               disabled={isLoading}
             />
-            {errors.emailOrUsername && errors.emailOrUsername.type === 'required' && (
-              <Field.ErrorText>{errors.emailOrUsername.message}</Field.ErrorText>
-            )}
+            {errors.emailOrUsername &&
+              errors.emailOrUsername.type === 'required' && (
+                <Field.ErrorText>
+                  {errors.emailOrUsername.message}
+                </Field.ErrorText>
+              )}
           </Field.Root>
 
           <Field.Root invalid={!!errors.password} required>

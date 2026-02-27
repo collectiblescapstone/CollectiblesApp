@@ -42,6 +42,8 @@ npx prisma db execute --file prisma/setup.sql --schema prisma/schema.prisma
 
 On Supabase startup (`npx supabase start`), you should find the values you use to fill in the .env file. (If this step does not work, ensure your Docker is running.) The value `NEXT_PUBLIC_SUPABASE_URL` corresponds to `API URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` corresponds to either `anon key` or `Publishable key`, and `SUPABASE_SERVICE_ROLE_KEY` corresponds to `secret key`.
 
+In order to get the geolocation suggestions working for profiles, you will need to add the following environment variable to your .env file: `GEOAPIFY_API_KEY=<INSERT KEY HERE>`. You can access this API key from the [Geoapify](https://www.geoapify.com/) and log-in with the info provided on the discord server. Once logged in, proceed to the 'Capstone2025' project and you can access the API key there.
+
 At this point, the application should be available on http://localhost:3000
 
 \*Note: If at any point you need to check an email that is sent to you when you are developing locally, you WILL NOT receive it in your actual email inbox. This will be sent in Mailpit (Usually at http://127.0.0.1:54324/), which you can find the url on running `npx supabase start`.

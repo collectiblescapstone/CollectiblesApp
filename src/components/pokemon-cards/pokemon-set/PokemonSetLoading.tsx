@@ -12,4 +12,4 @@ const PokemonSetLoading = () => {
     )
 }
 
-export default PokemonSetLoading;
+export default PokemonSetLoading

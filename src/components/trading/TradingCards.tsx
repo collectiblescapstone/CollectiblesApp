@@ -1,15 +1,15 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { Flex, Image, Text } from '@chakra-ui/react';
-import { useRandomCards } from '@/components/personal-profile/RandomCard'; // for now, change later
-import { PokemonCardImage } from '@/types/personal-profile';
+import React from 'react'
+import { Flex, Image, Text } from '@chakra-ui/react'
+import { useRandomCards } from '@/components/personal-profile/RandomCard' // for now, change later
+import { PokemonCardImage } from '@/types/personal-profile'
 
 const TradingCards: React.FC = () => {
-    const { cards, loading } = useRandomCards('ex5', 3);
+    const { cards, loading } = useRandomCards('ex5', 3)
 
-    if (loading) return <Text>Loading cards...</Text>;
-    if (cards.length === 0) return null;
+    if (loading) return <Text>Loading cards...</Text>
+    if (cards.length === 0) return null
 
     return (
         <Flex
@@ -40,7 +40,7 @@ const TradingCards: React.FC = () => {
                 ))}
             </Flex>
         </Flex>
-    );
-};
+    )
+}
 
-export default TradingCards;
+export default TradingCards

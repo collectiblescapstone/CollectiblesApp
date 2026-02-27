@@ -1,7 +1,7 @@
 import { CapacitorHttp } from '@capacitor/core'
 
 // Types
-import type { Card, Set } from '@prisma/client'
+import type { Set } from '@prisma/client'
 import type { CardData } from '@/types/pokemon-card'
 
 // Utils
@@ -39,16 +39,34 @@ let pokemonGrandmasterCounts: number[] = []
 let pokemonCardsInit: Promise<void> | null = null
 let pokemonSetsInit: Promise<void> | null = null
 
+export interface GetPokemonCardsFilters {
+    ids: string[]
+}
+
+export const getPokemonCards = async (
+    filters?: GetPokemonCardsFilters
+): Promise<CardData[]> => {
+    const response = await CapacitorHttp.post({
+        url: `${baseUrl}/api/pokemon-card`,
+        data: filters ?? {},
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (response.status < 200 || response.status >= 300) {
+        throw new Error('Failed to fetch /api/pokemon-card')
+    }
+
+    return await response.data
+}
+
 const fetchPokemonCards = async (): Promise<void> => {
     // If already initialized, just return the existing promise
     if (pokemonCardsInit) return pokemonCardsInit
 
     pokemonCardsInit = (async () => {
         try {
-            const response = await fetch('/api/pokemon-card-all')
-            if (!response.ok)
-                throw new Error(`Failed to fetch /api/pokemon-card-all`)
-            const cards: Card[] = await response.json()
+            const cards = await getPokemonCards()
 
             // Clear counts first
             pokemonMasterCounts = []
@@ -249,25 +267,4 @@ export const pokemonGrandmasterSetCount = async (
 ): Promise<number> => {
     if (pokemonGrandmasterCounts.length === 0) await fetchPokemonCards()
     return pokemonGrandmasterCounts[pokedexId - 1] ?? 0
-}
-
-export interface GetPokemonCardsFilters {
-    ids: string[]
-}
-
-export const getPokemonCards = async (
-    filters?: GetPokemonCardsFilters
-): Promise<CardData[]> => {
-    const response = await CapacitorHttp.post({
-        url: `${baseUrl}/api/pokemon-card`,
-        data: filters ?? {},
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    if (response.status < 200 || response.status >= 300) {
-        throw new Error('Failed to fetch /api/pokemon-card')
-    }
-
-    return await response.data
 }

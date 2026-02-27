@@ -1,7 +1,15 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Box, Image, Icon, Progress, HStack, Spinner } from '@chakra-ui/react'
+import {
+    Box,
+    Image,
+    Icon,
+    Progress,
+    HStack,
+    Spinner,
+    Heading
+} from '@chakra-ui/react'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -15,6 +23,7 @@ import {
     userPokemonGrandmasterSetCount
 } from '@/utils/userPokemonCard'
 import { getDynamicColour } from '@/utils/dynamicColours'
+import { getPokemonName } from '@/utils/pokedex'
 
 interface PokemonPolaroidProps {
     id: number
@@ -36,6 +45,7 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
     const [grandmasterSetCount, setGrandmasterSetCount] = useState<
         number | null
     >(null)
+    const [label, setLabel] = useState<string>()
 
     useEffect(() => {
         if (!session?.user?.id) return
@@ -59,6 +69,14 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
 
         fetchCards()
     }, [session?.user?.id, id])
+
+    useEffect(() => {
+        const getLabel = async () => {
+            setLabel(await getPokemonName(id))
+        }
+
+        getLabel()
+    }, [id])
 
     if (loading) {
         return (
@@ -118,6 +136,7 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
                         transform: 'translateZ(0)'
                     }}
                 />
+                {label && <Heading size="md">{label}</Heading>}
                 {/* Stats Section */}
                 <Box w="100%" mb={2}>
                     <HStack mb={1}>

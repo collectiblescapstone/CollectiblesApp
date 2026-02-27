@@ -12,14 +12,14 @@ import {
     createListCollection,
     Pagination,
     Stack,
-    IconButton,
-} from '@chakra-ui/react';
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+    IconButton
+} from '@chakra-ui/react'
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 
 // Child Components
-import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid';
-import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
-import { CardSearch } from '@/components/card-filter/CardSearch';
+import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid'
+import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet'
+import { CardSearch } from '@/components/card-filter/CardSearch'
 
 // Hooks
 import { FiltersProvider } from '@/hooks/useFilters'
@@ -29,7 +29,7 @@ import { PokemonSetType } from '@/types/pokemon-grid'
 import { useAuth } from '@/context/AuthProvider'
 
 // Utils
-import { POKEMONGEN, ALL_POKEMON, getPokemonName } from '@/utils/pokedex';
+import { POKEMONGEN, ALL_POKEMON, getPokemonName } from '@/utils/pokedex'
 import {
     masterSetCount,
     grandmasterSetCount,
@@ -37,7 +37,7 @@ import {
     pokemonGrandmasterSetCount
 } from '@/utils/pokemonCard'
 
-const NUM_ITEMS_PER_PAGE = 24;
+const NUM_ITEMS_PER_PAGE = 24
 
 interface PokemonGridDisplayProps {
     originalPage: string
@@ -48,19 +48,19 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     const nextPage =
         originalPage === 'pokemon-grid'
             ? '/filter-cards'
-            : '/wishlist-filter-cards';
+            : '/wishlist-filter-cards'
 
-    const { session, loading } = useAuth();
-    const [filteredIds, setFilteredIds] = useState<string[]>();
+    const { session, loading } = useAuth()
+    const [filteredIds, setFilteredIds] = useState<string[]>()
     const [filteredPokemonData, setFilteredPokemonData] = useState<
         {
-            id: string;
-            name: string;
+            id: string
+            name: string
         }[]
-    >();
-    const [page, setPage] = useState(1);
-    const [selected, setSelected] = useState('set');
-    const [selectedEra, setSelectedEra] = useState('sv');
+    >()
+    const [page, setPage] = useState(1)
+    const [selected, setSelected] = useState('set')
+    const [selectedEra, setSelectedEra] = useState('sv')
     const [groupedSets, setGroupedSets] = useState<
         Record<string, PokemonSetType[]>
     >({})
@@ -183,20 +183,18 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     const filteredPokemon = useMemo(() => {
         const preFilteredPokemon = filteredIds
             ? pokemon.filter((id) => filteredIds.includes(id.toString()))
-            : pokemon;
+            : pokemon
 
         if (selectedGen === 'ALL') {
-            return preFilteredPokemon;
+            return preFilteredPokemon
         }
 
         const genIndex = parseInt(selectedGen) - 1
         const startId = genIndex === 0 ? 1 : POKEMONGEN[genIndex - 1] + 1
         const endId = POKEMONGEN[genIndex]
 
-        return preFilteredPokemon.filter(
-            (id) => id >= startId && id <= endId
-        );
-    }, [selectedGen, pokemon, filteredIds]);
+        return preFilteredPokemon.filter((id) => id >= startId && id <= endId)
+    }, [selectedGen, pokemon, filteredIds])
 
     /**
      * useEffect to fetch set counts
@@ -222,8 +220,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                 })
             )
 
-            setSetCounts(counts);
-        };
+            setSetCounts(counts)
+        }
 
         fetchCounts()
     }, [selectedEra, groupedSets, selected])
@@ -232,7 +230,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
      * Use effect for fetching Pokemon card counts, grouped by Pokedex number.
      */
     useEffect(() => {
-        if (!selectedGen || selected !== 'pokemon') return;
+        if (!selectedGen || selected !== 'pokemon') return
         const fetchCounts = async () => {
             const counts: Record<
                 number,
@@ -241,35 +239,38 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
 
             await Promise.allSettled(
                 filteredPokemon.map(async (id) => {
-                    const master = await pokemonMasterSetCount(id);
-                    const grandmaster = await pokemonGrandmasterSetCount(id);
+                    const master = await pokemonMasterSetCount(id)
+                    const grandmaster = await pokemonGrandmasterSetCount(id)
                     counts[id] = {
                         masterSet: master ?? 0,
-                        grandmasterSet: grandmaster ?? 0,
-                    };
+                        grandmasterSet: grandmaster ?? 0
+                    }
                 })
-            );
+            )
 
-            setPokemonCounts(counts);
-        };
+            setPokemonCounts(counts)
+        }
 
-        fetchCounts();
-    }, [selectedGen, selected, filteredPokemon]);
+        fetchCounts()
+    }, [selectedGen, selected, filteredPokemon])
 
     useEffect(() => {
         const fetchNames = async () => {
-            const data: { id: string; name: string }[] = [];
+            const data: { id: string; name: string }[] = []
             await Promise.allSettled(
                 filteredPokemon.map(async (id) =>
-                    data.push({ id: id.toString(), name: await getPokemonName(id) })
+                    data.push({
+                        id: id.toString(),
+                        name: await getPokemonName(id)
+                    })
                 )
-            );
+            )
 
-            setFilteredPokemonData(data);
-        };
+            setFilteredPokemonData(data)
+        }
 
-        fetchNames();
-    }, [filteredPokemon]);
+        fetchNames()
+    }, [filteredPokemon])
 
     if (loading || !session) {
         return (
@@ -455,22 +456,27 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                             {filteredPokemon
                                 .slice(
                                     (page - 1) * NUM_ITEMS_PER_PAGE,
-                                    Math.min(page * NUM_ITEMS_PER_PAGE, filteredPokemon.length)
+                                    Math.min(
+                                        page * NUM_ITEMS_PER_PAGE,
+                                        filteredPokemon.length
+                                    )
                                 )
                                 .map((id) => {
                                     const counts = pokemonCounts[id] || {
                                         masterSet: 1,
-                                        grandmasterSet: 1,
-                                    };
+                                        grandmasterSet: 1
+                                    }
                                     return (
                                         <PokemonPolaroid
                                             key={id}
                                             id={id}
                                             masterSet={counts.masterSet}
-                                            grandmasterSet={counts.grandmasterSet}
+                                            grandmasterSet={
+                                                counts.grandmasterSet
+                                            }
                                             nextPage={nextPage}
                                         />
-                                    );
+                                    )
                                 })}
                         </Grid>
                         <Pagination.Root
@@ -488,7 +494,12 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                             </Pagination.PrevTrigger>
                             <Pagination.Items
                                 render={(page) => (
-                                    <IconButton variant={{ base: 'ghost', _selected: 'outline' }}>
+                                    <IconButton
+                                        variant={{
+                                            base: 'ghost',
+                                            _selected: 'outline'
+                                        }}
+                                    >
                                         {page.value}
                                     </IconButton>
                                 )}
@@ -503,33 +514,43 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                 )}
 
                 {/* Set Era View */}
-                {selected === 'set' && selectedEra && groupedSets[selectedEra] && (
-                    <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
-                        {groupedSets[selectedEra].map((set) => {
-                            const imageSrc = set.logo || set.symbol;
-                            const counts = setCounts[set.id] || {
-                                masterSet: 1,
-                                grandmasterSet: 1,
-                            };
+                {selected === 'set' &&
+                    selectedEra &&
+                    groupedSets[selectedEra] && (
+                        <Grid
+                            mt="30px"
+                            templateColumns="repeat(1, 1fr)"
+                            gap="20px"
+                        >
+                            {groupedSets[selectedEra].map((set) => {
+                                const imageSrc = set.logo || set.symbol
+                                const counts = setCounts[set.id] || {
+                                    masterSet: 1,
+                                    grandmasterSet: 1
+                                }
 
-                            return (
-                                <GridItem key={set.id}>
-                                    <PokemonSet
-                                        label={set.name}
-                                        image={
-                                            imageSrc ? `${imageSrc}.png` : '/Images/temp_icon.svg'
-                                        }
-                                        setName={set.name}
-                                        setID={set.id}
-                                        masterSet={counts.masterSet}
-                                        grandmasterSet={counts.grandmasterSet}
-                                        nextPage={nextPage}
-                                    />
-                                </GridItem>
-                            );
-                        })}
-                    </Grid>
-                )}
+                                return (
+                                    <GridItem key={set.id}>
+                                        <PokemonSet
+                                            label={set.name}
+                                            image={
+                                                imageSrc
+                                                    ? `${imageSrc}.png`
+                                                    : '/Images/temp_icon.svg'
+                                            }
+                                            setName={set.name}
+                                            setID={set.id}
+                                            masterSet={counts.masterSet}
+                                            grandmasterSet={
+                                                counts.grandmasterSet
+                                            }
+                                            nextPage={nextPage}
+                                        />
+                                    </GridItem>
+                                )
+                            })}
+                        </Grid>
+                    )}
             </Box>
         </FiltersProvider>
     )

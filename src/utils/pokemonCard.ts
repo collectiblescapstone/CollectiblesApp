@@ -1,8 +1,8 @@
 import { CapacitorHttp } from '@capacitor/core'
 
 // Types
-import type { Set } from '@prisma/client';
-import type { CardData } from '@/types/pokemon-card';
+import type { Set } from '@prisma/client'
+import type { CardData } from '@/types/pokemon-card'
 
 // Utils
 import { baseUrl } from '@/utils/constants'
@@ -40,33 +40,33 @@ let pokemonCardsInit: Promise<void> | null = null
 let pokemonSetsInit: Promise<void> | null = null
 
 export interface GetPokemonCardsFilters {
-  ids: string[];
+    ids: string[]
 }
 
 export const getPokemonCards = async (
-  filters?: GetPokemonCardsFilters
+    filters?: GetPokemonCardsFilters
 ): Promise<CardData[]> => {
-  const response = await CapacitorHttp.post({
-    url: `${baseUrl}/api/pokemon-card`,
-    data: filters ?? {},
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  if (response.status < 200 || response.status >= 300) {
-    throw new Error('Failed to fetch /api/pokemon-card');
-  }
+    const response = await CapacitorHttp.post({
+        url: `${baseUrl}/api/pokemon-card`,
+        data: filters ?? {},
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (response.status < 200 || response.status >= 300) {
+        throw new Error('Failed to fetch /api/pokemon-card')
+    }
 
-  return await response.data;
-};
+    return await response.data
+}
 
 const fetchPokemonCards = async (): Promise<void> => {
     // If already initialized, just return the existing promise
     if (pokemonCardsInit) return pokemonCardsInit
 
-  pokemonCardsInit = (async () => {
-    try {
-      const cards = await getPokemonCards();
+    pokemonCardsInit = (async () => {
+        try {
+            const cards = await getPokemonCards()
 
             // Clear counts first
             pokemonMasterCounts = []
@@ -265,6 +265,6 @@ export const pokemonMasterSetCount = async (
 export const pokemonGrandmasterSetCount = async (
     pokedexId: number
 ): Promise<number> => {
-  if (pokemonGrandmasterCounts.length === 0) await fetchPokemonCards();
-  return pokemonGrandmasterCounts[pokedexId - 1] ?? 0;
-};
+    if (pokemonGrandmasterCounts.length === 0) await fetchPokemonCards()
+    return pokemonGrandmasterCounts[pokedexId - 1] ?? 0
+}

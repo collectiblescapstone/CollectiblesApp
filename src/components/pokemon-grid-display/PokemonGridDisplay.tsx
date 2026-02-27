@@ -181,20 +181,16 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
 
     // Filter Pokémon based on selected generation
     const filteredPokemon = useMemo(() => {
-        const preFilteredPokemon = filteredIds
-            ? pokemon.filter((id) => filteredIds.includes(id.toString()))
-            : pokemon
-
         if (selectedGen === 'ALL') {
-            return preFilteredPokemon
+            return pokemon
         }
 
         const genIndex = parseInt(selectedGen) - 1
         const startId = genIndex === 0 ? 1 : POKEMONGEN[genIndex - 1] + 1
         const endId = POKEMONGEN[genIndex]
 
-        return preFilteredPokemon.filter((id) => id >= startId && id <= endId)
-    }, [selectedGen, pokemon, filteredIds])
+        return pokemon.filter((id) => id >= startId && id <= endId)
+    }, [selectedGen, pokemon])
 
     /**
      * useEffect to fetch set counts
@@ -271,6 +267,20 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
 
         fetchNames()
     }, [filteredPokemon])
+
+    const displayablePokemon = useMemo(
+        () =>
+            filteredIds
+                ? filteredPokemon.filter((id) =>
+                      filteredIds.includes(id.toString())
+                  )
+                : filteredPokemon,
+        [filteredPokemon, filteredIds]
+    )
+
+    useEffect(() => {
+        setPage(1)
+    }, [displayablePokemon])
 
     if (loading || !session) {
         return (
@@ -453,7 +463,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                             justifyItems="center"
                             mt={4}
                         >
-                            {filteredPokemon
+                            {displayablePokemon
                                 .slice(
                                     (page - 1) * NUM_ITEMS_PER_PAGE,
                                     Math.min(
@@ -480,7 +490,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                 })}
                         </Grid>
                         <Pagination.Root
-                            count={filteredPokemon.length}
+                            count={displayablePokemon.length}
                             pageSize={NUM_ITEMS_PER_PAGE}
                             page={page}
                             onPageChange={(e) => setPage(e.page)}

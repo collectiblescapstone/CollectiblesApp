@@ -472,10 +472,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                     )
                                 )
                                 .map((id) => {
-                                    const counts = pokemonCounts[id] || {
-                                        masterSet: 1,
-                                        grandmasterSet: 1
-                                    }
+                                    const counts = pokemonCounts[id]
                                     return (
                                         <PokemonPolaroid
                                             key={id}
@@ -534,10 +531,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                         >
                             {groupedSets[selectedEra].map((set) => {
                                 const imageSrc = set.logo || set.symbol
-                                const counts = setCounts[set.id] || {
-                                    masterSet: 1,
-                                    grandmasterSet: 1
-                                }
+                                const counts = setCounts[set.id]
 
                                 return (
                                     <GridItem key={set.id}>

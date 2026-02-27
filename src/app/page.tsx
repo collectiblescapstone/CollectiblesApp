@@ -1,67 +1,62 @@
-'use client';
-import { Button } from '@chakra-ui/react';
+'use client'
+import { Button } from '@chakra-ui/react'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 const Landing: React.FC = () => {
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const href = e.currentTarget.getAttribute('href') || '';
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const id = href.slice(1);
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        (el as HTMLElement).focus({ preventScroll: true });
-      }
+    const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        const href = e.currentTarget.getAttribute('href') || ''
+        if (href.startsWith('#')) {
+            e.preventDefault()
+            const id = href.slice(1)
+            const el = document.getElementById(id)
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                ;(el as HTMLElement).focus({ preventScroll: true })
+            }
+        }
     }
-  };
 
-  const [launch, setLaunch] = useState(false);
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+    const [launch, setLaunch] = useState(false)
+    const [days, setDays] = useState(0)
+    const [hours, setHours] = useState(0)
+    const [minutes, setMinutes] = useState(0)
+    const [seconds, setSeconds] = useState(0)
 
-  useEffect(() => {
+    useEffect(() => {
+        const target = new Date(2026, 3, 7, 10, 0, 0) // april 7th, 10:00am
 
-    const target = new Date(2026, 3, 7, 10, 0, 0); // april 7th, 10:00am
+        const interval = setInterval(() => {
+            const now = new Date()
+            const difference = target.getTime() - now.getTime()
 
-    const interval = setInterval(() => {
-      const now = new Date();
-      const difference = target.getTime() - now.getTime();
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24))
+            setDays(d)
 
-      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-      setDays(d);
+            const h = Math.floor(
+                (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            )
+            setHours(h)
 
-      const h = Math.floor(
-        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      setHours(h);
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+            setMinutes(m)
 
-      const m = Math.floor(
-        (difference % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      setMinutes(m);
+            const s = Math.floor((difference % (1000 * 60)) / 1000)
+            setSeconds(s)
 
-      const s = Math.floor(
-        (difference % (1000 * 60)) / (1000)
-      );
-      setSeconds(s);
+            if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
+                setLaunch(true)
+                clearInterval(interval)
+            }
+        }, 1000)
 
-      if (d <= 0 && h <= 0 && m <= 0 && s <= 0){
-        setLaunch(true);
-        clearInterval(interval);
-      }
-    }, 1000);
+        return () => clearInterval(interval)
+    }, [])
 
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <>
-      <style>
-        {`
+    return (
+        <>
+            <style>
+                {`
           html, body, #__next, main {
             height: 100%;
             margin: 0;
@@ -210,115 +205,151 @@ const Landing: React.FC = () => {
             color: #003b49;
           }
         `}
-      </style>
+            </style>
 
-      <div className="kollec-body">
-        <div className="container">
+            <div className="kollec-body">
+                <div className="container">
+                    {/* Main content */}
+                    <div className="main-content">
+                        {/* Navigation Section */}
+                        <nav
+                            className="navigation"
+                            aria-label="Kollec main navigation"
+                        >
+                            <h2>Kollec</h2>
+                            <div
+                                className="nav-actions"
+                                style={{ marginBottom: '8px' }}
+                            >
+                                <a
+                                    href="#about"
+                                    onClick={handleAnchorClick}
+                                    style={{ textDecoration: 'none' }}
+                                    aria-label="Scroll to About section"
+                                >
+                                    <Button
+                                        variant="ghost"
+                                        color="brand.turtoise"
+                                    >
+                                        About
+                                    </Button>
+                                </a>
+                                <a
+                                    href="#features"
+                                    onClick={handleAnchorClick}
+                                    style={{ textDecoration: 'none' }}
+                                    aria-label="Scroll to Features section"
+                                >
+                                    <Button
+                                        variant="ghost"
+                                        color="brand.turtoise"
+                                    >
+                                        Features
+                                    </Button>
+                                </a>
+                                <a
+                                    href="#faq"
+                                    onClick={handleAnchorClick}
+                                    style={{ textDecoration: 'none' }}
+                                    aria-label="Scroll to FAQ section"
+                                >
+                                    <Button
+                                        variant="ghost"
+                                        color="brand.turtoise"
+                                    >
+                                        FAQ
+                                    </Button>
+                                </a>
+                                <a
+                                    href="/sign-up"
+                                    style={{ textDecoration: 'none' }}
+                                    aria-label="Go to Sign Up page"
+                                >
+                                    <Button
+                                        variant="ghost"
+                                        color="brand.turtoise"
+                                    >
+                                        Sign Up
+                                    </Button>
+                                </a>
+                                <a
+                                    href="/sign-in"
+                                    style={{ textDecoration: 'none' }}
+                                    aria-label="Go to Login page"
+                                >
+                                    <Button
+                                        variant="ghost"
+                                        color="brand.turtoise"
+                                    >
+                                        Login
+                                    </Button>
+                                </a>
+                            </div>
+                        </nav>
 
-          {/* Main content */}
-          <div className="main-content">
-            {/* Navigation Section */}
-            <nav className="navigation" aria-label="Kollec main navigation">
-              <h2>Kollec</h2>
-              <div className="nav-actions" style={{ marginBottom: '8px' }}>
-                <a
-                  href="#about"
-                  onClick={handleAnchorClick}
-                  style={{ textDecoration: 'none' }}
-                  aria-label="Scroll to About section"
-                >
-                  <Button variant="ghost" color="brand.turtoise">About</Button>
-                </a>
-                <a
-                  href="#features"
-                  onClick={handleAnchorClick}
-                  style={{ textDecoration: 'none' }}
-                  aria-label="Scroll to Features section"
-                >
-                  <Button variant="ghost" color="brand.turtoise">Features</Button>
-                </a>
-                <a
-                  href="#faq"
-                  onClick={handleAnchorClick}
-                  style={{ textDecoration: 'none' }}
-                  aria-label="Scroll to FAQ section"
-                >
-                  <Button variant="ghost" color="brand.turtoise">FAQ</Button>
-                </a>
-                <a
-                  href="/sign-up"
-                  style={{ textDecoration: 'none' }}
-                  aria-label="Go to Sign Up page"
-                >
-                  <Button variant="ghost" color="brand.turtoise">Sign Up</Button>
-                </a>
-                <a
-                  href="/sign-in"
-                  style={{ textDecoration: 'none' }}
-                  aria-label="Go to Login page"
-                >
-                  <Button variant="ghost" color="brand.turtoise">Login</Button>
-                </a>
-              </div>
-            </nav>
+                        {/* Content Section */}
+                        <div className="content">
+                            {launch ? (
+                                <div className="card timer-card">
+                                    <h1>
+                                        Come see our demo at the capstone expo!
+                                    </h1>
+                                </div>
+                            ) : (
+                                <div className="card timer-card">
+                                    <h1>
+                                        {days}:{String(hours).padStart(2, '0')}:
+                                        {String(minutes).padStart(2, '0')}:
+                                        {String(seconds).padStart(2, '0')}
+                                    </h1>
+                                    <p>Time until launch!</p>
+                                </div>
+                            )}
 
-            {/* Content Section */}
-            <div className="content">
-              {launch ? (
-                <div className='card timer-card'>
-                  <h1>Come see our demo at the capstone expo!</h1>
+                            <div className="card" id="about" tabIndex={-1}>
+                                <h1>About Us</h1>
+                                <p>
+                                    Kollec is a final year computer science
+                                    capstone project created by Tania Da Silva,
+                                    Norman Liang, Elite Lu, Ishpreet Nagi, James
+                                    Nickoli, Kenneth Ong, and Geon Youn.
+                                </p>
+                                <ul>
+                                    <li>hi</li>
+                                </ul>
+                            </div>
+
+                            <div className="card" id="features" tabIndex={-1}>
+                                <h2>Features</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Metus nunc ullamcorper
+                                    ipsum enim natoque orci dignissim consequat
+                                    nascetur. Molestie inceptos phasellus purus
+                                    sapien; nam ligula adipiscing.
+                                </p>
+                            </div>
+
+                            <div className="card" id="faq" tabIndex={-1}>
+                                <h2>FAQ</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Metus nunc ullamcorper
+                                    ipsum enim natoque orci dignissim consequat
+                                    nascetur. Molestie inceptos phasellus purus
+                                    sapien; nam ligula adipiscing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              ): (
-              <div className='card timer-card'>
-                <h1>
-                  {days}:
-                  {String(hours).padStart(2, '0')}:
-                  {String(minutes).padStart(2, '0')}:
-                  {String(seconds).padStart(2, '0')}
-                </h1>
-                <p>Time until launch!</p>
-              </div>
-              )}
 
-              <div className="card" id="about" tabIndex={-1}>
-                 <h1>About Us</h1>
-                 <p>
-                   Kollec is a final year computer science capstone project created by Tania Da Silva, Norman Liang, Elite Lu, Ishpreet Nagi, James Nickoli, Kenneth Ong, and Geon Youn.
-                 </p>
-                 <ul>
-                   <li>hi</li>
-                 </ul>
-               </div>
+                <footer className="footer">
+                    <p>&copy; 2026 TSH B129</p>
+                </footer>
+            </div>
+        </>
+    )
+}
 
-              <div className="card" id="features" tabIndex={-1}>
-                 <h2>Features</h2>
-                 <p>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus nunc
-                   ullamcorper ipsum enim natoque orci dignissim consequat nascetur.
-                   Molestie inceptos phasellus purus sapien; nam ligula adipiscing.
-                 </p>
-               </div>
-
-              <div className="card" id="faq" tabIndex={-1}>
-                 <h2>FAQ</h2>
-                 <p>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus nunc
-                   ullamcorper ipsum enim natoque orci dignissim consequat nascetur.
-                   Molestie inceptos phasellus purus sapien; nam ligula adipiscing.
-                 </p>
-               </div>
-             </div>
-
-
-           </div>
-         </div>
-
-         <footer className="footer">
-           <p>&copy; 2026 TSH B129</p>
-         </footer>
-       </div>
-     </>
-   );
- };
-
- export default Landing;
+export default Landing

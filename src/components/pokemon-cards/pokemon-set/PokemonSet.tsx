@@ -88,7 +88,7 @@ const PokemonSet = ({
     //   grandmasterSet
     // );
 
-    if (loading) {
+    if (loading || masterSetCount === null || grandmasterSetCount === null) {
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />

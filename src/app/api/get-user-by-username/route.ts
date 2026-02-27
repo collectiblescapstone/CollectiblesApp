@@ -28,6 +28,8 @@ export const POST = async (request: Request) => {
             whatsapp: true,
             profile_pic: true,
             visibility: true,
+            rating: true,
+            rating_count: true,
             wishlist: {
                 select: {
                     card: {

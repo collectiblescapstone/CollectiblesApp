@@ -24,8 +24,7 @@ const TradeScreen: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
     const userName = searchParams.get('username')
-    const headerContext = useHeader()
-    const setProfileID = headerContext?.setProfileID
+    const { setProfileID } = useHeader()
 
     useEffect(() => {
         if (!userName) {

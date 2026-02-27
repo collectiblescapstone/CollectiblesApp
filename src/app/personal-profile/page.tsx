@@ -4,31 +4,19 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useHeader } from '@/context/HeaderProvider'
 
-import SocialLinks from '@/components/profiles/SocialLinks'
-import Showcase from '@/components/profiles/Showcase'
-import TradeList from '@/components/profiles/TradeList'
-import WishList from '@/components/profiles/WishList'
 import { UserProfile } from '@/types/personal-profile'
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
 
-import {
-    Box,
-    Flex,
-    Heading,
-    Text,
-    Icon,
-    Button,
-    Spinner
-} from '@chakra-ui/react'
-import { Avatar } from '@chakra-ui/react'
-import { FiMapPin, FiEdit3 } from 'react-icons/fi'
+import { Box, Flex, Text, Button, Spinner } from '@chakra-ui/react'
+
+import { FiEdit3 } from 'react-icons/fi'
 import { useAuth } from '@/context/AuthProvider'
-import { pfp_image_mapping } from './edit-profile/constants'
+import ProfileLayout from '@/components/profiles/ProfileLayout'
+import StarRating from '@/components/profiles/StarRating'
 
 const PersonalProfileScreen: React.FC = () => {
     const router = useRouter()
-    const headerContext = useHeader()
-    const setProfileID = headerContext?.setProfileID
+    const { setProfileID } = useHeader()
     const { session } = useAuth()
 
     const userID = session?.user.id
@@ -90,99 +78,32 @@ const PersonalProfileScreen: React.FC = () => {
         )
     }
 
-    return (
-        <Box bg="white" minH="100vh" color="black" mb={4}>
-            <Box
-                bgImage="url('/user-profile/banner_temp.jpg')"
-                bgSize="cover"
-                bgPos="center"
-                width="100%"
-                height="110px"
-                position="relative"
-            />
-            <Button
-                onClick={editpress}
-                position="relative"
-                top={3}
-                zIndex={1}
-                size="lg"
-                rounded="sm"
-                variant="solid"
-                bg="white"
-                color="black"
-            >
-                <FiEdit3 />
-            </Button>
-            <Flex flexDirection="column" alignItems="center" gap={2} px={4}>
-                <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
-                    <Avatar.Image src={pfp_image_mapping[user.profile_pic]} />
-                </Avatar.Root>
-                {(user.firstName || user.lastName) && (
-                    <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
-                        {user.firstName} {user.lastName}
-                    </Heading>
-                )}
-                {user.location && (
-                    <Flex
-                        flexDirection="row"
-                        justifyContent="center"
-                        alignItems="center"
-                        gap={1}
-                    >
-                        <Icon as={FiMapPin} boxSize={4} />
-                        <Text
-                            fontSize="xs"
-                            color="gray.600"
-                            fontWeight={'semibold'}
-                        >
-                            {user.location}
-                        </Text>
-                    </Flex>
-                )}
-                {user.bio && (
-                    <Text
-                        fontSize="sm"
-                        color="gray.800"
-                        textAlign="center"
-                        maxW="400px"
-                        px={4}
-                    >
-                        {user.bio}
-                    </Text>
-                )}
-                <Flex mt={1} px={4}>
-                    <SocialLinks
-                        instagram={user.instagram}
-                        x={user.x}
-                        facebook={user.facebook}
-                        discord={user.discord}
-                        whatsapp={user.whatsapp}
-                    />
-                </Flex>
-            </Flex>
-            <Showcase
-                showcaseList={user.showcaseList.map((item) => ({
-                    name: item.card.name,
-                    image: item.card.image_url
-                }))}
-            />
-            <TradeList
-                type={'personal'}
-                username={''}
-                tradelist={user.tradeList.map((item) => ({
-                    name: item.card.name,
-                    image: item.card.image_url
-                }))}
-            />
-            <WishList
-                type={'personal'}
-                username={''}
-                wishlist={user.wishlist.map((item) => ({
-                    name: item.card.name,
-                    image: item.card.image_url
-                }))}
-            />
+    const leftButtonInteractible = (
+        <Button
+            onClick={editpress}
+            position="relative"
+            size="lg"
+            rounded="sm"
+            variant="solid"
+            bg="white"
+            color="black"
+        >
+            <FiEdit3 />
+        </Button>
+    )
+
+    const rightButtonInteractible = (
+        <Box mr={2} mt={2}>
+            <StarRating rating={user.rating} ratingCount={user.rating_count} />
         </Box>
+    )
+
+    return (
+        <ProfileLayout
+            user={user}
+            leftInteractible={leftButtonInteractible}
+            rightInteractible={rightButtonInteractible}
+        />
     )
 }
 

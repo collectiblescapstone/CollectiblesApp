@@ -13,7 +13,7 @@ import {
     Slider
 } from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
-import { LuStar } from 'react-icons/lu'
+import StarRating from '@/components/profiles/StarRating'
 
 type TradeCardProps = {
     username: string
@@ -49,26 +49,7 @@ const TradeCard: React.FC<TradeCardProps> = ({
                     </Stack>
                     <Stack gap="0">
                         {/* show star and numeric rating side-by-side */}
-                        <HStack gap="1" align="center">
-                            <Box>
-                                {(() => {
-                                    const color =
-                                        rating <= 2.5
-                                            ? '#ff3b30'
-                                            : rating < 4.0
-                                              ? '#ffd60a'
-                                              : rating < 5
-                                                ? '#32d74b'
-                                                : '#08a9c6'
-                                    return <LuStar color={color} size={20} />
-                                })()}
-                            </Box>
-                            <Text fontSize="sm" fontWeight="semibold">
-                                {Number.isFinite(rating)
-                                    ? rating.toFixed(1)
-                                    : '-'}
-                            </Text>
-                        </HStack>
+                        <StarRating rating={rating} ratingCount={1} />
                     </Stack>
                 </HStack>
             </Card.Footer>

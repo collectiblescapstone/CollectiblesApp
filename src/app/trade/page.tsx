@@ -1,27 +1,31 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React from 'react'
 import {
     Avatar,
-    Card, Flex,
+    Card,
+    Flex,
     HStack,
     Stack,
     Text,
     Box,
     Heading,
-    Slider,
-} from '@chakra-ui/react';
-import TradingCards from '@/components/trading/TradingCards';
-import StarRating from '@/components/profiles/StarRating';
-
+    Slider
+} from '@chakra-ui/react'
+import TradingCards from '@/components/trading/TradingCards'
+import StarRating from '@/components/profiles/StarRating'
 
 type TradeCardProps = {
-    username: string;
-    avatarUrl?: string;
-    rating: number;
-};
+    username: string
+    avatarUrl?: string
+    rating: number
+}
 
-const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
+const TradeCard: React.FC<TradeCardProps> = ({
+    username,
+    avatarUrl,
+    rating
+}) => {
     return (
         <Card.Root width="80%">
             <Card.Body>
@@ -30,7 +34,12 @@ const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
             <Card.Footer>
                 <HStack mb="0" gap="3">
                     <Avatar.Root>
-                        <Avatar.Image src={avatarUrl ?? "https://images.unsplash.com/photo-1511806754518-53bada35f930"} />
+                        <Avatar.Image
+                            src={
+                                avatarUrl ??
+                                'https://images.unsplash.com/photo-1511806754518-53bada35f930'
+                            }
+                        />
                         <Avatar.Fallback name={username} />
                     </Avatar.Root>
                     <Stack gap="0">
@@ -40,13 +49,13 @@ const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
                     </Stack>
                     <Stack gap="0">
                         {/* show star and numeric rating side-by-side */}
-                            <StarRating rating={rating} ratingCount={1} />
+                        <StarRating rating={rating} ratingCount={1} />
                     </Stack>
                 </HStack>
             </Card.Footer>
         </Card.Root>
-     )
- };
+    )
+}
 
 const TradePage = () => {
     const users: TradeCardProps[] = [
@@ -55,8 +64,8 @@ const TradePage = () => {
         { username: 'Liam Smith', rating: 1 },
         { username: 'Maya Patel', rating: 3.5 },
         { username: 'Carlos Ruiz', rating: 2 },
-        { username: 'Zoe Kim', rating: 5 },
-    ];
+        { username: 'Zoe Kim', rating: 5 }
+    ]
 
     return (
         <Box bg="white" minH="100vh" color="black" mb={4}>
@@ -66,14 +75,26 @@ const TradePage = () => {
                     justifyContent="center"
                     alignItems="center"
                     gap={1}
-                >
-                </Flex>
+                ></Flex>
                 <Box w="100%" position="relative" px={4}>
-                    <Heading mt={1} fontSize="2xl" textAlign="center" fontWeight={'Bold'} fontFamily="var(--font-sans)" maxW="container.md" mx="auto">
+                    <Heading
+                        mt={1}
+                        fontSize="2xl"
+                        textAlign="center"
+                        fontWeight={'Bold'}
+                        fontFamily="var(--font-sans)"
+                        maxW="container.md"
+                        mx="auto"
+                    >
                         TradePost
                     </Heading>
 
-                    <Box position="absolute" right={4} top="50%" transform="translateY(-50%)">
+                    <Box
+                        position="absolute"
+                        right={4}
+                        top="50%"
+                        transform="translateY(-50%)"
+                    >
                         <Slider.Root maxW="sm" size="sm" defaultValue={[40]}>
                             <HStack justify="space-between">
                                 <Slider.Label>Distance</Slider.Label>
@@ -88,12 +109,17 @@ const TradePage = () => {
                         </Slider.Root>
                     </Box>
                 </Box>
-                {users.map(u => (
-                    <TradeCard key={u.username} username={u.username} avatarUrl={u.avatarUrl} rating={u.rating} />
+                {users.map((u) => (
+                    <TradeCard
+                        key={u.username}
+                        username={u.username}
+                        avatarUrl={u.avatarUrl}
+                        rating={u.rating}
+                    />
                 ))}
             </Flex>
         </Box>
     )
-};
+}
 
-export default TradePage;
+export default TradePage

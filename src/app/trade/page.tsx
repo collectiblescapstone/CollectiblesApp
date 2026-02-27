@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React from 'react'
 import {
   Flex,
   HStack,
@@ -81,4 +81,4 @@ const TradePage = () => {
   );
 };
 
-export default TradePage;
+export default TradePage

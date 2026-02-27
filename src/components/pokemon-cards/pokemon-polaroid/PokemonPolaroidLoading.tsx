@@ -26,4 +26,4 @@ const PokemonPolaroidLoading = () => {
     )
 }
 
-export default PokemonPolaroidLoading;
+export default PokemonPolaroidLoading

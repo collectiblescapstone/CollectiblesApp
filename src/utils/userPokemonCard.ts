@@ -31,11 +31,11 @@ const pokemonCards: Record<string, Entry> = {}
 
 // Set counts based on set
 const masterSetCards: Record<string, Set<string>> = {}
-const grandmasterSetCards: Record<string, Record<string, string>> = {}
+const grandmasterSetCards: Record<string, Record<string, Set<string>>> = {}
 
 // Set counts based on Pokedex ID
 const pokemonMasterSetCards: Record<number, Set<string>> = {}
-const pokemonGrandmasterSet: Record<number, Record<string, string>> = {}
+const pokemonGrandmasterSet: Record<number, Record<string, Set<string>>> = {}
 
 // Track whether we've already fetched cards
 let pokemonCardsInit: Promise<void> | null = null
@@ -87,8 +87,12 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
 
                     if (!grandmasterSetCards[setId])
                         grandmasterSetCards[setId] = {}
-                    grandmasterSetCards[setId][collectionEntry.cardId] =
+                    if (!grandmasterSetCards[setId][collectionEntry.cardId])
+                        grandmasterSetCards[setId][collectionEntry.cardId] =
+                            new Set<string>()
+                    grandmasterSetCards[setId][collectionEntry.cardId].add(
                         collectionEntry.variant
+                    )
                 }
 
                 // Add cards to the Pokemon master and grandmaster sets
@@ -104,8 +108,13 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
 
                     if (!pokemonGrandmasterSet[dexId])
                         pokemonGrandmasterSet[dexId] = {}
-                    pokemonGrandmasterSet[dexId][collectionEntry.cardId] =
+                    if (!pokemonGrandmasterSet[dexId][collectionEntry.cardId]) {
+                        pokemonGrandmasterSet[dexId][collectionEntry.cardId] =
+                            new Set<string>()
+                    }
+                    pokemonGrandmasterSet[dexId][collectionEntry.cardId].add(
                         collectionEntry.variant
+                    )
                 }
             }
         } catch (err) {
@@ -187,13 +196,16 @@ export const userGrandmasterSetCount = async (
     if (Object.keys(grandmasterSetCards).length === 0)
         await fetchPokemonCards(userId)
 
+    const setData = grandmasterSetCards[setId]
+    if (!setData) return 0
+
     let count = 0
-    for (const [, variants] of Object.entries(
-        grandmasterSetCards[setId] || {}
-    )) {
-        count += variants.length
+
+    for (const cardId in setData) {
+        count += setData[cardId].size
     }
-    return count ?? 0
+
+    return count
 }
 
 /**
@@ -238,12 +250,15 @@ export const userPokemonGrandmasterSetCount = async (
 ): Promise<number> => {
     if (Object.keys(pokemonGrandmasterSet).length === 0)
         await fetchPokemonCards(userId)
+
+    const pokeData = pokemonGrandmasterSet[pokedexId]
+    if (!pokeData) return 0
+
     let count = 0
 
-    for (const [, variants] of Object.entries(
-        pokemonGrandmasterSet[pokedexId] || {}
-    )) {
-        count += Object.keys(variants).length
+    for (const cardId in pokeData) {
+        count += pokeData[cardId].size
     }
-    return count ?? 0
+
+    return count
 }

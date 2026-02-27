@@ -4,15 +4,17 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import {
     Box,
-    Image,
-    Heading,
     Card,
     Flex,
-    Progress,
+    Heading,
     HStack,
     Icon,
-    Spinner
+    Image,
+    Progress
 } from '@chakra-ui/react'
+
+// Child Components
+import PokemonSetLoading from './PokemonSetLoading'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -77,23 +79,20 @@ const PokemonSet = ({
     }, [session?.user?.id, setID])
 
     // console.log(
-    //   setID,
-    //   '| Master Set: ',
-    //   masterSetCount,
-    //   '/',
-    //   masterSet,
-    //   ' | Grandmaster Set: ',
-    //   grandmasterSetCount,
-    //   '/',
-    //   grandmasterSet
+    //     setID,
+    //     '| Master Set: ',
+    //     masterSetCount,
+    //     '/',
+    //     masterSet,
+    //     ' | Grandmaster Set: ',
+    //     grandmasterSetCount,
+    //     '/',
+    //     grandmasterSet
     // );
 
-    if (loading) {
-        return (
-            <Box textAlign="center" mt={10}>
-                <Spinner size="xl" />
-            </Box>
-        )
+    if (loading || masterSetCount === null || grandmasterSetCount === null) {
+        return <PokemonSetLoading />
+
     }
 
     return (

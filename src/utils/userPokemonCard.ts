@@ -1,115 +1,120 @@
 // Capacitor
-import { CapacitorHttp } from '@capacitor/core';
+import { CapacitorHttp } from '@capacitor/core'
 
 // Utils
-import { baseUrl } from '@/utils/constants';
-import { MAXPOKEDEXVALUE } from '@/utils/pokedex';
+import { baseUrl } from '@/utils/constants'
+import { MAXPOKEDEXVALUE } from '@/utils/pokedex'
 
 export type Entry = {
-  cardId: string;
-  variant: string;
-  condition: string;
-  setId: string;
-  forTrade: boolean;
-  showcase: boolean;
-  grade: string;
-  gradeLevel: string;
-  tags: string[];
-  dexId: number[];
-};
+    cardId: string
+    variant: string
+    condition: string
+    setId: string
+    forTrade: boolean
+    showcase: boolean
+    grade: string
+    gradeLevel: string
+    tags: string[]
+    dexId: number[]
+}
 
 export type PokemonSet = {
-  name: string;
-  series: string;
-  logo: string;
-  symbol: string;
-  official: number;
-  total: number;
-};
+    name: string
+    series: string
+    logo: string
+    symbol: string
+    official: number
+    total: number
+}
 
-const pokemonCards: Record<string, Entry> = {};
+const pokemonCards: Record<string, Entry> = {}
 
 // Set counts based on set
-const masterSetCards: Record<string, Set<string>> = {};
-const grandmasterSetCards: Record<string, Record<string, string>> = {};
+const masterSetCards: Record<string, Set<string>> = {}
+const grandmasterSetCards: Record<string, Record<string, string>> = {}
 
 // Set counts based on Pokedex ID
-const pokemonMasterSetCards: Record<number, Set<string>> = {};
-const pokemonGrandmasterSet: Record<number, Record<string, string>> = {};
+const pokemonMasterSetCards: Record<number, Set<string>> = {}
+const pokemonGrandmasterSet: Record<number, Record<string, string>> = {}
 
 // Track whether we've already fetched cards
-let pokemonCardsInit: Promise<void> | null = null;
+let pokemonCardsInit: Promise<void> | null = null
 
 const fetchPokemonCards = async (userId: string): Promise<void> => {
-  // If already initialized, just return the existing promise
-  if (pokemonCardsInit) return pokemonCardsInit;
+    // If already initialized, just return the existing promise
+    if (pokemonCardsInit) return pokemonCardsInit
 
-  pokemonCardsInit = (async () => {
-    try {
-      const res = await CapacitorHttp.post({
-        url: `${baseUrl}/api/user-cards`,
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        data: {
-          userId: userId,
-        },
-      });
+    pokemonCardsInit = (async () => {
+        try {
+            const res = await CapacitorHttp.post({
+                url: `${baseUrl}/api/user-cards`,
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                data: {
+                    userId: userId
+                }
+            })
 
-      if (res.status !== 200)
-        throw new Error(`Failed to fetch /api/user-cards for user ${userId}`);
+            if (res.status !== 200)
+                throw new Error(
+                    `Failed to fetch /api/user-cards for user ${userId}`
+                )
 
-      const collectionEntries = res.data.cards;
+            const collectionEntries = res.data.cards
 
-      for (const collectionEntry of collectionEntries) {
-        // Populate a list of cards owned
-        pokemonCards[collectionEntry.id.toString()] = {
-          cardId: collectionEntry.cardId,
-          variant: collectionEntry.variant,
-          condition: collectionEntry.condition || '',
-          setId: collectionEntry.card?.setId ?? [],
-          dexId: collectionEntry.card?.dexId ?? [],
-          forTrade: collectionEntry.forTrade,
-          showcase: collectionEntry.showcase,
-          grade: collectionEntry.grade,
-          gradeLevel: collectionEntry.gradeLevel,
-          tags: collectionEntry.tags,
-        };
+            for (const collectionEntry of collectionEntries) {
+                // Populate a list of cards owned
+                pokemonCards[collectionEntry.id.toString()] = {
+                    cardId: collectionEntry.cardId,
+                    variant: collectionEntry.variant,
+                    condition: collectionEntry.condition || '',
+                    setId: collectionEntry.card?.setId ?? [],
+                    dexId: collectionEntry.card?.dexId ?? [],
+                    forTrade: collectionEntry.forTrade,
+                    showcase: collectionEntry.showcase,
+                    grade: collectionEntry.grade,
+                    gradeLevel: collectionEntry.gradeLevel,
+                    tags: collectionEntry.tags
+                }
 
-        // Add to master and grandmaster sets
-        const setId = collectionEntry.card?.setId;
+                // Add to master and grandmaster sets
+                const setId = collectionEntry.card?.setId
 
-        if (setId) {
-          if (!masterSetCards[setId]) masterSetCards[setId] = new Set<string>();
-          masterSetCards[setId].add(collectionEntry.cardId);
+                if (setId) {
+                    if (!masterSetCards[setId])
+                        masterSetCards[setId] = new Set<string>()
+                    masterSetCards[setId].add(collectionEntry.cardId)
 
-          if (!grandmasterSetCards[setId]) grandmasterSetCards[setId] = {};
-          grandmasterSetCards[setId][collectionEntry.cardId] =
-            collectionEntry.variant;
+                    if (!grandmasterSetCards[setId])
+                        grandmasterSetCards[setId] = {}
+                    grandmasterSetCards[setId][collectionEntry.cardId] =
+                        collectionEntry.variant
+                }
+
+                // Add cards to the Pokemon master and grandmaster sets
+                // Sorted by dexId
+                const dexIds = collectionEntry.card?.dexId || []
+
+                for (const dexId of dexIds) {
+                    if (dexId > MAXPOKEDEXVALUE) continue
+
+                    if (!pokemonMasterSetCards[dexId])
+                        pokemonMasterSetCards[dexId] = new Set<string>()
+                    pokemonMasterSetCards[dexId].add(collectionEntry.cardId)
+
+                    if (!pokemonGrandmasterSet[dexId])
+                        pokemonGrandmasterSet[dexId] = {}
+                    pokemonGrandmasterSet[dexId][collectionEntry.cardId] =
+                        collectionEntry.variant
+                }
+            }
+        } catch (err) {
+            console.error('Fetch error for pokemon cards:', err)
         }
+    })()
 
-        // Add cards to the Pokemon master and grandmaster sets
-        // Sorted by dexId
-        const dexIds = collectionEntry.card?.dexId || [];
-
-        for (const dexId of dexIds) {
-          if (dexId > MAXPOKEDEXVALUE) continue;
-
-          if (!pokemonMasterSetCards[dexId])
-            pokemonMasterSetCards[dexId] = new Set<string>();
-          pokemonMasterSetCards[dexId].add(collectionEntry.cardId);
-
-          if (!pokemonGrandmasterSet[dexId]) pokemonGrandmasterSet[dexId] = {};
-          pokemonGrandmasterSet[dexId][collectionEntry.cardId] =
-            collectionEntry.variant;
-        }
-      }
-    } catch (err) {
-      console.error('Fetch error for pokemon cards:', err);
-    }
-  })();
-
-  return pokemonCardsInit;
-};
+    return pokemonCardsInit
+}
 
 /**
  * Returns Pokemon cards that belongs to a specific set
@@ -117,12 +122,12 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
  * @returns
  */
 export const getUserCardsBySetId = async (
-  userId: string,
-  setId: string
+    userId: string,
+    setId: string
 ): Promise<Entry[]> => {
-  if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards(userId);
-  return Object.values(pokemonCards).filter((card) => card.setId === setId);
-};
+    if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards(userId)
+    return Object.values(pokemonCards).filter((card) => card.setId === setId)
+}
 
 /**
  * Retrieves Pokemon cards with the Pokemon name
@@ -130,12 +135,14 @@ export const getUserCardsBySetId = async (
  * @returns
  */
 export const getUserCardsByPokemonId = async (
-  userId: string,
-  pId: number
+    userId: string,
+    pId: number
 ): Promise<Entry[]> => {
-  if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards(userId);
-  return Object.values(pokemonCards).filter((card) => card.dexId.includes(pId));
-};
+    if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards(userId)
+    return Object.values(pokemonCards).filter((card) =>
+        card.dexId.includes(pId)
+    )
+}
 
 /**
  * Get the master set cards for a user based on setId
@@ -144,13 +151,14 @@ export const getUserCardsByPokemonId = async (
  * @returns
  */
 export const userMasterSet = async (
-  userId: string,
-  setId: string
+    userId: string,
+    setId: string
 ): Promise<string[]> => {
-  if (Object.keys(masterSetCards).length === 0) await fetchPokemonCards(userId);
+    if (Object.keys(masterSetCards).length === 0)
+        await fetchPokemonCards(userId)
 
-  return Array.from(masterSetCards[setId] ?? new Set<string>());
-};
+    return Array.from(masterSetCards[setId] ?? new Set<string>())
+}
 
 /**
  * Gets the total cards for the master set based on setId
@@ -159,11 +167,11 @@ export const userMasterSet = async (
  * @returns
  */
 export const userMasterSetCount = async (
-  userId: string,
-  setId: string
+    userId: string,
+    setId: string
 ): Promise<number> => {
-  return userMasterSet(userId, setId).then((cards) => cards.length);
-};
+    return userMasterSet(userId, setId).then((cards) => cards.length)
+}
 
 /**
  * Calculates the grandmaster set count based on the setId
@@ -173,18 +181,20 @@ export const userMasterSetCount = async (
  * @returns
  */
 export const userGrandmasterSetCount = async (
-  userId: string,
-  setId: string
+    userId: string,
+    setId: string
 ): Promise<number> => {
-  if (Object.keys(grandmasterSetCards).length === 0)
-    await fetchPokemonCards(userId);
+    if (Object.keys(grandmasterSetCards).length === 0)
+        await fetchPokemonCards(userId)
 
-  let count = 0;
-  for (const [, variants] of Object.entries(grandmasterSetCards[setId] || {})) {
-    count += variants.length;
-  }
-  return count ?? 0;
-};
+    let count = 0
+    for (const [, variants] of Object.entries(
+        grandmasterSetCards[setId] || {}
+    )) {
+        count += variants.length
+    }
+    return count ?? 0
+}
 
 /**
  * Get the master set cards for a user based on pokemonId
@@ -193,14 +203,14 @@ export const userGrandmasterSetCount = async (
  * @returns
  */
 export const userPokemonMasterSet = async (
-  userId: string,
-  pokedexId: number
+    userId: string,
+    pokedexId: number
 ): Promise<string[]> => {
-  if (Object.keys(pokemonMasterSetCards).length === 0)
-    await fetchPokemonCards(userId);
+    if (Object.keys(pokemonMasterSetCards).length === 0)
+        await fetchPokemonCards(userId)
 
-  return Array.from(pokemonMasterSetCards[pokedexId] || new Set<string>());
-};
+    return Array.from(pokemonMasterSetCards[pokedexId] || new Set<string>())
+}
 
 /**
  * Gets the total cards for the master set based on pokemonId
@@ -209,11 +219,11 @@ export const userPokemonMasterSet = async (
  * @returns
  */
 export const userPokemonMasterSetCount = async (
-  userId: string,
-  pokedexId: number
+    userId: string,
+    pokedexId: number
 ): Promise<number> => {
-  return userPokemonMasterSet(userId, pokedexId).then((cards) => cards.length);
-};
+    return userPokemonMasterSet(userId, pokedexId).then((cards) => cards.length)
+}
 
 /**
  * Calculates the grandmaster set count based on the pokemonId
@@ -223,17 +233,17 @@ export const userPokemonMasterSetCount = async (
  * @returns
  */
 export const userPokemonGrandmasterSetCount = async (
-  userId: string,
-  pokedexId: number
+    userId: string,
+    pokedexId: number
 ): Promise<number> => {
-  if (Object.keys(pokemonGrandmasterSet).length === 0)
-    await fetchPokemonCards(userId);
-  let count = 0;
+    if (Object.keys(pokemonGrandmasterSet).length === 0)
+        await fetchPokemonCards(userId)
+    let count = 0
 
-  for (const [, variants] of Object.entries(
-    pokemonGrandmasterSet[pokedexId] || {}
-  )) {
-    count += Object.keys(variants).length;
-  }
-  return count ?? 0;
-};
+    for (const [, variants] of Object.entries(
+        pokemonGrandmasterSet[pokedexId] || {}
+    )) {
+        count += Object.keys(variants).length
+    }
+    return count ?? 0
+}

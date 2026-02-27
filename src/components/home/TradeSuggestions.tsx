@@ -1,23 +1,18 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Divider from '@/components/profiles/Divider';
-import {
-    Flex,
-    Image,
-    Text,
-    Button,
-} from '@chakra-ui/react';
-import { useRandomCards } from '@/components/personal-profile/RandomCard'; // for now, change later
-import { PokemonCardImage } from '@/types/personal-profile';
-import { useRouter } from 'next/navigation';
+import React from 'react'
+import Divider from '@/components/profiles/Divider'
+import { Flex, Image, Text, Button } from '@chakra-ui/react'
+import { useRandomCards } from '@/components/personal-profile/RandomCard' // for now, change later
+import { PokemonCardImage } from '@/types/personal-profile'
+import { useRouter } from 'next/navigation'
 
 const TradeSuggestions: React.FC = () => {
-    const { cards, loading } = useRandomCards('ex5', 3);
-    const router = useRouter();
+    const { cards, loading } = useRandomCards('ex5', 3)
+    const router = useRouter()
 
-    if (loading) return <Text>Loading cards...</Text>;
-    if (cards.length === 0) return null;
+    if (loading) return <Text>Loading cards...</Text>
+    if (cards.length === 0) return null
 
     return (
         <Flex
@@ -30,7 +25,12 @@ const TradeSuggestions: React.FC = () => {
         >
             <Divider />
             <Flex mt={1}>
-                <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={2}>
+                <Text
+                    fontSize="md"
+                    color="gray.700"
+                    fontWeight="semibold"
+                    mb={2}
+                >
                     TradePost Suggestion
                 </Text>
             </Flex>
@@ -54,11 +54,16 @@ const TradeSuggestions: React.FC = () => {
                 ))}
                 <Text>[USERNAME]</Text>
             </Flex>
-        {/* Button below navigates to /trade/page.tsx */}
-            <Button size="xs" aria-label="See more trade suggestions" onClick={() => router.push('/trade')}>+ Go to TradePost</Button>
-
+            {/* Button below navigates to /trade/page.tsx */}
+            <Button
+                size="xs"
+                aria-label="See more trade suggestions"
+                onClick={() => router.push('/trade')}
+            >
+                + Go to TradePost
+            </Button>
         </Flex>
-    );
-};
+    )
+}
 
-export default TradeSuggestions;
+export default TradeSuggestions

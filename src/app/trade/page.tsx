@@ -27,14 +27,13 @@ type TradeCardProps = {
 };
 
 type ViableOption = {
-  card: { id: string; name: string; image_url: string };
-  users: {
+  user: {
     id: string;
     username: string | null;
     profile_pic: number;
-    longitude: number | null;
-    latitude: number | null;
-  }[];
+    distance: number | null;
+  };
+  cards: { id: string; name: string; image_url: string }[];
 };
 
 const TradeCard: React.FC<TradeCardProps> = ({
@@ -120,14 +119,13 @@ const TradePage = () => {
 
         const userMap = new Map<string, TradeCardProps>();
         for (const option of viableOptions) {
-          for (const user of option.users) {
-            if (!userMap.has(user.id)) {
-              userMap.set(user.id, {
-                username: user.username ?? 'Unknown User',
-                avatarUrl: pfp_image_mapping[user.profile_pic],
-                rating: 0,
-              });
-            }
+          const viableUser = option.user;
+          if (!userMap.has(viableUser.id)) {
+            userMap.set(viableUser.id, {
+              username: viableUser.username ?? 'Unknown User',
+              avatarUrl: pfp_image_mapping[viableUser.profile_pic],
+              rating: 0,
+            });
           }
         }
 

@@ -55,13 +55,15 @@ export const POST = async (request: Request) => {
   const wishlistCardIds = user.wishlist.map((item) => item.card.id);
 
   // Find all collection entries that are up for trade and match any card in the user's wishlist
-  // Also check for the visibility of the person and make sure to only include those that have set their profile visibility to public
   const tradeMatches = wishlistCardIds.length
     ? await prisma.collectionEntry.findMany({
         where: {
           forTrade: true,
           cardId: { in: wishlistCardIds },
           userId: { not: userID },
+          user: {
+            visibility: 'public',
+          },
         },
         select: {
           card: {
@@ -76,8 +78,6 @@ export const POST = async (request: Request) => {
               id: true,
               username: true,
               profile_pic: true,
-              // Using the longitude and latitude, calculate the distance between the original user and the user with the matching card to determine if they are a viable trade option based on proximity
-              // the proximity part can come later, for now store the distance in the options and return it to the frontend to be used in the sorting of the options
               longitude: true,
               latitude: true,
               wishlist: {
@@ -97,18 +97,17 @@ export const POST = async (request: Request) => {
       })
     : [];
 
-  // Organize the viable options by card, grouping users who have the same card up for trade
+  // Organize the viable options by user, grouping matching trade cards from the original user's wishlist
   const viableOptionsMap = new Map<
     string,
     {
-      card: { id: string; name: string; image_url: string };
-      users: {
+      user: {
         id: string;
         username: string | null;
         profile_pic: number;
-        longitude: number | null;
-        latitude: number | null;
-      }[];
+        distance: number | null;
+      };
+      cards: { id: string; name: string; image_url: string }[];
     }
   >();
 
@@ -122,15 +121,28 @@ export const POST = async (request: Request) => {
       continue;
     }
 
-    // If there's a mutual trade, add the user to the viable options for that card
-    // Change this so that instead its a list of users with the cards they have up for trade that match the original user's wishlist
-    const existing = viableOptionsMap.get(match.card.id);
+    // If there's a mutual trade, add the matching card to that user's viable options
+    const existing = viableOptionsMap.get(match.user.id);
     if (existing) {
-      existing.users.push(match.user);
+      const cardAlreadyAdded = existing.cards.some(
+        (card) => card.id === match.card.id
+      );
+      if (!cardAlreadyAdded) {
+        existing.cards.push(match.card);
+      }
     } else {
-      viableOptionsMap.set(match.card.id, {
-        card: match.card,
-        users: [match.user],
+      viableOptionsMap.set(match.user.id, {
+        user: {
+          id: match.user.id,
+          username: match.user.username,
+          profile_pic: match.user.profile_pic,
+          // Using the longitude and latitude, calculate the euclidean distance between the original user and the user with the matching card to determine if they are a viable trade option based on proximity
+          distance: Math.sqrt(
+            Math.pow(match.user.latitude ?? 0 - (user.latitude ?? 0), 2) +
+              Math.pow(match.user.longitude ?? 0 - (user.longitude ?? 0), 2)
+          ),
+        },
+        cards: [match.card],
       });
     }
   }

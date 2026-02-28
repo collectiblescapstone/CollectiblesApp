@@ -29,6 +29,7 @@ import { useAuth } from '@/context/AuthProvider'
 import { baseUrl } from '@/utils/constants'
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
+import { refreshPokemonCards } from '@/utils/userPokemonCard'
 
 
 interface FormValues {
@@ -125,6 +126,8 @@ const EditCardPage = () => {
     type SelectPayload = { value?: string | string[] }
 
     const { session, loading } = useAuth()
+
+
 
     const searchParams = useSearchParams()
 
@@ -226,6 +229,7 @@ const EditCardPage = () => {
 
     const onSubmit = handleSubmit(async (data) => {
         try {
+            if (!session?.user?.id) return // Extra check to ensure user is authenticated before allowing submission
             const payload = {
                 cardName: data.CardName,
                 condition: data.Condition ?? undefined,
@@ -253,11 +257,15 @@ const EditCardPage = () => {
             }
 
             alert('Card saved to your collection')
+            // Refresh the user data
+            refreshPokemonCards(session.user.id)
         } catch (err) {
             console.error('Unexpected error saving card', err)
             alert('Unexpected error saving card')
         }
     })
+
+    if (!session?.user?.id) return
 
     if (loading || !session) {
         return (
@@ -266,6 +274,7 @@ const EditCardPage = () => {
             </Box>
         )
     }
+
 
     return (
         <form onSubmit={onSubmit}>

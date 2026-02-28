@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Divider from '@/components/profiles/Divider';
-import {Flex, Image, Text} from '@chakra-ui/react';
-import { useRandomCards } from '@/components/personal-profile/RandomCard'; // update to use sets rather than cards
+import React from 'react'
+import Divider from '@/components/profiles/Divider'
+import { Flex, Image, Text } from '@chakra-ui/react'
+import { useRandomCards } from '@/components/personal-profile/RandomCard' // update to use sets rather than cards
 // import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
-import { PokemonCardImage } from '@/types/personal-profile';
+import { PokemonCardImage } from '@/types/personal-profile'
 
 const Collection: React.FC = () => {
-    const { cards, loading } = useRandomCards('ex5', 3);
+    const { cards, loading } = useRandomCards('ex5', 3)
 
-    if (loading) return <Text>Loading cards...</Text>;
-    if (cards.length === 0) return null;
+    if (loading) return <Text>Loading cards...</Text>
+    if (cards.length === 0) return null
 
     return (
         <Flex
@@ -24,7 +24,12 @@ const Collection: React.FC = () => {
         >
             <Divider />
             <Flex mt={1}>
-                <Text fontSize="md" color="gray.700" fontWeight="semibold" mb={2}>
+                <Text
+                    fontSize="md"
+                    color="gray.700"
+                    fontWeight="semibold"
+                    mb={2}
+                >
                     Your collection at a glance
                 </Text>
             </Flex>
@@ -48,7 +53,7 @@ const Collection: React.FC = () => {
                 ))}
             </Flex>
         </Flex>
-    );
-};
+    )
+}
 
-export default Collection;
+export default Collection

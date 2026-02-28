@@ -1,39 +1,39 @@
 name: PR CI
 
 concurrency:
-  group: ${{ github.workflow}}-${{ github.ref || github.event.pull_request.number }}
-  cancel-in-progress: true
+    group: ${{ github.workflow}}-${{ github.ref || github.event.pull_request.number }}
+    cancel-in-progress: true
 
 on:
-  workflow_dispatch:
-  pull_request:
-    branches:
-      - main
+    workflow_dispatch:
+    pull_request:
+        branches:
+            - main
 
 jobs:
-  lint-migrate-test:
-    runs-on: ubuntu-latest
-    environment: Preview
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    lint-migrate-test:
+        runs-on: ubuntu-latest
+        environment: Preview
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22'
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '22'
 
-      - name: Install dependencies
-        run: npm install
+            - name: Install dependencies
+              run: npm install
 
-      - name: Run Linter
-        run: npm run lint
+            - name: Run Linter
+              run: npm run lint
 
-      - name: Deploy db migrations to Preview
-        run: npm run ci:db:deploy
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+            - name: Deploy db migrations to Preview
+              run: npm run ci:db:deploy
+              env:
+                  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+                  DIRECT_URL: ${{ secrets.DIRECT_URL }}
 
-      - name: Run Unit Tests
-        run: npm run test
+            - name: Run Unit Tests
+              run: npm run test

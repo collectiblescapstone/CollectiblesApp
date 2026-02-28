@@ -1,39 +1,32 @@
-import { PokemonCard } from '@/types/pokemon-card';
-import cvReadyPromise from '@techstark/opencv-js';
+import { PokemonCard } from '@/types/pokemon-card'
+import cvReadyPromise from '@techstark/opencv-js'
 
 export type CardData = {
-  hash: string;
-  hashBits: string;
-  card: PokemonCard;
-};
+    hash: string
+    hashBits: string
+    card: PokemonCard
+}
 
 export type CardDataObj = {
-  [id: string]: CardData;
-};
+    [id: string]: CardData
+}
 
-export type corners = [
-  [number, number],
-  [number, number],
-  [number, number],
-  [number, number],
-];
+export interface PredictedImageResult {
+    predictedCard?: CardData
+    foundCardImage?: cvReadyPromise.Mat
+    corners?: [number, number][]
+}
 
-export type PredictedImageResult = {
-  predictedCard?: CardData;
-  foundCardImage?: cvReadyPromise.Mat;
-  corners?: corners;
-};
-
-export type NormalizeCardResult = {
-  image: cvReadyPromise.Mat;
-  corners: corners;
-};
+export interface NormalizeCardResult {
+    image: cvReadyPromise.Mat
+    corners: [number, number][]
+}
 
 // make a new result type
 
 export enum rotation {
-  NONE,
-  CLOCKWISE,
-  COUNTERCLOCKWISE,
-  UPSIDE_DOWN,
+    NONE,
+    CLOCKWISE,
+    COUNTERCLOCKWISE,
+    UPSIDE_DOWN
 }

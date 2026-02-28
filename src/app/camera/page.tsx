@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { IdentifyCards } from '@/components/cv/IdentifyCards';
 import { useState, useEffect, useRef, useCallback } from 'react';
@@ -129,5 +129,3 @@ export const CameraPage = () => {
     </Box>
   );
 };
-
-export default CameraPage;

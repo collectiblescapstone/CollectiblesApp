@@ -118,6 +118,7 @@ const TradePage = () => {
           (response.data?.viableOptions as ViableOption[] | undefined) ?? [];
 
         const userMap = new Map<string, TradeCardProps>();
+
         for (const option of viableOptions) {
           const viableUser = option.user;
           if (!userMap.has(viableUser.id)) {

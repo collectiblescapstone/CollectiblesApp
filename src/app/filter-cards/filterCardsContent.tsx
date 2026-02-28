@@ -209,9 +209,10 @@ const FilterCardsContent: React.FC = () => {
                 <HStack justify="center" gap={4} flexWrap="wrap" mb={4}>
                     {filteredCards.map((card, index) => (
                         <PokemonCardMini
+                            cardId={card.id}
                             key={index}
                             cardName={card.name}
-                            cardId={
+                            cardSetId={
                                 cardNumbers[card.id] +
                                 (Number(card.set.official) > 0
                                     ? '/' + card.set.official

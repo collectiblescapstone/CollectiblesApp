@@ -1,8 +1,7 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
-
 import {
     Button,
     Field,
@@ -14,14 +13,22 @@ import {
     Box,
     createListCollection,
     Listbox,
-    Spinner
+    Spinner,
+    ListCollection
 } from '@chakra-ui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { useAuth } from '@/context/AuthProvider'
 import { CapacitorHttp } from '@capacitor/core'
+
+// Context
+import { useAuth } from '@/context/AuthProvider'
+
+// Utils
 import { baseUrl } from '@/utils/constants'
+import { capitalizeEachWord } from '@/utils/capitalize'
+import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
+
 
 interface FormValues {
     CardName: string
@@ -54,6 +61,8 @@ const grades = createListCollection({
     ]
 })
 
+
+
 // Mapping for the second select's options depending on the selected grade
 const gradeDetailsMap: Record<string, { label: string; value: string }[]> = {
     ungraded: [],
@@ -84,47 +93,101 @@ const conditions = createListCollection({
     ]
 })
 
-const foils = createListCollection({
-    items: [
-        { label: 'Starlight', value: 'starlight' },
-        { label: 'Cosmos', value: 'cosmos' },
-        { label: 'Tinsel', value: 'tinsel' },
-        { label: 'Sheen', value: 'sheen' },
-        { label: 'Cracked Ice', value: 'cracked-ice' },
-        { label: 'Crosshatch', value: 'crosshatch' },
-        { label: 'Water Web', value: 'water-web' },
-        { label: 'Sequin', value: 'sequin' },
-        { label: 'Pixel', value: 'pixel' },
-        { label: 'Reverse Holofoil', value: 'reverse-holo' }
-    ]
-})
+// const holoPatternRecord: Record<string, string> = {
+//     starlight: 'Starlight',
+//     cosmos: 'Cosmos',
+//     tinsel: 'Tinsel',
+//     sheen: 'Sheen',
+//     'cracked-ice': 'Cracked Ice',
+//     crosshatch: 'Crosshatch',
+//     'water-web': 'Water Web',
+//     sequin: 'Sequin',
+//     pixel: 'Pixel',
+//     'reverse-holo': 'Reverse Holofoil'
+//     normal: 'Normal'
+// }
 
-function reset() {
-    // Placeholder reset function - implement form reset logic as needed
-    console.log('Reset form called')
-}
 
+
+// function reset() {
+//     // Placeholder reset function - implement form reset logic as needed
+//     console.log('Reset form called')
+// }
+
+/**
+ * 
+ * @returns 
+ */
 const EditCardPage = () => {
+
+
     type SelectPayload = { value?: string | string[] }
 
     const { session, loading } = useAuth()
 
     const searchParams = useSearchParams()
 
-    const imageUrl = searchParams.get('imageUrl') ?? ''
-    const cardName = searchParams.get('cardName') ?? ''
-    const cardSet = searchParams.get('cardSet') ?? ''
-    const cardId = searchParams.get('cardId') ?? ''
+    const [cardId, setCardId] = useState<string>('')
+    const [cardInfo, setCardInfo] = useState<PokemonCard | undefined>(undefined)
+    const [cardFoils, setCardFoils] = useState<ListCollection<{ label: string; value: string; }>>()
+
+    // const foils = () => {
+    //     const items = []
+    //     for (const holopattern in )
+    //     // const collections = createListCollection({
+    //     //     items: [
+    //     //         { label: 'Starlight', value: 'starlight' },
+    //     //         { label: 'Cosmos', value: 'cosmos' },
+    //     //         { label: 'Tinsel', value: 'tinsel' },
+    //     //         { label: 'Sheen', value: 'sheen' },
+    //     //         { label: 'Cracked Ice', value: 'cracked-ice' },
+    //     //         { label: 'Crosshatch', value: 'crosshatch' },
+    //     //         { label: 'Water Web', value: 'water-web' },
+    //     //         { label: 'Sequin', value: 'sequin' },
+    //     //         { label: 'Pixel', value: 'pixel' },
+    //     //         { label: 'Reverse Holofoil', value: 'reverse-holo' }
+    //     //     ]
+    //     // })
+    //     return collections
+    // }
+
+    useEffect(() => {
+        const cardId = searchParams.get('cardId') ?? ''
+        setCardId(cardId)
+        const fetchCardInfo = async () => {
+            console.log(cardId)
+            const info = await getCardInformation(cardId)
+            setCardInfo(info)
+
+            // Get holo patterns
+            const items = info?.variants ? [] : [{ label: 'Normal', value: 'normal' }]
+
+            for (const [, holopattern] of Object.entries(info?.variants || {})) {
+                console.log(holopattern)
+                items.push({
+                    label: capitalizeEachWord(holopattern),
+                    value: holopattern
+                })
+            }
+            setCardFoils(createListCollection({
+                items: items
+            }))
+        }
+        fetchCardInfo()
+    }, [searchParams])
+
+
     const {
         register,
         handleSubmit,
         control,
+        reset,
         formState: { errors }
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            CardName: cardName,
-            CardSet: cardSet,
+            CardName: '',
+            CardSet: '',
             CardGrade: ['ungraded'],
             CardGradeDetail: [],
             Condition: undefined,
@@ -132,6 +195,23 @@ const EditCardPage = () => {
             Tags: []
         }
     })
+
+    // Reset form when cardInfo loads
+    useEffect(() => {
+        if (cardInfo) {
+            reset({
+                CardName: cardInfo.name ?? '',
+                CardSet: cardInfo.setId ?? '',
+                CardGrade: ['ungraded'],
+                CardGradeDetail: [],
+                Condition: undefined,
+                FoilPattern: undefined,
+                Tags: []
+            })
+        }
+    }, [cardInfo, reset])
+
+
 
     // keep track of the currently selected top-level grade so we can
     // enable/disable and populate the second select accordingly
@@ -217,14 +297,14 @@ const EditCardPage = () => {
                         alignItems="center"
                         justifyContent="center"
                         style={{
-                            backgroundImage: imageUrl
-                                ? `url(${imageUrl}/low.jpg)`
+                            backgroundImage: cardInfo?.image_url
+                                ? `url(${cardInfo?.image_url})`
                                 : undefined,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }}
                     >
-                        {!imageUrl && 'CARD IMAGE'}
+                        {!cardInfo?.image_url && 'CARD IMAGE'}
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}
@@ -302,8 +382,8 @@ const EditCardPage = () => {
                                             raw === undefined
                                                 ? []
                                                 : Array.isArray(raw)
-                                                  ? raw
-                                                  : [raw]
+                                                    ? raw
+                                                    : [raw]
                                         field.onChange(arr)
                                         setSelectedGrade(arr[0] ?? 'ungraded')
                                     }
@@ -452,8 +532,8 @@ const EditCardPage = () => {
                                                     raw === undefined
                                                         ? []
                                                         : Array.isArray(raw)
-                                                          ? raw
-                                                          : [raw]
+                                                            ? raw
+                                                            : [raw]
                                                 field.onChange(arr)
                                             }}
                                         >
@@ -563,7 +643,7 @@ const EditCardPage = () => {
                         control={control}
                         render={({ field }) => (
                             <Listbox.Root
-                                collection={foils}
+                                collection={cardFoils || createListCollection<{ label: string; value: string }>({ items: [] })}
                                 deselectable
                                 maxW="320px"
                                 value={field.value ? [field.value] : []}
@@ -573,13 +653,13 @@ const EditCardPage = () => {
                             >
                                 <Listbox.Label>Card Foil Pattern</Listbox.Label>
                                 <Listbox.Content>
-                                    {foils.items.map((foil) => (
+                                    {cardFoils?.items.map((cardFoil) => (
                                         <Listbox.Item
-                                            item={foil}
-                                            key={foil.value}
+                                            item={cardFoil}
+                                            key={cardFoil.value}
                                         >
                                             <Listbox.ItemText>
-                                                {foil.label}
+                                                {cardFoil.label}
                                             </Listbox.ItemText>
                                             <Listbox.ItemIndicator />
                                         </Listbox.Item>
@@ -635,7 +715,7 @@ const EditCardPage = () => {
                         </Field.HelperText>
                     </Field.Root>
                     <Stack direction="column" gap={2}>
-                        <Button bg="red" onClick={reset}>
+                        <Button bg="red" onClick={() => reset()}>
                             Discard Changes
                         </Button>
                         <Button type="submit">Save</Button>

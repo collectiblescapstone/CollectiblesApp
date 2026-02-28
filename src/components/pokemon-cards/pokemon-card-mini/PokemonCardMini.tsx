@@ -5,18 +5,20 @@ import { Box, Image, VStack, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 
 interface PokemonCardMiniProps {
+    cardId: string
     cardName: string
     image: string
     cardOwned: boolean
-    cardId: string // actual card ID, e.g., "sv01-001"
+    cardSetId: string // actual card ID, e.g., "sv01-001"
     // illustrator?: string;
     // rarity?: string;
 }
 
 const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
+    cardId,
     cardName,
     image,
-    cardId,
+    cardSetId,
     cardOwned
     // illustrator,
     // rarity,
@@ -26,10 +28,8 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
             href={{
                 pathname: '/edit-card',
                 query: {
-                    imageUrl: image,
-                    cardName: cardName,
-                    cardSet: cardId,
-                    cardOwned: cardOwned
+                    cardId: cardId,
+                    editable: false
                 }
             }}
         >
@@ -88,7 +88,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
 
                     {/* Show the actual card ID */}
                     <Text fontSize="sm" color="gray.600">
-                        {cardId}
+                        {cardSetId}
                     </Text>
                 </VStack>
             </Box>

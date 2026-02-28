@@ -8,6 +8,7 @@ import {
     Input,
     Stack,
     TagsInput,
+    Image,
     Select,
     Portal,
     Box,
@@ -288,23 +289,27 @@ const EditCardPage = () => {
                     <Box
                         bg="tomato"
                         width="170px"
-                        height="260px"
                         borderRadius="12px"
                         boxShadow="md"
-                        p="4"
                         color="white"
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
                         style={{
-                            backgroundImage: cardInfo?.image_url
-                                ? `url(${cardInfo?.image_url})`
-                                : undefined,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }}
                     >
-                        {!cardInfo?.image_url && 'CARD IMAGE'}
+                        <Image
+                            src={
+                                cardInfo?.image_url !== 'undefined/low.png' && cardInfo?.image_url !== ''
+                                    ? cardInfo?.image_url
+                                    : '/Images/PokemonCardBack.jpg'
+                            }
+                            alt={cardInfo?.name ?? 'Card Image'}
+                            objectFit="contain"
+                            width="100%"
+                        />
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}

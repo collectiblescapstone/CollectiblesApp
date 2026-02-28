@@ -28,8 +28,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
             href={{
                 pathname: '/edit-card',
                 query: {
-                    cardId: cardId,
-                    editable: false
+                    cardId: cardId
                 }
             }}
         >

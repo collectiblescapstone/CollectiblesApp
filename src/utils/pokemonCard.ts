@@ -110,7 +110,6 @@ const fetchPokemonCards = async (): Promise<void> => {
                     pokemonGrandmasterCounts.push(0)
 
                 for (const [, cardInfo] of Object.entries(pokemonCards)) {
-                    // console.log(pokemonCards[pId], cardInfo);
                     if (cardInfo.dexId.includes(pokedexValue)) {
                         // Add the values to the arrays
                         if (!pokemonGrandmasterCounts[i]) {

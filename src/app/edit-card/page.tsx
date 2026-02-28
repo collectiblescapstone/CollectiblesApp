@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation'
 import {
     Button,
     Field,
-    Input,
     Stack,
     TagsInput,
     Image,
@@ -27,6 +26,7 @@ import { useAuth } from '@/context/AuthProvider'
 
 // Utils
 import { baseUrl } from '@/utils/constants'
+import { cardConditions, gradeDetailsMap, gradingCompanies } from '@/utils/cardInfo/cardGrading'
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
@@ -53,68 +53,12 @@ const formSchema = z.object({
 })
 
 const grades = createListCollection({
-    items: [
-        { label: 'Ungraded', value: 'ungraded' },
-        { label: 'PSA', value: 'psa' },
-        { label: 'TAG', value: 'tag' },
-        { label: 'CGC', value: 'cgc' },
-        { label: 'Beckett', value: 'beckett' },
-        { label: 'ACE', value: 'ace' }
-    ]
+    items: gradingCompanies
 })
-
-
-
-// Mapping for the second select's options depending on the selected grade
-const gradeDetailsMap: Record<string, { label: string; value: string }[]> = {
-    ungraded: [],
-    psa: [
-        { label: '10', value: 'psa-10' },
-        { label: '9', value: 'psa-9' },
-        { label: '8', value: 'psa-8' }
-    ],
-    tag: [
-        { label: '10', value: 'tag-10' },
-        { label: '9', value: 'tag-9' }
-    ],
-    cgc: [
-        { label: '10', value: 'cgc-10' },
-        { label: '9.5', value: 'cgc-9.5' }
-    ],
-    beckett: [{ label: '10', value: 'beckett-10' }],
-    ace: [{ label: '10', value: 'ace-10' }]
-}
 
 const conditions = createListCollection({
-    items: [
-        { label: 'Near Mint', value: 'near-mint' },
-        { label: 'Lightly Played', value: 'lightly-played' },
-        { label: 'Moderately Played', value: 'moderately-played' },
-        { label: 'Heavily Played', value: 'heavily-played' },
-        { label: 'Damaged', value: 'damaged' }
-    ]
+    items: cardConditions
 })
-
-// const holoPatternRecord: Record<string, string> = {
-//     starlight: 'Starlight',
-//     cosmos: 'Cosmos',
-//     tinsel: 'Tinsel',
-//     sheen: 'Sheen',
-//     'cracked-ice': 'Cracked Ice',
-//     crosshatch: 'Crosshatch',
-//     'water-web': 'Water Web',
-//     sequin: 'Sequin',
-//     pixel: 'Pixel',
-//     'reverse-holo': 'Reverse Holofoil'
-//     normal: 'Normal'
-// }
-
-
-
-// function reset() {
-//     // Placeholder reset function - implement form reset logic as needed
-//     console.log('Reset form called')
-// }
 
 /**
  * 
@@ -122,38 +66,15 @@ const conditions = createListCollection({
  */
 const EditCardPage = () => {
 
-
     type SelectPayload = { value?: string | string[] }
 
     const { session, loading } = useAuth()
-
-
-
     const searchParams = useSearchParams()
 
     const [cardId, setCardId] = useState<string>('')
     const [cardInfo, setCardInfo] = useState<PokemonCard | undefined>(undefined)
     const [cardFoils, setCardFoils] = useState<ListCollection<{ label: string; value: string; }>>()
 
-    // const foils = () => {
-    //     const items = []
-    //     for (const holopattern in )
-    //     // const collections = createListCollection({
-    //     //     items: [
-    //     //         { label: 'Starlight', value: 'starlight' },
-    //     //         { label: 'Cosmos', value: 'cosmos' },
-    //     //         { label: 'Tinsel', value: 'tinsel' },
-    //     //         { label: 'Sheen', value: 'sheen' },
-    //     //         { label: 'Cracked Ice', value: 'cracked-ice' },
-    //     //         { label: 'Crosshatch', value: 'crosshatch' },
-    //     //         { label: 'Water Web', value: 'water-web' },
-    //     //         { label: 'Sequin', value: 'sequin' },
-    //     //         { label: 'Pixel', value: 'pixel' },
-    //     //         { label: 'Reverse Holofoil', value: 'reverse-holo' }
-    //     //     ]
-    //     // })
-    //     return collections
-    // }
 
     useEffect(() => {
         const cardId = searchParams.get('cardId') ?? ''
@@ -182,7 +103,6 @@ const EditCardPage = () => {
 
 
     const {
-        register,
         handleSubmit,
         control,
         reset,
@@ -340,35 +260,11 @@ const EditCardPage = () => {
                     flexGrow={1}
                     minWidth={0}
                 >
-                    <Field.Root invalid={!!errors.CardName}>
-                        <Field.Label>
-                            Card name <Field.RequiredIndicator />
-                        </Field.Label>
-                        <Input
-                            placeholder="Item name"
-                            {...register('CardName', {
-                                required: 'Card name is required'
-                            })}
-                        />
-                        <Field.ErrorText>
-                            {errors.CardName?.message}
-                        </Field.ErrorText>
-                    </Field.Root>
+                    <Box fontSize="sm" fontWeight="bold">Card name</Box>
+                    <Box>{cardInfo?.name || 'N/A'}</Box>
 
-                    <Field.Root invalid={!!errors.CardSet}>
-                        <Field.Label>
-                            Card set <Field.RequiredIndicator />
-                        </Field.Label>
-                        <Input
-                            placeholder="Item set"
-                            {...register('CardSet', {
-                                required: 'Card set is required'
-                            })}
-                        />
-                        <Field.ErrorText>
-                            {errors.CardSet?.message}
-                        </Field.ErrorText>
-                    </Field.Root>
+                    <Box fontSize="sm" fontWeight="bold">Card set</Box>
+                    <Box>{cardInfo?.setId || 'N/A'}</Box>
 
                     <Stack
                         direction="row"
@@ -378,7 +274,7 @@ const EditCardPage = () => {
                         width="-webkit-fill-available"
                     >
                         <Field.Root invalid={!!errors.CardGrade}>
-                            <Field.Label>Card Grade</Field.Label>
+                            <Field.Label>Grading</Field.Label>
                             <Controller
                                 control={control}
                                 name="CardGrade"

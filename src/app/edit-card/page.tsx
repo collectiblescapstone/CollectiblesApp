@@ -30,6 +30,7 @@ import { cardConditions, gradeDetailsMap, gradingCompanies } from '@/utils/cardI
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
+import { getSetName } from '@/utils/pokemonSet'
 
 
 interface FormValues {
@@ -71,18 +72,21 @@ const EditCardPage = () => {
     const { session, loading } = useAuth()
     const searchParams = useSearchParams()
 
+    // Card information
     const [cardId, setCardId] = useState<string>('')
     const [cardInfo, setCardInfo] = useState<PokemonCard | undefined>(undefined)
     const [cardFoils, setCardFoils] = useState<ListCollection<{ label: string; value: string; }>>()
+    const [cardSet, setCardSet] = useState<string>('')
 
 
     useEffect(() => {
         const cardId = searchParams.get('cardId') ?? ''
         setCardId(cardId)
         const fetchCardInfo = async () => {
-            console.log(cardId)
             const info = await getCardInformation(cardId)
             setCardInfo(info)
+
+            setCardSet(await getSetName(info?.setId ?? '') || 'N/A')
 
             // Get holo patterns
             const items = info?.variants ? [] : [{ label: 'Normal', value: 'normal' }]
@@ -264,7 +268,8 @@ const EditCardPage = () => {
                     <Box>{cardInfo?.name || 'N/A'}</Box>
 
                     <Box fontSize="sm" fontWeight="bold">Card set</Box>
-                    <Box>{cardInfo?.setId || 'N/A'}</Box>
+                    {/* getSetName(cardInfo?.setId || '') */}
+                    <Box>{cardSet}</Box>
 
                     <Stack
                         direction="row"

@@ -138,23 +138,6 @@ const fetchPokemonCards = async (): Promise<void> => {
     return pokemonCardsInit
 }
 
-// /**
-//  * Edits the set counts
-//  * @param set
-//  * @param index
-//  * @param value
-//  * @returns
-//  */
-// const editSetCounts = (
-//   set: Record<string, number>,
-//   index: string,
-//   value: number
-// ) => {
-//   if (!set[index]) set[index] = 0;
-//   set[index] += value > 0 ? value : 1;
-//   return set;
-// };
-
 const fetchPokemonSets = async (): Promise<void> => {
     if (pokemonSetsInit) return pokemonSetsInit
 

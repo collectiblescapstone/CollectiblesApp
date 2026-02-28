@@ -1,8 +1,8 @@
 import { Box, Spinner } from '@chakra-ui/react'
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 const PokemonSetLoading = () => {
     return (

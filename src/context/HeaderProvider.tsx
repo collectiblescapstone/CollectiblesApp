@@ -1,25 +1,28 @@
-'use client';
+'use client'
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react'
 
-const HeaderContext = createContext<HeaderContextType | undefined>(undefined);
+const HeaderContext = createContext<HeaderContextType | undefined>(undefined)
 
 interface HeaderContextType {
-  profileId: string;
-  setProfileID: (newProfileID: string) => void;
+    profileId: string
+    setProfileID: (newProfileID: string) => void
 }
 
 export const HeaderProvider = ({ children }: { children: ReactNode }) => {
-  const [profileId, setProfileID] = useState('Collectibles App');
+    const [profileId, setProfileID] = useState('Collectibles App')
 
-  return (
-    <HeaderContext.Provider value={{ profileId, setProfileID }}>
-      {children}
-    </HeaderContext.Provider>
-  );
-};
+    return (
+        <HeaderContext.Provider value={{ profileId, setProfileID }}>
+            {children}
+        </HeaderContext.Provider>
+    )
+}
 
 export const useHeader = () => {
-  const context = useContext(HeaderContext);
-  return context;
-};
+    const context = useContext(HeaderContext)
+    if (!context) {
+        throw new Error('useHeader must be used within a HeaderProvider')
+    }
+    return context
+}

@@ -9,24 +9,26 @@ datasource db {
 }
 
 model User {
-  email       String            @unique
-  username    String?           @unique
-  id          String            @id @db.Uuid
-  bio         String?
-  facebook    String?
-  firstName   String?
-  instagram   String?
-  lastName    String?
-  location    String?
-  x           String?
-  discord     String?
-  whatsapp    String?
-  profile_pic Int               @default(0)
-  visibility  String            @default("public")
-  latitude    Float?
-  longitude   Float?
-  collection  CollectionEntry[]
-  wishlist    WishlistEntry[]
+  email           String            @unique
+  username        String?           @unique
+  id              String            @id @db.Uuid
+  bio             String?
+  facebook        String?
+  firstName       String?
+  instagram       String?
+  lastName        String?
+  location        String?
+  x               String?
+  discord         String?
+  whatsapp        String?
+  profile_pic     Int               @default(0)
+  visibility      String            @default("public")
+  latitude        Float?
+  longitude       Float?
+  rating          Float             @default(0)
+  rating_count    Int               @default(0)
+  collection      CollectionEntry[]
+  wishlist        WishlistEntry[]
 }
 
 model Set {

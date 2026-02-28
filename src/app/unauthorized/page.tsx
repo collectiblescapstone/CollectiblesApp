@@ -1,42 +1,42 @@
-'use client';
+'use client'
 
-import { Flex, VStack, Heading, Text, Button } from '@chakra-ui/react';
-import { useRouter } from 'next/navigation';
-import React from 'react';
+import { Flex, VStack, Heading, Text, Button } from '@chakra-ui/react'
+import { useRouter } from 'next/navigation'
+import React from 'react'
 
 const UnauthorizedPage: React.FC = () => {
-  const router = useRouter();
+    const router = useRouter()
 
-  const handleLoginRedirect = () => {
-    router.push('/sign-in');
-  };
+    const handleLoginRedirect = () => {
+        router.push('/sign-in')
+    }
 
-  return (
-    <Flex minH="100vh" align="center" justify="center" bg="gray.100">
-      <VStack gap={8} textAlign="center">
-        <Heading as="h1" size="4xl" color="gray.800">
-          401
-        </Heading>
-        <Text fontSize="2xl" color="gray.600">
-          Unauthorized
-        </Text>
-        <Text color="gray.500">
-          You don&apos;t have permission to access this page. Please log in to
-          continue.
-        </Text>
-        <Button
-          onClick={handleLoginRedirect}
-          backgroundColor="brand.marigold"
-          color="brand.turtoise"
-          px={6}
-          py={3}
-          fontWeight="semibold"
-        >
-          Go to Login
-        </Button>
-      </VStack>
-    </Flex>
-  );
-};
+    return (
+        <Flex minH="100vh" align="center" justify="center" bg="gray.100">
+            <VStack gap={8} textAlign="center">
+                <Heading as="h1" size="4xl" color="gray.800">
+                    401
+                </Heading>
+                <Text fontSize="2xl" color="gray.600">
+                    Unauthorized
+                </Text>
+                <Text color="gray.500">
+                    You don&apos;t have permission to access this page. Please
+                    log in to continue.
+                </Text>
+                <Button
+                    onClick={handleLoginRedirect}
+                    backgroundColor="brand.marigold"
+                    color="brand.turtoise"
+                    px={6}
+                    py={3}
+                    fontWeight="semibold"
+                >
+                    Go to Login
+                </Button>
+            </VStack>
+        </Flex>
+    )
+}
 
-export default UnauthorizedPage;
+export default UnauthorizedPage

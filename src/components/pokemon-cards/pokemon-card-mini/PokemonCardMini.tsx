@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Box, Image, VStack, Text } from '@chakra-ui/react'
+import { CiCirclePlus } from 'react-icons/ci'
 import Link from 'next/link'
 
 interface PokemonCardMiniProps {
@@ -56,6 +57,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
+                    position="relative" // important for overlay positioning
                 >
                     <Image
                         src={
@@ -72,6 +74,26 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
                             opacity: cardOwned ? 1 : 0.4
                         }}
                     />
+
+                    {!cardOwned && (
+                        <Box
+                            position="absolute"
+                            top="50%"
+                            left="50%"
+                            transform="translate(-50%, -50%)"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                        >
+                            <CiCirclePlus
+                                size={64}
+                                color="white"
+                                style={{
+                                    filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                                }}
+                            />
+                        </Box>
+                    )}
                 </Box>
 
                 {/* Text Info */}

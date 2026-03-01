@@ -22,7 +22,7 @@ export interface NormalizeCardResult {
     corners: [number, number][]
 }
 
-export type corners = [
+export type Corners = [
     [number, number],
     [number, number],
     [number, number],

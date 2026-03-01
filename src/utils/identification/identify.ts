@@ -17,7 +17,7 @@ export const IdentifyCardInImage = async (
     src: string,
     rot: rotation = rotation.NONE
 ): Promise<PredictedImageResult | undefined> => {
-    if(!rot) console.log("fuck the linter bro")
+    if (!rot) console.log('fuck the linter bro')
 
     const cv = await cvReadyPromise
 
@@ -48,6 +48,13 @@ export const IdentifyCardInImage = async (
     const classifier = await CardClassifier()
 
     const similarCards = classifier(cv, first.image)
+
+    // cleanup
+    for (const r of result?.results ?? []) {
+        if (r.image && !r.image.isDeleted()) {
+            r.image.delete()
+        }
+    }
 
     const ret: PredictedImageResult = {
         predictedCard: similarCards[0],

@@ -73,6 +73,13 @@ export const IdentifyCards = ({
             }
             setPredictedCards(similar)
 
+            // cleanup
+            for (const r of res?.results ?? []) {
+                if (r.image && !r.image.isDeleted()) {
+                    r.image.delete()
+                }
+            }
+
             isProcessing.current = false
             onProcessed()
         }

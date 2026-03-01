@@ -6,7 +6,7 @@ import {
     MODEL_INPUT_HEIGHT
 } from '@/utils/constants'
 
-import { corners, NormalizeCardResult } from '@/types/identification'
+import { Corners, NormalizeCardResult } from '@/types/identification'
 
 import { Tensor } from 'onnxruntime-web'
 import { filterContours, reorderCorners } from './cvutils'
@@ -27,7 +27,6 @@ export const locateWithYOLO = async (
     imageData: ImageData,
     cv: CV,
     logging: boolean = false
-    // ): Promise<NormalizeCardResult | undefined> => {
 ): Promise<{ results: NormalizeCardResult[]; overlay: ImageData } | null> => {
     if (errorCount >= 5) {
         console.warn('Too many errors in locateWithYOLO, skipping processing.')
@@ -125,10 +124,6 @@ export const locateWithYOLO = async (
             cv.CHAIN_APPROX_SIMPLE
         )
 
-        for (let i = 0; i < contours.size(); i++) {
-            matsToDelete.push(contours.get(i))
-        }
-
         if (logging) console.log('filtering contours')
         // ----------
         // find contours with 4 sides, a big enough area, and not touching edge of image
@@ -144,6 +139,7 @@ export const locateWithYOLO = async (
         const foundCards: NormalizeCardResult[] = []
 
         for (const contour of filteredContours) {
+            matsToDelete.push(contour)
             // draw found contour and warp card
             const warped = cv.Mat.zeros(
                 CARD_HEIGHT_PX,
@@ -178,15 +174,17 @@ export const locateWithYOLO = async (
 
             // transform card to aligned view
             const Matrix = cv.getPerspectiveTransform(pts1, pts2)
+            matsToDelete.push(Matrix)
             cv.warpPerspective(
                 srcMat,
                 warped,
                 Matrix,
                 new cv.Size(CARD_WIDTH_PX, CARD_HEIGHT_PX)
             )
+
             foundCards.push({
                 image: warped,
-                corners: scaledCorners as corners
+                corners: scaledCorners as Corners
             } as NormalizeCardResult)
         }
 

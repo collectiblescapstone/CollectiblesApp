@@ -21,19 +21,16 @@ import CardFilter from '@/components/card-filter/CardFilter'
 import { useFilters } from '@/hooks/useFilters'
 
 // Utils
-import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard'
-import { getPokemonName, getGeneration } from '@/utils/pokedex'
+import { getUserCards } from '@/utils/userPokemonCard'
 
 // Types
-import type { CardData } from '@/types/pokemon-card'
 import { useAuth } from '@/context/AuthProvider'
-import { getPokemonCards } from '@/utils/pokemonCard'
-import { CardSearch } from '@/components/card-filter/CardSearch'
+import { CardCollectionEntry } from '@/types/collection-card'
 
 const UserCardsPage: React.FC = () => {
     // Search Params
     const searchParams = useSearchParams()
-    const type = searchParams.get('type')
+    const cardId = searchParams.get('cardId')
 
     // Authentification
     const { session, loading: authLoading } = useAuth()
@@ -41,8 +38,22 @@ const UserCardsPage: React.FC = () => {
     // Filters from search
     const [filteredIds, setFilteredIds] = useState<string[]>()
 
+    // Cards owned
+    const [userCards, setUserCards] = useState<CardCollectionEntry[]>([])
+
     // Local States
     const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const loadData = async () => {
+            if (!session) return
+            const fetchedCards = await getUserCards(session.user.id, cardId || '')
+            // console.log('Fetched Cards:', fetchedCards) // Debug log
+            setUserCards(fetchedCards)
+            setLoading(false)
+        }
+        loadData()
+    }, [])
 
 
     if (loading || authLoading || !session)
@@ -52,54 +63,20 @@ const UserCardsPage: React.FC = () => {
             </Box>
         )
 
-    return;
 
-    //     return (
-    //         <Box>
-    //             <Flex mb={6} flexDirection="column" pl={5} pr={5} pt={5}>
-    //                 <Flex justify="space-between" align="center">
-    //                     <Heading>
-    //                         {type === 'set'
-    //                             ? `${setName} Card Set`
-    //                             : `${type === 'set' ? setName : pokemonName} Cards`}
-    //                     </Heading>
-    //                     <Flex gap={1} align="right">
-    //                         <IconButton
-    //                             aria-label="Toggle sort order"
-    //                             size="lg"
-    //                             variant="ghost"
-    //                             onClick={toggleSortOrder}
-    //                         >
-    //                             {ascending ? <LuChevronUp /> : <LuChevronDown />}
-    //                         </IconButton>
-    //                         <CardFilter />
-    //                     </Flex>
-    //                 </Flex>
-    //                 <CardSearch cards={cards} setFilteredIds={setFilteredIds} />
-    //             </Flex>
-    //             {filteredCards.length === 0 ? (
-    //                 <Text>No cards match the selected filters.</Text>
-    //             ) : (
-    //                 <HStack justify="center" gap={4} flexWrap="wrap" mb={4}>
-    //                     {filteredCards.map((card, index) => (
-    //                         <PokemonCardMini
-    //                             cardId={card.id}
-    //                             key={index}
-    //                             cardName={card.name}
-    //                             cardSetId={
-    //                                 cardNumbers[card.id] +
-    //                                 (Number(card.set.official) > 0
-    //                                     ? '/' + card.set.official
-    //                                     : '')
-    //                             }
-    //                             cardOwned={userCards.includes(card.id)}
-    //                             image={card.image_url}
-    //                         />
-    //                     ))}
-    //                 </HStack>
-    //             )}
-    //         </Box>
-    //     )
+    return (
+        <Box>
+            {/*CARD HEADER INFORMATION*/}
+
+
+            {/*Cards Owned INFORMATION*/}
+            {userCards.map((card, id) => (
+                <Text key={id}>
+                    Condition: {card.condition || 'None'}, Variant: {card.variant}
+                </Text>
+            ))}
+        </Box>
+    )
 }
 
 export default UserCardsPage

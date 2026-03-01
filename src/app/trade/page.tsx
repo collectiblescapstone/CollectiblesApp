@@ -129,14 +129,6 @@ const TradePage = () => {
                         | ViableOption[]
                         | undefined) ?? []
 
-                if (viableOptions.length === 0) {
-                    setUsers([])
-                    setError(
-                        "Thats a truly special hand you have there. We couldn't find any viable trades for you at the moment. Try editing your collection or wishlist to find some matches!"
-                    )
-                    return
-                }
-
                 const userMap = new Map<string, TradeCardProps>()
 
                 for (const option of viableOptions) {
@@ -187,41 +179,34 @@ const TradePage = () => {
         )
     }
 
-    // if (users.length === 0) {
-    //     return (
-    //         <Box bg="white" minH="100vh" color="black" mb={4}>
-    //             <Flex flexDirection="column" alignItems="center" gap={2}>
-    //                 <Flex
-    //                     flexDirection="row"
-    //                     justifyContent="center"
-    //                     alignItems="center"
-    //                     gap={1}
-    //                     textAlign="center"
-    //                 ></Flex>
-    //                 <Box w="100%" position="relative" px={4}>
-    //                     <Box position="absolute" right={4} top="50%">
-    //                         <Slider.Root
-    //                             maxW="sm"
-    //                             size="sm"
-    //                             defaultValue={[40]}
-    //                         >
-    //                             <HStack justify="space-between">
-    //                                 <Slider.Label>Distance</Slider.Label>
-    //                                 <Slider.ValueText />
-    //                             </HStack>
-    //                             <Slider.Control>
-    //                                 <Slider.Track>
-    //                                     <Slider.Range />
-    //                                 </Slider.Track>
-    //                                 <Slider.Thumbs />
-    //                             </Slider.Control>
-    //                         </Slider.Root>
-    //                     </Box>
-    //                 </Box>
-    //             </Flex>
-    //         </Box>
-    //     )
-    // }
+    if (users.length === 0) {
+        return (
+            <Box bg="white" minH="100vh" color="black" mb={3}>
+                <Flex
+                    textAlign="center"
+                    justifyContent="center"
+                    alignItems="center"
+                    height="50vh"
+                    px={10}
+                    gap={4}
+                    flexDirection="column"
+                >
+                    <Text
+                        fontSize="lg"
+                        fontWeight="semibold"
+                        color="brand.turtoise"
+                    >
+                        Thats a special hand you have there!
+                    </Text>
+                    <Text fontSize="sm" color="gray.600">
+                        We could not find any viable trades for you at the
+                        moment. Try editing your collection or wishlist to find
+                        some matches!
+                    </Text>
+                </Flex>
+            </Box>
+        )
+    }
 
     return (
         <Box bg="white" minH="100vh" color="black" mb={4}>

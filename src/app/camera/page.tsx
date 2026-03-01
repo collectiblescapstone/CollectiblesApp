@@ -13,7 +13,7 @@ import {
     HStack
 } from '@chakra-ui/react'
 
-export const CameraPage = () => {
+const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
         null
     )

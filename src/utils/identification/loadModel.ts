@@ -28,7 +28,7 @@ export const loadModel = async (
     // create model session
     try {
         session = await InferenceSession.create(modelPath, settings)
-    } catch (e) {
+    } catch {
         // try without SIMD
         env.wasm.simd = false
         session = await InferenceSession.create(modelPath, settings)

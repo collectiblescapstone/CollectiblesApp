@@ -8,9 +8,9 @@ import {
 
 import { corners, NormalizeCardResult } from '@/types/identification'
 
-import { InferenceSession, Tensor } from 'onnxruntime-web'
-import { biggestContour, filterContours, reorderCorners } from './cvutils'
-import { processONNXSessionResults, PostProcessResult } from './YOLOONNXUtils'
+import { Tensor } from 'onnxruntime-web'
+import { filterContours, reorderCorners } from './cvutils'
+import { processONNXSessionResults } from './YOLOONNXUtils'
 import { loadModel } from './loadModel'
 
 let errorCount = 0
@@ -39,8 +39,8 @@ export const locateWithYOLO = async (
     let inputTensor: Tensor | null = null
     let detections: Tensor | null = null
     let proto: Tensor | null = null
-    let srcWidth = imageData.width
-    let srcHeight = imageData.height
+    const srcWidth = imageData.width
+    const srcHeight = imageData.height
 
     try {
         if (logging) console.log('creating srcMat')
@@ -192,10 +192,10 @@ export const locateWithYOLO = async (
 
         if (foundCards.length > 0) {
             // draw overlay
-            var overlayCanvas = document.createElement('canvas')
+            const overlayCanvas = document.createElement('canvas')
             overlayCanvas.width = srcWidth
             overlayCanvas.height = srcHeight
-            var overlayCtx = overlayCanvas.getContext('2d')!
+            const overlayCtx = overlayCanvas.getContext('2d')!
             overlayCtx.strokeStyle = 'rgba(0, 255, 0, 0.5)'
             overlayCtx.lineWidth = 4
 

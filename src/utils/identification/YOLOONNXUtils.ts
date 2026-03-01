@@ -1,8 +1,6 @@
 // credit: https://github.com/nomi30701/yolo-multi-task-onnxruntime-web
-import { CV, Mat, Size, Rect, CV_16S } from '@techstark/opencv-js'
+import { CV, Mat } from '@techstark/opencv-js'
 import { Tensor } from 'onnxruntime-web'
-import { corners } from '@/types/identification'
-import { PokemonCard } from '@/types/pokemon-card'
 
 import { MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT } from '@/utils/constants'
 
@@ -286,21 +284,6 @@ const postProcessMask = (
         maskBinaryMat.delete()
         maskBinaryU8Mat.delete()
         maskSigmoidMat.delete()
-
-        // const dataArray: ImageDataArray = new Uint8ClampedArray(
-        //   overlayMat.data.buffer,
-        //   overlayMat.data.byteOffset,
-        //   overlayMat.data.byteLength
-        // ) as ImageDataArray;
-
-        // const imgData = new ImageData(
-        //   dataArray,
-        //   MODEL_INPUT_WIDTH,
-        //   MODEL_INPUT_HEIGHT
-        // );
-        // overlayMat.delete();
-
-        // return imgData;
 
         return overlayMat
     } catch (error) {

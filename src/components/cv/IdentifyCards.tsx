@@ -1,145 +1,128 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
-import Link from 'next/link'
+import { Box, ScrollArea, Text, VStack } from '@chakra-ui/react'
 
-import { IdentifyCardInImage } from '@/utils/identification/identify'
-import {
-    PredictedImageResult,
-    CardData,
-    rotation
-} from '@/types/identification'
-import cvReadyPromise, { CV, Mat } from '@techstark/opencv-js'
+import { CardData } from '@/types/identification'
+import cvReadyPromise, { CV } from '@techstark/opencv-js'
 import { locateWithYOLO } from '@/utils/identification/locateWithYOLO'
-import { styleText } from 'util'
 import { CardClassifier } from '@/utils/identification/classifyNormalizedCard'
+import { IdentifiedCard } from './IdentifiedCard'
+import { useAuth } from '@/context/AuthProvider'
 
 interface IdentifyCardsProps {
     sourceImageData?: ImageData
     onProcessed: () => void
+    overlayRef: React.RefObject<HTMLCanvasElement | null>
 }
+
+type PredictedCard = { data: CardData; imageURL: string }[]
 
 export const IdentifyCards = ({
     sourceImageData,
-    onProcessed
+    onProcessed,
+    overlayRef
 }: IdentifyCardsProps) => {
-    const overlayRef = useRef<HTMLCanvasElement | null>(null)
     const isProcessing = useRef<boolean>(false)
     const cv = useRef<CV>(null)
 
-    const [predictedCard, setPredictedCard] = useState<CardData>()
-    const [predictedCardImage, setPredictedCardImage] = useState<string>()
+    const [predictedCards, setPredictedCards] = useState<PredictedCard>()
+    const [instantAddedCards, setInstantAddedCards] = useState<string[]>([]) // list of ids that have been instant added
 
-    const processImage = async (
-        imageData: ImageData,
-        onProcessed: () => void
-    ) => {
-        if (isProcessing.current) return
-        isProcessing.current = true
-
-        // get openCV instance
-        if (!cv.current) {
-            const cvInstance = await cvReadyPromise
-            cv.current = cvInstance
-        }
-
-        const res = await locateWithYOLO(imageData, cv.current!, false)
-
-        if (res && res.results.length > 0) {
-            overlayRef.current!.width = res.overlay.width
-            overlayRef.current!.height = res.overlay.height
-            overlayRef
-                .current!.getContext('2d')!
-                .putImageData(res.overlay, 0, 0)
-        }
-
-        const classifier = await CardClassifier()
-        for (const card of res?.results ?? []) {
-            const similarCards = classifier(cv.current!, card.image)
-            if (similarCards.length > 0) {
-                setPredictedCard(similarCards[0])
-                setPredictedCardImage(similarCards[0].card.image + '/low.jpg')
-                break
-            }
-        }
-
-        // if (annotated && !annotated.isDeleted()) {
-        //   cv.current!.imshow(ProcessedImageRef.current!, annotated);
-        // }
-
-        // const result: PredictedImageResult | undefined =
-        //   await IdentifyCardInImage(src);
-
-        // if (!result) {
-        //   onProcessed();
-        //   return;
-        // }
-
-        // if (result.foundCardImage) {
-        //   // show processed image in canvas
-        //   cv.current!.imshow(ProcessedImageRef.current!, result.foundCardImage!);
-
-        //   setPredictedCard(result.predictedCard);
-        //   setPredictedCardImage(result.predictedCard?.card.image + '/low.jpg');
-
-        //   result.foundCardImage!.delete();
-        // }
-        isProcessing.current = false
-        onProcessed()
-    }
+    const { session } = useAuth()
 
     useEffect(() => {
+        // called when new image data is made available by parent, runs the whole identification pipeline and updates state with results
+        const processImage = async (
+            imageData: ImageData,
+            onProcessed: () => void
+        ) => {
+            if (isProcessing.current) return
+            isProcessing.current = true
+
+            // get openCV instance
+            if (!cv.current) {
+                const cvInstance = await cvReadyPromise
+                cv.current = cvInstance
+            }
+
+            const res = await locateWithYOLO(imageData, cv.current!, false)
+
+            // display overlay of detected cards in parent component
+            if (res && res.results.length > 0 && overlayRef) {
+                overlayRef.current!.width = res.overlay.width
+                overlayRef.current!.height = res.overlay.height
+                overlayRef
+                    .current!.getContext('2d')!
+                    .putImageData(res.overlay, 0, 0)
+            }
+
+            // for each detected card
+            const classifier = await CardClassifier()
+            const similar: PredictedCard = []
+            for (const card of res?.results ?? []) {
+                // find most similar card
+                const similarCards = classifier(cv.current!, card.image)
+                if (similarCards.length > 0) {
+                    // update list of identified cards with closest result
+                    similar.push({
+                        data: similarCards[0],
+                        imageURL: similarCards[0].card.image + '/low.jpg'
+                    })
+                }
+            }
+            setPredictedCards(similar)
+
+            isProcessing.current = false
+            onProcessed()
+        }
         if (sourceImageData) {
             processImage(sourceImageData, onProcessed)
         }
-    }, [sourceImageData, onProcessed])
+    }, [sourceImageData, onProcessed, overlayRef])
+
+    useEffect(() => {
+        // remove instant added cards that are no longer identified
+        setInstantAddedCards((prev) =>
+            prev.filter((id) =>
+                predictedCards?.some((card) => card.data.card.id === id)
+            )
+        )
+    }, [predictedCards])
 
     return (
         <Box>
-            <Box style={{ position: 'absolute', top: '0px', left: '80px' }}>
-                <canvas ref={overlayRef} />
-            </Box>
-            <Flex flexDirection="column">
-                <Box maxHeight="40vh" justifyItems="center">
-                    <Text>Identified Card</Text>
-                    <Image
-                        src={predictedCardImage}
-                        maxHeight="30vh"
-                        alt="identified card"
-                    ></Image>
-                </Box>
-            </Flex>
-            <Flex
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                textAlign="center"
-                mt={1}
-                gap={1}
-            >
-                <Text>
-                    {predictedCard?.card.name} (
-                    {predictedCard?.card.id.split('-')[1]})
-                </Text>
-                <Text>
-                    From: {predictedCard?.card.set.name} (
-                    {predictedCard?.card.set.id})
-                </Text>
-                <Link
-                    href={{
-                        pathname: '/edit-card',
-                        query: {
-                            cardId: predictedCard?.card.id ?? '',
-                            imageUrl: predictedCard?.card.image ?? '',
-                            cardName: `${predictedCard?.card.name ?? ''} (${predictedCard?.card.id.split('-')[1]})`,
-                            cardSet: predictedCard?.card.set.name ?? ''
-                        }
-                    }}
-                >
-                    <Button maxW="40vw">Add To Collection</Button>
-                </Link>
-            </Flex>
+            <Text textAlign="center">Identified Cards</Text>
+            <ScrollArea.Root style={{ width: '100%', height: '40vh' }}>
+                <ScrollArea.Viewport>
+                    <ScrollArea.Content>
+                        <VStack>
+                            {predictedCards ? (
+                                predictedCards.map((card, index) => (
+                                    <IdentifiedCard
+                                        key={index}
+                                        data={card.data}
+                                        imageURL={card.imageURL}
+                                        session={session}
+                                        instantAdded={instantAddedCards.includes(
+                                            card.data.card.id
+                                        )}
+                                        onInstantAdd={() => {
+                                            setInstantAddedCards((prev) => [
+                                                ...prev,
+                                                card.data.card.id
+                                            ])
+                                        }}
+                                    ></IdentifiedCard>
+                                ))
+                            ) : (
+                                <Text>No cards identified.</Text>
+                            )}
+                        </VStack>
+                    </ScrollArea.Content>
+                </ScrollArea.Viewport>
+                <ScrollArea.Scrollbar />
+            </ScrollArea.Root>
         </Box>
     )
 }

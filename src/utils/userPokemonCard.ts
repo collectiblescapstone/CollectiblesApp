@@ -27,7 +27,7 @@ export type PokemonSet = {
     total: number
 }
 
-const pokemonCards: Record<string, Entry> = {}
+let pokemonCards: Record<string, Entry> = {}
 
 // Set counts based on set
 const masterSetCards: Record<string, Set<string>> = {}
@@ -123,6 +123,12 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
     })()
 
     return pokemonCardsInit
+}
+
+export const refreshPokemonCards = (userId: string): void => {
+    pokemonCardsInit = null
+    pokemonCards = {}
+    fetchPokemonCards(userId)
 }
 
 /**

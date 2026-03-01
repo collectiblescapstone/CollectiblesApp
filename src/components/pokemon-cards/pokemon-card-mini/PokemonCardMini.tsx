@@ -15,7 +15,7 @@ interface PokemonCardMiniProps {
     // rarity?: string;
 }
 
-const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
+const PokemonCardMini = ({
     cardId,
     cardName,
     image,

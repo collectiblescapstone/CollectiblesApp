@@ -11,14 +11,15 @@ import {
     Spinner,
     Text
 } from '@chakra-ui/react'
-import { LuChevronUp, LuChevronDown } from 'react-icons/lu'
 
 // Child Components
-import PokemonCardMini from '@/components/pokemon-cards/pokemon-card-mini/PokemonCardMini'
-import CardFilter from '@/components/card-filter/CardFilter'
+import PokemonCardHeader from '@/components/pokemon-cards/pokemon-card-header/PokemonCardHeader'
 
 // Hooks
 import { useFilters } from '@/hooks/useFilters'
+
+// Icons
+import { LuChevronUp, LuChevronDown } from 'react-icons/lu'
 
 // Utils
 import { getUserCards } from '@/utils/userPokemonCard'
@@ -53,7 +54,7 @@ const UserCardsPage: React.FC = () => {
             setLoading(false)
         }
         loadData()
-    }, [])
+    }, [cardId, session])
 
 
     if (loading || authLoading || !session)
@@ -67,7 +68,7 @@ const UserCardsPage: React.FC = () => {
     return (
         <Box>
             {/*CARD HEADER INFORMATION*/}
-
+            <PokemonCardHeader cardId={cardId || ''} />
 
             {/*Cards Owned INFORMATION*/}
             {userCards.map((card, id) => (

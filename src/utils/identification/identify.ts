@@ -2,8 +2,8 @@ import { locateWithEdgeDetectionContour } from '@/utils/identification/locateWit
 import { CardClassifier } from '@/utils/identification/classifyNormalizedCard'
 import cvReadyPromise from '@techstark/opencv-js'
 
-import { PredictedImageResult, rotation } from '@/types/identification';
-import { locateWithYOLO } from './locateWithYOLO';
+import { PredictedImageResult, rotation } from '@/types/identification'
+import { locateWithYOLO } from './locateWithYOLO'
 
 export const IdentifyCardInImage = async (
     src: string,
@@ -19,7 +19,7 @@ export const IdentifyCardInImage = async (
      * @returns ProcessedImageResult | undefined
      */
 
-  const result: PredictedImageResult = {};
-  
-  return result;
-};
+    const result: PredictedImageResult = {}
+
+    return result
+}

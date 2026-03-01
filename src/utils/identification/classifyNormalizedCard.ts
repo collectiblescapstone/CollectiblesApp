@@ -1,17 +1,20 @@
-import {CV, Mat} from '@techstark/opencv-js';
+import { CV, Mat } from '@techstark/opencv-js'
 
 import { CardData, CardDataObj } from '@/types/identification'
 
 export const CardClassifier = async (): Promise<
-  (cv:CV, image: Mat, k?: number) => CardData[]
+    (cv: CV, image: Mat, k?: number) => CardData[]
 > => {
-  /**
-   * Converts hexadecimal string to binary string
-   */
-  const hexToBin = (hex: string) => {
-    let bits = '';
-    for (const char of hex) {
-      bits += parseInt(char, 16).toString(2).padStart(4, '0');
+    /**
+     * Converts hexadecimal string to binary string
+     */
+    const hexToBin = (hex: string) => {
+        let bits = ''
+        for (const char of hex) {
+            bits += parseInt(char, 16).toString(2).padStart(4, '0')
+        }
+
+        return bits
     }
 
     /**
@@ -43,19 +46,14 @@ export const CardClassifier = async (): Promise<
      * Calculates difference hash
      * Reference: https://github.com/JohannesBuchner/imagehash/blob/4e289ebe056b961aa19fb1b50f5bdc66c87e0d55/imagehash/__init__.py#L304
      */
-    const dhash = (image: cvReadyPromise.Mat, hashSize = 16): string => {
+    const dhash = (cv: CV, image: Mat, hashSize = 16): string => {
         // Convert image to a greyscale (hashSize + 1) x (hashSize) image
         const grayImage = new cv.Mat()
         cv.cvtColor(image, grayImage, cv.COLOR_RGB2GRAY)
 
-  /**
-   * Calculates difference hash
-   * Reference: https://github.com/JohannesBuchner/imagehash/blob/4e289ebe056b961aa19fb1b50f5bdc66c87e0d55/imagehash/__init__.py#L304
-   */
-  const dhash = (cv:CV, image: Mat, hashSize = 16): string => {
-    // Convert image to a greyscale (hashSize + 1) x (hashSize) image
-    const grayImage = new cv.Mat();
-    cv.cvtColor(image, grayImage, cv.COLOR_RGB2GRAY);
+        const resizedImage = new cv.Mat()
+        const dsize = new cv.Size(hashSize + 1, hashSize)
+        cv.resize(grayImage, resizedImage, dsize, 0, 0, cv.INTER_AREA)
 
         // Get (hashSize) x (hashSize) boolean array by checking if each pixel (other than last column) is smaller than its right pixel
         const pixels = new Array<boolean>(hashSize * hashSize)
@@ -73,8 +71,8 @@ export const CardClassifier = async (): Promise<
     /**
      * Given a card image, returns the (k) most similar card(s)
      */
-    const getSimilarCards = (image: cvReadyPromise.Mat, k = 4) => {
-        const dHash = dhash(image)
+    const getSimilarCards = (cv: CV, image: Mat, k = 4) => {
+        const dHash = dhash(cv, image)
         const distances: [distance: number, id: string][] = []
         for (const id in cardData) {
             let distance = 0
@@ -84,17 +82,7 @@ export const CardClassifier = async (): Promise<
                 }
             }
 
-  /**
-   * Given a card image, returns the (k) most similar card(s)
-   */
-  const getSimilarCards = (cv:CV, image: Mat, k = 4) => {
-    const dHash = dhash(cv, image);
-    const distances: [distance: number, id: string][] = [];
-    for (const id in cardData) {
-      let distance = 0;
-      for (let i = 0; i < dHash.length; i++) {
-        if (dHash[i] !== cardData[id].hashBits[i]) {
-          distance++;
+            distances.push([distance, id])
         }
 
         distances.sort((a, b) => a[0] - b[0])

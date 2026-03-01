@@ -1,11 +1,8 @@
 // automatically translated from NolanAmblard/Pokemon-Card-Scanner/blob/main/utils.py
 // TODO: reference https://stackoverflow.com/questions/51528462/opencv-js-perspective-transform and rewrite by hand
 
-import { MatVector, Mat, CV } from '@techstark/opencv-js';
-import {
-  MODEL_INPUT_WIDTH,
-  MODEL_INPUT_HEIGHT,
-} from '@/utils/constants';
+import { MatVector, Mat, CV } from '@techstark/opencv-js'
+import { MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT } from '@/utils/constants'
 
 //  Returns the corners & area of the biggest contour
 export const biggestContour = (
@@ -41,50 +38,52 @@ export const biggestContour = (
 }
 
 // Returns filtered contours (only 4-sided contours with area > minimumArea)
-export const filterContours = (
-  cv: CV,
-  contours: MatVector
-): Mat[] => {
-  const minimumArea = 2500;
-  const filteredContours: Mat[] = [];
+export const filterContours = (cv: CV, contours: MatVector): Mat[] => {
+    const minimumArea = 2500
+    const filteredContours: Mat[] = []
 
-  // loop through contours
-  for (let i = 0; i < contours.size(); i++) {
-    const cnt = contours.get(i);
+    // loop through contours
+    for (let i = 0; i < contours.size(); i++) {
+        const cnt = contours.get(i)
 
         // filter if contour is touching edge of input image
-    let isTouchingEdge = false;
-    for (let j = 0; j < cnt.rows; j++) {
-      const x = cnt.intAt(j, 0);
-      const y = cnt.intAt(j, 1);
-      if (x <= 1 || y <= 1 || x >= MODEL_INPUT_WIDTH-1 || y >= MODEL_INPUT_HEIGHT-1) {
-        isTouchingEdge = true;
-        break;
-      }
-    }
-    if (isTouchingEdge) {
-      cnt.delete();
-      continue;
+        let isTouchingEdge = false
+        for (let j = 0; j < cnt.rows; j++) {
+            const x = cnt.intAt(j, 0)
+            const y = cnt.intAt(j, 1)
+            if (
+                x <= 1 ||
+                y <= 1 ||
+                x >= MODEL_INPUT_WIDTH - 1 ||
+                y >= MODEL_INPUT_HEIGHT - 1
+            ) {
+                isTouchingEdge = true
+                break
+            }
+        }
+        if (isTouchingEdge) {
+            cnt.delete()
+            continue
+        }
+
+        const area = cv.contourArea(cnt) // get area of contour
+        if (area > minimumArea) {
+            const peri = cv.arcLength(cnt, true) // get perimeter
+            const approx = new cv.Mat()
+            cv.approxPolyDP(cnt, approx, 0.02 * peri, true) // get number of sides
+
+            // approx.rows = number of sides
+            if (approx.rows === 4) {
+                filteredContours.push(approx)
+            } else {
+                approx.delete()
+            }
+        }
+        cnt.delete()
     }
 
-    const area = cv.contourArea(cnt); // get area of contour
-    if (area > minimumArea) {
-      const peri = cv.arcLength(cnt, true); // get perimeter
-      const approx = new cv.Mat();
-      cv.approxPolyDP(cnt, approx, 0.02 * peri, true); // get number of sides
-
-      // approx.rows = number of sides
-      if (approx.rows === 4) {
-        filteredContours.push(approx);
-      } else {
-        approx.delete();
-      }
-    }
-    cnt.delete();
-  }
-
-  return filteredContours;
-};
+    return filteredContours
+}
 
 // reorderCorners: input may be a contour approximation (Mat) or nested arrays.
 // Returns corners in format [[topleft],[topright],[bottomleft],[bottomright]]

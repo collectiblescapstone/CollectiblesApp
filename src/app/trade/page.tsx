@@ -10,8 +10,8 @@ import {
     Stack,
     Text,
     Box,
-    Heading,
-    Slider
+    Slider,
+    Spinner
 } from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
 import { useAuth } from '@/context/AuthProvider'
@@ -24,6 +24,8 @@ type TradeCardProps = {
     username: string
     avatarUrl?: string
     rating: number
+    cards?: { id: string; name: string; image_url: string }[]
+    distance?: number | null
 }
 
 type ViableOption = {
@@ -39,23 +41,24 @@ type ViableOption = {
 const TradeCard: React.FC<TradeCardProps> = ({
     username,
     avatarUrl,
-    rating
+    rating,
+    cards
 }) => {
     return (
         <Card.Root width="80%">
             <Card.Body>
-                <TradingCards />
+                <TradingCards
+                    cards={cards?.map((card) => ({
+                        id: card.id,
+                        name: card.name,
+                        image: card.image_url
+                    }))}
+                />
             </Card.Body>
             <Card.Footer>
                 <HStack mb="0" gap="3">
                     <Avatar.Root>
-                        <Avatar.Image
-                            src={
-                                avatarUrl ??
-                                'https://images.unsplash.com/photo-1511806754518-53bada35f930'
-                            }
-                        />
-                        <Avatar.Fallback name={username} />
+                        <Avatar.Image src={avatarUrl} />
                     </Avatar.Root>
                     <Stack gap="0">
                         <Text fontWeight="semibold" textStyle="sm">
@@ -99,6 +102,11 @@ const TradePage = () => {
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
+    const [sliderValue, setSliderValue] = useState<number>(40)
+    const slideFn = (details: { value: number[] }) => {
+        setSliderValue(details.value[0])
+    }
+
     useEffect(() => {
         if (!userID) {
             setError('No user ID found')
@@ -121,6 +129,14 @@ const TradePage = () => {
                         | ViableOption[]
                         | undefined) ?? []
 
+                if (viableOptions.length === 0) {
+                    setUsers([])
+                    setError(
+                        "Thats a truly special hand you have there. We couldn't find any viable trades for you at the moment. Try editing your collection or wishlist to find some matches!"
+                    )
+                    return
+                }
+
                 const userMap = new Map<string, TradeCardProps>()
 
                 for (const option of viableOptions) {
@@ -130,7 +146,8 @@ const TradePage = () => {
                             username: viableUser.username ?? 'Unknown User',
                             avatarUrl:
                                 pfp_image_mapping[viableUser.profile_pic],
-                            rating: 0
+                            rating: 0,
+                            distance: viableUser.distance
                         })
                     }
                 }
@@ -148,21 +165,63 @@ const TradePage = () => {
         loadViableOptions()
     }, [userID])
 
-    if (loading) {
+    if (loading || !session) {
         return (
             <Box textAlign="center" mt={10}>
-                <Text>Loading...</Text>
+                <Spinner size="xl" />
             </Box>
         )
     }
 
     if (error) {
         return (
-            <Flex justifyContent="center" alignItems="center" height="50vh">
+            <Flex
+                textAlign="center"
+                justifyContent="center"
+                alignItems="center"
+                height="50vh"
+                px={10}
+            >
                 <Text>{error}</Text>
             </Flex>
         )
     }
+
+    // if (users.length === 0) {
+    //     return (
+    //         <Box bg="white" minH="100vh" color="black" mb={4}>
+    //             <Flex flexDirection="column" alignItems="center" gap={2}>
+    //                 <Flex
+    //                     flexDirection="row"
+    //                     justifyContent="center"
+    //                     alignItems="center"
+    //                     gap={1}
+    //                     textAlign="center"
+    //                 ></Flex>
+    //                 <Box w="100%" position="relative" px={4}>
+    //                     <Box position="absolute" right={4} top="50%">
+    //                         <Slider.Root
+    //                             maxW="sm"
+    //                             size="sm"
+    //                             defaultValue={[40]}
+    //                         >
+    //                             <HStack justify="space-between">
+    //                                 <Slider.Label>Distance</Slider.Label>
+    //                                 <Slider.ValueText />
+    //                             </HStack>
+    //                             <Slider.Control>
+    //                                 <Slider.Track>
+    //                                     <Slider.Range />
+    //                                 </Slider.Track>
+    //                                 <Slider.Thumbs />
+    //                             </Slider.Control>
+    //                         </Slider.Root>
+    //                     </Box>
+    //                 </Box>
+    //             </Flex>
+    //         </Box>
+    //     )
+    // }
 
     return (
         <Box bg="white" minH="100vh" color="black" mb={4}>
@@ -174,27 +233,18 @@ const TradePage = () => {
                     gap={1}
                 ></Flex>
                 <Box w="100%" position="relative" px={4}>
-                    <Heading
-                        mt={1}
-                        fontSize="2xl"
-                        textAlign="center"
-                        fontWeight={'Bold'}
-                        fontFamily="var(--font-sans)"
-                        maxW="container.md"
-                        mx="auto"
-                    >
-                        TradePost
-                    </Heading>
-
-                    <Box
-                        position="absolute"
-                        right={4}
-                        top="50%"
-                        transform="translateY(-50%)"
-                    >
-                        <Slider.Root maxW="sm" size="sm" defaultValue={[40]}>
+                    <Box position="absolute" right={4} top="50%">
+                        <Slider.Root
+                            maxW="sm"
+                            size="sm"
+                            defaultValue={[40]}
+                            value={[sliderValue]}
+                            onValueChange={slideFn}
+                        >
                             <HStack justify="space-between">
-                                <Slider.Label>Distance</Slider.Label>
+                                <Slider.Label>
+                                    Distance: {sliderValue}
+                                </Slider.Label>
                                 <Slider.ValueText />
                             </HStack>
                             <Slider.Control>
@@ -206,14 +256,40 @@ const TradePage = () => {
                         </Slider.Root>
                     </Box>
                 </Box>
-                {users.map((u) => (
-                    <TradeCard
-                        key={u.username}
-                        username={u.username}
-                        avatarUrl={u.avatarUrl}
-                        rating={u.rating}
-                    />
-                ))}
+                {(() => {
+                    const filteredUsers = users.filter(
+                        (u) => !u.distance || u.distance <= sliderValue
+                    )
+                    if (filteredUsers.length === 0) {
+                        return (
+                            <Box textAlign="center" mt={10}>
+                                <Flex
+                                    textAlign="center"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    height="50vh"
+                                    px={10}
+                                >
+                                    <Text>
+                                        ....Looks like there are no viable
+                                        trades within this distance. Try
+                                        widening the distance filter to find
+                                        more matches!
+                                    </Text>
+                                </Flex>
+                            </Box>
+                        )
+                    }
+                    return filteredUsers.map((u) => (
+                        <TradeCard
+                            key={u.username}
+                            username={u.username}
+                            avatarUrl={u.avatarUrl}
+                            rating={u.rating}
+                            cards={u.cards}
+                        />
+                    ))
+                })()}
             </Flex>
         </Box>
     )

@@ -24,10 +24,15 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
     // illustrator,
     // rarity,
 }: PokemonCardMiniProps) => {
+
+    // Determine path, either add card OR to the cards owned page, where you can click and edit the cards
+
+    const path = cardOwned ? '/user-cards' : '/edit-card'
+
     return (
         <Link
             href={{
-                pathname: '/edit-card',
+                pathname: path,
                 query: {
                     cardId: cardId
                 }
@@ -57,7 +62,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
-                    position="relative" // important for overlay positioning
+                    position="relative"
                 >
                     <Image
                         src={
@@ -74,7 +79,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
                             opacity: cardOwned ? 1 : 0.4
                         }}
                     />
-
+                    {/* Card Image Overlay IF the card is NOT owned*/}
                     {!cardOwned && (
                         <Box
                             position="absolute"

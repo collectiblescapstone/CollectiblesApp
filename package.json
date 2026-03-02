@@ -9,6 +9,7 @@
         "dev:ios": "npx cap open ios",
         "sync": "npx cap sync",
         "build": "npx prisma generate && next build",
+        "build:static": "npx prisma generate && BUILD_OPTION=static next build",
         "start": "next start",
         "lint": "eslint src",
         "lint:fix": "eslint --fix src",

@@ -26,12 +26,15 @@ import { useAuth } from '@/context/AuthProvider'
 
 // Utils
 import { baseUrl } from '@/utils/constants'
-import { cardConditions, gradeDetailsMap, gradingCompanies } from '@/utils/cardInfo/cardGrading'
+import {
+    cardConditions,
+    gradeDetailsMap,
+    gradingCompanies
+} from '@/utils/cardInfo/cardGrading'
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
 import { getSetName } from '@/utils/pokemonSet'
-
 
 interface FormValues {
     CardName: string
@@ -62,11 +65,10 @@ const conditions = createListCollection({
 })
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 const EditCardPage = () => {
-
     type SelectPayload = { value?: string | string[] }
 
     const { session, loading } = useAuth()
@@ -75,9 +77,9 @@ const EditCardPage = () => {
     // Card information
     const [cardId, setCardId] = useState<string>('')
     const [cardInfo, setCardInfo] = useState<PokemonCard | undefined>(undefined)
-    const [cardFoils, setCardFoils] = useState<ListCollection<{ label: string; value: string; }>>()
+    const [cardFoils, setCardFoils] =
+        useState<ListCollection<{ label: string; value: string }>>()
     const [cardSet, setCardSet] = useState<string>('')
-
 
     useEffect(() => {
         const cardId = searchParams.get('cardId') ?? ''
@@ -86,25 +88,30 @@ const EditCardPage = () => {
             const info = await getCardInformation(cardId)
             setCardInfo(info)
 
-            setCardSet(await getSetName(info?.setId ?? '') || 'N/A')
+            setCardSet((await getSetName(info?.setId ?? '')) || 'N/A')
 
             // Get holo patterns
-            const items = info?.variants ? [] : [{ label: 'Normal', value: 'normal' }]
+            const items = info?.variants
+                ? []
+                : [{ label: 'Normal', value: 'normal' }]
 
-            for (const [, holopattern] of Object.entries(info?.variants || {})) {
+            for (const [, holopattern] of Object.entries(
+                info?.variants || {}
+            )) {
                 console.log(holopattern)
                 items.push({
                     label: capitalizeEachWord(holopattern),
                     value: holopattern
                 })
             }
-            setCardFoils(createListCollection({
-                items: items
-            }))
+            setCardFoils(
+                createListCollection({
+                    items: items
+                })
+            )
         }
         fetchCardInfo()
     }, [searchParams])
-
 
     const {
         handleSubmit,
@@ -138,8 +145,6 @@ const EditCardPage = () => {
             })
         }
     }, [cardInfo, reset])
-
-
 
     // keep track of the currently selected top-level grade so we can
     // enable/disable and populate the second select accordingly
@@ -199,7 +204,6 @@ const EditCardPage = () => {
         )
     }
 
-
     return (
         <form onSubmit={onSubmit}>
             {/* Keep the card image to the left at all screen sizes and the form on the right */}
@@ -235,7 +239,8 @@ const EditCardPage = () => {
                     >
                         <Image
                             src={
-                                cardInfo?.image_url !== 'undefined/low.png' && cardInfo?.image_url !== ''
+                                cardInfo?.image_url !== 'undefined/low.png' &&
+                                cardInfo?.image_url !== ''
                                     ? cardInfo?.image_url
                                     : '/Images/PokemonCardBack.jpg'
                             }
@@ -264,10 +269,14 @@ const EditCardPage = () => {
                     flexGrow={1}
                     minWidth={0}
                 >
-                    <Box fontSize="sm" fontWeight="bold">Card name</Box>
+                    <Box fontSize="sm" fontWeight="bold">
+                        Card name
+                    </Box>
                     <Box>{cardInfo?.name || 'N/A'}</Box>
 
-                    <Box fontSize="sm" fontWeight="bold">Card set</Box>
+                    <Box fontSize="sm" fontWeight="bold">
+                        Card set
+                    </Box>
                     {/* getSetName(cardInfo?.setId || '') */}
                     <Box>{cardSet}</Box>
 
@@ -297,8 +306,8 @@ const EditCardPage = () => {
                                             raw === undefined
                                                 ? []
                                                 : Array.isArray(raw)
-                                                    ? raw
-                                                    : [raw]
+                                                  ? raw
+                                                  : [raw]
                                         field.onChange(arr)
                                         setSelectedGrade(arr[0] ?? 'ungraded')
                                     }
@@ -447,8 +456,8 @@ const EditCardPage = () => {
                                                     raw === undefined
                                                         ? []
                                                         : Array.isArray(raw)
-                                                            ? raw
-                                                            : [raw]
+                                                          ? raw
+                                                          : [raw]
                                                 field.onChange(arr)
                                             }}
                                         >
@@ -558,7 +567,13 @@ const EditCardPage = () => {
                         control={control}
                         render={({ field }) => (
                             <Listbox.Root
-                                collection={cardFoils || createListCollection<{ label: string; value: string }>({ items: [] })}
+                                collection={
+                                    cardFoils ||
+                                    createListCollection<{
+                                        label: string
+                                        value: string
+                                    }>({ items: [] })
+                                }
                                 deselectable
                                 maxW="320px"
                                 value={field.value ? [field.value] : []}

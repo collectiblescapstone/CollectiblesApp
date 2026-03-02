@@ -9,6 +9,7 @@ import {
   Slider,
 } from '@chakra-ui/react';
 import TradeCard from '@/components/trading/TradeCard';
+import TradePopup from '@/components/ui/PopupUI';
 
 type TradeCardProps = {
   username: string;
@@ -68,14 +69,33 @@ const TradePage = () => {
             </Slider.Root>
           </Box>
         </Box>
+
+
         {users.map((u) => (
-          <TradeCard
-            key={u.username}
-            username={u.username}
-            avatarUrl={u.avatarUrl}
-            rating={u.rating}
-          />
+          <Box
+            alignItems="center"
+            onClick={() =>
+              TradePopup.open('trade', {
+                title: 'Trade with ' + u.username,
+                content: <TradeCard
+                  key={u.username}
+                  username={u.username}
+                  avatarUrl={u.avatarUrl}
+                  rating={u.rating}
+                />,
+                onClickClose: () => TradePopup.close('trade')
+              })
+            } >
+            <TradeCard
+              key={u.username}
+              username={u.username}
+              avatarUrl={u.avatarUrl}
+              rating={u.rating}
+            />
+          </Box>
         ))}
+        <TradePopup.Viewport />
+
       </Flex>
     </Box>
   );

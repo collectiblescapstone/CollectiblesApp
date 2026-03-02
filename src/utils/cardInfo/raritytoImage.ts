@@ -17,8 +17,12 @@ const rarityImageMap: Record<string, string> = {
     'special illustration rare': 'Rarity_Special_Illustration_Rare.png'
 }
 
+/**
+ * Returns the rarity image. Default image is common.
+ * @param rarity
+ * @returns
+ */
 export const getRarityImage = (rarity: string): string => {
-    console.log('RARITY: ' + rarity.toLowerCase())
     return (
         '/Images/CardRarity/' + rarityImageMap[rarity.toLowerCase()] ||
         '/Images/CardRarity/Rarity_Common.png'

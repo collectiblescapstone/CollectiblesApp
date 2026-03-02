@@ -160,7 +160,7 @@ export const getUserCards = async (
     for (const entryId of cards[cardId] || []) {
         const entry = pokemonCards[entryId]
         if (entry) {
-            console.log('Entry:', entry)
+            console.log('Entry:', entry, 'Entry ID:', entryId) // Debug log
             const cardEntry: CardCollectionEntry = {
                 condition: entry.condition,
                 variant: entry.variant,

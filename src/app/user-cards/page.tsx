@@ -4,22 +4,14 @@ import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import {
     Box,
-    Flex,
-    HStack,
-    Heading,
-    IconButton,
+    Button,
     Spinner,
-    Text
+    Text,
+    VStack
 } from '@chakra-ui/react'
 
 // Child Components
 import PokemonCardHeader from '@/components/pokemon-cards/pokemon-card-header/PokemonCardHeader'
-
-// Hooks
-import { useFilters } from '@/hooks/useFilters'
-
-// Icons
-import { LuChevronUp, LuChevronDown } from 'react-icons/lu'
 
 // Utils
 import { getUserCards } from '@/utils/userPokemonCard'
@@ -36,8 +28,6 @@ const UserCardsPage: React.FC = () => {
     // Authentification
     const { session, loading: authLoading } = useAuth()
 
-    // Filters from search
-    const [filteredIds, setFilteredIds] = useState<string[]>()
 
     // Cards owned
     const [userCards, setUserCards] = useState<CardCollectionEntry[]>([])
@@ -69,13 +59,26 @@ const UserCardsPage: React.FC = () => {
         <Box>
             {/*CARD HEADER INFORMATION*/}
             <PokemonCardHeader cardId={cardId || ''} />
+            {/*ADD NEW CARD BUTTON*/}
+            <VStack width={"100%"} padding={4} gap={4}>
+                <Button
+                    size="sm"
+                    colorScheme="blue"
+                    onClick={() => {
+                        window.location.href = `/edit-card?cardId=${cardId}`
+                    }}
+                    width={"100%"}
+                >
+                    Add Card
 
-            {/*Cards Owned INFORMATION*/}
-            {userCards.map((card, id) => (
-                <Text key={id}>
-                    Condition: {card.condition || 'None'}, Variant: {card.variant}
-                </Text>
-            ))}
+                </Button>
+                {/*Cards Owned INFORMATION*/}
+                {userCards.map((card, id) => (
+                    <Text key={id}>
+                        Condition: {card.condition || 'None'}, Variant: {card.variant}
+                    </Text>
+                ))}
+            </VStack>
         </Box>
     )
 }

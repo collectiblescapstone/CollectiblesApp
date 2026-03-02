@@ -24,7 +24,7 @@ export const IdentifyCards = ({
     overlayRef
 }: IdentifyCardsProps) => {
     const isProcessing = useRef<boolean>(false)
-    const cv = useRef<CV>(null)
+    const cv = useRef<CV | null>(null)
 
     const [predictedCards, setPredictedCards] = useState<PredictedCard>()
     const [instantAddedCards, setInstantAddedCards] = useState<string[]>([]) // list of ids that have been instant added

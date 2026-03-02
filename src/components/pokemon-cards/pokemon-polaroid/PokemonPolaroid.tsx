@@ -34,7 +34,7 @@ interface PokemonPolaroidProps {
 	nextPage: string
 }
 
-const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
+const PokemonPolaroid = ({
 	id,
 	masterSet,
 	grandmasterSet,

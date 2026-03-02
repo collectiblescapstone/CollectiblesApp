@@ -1,3 +1,6 @@
+// Utils
+import { capitalizeEachWord } from '../capitalize'
+
 export const cardConditions = [
     { label: 'Near Mint', value: 'near-mint' },
     { label: 'Lightly Played', value: 'lightly-played' },
@@ -5,6 +8,14 @@ export const cardConditions = [
     { label: 'Heavily Played', value: 'heavily-played' },
     { label: 'Damaged', value: 'damaged' }
 ]
+
+export const cardConditionsMap: Record<string, string> = {
+    'near-mint': 'Near Mint',
+    'lightly-played': 'Lightly Played',
+    'moderately-played': 'Moderately Played',
+    'heavily-played': 'Heavily Played',
+    damaged: 'Damaged'
+}
 
 export const gradingCompanies = [
     { label: 'Ungraded', value: 'ungraded' },
@@ -14,6 +25,31 @@ export const gradingCompanies = [
     { label: 'Beckett', value: 'beckett' },
     { label: 'ACE', value: 'ace' }
 ]
+
+export const gradingCompaniesMap: Record<string, string> = {
+    ungraded: 'Ungraded',
+    psa: 'PSA',
+    tag: 'TAG',
+    cgc: 'CGC',
+    beckett: 'Beckett',
+    ace: 'ACE'
+}
+
+const numericalGrade = (gradeValue: string) => {
+    if (gradeValue.includes('-')) {
+        const highName = capitalizeEachWord(gradeValue.split('-')[0])
+        return highName + ' ' + gradeValue.split('-')[1]
+    }
+    return gradeValue
+}
+
+export const gradeName = (grade: string) => {
+    const index = grade.indexOf('-')
+    const company = grade.substring(0, index)
+    const gradeValue = grade.substring(index + 1)
+    console.log('company:', grade, '     gradeValue:', gradeValue) // Debug log
+    return `${gradingCompaniesMap[company]} ${numericalGrade(gradeValue)}`.trim()
+}
 
 export const gradeDetailsMap: Record<
     string,

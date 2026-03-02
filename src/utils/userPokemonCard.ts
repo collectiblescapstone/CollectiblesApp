@@ -5,9 +5,6 @@ import { CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
 import { MAXPOKEDEXVALUE } from '@/utils/pokedex'
 
-// Types
-import type { CardCollectionEntry } from '@/types/collection-card'
-
 export type Entry = {
     cardId: string
     variant: string
@@ -151,30 +148,19 @@ export const refreshPokemonCards = (userId: string): void => {
 export const getUserCards = async (
     userId: string,
     cardId: string
-): Promise<CardCollectionEntry[]> => {
+): Promise<Set<string>> => {
     if (pokemonCardsInit === null) await fetchPokemonCards(userId)
 
-    // Find the card and iterate through the entries that have this card
-    const entries: CardCollectionEntry[] = []
-    console.log('Card Id: ', cardId)
-    for (const entryId of cards[cardId] || []) {
-        const entry = pokemonCards[entryId]
-        if (entry) {
-            console.log('Entry:', entry, 'Entry ID:', entryId) // Debug log
-            const cardEntry: CardCollectionEntry = {
-                condition: entry.condition,
-                variant: entry.variant,
-                forTrade: entry.forTrade,
-                showcase: entry.showcase,
-                grade: entry.grade,
-                gradeLevel: entry.gradeLevel,
-                tags: entry.tags
-            }
-            entries.push(cardEntry)
-        }
-    }
+    // Find the card and iterate through the entries that have this cardId
+    return cards[cardId] || new Set<string>()
+}
 
-    return entries
+export const getUserCard = async (
+    userId: string,
+    entryId: string
+): Promise<Entry | null> => {
+    if (pokemonCardsInit === null) await fetchPokemonCards(userId)
+    return pokemonCards[entryId] || null
 }
 
 /**

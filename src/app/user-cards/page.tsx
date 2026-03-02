@@ -6,19 +6,19 @@ import {
     Box,
     Button,
     Spinner,
-    Text,
     VStack
 } from '@chakra-ui/react'
 
+// Context
+import { useAuth } from '@/context/AuthProvider'
+
 // Child Components
 import PokemonCardHeader from '@/components/pokemon-cards/pokemon-card-header/PokemonCardHeader'
+import PokemonCardInfo from '@/components/pokemon-cards/pokemon-card-info/PokemonCardInfo'
 
 // Utils
 import { getUserCards } from '@/utils/userPokemonCard'
 
-// Types
-import { useAuth } from '@/context/AuthProvider'
-import { CardCollectionEntry } from '@/types/collection-card'
 
 const UserCardsPage: React.FC = () => {
     // Search Params
@@ -30,7 +30,7 @@ const UserCardsPage: React.FC = () => {
 
 
     // Cards owned
-    const [userCards, setUserCards] = useState<CardCollectionEntry[]>([])
+    const [userCards, setUserCards] = useState<Set<string>>(new Set<string>())
 
     // Local States
     const [loading, setLoading] = useState(true)
@@ -63,7 +63,8 @@ const UserCardsPage: React.FC = () => {
             <VStack width={"100%"} padding={4} gap={4}>
                 <Button
                     size="sm"
-                    colorScheme="blue"
+                    backgroundColor="brand.marigold"
+                    color="brand.turtoise"
                     onClick={() => {
                         window.location.href = `/edit-card?cardId=${cardId}`
                     }}
@@ -73,10 +74,8 @@ const UserCardsPage: React.FC = () => {
 
                 </Button>
                 {/*Cards Owned INFORMATION*/}
-                {userCards.map((card, id) => (
-                    <Text key={id}>
-                        Condition: {card.condition || 'None'}, Variant: {card.variant}
-                    </Text>
+                {Array.from(userCards).map((cardId, id) => (
+                    <PokemonCardInfo key={id} entryId={cardId} />
                 ))}
             </VStack>
         </Box>

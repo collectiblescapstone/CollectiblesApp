@@ -262,7 +262,7 @@ const Landing: React.FC = () => {
                                     </Button>
                                 </a>
                                 <Link
-                                    href="/sign-up"
+                                    href={{pathname: "/sign-up", query: { }}}
                                     style={{ textDecoration: 'none' }}
                                     aria-label="Go to Sign Up page"
                                 >
@@ -274,7 +274,7 @@ const Landing: React.FC = () => {
                                     </Button>
                                 </Link>
                                 <Link
-                                    href="/sign-in"
+                                    href={{pathname: "/sign-in", query: { }}}
                                     style={{ textDecoration: 'none' }}
                                     aria-label="Go to Login page"
                                 >

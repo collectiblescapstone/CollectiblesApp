@@ -14,14 +14,19 @@ import {
 } from '@chakra-ui/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import UserSearchList from './UserSearchList'
+import { useRouter } from 'next/navigation'
+import { useProfileSelected } from '@/context/ProfileSelectionProvider'
 
 const UserSearch = () => {
     const { session } = useAuth()
+    const { push } = useRouter()
+    const { setProfileSelected } = useProfileSelected()
 
     const searchRef = useRef<HTMLInputElement | null>(null)
     const [searchValue, setSearchValue] = useState<string>('')
     const [listboxValue, setListboxValue] = useState<string[]>([])
-    const [searchableUsers, setSearchableUsers] = useState<
+    const [searchableUsers, setSearchableUsers] = useState<SearchableUser[]>([])
+    const [filteredUsers, setFilteredUsers] = useState<
         ListCollection<SearchableUser>
     >(createListCollection<SearchableUser>({ items: [] }))
     const [open, setOpen] = useState<boolean>(false)
@@ -31,9 +36,29 @@ const UserSearch = () => {
         setListboxValue([])
         setOpen(false)
     }, [])
+
     const clearSearch = searchValue ? (
         <CloseButton size="xs" onClick={handleClear} me={-2} />
     ) : undefined
+
+    const handleSelect = (username: string) => {
+        setOpen(false)
+        setProfileSelected(username)
+        push('/user-profile')
+    }
+
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.currentTarget.value
+        setSearchValue(value)
+        const filtered = searchableUsers.filter((user) => {
+            const fullName = `${user.firstName ?? ''} ${user.lastName ?? ''}`
+            return (
+                user.username.toLowerCase().includes(value.toLowerCase()) ||
+                fullName.toLowerCase().includes(value.toLowerCase())
+            )
+        })
+        setFilteredUsers(createListCollection({ items: filtered }))
+    }
 
     useEffect(() => {
         const fetchSearchableUsers = async () => {
@@ -59,11 +84,12 @@ const UserSearch = () => {
                             location: user.location
                         }))
                     })
-                setSearchableUsers(searchableUsersData)
+                setFilteredUsers(searchableUsersData)
+                setSearchableUsers(res.data.users)
             }
         }
         fetchSearchableUsers()
-    }, [])
+    }, [session?.access_token])
 
     return (
         <Popover.Root
@@ -77,10 +103,7 @@ const UserSearch = () => {
                         placeholder={`Search user by username or profile name`}
                         ref={searchRef}
                         value={searchValue}
-                        onChange={(e) => {
-                            const value = e.currentTarget.value
-                            setSearchValue(value)
-                        }}
+                        onChange={handleSearchChange}
                         onFocus={() => setOpen(true)}
                         onBlur={() => setTimeout(() => setOpen(false), 100)}
                     />
@@ -89,13 +112,19 @@ const UserSearch = () => {
             <Popover.Positioner>
                 <Popover.Content width="auto">
                     <Listbox.Root
-                        collection={searchableUsers}
+                        collection={filteredUsers}
                         value={listboxValue}
                     >
-                        {searchableUsers.items.length > 0 ? (
+                        {filteredUsers.items.length > 0 ? (
                             <Listbox.Content>
-                                {searchableUsers.items.map((item) => (
-                                    <Listbox.Item item={item} key={item.id}>
+                                {filteredUsers.items.map((item) => (
+                                    <Listbox.Item
+                                        item={item}
+                                        key={item.id}
+                                        onClick={() =>
+                                            handleSelect(item.username)
+                                        }
+                                    >
                                         <UserSearchList
                                             name={
                                                 (item.firstName ?? '') +

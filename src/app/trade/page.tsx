@@ -260,7 +260,7 @@ const TradePage = () => {
                         <Slider.Root
                             maxW="sm"
                             size="sm"
-                            min={10}
+                            min={20}
                             max={500}
                             step={10}
                             value={[sliderValue]}

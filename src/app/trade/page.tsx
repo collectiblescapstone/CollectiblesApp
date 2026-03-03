@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
 import StarRating from '@/components/profiles/StarRating'
+import UserSearch from '@/components/trading/UserSearch'
 
 type TradeCardProps = {
     username: string
@@ -109,6 +110,7 @@ const TradePage = () => {
                         </Slider.Root>
                     </Box>
                 </Box>
+                <UserSearch />
                 {users.map((u) => (
                     <TradeCard
                         key={u.username}

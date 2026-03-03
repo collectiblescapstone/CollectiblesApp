@@ -232,8 +232,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         () =>
             filteredIds
                 ? filteredPokemon.filter((id) =>
-                    filteredIds.includes(id.toString())
-                )
+                      filteredIds.includes(id.toString())
+                  )
                 : filteredPokemon,
         [filteredPokemon, filteredIds]
     )
@@ -510,11 +510,17 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                     <GridItem key={set.id}>
                                         <PokemonSet
                                             label={set.name}
-                                            image={imageSrc ? `${imageSrc}.png` : '/Images/temp_icon.svg'}
+                                            image={
+                                                imageSrc
+                                                    ? `${imageSrc}.png`
+                                                    : '/Images/temp_icon.svg'
+                                            }
                                             setName={set.name}
                                             setID={set.id}
                                             masterSet={counts.masterSet}
-                                            grandmasterSet={counts.grandmasterSet}
+                                            grandmasterSet={
+                                                counts.grandmasterSet
+                                            }
                                             nextPage={nextPage}
                                         />
                                     </GridItem>

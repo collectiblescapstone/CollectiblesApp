@@ -92,7 +92,6 @@ const PokemonSet = ({
 
     if (loading || masterSetCount === null || grandmasterSetCount === null) {
         return <PokemonSetLoading />
-
     }
 
     return (

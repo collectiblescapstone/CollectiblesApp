@@ -1,5 +1,6 @@
 'use client'
 import { Button } from '@chakra-ui/react'
+import Link from 'next/link'
 
 import React, { useEffect, useState } from 'react'
 
@@ -260,8 +261,8 @@ const Landing: React.FC = () => {
                                         FAQ
                                     </Button>
                                 </a>
-                                <a
-                                    href="/sign-up"
+                                <Link
+                                    href={{pathname: "/sign-up", query: { }}}
                                     style={{ textDecoration: 'none' }}
                                     aria-label="Go to Sign Up page"
                                 >
@@ -271,9 +272,9 @@ const Landing: React.FC = () => {
                                     >
                                         Sign Up
                                     </Button>
-                                </a>
-                                <a
-                                    href="/sign-in"
+                                </Link>
+                                <Link
+                                    href={{pathname: "/sign-in", query: { }}}
                                     style={{ textDecoration: 'none' }}
                                     aria-label="Go to Login page"
                                 >
@@ -283,7 +284,7 @@ const Landing: React.FC = () => {
                                     >
                                         Login
                                     </Button>
-                                </a>
+                                </Link>
                             </div>
                         </nav>
 

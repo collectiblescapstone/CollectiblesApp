@@ -301,6 +301,7 @@ const TradePage = () => {
                                     px={10}
                                     flexDirection="column"
                                     gap={3}
+                                    pb={16}
                                 >
                                     <Text
                                         fontSize="lg"

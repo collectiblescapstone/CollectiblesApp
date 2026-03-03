@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocalStorage } from '@/hooks/useLocalStorage'
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, ReactNode } from 'react'
 
 type ProfileContextType = {
     profileSelected: string

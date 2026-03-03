@@ -255,7 +255,7 @@ const TradePage = () => {
     return (
         <Flex flexDirection="column" gap={6} mt={3}>
             <Flex gap={2} justifyContent="right">
-                <Box position="relative" px={7}>
+                <Box position="relative" px={9}>
                     <Box>
                         <Slider.Root
                             maxW="sm"

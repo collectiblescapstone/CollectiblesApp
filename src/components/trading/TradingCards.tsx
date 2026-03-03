@@ -12,7 +12,7 @@ const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
             flexDirection="column"
             gap={2}
             justifyContent="flex-start"
-            alignItems="flex-start"
+            alignItems="center"
             w="100%"
             px={4}
         >

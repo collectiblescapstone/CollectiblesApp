@@ -42,54 +42,97 @@ const TradeCard: React.FC<TradeCardProps> = ({
     username,
     avatarUrl,
     rating,
-    cards
+    cards,
+    distance
 }) => {
+    const cardlength = cards?.length ?? 0
     return (
-        <Card.Root width="80%">
-            <Card.Body>
-                <TradingCards
-                    cards={cards?.map((card) => ({
-                        id: card.id,
-                        name: card.name,
-                        image: card.image_url
-                    }))}
-                />
-            </Card.Body>
-            <Card.Footer>
-                <HStack mb="0" gap="3">
-                    <Avatar.Root>
-                        <Avatar.Image src={avatarUrl} />
-                    </Avatar.Root>
-                    <Stack gap="0">
-                        <Text fontWeight="semibold" textStyle="sm">
-                            {username}
-                        </Text>
-                    </Stack>
-                    <Stack gap="0">
-                        {/* show star and numeric rating side-by-side */}
-                        <HStack gap="1" align="center">
-                            <Box>
-                                {(() => {
-                                    const color =
-                                        rating <= 2.5
-                                            ? '#ff3b30'
-                                            : rating < 4.0
-                                              ? '#ffd60a'
-                                              : rating < 5
-                                                ? '#32d74b'
-                                                : '#08a9c6'
-                                    return <LuStar color={color} size={20} />
-                                })()}
-                            </Box>
-                            <Text fontSize="sm" fontWeight="semibold">
-                                {Number.isFinite(rating)
-                                    ? rating.toFixed(1)
-                                    : '-'}
-                            </Text>
-                        </HStack>
-                    </Stack>
-                </HStack>
-            </Card.Footer>
+        <Card.Root width="85%">
+            <Flex flexDirection="column">
+                <Flex
+                    flexDirection="row"
+                    justifyContent="space-between"
+                    w="100%"
+                >
+                    <Text
+                        fontSize="sm"
+                        color="brand.turtoise"
+                        px={4}
+                        pt={4}
+                        textAlign="left"
+                        fontWeight="semibold"
+                    >
+                        {cardlength} {cardlength === 1 ? 'card' : 'cards'}
+                    </Text>
+                    <Text
+                        fontSize="sm"
+                        color="gray.500"
+                        px={4}
+                        pt={4}
+                        textAlign="right"
+                    >
+                        {distance !== null && distance !== undefined
+                            ? `${distance.toFixed(1)} km away`
+                            : 'Distance unknown'}
+                    </Text>
+                </Flex>
+                <Card.Body>
+                    <TradingCards
+                        cards={cards?.map((card) => ({
+                            id: card.id,
+                            name: card.name,
+                            image: card.image_url
+                        }))}
+                    />
+                </Card.Body>
+                <Card.Footer>
+                    <Flex
+                        flexDirection="row"
+                        justifyContent="space-between"
+                        w="100%"
+                    >
+                        <Flex align="center" gap={3}>
+                            <Avatar.Root boxSize="45px" shape="rounded">
+                                <Avatar.Image src={avatarUrl} />
+                            </Avatar.Root>
+                            <Stack gap="0">
+                                <Text fontWeight="semibold" textStyle="sm">
+                                    {username}
+                                </Text>
+                            </Stack>
+                        </Flex>
+                        <Flex align="center" gap={1}>
+                            <Stack gap="0">
+                                <HStack gap="1" align="center">
+                                    <Box>
+                                        {(() => {
+                                            const color =
+                                                rating <= 2.5
+                                                    ? '#ff3b30'
+                                                    : rating < 4.0
+                                                      ? '#ffd60a'
+                                                      : rating < 5
+                                                        ? '#32d74b'
+                                                        : '#08a9c6'
+                                            return (
+                                                <LuStar
+                                                    color={color}
+                                                    size={20}
+                                                />
+                                            )
+                                        })()}
+                                    </Box>
+                                    <Text fontSize="sm" fontWeight="semibold">
+                                        {Number.isFinite(rating)
+                                            ? rating.toFixed(1)
+                                            : '-'}
+                                    </Text>
+                                </HStack>
+                            </Stack>
+                        </Flex>
+                    </Flex>
+                </Card.Footer>
+            </Flex>
         </Card.Root>
     )
 }
@@ -102,7 +145,7 @@ const TradePage = () => {
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
-    const [sliderValue, setSliderValue] = useState<number>(40)
+    const [sliderValue, setSliderValue] = useState<number>(100)
     const slideFn = (details: { value: number[] }) => {
         setSliderValue(details.value[0])
     }
@@ -139,7 +182,8 @@ const TradePage = () => {
                             avatarUrl:
                                 pfp_image_mapping[viableUser.profile_pic],
                             rating: 0,
-                            distance: viableUser.distance
+                            distance: viableUser.distance,
+                            cards: option.cards
                         })
                     }
                 }
@@ -188,7 +232,7 @@ const TradePage = () => {
                     alignItems="center"
                     height="50vh"
                     px={10}
-                    gap={4}
+                    gap={3}
                     flexDirection="column"
                 >
                     <Text
@@ -209,28 +253,27 @@ const TradePage = () => {
     }
 
     return (
-        <Box bg="white" minH="100vh" color="black" mb={4}>
-            <Flex flexDirection="column" alignItems="center" gap={2}>
-                <Flex
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    gap={1}
-                ></Flex>
-                <Box w="100%" position="relative" px={4}>
-                    <Box position="absolute" right={4} top="50%">
+        <Flex flexDirection="column" gap={6} mt={3}>
+            <Flex gap={2} justifyContent="right">
+                <Box position="relative" px={7}>
+                    <Box>
                         <Slider.Root
                             maxW="sm"
                             size="sm"
-                            defaultValue={[40]}
+                            min={10}
+                            max={500}
+                            step={10}
                             value={[sliderValue]}
                             onValueChange={slideFn}
+                            width={150}
                         >
-                            <HStack justify="space-between">
+                            <HStack
+                                justify="space-between"
+                                justifyContent="left"
+                            >
                                 <Slider.Label>
-                                    Distance: {sliderValue}
+                                    Range: {sliderValue} km
                                 </Slider.Label>
-                                <Slider.ValueText />
                             </HStack>
                             <Slider.Control>
                                 <Slider.Track>
@@ -241,6 +284,8 @@ const TradePage = () => {
                         </Slider.Root>
                     </Box>
                 </Box>
+            </Flex>
+            <Flex flexDirection="column" gap={6} alignItems="center">
                 {(() => {
                     const filteredUsers = users.filter(
                         (u) => !u.distance || u.distance <= sliderValue
@@ -254,11 +299,19 @@ const TradePage = () => {
                                     alignItems="center"
                                     height="50vh"
                                     px={10}
+                                    flexDirection="column"
+                                    gap={3}
                                 >
-                                    <Text>
-                                        ....Looks like there are no viable
-                                        trades within this distance. Try
-                                        widening the distance filter to find
+                                    <Text
+                                        fontSize="lg"
+                                        fontWeight="semibold"
+                                        color="brand.turtoise"
+                                    >
+                                        ...Hello?
+                                    </Text>
+                                    <Text fontSize="sm" color="gray.600">
+                                        No viable trades within this distance.
+                                        Try widening the distance filter to find
                                         more matches!
                                     </Text>
                                 </Flex>
@@ -272,11 +325,12 @@ const TradePage = () => {
                             avatarUrl={u.avatarUrl}
                             rating={u.rating}
                             cards={u.cards}
+                            distance={u.distance}
                         />
                     ))
                 })()}
             </Flex>
-        </Box>
+        </Flex>
     )
 }
 

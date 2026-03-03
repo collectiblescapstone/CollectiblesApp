@@ -1,6 +1,26 @@
 import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
 
+// Calculate distance between two points using Haversine formula (in km)
+const calculateHaversineDistance = (
+    lat1: number,
+    lon1: number,
+    lat2: number,
+    lon2: number
+): number => {
+    const R = 6371
+    const φ1 = (lat1 * Math.PI) / 180
+    const φ2 = (lat2 * Math.PI) / 180
+    const Δφ = ((lat2 - lat1) * Math.PI) / 180
+    const Δλ = ((lon2 - lon1) * Math.PI) / 180
+
+    const a =
+        Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+        Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2)
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+    return R * c
+}
+
 export const POST = async (request: Request) => {
     const { userID } = await request.json()
 
@@ -136,17 +156,11 @@ export const POST = async (request: Request) => {
                     id: match.user.id,
                     username: match.user.username,
                     profile_pic: match.user.profile_pic,
-                    // Using the longitude and latitude, calculate the euclidean distance between the original user and the user with the matching card to determine if they are a viable trade option based on proximity
-                    distance: Math.sqrt(
-                        Math.pow(
-                            match.user.latitude ?? 0 - (user.latitude ?? 0),
-                            2
-                        ) +
-                            Math.pow(
-                                match.user.longitude ??
-                                    0 - (user.longitude ?? 0),
-                                2
-                            )
+                    distance: calculateHaversineDistance(
+                        user.latitude ?? 0,
+                        user.longitude ?? 0,
+                        match.user.latitude ?? 0,
+                        match.user.longitude ?? 0
                     )
                 },
                 cards: [match.card]

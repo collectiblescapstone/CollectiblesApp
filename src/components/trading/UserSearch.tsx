@@ -62,9 +62,9 @@ const UserSearch = () => {
 
     useEffect(() => {
         const fetchSearchableUsers = async () => {
-            const res = await CapacitorHttp.get({
+            const res = await CapacitorHttp.post({
                 url: `${baseUrl}/api/get-searchable-users`,
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${session?.access_token}`
@@ -73,19 +73,28 @@ const UserSearch = () => {
             if (res.status === 200) {
                 const searchableUsersData: ListCollection<SearchableUser> =
                     createListCollection({
-                        items: res.data.users.map((user: SearchableUser) => ({
-                            id: user.id,
-                            username: user.username,
-                            firstName: user.firstName,
-                            lastName: user.lastName,
-                            profile_pic: user.profile_pic,
-                            rating: user.rating,
-                            rating_count: user.rating_count,
-                            location: user.location
-                        }))
+                        items: res.data.users
+                            .map((user: SearchableUser) => ({
+                                id: user.id,
+                                username: user.username,
+                                firstName: user.firstName,
+                                lastName: user.lastName,
+                                profile_pic: user.profile_pic,
+                                rating: user.rating,
+                                rating_count: user.rating_count,
+                                location: user.location
+                            }))
+                            .sort((a: SearchableUser, b: SearchableUser) =>
+                                a.username.localeCompare(b.username)
+                            )
                     })
                 setFilteredUsers(searchableUsersData)
-                setSearchableUsers(res.data.users)
+                setSearchableUsers(
+                    res.data.users.sort(
+                        (a: SearchableUser, b: SearchableUser) =>
+                            a.username.localeCompare(b.username)
+                    )
+                )
             }
         }
         fetchSearchableUsers()

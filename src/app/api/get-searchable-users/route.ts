@@ -2,9 +2,7 @@ import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma'
 import { supabase } from '@/lib/supabase'
 
-export const dynamic = 'force-static'
-
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
     try {
         const authHeader = request.headers.get('authorization')
         if (!authHeader || !authHeader.startsWith('Bearer ')) {

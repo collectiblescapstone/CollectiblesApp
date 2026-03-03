@@ -232,7 +232,7 @@ const TradePage = () => {
                     alignItems="center"
                     height="50vh"
                     px={10}
-                    gap={3}
+                    gap={4}
                     flexDirection="column"
                 >
                     <Text
@@ -300,7 +300,7 @@ const TradePage = () => {
                                     height="50vh"
                                     px={10}
                                     flexDirection="column"
-                                    gap={3}
+                                    gap={4}
                                     pb={16}
                                 >
                                     <Text
@@ -308,7 +308,7 @@ const TradePage = () => {
                                         fontWeight="semibold"
                                         color="brand.turtoise"
                                     >
-                                        ...Hello?
+                                        Everyone is in a galaxy far, far away!
                                     </Text>
                                     <Text fontSize="sm" color="gray.600">
                                         No viable trades within this distance.

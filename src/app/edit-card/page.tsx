@@ -82,36 +82,55 @@ const EditCardPage = () => {
     const [cardSet, setCardSet] = useState<string>('')
 
     useEffect(() => {
-        const cardId = searchParams.get('cardId') ?? ''
-        setCardId(cardId)
+        const id = searchParams.get('cardId') ?? ''
+        setCardId(id)
+
+        let active = true
+
         const fetchCardInfo = async () => {
-            const info = await getCardInformation(cardId)
+            const info = await getCardInformation(id)
+            if (!active) return
+
             setCardInfo(info)
 
-            setCardSet((await getSetName(info?.setId ?? '')) || 'N/A')
-
-            // Get holo patterns
+            // Build holo patterns
             const items = info?.variants
                 ? []
                 : [{ label: 'Normal', value: 'normal' }]
 
-            for (const [, holopattern] of Object.entries(
-                info?.variants || {}
-            )) {
-                console.log(holopattern)
+            for (const [, holopattern] of Object.entries(info?.variants || {})) {
                 items.push({
                     label: capitalizeEachWord(holopattern),
                     value: holopattern
                 })
             }
-            setCardFoils(
-                createListCollection({
-                    items: items
-                })
-            )
+
+            setCardFoils(createListCollection({ items }))
         }
+
         fetchCardInfo()
+
+        return () => {
+            active = false
+        }
     }, [searchParams])
+
+    useEffect(() => {
+        let active = true
+
+        const resolveSetName = async () => {
+            const name = await getSetName(cardInfo?.setId.toLowerCase() ?? '')
+            if (!active) return
+            setCardSet(name ?? 'N/A')
+        }
+
+        resolveSetName()
+
+        return () => {
+            active = false
+        }
+    }, [cardInfo])
+
 
     const {
         handleSubmit,

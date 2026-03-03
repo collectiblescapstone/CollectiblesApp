@@ -1,5 +1,6 @@
 'use client'
 
+import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { createContext, useContext, useState, ReactNode } from 'react'
 
 type ProfileContextType = {
@@ -14,7 +15,11 @@ export const ProfileSelectionProvider = ({
 }: {
     children: ReactNode
 }) => {
-    const [profileSelected, setProfileSelected] = useState<string>('')
+    // Use local storage to persist the selected profile across sessions
+    const [profileSelected, setProfileSelected] = useLocalStorage(
+        'profileSelected',
+        ''
+    )
 
     return (
         <ProfileContext.Provider

@@ -21,6 +21,7 @@
         "ci:db:deploy": "npx prisma migrate deploy"
     },
     "dependencies": {
+        "@capacitor-community/camera-preview": "^7.0.5",
         "@capacitor/android": "^7.4.3",
         "@capacitor/camera": "^7.0.2",
         "@capacitor/core": "^7.4.3",

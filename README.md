@@ -105,6 +105,48 @@ Now, you should see the app build, then your emulator will boot up and open the 
 - [Android Studio Docs](https://developer.android.com/studio/run)
 - [XCode Emulator Docs](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)
 
+### Deploying native app production build
+
+#### Android
+
+**first time:**
+
+delete ./android ./out ./.next
+
+
+```
+npm run build
+npx cap add android
+npx cap sync android
+```
+Open `android/app/src/main/AndroidManifest.xml` and above the closing `</manifest>` tag add this line to request the CAMERA permission:
+
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+```
+
+```
+npx cap open android
+```
+
+click run in android studio
+
+**after first time:**
+
+run
+```
+npm run build
+npx cap add android
+npx cap sync android
+```
+click run in android studio
+
+*you may have to readd the camera permissions
+
+#### IOS
+
+TODO add instructions and include https://github.com/capacitor-community/camera-preview?tab=readme-ov-file#extra-ios-installation-steps
+
 ### Running your own local database
 
 #### First-Time Setup

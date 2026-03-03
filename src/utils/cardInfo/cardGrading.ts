@@ -47,7 +47,7 @@ export const gradeName = (grade: string) => {
     const index = grade.indexOf('-')
     const company = grade.substring(0, index)
     const gradeValue = grade.substring(index + 1)
-    console.log('company:', grade, '     gradeValue:', gradeValue) // Debug log
+    // console.log('company:', grade, '     gradeValue:', gradeValue) // Debug log
     return `${gradingCompaniesMap[company]} ${numericalGrade(gradeValue)}`.trim()
 }
 

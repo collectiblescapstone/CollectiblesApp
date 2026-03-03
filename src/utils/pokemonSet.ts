@@ -78,12 +78,12 @@ const fetchPokemonSets = async (): Promise<void> => {
 export const getSetName = async (id: string): Promise<string | undefined> => {
     if (Object.keys(pokemonSetNameMap).length === 0) {
         await fetchPokemonSets()
-        console.log(
-            'Getting set name for id:',
-            id,
-            'Found name:',
-            pokemonSetNameMap[id]
-        )
+        // console.log(
+        //     'Getting set name for id:',
+        //     id,
+        //     'Found name:',
+        //     pokemonSetNameMap[id]
+        // )
         return pokemonSetNameMap[id]
     } else {
         return pokemonSetNameMap[id]

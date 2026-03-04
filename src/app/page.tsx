@@ -353,7 +353,7 @@ const Landing: React.FC = () => {
                                             Using advance machine learning
                                             techniques, Kollec can rapidly
                                             identify collectibles in real time
-                                            using just your phone's camera. No
+                                            using just your phone&apos;s camera. No
                                             more manual entry or searching
                                             through endless lists!
                                         </Text>
@@ -364,7 +364,7 @@ const Landing: React.FC = () => {
                                             Kollec first uses a custom trained
                                             YOLO segmentation machine learning
                                             model to locate any cards in view of
-                                            your device's camera. We then use
+                                            your device&apos;s camera. We then use
                                             perceptual hashing to match the
                                             found cards against our database of
                                             known cards. Once a match is found,

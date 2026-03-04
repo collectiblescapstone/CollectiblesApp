@@ -18,8 +18,11 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 
 // Child Components
 import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid'
+import PokemonPolaroidLoading from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroidLoading'
 import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet'
+import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSetLoading'
 import { CardSearch } from '@/components/card-filter/CardSearch'
+import { getSetGroups } from '@/utils/pokemonSet'
 
 // Hooks
 import { FiltersProvider } from '@/hooks/useFilters'
@@ -118,53 +121,10 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     })
 
     useEffect(() => {
-        fetch('/api/pokemon-set')
-            .then((res) => res.json())
-            .then((data) => {
-                const sets = Array.isArray(data) ? data : [data]
-
-                const groups: Record<string, PokemonSetType[]> = {
-                    sv: [],
-                    swsh: [],
-                    sm: [],
-                    xy: [],
-                    bw: [],
-                    dp: [],
-                    me: [],
-                    base: [],
-                    other: [],
-                    ex: [],
-                    neo: [],
-                    pl: [],
-                    hgss: [],
-                    pop: [],
-                    ecard: []
-                }
-
-                sets.forEach((set) => {
-                    const id = set.id?.toLowerCase() ?? ''
-                    if (id.includes('sv')) groups.sv.push(set)
-                    else if (id.includes('swsh')) groups.swsh.push(set)
-                    else if (id.includes('sm')) groups.sm.push(set)
-                    else if (id.includes('xy')) groups.xy.push(set)
-                    else if (id.includes('bw')) groups.bw.push(set)
-                    else if (id.includes('hgss') || id.includes('tk-hs'))
-                        groups.hgss.push(set)
-                    else if (id.includes('pl')) groups.pl.push(set)
-                    else if (id.includes('dp')) groups.dp.push(set)
-                    else if (id.includes('me')) groups.me.push(set)
-                    else if (id.includes('ex')) groups.ex.push(set)
-                    else if (id.includes('ecard')) groups.ecard.push(set)
-                    else if (id.includes('pop')) groups.pop.push(set)
-                    else if (id.includes('neo') || id.includes('si'))
-                        groups.neo.push(set)
-                    else if (id.includes('base')) groups.base.push(set)
-                    else groups.other.push(set)
-                })
-
-                setGroupedSets(groups)
-            })
-            .catch((err) => console.error('Error loading sets.json:', err))
+        const fetchGroups = async () => {
+            setGroupedSets(await getSetGroups())
+        }
+        fetchGroups()
     }, [])
 
     const selectStyles = {
@@ -472,9 +432,11 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                     )
                                 )
                                 .map((id) => {
-                                    const counts = pokemonCounts[id] || {
-                                        masterSet: 1,
-                                        grandmasterSet: 1
+                                    const counts = pokemonCounts[id]
+                                    if (!counts) {
+                                        return (
+                                            <PokemonPolaroidLoading key={id} />
+                                        )
                                     }
                                     return (
                                         <PokemonPolaroid
@@ -534,9 +496,14 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                         >
                             {groupedSets[selectedEra].map((set) => {
                                 const imageSrc = set.logo || set.symbol
-                                const counts = setCounts[set.id] || {
-                                    masterSet: 1,
-                                    grandmasterSet: 1
+                                const counts = setCounts[set.id]
+
+                                if (!counts) {
+                                    return (
+                                        <GridItem key={set.id}>
+                                            <PokemonSetLoading />
+                                        </GridItem>
+                                    )
                                 }
 
                                 return (

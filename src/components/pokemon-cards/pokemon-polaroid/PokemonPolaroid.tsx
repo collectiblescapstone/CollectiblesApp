@@ -1,15 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import {
-    Box,
-    Image,
-    Icon,
-    Progress,
-    HStack,
-    Spinner,
-    Heading
-} from '@chakra-ui/react'
+import { Box, Heading, HStack, Icon, Image, Progress } from '@chakra-ui/react'
+
+// Child Components
+import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSetLoading'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -32,11 +27,11 @@ interface PokemonPolaroidProps {
     nextPage: string
 }
 
-const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
-    id,
-    masterSet,
-    grandmasterSet,
-    nextPage
+const PokemonPolaroid = ({
+	id,
+	masterSet,
+	grandmasterSet,
+	nextPage
 }: PokemonPolaroidProps) => {
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
     const { session } = useAuth()
@@ -78,26 +73,8 @@ const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
         getLabel()
     }, [id])
 
-    if (loading) {
-        return (
-            <Box
-                as="button"
-                bg="white"
-                boxShadow="lg"
-                borderRadius="md"
-                w={{ base: '45vw', md: '200px' }}
-                p={3}
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="space-between"
-                transition="transform 0.2s"
-                _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
-                _active={{ transform: 'scale(0.98)' }}
-            >
-                <Spinner size="xl" />
-            </Box>
-        )
+    if (loading || masterSetCount === null || grandmasterSetCount === null) {
+        return <PokemonSetLoading />
     }
 
     return (

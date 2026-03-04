@@ -12,6 +12,7 @@ import {
     VStack,
     HStack
 } from '@chakra-ui/react'
+import TipsPopup from '@/components/ui/PopupUI'
 
 const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
@@ -23,7 +24,6 @@ const CameraPage = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null)
     const inputCanvas = useRef<HTMLCanvasElement | null>(null)
     const overlayCanvas = useRef<HTMLCanvasElement | null>(null)
-    const tipsPopupRef = useRef<HTMLDivElement | null>(null)
     const streamRef = useRef<MediaStream | null>(null)
     const { session, loading } = useAuth()
 
@@ -132,6 +132,64 @@ const CameraPage = () => {
         )
     }
 
+    const tipsPopupContent = () => {
+        return (
+            <Box
+                maxW="800px"
+                width="100%"
+                textAlign="center"
+                padding="6"
+                backgroundColor="#FFFFFF"
+                borderRadius="md"
+            >
+                <Box as="article">
+                    <VStack align="start">
+                        <Box>
+                            <Heading as="h3" size="sm" mb={2} textAlign="left">
+                                Lighting
+                            </Heading>
+                            <Text textAlign="left">
+                                Use bright, even lighting. Avoid shadows and
+                                glare on the card surface.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Heading as="h3" size="sm" mb={2} textAlign="left">
+                                Positioning
+                            </Heading>
+                            <Text textAlign="left">
+                                Ensure the whole card is visible. Hold steady to
+                                avoid blur.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Heading as="h3" size="sm" mb={2} textAlign="left">
+                                For Best Results
+                            </Heading>
+                            <Text textAlign="left">
+                                Have a single card visible, cards in binders may
+                                be hard to recognize.
+                            </Text>
+                        </Box>
+                    </VStack>
+                </Box>
+            </Box>
+        )
+    }
+
+    // show tips popup on first load
+    useEffect(() => {
+        if (loading || !session) return
+        TipsPopup.open('camera-tips', {
+            title: 'Scanning Tips',
+            description: 'For better card recognition, follow these tips:',
+            content: tipsPopupContent(),
+            onClickClose: () => {
+                TipsPopup.close('camera-tips')
+            }
+        })
+    }, [loading, session])
+
     if (loading || !session) {
         return (
             <Box textAlign="center" mt={10}>
@@ -164,11 +222,11 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
-            <div className='block landscape:hidden flex justify-center'>
-            <Button onClick={toggleCamera}>
-                Switch to {facingMode === 'environment' ? 'Front' : 'Rear'}{' '}
-                Camera
-            </Button>
+            <div className="block flex justify-center landscape:hidden">
+                <Button onClick={toggleCamera}>
+                    Switch to {facingMode === 'environment' ? 'Front' : 'Rear'}{' '}
+                    Camera
+                </Button>
             </div>
             {sourceImageData ? (
                 <IdentifyCards
@@ -179,90 +237,7 @@ const CameraPage = () => {
             ) : (
                 <Box>No image captured.</Box>
             )}
-            <Box
-                ref={tipsPopupRef}
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                backgroundColor="#000000AA"
-            >
-                <Box
-                    maxW="800px"
-                    width="100%"
-                    textAlign="center"
-                    padding="6"
-                    backgroundColor="#FFFFFF"
-                    borderRadius="md"
-                >
-                    <Box as="article">
-                        <HStack justifyContent="space-between" mb={6}>
-                            <Heading as="h2" size="lg" mb={4}>
-                                Tips for Better Card Scans
-                            </Heading>
-                            <Button
-                                onClick={() => {
-                                    // just hide the overlay, the camera will still be running underneath
-                                    if (tipsPopupRef.current) {
-                                        tipsPopupRef.current.style.display =
-                                            'none'
-                                    }
-                                }}
-                            >
-                                Close
-                            </Button>
-                        </HStack>
-                        <VStack align="start">
-                            <Box>
-                                <Heading
-                                    as="h3"
-                                    size="sm"
-                                    mb={2}
-                                    textAlign="left"
-                                >
-                                    Lighting
-                                </Heading>
-                                <Text textAlign="left">
-                                    Use bright, even lighting. Avoid shadows and
-                                    glare on the card surface.
-                                </Text>
-                            </Box>
-                            <Box>
-                                <Heading
-                                    as="h3"
-                                    size="sm"
-                                    mb={2}
-                                    textAlign="left"
-                                >
-                                    Positioning
-                                </Heading>
-                                <Text textAlign="left">
-                                    Ensure the whole card is visible. Hold
-                                    steady to avoid blur.
-                                </Text>
-                            </Box>
-                            <Box>
-                                <Heading
-                                    as="h3"
-                                    size="sm"
-                                    mb={2}
-                                    textAlign="left"
-                                >
-                                    For Best Results
-                                </Heading>
-                                <Text textAlign="left">
-                                    Have a single card visible, cards in binders
-                                    may be hard to recognize.
-                                </Text>
-                            </Box>
-                        </VStack>
-                    </Box>
-                </Box>
-            </Box>
+            <TipsPopup.Viewport />
         </Box>
     )
 }

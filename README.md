@@ -111,11 +111,11 @@ Now, you should see the app build, then your emulator will boot up and open the 
 
 delete ./android ./out ./.next
 
-
 ```
 npm run build:static
 npx cap add android
 ```
+
 Open `android/app/src/main/AndroidManifest.xml` and above the closing `</manifest>` tag add this line to request the CAMERA permission:
 
 ```xml
@@ -131,7 +131,7 @@ click run in android studio
 
 #### IOS
 
-TODO add instructions 
+TODO add instructions
 
 You will also need to add a permission to `Info.plist`. Follow the [Capacitor docs](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) and add permissions with the raw keys `NSCameraUsageDescription`
 

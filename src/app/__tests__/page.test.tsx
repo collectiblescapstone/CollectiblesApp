@@ -1,6 +1,13 @@
+import React from 'react'
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import Page from '../page'
+import {
+    ButtonProps,
+    FlexProps,
+    HeadingProps,
+    TextProps,
+} from '@chakra-ui/react'
 
 jest.mock('@chakra-ui/react', () => {
     const React = require('react')
@@ -8,19 +15,19 @@ jest.mock('@chakra-ui/react', () => {
     return {
         __esModule: true,
 
-        Flex: ({ children }: any) => <div>{children}</div>,
-        Heading: ({ children }: any) => <h1>{children}</h1>,
-        Text: ({ children }: any) => <p>{children}</p>,
-
-        Button: ({ children, onClick }: any) => (
+        Flex: ({ children }: FlexProps & { children?: React.ReactNode }) => <div>{children}</div>,
+        Heading: ({ children }: HeadingProps & { children?: React.ReactNode }) => <h1>{children}</h1>,
+        Text: ({ children }: TextProps & { children?: React.ReactNode }) => <p>{children}</p>,
+        Button: ({ children, onClick }: ButtonProps & { children?: React.ReactNode; onClick?: () => void }) => (
             <button onClick={onClick}>{children}</button>
         ),
 
         Tabs: {
-            Root: ({ children }: any) => <div data-testid="tabs-root">{children}</div>,
-            List: ({ children }: any) => <div data-testid="tabs-list">{children}</div>,
-            Trigger: ({ children }: any) => <button type="button">{children}</button>,
-            Content: ({ children }: any) => <div>{children}</div>,
+            Root: ({ children }: { children?: React.ReactNode }) => <div data-testid="tabs-root">{children}</div>,
+            List: ({ children }: { children?: React.ReactNode }) => <div data-testid="tabs-list">{children}</div>,
+            Trigger: ({ children }: { children?: React.ReactNode }) => <button type="button">{children}</button>,
+            Indicator: ({ children }: { children?: React.ReactNode }) => <div data-testid="tabs-indicator">{children}</div>,
+            Content: ({ children }: { children?: React.ReactNode }) => <div>{children}</div>,
         }
     }
 })

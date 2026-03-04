@@ -109,15 +109,12 @@ Now, you should see the app build, then your emulator will boot up and open the 
 
 #### Android
 
-**first time:**
-
 delete ./android ./out ./.next
 
 
 ```
-npm run build
+npm run build:static
 npx cap add android
-npx cap sync android
 ```
 Open `android/app/src/main/AndroidManifest.xml` and above the closing `</manifest>` tag add this line to request the CAMERA permission:
 
@@ -126,22 +123,11 @@ Open `android/app/src/main/AndroidManifest.xml` and above the closing `</manifes
 ```
 
 ```
+npx cap sync android
 npx cap open android
 ```
 
 click run in android studio
-
-**after first time:**
-
-run
-```
-npm run build
-npx cap add android
-npx cap sync android
-```
-click run in android studio
-
-*you may have to re-add the camera permissions
 
 #### IOS
 

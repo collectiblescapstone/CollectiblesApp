@@ -23,15 +23,14 @@ export const loadModel = async (
         enableMemPattern: true
     }
 
-    env.wasm.simd = true
+    env.wasm.simd = false
 
     // create model session
     try {
         session = await InferenceSession.create(modelPath, settings)
-    } catch {
-        // try without SIMD
-        env.wasm.simd = false
-        session = await InferenceSession.create(modelPath, settings)
+    } catch (err) {
+        alert('unable to load onnx model')
+        throw err
     }
 
     // warm up model with dummy input

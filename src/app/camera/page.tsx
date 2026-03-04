@@ -1,7 +1,7 @@
 'use client'
 
 import { IdentifyCards } from '@/components/cv/IdentifyCards'
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, use } from 'react'
 import { useAuth } from '@/context/AuthProvider'
 import {
     Box,
@@ -17,11 +17,47 @@ const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
         null
     )
+    const [facingMode, setFacingMode] = useState<'environment' | 'user'>(
+        'environment'
+    )
     const videoRef = useRef<HTMLVideoElement | null>(null)
     const inputCanvas = useRef<HTMLCanvasElement | null>(null)
     const overlayCanvas = useRef<HTMLCanvasElement | null>(null)
     const tipsPopupRef = useRef<HTMLDivElement | null>(null)
+    const streamRef = useRef<MediaStream | null>(null)
     const { session, loading } = useAuth()
+
+    const stopCurrentStream = () => {
+        if (streamRef.current) {
+            streamRef.current.getTracks().forEach((track) => track.stop())
+            streamRef.current = null
+        }
+    }
+
+    const startCamera = useCallback(async () => {
+        const video = videoRef.current
+        if (!video) return
+
+        try {
+            stopCurrentStream()
+
+            const stream = await navigator.mediaDevices.getUserMedia({
+                audio: false,
+                video: {
+                    facingMode: facingMode,
+                    frameRate: { ideal: 20 }
+                }
+            })
+
+            streamRef.current = stream
+            video.srcObject = stream
+            await video.play()
+
+            handleProcessed()
+        } catch (err) {
+            console.error('Error accessing camera', err)
+        }
+    }, [facingMode])
 
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
@@ -83,33 +119,18 @@ const CameraPage = () => {
     }, [])
 
     useEffect(() => {
-        const video = videoRef.current
-        if (!video || loading || !session) return
-
-        const startCamera = async () => {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    video: true
-                })
-
-                video.srcObject = stream
-                await video.play()
-                // grab the first frame immediately
-                handleProcessed()
-            } catch (err) {
-                console.error('Error accessing camera', err)
-            }
-        }
-
+        if (loading || !session) return
         startCamera()
-
         return () => {
-            if (!video.srcObject) return
-            ;(video.srcObject as MediaStream)
-                .getTracks()
-                .forEach((track) => track.stop())
+            stopCurrentStream()
         }
-    }, [handleProcessed, loading, session])
+    }, [startCamera, loading, session])
+
+    const toggleCamera = () => {
+        setFacingMode((prev) =>
+            prev === 'environment' ? 'user' : 'environment'
+        )
+    }
 
     if (loading || !session) {
         return (
@@ -143,6 +164,12 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
+            <div className='block landscape:hidden flex justify-center'>
+            <Button onClick={toggleCamera}>
+                Switch to {facingMode === 'environment' ? 'Front' : 'Rear'}{' '}
+                Camera
+            </Button>
+            </div>
             {sourceImageData ? (
                 <IdentifyCards
                     sourceImageData={sourceImageData}

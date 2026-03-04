@@ -33,7 +33,7 @@ const StarRating = ({ rating, ratingCount }: StarRatingProps) => {
             <Text
                 fontSize="sm"
                 fontWeight="semibold"
-                color={ratingCount > 0 ? colorForRating : '#888888'}
+                color="brand.turtoise"
             >
                 {ratingCount > 0 && rating.toFixed(1)}
             </Text>

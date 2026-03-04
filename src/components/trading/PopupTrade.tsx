@@ -26,12 +26,12 @@ type ContactMethod = {
     value: string;
 };
 
-type TradeCardProps = {
+type TradeCardPopupProps = {
     username: string;
     contacts?: ContactMethod[];
 };
 
-const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
+const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) =>{
     const { username, contacts } = props;
     // helper to normalise contact method names and check existence
     const normalize = (s?: string) => (s ?? '').toLowerCase().replace(/\s+/g, '');

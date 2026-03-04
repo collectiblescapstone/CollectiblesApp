@@ -1,17 +1,9 @@
 'use client'
 
 import { IdentifyCards } from '@/components/cv/IdentifyCards'
-import { useState, useEffect, useRef, useCallback, use } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useAuth } from '@/context/AuthProvider'
-import {
-    Box,
-    Button,
-    Spinner,
-    Heading,
-    Text,
-    VStack,
-    HStack
-} from '@chakra-ui/react'
+import { Box, Button, Spinner, Heading, Text, VStack } from '@chakra-ui/react'
 import TipsPopup from '@/components/ui/PopupUI'
 
 const CameraPage = () => {
@@ -27,37 +19,12 @@ const CameraPage = () => {
     const streamRef = useRef<MediaStream | null>(null)
     const { session, loading } = useAuth()
 
-    const stopCurrentStream = () => {
+    const stopCurrentStream = useCallback(() => {
         if (streamRef.current) {
             streamRef.current.getTracks().forEach((track) => track.stop())
             streamRef.current = null
         }
-    }
-
-    const startCamera = useCallback(async () => {
-        const video = videoRef.current
-        if (!video) return
-
-        try {
-            stopCurrentStream()
-
-            const stream = await navigator.mediaDevices.getUserMedia({
-                audio: false,
-                video: {
-                    facingMode: facingMode,
-                    frameRate: { ideal: 20 }
-                }
-            })
-
-            streamRef.current = stream
-            video.srcObject = stream
-            await video.play()
-
-            handleProcessed()
-        } catch (err) {
-            console.error('Error accessing camera', err)
-        }
-    }, [facingMode])
+    }, [])
 
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
@@ -117,6 +84,31 @@ const CameraPage = () => {
             setSourceImageData(imageData)
         }, 100)
     }, [])
+
+    const startCamera = useCallback(async () => {
+        const video = videoRef.current
+        if (!video) return
+
+        try {
+            stopCurrentStream()
+
+            const stream = await navigator.mediaDevices.getUserMedia({
+                audio: false,
+                video: {
+                    facingMode: facingMode,
+                    frameRate: { ideal: 20 }
+                }
+            })
+
+            streamRef.current = stream
+            video.srcObject = stream
+            await video.play()
+
+            handleProcessed()
+        } catch (err) {
+            console.error('Error accessing camera', err)
+        }
+    }, [facingMode, handleProcessed, stopCurrentStream])
 
     useEffect(() => {
         if (loading || !session) return

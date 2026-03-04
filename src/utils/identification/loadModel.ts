@@ -29,8 +29,7 @@ export const loadModel = async (
     try {
         session = await InferenceSession.create(modelPath, settings)
     } catch (err) {
-        alert('unable to load onnx model')
-        throw err
+        throw new Error(`Failed to load model at ${modelPath}: ${err instanceof Error ? err.message : String(err)}`)
     }
 
     // warm up model with dummy input

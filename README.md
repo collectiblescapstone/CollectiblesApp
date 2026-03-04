@@ -109,7 +109,7 @@ Now, you should see the app build, then your emulator will boot up and open the 
 
 #### Android
 
-delete ./android ./out ./.next
+delete the folders `android`, `out`, and `.next`
 
 ```
 npm run build:static
@@ -129,7 +129,7 @@ npx cap open android
 
 click run in android studio
 
-#### IOS
+#### iOS
 
 TODO add instructions
 

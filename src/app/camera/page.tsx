@@ -116,7 +116,7 @@ const CameraPage = () => {
         return () => {
             stopCurrentStream()
         }
-    }, [startCamera, loading, session])
+    }, [startCamera, loading, session, stopCurrentStream])
 
     const toggleCamera = () => {
         setFacingMode((prev) =>

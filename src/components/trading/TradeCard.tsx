@@ -44,7 +44,6 @@ const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
                 <StarRating
                   rating={Number.isFinite(rating) ? rating : 0}
                   ratingCount={Number.isFinite(rating) ? 1 : 0}
-                  showCount={false}
                 />
               </HStack>
             </Stack>

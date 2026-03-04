@@ -13,7 +13,7 @@ import TradingCards from '@/components/trading/TradingCards';
 import {
     LuArrowRightLeft,
 } from 'react-icons/lu';
-import{
+import {
     SiInstagram,
     SiX,
     SiFacebook,

@@ -2,12 +2,23 @@
 
 import React, { useEffect, useState } from 'react'
 
-import { Flex, HStack, Text, Box, Slider, Spinner } from '@chakra-ui/react'
+import {
+    Flex,
+    HStack,
+    Text,
+    Box,
+    Slider,
+    Spinner,
+    Button,
+    Popover,
+    Portal
+} from '@chakra-ui/react'
 import ViableOptions from '@/components/trading/ViableOptions'
 import { TradeCardProps, ViableOption } from '@/types/tradepost'
 import { useAuth } from '@/context/AuthProvider'
 import { fetchTradeOptions } from '@/utils/getTradeOptions'
 import { pfp_image_mapping } from '../personal-profile/edit-profile/constants'
+import { IoIosInformationCircleOutline } from 'react-icons/io'
 
 const TradePage = () => {
     const { session } = useAuth()
@@ -117,36 +128,56 @@ const TradePage = () => {
     }
 
     return (
-        <Flex flexDirection="column" gap={6} mt={3}>
-            <Flex gap={2} justifyContent="right">
-                <Box position="relative" px={9}>
-                    <Box>
-                        <Slider.Root
-                            maxW="sm"
-                            size="sm"
-                            min={20}
-                            max={500}
-                            step={10}
-                            value={[sliderValue]}
-                            onValueChange={slideFn}
-                            width={150}
-                        >
-                            <HStack
-                                justify="space-between"
-                                justifyContent="left"
-                            >
-                                <Slider.Label>
-                                    Range: {sliderValue} km
-                                </Slider.Label>
-                            </HStack>
-                            <Slider.Control>
-                                <Slider.Track>
-                                    <Slider.Range />
-                                </Slider.Track>
-                                <Slider.Thumbs />
-                            </Slider.Control>
-                        </Slider.Root>
-                    </Box>
+        <Flex flexDirection="column" gap={6} mt={4}>
+            <Flex
+                flexDirection="row"
+                justifyContent="right"
+                alignItems="center"
+                w="100%"
+                gap={0}
+                pr={9}
+            >
+                <Popover.Root>
+                    <Popover.Trigger asChild>
+                        <Button variant="ghost" size="sm">
+                            <IoIosInformationCircleOutline />
+                        </Button>
+                    </Popover.Trigger>
+                    <Portal>
+                        <Popover.Positioner>
+                            <Popover.Content>
+                                <Popover.Arrow />
+                                <Popover.Body>
+                                    <Text fontSize="sm">
+                                        Distance is calculated based on the
+                                        location information provided by users.
+                                    </Text>
+                                </Popover.Body>
+                            </Popover.Content>
+                        </Popover.Positioner>
+                    </Portal>
+                </Popover.Root>
+                <Box position="relative">
+                    <Slider.Root
+                        maxW="sm"
+                        size="sm"
+                        min={20}
+                        max={500}
+                        step={10}
+                        value={[sliderValue]}
+                        onValueChange={slideFn}
+                        width={150}
+                    >
+                        <HStack justify="space-between" justifyContent="left">
+                            <Slider.Label>Range: {sliderValue} km</Slider.Label>
+                        </HStack>
+                        <Slider.Control>
+                            <Slider.Track>
+                                <Slider.Range />
+                            </Slider.Track>
+                            <Slider.Thumbs />
+                        </Slider.Control>
+                    </Slider.Root>
                 </Box>
             </Flex>
             <Flex flexDirection="column" gap={6} alignItems="center">

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
     Card,
     HStack,
@@ -35,6 +35,8 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) =>{
 
     // state to show small inline confirmation when something is copied
     const [copied, setCopied] = useState<string | null>(null);
+    // store timeout id so we can clear previous timeout to avoid race conditions
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     // copy the contact value (build profile URL for social methods) to the clipboard quietly (no toast)
     const copyToClipboard = async (types: string[]) => {
@@ -66,12 +68,29 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) =>{
         try {
             await navigator.clipboard.writeText(toCopy);
             setCopied(primary);
-            window.setTimeout(() => setCopied(null), 1500);
+            // clear any existing timeout so a previous click doesn't clear the new indicator
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
+            }
+            timeoutRef.current = setTimeout(() => {
+                setCopied(null);
+                timeoutRef.current = null;
+            }, 1500);
         } catch (e) {
             // copy failed - log for debugging
             console.error('Copy to clipboard failed', e);
         }
     }
+
+    // clear timeout on unmount to avoid leaking timers
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
+                timeoutRef.current = null;
+            }
+        };
+    }, []);
 
     return (
         <Card.Root width="100%">

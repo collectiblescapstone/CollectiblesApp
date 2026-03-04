@@ -174,6 +174,9 @@ export const POST = async (request: Request) => {
     return NextResponse.json({
         ...user,
         tradeList,
-        viableOptions: Array.from(viableOptionsMap.values())
+        viableOptions: Array.from(viableOptionsMap.values()).filter(
+            (option) =>
+                option.user.distance !== null && option.user.distance < 500
+        )
     })
 }

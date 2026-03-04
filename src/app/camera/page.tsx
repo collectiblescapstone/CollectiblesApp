@@ -12,13 +12,12 @@ import {
     VStack,
     HStack
 } from '@chakra-ui/react'
-import { CameraPreview, CameraPreviewPictureOptions } from '@capacitor-community/camera-preview';
 
 const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
         null
     )
-    // const videoRef = useRef<HTMLVideoElement | null>(null)
+    const videoRef = useRef<HTMLVideoElement | null>(null)
     const inputCanvas = useRef<HTMLCanvasElement | null>(null)
     const overlayCanvas = useRef<HTMLCanvasElement | null>(null)
     const tipsPopupRef = useRef<HTMLDivElement | null>(null)
@@ -27,15 +26,9 @@ const CameraPage = () => {
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
         setTimeout(() => {
-            const cameraPreviewPictureOptions: CameraPreviewPictureOptions = {
-                quality: 50
-            };
-
-            let result:string;
-            
-            try {
-                result = await CameraPreview.capture(cameraPreviewPictureOptions);
-            }
+            if (!videoRef.current) return
+            if (videoRef.current.paused || videoRef.current.ended) return
+            const video = videoRef.current
 
             // create canvas if not exists
             if (!inputCanvas.current) {
@@ -90,12 +83,17 @@ const CameraPage = () => {
     }, [])
 
     useEffect(() => {
-        if (loading || !session) return
+        const video = videoRef.current
+        if (!video || loading || !session) return
 
         const startCamera = async () => {
             try {
-                CameraPreview.start({ parent: "cameraPreview", position: "rear", width:1280, height:1280, disableAudio: true });
-                
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: true
+                })
+
+                video.srcObject = stream
+                await video.play()
                 // grab the first frame immediately
                 handleProcessed()
             } catch (err) {
@@ -105,11 +103,13 @@ const CameraPage = () => {
 
         startCamera()
 
+        return () => {
+            if (!video.srcObject) return
+            ;(video.srcObject as MediaStream)
+                .getTracks()
+                .forEach((track) => track.stop())
+        }
     }, [handleProcessed, loading, session])
-
-    window.addEventListener("beforeunload", () => {
-        CameraPreview.stop();
-    })
 
     if (loading || !session) {
         return (
@@ -122,7 +122,7 @@ const CameraPage = () => {
     return (
         <Box minW="39vw">
             <Box position="relative" maxH="50vh" aspectRatio="1" mx="auto">
-                {/* <video
+                <video
                     ref={videoRef}
                     style={{
                         position: 'absolute',
@@ -131,14 +131,7 @@ const CameraPage = () => {
                         objectFit: 'cover',
                         border: '2px solid var(--chakra-colors-brand-turtoise)'
                     }}
-                /> */}
-                <div id="cameraPreview" style={{
-                        position: 'absolute',
-                    width: '100%',  
-                        height: '100%',
-                        objectFit: 'cover',
-                        border: '2px solid var(--chakra-colors-brand-turtoise)'
-                    }}></div>
+                />
                 <canvas
                     ref={overlayCanvas}
                     style={{

@@ -10,8 +10,6 @@ import {
 } from '@chakra-ui/react'
 
 jest.mock('@chakra-ui/react', () => {
-    const React = require('react')
-
     return {
         __esModule: true,
 

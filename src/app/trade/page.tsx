@@ -81,6 +81,7 @@ const TradePage = () => {
         {users.map((u) => (
           <Box
             key={u.username}
+            cursor="pointer"
             alignItems="center"
             onClick={() =>
               TradePopup.open('trade', {

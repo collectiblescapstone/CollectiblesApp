@@ -13,13 +13,8 @@ import TradingCards from '@/components/trading/TradingCards';
 import {
     LuArrowRightLeft,
 } from 'react-icons/lu';
-import{
-    SiInstagram,
-    SiX,
-    SiFacebook,
-    SiDiscord,
-    SiWhatsapp,
-} from 'react-icons/si';
+import { FaInstagram, FaFacebook, FaDiscord, FaWhatsapp } from 'react-icons/fa'
+import { RiTwitterXLine } from 'react-icons/ri'
 
 type ContactMethod = {
     method: string;
@@ -97,7 +92,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                             {hasContact(['instagram']) && (
                                 <HStack key="instagram">
                                     <IconButton aria-label="instagram" onClick={() => copyToClipboard(['instagram'])}>
-                                        <SiInstagram size={20} />
+                                        <FaInstagram size={20} />
                                     </IconButton>
                                     {copied === 'instagram' && <Text fontSize="xs" color="green.500">Copied</Text>}
                                 </HStack>
@@ -105,7 +100,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                             {hasContact(['x','twitter']) && (
                                 <HStack key="x">
                                     <IconButton aria-label="x" onClick={() => copyToClipboard(['x','twitter'])}>
-                                        <SiX size={20} />
+                                        <RiTwitterXLine size={20} />
                                     </IconButton>
                                     {copied === 'x' && <Text fontSize="xs" color="green.500">Copied</Text>}
                                 </HStack>
@@ -113,7 +108,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                             {hasContact(['facebook']) && (
                                 <HStack key="facebook">
                                     <IconButton aria-label="facebook" onClick={() => copyToClipboard(['facebook'])}>
-                                        <SiFacebook size={20} />
+                                        <FaFacebook size={20} />
                                     </IconButton>
                                     {copied === 'facebook' && <Text fontSize="xs" color="green.500">Copied</Text>}
                                 </HStack>
@@ -121,7 +116,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                             {hasContact(['whatsapp']) && (
                                 <HStack key="whatsapp">
                                     <IconButton aria-label="whatsapp" onClick={() => copyToClipboard(['whatsapp'])}>
-                                        <SiWhatsapp size={20} />
+                                        <FaWhatsapp size={20} />
                                     </IconButton>
                                     {copied === 'whatsapp' && <Text fontSize="xs" color="green.500">Copied</Text>}
                                 </HStack>
@@ -129,7 +124,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                             {hasContact(['discord']) && (
                                 <HStack key="discord">
                                     <IconButton aria-label="discord" onClick={() => copyToClipboard(['discord'])}>
-                                        <SiDiscord size={20} />
+                                        <FaDiscord size={20} />
                                     </IconButton>
                                     {copied === 'discord' && <Text fontSize="xs" color="green.500">Copied</Text>}
                                 </HStack>
@@ -137,11 +132,11 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                         </HStack>
                     </VStack>
 
-                <LuArrowRightLeft size={30} />
+                    <LuArrowRightLeft size={30} />
 
-                {/*/!*your cards*!/*/}
-                  <TradingCards />
-                  <Text fontSize="sm" fontWeight="semibold">Your cards</Text>
+                    {/*/!*your cards*!/*/}
+                    <TradingCards />
+                    <Text fontSize="sm" fontWeight="semibold">Your cards</Text>
                 </VStack>
             </Card.Body>
         </Card.Root>

@@ -23,7 +23,8 @@ type TradeCardProps = {
 
 const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
   return (
-    <Card.Root width="80%">
+    // center the card horizontally and constrain its max width
+    <Card.Root width="100%" maxW="360px" mx="auto">
       <Card.Body>
         {/*their cards*/}
         <VStack align="center" gap={2}>
@@ -61,18 +62,6 @@ const TradeCard: React.FC<TradeCardProps> = ({ username, avatarUrl, rating}) =>{
             </Stack>
           </VStack>
         </VStack>
-
-
-        {/*/!*TODO: GET RID OF THIS, JUST SHOW THEIR CARDS, HAVE A POPUP WHEN YOU PRESS ON THE CARD*/}
-        {/*SHOWING WHAT THE TRADE IS, WHEN CLICK ON THEIR PFP OR USER LEAD TO THEIR PROFILE*!/*/}
-        {/*<LuArrowRightLeft size={150} />*/}
-
-        {/*/!*your cards*!/*/}
-        {/*<VStack align="center" gap={2}>*/}
-        {/*  <TradingCards />*/}
-        {/*  <Text fontSize="sm" fontWeight="semibold">Your cards</Text>*/}
-        {/*</VStack>*/}
-
       </Card.Body>
     </Card.Root>
   )

@@ -10,21 +10,28 @@ import {
 } from '@chakra-ui/react';
 import TradeCard from '@/components/trading/TradeCard';
 import TradePopup from '@/components/ui/PopupUI';
+import TradeCardPopup from '@/components/trading/PopupTrade';
+
+type ContactMethod = {
+  method: string;
+  value: string;
+};
 
 type TradeCardProps = {
   username: string;
   avatarUrl?: string;
   rating: number;
+  contacts?: ContactMethod[];
 };
 
 const TradePage = () => {
   const users: TradeCardProps[] = [
-    { username: 'Nate Foss', rating: 4.5 },
-    { username: 'Ava Johnson', rating: 4.0 },
-    { username: 'Liam Smith', rating: 1 },
-    { username: 'Maya Patel', rating: 3.5 },
-    { username: 'Carlos Ruiz', rating: 2 },
-    { username: 'Zoe Kim', rating: 5 },
+    { username: 'Nate Foss', rating: 4.5, contacts: [{ method: 'X', value: '1111111111' }, { method: 'Discord', value: '1111111111' }] },
+    { username: 'Ava Johnson', rating: 4.0, contacts: [{ method: 'Instagram', value: '1111111111' }] },
+    { username: 'Liam Smith', rating: 1, contacts: [{ method: 'Facebook', value: '1111111111' }] },
+    { username: 'Maya Patel', rating: 3.5, contacts: [{ method: 'Discord', value: '1111111111' }, { method: 'Whatsapp', value: '1111111111' }] },
+    { username: 'Carlos Ruiz', rating: 2, contacts: [{ method: 'Whatsapp', value: '1111111111' }] },
+    { username: 'Zoe Kim', rating: 5, contacts: [{ method: 'X', value: '1111111111' }] },
   ];
 
   return (
@@ -77,11 +84,10 @@ const TradePage = () => {
             onClick={() =>
               TradePopup.open('trade', {
                 title: 'Trade with ' + u.username,
-                content: <TradeCard
+                content: <TradeCardPopup
                   key={u.username}
                   username={u.username}
-                  avatarUrl={u.avatarUrl}
-                  rating={u.rating}
+                  contacts={u.contacts}
                 />,
                 onClickClose: () => TradePopup.close('trade')
               })

@@ -96,7 +96,9 @@ const CameraPage = () => {
                 audio: false,
                 video: {
                     facingMode: facingMode,
-                    frameRate: { ideal: 20 }
+                    frameRate: { ideal: 20 },
+                    width: { ideal: 1280 },
+                    height: { ideal: 1280 }
                 }
             })
 
@@ -214,12 +216,12 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
-            <div className="block flex justify-center landscape:hidden">
+            <Box className="block flex justify-center landscape:hidden">
                 <Button onClick={toggleCamera}>
                     Switch to {facingMode === 'environment' ? 'Front' : 'Rear'}{' '}
                     Camera
                 </Button>
-            </div>
+            </Box>
             {sourceImageData ? (
                 <IdentifyCards
                     sourceImageData={sourceImageData}

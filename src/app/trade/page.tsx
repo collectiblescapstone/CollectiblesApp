@@ -80,24 +80,23 @@ const TradePage = () => {
 
         {users.map((u) => (
           <Box
+            key={u.username}
             alignItems="center"
             onClick={() =>
               TradePopup.open('trade', {
                 title: 'Trade with ' + u.username,
                 content: <TradeCardPopup
-                  key={u.username}
-                  username={u.username}
-                  contacts={u.contacts}
-                />,
+                   username={u.username}
+                   contacts={u.contacts}
+                 />,
                 onClickClose: () => TradePopup.close('trade')
               })
             } >
             <TradeCard
-              key={u.username}
-              username={u.username}
-              avatarUrl={u.avatarUrl}
-              rating={u.rating}
-            />
+               username={u.username}
+               avatarUrl={u.avatarUrl}
+               rating={u.rating}
+             />
           </Box>
         ))}
         <TradePopup.Viewport />

@@ -74,7 +74,6 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
             window.setTimeout(() => setCopied(null), 1500);
         } catch (e) {
             // copy failed - log for debugging
-            // eslint-disable-next-line no-console
             console.error('Copy to clipboard failed', e);
         }
     }
@@ -96,7 +95,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                         </HStack>
                         <HStack>
                             {hasContact(['instagram']) && (
-                                <HStack>
+                                <HStack key="instagram">
                                     <IconButton aria-label="instagram" onClick={() => copyToClipboard(['instagram'])}>
                                         <SiInstagram size={20} />
                                     </IconButton>
@@ -104,7 +103,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                                 </HStack>
                             )}
                             {hasContact(['x','twitter']) && (
-                                <HStack>
+                                <HStack key="x">
                                     <IconButton aria-label="x" onClick={() => copyToClipboard(['x','twitter'])}>
                                         <SiX size={20} />
                                     </IconButton>
@@ -112,7 +111,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                                 </HStack>
                             )}
                             {hasContact(['facebook']) && (
-                                <HStack>
+                                <HStack key="facebook">
                                     <IconButton aria-label="facebook" onClick={() => copyToClipboard(['facebook'])}>
                                         <SiFacebook size={20} />
                                     </IconButton>
@@ -120,7 +119,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                                 </HStack>
                             )}
                             {hasContact(['whatsapp']) && (
-                                <HStack>
+                                <HStack key="whatsapp">
                                     <IconButton aria-label="whatsapp" onClick={() => copyToClipboard(['whatsapp'])}>
                                         <SiWhatsapp size={20} />
                                     </IconButton>
@@ -128,7 +127,7 @@ const TradeCardPopup: React.FC<TradeCardProps> = (props) =>{
                                 </HStack>
                             )}
                             {hasContact(['discord']) && (
-                                <HStack>
+                                <HStack key="discord">
                                     <IconButton aria-label="discord" onClick={() => copyToClipboard(['discord'])}>
                                         <SiDiscord size={20} />
                                     </IconButton>

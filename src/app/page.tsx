@@ -1,8 +1,10 @@
 'use client'
-import { Button } from '@chakra-ui/react'
+import { Button, Heading, Text, Tabs } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import React, { useEffect, useState } from 'react'
+import { LuHandshake, LuScanEye, LuSearch } from 'react-icons/lu'
+
 
 const Landing: React.FC = () => {
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -322,13 +324,66 @@ const Landing: React.FC = () => {
 
                             <div className="card" id="features" tabIndex={-1}>
                                 <h2>Features</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Metus nunc ullamcorper
-                                    ipsum enim natoque orci dignissim consequat
-                                    nascetur. Molestie inceptos phasellus purus
-                                    sapien; nam ligula adipiscing.
-                                </p>
+                                <Tabs.Root
+                                    defaultValue="Identification"
+                                    variant="line"
+                                >
+                                    <Tabs.List>
+                                        <Tabs.Trigger value="Identification">
+                                            <LuScanEye />
+                                            Identification
+                                        </Tabs.Trigger>
+                                        <Tabs.Indicator />
+                                        <Tabs.Trigger value="Search">
+                                            <LuSearch />
+                                            Search
+                                        </Tabs.Trigger>
+                                        <Tabs.Indicator />
+                                        <Tabs.Trigger value="Trading">
+                                            <LuHandshake />
+                                            Trading
+                                        </Tabs.Trigger>
+                                        <Tabs.Indicator />
+                                    </Tabs.List>
+                                    <Tabs.Content value="Identification">
+                                        <Heading as="h3">
+                                            Card Identification
+                                        </Heading>
+                                        <Text>
+                                            Using advance machine learning
+                                            techniques, Kollec can rapidly
+                                            identify collectibles in real time
+                                            using just your phone's camera. No
+                                            more manual entry or searching
+                                            through endless lists!
+                                        </Text>
+                                        <Heading as="h4">
+                                            The Technology
+                                        </Heading>
+                                        <Text>
+                                            Kollec first uses a custom trained
+                                            YOLO segmentation machine learning
+                                            model to locate any cards in view of
+                                            your device's camera. We then use
+                                            perceptual hashing to match the
+                                            found cards against our database of
+                                            known cards. Once a match is found,
+                                            it is shown to you so you can
+                                            quickly add the card to your digital
+                                            collection.
+                                        </Text>
+                                    </Tabs.Content>
+                                    <Tabs.Content value="Search">
+                                        <Heading as="h3">Card Search</Heading>
+                                        <Text>TODO</Text>
+                                    </Tabs.Content>
+                                    <Tabs.Content value="Trading">
+                                        <Heading as="h3">
+                                            Trading Algorithm
+                                        </Heading>
+                                        <Text>TODO</Text>
+                                    </Tabs.Content>
+                                </Tabs.Root>
                             </div>
 
                             <div className="card" id="faq" tabIndex={-1}>

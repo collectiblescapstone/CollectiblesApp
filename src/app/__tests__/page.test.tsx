@@ -1,16 +1,27 @@
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import Page from '../page'
-import { ButtonProps, FlexProps, HeadingProps } from '@chakra-ui/react'
 
 jest.mock('@chakra-ui/react', () => {
+    const React = require('react')
+
     return {
         __esModule: true,
-        Flex: (props: FlexProps) => <div>{props.children}</div>,
-        Heading: (props: HeadingProps) => <h1>{props.children}</h1>,
-        Button: (props: ButtonProps) => (
-            <button onClick={props.onClick}>{props.children}</button>
-        )
+
+        Flex: ({ children }: any) => <div>{children}</div>,
+        Heading: ({ children }: any) => <h1>{children}</h1>,
+        Text: ({ children }: any) => <p>{children}</p>,
+
+        Button: ({ children, onClick }: any) => (
+            <button onClick={onClick}>{children}</button>
+        ),
+
+        Tabs: {
+            Root: ({ children }: any) => <div data-testid="tabs-root">{children}</div>,
+            List: ({ children }: any) => <div data-testid="tabs-list">{children}</div>,
+            Trigger: ({ children }: any) => <button type="button">{children}</button>,
+            Content: ({ children }: any) => <div>{children}</div>,
+        }
     }
 })
 

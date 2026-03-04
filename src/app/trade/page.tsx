@@ -148,7 +148,11 @@ const TradePage = () => {
                             <Popover.Content>
                                 <Popover.Arrow />
                                 <Popover.Body>
-                                    <Text fontSize="sm">
+                                    <Text
+                                        fontSize="xs"
+                                        color="gray.600"
+                                        textAlign="center"
+                                    >
                                         Distance is calculated based on the
                                         location information provided by users.
                                     </Text>

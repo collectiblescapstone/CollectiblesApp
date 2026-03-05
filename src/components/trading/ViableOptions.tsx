@@ -47,7 +47,6 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                 <Card.Body>
                     <TradingCards
                         cards={cards?.map((card) => ({
-                            id: card.id,
                             name: card.name,
                             image: card.image_url
                         }))}

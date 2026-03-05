@@ -154,17 +154,25 @@ export const POST = async (request: Request) => {
                 existing.cards.push(match.card)
             }
         } else {
+            const hasValidCoords =
+                user.latitude !== null &&
+                user.longitude !== null &&
+                match.user.latitude !== null &&
+                match.user.longitude !== null
+
             viableOptionsMap.set(match.user.id, {
                 user: {
                     id: match.user.id,
                     username: match.user.username,
                     profile_pic: match.user.profile_pic,
-                    distance: calculateHaversineDistance(
-                        user.latitude ?? 0,
-                        user.longitude ?? 0,
-                        match.user.latitude ?? 0,
-                        match.user.longitude ?? 0
-                    )
+                    distance: hasValidCoords
+                        ? calculateHaversineDistance(
+                              user.latitude!,
+                              user.longitude!,
+                              match.user.latitude!,
+                              match.user.longitude!
+                          )
+                        : null
                 },
                 cards: [match.card]
             })
@@ -172,8 +180,6 @@ export const POST = async (request: Request) => {
     }
 
     return NextResponse.json({
-        ...user,
-        tradeList,
         viableOptions: Array.from(viableOptionsMap.values()).filter(
             (option) =>
                 option.user.distance !== null && option.user.distance < 500

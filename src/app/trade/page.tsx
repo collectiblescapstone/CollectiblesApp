@@ -115,7 +115,7 @@ const TradePage = () => {
                         fontWeight="semibold"
                         color="brand.turtoise"
                     >
-                        Thats a special hand you have there!
+                        That&apos;s a special hand you have there!
                     </Text>
                     <Text fontSize="sm" color="gray.600">
                         We could not find any viable trades for you at the
@@ -139,7 +139,7 @@ const TradePage = () => {
             >
                 <Popover.Root>
                     <Popover.Trigger asChild>
-                        <Button variant="ghost" size="sm">
+                        <Button variant="ghost" size="sm" aria-label="Info">
                             <IoIosInformationCircleOutline />
                         </Button>
                     </Popover.Trigger>
@@ -187,7 +187,10 @@ const TradePage = () => {
             <Flex flexDirection="column" gap={6} alignItems="center">
                 {(() => {
                     const filteredUsers = users.filter(
-                        (u) => !u.distance || u.distance <= sliderValue
+                        (u) =>
+                            u.distance !== null &&
+                            u.distance !== undefined &&
+                            u.distance <= sliderValue
                     )
                     if (filteredUsers.length === 0) {
                         return (

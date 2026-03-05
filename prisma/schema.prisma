@@ -29,6 +29,8 @@ model User {
   rating_count    Int               @default(0)
   collection      CollectionEntry[]
   wishlist        WishlistEntry[]
+  blockedUsers    BlockList[]       @relation("Blocker")
+  blockedBy       BlockList[]       @relation("Blocked")
 }
 
 model Set {
@@ -87,4 +89,16 @@ model WishlistEntry {
   user    User    @relation(fields: [userId], references: [id])
 
   @@unique([userId, cardId, variant])
+}
+
+model BlockList {
+  id              String   @id @default(cuid())
+  userId          String   @db.Uuid
+  blockedUserId   String @db.Uuid
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation("Blocker", fields: [userId], references: [id])
+  blockedUser     User     @relation("Blocked", fields: [blockedUserId], references: [id])
+
+  @@unique([userId, blockedUserId])
 }

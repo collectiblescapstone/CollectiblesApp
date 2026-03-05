@@ -27,7 +27,10 @@ export type PokemonSet = {
     total: number
 }
 
-const pokemonCards: Record<string, Entry> = {}
+let pokemonCards: Record<string, Entry> = {}
+
+// Cards based on cardID
+const cards: Record<string, Set<string>> = {}
 
 // Set counts based on set
 const masterSetCards: Record<string, Set<string>> = {}
@@ -77,6 +80,12 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
                     tags: collectionEntry.tags
                 }
 
+                // Add the card to the user's collection based on cardId
+                // Adds the entry ID to the list
+                if (!cards[collectionEntry.cardId])
+                    cards[collectionEntry.cardId] = new Set<string>()
+                cards[collectionEntry.cardId].add(collectionEntry.id.toString())
+
                 // Add to master and grandmaster sets
                 const setId = collectionEntry.card?.setId
 
@@ -123,6 +132,42 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
     })()
 
     return pokemonCardsInit
+}
+
+/**
+ * Refreshes the Pokemon cards data.
+ * Mainly used for adding a new card to the database.
+ * @param userId
+ */
+export const refreshPokemonCards = (userId: string): void => {
+    // Reset initialization state and clear all cached data and derived indexes
+    pokemonCardsInit = null
+    pokemonCards = {}
+    // Clear derived caches based on pokemonCards
+    Object.keys(cards).forEach((key) => delete cards[key])
+    Object.keys(masterSetCards).forEach((key) => delete masterSetCards[key])
+    Object.keys(grandmasterSetCards).forEach((key) => delete grandmasterSetCards[key])
+    Object.keys(pokemonMasterSetCards).forEach((key) => delete pokemonMasterSetCards[Number(key)])
+    Object.keys(pokemonGrandmasterSet).forEach((key) => delete pokemonGrandmasterSet[Number(key)])
+    fetchPokemonCards(userId)
+}
+
+export const getUserCards = async (
+    userId: string,
+    cardId: string
+): Promise<Set<string>> => {
+    if (pokemonCardsInit === null) await fetchPokemonCards(userId)
+
+    // Find the card and iterate through the entries that have this cardId
+    return cards[cardId] || new Set<string>()
+}
+
+export const getUserCard = async (
+    userId: string,
+    entryId: string
+): Promise<Entry | null> => {
+    if (pokemonCardsInit === null) await fetchPokemonCards(userId)
+    return pokemonCards[entryId] || null
 }
 
 /**

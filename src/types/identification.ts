@@ -22,6 +22,13 @@ export interface NormalizeCardResult {
     corners: [number, number][]
 }
 
+export type Corners = [
+    [number, number],
+    [number, number],
+    [number, number],
+    [number, number]
+]
+
 export enum rotation {
     NONE,
     CLOCKWISE,

@@ -1,0 +1,103 @@
+// Types
+import { PokemonSetType } from '@/types/pokemon-grid'
+
+import { Set as DbSet } from '@prisma/client'
+
+let pokemonSetsInit: Promise<void> | null = null
+
+const groups: Record<string, PokemonSetType[]> = {
+    sv: [],
+    swsh: [],
+    sm: [],
+    xy: [],
+    bw: [],
+    dp: [],
+    me: [],
+    base: [],
+    other: [],
+    ex: [],
+    neo: [],
+    pl: [],
+    hgss: [],
+    pop: [],
+    ecard: []
+}
+
+const pokemonSetIdMap: Record<string, DbSet> = {}
+
+const pokemonSetNameMap: Record<string, string> = {}
+
+const fetchPokemonSets = async (): Promise<void> => {
+    // If already initialized, just return the existing promise
+    if (pokemonSetsInit) return pokemonSetsInit
+
+    pokemonSetsInit = (async () => {
+        try {
+            fetch('/api/pokemon-set')
+                .then((res) => res.json())
+                .then((data) => {
+                    const dbSets: DbSet[] = Array.isArray(data) ? data : [data]
+                    const sets: PokemonSetType[] = Array.isArray(data)
+                        ? data
+                        : [data]
+                    sets.forEach((set) => {
+                        const id = set.id?.toLowerCase() ?? ''
+                        pokemonSetNameMap[id] = set.name
+
+                        if (id.includes('sv')) groups.sv.push(set)
+                        else if (id.includes('swsh')) groups.swsh.push(set)
+                        else if (id.includes('sm')) groups.sm.push(set)
+                        else if (id.includes('xy')) groups.xy.push(set)
+                        else if (id.includes('bw')) groups.bw.push(set)
+                        else if (id.includes('hgss') || id.includes('tk-hs'))
+                            groups.hgss.push(set)
+                        else if (id.includes('pl')) groups.pl.push(set)
+                        else if (id.includes('dp')) groups.dp.push(set)
+                        else if (id.includes('me')) groups.me.push(set)
+                        else if (id.includes('ex')) groups.ex.push(set)
+                        else if (id.includes('ecard')) groups.ecard.push(set)
+                        else if (id.includes('pop')) groups.pop.push(set)
+                        else if (id.includes('neo') || id.includes('si'))
+                            groups.neo.push(set)
+                        else if (id.includes('base')) groups.base.push(set)
+                        else groups.other.push(set)
+                    })
+                    dbSets.forEach((set) => {
+                        const id = set.id?.toLowerCase() ?? ''
+                        pokemonSetIdMap[id] = set
+                    })
+                })
+        } catch (err) {
+            console.error('Fetch error for pokemon sets:', err)
+        }
+    })()
+
+    return pokemonSetsInit
+}
+
+export const getSetName = async (id: string): Promise<string | undefined> => {
+    if (Object.keys(pokemonSetNameMap).length === 0) {
+        await fetchPokemonSets()
+        // console.log(
+        //     'Getting set name for id:',
+        //     id,
+        //     'Found name:',
+        //     pokemonSetNameMap[id]
+        // )
+        return pokemonSetNameMap[id]
+    } else {
+        return pokemonSetNameMap[id]
+    }
+}
+
+export const getSetInfo = async (id: string): Promise<DbSet | undefined> => {
+    if (Object.keys(pokemonSetIdMap).length === 0) await fetchPokemonSets()
+    return pokemonSetIdMap[id]
+}
+
+export const getSetGroups = async (): Promise<
+    Record<string, PokemonSetType[]>
+> => {
+    if (Object.keys(pokemonSetNameMap).length === 0) await fetchPokemonSets()
+    return groups
+}

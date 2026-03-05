@@ -110,7 +110,6 @@ const fetchPokemonCards = async (): Promise<void> => {
                     pokemonGrandmasterCounts.push(0)
 
                 for (const [, cardInfo] of Object.entries(pokemonCards)) {
-                    // console.log(pokemonCards[pId], cardInfo);
                     if (cardInfo.dexId.includes(pokedexValue)) {
                         // Add the values to the arrays
                         if (!pokemonGrandmasterCounts[i]) {
@@ -138,23 +137,6 @@ const fetchPokemonCards = async (): Promise<void> => {
     })()
     return pokemonCardsInit
 }
-
-// /**
-//  * Edits the set counts
-//  * @param set
-//  * @param index
-//  * @param value
-//  * @returns
-//  */
-// const editSetCounts = (
-//   set: Record<string, number>,
-//   index: string,
-//   value: number
-// ) => {
-//   if (!set[index]) set[index] = 0;
-//   set[index] += value > 0 ? value : 1;
-//   return set;
-// };
 
 const fetchPokemonSets = async (): Promise<void> => {
     if (pokemonSetsInit) return pokemonSetsInit
@@ -193,6 +175,7 @@ export const getCardInformation = async (
     id: string
 ): Promise<PokemonCard | undefined> => {
     if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards()
+    // console.log('getCardInformation: ', pokemonCards[id].name)
     return pokemonCards[id]
 }
 

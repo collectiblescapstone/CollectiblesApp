@@ -1,27 +1,40 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
-
 import {
     Button,
     Field,
-    Input,
     Stack,
     TagsInput,
+    Image,
     Select,
     Portal,
     Box,
     createListCollection,
     Listbox,
-    Spinner
+    Spinner,
+    ListCollection
 } from '@chakra-ui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { useAuth } from '@/context/AuthProvider'
 import { CapacitorHttp } from '@capacitor/core'
+
+// Context
+import { useAuth } from '@/context/AuthProvider'
+
+// Utils
 import { baseUrl } from '@/utils/constants'
+import {
+    cardConditions,
+    gradeDetailsMap,
+    gradingCompanies
+} from '@/utils/cardInfo/cardGrading'
+import { capitalizeEachWord } from '@/utils/capitalize'
+import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
+import { refreshPokemonCards } from '@/utils/userPokemonCard'
+import { getSetName } from '@/utils/pokemonSet'
 
 interface FormValues {
     CardName: string
@@ -44,87 +57,91 @@ const formSchema = z.object({
 })
 
 const grades = createListCollection({
-    items: [
-        { label: 'Ungraded', value: 'ungraded' },
-        { label: 'PSA', value: 'psa' },
-        { label: 'TAG', value: 'tag' },
-        { label: 'CGC', value: 'cgc' },
-        { label: 'Beckett', value: 'beckett' },
-        { label: 'ACE', value: 'ace' }
-    ]
+    items: gradingCompanies
 })
-
-// Mapping for the second select's options depending on the selected grade
-const gradeDetailsMap: Record<string, { label: string; value: string }[]> = {
-    ungraded: [],
-    psa: [
-        { label: '10', value: 'psa-10' },
-        { label: '9', value: 'psa-9' },
-        { label: '8', value: 'psa-8' }
-    ],
-    tag: [
-        { label: '10', value: 'tag-10' },
-        { label: '9', value: 'tag-9' }
-    ],
-    cgc: [
-        { label: '10', value: 'cgc-10' },
-        { label: '9.5', value: 'cgc-9.5' }
-    ],
-    beckett: [{ label: '10', value: 'beckett-10' }],
-    ace: [{ label: '10', value: 'ace-10' }]
-}
 
 const conditions = createListCollection({
-    items: [
-        { label: 'Near Mint', value: 'near-mint' },
-        { label: 'Lightly Played', value: 'lightly-played' },
-        { label: 'Moderately Played', value: 'moderately-played' },
-        { label: 'Heavily Played', value: 'heavily-played' },
-        { label: 'Damaged', value: 'damaged' }
-    ]
+    items: cardConditions
 })
 
-const foils = createListCollection({
-    items: [
-        { label: 'Starlight', value: 'starlight' },
-        { label: 'Cosmos', value: 'cosmos' },
-        { label: 'Tinsel', value: 'tinsel' },
-        { label: 'Sheen', value: 'sheen' },
-        { label: 'Cracked Ice', value: 'cracked-ice' },
-        { label: 'Crosshatch', value: 'crosshatch' },
-        { label: 'Water Web', value: 'water-web' },
-        { label: 'Sequin', value: 'sequin' },
-        { label: 'Pixel', value: 'pixel' },
-        { label: 'Reverse Holofoil', value: 'reverse-holo' }
-    ]
-})
-
-function reset() {
-    // Placeholder reset function - implement form reset logic as needed
-    console.log('Reset form called')
-}
-
+/**
+ *
+ * @returns
+ */
 const EditCardPage = () => {
     type SelectPayload = { value?: string | string[] }
 
     const { session, loading } = useAuth()
-
     const searchParams = useSearchParams()
 
-    const imageUrl = searchParams.get('imageUrl') ?? ''
-    const cardName = searchParams.get('cardName') ?? ''
-    const cardSet = searchParams.get('cardSet') ?? ''
-    const cardId = searchParams.get('cardId') ?? ''
+    // Card information
+    const [cardId, setCardId] = useState<string>('')
+    const [cardInfo, setCardInfo] = useState<PokemonCard | undefined>(undefined)
+    const [cardFoils, setCardFoils] =
+        useState<ListCollection<{ label: string; value: string }>>()
+    const [cardSet, setCardSet] = useState<string>('')
+
+    useEffect(() => {
+        const id = searchParams.get('cardId') ?? ''
+        setCardId(id)
+
+        let active = true
+
+        const fetchCardInfo = async () => {
+            const info = await getCardInformation(id)
+            if (!active) return
+
+            setCardInfo(info)
+
+            // Build holo patterns
+            const items = info?.variants
+                ? []
+                : [{ label: 'Normal', value: 'normal' }]
+
+            for (const [, holopattern] of Object.entries(info?.variants || {})) {
+                items.push({
+                    label: capitalizeEachWord(holopattern),
+                    value: holopattern
+                })
+            }
+
+            setCardFoils(createListCollection({ items }))
+        }
+
+        fetchCardInfo()
+
+        return () => {
+            active = false
+        }
+    }, [searchParams])
+
+    useEffect(() => {
+        let active = true
+
+        const resolveSetName = async () => {
+            const name = await getSetName(cardInfo?.setId.toLowerCase() ?? '')
+            if (!active) return
+            setCardSet(name ?? 'N/A')
+        }
+
+        resolveSetName()
+
+        return () => {
+            active = false
+        }
+    }, [cardInfo])
+
+
     const {
-        register,
         handleSubmit,
         control,
+        reset,
         formState: { errors }
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            CardName: cardName,
-            CardSet: cardSet,
+            CardName: '',
+            CardSet: '',
             CardGrade: ['ungraded'],
             CardGradeDetail: [],
             Condition: undefined,
@@ -132,6 +149,21 @@ const EditCardPage = () => {
             Tags: []
         }
     })
+
+    // Reset form when cardInfo loads
+    useEffect(() => {
+        if (cardInfo) {
+            reset({
+                CardName: cardInfo.name ?? '',
+                CardSet: cardInfo.setId ?? '',
+                CardGrade: ['ungraded'],
+                CardGradeDetail: [],
+                Condition: undefined,
+                FoilPattern: undefined,
+                Tags: []
+            })
+        }
+    }, [cardInfo, reset])
 
     // keep track of the currently selected top-level grade so we can
     // enable/disable and populate the second select accordingly
@@ -145,6 +177,7 @@ const EditCardPage = () => {
 
     const onSubmit = handleSubmit(async (data) => {
         try {
+            if (!session?.user?.id) return // Extra check to ensure user is authenticated before allowing submission
             const payload = {
                 cardName: data.CardName,
                 condition: data.Condition ?? undefined,
@@ -172,11 +205,15 @@ const EditCardPage = () => {
             }
 
             alert('Card saved to your collection')
+            // Refresh the user data
+            refreshPokemonCards(session.user.id)
         } catch (err) {
             console.error('Unexpected error saving card', err)
             alert('Unexpected error saving card')
         }
     })
+
+    if (!session?.user?.id) return
 
     if (loading || !session) {
         return (
@@ -208,23 +245,28 @@ const EditCardPage = () => {
                     <Box
                         bg="tomato"
                         width="170px"
-                        height="260px"
                         borderRadius="12px"
                         boxShadow="md"
-                        p="4"
                         color="white"
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
                         style={{
-                            backgroundImage: imageUrl
-                                ? `url(${imageUrl}/low.jpg)`
-                                : undefined,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }}
                     >
-                        {!imageUrl && 'CARD IMAGE'}
+                        <Image
+                            src={
+                                cardInfo?.image_url !== 'undefined/low.png' &&
+                                cardInfo?.image_url !== ''
+                                    ? cardInfo?.image_url
+                                    : '/Images/PokemonCardBack.jpg'
+                            }
+                            alt={cardInfo?.name ?? 'Card Image'}
+                            objectFit="contain"
+                            width="100%"
+                        />
                     </Box>
 
                     {/* Buttons under the card image for quick actions */}
@@ -246,35 +288,16 @@ const EditCardPage = () => {
                     flexGrow={1}
                     minWidth={0}
                 >
-                    <Field.Root invalid={!!errors.CardName}>
-                        <Field.Label>
-                            Card name <Field.RequiredIndicator />
-                        </Field.Label>
-                        <Input
-                            placeholder="Item name"
-                            {...register('CardName', {
-                                required: 'Card name is required'
-                            })}
-                        />
-                        <Field.ErrorText>
-                            {errors.CardName?.message}
-                        </Field.ErrorText>
-                    </Field.Root>
+                    <Box fontSize="sm" fontWeight="bold">
+                        Card name
+                    </Box>
+                    <Box>{cardInfo?.name || 'N/A'}</Box>
 
-                    <Field.Root invalid={!!errors.CardSet}>
-                        <Field.Label>
-                            Card set <Field.RequiredIndicator />
-                        </Field.Label>
-                        <Input
-                            placeholder="Item set"
-                            {...register('CardSet', {
-                                required: 'Card set is required'
-                            })}
-                        />
-                        <Field.ErrorText>
-                            {errors.CardSet?.message}
-                        </Field.ErrorText>
-                    </Field.Root>
+                    <Box fontSize="sm" fontWeight="bold">
+                        Card set
+                    </Box>
+                    {/* getSetName(cardInfo?.setId || '') */}
+                    <Box>{cardSet}</Box>
 
                     <Stack
                         direction="row"
@@ -284,7 +307,7 @@ const EditCardPage = () => {
                         width="-webkit-fill-available"
                     >
                         <Field.Root invalid={!!errors.CardGrade}>
-                            <Field.Label>Card Grade</Field.Label>
+                            <Field.Label>Grading</Field.Label>
                             <Controller
                                 control={control}
                                 name="CardGrade"
@@ -563,7 +586,13 @@ const EditCardPage = () => {
                         control={control}
                         render={({ field }) => (
                             <Listbox.Root
-                                collection={foils}
+                                collection={
+                                    cardFoils ||
+                                    createListCollection<{
+                                        label: string
+                                        value: string
+                                    }>({ items: [] })
+                                }
                                 deselectable
                                 maxW="320px"
                                 value={field.value ? [field.value] : []}
@@ -573,13 +602,13 @@ const EditCardPage = () => {
                             >
                                 <Listbox.Label>Card Foil Pattern</Listbox.Label>
                                 <Listbox.Content>
-                                    {foils.items.map((foil) => (
+                                    {cardFoils?.items.map((cardFoil) => (
                                         <Listbox.Item
-                                            item={foil}
-                                            key={foil.value}
+                                            item={cardFoil}
+                                            key={cardFoil.value}
                                         >
                                             <Listbox.ItemText>
-                                                {foil.label}
+                                                {cardFoil.label}
                                             </Listbox.ItemText>
                                             <Listbox.ItemIndicator />
                                         </Listbox.Item>
@@ -635,7 +664,7 @@ const EditCardPage = () => {
                         </Field.HelperText>
                     </Field.Root>
                     <Stack direction="column" gap={2}>
-                        <Button bg="red" onClick={reset}>
+                        <Button bg="red" onClick={() => reset()}>
                             Discard Changes
                         </Button>
                         <Button type="submit">Save</Button>

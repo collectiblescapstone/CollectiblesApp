@@ -2,34 +2,39 @@
 
 import React from 'react'
 import { Box, Image, VStack, Text } from '@chakra-ui/react'
+import { CiCirclePlus } from 'react-icons/ci'
 import Link from 'next/link'
 
 interface PokemonCardMiniProps {
+    cardId: string
     cardName: string
     image: string
     cardOwned: boolean
-    cardId: string // actual card ID, e.g., "sv01-001"
+    cardSetId: string // actual card ID, e.g., "sv01-001"
     // illustrator?: string;
     // rarity?: string;
 }
 
-const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
+const PokemonCardMini = ({
+    cardId,
     cardName,
     image,
-    cardId,
+    cardSetId,
     cardOwned
     // illustrator,
     // rarity,
 }: PokemonCardMiniProps) => {
+
+    // Determine path, either add card OR to the cards owned page, where you can click and edit the cards
+
+    const path = cardOwned ? '/user-cards' : '/edit-card'
+
     return (
         <Link
             href={{
-                pathname: '/edit-card',
+                pathname: path,
                 query: {
-                    imageUrl: image,
-                    cardName: cardName,
-                    cardSet: cardId,
-                    cardOwned: cardOwned
+                    cardId: cardId
                 }
             }}
         >
@@ -57,6 +62,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
+                    position="relative"
                 >
                     <Image
                         src={
@@ -73,6 +79,26 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
                             opacity: cardOwned ? 1 : 0.4
                         }}
                     />
+                    {/* Card Image Overlay IF the card is NOT owned*/}
+                    {!cardOwned && (
+                        <Box
+                            position="absolute"
+                            top="50%"
+                            left="50%"
+                            transform="translate(-50%, -50%)"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                        >
+                            <CiCirclePlus
+                                size={64}
+                                color="white"
+                                style={{
+                                    filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                                }}
+                            />
+                        </Box>
+                    )}
                 </Box>
 
                 {/* Text Info */}
@@ -88,7 +114,7 @@ const PokemonCardMini: React.FC<PokemonCardMiniProps> = ({
 
                     {/* Show the actual card ID */}
                     <Text fontSize="sm" color="gray.600">
-                        {cardId}
+                        {cardSetId}
                     </Text>
                 </VStack>
             </Box>

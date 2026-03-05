@@ -1,5 +1,5 @@
 import { useAuth } from '@/context/AuthProvider'
-import { SearchableUser } from '@/types/trade'
+import { SearchableUser } from '@/types/user-management'
 import { baseUrl } from '@/utils/constants'
 import { CapacitorHttp } from '@capacitor/core'
 import {

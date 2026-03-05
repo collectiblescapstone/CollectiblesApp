@@ -6,7 +6,7 @@ import { Field } from '@chakra-ui/react'
 import { baseUrl } from '@/utils/constants'
 import { CapacitorHttp } from '@capacitor/core'
 import { useAuth } from '@/context/AuthProvider'
-import { ReportFormValues } from '@/types/trade'
+import { ReportFormValues } from '@/types/user-management'
 import { useState } from 'react'
 
 interface ReportFormProps {

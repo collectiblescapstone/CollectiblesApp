@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import prisma from '@/lib/prisma'
-import { ReportFormValues } from '@/types/trade'
+import { ReportFormValues } from '@/types/user-management'
 
 export const POST = async (request: NextRequest) => {
     try {

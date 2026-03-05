@@ -61,6 +61,7 @@ const UserSearch = () => {
     }
 
     useEffect(() => {
+        if (!session?.access_token) return
         const fetchSearchableUsers = async () => {
             const res = await CapacitorHttp.post({
                 url: `${baseUrl}/api/get-searchable-users`,

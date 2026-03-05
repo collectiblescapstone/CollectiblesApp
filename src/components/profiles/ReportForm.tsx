@@ -66,37 +66,45 @@ const ReportForm = ({ closeOnSubmit, userId }: ReportFormProps) => {
             return
         }
 
-        const res = await CapacitorHttp.post({
-            url: `${baseUrl}/api/report-user`,
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${session?.access_token}`
-            },
-            data: {
-                ...data,
-                reqUserId: session?.user.id,
-                reportedUserId: userId
-            }
-        })
+        try {
+            const res = await CapacitorHttp.post({
+                url: `${baseUrl}/api/report-user`,
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                },
+                data: {
+                    ...data,
+                    reqUserId: session?.user.id,
+                    reportedUserId: userId
+                }
+            })
 
-        if (res.status !== 200) {
+            if (res.status !== 200) {
+                setError('root', {
+                    type: 'server',
+                    message: res.data?.error || 'Failed to submit report'
+                })
+                setIsSubmitting(false)
+                return
+            }
+
+            if (res.status === 200) {
+                setError('root', {
+                    type: 'success',
+                    message: 'Report submitted successfully'
+                })
+                setTimeout(() => {
+                    setIsSubmitting(false)
+                    closeOnSubmit()
+                }, 1500)
+            }
+        } catch {
             setError('root', {
                 type: 'server',
-                message: res.data?.error || 'Failed to submit report'
+                message: 'An error occurred while submitting the report'
             })
             setIsSubmitting(false)
-            return
-        }
-
-        if (res.status === 200) {
-            setError('root', {
-                type: 'success',
-                message: 'Report submitted successfully'
-            })
-            setTimeout(() => {
-                setIsSubmitting(false)
-                closeOnSubmit()
-            }, 1500)
         }
     }
 
@@ -158,7 +166,14 @@ const ReportForm = ({ closeOnSubmit, userId }: ReportFormProps) => {
                 {/* Error Messages Area */}
                 <Box width="100%" mb={3}>
                     {errors.root && (
-                        <Text color="red.500" fontSize="sm">
+                        <Text
+                            color={
+                                errors.root.type === 'success'
+                                    ? 'green.500'
+                                    : 'red.500'
+                            }
+                            fontSize="sm"
+                        >
                             {errors.root.message}
                         </Text>
                     )}

@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react'
 
-export const useLocalStorage = (
+export const useLocalStorage = <T>(
     key: string,
-    defaultValue: string | number | boolean | object
-) => {
-    const [state, setState] = useState(() => {
+    defaultValue: T
+): [T, (value: T) => void] => {
+    const [state, setState] = useState<T>(() => {
         // Lazy initialization to only run once on mount
         if (typeof window === 'undefined') {
             return defaultValue

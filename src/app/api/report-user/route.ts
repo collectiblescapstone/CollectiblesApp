@@ -39,6 +39,22 @@ export const POST = async (request: NextRequest) => {
             )
         }
 
+        const hasAtLeastOneCheckbox =
+            payload.isVerbalAbuse ||
+            payload.isSpamming ||
+            payload.isHarassment ||
+            payload.isScamming ||
+            payload.isBadName ||
+            payload.isBadBio
+        if (!hasAtLeastOneCheckbox || payload.reason.length < 10) {
+            return NextResponse.json(
+                {
+                    error: 'Please select at least one report type and provide a reason (minimum 10 characters)'
+                },
+                { status: 400 }
+            )
+        }
+
         // Check if the report already exists
         const existingReport = await prisma.reportedUser.findFirst({
             where: {
@@ -80,7 +96,7 @@ export const POST = async (request: NextRequest) => {
 
         return NextResponse.json({ message: 'User reported successfully' })
     } catch (error) {
-        console.error('Error in block-user API:', error)
+        console.error('Error in report-user API:', error)
         return NextResponse.json(
             { error: 'Internal Server Error' },
             { status: 500 }

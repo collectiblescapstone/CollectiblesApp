@@ -125,4 +125,6 @@ model ReportedUser {
   updatedAt       DateTime @updatedAt
   reporter        User     @relation("Reporter", fields: [reporterId], references: [id])
   reportedUser    User     @relation("Reported", fields: [reportedUserId], references: [id])
+
+  @@index([reporterId, reportedUserId, createdAt])
 }

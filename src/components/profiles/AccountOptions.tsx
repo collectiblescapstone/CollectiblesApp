@@ -40,6 +40,7 @@ const AccountOptions = ({ user }: AccountOptionsProps) => {
                                                 onCancel={() =>
                                                     PopupUI.close('block-user')
                                                 }
+                                                userId={user.id}
                                             />
                                         ),
                                         onClickClose: () =>

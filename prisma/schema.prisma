@@ -99,7 +99,7 @@ model WishlistEntry {
 model BlockList {
   id              String   @id @default(cuid())
   userId          String   @db.Uuid
-  blockedUserId   String @db.Uuid
+  blockedUserId   String   @db.Uuid
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
   user            User     @relation("Blocker", fields: [userId], references: [id])

@@ -26,7 +26,25 @@ export async function POST(request: NextRequest) {
                 id: {
                     not: userId
                 },
-                visibility: 'public'
+                visibility: 'public',
+                NOT: {
+                    OR: [
+                        {
+                            blockedBy: {
+                                some: {
+                                    userId: userId
+                                }
+                            }
+                        },
+                        {
+                            blockedUsers: {
+                                some: {
+                                    blockedUserId: userId
+                                }
+                            }
+                        }
+                    ]
+                }
             },
             select: {
                 id: true,

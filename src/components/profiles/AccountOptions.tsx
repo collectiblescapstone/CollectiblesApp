@@ -5,15 +5,20 @@ import React from 'react'
 import { Box, Button, Menu, Portal } from '@chakra-ui/react'
 import { FiMoreVertical, FiSlash, FiUserX } from 'react-icons/fi'
 import { LuStar } from 'react-icons/lu'
-import RatingPopup from '@/components/ui/PopupUI'
+import PopupUI from '@/components/ui/PopupUI'
 import RatingForm from './RatingForm'
 import { UserProfile } from '@/types/personal-profile'
+import BlockForm from './BlockForm'
+import ReportForm from './ReportForm'
 
 interface AccountOptionsProps {
     user: UserProfile
 }
 
 const AccountOptions = ({ user }: AccountOptionsProps) => {
+    const userFullName =
+        `${user.firstName} ${user.lastName}`.trim() ?? user.username
+
     return (
         <Box>
             <Menu.Root>
@@ -25,7 +30,23 @@ const AccountOptions = ({ user }: AccountOptionsProps) => {
                 <Portal>
                     <Menu.Positioner>
                         <Menu.Content>
-                            <Menu.Item value="block-user">
+                            <Menu.Item
+                                value="block-user"
+                                onClick={() =>
+                                    PopupUI.open('block-user', {
+                                        title: `Block ${userFullName}?`,
+                                        content: (
+                                            <BlockForm
+                                                onCancel={() =>
+                                                    PopupUI.close('block-user')
+                                                }
+                                            />
+                                        ),
+                                        onClickClose: () =>
+                                            PopupUI.close('block-user')
+                                    })
+                                }
+                            >
                                 Block{' '}
                                 <Menu.ItemCommand>
                                     <FiSlash size={20} />
@@ -34,18 +55,16 @@ const AccountOptions = ({ user }: AccountOptionsProps) => {
                             <Menu.Item
                                 value="rate-user"
                                 onClick={() =>
-                                    RatingPopup.open('rate-user', {
-                                        title: 'Rate this User',
+                                    PopupUI.open('rate-user', {
+                                        title: `Rate ${userFullName}?`,
                                         content: (
                                             <RatingForm
-                                                closeOnSubmit={
-                                                    RatingPopup.close
-                                                }
+                                                closeOnSubmit={PopupUI.close}
                                                 user={user}
                                             />
                                         ),
                                         onClickClose: () =>
-                                            RatingPopup.close('rate-user')
+                                            PopupUI.close('rate-user')
                                     })
                                 }
                             >
@@ -54,7 +73,24 @@ const AccountOptions = ({ user }: AccountOptionsProps) => {
                                     <LuStar size={20} />
                                 </Menu.ItemCommand>
                             </Menu.Item>
-                            <Menu.Item color="red" value="report-user">
+                            <Menu.Item
+                                color="red"
+                                value="report-user"
+                                onClick={() =>
+                                    PopupUI.open('report-user', {
+                                        title: `Report ${userFullName}?`,
+                                        content: (
+                                            <ReportForm
+                                                closeOnSubmit={() =>
+                                                    PopupUI.close('report-user')
+                                                }
+                                            />
+                                        ),
+                                        onClickClose: () =>
+                                            PopupUI.close('report-user')
+                                    })
+                                }
+                            >
                                 Report{' '}
                                 <Menu.ItemCommand>
                                     <FiUserX size={20} />
@@ -64,7 +100,7 @@ const AccountOptions = ({ user }: AccountOptionsProps) => {
                     </Menu.Positioner>
                 </Portal>
             </Menu.Root>
-            <RatingPopup.Viewport />
+            <PopupUI.Viewport />
         </Box>
     )
 }

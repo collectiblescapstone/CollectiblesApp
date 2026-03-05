@@ -124,7 +124,8 @@ const UserSearch = () => {
                         collection={filteredUsers}
                         value={listboxValue}
                     >
-                        {filteredUsers.items.length > 0 ? (
+                        {filteredUsers.items.length > 0 &&
+                        searchValue.length > 0 ? (
                             <Listbox.Content>
                                 {filteredUsers.items.map((item) => (
                                     <Listbox.Item
@@ -157,7 +158,9 @@ const UserSearch = () => {
                                     justifyContent="center"
                                     alignItems="center"
                                 >
-                                    No users found
+                                    {searchValue.length > 0
+                                        ? 'No users found'
+                                        : 'Search for users'}
                                 </Box>
                             </Listbox.Content>
                         )}

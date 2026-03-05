@@ -155,6 +155,11 @@ const ReportForm = ({ closeOnSubmit, userId }: ReportFormProps) => {
                                     value: 10,
                                     message:
                                         'Reason must be at least 10 characters'
+                                },
+                                maxLength: {
+                                    value: 240,
+                                    message:
+                                        'Reason must be at most 240 characters'
                                 }
                             })}
                             placeholder="Please provide additional details about your report"

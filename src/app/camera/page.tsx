@@ -108,7 +108,9 @@ const CameraPage = () => {
                 audio: false,
                 video: {
                     facingMode: facingMode,
-                    frameRate: { ideal: 20 }
+                    frameRate: { ideal: 20 },
+                    width: { ideal: 1280 },
+                    height: { ideal: 1280 }
                 }
             })
 

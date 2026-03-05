@@ -27,11 +27,11 @@ interface PokemonPolaroidProps {
     nextPage: string
 }
 
-const PokemonPolaroid = ({
-	id,
-	masterSet,
-	grandmasterSet,
-	nextPage
+const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
+    id,
+    masterSet,
+    grandmasterSet,
+    nextPage
 }: PokemonPolaroidProps) => {
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
     const { session } = useAuth()

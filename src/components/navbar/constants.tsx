@@ -38,7 +38,7 @@ export const MENU_ITEMS: {
 
 export const PAGE_HEADINGS: Record<string, string> = {
     '/home': 'kollec',
-    '/trade': 'trade post',
+    '/trade': 'TradePost',
     '/pokemon-grid': 'kollections',
     '/camera': 'camera',
     '/personal-profile': 'profile'

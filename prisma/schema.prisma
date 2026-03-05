@@ -27,10 +27,15 @@ model User {
   longitude       Float?
   rating          Float             @default(0)
   rating_count    Int               @default(0)
+
   collection      CollectionEntry[]
   wishlist        WishlistEntry[]
+
   blockedUsers    BlockList[]       @relation("Blocker")
   blockedBy       BlockList[]       @relation("Blocked")
+
+  reportedUsers   ReportedUser[]    @relation("Reporter")
+  reportedBy      ReportedUser[]    @relation("Reported")
 }
 
 model Set {
@@ -101,4 +106,23 @@ model BlockList {
   blockedUser     User     @relation("Blocked", fields: [blockedUserId], references: [id])
 
   @@unique([userId, blockedUserId])
+}
+
+model ReportedUser {
+  id              String   @id @default(cuid())
+  reporterId      String   @db.Uuid
+  reportedUserId  String   @db.Uuid
+  // Report types
+  isVerbalAbuse   Boolean  @default(false)
+  isSpamming      Boolean  @default(false)
+  isHarassment    Boolean  @default(false)
+  isScamming      Boolean  @default(false)
+  isBadName       Boolean  @default(false)
+  isBadBio        Boolean  @default(false)
+  // Additional field for reason
+  reason          String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  reporter        User     @relation("Reporter", fields: [reporterId], references: [id])
+  reportedUser    User     @relation("Reported", fields: [reportedUserId], references: [id])
 }

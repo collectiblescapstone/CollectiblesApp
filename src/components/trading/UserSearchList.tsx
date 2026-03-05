@@ -19,6 +19,11 @@ const UserSearchList = ({
     rating_count,
     location
 }: UserSearchListProps) => {
+    const trimmedLocation =
+        location.length > 20
+            ? location.split(',').slice(-3).join(', ')
+            : location
+
     return (
         <Box
             display="flex"
@@ -50,7 +55,7 @@ const UserSearchList = ({
                 >
                     <StarRating rating={rating} ratingCount={rating_count} />
                     <Text fontSize="sm" color="gray.500">
-                        {location}
+                        {trimmedLocation}
                     </Text>
                 </Box>
             </Box>

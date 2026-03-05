@@ -46,10 +46,14 @@ export const POST = async (request: NextRequest) => {
             payload.isScamming ||
             payload.isBadName ||
             payload.isBadBio
-        if (!hasAtLeastOneCheckbox || payload.reason.length < 10) {
+        if (
+            !hasAtLeastOneCheckbox ||
+            payload.reason.length < 10 ||
+            payload.reason.length > 240
+        ) {
             return NextResponse.json(
                 {
-                    error: 'Please select at least one report type and provide a reason (minimum 10 characters)'
+                    error: 'Please select at least one report type and provide a reason (between 10 and 240 characters)'
                 },
                 { status: 400 }
             )

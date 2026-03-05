@@ -3,25 +3,28 @@
 import { IdentifyCards } from '@/components/cv/IdentifyCards'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useAuth } from '@/context/AuthProvider'
-import {
-    Box,
-    Button,
-    Spinner,
-    Heading,
-    Text,
-    VStack,
-    HStack
-} from '@chakra-ui/react'
+import { Box, Button, Spinner, Heading, Text, VStack } from '@chakra-ui/react'
+import TipsPopup from '@/components/ui/PopupUI'
 
 const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
         null
     )
+    const [facingMode, setFacingMode] = useState<'environment' | 'user'>(
+        'environment'
+    )
     const videoRef = useRef<HTMLVideoElement | null>(null)
     const inputCanvas = useRef<HTMLCanvasElement | null>(null)
     const overlayCanvas = useRef<HTMLCanvasElement | null>(null)
-    const tipsPopupRef = useRef<HTMLDivElement | null>(null)
+    const streamRef = useRef<MediaStream | null>(null)
     const { session, loading } = useAuth()
+
+    const stopCurrentStream = useCallback(() => {
+        if (streamRef.current) {
+            streamRef.current.getTracks().forEach((track) => track.stop())
+            streamRef.current = null
+        }
+    }, [])
 
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
@@ -82,34 +85,104 @@ const CameraPage = () => {
         }, 100)
     }, [])
 
-    useEffect(() => {
+    const startCamera = useCallback(async () => {
         const video = videoRef.current
-        if (!video || loading || !session) return
+        if (!video) return
 
-        const startCamera = async () => {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    video: true
-                })
+        try {
+            stopCurrentStream()
 
-                video.srcObject = stream
-                await video.play()
-                // grab the first frame immediately
-                handleProcessed()
-            } catch (err) {
-                console.error('Error accessing camera', err)
-            }
+            const stream = await navigator.mediaDevices.getUserMedia({
+                audio: false,
+                video: {
+                    facingMode: facingMode,
+                    frameRate: { ideal: 20 },
+                    width: { ideal: 1280 },
+                    height: { ideal: 1280 }
+                }
+            })
+
+            streamRef.current = stream
+            video.srcObject = stream
+            await video.play()
+
+            handleProcessed()
+        } catch (err) {
+            console.error('Error accessing camera', err)
         }
+    }, [facingMode, handleProcessed, stopCurrentStream])
 
+    useEffect(() => {
+        if (loading || !session) return
         startCamera()
-
         return () => {
-            if (!video.srcObject) return
-            ;(video.srcObject as MediaStream)
-                .getTracks()
-                .forEach((track) => track.stop())
+            stopCurrentStream()
         }
-    }, [handleProcessed, loading, session])
+    }, [startCamera, loading, session, stopCurrentStream])
+
+    const toggleCamera = () => {
+        setFacingMode((prev) =>
+            prev === 'environment' ? 'user' : 'environment'
+        )
+    }
+
+    const tipsPopupContent = () => {
+        return (
+            <Box
+                maxW="800px"
+                width="100%"
+                textAlign="center"
+                padding="6"
+                backgroundColor="#FFFFFF"
+                borderRadius="md"
+            >
+                <Box as="article">
+                    <VStack align="start">
+                        <Box>
+                            <Heading as="h3" size="sm" mb={2} textAlign="left">
+                                Lighting
+                            </Heading>
+                            <Text textAlign="left">
+                                Use bright, even lighting. Avoid shadows and
+                                glare on the card surface.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Heading as="h3" size="sm" mb={2} textAlign="left">
+                                Positioning
+                            </Heading>
+                            <Text textAlign="left">
+                                Ensure the whole card is visible. Hold steady to
+                                avoid blur.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Heading as="h3" size="sm" mb={2} textAlign="left">
+                                For Best Results
+                            </Heading>
+                            <Text textAlign="left">
+                                Have a single card visible, cards in binders may
+                                be hard to recognize.
+                            </Text>
+                        </Box>
+                    </VStack>
+                </Box>
+            </Box>
+        )
+    }
+
+    // show tips popup on first load
+    useEffect(() => {
+        if (loading || !session) return
+        TipsPopup.open('camera-tips', {
+            title: 'Scanning Tips',
+            description: 'For better card recognition, follow these tips:',
+            content: tipsPopupContent(),
+            onClickClose: () => {
+                TipsPopup.close('camera-tips')
+            }
+        })
+    }, [loading, session])
 
     if (loading || !session) {
         return (
@@ -143,6 +216,12 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
+            <Box className="block flex justify-center landscape:hidden">
+                <Button onClick={toggleCamera}>
+                    Switch to {facingMode === 'environment' ? 'Front' : 'Rear'}{' '}
+                    Camera
+                </Button>
+            </Box>
             {sourceImageData ? (
                 <IdentifyCards
                     sourceImageData={sourceImageData}
@@ -152,90 +231,7 @@ const CameraPage = () => {
             ) : (
                 <Box>No image captured.</Box>
             )}
-            <Box
-                ref={tipsPopupRef}
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                backgroundColor="#000000AA"
-            >
-                <Box
-                    maxW="800px"
-                    width="100%"
-                    textAlign="center"
-                    padding="6"
-                    backgroundColor="#FFFFFF"
-                    borderRadius="md"
-                >
-                    <Box as="article">
-                        <HStack justifyContent="space-between" mb={6}>
-                            <Heading as="h2" size="lg" mb={4}>
-                                Tips for Better Card Scans
-                            </Heading>
-                            <Button
-                                onClick={() => {
-                                    // just hide the overlay, the camera will still be running underneath
-                                    if (tipsPopupRef.current) {
-                                        tipsPopupRef.current.style.display =
-                                            'none'
-                                    }
-                                }}
-                            >
-                                Close
-                            </Button>
-                        </HStack>
-                        <VStack align="start">
-                            <Box>
-                                <Heading
-                                    as="h3"
-                                    size="sm"
-                                    mb={2}
-                                    textAlign="left"
-                                >
-                                    Lighting
-                                </Heading>
-                                <Text textAlign="left">
-                                    Use bright, even lighting. Avoid shadows and
-                                    glare on the card surface.
-                                </Text>
-                            </Box>
-                            <Box>
-                                <Heading
-                                    as="h3"
-                                    size="sm"
-                                    mb={2}
-                                    textAlign="left"
-                                >
-                                    Positioning
-                                </Heading>
-                                <Text textAlign="left">
-                                    Ensure the whole card is visible. Hold
-                                    steady to avoid blur.
-                                </Text>
-                            </Box>
-                            <Box>
-                                <Heading
-                                    as="h3"
-                                    size="sm"
-                                    mb={2}
-                                    textAlign="left"
-                                >
-                                    For Best Results
-                                </Heading>
-                                <Text textAlign="left">
-                                    Have a single card visible, cards in binders
-                                    may be hard to recognize.
-                                </Text>
-                            </Box>
-                        </VStack>
-                    </Box>
-                </Box>
-            </Box>
+            <TipsPopup.Viewport />
         </Box>
     )
 }

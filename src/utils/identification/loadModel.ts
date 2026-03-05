@@ -23,15 +23,13 @@ export const loadModel = async (
         enableMemPattern: true
     }
 
-    env.wasm.simd = true
+    env.wasm.simd = false
 
     // create model session
     try {
         session = await InferenceSession.create(modelPath, settings)
-    } catch {
-        // try without SIMD
-        env.wasm.simd = false
-        session = await InferenceSession.create(modelPath, settings)
+    } catch (err) {
+        throw new Error(`Failed to load model at ${modelPath}: ${err instanceof Error ? err.message : String(err)}`)
     }
 
     // warm up model with dummy input

@@ -11,3 +11,13 @@ export type SearchableUser = Pick<
     | 'rating_count'
     | 'location'
 >
+
+export interface ReportFormValues {
+    isVerbalAbuse: boolean
+    isSpamming: boolean
+    isHarassment: boolean
+    isScamming: boolean
+    isBadName: boolean
+    isBadBio: boolean
+    reason: string
+}

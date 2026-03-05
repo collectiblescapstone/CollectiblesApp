@@ -17,7 +17,9 @@ interface AccountOptionsProps {
 
 const AccountOptions = ({ user }: AccountOptionsProps) => {
     const userFullName =
-        `${user.firstName} ${user.lastName}`.trim() ?? user.username
+        user.firstName || user.lastName
+            ? `${user.firstName ?? ''} ${user.lastName ?? ''}`.trim()
+            : user.username
 
     return (
         <Box>
@@ -85,6 +87,7 @@ const AccountOptions = ({ user }: AccountOptionsProps) => {
                                                 closeOnSubmit={() =>
                                                     PopupUI.close('report-user')
                                                 }
+                                                userId={user.id}
                                             />
                                         ),
                                         onClickClose: () =>

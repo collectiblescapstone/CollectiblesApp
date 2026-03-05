@@ -3,19 +3,15 @@
 import { Box, Button, Checkbox, Stack, Text, Textarea } from '@chakra-ui/react'
 import { useForm, Controller } from 'react-hook-form'
 import { Field } from '@chakra-ui/react'
-
-interface ReportFormValues {
-    isVerbalAbuse: boolean
-    isSpamming: boolean
-    isHarassment: boolean
-    isScamming: boolean
-    isBadName: boolean
-    isBadBio: boolean
-    reason: string
-}
+import { baseUrl } from '@/utils/constants'
+import { CapacitorHttp } from '@capacitor/core'
+import { useAuth } from '@/context/AuthProvider'
+import { ReportFormValues } from '@/types/trade'
+import { useState } from 'react'
 
 interface ReportFormProps {
     closeOnSubmit: () => void
+    userId: string
 }
 
 const checkboxFields: Record<keyof Omit<ReportFormValues, 'reason'>, string> = {
@@ -27,7 +23,8 @@ const checkboxFields: Record<keyof Omit<ReportFormValues, 'reason'>, string> = {
     isBadBio: 'Inappropriate Profile Bio'
 }
 
-const ReportForm = ({ closeOnSubmit }: ReportFormProps) => {
+const ReportForm = ({ closeOnSubmit, userId }: ReportFormProps) => {
+    const { session } = useAuth()
     const {
         register,
         handleSubmit,
@@ -46,7 +43,11 @@ const ReportForm = ({ closeOnSubmit }: ReportFormProps) => {
         }
     })
 
-    const onSubmitHandler = (data: ReportFormValues) => {
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const onSubmitHandler = async (data: ReportFormValues) => {
+        if (isSubmitting) return
+        setIsSubmitting(true)
         // Validate at least one checkbox is selected
         const hasAtLeastOneCheckbox =
             data.isVerbalAbuse ||
@@ -61,11 +62,42 @@ const ReportForm = ({ closeOnSubmit }: ReportFormProps) => {
                 type: 'validation',
                 message: 'Please select at least one report type'
             })
+            setIsSubmitting(false)
             return
         }
 
-        // Close form
-        closeOnSubmit()
+        const res = await CapacitorHttp.post({
+            url: `${baseUrl}/api/report-user`,
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${session?.access_token}`
+            },
+            data: {
+                ...data,
+                reqUserId: session?.user.id,
+                reportedUserId: userId
+            }
+        })
+
+        if (res.status !== 200) {
+            setError('root', {
+                type: 'server',
+                message: res.data?.error || 'Failed to submit report'
+            })
+            setIsSubmitting(false)
+            return
+        }
+
+        if (res.status === 200) {
+            setError('root', {
+                type: 'success',
+                message: 'Report submitted successfully'
+            })
+            setTimeout(() => {
+                setIsSubmitting(false)
+                closeOnSubmit()
+            }, 1500)
+        }
     }
 
     return (
@@ -139,10 +171,10 @@ const ReportForm = ({ closeOnSubmit }: ReportFormProps) => {
 
                 {/* Action Buttons */}
                 <Box display="flex" gap={2}>
-                    <Button type="submit" colorScheme="red">
+                    <Button type="submit" bgColor="red" disabled={isSubmitting}>
                         Submit Report
                     </Button>
-                    <Button onClick={closeOnSubmit} variant="outline">
+                    <Button onClick={closeOnSubmit} disabled={isSubmitting}>
                         Cancel
                     </Button>
                 </Box>

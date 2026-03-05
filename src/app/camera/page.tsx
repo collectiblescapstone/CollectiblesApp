@@ -6,6 +6,8 @@ import { useAuth } from '@/context/AuthProvider'
 import { Box, Button, Spinner, Heading, Text, VStack } from '@chakra-ui/react'
 import TipsPopup from '@/components/ui/PopupUI'
 
+import { Camera } from '@capacitor/camera'
+
 const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
         null
@@ -90,15 +92,23 @@ const CameraPage = () => {
         if (!video) return
 
         try {
+            await Camera.requestPermissions()
+        } catch (err) {
+            const errorMessage =
+                err instanceof Error ? err.message : String(err)
+            if (!errorMessage.includes('Not implemented on web')) {
+                console.error('Error requesting camera permissions', err)
+            }
+        }
+
+        try {
             stopCurrentStream()
 
             const stream = await navigator.mediaDevices.getUserMedia({
                 audio: false,
                 video: {
                     facingMode: facingMode,
-                    frameRate: { ideal: 20 },
-                    width: { ideal: 1280 },
-                    height: { ideal: 1280 }
+                    frameRate: { ideal: 20 }
                 }
             })
 
@@ -204,6 +214,8 @@ const CameraPage = () => {
                         objectFit: 'cover',
                         border: '2px solid var(--chakra-colors-brand-turtoise)'
                     }}
+                    playsInline
+                    muted
                 />
                 <canvas
                     ref={overlayCanvas}
@@ -216,6 +228,9 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
+            {streamRef.current === null && (
+                <Button onClick={startCamera}>Start Camera</Button>
+            )}
             <Box className="block flex justify-center landscape:hidden">
                 <Button onClick={toggleCamera}>
                     Switch to {facingMode === 'environment' ? 'Front' : 'Rear'}{' '}

@@ -1,7 +1,24 @@
+import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma'
+import { supabase } from '@/lib/supabase'
 
-export const POST = async (request: Request) => {
+export const POST = async (request: NextRequest) => {
     const { userId } = await request.json()
+    const authHeader = request.headers.get('authorization')
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return NextResponse.json(
+            { error: 'Unauthorized - missing token' },
+            { status: 401 }
+        )
+    }
+    const token = authHeader.substring(7)
+    const { data, error } = await supabase.auth.getUser(token)
+    if (error || !data.user) {
+        return NextResponse.json(
+            { error: 'Unauthorized - invalid token' },
+            { status: 401 }
+        )
+    }
 
     if (!userId) {
         return new Response(JSON.stringify({ error: 'Missing parameters' }), {

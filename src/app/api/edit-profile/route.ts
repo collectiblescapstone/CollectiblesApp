@@ -1,12 +1,29 @@
-import { NextResponse } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma'
+import { supabase } from '@/lib/supabase'
 import { FormValues } from '@/types/personal-profile'
 
 export const dynamic = 'force-static'
 
 // PATCH /api/profile
-export async function PATCH(request: Request) {
+export async function PATCH(request: NextRequest) {
     try {
+        const authHeader = request.headers.get('authorization')
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return NextResponse.json(
+                { error: 'Unauthorized - missing token' },
+                { status: 401 }
+            )
+        }
+        const token = authHeader.substring(7)
+        const { data: userData, error } = await supabase.auth.getUser(token)
+        if (error || !userData.user) {
+            return NextResponse.json(
+                { error: 'Unauthorized - invalid token' },
+                { status: 401 }
+            )
+        }
+
         const body = await request.json()
         const {
             id: identifier,

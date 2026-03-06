@@ -20,6 +20,8 @@ import { fetchTradeOptions } from '@/utils/getTradeOptions'
 import { pfp_image_mapping } from '../personal-profile/edit-profile/constants'
 import { IoIosInformationCircleOutline } from 'react-icons/io'
 import UserSearch from '@/components/trading/UserSearch'
+import TradePopup from '@/components/ui/PopupUI';
+import TradeCardPopup from '@/components/trading/PopupTrade';
 
 const TradePage = () => {
     const { session } = useAuth()
@@ -238,14 +240,33 @@ const TradePage = () => {
                                 )
                             }
                             return filteredUsers.map((u) => (
-                                <ViableOptions
+                                <Box
                                     key={u.username}
-                                    username={u.username}
-                                    avatarUrl={u.avatarUrl}
-                                    rating={u.rating}
-                                    cards={u.cards}
-                                    distance={u.distance}
-                                />
+                                    cursor="pointer"
+                                    alignItems="center"
+                                    onClick={() =>
+                                        TradePopup.open('trade', {
+                                            title: 'Trade with ' + u.username,
+                                            content: (
+                                                <TradeCardPopup
+                                                    username={u.username}
+                                                    contacts={u.contacts}
+                                                />
+                                            ),
+                                            onClickClose: () =>
+                                                TradePopup.close('trade')
+                                        })
+                                    }
+                                >
+                                    <ViableOptions
+                                        key={u.username}
+                                        username={u.username}
+                                        avatarUrl={u.avatarUrl}
+                                        rating={u.rating}
+                                        cards={u.cards}
+                                        distance={u.distance}
+                                    />
+                                </Box>
                             ))
                         })()}
                     </Flex>

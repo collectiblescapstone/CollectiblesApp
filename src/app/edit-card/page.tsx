@@ -98,7 +98,9 @@ const EditCardPage = () => {
                 ? []
                 : [{ label: 'Normal', value: 'normal' }]
 
-            for (const [, holopattern] of Object.entries(info?.variants || {})) {
+            for (const [, holopattern] of Object.entries(
+                info?.variants || {}
+            )) {
                 items.push({
                     label: capitalizeEachWord(holopattern),
                     value: holopattern
@@ -130,7 +132,6 @@ const EditCardPage = () => {
             active = false
         }
     }, [cardInfo])
-
 
     const {
         handleSubmit,

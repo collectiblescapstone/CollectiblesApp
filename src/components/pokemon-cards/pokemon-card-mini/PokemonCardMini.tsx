@@ -24,7 +24,6 @@ const PokemonCardMini = ({
     // illustrator,
     // rarity,
 }: PokemonCardMiniProps) => {
-
     // Determine path, either add card OR to the cards owned page, where you can click and edit the cards
 
     const path = cardOwned ? '/user-cards' : '/edit-card'

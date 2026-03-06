@@ -146,9 +146,15 @@ export const refreshPokemonCards = (userId: string): void => {
     // Clear derived caches based on pokemonCards
     Object.keys(cards).forEach((key) => delete cards[key])
     Object.keys(masterSetCards).forEach((key) => delete masterSetCards[key])
-    Object.keys(grandmasterSetCards).forEach((key) => delete grandmasterSetCards[key])
-    Object.keys(pokemonMasterSetCards).forEach((key) => delete pokemonMasterSetCards[Number(key)])
-    Object.keys(pokemonGrandmasterSet).forEach((key) => delete pokemonGrandmasterSet[Number(key)])
+    Object.keys(grandmasterSetCards).forEach(
+        (key) => delete grandmasterSetCards[key]
+    )
+    Object.keys(pokemonMasterSetCards).forEach(
+        (key) => delete pokemonMasterSetCards[Number(key)]
+    )
+    Object.keys(pokemonGrandmasterSet).forEach(
+        (key) => delete pokemonGrandmasterSet[Number(key)]
+    )
     fetchPokemonCards(userId)
 }
 

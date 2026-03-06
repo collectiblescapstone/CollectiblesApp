@@ -20,6 +20,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { CapacitorHttp } from '@capacitor/core'
+import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -32,9 +33,11 @@ import {
     gradingCompanies
 } from '@/utils/cardInfo/cardGrading'
 import { capitalizeEachWord } from '@/utils/capitalize'
-import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
+// import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
 import { getSetName } from '@/utils/pokemonSet'
+
 
 interface FormValues {
     CardName: string
@@ -70,6 +73,7 @@ const conditions = createListCollection({
  */
 const EditCardPage = () => {
     type SelectPayload = { value?: string | string[] }
+    const { getCardInformation } = usePokemonCards()
 
     const { session, loading } = useAuth()
     const searchParams = useSearchParams()
@@ -115,7 +119,7 @@ const EditCardPage = () => {
         return () => {
             active = false
         }
-    }, [searchParams])
+    }, [searchParams, getCardInformation])
 
     useEffect(() => {
         let active = true
@@ -260,7 +264,7 @@ const EditCardPage = () => {
                         <Image
                             src={
                                 cardInfo?.image_url !== 'undefined/low.png' &&
-                                cardInfo?.image_url !== ''
+                                    cardInfo?.image_url !== ''
                                     ? cardInfo?.image_url
                                     : '/Images/PokemonCardBack.jpg'
                             }
@@ -326,8 +330,8 @@ const EditCardPage = () => {
                                             raw === undefined
                                                 ? []
                                                 : Array.isArray(raw)
-                                                  ? raw
-                                                  : [raw]
+                                                    ? raw
+                                                    : [raw]
                                         field.onChange(arr)
                                         setSelectedGrade(arr[0] ?? 'ungraded')
                                     }
@@ -476,8 +480,8 @@ const EditCardPage = () => {
                                                     raw === undefined
                                                         ? []
                                                         : Array.isArray(raw)
-                                                          ? raw
-                                                          : [raw]
+                                                            ? raw
+                                                            : [raw]
                                                 field.onChange(arr)
                                             }}
                                         >

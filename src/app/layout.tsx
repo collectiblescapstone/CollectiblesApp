@@ -7,6 +7,7 @@ import Content from './content'
 import { Suspense } from 'react'
 import { Spinner } from '@chakra-ui/react'
 import { ProfileSelectionProvider } from '@/context/ProfileSelectionProvider'
+import { PokemonCardsProvider } from '@/context/PokemonCardsProvider'
 
 export const metadata: Metadata = {
     title: 'Collectibles App',
@@ -25,9 +26,11 @@ export default function RootLayout({
                     <ChakraUIProvider>
                         <AuthContextProvider>
                             <ProfileSelectionProvider>
-                                <Suspense fallback={<Spinner size="xl" />}>
-                                    <Content>{children}</Content>
-                                </Suspense>
+                                <PokemonCardsProvider>
+                                    <Suspense fallback={<Spinner size="xl" />}>
+                                        <Content>{children}</Content>
+                                    </Suspense>
+                                </PokemonCardsProvider>
                             </ProfileSelectionProvider>
                         </AuthContextProvider>
                     </ChakraUIProvider>

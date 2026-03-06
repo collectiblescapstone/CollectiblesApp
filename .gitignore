@@ -56,6 +56,7 @@ __pycache__/
 /src/ai_dev/notebooks/datasets/
 /src/ai_dev/notebooks/runs/
 /src/ai_dev/notebooks/yolo*.pt
+/src/ai_dev/notebooks/card_yolo.onnx
 
 # workspace settings
 .vscode/

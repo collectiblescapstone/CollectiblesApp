@@ -6,34 +6,42 @@ import { useAuth } from '@/context/AuthProvider'
 import { Box, Button, Spinner, Heading, Text, VStack } from '@chakra-ui/react'
 import TipsPopup from '@/components/ui/PopupUI'
 
-import { Camera } from '@capacitor/camera'
-
 const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
         null
     )
-    const [facingMode, setFacingMode] = useState<'environment' | 'user'>(
-        'environment'
-    )
-    const videoRef = useRef<HTMLVideoElement | null>(null)
     const inputCanvas = useRef<HTMLCanvasElement | null>(null)
     const overlayCanvas = useRef<HTMLCanvasElement | null>(null)
-    const streamRef = useRef<MediaStream | null>(null)
+    const videoRef = useRef<HTMLDivElement | null>(null)
     const { session, loading } = useAuth()
 
     const stopCurrentStream = useCallback(() => {
-        if (streamRef.current) {
-            streamRef.current.getTracks().forEach((track) => track.stop())
-            streamRef.current = null
+        try {
+            CameraPreview.stop()
+        } catch (err) {
+            console.error('Error stopping camera preview', err)
         }
     }, [])
 
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
-        setTimeout(() => {
-            if (!videoRef.current) return
-            if (videoRef.current.paused || videoRef.current.ended) return
-            const video = videoRef.current
+        setTimeout(async () => {
+            let result
+            try {
+                result = await CameraPreview.capture({ quality: 85 })
+
+            } catch (err) {
+                console.error('Error capturing camera sample', err)
+                return
+            }
+
+            const base64URL = result.value
+            const img = new Image()
+            img.crossOrigin = 'anonymous'
+            img.src = base64URL
+            await new Promise((resolve) => {
+                img.onload = resolve
+            })
 
             // create canvas if not exists
             if (!inputCanvas.current) {
@@ -45,27 +53,27 @@ const CameraPage = () => {
             if (!ctx) return
 
             // draw video centered while cutting off edges to fit model input size
-            const videoAspect = video.videoWidth / video.videoHeight
+            const videoAspect = img.width / img.height
             let sx = 0,
                 sy = 0,
-                sWidth = video.videoWidth,
-                sHeight = video.videoHeight
+                sWidth = img.width,
+                sHeight = img.height
 
             if (videoAspect > 1) {
                 // video is wider than canvas
-                sWidth = video.videoHeight
-                sx = (video.videoWidth - sWidth) / 2
+                sWidth = img.height
+                sx = (img.width - sWidth) / 2
             } else {
                 // video is taller than canvas
-                sHeight = video.videoWidth
-                sy = (video.videoHeight - sHeight) / 2
+                sHeight = img.width
+                sy = (img.height - sHeight) / 2
             }
             canvas.width = sWidth
             canvas.height = sHeight
 
             // grab frame from video, cropped to square
             ctx.drawImage(
-                video,
+                img,
                 sx,
                 sy,
                 sWidth,
@@ -88,41 +96,34 @@ const CameraPage = () => {
     }, [])
 
     const startCamera = useCallback(async () => {
-        const video = videoRef.current
-        if (!video) return
 
-        try {
-            await Camera.requestPermissions()
-        } catch (err) {
-            const errorMessage =
-                err instanceof Error ? err.message : String(err)
-            if (!errorMessage.includes('Not implemented on web')) {
-                console.error('Error requesting camera permissions', err)
-            }
-        }
+        // try {
+        //     await Camera.requestPermissions()
+        // } catch (err) {
+        //     const errorMessage =
+        //         err instanceof Error ? err.message : String(err)
+        //     if (!errorMessage.includes('Not implemented on web')) {
+        //         console.error('Error requesting camera permissions', err)
+        //     }
+        // }
 
         try {
             stopCurrentStream()
 
-            const stream = await navigator.mediaDevices.getUserMedia({
-                audio: false,
-                video: {
-                    facingMode: facingMode,
-                    frameRate: { ideal: 20 },
-                    width: { ideal: 1280 },
-                    height: { ideal: 1280 }
-                }
-            })
+            const cameraPreviewOptions: CameraPreviewOptions = {
+                parent: 'cameraPreview',
+                position: 'rear',
+                toBack: true,
+                disableAudio: true
+            }
 
-            streamRef.current = stream
-            video.srcObject = stream
-            await video.play()
+            CameraPreview.start(cameraPreviewOptions)
 
             handleProcessed()
         } catch (err) {
             console.error('Error accessing camera', err)
         }
-    }, [facingMode, handleProcessed, stopCurrentStream])
+    }, [handleProcessed, stopCurrentStream])
 
     useEffect(() => {
         if (loading || !session) return
@@ -133,9 +134,11 @@ const CameraPage = () => {
     }, [startCamera, loading, session, stopCurrentStream])
 
     const toggleCamera = () => {
-        setFacingMode((prev) =>
-            prev === 'environment' ? 'user' : 'environment'
-        )
+        try {
+            CameraPreview.flip()
+        } catch (err) {
+            console.error('Error flipping camera', err)
+        }
     }
 
     const tipsPopupContent = () => {
@@ -207,18 +210,7 @@ const CameraPage = () => {
     return (
         <Box minW="39vw">
             <Box position="relative" maxH="50vh" aspectRatio="1" mx="auto">
-                <video
-                    ref={videoRef}
-                    style={{
-                        position: 'absolute',
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        border: '2px solid var(--chakra-colors-brand-turtoise)'
-                    }}
-                    playsInline
-                    muted
-                />
+                <div ref={videoRef} id="cameraPreview"></div>
                 <canvas
                     ref={overlayCanvas}
                     style={{
@@ -230,13 +222,12 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
-            {streamRef.current === null && (
+            {videoRef.current !== null && videoRef.current.children.length === 0 && (
                 <Button onClick={startCamera}>Start Camera</Button>
             )}
             <Box className="block flex justify-center landscape:hidden">
                 <Button onClick={toggleCamera}>
-                    Switch to {facingMode === 'environment' ? 'Front' : 'Rear'}{' '}
-                    Camera
+                    Switch Camera
                 </Button>
             </Box>
             {sourceImageData ? (

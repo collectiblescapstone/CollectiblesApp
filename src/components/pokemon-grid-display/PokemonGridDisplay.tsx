@@ -51,7 +51,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     const nextPage =
         originalPage === 'pokemon-grid'
             ? '/filter-cards'
-            : '/wishlist-filter-cards'
+            : '/personal-profile/edit-profile/wishlist/add/cards'
 
     const { session, loading } = useAuth()
     const [filteredIds, setFilteredIds] = useState<string[]>()

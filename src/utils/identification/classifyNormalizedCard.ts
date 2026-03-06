@@ -2,6 +2,8 @@ import { CV, Mat } from '@techstark/opencv-js'
 
 import { CardData, CardDataObj } from '@/types/identification'
 
+let cardDataCache: CardDataObj | null = null
+
 export const CardClassifier = async (): Promise<
     (cv: CV, image: Mat, k?: number) => CardData[]
 > => {
@@ -21,6 +23,9 @@ export const CardClassifier = async (): Promise<
      * Loads the card data into memory
      */
     const loadCards = async () => {
+        if (cardDataCache) {
+            return cardDataCache
+        }
         const cardDataReq = await fetch('/card_data.json')
         if (!cardDataReq.ok) {
             return {} as CardDataObj
@@ -31,6 +36,7 @@ export const CardClassifier = async (): Promise<
             cardData[id].hashBits = hexToBin(cardData[id].hash)
         }
 
+        cardDataCache = cardData
         return cardData
     }
 

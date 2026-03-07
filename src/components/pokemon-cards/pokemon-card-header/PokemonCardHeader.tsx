@@ -15,7 +15,6 @@ import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Utils
 import { getSetName, getSetInfo } from '@/utils/pokemonSet'
-// import { getCardInformation } from '@/utils/pokemonCard'
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { getRarityImage } from '@/utils/cardInfo/raritytoImage'
 

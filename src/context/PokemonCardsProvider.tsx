@@ -29,8 +29,7 @@ let pokemonSetsInit: Promise<void> | null = null
 
 let allCards: CardData[] = []
 
-/* ---------------- API ---------------- */
-
+// API
 export interface GetPokemonCardsFilters {
     ids: string[]
 }

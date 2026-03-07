@@ -126,6 +126,7 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                 <Avatar.Root boxSize="30px" shape="rounded">
                                     <Avatar.Image src={avatarUrl} />
                                 </Avatar.Root>
+                                {/*TO DO: MAKE THE USERNAME CLICKABLE SO IT TAKES YOU TO THE USER PROFILE*/}
                                 <Text fontWeight="semibold" textStyle="sm">
                                     {username}
                                 </Text>

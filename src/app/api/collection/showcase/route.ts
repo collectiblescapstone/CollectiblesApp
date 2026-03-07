@@ -28,17 +28,21 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        const result = await prisma.collectionEntry.count({
+        const result = await prisma.collectionEntry.findMany({
             where: {
                 userId: userId,
                 showcase: true
+            },
+            select: {
+                id: true
             }
         })
 
         return NextResponse.json(
             {
                 message: 'Number of cards in showcase retrieved successfully',
-                showcaseCount: result
+                showcaseCount: result.length,
+                data: result
             },
             { status: 200 }
         )

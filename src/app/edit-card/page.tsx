@@ -85,6 +85,7 @@ const conditions = createListCollection({
 const EditCardPage = () => {
     // Use Effect for getting the number of cards that are on showcase
     const [showcaseCount, setShowcaseCount] = useState(0)
+    const [showcaseCardIds, setShowcaseCardIds] = useState<string[]>([])
 
     // Form validation schema
     const formSchema = z.object({
@@ -137,7 +138,7 @@ const EditCardPage = () => {
 
             // Get the number of cards that are on showcase
             const res = await CapacitorHttp.post({
-                url: `${baseUrl}/api/collection/showcaseCount`,
+                url: `${baseUrl}/api/collection/showcase`,
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -145,6 +146,9 @@ const EditCardPage = () => {
                 }
             })
             setShowcaseCount(res.data.showcaseCount)
+            setShowcaseCardIds(
+                res.data.data.map((card: { id: string }) => card.id)
+            )
 
             // Build holo patterns
             const items = info?.variants
@@ -266,7 +270,11 @@ const EditCardPage = () => {
             }
 
             // PREVENTS ADDING ADDITIONAL SHOWCASE CARDS BEYOND THE LIMIT OF 3
-            if (showcase && showcaseCount >= 3) {
+            if (
+                showcase &&
+                showcaseCount >= 3 &&
+                !showcaseCardIds.includes(entryId)
+            ) {
                 setShowcaseError(true)
                 return
             }
@@ -374,7 +382,6 @@ const EditCardPage = () => {
                         </Text>
                     </Button>
                 </HStack>
-                {/*ADD ERROR MESSAGE*/}
                 {/*ADD ERROR MESSAGE*/}
                 {showcaseError && (
                     <Text color="red">

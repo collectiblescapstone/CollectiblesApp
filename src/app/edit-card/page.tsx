@@ -20,10 +20,14 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { CapacitorHttp } from '@capacitor/core'
-import type { PokemonCard } from '@/types/Cards/frontend-card'
+
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
+
+// Types
+import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Utils
 import { baseUrl } from '@/utils/constants'
@@ -33,8 +37,6 @@ import {
     gradingCompanies
 } from '@/utils/cardInfo/cardGrading'
 import { capitalizeEachWord } from '@/utils/capitalize'
-import { usePokemonCards } from '@/context/PokemonCardsProvider'
-// import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
 import { getSetName } from '@/utils/pokemonSet'
 

@@ -159,8 +159,9 @@ const fetchPokemonSets = async (): Promise<void> => {
 
 type PokemonCardsContextType = {
     getCardInformation: (id: string) => Promise<PokemonCard | undefined>
-    getCardsBySetId: (setId: string) => Promise<PokemonCard[]>
-    getCardsByName: (name: string) => Promise<PokemonCard[]>
+    getCardsBySetId: (setId: string) => Promise<Record<string, PokemonCard>>
+    getCardsByName: (name: string) => Promise<Record<string, PokemonCard>>
+    getCardsByPokedex: (pId: number) => Promise<Record<string, PokemonCard>>
     getSetInformation: (id: string) => Promise<PokemonSet | undefined>
     masterSetCount: (setId: string) => Promise<number | undefined>
     grandmasterSetCount: (setId: string) => Promise<number>
@@ -195,9 +196,15 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
      */
     const getCardsBySetId = async (
         setId: string
-    ): Promise<PokemonCard[]> => {
+    ): Promise<Record<string, PokemonCard>> => {
         if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards()
-        return Object.values(pokemonCards).filter((card) => card.setId === setId)
+        const filteredCards: Record<string, PokemonCard> = {}
+        for (const [id, card] of Object.entries(pokemonCards)) {
+            if (card.setId === setId) {
+                filteredCards[id] = card
+            }
+        }
+        return filteredCards
     }
 
     /**
@@ -205,11 +212,31 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
      * @param name
      * @returns
      */
-    const getCardsByName = async (name: string): Promise<PokemonCard[]> => {
+    const getCardsByName = async (name: string): Promise<Record<string, PokemonCard>> => {
         if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards()
-        return Object.values(pokemonCards).filter((card) =>
-            card.name.includes(name)
-        )
+        const filteredCards: Record<string, PokemonCard> = {}
+        for (const [id, card] of Object.entries(pokemonCards)) {
+            if (card.name.includes(name)) {
+                filteredCards[id] = card
+            }
+        }
+        return filteredCards
+    }
+
+    /**
+     * Retrieves Pokemon cards with the Pokemon name
+     * @param name
+     * @returns
+     */
+    const getCardsByPokedex = async (pId: number): Promise<Record<string, PokemonCard>> => {
+        if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards()
+        const filteredCards: Record<string, PokemonCard> = {}
+        for (const [id, card] of Object.entries(pokemonCards)) {
+            if (card.dexId.includes(pId)) {
+                filteredCards[id] = card
+            }
+        }
+        return filteredCards
     }
 
     /**
@@ -267,6 +294,7 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
             value={{
                 getCardInformation,
                 getCardsBySetId,
+                getCardsByPokedex,
                 getCardsByName,
                 getSetInformation,
                 masterSetCount,

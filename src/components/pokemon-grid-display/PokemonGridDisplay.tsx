@@ -24,21 +24,18 @@ import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSet
 import { CardSearch } from '@/components/card-filter/CardSearch'
 import { getSetGroups } from '@/utils/pokemonSet'
 
+// Context
+import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
+
 // Hooks
 import { FiltersProvider } from '@/hooks/useFilters'
 
 // Types
 import { PokemonSetType } from '@/types/pokemon-grid'
-import { useAuth } from '@/context/AuthProvider'
 
 // Utils
 import { POKEMONGEN, ALL_POKEMON, getPokemonName } from '@/utils/pokedex'
-import {
-    masterSetCount,
-    grandmasterSetCount,
-    pokemonMasterSetCount,
-    pokemonGrandmasterSetCount
-} from '@/utils/pokemonCard'
 
 const NUM_ITEMS_PER_PAGE = 24
 
@@ -76,6 +73,11 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     const [pokemonCounts, setPokemonCounts] = useState<
         Record<string, { masterSet: number; grandmasterSet: number }>
     >({})
+
+    const { masterSetCount,
+        grandmasterSetCount,
+        pokemonMasterSetCount,
+        pokemonGrandmasterSetCount } = usePokemonCards()
 
     const pokemon = ALL_POKEMON
 
@@ -180,7 +182,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchCounts()
-    }, [selectedEra, groupedSets, selected])
+    }, [selectedEra, groupedSets, selected, grandmasterSetCount, masterSetCount])
 
     /**
      * Use effect for fetching Pokemon card counts, grouped by Pokedex number.
@@ -208,7 +210,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchCounts()
-    }, [selectedGen, selected, filteredPokemon])
+    }, [selectedGen, selected, filteredPokemon, pokemonMasterSetCount, pokemonGrandmasterSetCount])
 
     useEffect(() => {
         const fetchNames = async () => {
@@ -232,8 +234,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         () =>
             filteredIds
                 ? filteredPokemon.filter((id) =>
-                      filteredIds.includes(id.toString())
-                  )
+                    filteredIds.includes(id.toString())
+                )
                 : filteredPokemon,
         [filteredPokemon, filteredIds]
     )

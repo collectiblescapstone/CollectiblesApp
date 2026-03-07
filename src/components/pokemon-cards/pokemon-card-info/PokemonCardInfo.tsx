@@ -10,10 +10,11 @@ import { useAuth } from '@/context/AuthProvider'
 import { FaEye, FaPencilAlt } from 'react-icons/fa'
 import { AiOutlineSwap } from 'react-icons/ai'
 import { TbCards, TbPlayCard } from 'react-icons/tb'
+import { CiTrash } from 'react-icons/ci'
 
 // Utils
 import { cardConditionsMap, gradeName } from '@/utils/cardInfo/cardGrading'
-import { getUserCard } from '@/utils/userPokemonCard'
+import { getUserCard, refreshPokemonCards } from '@/utils/userPokemonCard'
 import { capitalizeEachWord } from '@/utils/capitalize'
 
 // Types
@@ -21,9 +22,15 @@ import type { Entry } from '@/utils/userPokemonCard'
 
 interface PokemonCardInfoProps {
     entryId: string
+    deleteCard: boolean
+    onDelete?: (entryId: string) => void
 }
 
-const PokemonCardInfo = ({ entryId }: PokemonCardInfoProps) => {
+const PokemonCardInfo = ({
+    entryId,
+    deleteCard,
+    onDelete
+}: PokemonCardInfoProps) => {
     // Authentification
     const { session } = useAuth()
 
@@ -34,6 +41,34 @@ const PokemonCardInfo = ({ entryId }: PokemonCardInfoProps) => {
     const [isForTrade, setIsForTrade] = useState<boolean>(false)
 
     const [isForShowcase, setIsForShowcase] = useState<boolean>(false)
+
+    const deleteCardHandler = () => {
+        if (!session) return
+        if (window.confirm('Are you sure you want to delete this card?')) {
+            // Call API to delete card
+            fetch('/api/collection/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                },
+                body: JSON.stringify({ entryId })
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log('Delete response:', data)
+                    refreshPokemonCards(session.user.id)
+                    // Notify parent component of successful deletion
+                    if (onDelete) {
+                        onDelete(entryId)
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error deleting card:', error)
+                    // Optionally, you can add some error feedback to the user here
+                })
+        }
+    }
 
     useEffect(() => {
         const fetchCardInfo = async () => {
@@ -64,7 +99,7 @@ const PokemonCardInfo = ({ entryId }: PokemonCardInfoProps) => {
     return (
         <Box width="100%" padding="4" borderWidth="3px" borderRadius="lg">
             {cardInfo && (
-                <Box height="50px">
+                <Box height="100%">
                     <HStack>
                         <VStack align="start" width={'60%'} gap={1}>
                             <HStack>
@@ -86,16 +121,30 @@ const PokemonCardInfo = ({ entryId }: PokemonCardInfoProps) => {
                             {isForShowcase && <FaEye size={24} />}
                             {isForTrade && <AiOutlineSwap size={24} />}
                         </HStack>
-                        <Button
-                            height="50px"
-                            width="50px"
-                            backgroundColor="brand.marigold"
-                            onClick={() => {
-                                window.location.href = `/edit-card?cardId=${cardInfo.cardId}&entryId=${entryId}`
-                            }}
-                        >
-                            <FaPencilAlt size={24} fill="#003B49" />
-                        </Button>
+                        {/*DELETE CARD*/}
+                        {!deleteCard ? (
+                            <Button
+                                height="50px"
+                                width="50px"
+                                background="black"
+                                onClick={() => {
+                                    window.location.href = `/edit-card?cardId=${cardInfo.cardId}&entryId=${entryId}`
+                                }}
+                            >
+                                <FaPencilAlt size={24} fill="white" />
+                            </Button>
+                        ) : (
+                            <Button
+                                height="50px"
+                                width="50px"
+                                background="red"
+                                onClick={() => {
+                                    deleteCardHandler()
+                                }}
+                            >
+                                <CiTrash size={24} fill="white" />
+                            </Button>
+                        )}
                     </HStack>
                 </Box>
             )}

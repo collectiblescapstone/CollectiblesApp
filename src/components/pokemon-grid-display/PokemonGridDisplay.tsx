@@ -247,8 +247,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         () =>
             filteredIds
                 ? filteredPokemon.filter((id) =>
-                    filteredIds.includes(id.toString())
-                )
+                      filteredIds.includes(id.toString())
+                  )
                 : filteredPokemon,
         [filteredPokemon, filteredIds]
     )

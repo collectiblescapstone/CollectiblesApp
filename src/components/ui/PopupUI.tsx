@@ -1,5 +1,9 @@
 'use client'
 
+// React
+import { IoMdClose } from 'react-icons/io'
+
+// Chakra UI
 import { Button, Dialog, Portal, createOverlay } from '@chakra-ui/react'
 
 interface DialogProps {
@@ -15,7 +19,7 @@ const PopupUI = createOverlay<DialogProps>((props) => {
         <Dialog.Root {...rest}>
             <Portal>
                 <Dialog.Backdrop />
-                <Dialog.Positioner>
+                <Dialog.Positioner justifyContent="center" alignItems="center">
                     <Dialog.Content>
                         {title && (
                             <Dialog.Header
@@ -25,15 +29,16 @@ const PopupUI = createOverlay<DialogProps>((props) => {
                             >
                                 <Dialog.Title>{title}</Dialog.Title>
                                 <Button
-                                    variant="outline"
                                     size="sm"
                                     onClick={onClickClose}
+                                    aspectRatio={1}
+                                    background={'none'}
                                 >
-                                    Close
+                                    <IoMdClose size={48} fill="black" />
                                 </Button>
                             </Dialog.Header>
                         )}
-                        <Dialog.Body spaceY="4">
+                        <Dialog.Body spaceY="4" gap={2}>
                             {description && (
                                 <Dialog.Description>
                                     {description}

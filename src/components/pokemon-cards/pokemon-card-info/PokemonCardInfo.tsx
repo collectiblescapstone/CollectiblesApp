@@ -7,13 +7,14 @@ import { useEffect, useState } from 'react'
 import {
     Box,
     Button,
-    CloseButton,
-    Dialog,
     HStack,
-    Portal,
+    Text,
     useDisclosure,
     VStack
 } from '@chakra-ui/react'
+
+// Child Components
+import PopupUI from '@/components/ui/PopupUI'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -59,7 +60,7 @@ const PokemonCardInfo = ({
 
     const [isForShowcase, setIsForShowcase] = useState<boolean>(false)
 
-    const { open, onOpen, onClose } = useDisclosure()
+    const { onOpen, onClose } = useDisclosure()
 
     const deleteCardHandler = async () => {
         if (!session) return
@@ -153,61 +154,49 @@ const PokemonCardInfo = ({
                                 <FaPencilAlt size={24} fill="white" />
                             </Button>
                         ) : (
-                            <Dialog.Root>
-                                <Dialog.Trigger asChild>
-                                    <Button
-                                        height="50px"
-                                        width="50px"
-                                        background="red"
-                                        onClick={onOpen}
-                                    >
-                                        <FaRegTrashAlt size={24} fill="white" />
-                                    </Button>
-                                </Dialog.Trigger>
-                                <Portal>
-                                    <Dialog.Backdrop />
-                                    <Dialog.Positioner
-                                        display="flex"
-                                        alignItems="center"
-                                        justifyContent="center"
-                                    >
-                                        <Dialog.Content>
-                                            <Dialog.Header>
-                                                <Dialog.Title>
-                                                    Confirm deletion?
-                                                </Dialog.Title>
-                                            </Dialog.Header>
-                                            <Dialog.Body>
-                                                <p>
+                            <Button
+                                height="50px"
+                                width="50px"
+                                background="red"
+                                onClick={() =>
+                                    PopupUI.open('confirm-delete', {
+                                        title: 'Confirm deletion?',
+                                        content: (
+                                            <VStack gap={2}>
+                                                <Text>
                                                     Are you sure you want to
                                                     delete this card? This
                                                     action cannot be undone.
-                                                </p>
-                                            </Dialog.Body>
-                                            <Dialog.Footer>
-                                                <Dialog.ActionTrigger asChild>
+                                                </Text>
+                                                <HStack
+                                                    gap={2}
+                                                    width="100%"
+                                                    justify="flex-start"
+                                                >
                                                     <Button variant="outline">
                                                         Cancel
                                                     </Button>
-                                                </Dialog.ActionTrigger>
-                                                <Button
-                                                    onClick={async () => {
-                                                        deleteCardHandler()
-                                                    }}
-                                                    background="red"
-                                                >
-                                                    Delete Card
-                                                </Button>
-                                            </Dialog.Footer>
-                                            <Dialog.CloseTrigger asChild>
-                                                <CloseButton size="sm" />
-                                            </Dialog.CloseTrigger>
-                                        </Dialog.Content>
-                                    </Dialog.Positioner>
-                                </Portal>
-                            </Dialog.Root>
+                                                    <Button
+                                                        onClick={async () => {
+                                                            deleteCardHandler()
+                                                        }}
+                                                        background="red"
+                                                    >
+                                                        Delete Card
+                                                    </Button>
+                                                </HStack>
+                                            </VStack>
+                                        ),
+                                        onClickClose: () =>
+                                            PopupUI.close('confirm-delete')
+                                    })
+                                }
+                            >
+                                <FaRegTrashAlt size={24} fill="white" />
+                            </Button>
                         )}
                     </HStack>
+                    <PopupUI.Viewport />
                 </Box>
             )}
         </Box>

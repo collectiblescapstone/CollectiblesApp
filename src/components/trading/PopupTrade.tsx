@@ -123,10 +123,11 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                     <VStack align="center" gap="3">
                         <HStack>
                             <HStack gap="2" mt={1}>
+                                {/*TO DO: MAKE THE USERNAME CLICKABLE SO IT TAKES YOU TO THE USER PROFILE*/}
+                                {/*MAKE THIS A BOX AND MAKE THE BOX CLICKABLE*/}
                                 <Avatar.Root boxSize="30px" shape="rounded">
                                     <Avatar.Image src={avatarUrl} />
                                 </Avatar.Root>
-                                {/*TO DO: MAKE THE USERNAME CLICKABLE SO IT TAKES YOU TO THE USER PROFILE*/}
                                 <Text fontWeight="semibold" textStyle="sm">
                                     {username}
                                 </Text>

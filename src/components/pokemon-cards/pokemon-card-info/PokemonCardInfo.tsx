@@ -65,7 +65,8 @@ const PokemonCardInfo = ({
     const deleteCardHandler = async () => {
         if (!session) return
         try {
-            const response = await fetch('/api/collection/delete', {
+            // Delete card from database
+            await fetch('/api/collection/delete', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -73,8 +74,6 @@ const PokemonCardInfo = ({
                 },
                 body: JSON.stringify({ entryId })
             })
-            const data = await response.json()
-            console.log('Delete response:', data)
             refreshPokemonCards(session.user.id)
             if (onDelete) {
                 onDelete(entryId)

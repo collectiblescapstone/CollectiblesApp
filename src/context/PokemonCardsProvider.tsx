@@ -176,7 +176,6 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
         id: string
     ): Promise<PokemonCard | undefined> => {
         if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards()
-        // console.log('getCardInformation: ', pokemonCards[id].name)
         return pokemonCards[id]
     }
 

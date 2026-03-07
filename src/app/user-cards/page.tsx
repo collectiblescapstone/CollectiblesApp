@@ -40,7 +40,6 @@ const UserCardsPage: React.FC = () => {
                 session.user.id,
                 cardId || ''
             )
-            // console.log('Fetched Cards:', fetchedCards) // Debug log
             setUserCards(fetchedCards)
             setLoading(false)
         }
@@ -84,8 +83,10 @@ const UserCardsPage: React.FC = () => {
 
                     <Button
                         size="sm"
-                        backgroundColor="brand.marigold"
-                        color="brand.turtoise"
+                        border={'2px solid'}
+                        borderColor={deleteCards ? 'red.500' : 'black'}
+                        background="none"
+                        color={deleteCards ? 'red.500' : 'black'}
                         onClick={() => {
                             setDeleteCards(!deleteCards)
                         }}

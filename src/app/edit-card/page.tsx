@@ -37,6 +37,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 // Child Components
+import PopupUI from '@/components/ui/PopupUI'
 import PokemonCardHeader from '@/components/pokemon-cards/pokemon-card-header/PokemonCardHeader'
 
 // Context
@@ -266,19 +267,41 @@ const EditCardPage = () => {
                 return
             }
 
-            refreshPokemonCards(session.user.id)
-            alert('Card saved to your collection')
-
             // Refresh the user data
+            refreshPokemonCards(session.user.id)
 
-            // Redirect to the userCards page if coming from there, otherwise go to userCards
-            // PREVENTS DOUBLE BACK BUTTON ISSUES!
-            const referrer = document.referrer
-            if (referrer.includes('/user-cards')) {
-                router.back()
-            } else {
-                router.push('/user-cards?cardId=' + id)
+            const closeAndRedirect = () => {
+                PopupUI.close('save-confirmation')
+                // Redirect to the userCards page if coming from there, otherwise go to userCards
+                // PREVENTS DOUBLE BACK BUTTON ISSUES!
+                const referrer = document.referrer
+                if (referrer.includes('/user-cards')) {
+                    router.back()
+                } else {
+                    router.push('/user-cards?cardId=' + id)
+                }
             }
+
+            // Show success popup - moved inside the success block
+            PopupUI.open('save-confirmation', {
+                title: 'Card Saved!',
+                content: (
+                    <VStack gap={2}>
+                        <Text>
+                            Your card has been saved to your collection!
+                        </Text>
+                        <HStack gap={2} width="100%">
+                            <Button
+                                onClick={closeAndRedirect}
+                                background="black"
+                            >
+                                OK
+                            </Button>
+                        </HStack>
+                    </VStack>
+                ),
+                onClickClose: closeAndRedirect
+            })
         } catch (err) {
             console.error('Unexpected error saving card', err)
             alert('Unexpected error saving card')
@@ -638,6 +661,7 @@ const EditCardPage = () => {
                     </Button>
                 </HStack>
             </VStack>
+            <PopupUI.Viewport />
         </form>
     )
 }

@@ -1,6 +1,9 @@
 'use client'
 
 // React
+import { useRef } from 'react'
+
+// React
 import { IoMdClose } from 'react-icons/io'
 
 // Chakra UI
@@ -15,8 +18,27 @@ interface DialogProps {
 
 const PopupUI = createOverlay<DialogProps>((props) => {
     const { title, description, content, onClickClose, ...rest } = props
+
+    // Ensure close side-effects run once regardless of how the dialog closes.
+    const hasHandledClose = useRef(false)
+    const handleClose = () => {
+        if (hasHandledClose.current) return
+        hasHandledClose.current = true
+        onClickClose()
+    }
+
     return (
-        <Dialog.Root {...rest}>
+        <Dialog.Root
+            {...rest}
+            onOpenChange={({ open }) => {
+                if (open) {
+                    hasHandledClose.current = false
+                    return
+                }
+
+                handleClose()
+            }}
+        >
             <Portal>
                 <Dialog.Backdrop />
                 <Dialog.Positioner justifyContent="center" alignItems="center">
@@ -30,7 +52,7 @@ const PopupUI = createOverlay<DialogProps>((props) => {
                                 <Dialog.Title>{title}</Dialog.Title>
                                 <Button
                                     size="sm"
-                                    onClick={onClickClose}
+                                    onClick={handleClose}
                                     aspectRatio={1}
                                     background={'none'}
                                 >

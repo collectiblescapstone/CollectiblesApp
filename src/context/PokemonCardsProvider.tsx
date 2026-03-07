@@ -361,7 +361,6 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     const getAllCards = async (
         filters?: GetPokemonCardsFilters
     ): Promise<CardData[]> => {
-        if (allCards.length !== 0) return allCards
         return getPokemonCards(filters)
     }
 

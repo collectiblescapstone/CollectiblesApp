@@ -7,10 +7,9 @@ import { Box, Button, HStack, VStack } from '@chakra-ui/react'
 import { useAuth } from '@/context/AuthProvider'
 
 // Icons
-import { FaEye, FaPencilAlt } from 'react-icons/fa'
+import { FaEye, FaPencilAlt, FaRegTrashAlt } from 'react-icons/fa'
 import { AiOutlineSwap } from 'react-icons/ai'
 import { TbCards, TbPlayCard } from 'react-icons/tb'
-import { CiTrash } from 'react-icons/ci'
 
 // Utils
 import { cardConditionsMap, gradeName } from '@/utils/cardInfo/cardGrading'
@@ -24,12 +23,14 @@ interface PokemonCardInfoProps {
     entryId: string
     deleteCard: boolean
     onDelete?: (entryId: string) => void
+    refreshTrigger?: number
 }
 
 const PokemonCardInfo = ({
     entryId,
     deleteCard,
-    onDelete
+    onDelete,
+    refreshTrigger
 }: PokemonCardInfoProps) => {
     // Authentification
     const { session } = useAuth()
@@ -94,7 +95,7 @@ const PokemonCardInfo = ({
             }
         }
         fetchCardInfo()
-    }, [entryId, session])
+    }, [entryId, session, refreshTrigger])
 
     return (
         <Box width="100%" padding="4" borderWidth="3px" borderRadius="lg">
@@ -142,7 +143,7 @@ const PokemonCardInfo = ({
                                     deleteCardHandler()
                                 }}
                             >
-                                <CiTrash size={24} fill="white" />
+                                <FaRegTrashAlt size={24} fill="white" />
                             </Button>
                         )}
                     </HStack>

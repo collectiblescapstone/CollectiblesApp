@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { Box, Button, HStack, Spinner, VStack } from '@chakra-ui/react'
 
 // Context
@@ -18,7 +18,6 @@ const UserCardsPage: React.FC = () => {
     // Search Params
     const searchParams = useSearchParams()
     const cardId = searchParams.get('cardId')
-    const router = useRouter()
 
     // Authentification
     const { session, loading: authLoading } = useAuth()
@@ -29,6 +28,7 @@ const UserCardsPage: React.FC = () => {
     // Local States
     const [loading, setLoading] = useState(true)
     const [deleteCards, setDeleteCards] = useState(false)
+    const [refreshTrigger, setRefreshTrigger] = useState(0)
 
     useEffect(() => {
         const loadData = async () => {
@@ -44,19 +44,14 @@ const UserCardsPage: React.FC = () => {
         loadData()
     }, [cardId, session])
 
-    const handleCardDelete = (entryId: string) => {
-        setUserCards((prevCards) => {
-            const newCards = new Set(prevCards)
-            newCards.delete(entryId)
-
-            // If no cards remain, navigate back
-            if (newCards.size === 0) {
-                router.back()
-            }
-
-            return newCards
-        })
-    }
+    // Trigger card refresh when coming back from edit
+    useEffect(() => {
+        // Use a small delay to ensure edit page has finished
+        const timeout = setTimeout(() => {
+            setRefreshTrigger((prev) => prev + 1)
+        }, 500)
+        return () => clearTimeout(timeout)
+    }, [])
 
     if (loading || authLoading || !session)
         return (
@@ -102,7 +97,7 @@ const UserCardsPage: React.FC = () => {
                         key={id}
                         entryId={cardId}
                         deleteCard={deleteCards}
-                        onDelete={handleCardDelete}
+                        refreshTrigger={refreshTrigger}
                     />
                 ))}
             </VStack>

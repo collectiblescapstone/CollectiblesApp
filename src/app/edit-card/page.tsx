@@ -101,6 +101,7 @@ const EditCardPage = () => {
     const [markedForTrade, setMarkedForTrade] = useState(false)
 
     const id = searchParams.get('cardId') ?? ''
+    const entryId = searchParams.get('entryId') ?? ''
 
     // Card information
     const [cardInfo, setCardInfo] = useState<PokemonCard | undefined>(undefined)
@@ -116,7 +117,7 @@ const EditCardPage = () => {
 
             setCardInfo(info)
 
-            // MODIFY THIS ONCE I DO EDIT CARD. CURRENTLY CHANGING IT TO WORK FOR ADD CARD
+            // MODIFY THIS ONCE I DO EDIT CARD. CHANGE THE DEFAULTS IF IT IS FOR EDITING AN EXISTING CARD VERSUS ADDING A NEW CARD
 
             // setShowcase(info.showcase || false)
             // setMarkedForTrade(info.markedForTrade || false)
@@ -235,12 +236,16 @@ const EditCardPage = () => {
                 gradeLevel: data.CardGradeDetail?.[0] ?? undefined,
                 tags: data.Tags ?? [],
                 cardId: id || undefined,
+                entryId: entryId || undefined,
                 showcase: showcase ?? false,
                 markedForTrade: markedForTrade ?? false
             }
 
+            const url = entryId
+                ? `${baseUrl}/api/collection/edit`
+                : `${baseUrl}/api/collection/save`
             const res = await CapacitorHttp.post({
-                url: `${baseUrl}/api/collection/save`,
+                url: url,
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -256,6 +261,7 @@ const EditCardPage = () => {
             }
 
             alert('Card saved to your collection')
+
             // Refresh the user data
             refreshPokemonCards(session.user.id)
         } catch (err) {

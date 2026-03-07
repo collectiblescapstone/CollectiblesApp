@@ -46,15 +46,18 @@ export async function POST(request: NextRequest) {
         const existingEntry = await prisma.collectionEntry.findFirst({
             where: {
                 userId: userId,
-                cardId: cardId,
                 id: entryId
             }
         })
+
+        console.log(existingEntry)
 
         if (existingEntry) {
             result = await prisma.collectionEntry.update({
                 where: { id: existingEntry.id },
                 data: {
+                    userId: userId,
+                    cardId: cardId ?? null,
                     condition: condition ?? null,
                     variant: variant ?? null,
                     grade: grade ?? null,
@@ -64,6 +67,9 @@ export async function POST(request: NextRequest) {
                     forTrade: markedForTrade ?? false
                 }
             })
+
+            console.log(result)
+
             return NextResponse.json(
                 { message: 'Saved to collection', data: result },
                 { status: 200 }

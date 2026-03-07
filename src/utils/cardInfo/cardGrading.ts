@@ -69,7 +69,7 @@ export const gradeDetailsMap: Record<
         { label: '1', value: 'psa-1' }
     ],
     tag: [
-        { label: '10*', value: 'tag-pristine-10' },
+        { label: 'Pristine 10', value: 'tag-pristine-10' },
         { label: '10', value: 'tag-10' },
         { label: '9', value: 'tag-9' },
         { label: '8.5', value: 'tag-8.5' },
@@ -90,7 +90,7 @@ export const gradeDetailsMap: Record<
         { label: '1', value: 'tag-1' }
     ],
     cgc: [
-        { label: '10*', value: 'cgc-pristine-10' },
+        { label: 'Pristine 10', value: 'cgc-pristine-10' },
         { label: '10', value: 'cgc-10' },
         { label: '9.5', value: 'cgc-9.5' },
         { label: '9', value: 'cgc-9' },
@@ -113,8 +113,8 @@ export const gradeDetailsMap: Record<
         { label: 'AU', value: 'cgc-au' }
     ],
     beckett: [
-        { label: '10**', value: 'beckett-blacklabel-10' },
-        { label: '10*', value: 'beckett-pristine-10' },
+        { label: 'Black Label 10', value: 'beckett-blacklabel-10' },
+        { label: 'Pristine 10', value: 'beckett-pristine-10' },
         { label: '10', value: 'beckett-10' },
         { label: '9', value: 'beckett-9' },
         { label: '9.5', value: 'beckett-9.5' },

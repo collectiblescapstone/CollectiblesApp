@@ -1,6 +1,10 @@
 'use client'
 
+// React
 import React, { useEffect, useState, useMemo } from 'react'
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
+
+// Chakra UI
 import {
     Box,
     HStack,
@@ -14,7 +18,6 @@ import {
     Stack,
     IconButton
 } from '@chakra-ui/react'
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 
 // Child Components
 import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid'

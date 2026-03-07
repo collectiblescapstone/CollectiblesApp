@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { Box, Image, HStack, VStack, Spinner, Text } from '@chakra-ui/react'
 
 // Context
-import { useAuth } from '@/context/AuthProvider'
 import { usePokemonCards } from '@/context/PokemonCardsProvider'
 
 // Icons
@@ -14,7 +13,6 @@ import { FaPaintBrush, FaTools } from 'react-icons/fa'
 import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Utils
-import { getSetName, getSetInfo } from '@/utils/pokemonSet'
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { getRarityImage } from '@/utils/cardInfo/raritytoImage'
 
@@ -23,33 +21,56 @@ interface PokemonCardHeaderProps {
 }
 
 const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
-    const { session, loading: authLoading } = useAuth()
     const [loading, setLoading] = useState(true)
     const [setCount, setSetCount] = useState<number>(0)
+    const [setName, setSetName] = useState<string>('')
 
     const [cardInfo, setCardInfo] = useState<PokemonCard | null>(null)
 
     // Context
-    const { getCardInformation } = usePokemonCards()
+    const { getCardInformation, getSetInfo } = usePokemonCards()
 
     useEffect(() => {
+        let isMounted = true
+
         const fetchCardInfo = async () => {
             setLoading(true)
             try {
                 const fetchedCardInfo = await getCardInformation(cardId)
+
+                if (!isMounted) return
+
                 setCardInfo(fetchedCardInfo || null)
+
+                if (!fetchedCardInfo?.setId) {
+                    setSetCount(0)
+                    setSetName('')
+                    setLoading(false)
+                    return
+                }
+
                 const set = await getSetInfo(fetchedCardInfo?.setId || '')
+
+                if (!isMounted) return
+
                 setSetCount(set?.official || 0)
+                setSetName(set?.name || '')
                 setLoading(false)
             } catch (error) {
                 console.error('Error fetching card information:', error)
+                if (!isMounted) return
                 setLoading(false)
             }
         }
-        fetchCardInfo()
-    }, [cardId, getCardInformation])
 
-    if (loading || authLoading || !session || !cardInfo)
+        fetchCardInfo()
+
+        return () => {
+            isMounted = false
+        }
+    }, [cardId, getCardInformation, getSetInfo])
+
+    if (loading || !cardInfo)
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />
@@ -104,7 +125,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                         {splitId + (setCount > 0 ? '/' + setCount : '')}
                     </Text>
                     <Text fontSize="sm" fontWeight="bold">
-                        {getSetName(cardInfo.setId)}
+                        {setName}
                     </Text>
                     {cardInfo.category === 'Pokemon' && (
                         <HStack gap={2} align="center">

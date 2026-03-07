@@ -11,7 +11,7 @@ import {
     Flex
 } from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
-import { LuArrowRightLeft } from 'react-icons/lu'
+import { LuArrowUpDown } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaDiscord, FaWhatsapp } from 'react-icons/fa'
 import { RiTwitterXLine } from 'react-icons/ri'
 
@@ -220,7 +220,7 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                         </HStack>
                     </VStack>
 
-                    <LuArrowRightLeft size={40} />
+                    <LuArrowUpDown size={40} />
 
                     {/*/!*your cards*!/*/}
                     <Flex mt={1}>

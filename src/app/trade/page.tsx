@@ -105,7 +105,6 @@ const TradePage = () => {
                         })
                     }
                 }
-
                 setUsers(Array.from(userMap.values()))
                 setError(null)
             } catch (error) {

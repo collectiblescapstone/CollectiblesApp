@@ -33,6 +33,8 @@ const PokemonCardInfo = ({ entryId }: PokemonCardInfoProps) => {
 
     const [isForTrade, setIsForTrade] = useState<boolean>(false)
 
+    const [isForShowcase, setIsForShowcase] = useState<boolean>(false)
+
     useEffect(() => {
         const fetchCardInfo = async () => {
             try {
@@ -51,6 +53,7 @@ const PokemonCardInfo = ({ entryId }: PokemonCardInfoProps) => {
                 }
 
                 setIsForTrade(card?.forTrade ?? false)
+                setIsForShowcase(card?.showcase ?? false)
             } catch (error) {
                 console.error('Error fetching card information:', error)
             }
@@ -80,7 +83,7 @@ const PokemonCardInfo = ({ entryId }: PokemonCardInfoProps) => {
                             gap={2}
                             direction="row-reverse"
                         >
-                            <FaEye size={24} />
+                            {isForShowcase && <FaEye size={24} />}
                             {isForTrade && <AiOutlineSwap size={24} />}
                         </HStack>
                         <Button

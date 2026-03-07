@@ -61,6 +61,8 @@ interface FormValues {
     Condition?: string
     FoilPattern?: string
     Tags?: string[]
+    Showcase: boolean
+    MarkedForTrade: boolean
 }
 
 const formSchema = z.object({
@@ -70,7 +72,9 @@ const formSchema = z.object({
     CardGradeDetail: z.array(z.string()).optional(),
     Condition: z.string().optional(),
     FoilPattern: z.string().optional(),
-    Tags: z.array(z.string()).optional()
+    Tags: z.array(z.string()).optional(),
+    Showcase: z.boolean(),
+    MarkedForTrade: z.boolean()
 })
 
 const grades = createListCollection({
@@ -156,6 +160,8 @@ const EditCardPage = () => {
             CardGradeDetail: [],
             Condition: undefined,
             FoilPattern: undefined,
+            Showcase: showcase,
+            MarkedForTrade: markedForTrade,
             Tags: []
         }
     })
@@ -170,6 +176,8 @@ const EditCardPage = () => {
                 CardGradeDetail: [],
                 Condition: undefined,
                 FoilPattern: undefined,
+                Showcase: false,
+                MarkedForTrade: false,
                 Tags: []
             })
         }
@@ -226,7 +234,9 @@ const EditCardPage = () => {
                 grade: data.CardGrade?.[0] ?? 'Ungraded',
                 gradeLevel: data.CardGradeDetail?.[0] ?? undefined,
                 tags: data.Tags ?? [],
-                cardId: id || undefined
+                cardId: id || undefined,
+                showcase: showcase ?? false,
+                markedForTrade: markedForTrade ?? false
             }
 
             const res = await CapacitorHttp.post({
@@ -398,15 +408,7 @@ const EditCardPage = () => {
                                         }}
                                     >
                                         <Select.Trigger>
-                                            <Select.ValueText
-                                                style={{
-                                                    maxWidth: 120,
-                                                    whiteSpace: 'nowrap',
-                                                    overflow: 'hidden',
-                                                    textOverflow: 'ellipsis'
-                                                }}
-                                                placeholder="Select card grade"
-                                            />
+                                            <Select.ValueText />
                                         </Select.Trigger>
                                         <Select.IndicatorGroup>
                                             <Select.Indicator />

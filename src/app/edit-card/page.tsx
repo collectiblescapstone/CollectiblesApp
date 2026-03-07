@@ -266,13 +266,19 @@ const EditCardPage = () => {
                 return
             }
 
+            refreshPokemonCards(session.user.id)
             alert('Card saved to your collection')
 
             // Refresh the user data
-            refreshPokemonCards(session.user.id)
 
-            // Redirect to the userCards page
-            router.replace(`/user-cards?cardId=${id}`)
+            // Redirect to the userCards page if coming from there, otherwise go to userCards
+            // PREVENTS DOUBLE BACK BUTTON ISSUES!
+            const referrer = document.referrer
+            if (referrer.includes('/user-cards')) {
+                router.back()
+            } else {
+                router.push('/user-cards?cardId=' + id)
+            }
         } catch (err) {
             console.error('Unexpected error saving card', err)
             alert('Unexpected error saving card')

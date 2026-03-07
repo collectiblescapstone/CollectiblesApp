@@ -60,7 +60,7 @@ const PokemonCardInfo = ({
 
     const [isForShowcase, setIsForShowcase] = useState<boolean>(false)
 
-    const { onOpen, onClose } = useDisclosure()
+    const { onClose } = useDisclosure()
 
     const deleteCardHandler = async () => {
         if (!session) return

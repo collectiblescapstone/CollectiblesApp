@@ -8,7 +8,7 @@ import { useAuth } from '@/context/AuthProvider'
 
 // Icons
 import { FaEye, FaPencilAlt, FaRegTrashAlt } from 'react-icons/fa'
-import { AiOutlineSwap } from 'react-icons/ai'
+import { IoSwapVertical } from 'react-icons/io5'
 import { TbCards, TbPlayCard } from 'react-icons/tb'
 
 // Utils
@@ -120,7 +120,7 @@ const PokemonCardInfo = ({
                             direction="row-reverse"
                         >
                             {isForShowcase && <FaEye size={24} />}
-                            {isForTrade && <AiOutlineSwap size={24} />}
+                            {isForTrade && <IoSwapVertical size={24} />}
                         </HStack>
                         {/*DELETE CARD*/}
                         {!deleteCard ? (

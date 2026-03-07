@@ -21,9 +21,8 @@ import {
 // React
 import React, { useMemo, useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { FaEye } from 'react-icons/fa'
-import { AiOutlineSwap } from 'react-icons/ai'
-import { RxCross1 } from 'react-icons/rx'
+import { FaEye, FaEyeSlash, FaSlash } from 'react-icons/fa'
+import { IoSwapVertical } from 'react-icons/io5'
 
 // Next.js
 import { useSearchParams } from 'next/navigation'
@@ -33,7 +32,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 // Child Components
-import CombinedIcons from '@/components/combined-icons/CombinedIcons'
 import PokemonCardHeader from '@/components/pokemon-cards/pokemon-card-header/PokemonCardHeader'
 
 // Context
@@ -298,16 +296,7 @@ const EditCardPage = () => {
                         // color="brand.turtoise"
                         onClick={() => setShowcase(!showcase)}
                     >
-                        {showcase ? (
-                            <CombinedIcons
-                                icons={[
-                                    <FaEye key="eye" />,
-                                    <RxCross1 key="cross" />
-                                ]}
-                            />
-                        ) : (
-                            <FaEye />
-                        )}
+                        {showcase ? <FaEyeSlash /> : <FaEye />}
                         <Text ml={2}>{showcase ? "Don't" : ''} Showcase</Text>
                     </Button>
                     <Button
@@ -316,16 +305,7 @@ const EditCardPage = () => {
                         flex="1"
                         onClick={() => setMarkedForTrade(!markedForTrade)}
                     >
-                        {markedForTrade ? (
-                            <CombinedIcons
-                                icons={[
-                                    <AiOutlineSwap key="swap" />,
-                                    <RxCross1 key="cross" />
-                                ]}
-                            />
-                        ) : (
-                            <AiOutlineSwap />
-                        )}
+                        {markedForTrade ? <FaSlash /> : <IoSwapVertical />}
                         <Text ml={2}>
                             {markedForTrade ? 'Unmark' : 'Mark for'} Trade
                         </Text>

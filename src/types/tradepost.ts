@@ -9,7 +9,7 @@ export type TradeCardProps = {
 export type ViableOption = {
     user: {
         id: string
-        username: string | null
+        username: string
         profile_pic: number
         distance: number | null
     }

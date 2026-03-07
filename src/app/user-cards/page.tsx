@@ -1,7 +1,10 @@
 'use client'
 
+// React
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
+
+// Chakra UI
 import { Box, Button, HStack, Spinner, VStack } from '@chakra-ui/react'
 
 // Context

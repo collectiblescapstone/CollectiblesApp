@@ -24,6 +24,8 @@ import { Controller, useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash, FaSlash } from 'react-icons/fa'
 import { IoSwapVertical } from 'react-icons/io5'
 
+import { useRouter } from 'next/navigation'
+
 // Next.js
 import { useSearchParams } from 'next/navigation'
 
@@ -51,6 +53,7 @@ import {
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
 
+// Form value types
 interface FormValues {
     CardName: string
     CardSet: string
@@ -63,6 +66,7 @@ interface FormValues {
     MarkedForTrade: boolean
 }
 
+// Form validation schema
 const formSchema = z.object({
     CardName: z.string().min(1, 'Item name is required'),
     CardSet: z.string().min(1, 'Item set is required'),
@@ -93,6 +97,7 @@ const EditCardPage = () => {
 
     const { session, loading } = useAuth()
     const searchParams = useSearchParams()
+    const router = useRouter()
 
     // Showcase and Mark for Trade booleans
     const [showcase, setShowcase] = useState(false)
@@ -608,8 +613,8 @@ const EditCardPage = () => {
                     </Field.HelperText>
                 </Field.Root>
                 <HStack direction="column" gap={1} width="100%">
-                    <Button bg="red" flex="1" onClick={() => reset()}>
-                        Discard Changes
+                    <Button bg="red" flex="1" onClick={() => router.back()}>
+                        Cancel
                     </Button>
                     <Button
                         flex="1"

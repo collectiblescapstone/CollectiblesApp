@@ -12,13 +12,18 @@ import { IoSwapVertical } from 'react-icons/io5'
 import { TbCards, TbPlayCard } from 'react-icons/tb'
 
 // Utils
-import { cardConditionsMap, gradeName } from '@/utils/cardInfo/cardGrading'
+import {
+    cardConditionsMap,
+    gradeName,
+    parseGradeLevel
+} from '@/utils/cardInfo/cardGrading'
 import { getUserCard, refreshPokemonCards } from '@/utils/userPokemonCard'
 import { capitalizeEachWord } from '@/utils/capitalize'
 
 // Types
 import type { Entry } from '@/utils/userPokemonCard'
 
+// Pokemon Card Info Props
 interface PokemonCardInfoProps {
     entryId: string
     deleteCard: boolean
@@ -85,7 +90,11 @@ const PokemonCardInfo = ({
                             'Near Mint'
                     )
                 } else {
-                    setCardCondition(gradeName(card?.gradeLevel || ''))
+                    const gradeLevel = parseGradeLevel(
+                        card?.grade || '',
+                        card?.gradeLevel || ''
+                    )
+                    setCardCondition(card?.grade + ' ' + gradeLevel)
                 }
 
                 setIsForTrade(card?.forTrade ?? false)
@@ -108,7 +117,8 @@ const PokemonCardInfo = ({
                                 {capitalizeEachWord(cardInfo.variant)}
                             </HStack>
                             <HStack>
-                                <TbPlayCard /> {cardCondition}
+                                <TbPlayCard />{' '}
+                                {capitalizeEachWord(cardCondition)}
                             </HStack>
                         </VStack>
                         <HStack

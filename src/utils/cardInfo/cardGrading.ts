@@ -35,6 +35,13 @@ export const gradingCompaniesMap: Record<string, string> = {
     ace: 'ACE'
 }
 
+export const parseGradeLevel = (company: string, gradeLevel: string) => {
+    return (
+        gradeDetailsMap[company].find((grade) => grade.value === gradeLevel)
+            ?.label || gradeLevel
+    )
+}
+
 const numericalGrade = (gradeValue: string) => {
     if (gradeValue.includes('-')) {
         const highName = capitalizeEachWord(gradeValue.split('-')[0])

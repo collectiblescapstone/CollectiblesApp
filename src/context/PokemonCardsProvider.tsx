@@ -24,9 +24,6 @@ const grandmasterSetCards: Record<string, Record<string, Set<string>>> = {}
 const pokemonMasterSetCards: Record<number, Set<string>> = {}
 const pokemonGrandmasterSet: Record<number, Record<string, Set<string>>> = {}
 
-let pokemonCardsInit: Promise<void> | null = null
-let pokemonSetsInit: Promise<void> | null = null
-
 let allCards: CardData[] = []
 
 // API
@@ -62,107 +59,90 @@ export const getPokemonCards = async (
 
 // FETCHERS
 const fetchPokemonCards = async (): Promise<void> => {
-    // If already initialized, just return the existing promise
-    if (pokemonCardsInit) return pokemonCardsInit
+    try {
+        const cards = await getPokemonCards()
 
-    pokemonCardsInit = (async () => {
-        try {
-            const cards = await getPokemonCards()
-
-            for (const pokemonCard of cards) {
-                pokemonCards[pokemonCard.id.toString()] = {
-                    name: pokemonCard.name,
-                    category: pokemonCard.category,
-                    types: pokemonCard.types,
-                    illustrator: pokemonCard.illustrator || '',
-                    rarity: pokemonCard.rarity,
-                    variants: pokemonCard.variants || [],
-                    dexId: pokemonCard.dexId,
-                    image_url: pokemonCard.image_url,
-                    setId: pokemonCard.setId
-                }
-
-                const setId = pokemonCard.setId
-
-                // Add to master and grandmaster sets
-
-                if (setId) {
-                    if (!masterSetCards[setId])
-                        masterSetCards[setId] = new Set<string>()
-                    masterSetCards[setId].add(pokemonCard.id.toString())
-
-                    if (!grandmasterSetCards[setId])
-                        grandmasterSetCards[setId] = {}
-                    if (!grandmasterSetCards[setId][pokemonCard.id.toString()])
-                        grandmasterSetCards[setId][pokemonCard.id.toString()] =
-                            new Set<string>()
-                    pokemonCard.variants.forEach((variant) => {
-                        grandmasterSetCards[setId][
-                            pokemonCard.id.toString()
-                        ].add(variant)
-                    })
-                }
-
-                // Add cards to the Pokemon master and grandmaster sets
-                // Sorted by dexId
-                const dexIds = pokemonCard.dexId || []
-
-                for (const dexId of dexIds) {
-                    if (dexId > MAXPOKEDEXVALUE) continue
-
-                    if (!pokemonMasterSetCards[dexId])
-                        pokemonMasterSetCards[dexId] = new Set<string>()
-                    pokemonMasterSetCards[dexId].add(pokemonCard.id.toString())
-
-                    if (!pokemonGrandmasterSet[dexId])
-                        pokemonGrandmasterSet[dexId] = {}
-                    if (
-                        !pokemonGrandmasterSet[dexId][pokemonCard.id.toString()]
-                    ) {
-                        pokemonGrandmasterSet[dexId][
-                            pokemonCard.id.toString()
-                        ] = new Set<string>()
-                    }
-                    pokemonCard.variants.forEach((variant) => {
-                        pokemonGrandmasterSet[dexId][
-                            pokemonCard.id.toString()
-                        ].add(variant)
-                    })
-                }
+        for (const pokemonCard of cards) {
+            pokemonCards[pokemonCard.id.toString()] = {
+                name: pokemonCard.name,
+                category: pokemonCard.category,
+                types: pokemonCard.types,
+                illustrator: pokemonCard.illustrator || '',
+                rarity: pokemonCard.rarity,
+                variants: pokemonCard.variants || [],
+                dexId: pokemonCard.dexId,
+                image_url: pokemonCard.image_url,
+                setId: pokemonCard.setId
             }
-        } catch (err) {
-            console.error('Fetch error for pokemon cards:', err)
+
+            const setId = pokemonCard.setId
+
+            // Add to master and grandmaster sets
+
+            if (setId) {
+                if (!masterSetCards[setId])
+                    masterSetCards[setId] = new Set<string>()
+                masterSetCards[setId].add(pokemonCard.id.toString())
+
+                if (!grandmasterSetCards[setId]) grandmasterSetCards[setId] = {}
+                if (!grandmasterSetCards[setId][pokemonCard.id.toString()])
+                    grandmasterSetCards[setId][pokemonCard.id.toString()] =
+                        new Set<string>()
+                pokemonCard.variants.forEach((variant) => {
+                    grandmasterSetCards[setId][pokemonCard.id.toString()].add(
+                        variant
+                    )
+                })
+            }
+
+            // Add cards to the Pokemon master and grandmaster sets
+            // Sorted by dexId
+            const dexIds = pokemonCard.dexId || []
+
+            for (const dexId of dexIds) {
+                if (dexId > MAXPOKEDEXVALUE) continue
+
+                if (!pokemonMasterSetCards[dexId])
+                    pokemonMasterSetCards[dexId] = new Set<string>()
+                pokemonMasterSetCards[dexId].add(pokemonCard.id.toString())
+
+                if (!pokemonGrandmasterSet[dexId])
+                    pokemonGrandmasterSet[dexId] = {}
+                if (!pokemonGrandmasterSet[dexId][pokemonCard.id.toString()]) {
+                    pokemonGrandmasterSet[dexId][pokemonCard.id.toString()] =
+                        new Set<string>()
+                }
+                pokemonCard.variants.forEach((variant) => {
+                    pokemonGrandmasterSet[dexId][pokemonCard.id.toString()].add(
+                        variant
+                    )
+                })
+            }
         }
-    })()
-    return pokemonCardsInit
+    } catch (err) {
+        console.error('Fetch error for pokemon cards:', err)
+    }
 }
 
 const fetchPokemonSets = async (): Promise<void> => {
-    if (pokemonSetsInit) return pokemonSetsInit
+    try {
+        const response = await fetch('/api/pokemon-set')
+        if (!response.ok) throw new Error(`Failed to fetch /api/pokemon-set`)
+        const sets: DatabaseSet[] = await response.json()
 
-    pokemonSetsInit = (async () => {
-        try {
-            const response = await fetch('/api/pokemon-set')
-            if (!response.ok)
-                throw new Error(`Failed to fetch /api/pokemon-set`)
-            const sets: DatabaseSet[] = await response.json()
-
-            for (const pokemonSet of sets) {
-                pokemonSets[pokemonSet.id.toString()] = {
-                    name: pokemonSet.name,
-                    series: pokemonSet.series,
-                    logo: pokemonSet.logo || '',
-                    symbol: pokemonSet.symbol || '',
-                    official: pokemonSet.official,
-                    total: pokemonSet.total
-                }
+        for (const pokemonSet of sets) {
+            pokemonSets[pokemonSet.id.toString()] = {
+                name: pokemonSet.name,
+                series: pokemonSet.series,
+                logo: pokemonSet.logo || '',
+                symbol: pokemonSet.symbol || '',
+                official: pokemonSet.official,
+                total: pokemonSet.total
             }
-        } catch (err) {
-            console.error('Fetch error for pokemon sets:', err)
         }
-    })()
-
-    return pokemonSetsInit
+    } catch (err) {
+        console.error('Fetch error for pokemon sets:', err)
+    }
 }
 
 /* ---------------- CONTEXT ---------------- */

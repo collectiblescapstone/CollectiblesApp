@@ -131,11 +131,6 @@ const EditCardPage = () => {
 
             setCardInfo(info)
 
-            // MODIFY THIS ONCE I DO EDIT CARD. CHANGE THE DEFAULTS IF IT IS FOR EDITING AN EXISTING CARD VERSUS ADDING A NEW CARD
-
-            // setShowcase(info.showcase || false)
-            // setMarkedForTrade(info.markedForTrade || false)
-
             // Get the number of cards that are on showcase
             const res = await CapacitorHttp.post({
                 url: `${baseUrl}/api/collection/showcase`,
@@ -183,8 +178,8 @@ const EditCardPage = () => {
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            CardName: '',
-            CardSet: '',
+            CardName: cardInfo?.name ?? '',
+            CardSet: cardInfo?.setId ?? '',
             CardGrade: ['ungraded'],
             CardGradeDetail: [],
             Condition: undefined,
@@ -195,9 +190,9 @@ const EditCardPage = () => {
         }
     })
 
-    // Reset form when cardInfo loads
+    // Reset form when cardInfo loads (only if not editing an existing entry)
     useEffect(() => {
-        if (cardInfo) {
+        if (cardInfo && !entryId) {
             reset({
                 CardName: cardInfo.name ?? '',
                 CardSet: cardInfo.setId ?? '',
@@ -210,29 +205,82 @@ const EditCardPage = () => {
                 Tags: []
             })
         }
-    }, [cardInfo, reset])
+    }, [cardInfo, reset, entryId])
 
-    // Keep FoilPattern initialized to the first available item.
+    // Load existing entry data when editing
     useEffect(() => {
+        if (!entryId || !session) return
+
+        let active = true
+
+        const loadEntryData = async () => {
+            const res = await CapacitorHttp.post({
+                url: `${baseUrl}/api/collection/read`,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                },
+                data: JSON.stringify({ cardId: entryId })
+            })
+
+            if (!active || !res.data?.data) return
+
+            const entry = res.data.data
+            console.log('Loading entry data:', entry)
+
+            // Set state for showcase and markedForTrade
+            setShowcase(entry.showcase ?? false)
+            setMarkedForTrade(entry.forTrade ?? false)
+
+            // Extract and set the grade to control UI visibility
+            const loadedGrade = entry.grade?.toLowerCase() ?? 'ungraded'
+            setSelectedGrade(loadedGrade)
+
+            // Reset form with loaded data
+            reset({
+                CardName: cardInfo?.name ?? '',
+                CardSet: cardInfo?.setId ?? '',
+                CardGrade: [loadedGrade],
+                CardGradeDetail: entry.gradeLevel ? [entry.gradeLevel] : [],
+                Condition: entry.condition ?? undefined,
+                FoilPattern: entry.variant ?? undefined,
+                Showcase: entry.showcase ?? false,
+                MarkedForTrade: entry.forTrade ?? false,
+                Tags: entry.tags ?? []
+            })
+        }
+
+        loadEntryData()
+
+        return () => {
+            active = false
+        }
+    }, [entryId, session, reset, cardInfo])
+
+    // Keep FoilPattern initialized to the first available item (only for new cards).
+    useEffect(() => {
+        if (entryId) return // Don't auto-initialize when editing
+
         const firstFoil = cardFoils?.items?.[0]?.value
         if (firstFoil) {
             setValue('FoilPattern', firstFoil, { shouldDirty: false })
         }
-    }, [cardFoils, setValue])
+    }, [cardFoils, setValue, entryId])
 
     // keep track of the currently selected top-level grade so we can
     // enable/disable and populate the second select accordingly
     const [selectedGrade, setSelectedGrade] = useState<string>('ungraded')
 
-    // Keep Condition initialized to the first available item when card is ungraded.
+    // Keep Condition initialized to the first available item when card is ungraded (only for new cards).
     useEffect(() => {
-        if (selectedGrade !== 'ungraded') return
+        if (selectedGrade !== 'ungraded' || entryId) return
 
         const firstCondition = conditions.items?.[0]?.value
         if (firstCondition) {
             setValue('Condition', firstCondition, { shouldDirty: false })
         }
-    }, [selectedGrade, setValue])
+    }, [selectedGrade, setValue, entryId])
 
     // memoize the second-select collection items for performance
     const detailOptions = useMemo(
@@ -240,10 +288,12 @@ const EditCardPage = () => {
         [selectedGrade]
     )
 
-    // Keep CardGradeDetail initialized to the first available number when graded.
+    // Keep CardGradeDetail initialized to the first available number when graded (only for new cards).
     useEffect(() => {
-        if (selectedGrade === 'ungraded') {
-            setValue('CardGradeDetail', [], { shouldDirty: false })
+        if (selectedGrade === 'ungraded' || entryId) {
+            if (selectedGrade === 'ungraded') {
+                setValue('CardGradeDetail', [], { shouldDirty: false })
+            }
             return
         }
 
@@ -251,7 +301,7 @@ const EditCardPage = () => {
         if (firstDetail) {
             setValue('CardGradeDetail', [firstDetail], { shouldDirty: false })
         }
-    }, [selectedGrade, detailOptions, setValue])
+    }, [selectedGrade, detailOptions, setValue, entryId])
 
     const onSubmit = handleSubmit(async (data) => {
         try {
@@ -365,7 +415,13 @@ const EditCardPage = () => {
                         flex="1"
                         // backgroundColor="brand.marigold"
                         // color="brand.turtoise"
-                        onClick={() => setShowcase(!showcase)}
+                        onClick={() => {
+                            const nextShowcase = !showcase
+                            setShowcase(nextShowcase)
+                            if (!nextShowcase) {
+                                setShowcaseError(false)
+                            }
+                        }}
                     >
                         {showcase ? <FaEyeSlash /> : <FaEye />}
                         <Text ml={2}>{showcase ? "Don't" : ''} Showcase</Text>

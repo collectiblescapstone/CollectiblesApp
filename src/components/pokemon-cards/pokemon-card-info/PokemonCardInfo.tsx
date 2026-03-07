@@ -3,6 +3,9 @@
 // React
 import { useEffect, useState } from 'react'
 
+// Capacitor
+import { CapacitorHttp } from '@capacitor/core'
+
 // Chakra UI
 import {
     Box,
@@ -31,6 +34,7 @@ import {
 } from '@/utils/cardInfo/cardGrading'
 import { getUserCard, refreshPokemonCards } from '@/utils/userPokemonCard'
 import { capitalizeEachWord } from '@/utils/capitalize'
+import { baseUrl } from '@/utils/constants'
 
 // Types
 import type { Entry } from '@/utils/userPokemonCard'
@@ -66,13 +70,14 @@ const PokemonCardInfo = ({
         if (!session) return
         try {
             // Delete card from database
-            await fetch('/api/collection/delete', {
-                method: 'POST',
+            await CapacitorHttp.delete({
+                url: `${baseUrl}/api/collection/delete`,
+                method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${session?.access_token}`
                 },
-                body: JSON.stringify({ entryId })
+                data: JSON.stringify({ entryId })
             })
             refreshPokemonCards(session.user.id)
             if (onDelete) {

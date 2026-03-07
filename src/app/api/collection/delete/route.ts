@@ -40,7 +40,6 @@ export async function POST(request: NextRequest) {
         })
 
         if (existingEntry) {
-            console.log('GOING TO NUT')
             result = await prisma.collectionEntry.delete({
                 where: { id: entryId, userId: userId }
             })

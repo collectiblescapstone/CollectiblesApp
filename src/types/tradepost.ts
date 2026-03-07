@@ -2,16 +2,24 @@ export type TradeCardProps = {
     username: string
     avatarUrl?: string
     rating: number
-    cards?: { id: string; name: string; image_url: string }[]
+    user1Wishlist?: { name: string; image_url: string }[]
+    user2Wishlist?: { name: string; image_url: string }[]
+    contacts?: { method: string; value: string }[]
     distance?: number | null
 }
 
 export type ViableOption = {
     user: {
         id: string
-        username: string
+        username: string | null
         profile_pic: number
         distance: number | null
+        facebook: string | null
+        instagram: string | null
+        x: string | null
+        discord: string | null
+        whatsapp: string | null
     }
-    cards: { id: string; name: string; image_url: string }[]
+    cardsUser1WantsFromUser2: { id: string; name: string; image_url: string }[]
+    cardsUser2WantsFromUser1: { id: string; name: string; image_url: string }[]
 }

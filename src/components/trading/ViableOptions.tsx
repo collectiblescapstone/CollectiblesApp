@@ -1,21 +1,22 @@
 'use client'
 
 import React from 'react'
-import { Avatar, Card, Flex, HStack, Stack, Text, Box, } from '@chakra-ui/react'
+import { Avatar, Card, Flex, HStack, Stack, Text } from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
 import { TradeCardProps } from '@/types/tradepost'
-import StarRating from '@/components/profiles/StarRating';
+import StarRating from '@/components/profiles/StarRating'
 
 const ViableOptions: React.FC<TradeCardProps> = ({
     username,
     avatarUrl,
     rating,
-    cards,
+    user1Wishlist,
     distance
 }) => {
-    const cardlength = cards?.length ?? 0
+    const cardsToDisplay = user1Wishlist ?? []
+    const cardlength = cardsToDisplay.length
     return (
-        <Card.Root width="85%">
+        <Card.Root w="100%" minW="350px" borderRadius="md" shadow="md">
             <Flex flexDirection="column">
                 <Flex
                     flexDirection="row"
@@ -46,7 +47,7 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                 </Flex>
                 <Card.Body>
                     <TradingCards
-                        cards={cards?.map((card) => ({
+                        cards={cardsToDisplay.map((card) => ({
                             name: card.name,
                             image: card.image_url
                         }))}

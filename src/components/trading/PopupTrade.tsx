@@ -1,7 +1,15 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
-import { Card, HStack, VStack, Stack, Text, IconButton } from '@chakra-ui/react'
+import {
+    Avatar,
+    Card,
+    HStack,
+    VStack,
+    Text,
+    IconButton,
+    Flex
+} from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
 import { LuArrowRightLeft } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaDiscord, FaWhatsapp } from 'react-icons/fa'
@@ -15,10 +23,18 @@ type ContactMethod = {
 type TradeCardPopupProps = {
     username: string
     contacts?: ContactMethod[]
+    avatarUrl?: string
+    user1Wishlist?: { name: string; image_url: string }[]
+    user2Wishlist?: { name: string; image_url: string }[]
 }
 
 const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
-    const { username, contacts } = props
+    const { username, contacts, avatarUrl, user1Wishlist, user2Wishlist } =
+        props
+
+    // Debug log to see what contacts are being passed
+    console.log('PopupTrade contacts:', contacts)
+
     // helper to normalise contact method names and check existence
     const normalize = (s?: string) =>
         (s ?? '').toLowerCase().replace(/\s+/g, '')
@@ -98,14 +114,22 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
             <Card.Body py={3}>
                 {/*their cards*/}
                 <VStack align="center" gap={2}>
-                    <TradingCards />
-                    <VStack align="center" gap="0">
-                        <HStack mb="0" gap="3">
-                            <Stack gap="0">
+                    <TradingCards
+                        cards={user1Wishlist?.map((card) => ({
+                            name: card.name,
+                            image: card.image_url
+                        }))}
+                    />
+                    <VStack align="center" gap="3">
+                        <HStack>
+                            <HStack gap="2" mt={1}>
+                                <Avatar.Root boxSize="30px" shape="rounded">
+                                    <Avatar.Image src={avatarUrl} />
+                                </Avatar.Root>
                                 <Text fontWeight="semibold" textStyle="sm">
                                     {username}
                                 </Text>
-                            </Stack>
+                            </HStack>
                         </HStack>
                         <HStack>
                             {hasContact(['instagram']) && (
@@ -196,11 +220,18 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                         </HStack>
                     </VStack>
 
-                    <LuArrowRightLeft size={30} />
+                    <LuArrowRightLeft size={40} />
 
                     {/*/!*your cards*!/*/}
-                    <TradingCards />
-                    <Text fontSize="sm" fontWeight="semibold">
+                    <Flex mt={1}>
+                        <TradingCards
+                            cards={user2Wishlist?.map((card) => ({
+                                name: card.name,
+                                image: card.image_url
+                            }))}
+                        />
+                    </Flex>
+                    <Text fontSize="sm" fontWeight="semibold" mt={1}>
                         Your cards
                     </Text>
                 </VStack>

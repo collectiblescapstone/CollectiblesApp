@@ -61,7 +61,47 @@ const TradePage = () => {
                                 pfp_image_mapping[viableUser.profile_pic],
                             rating: 0,
                             distance: viableUser.distance,
-                            cards: option.cards
+                            user1Wishlist: option.cardsUser1WantsFromUser2.map(
+                                (card) => ({
+                                    name: card.name,
+                                    image_url: card.image_url
+                                })
+                            ),
+                            user2Wishlist: option.cardsUser2WantsFromUser1.map(
+                                (card) => ({
+                                    name: card.name,
+                                    image_url: card.image_url
+                                })
+                            ),
+                            contacts: [
+                                viableUser.facebook && {
+                                    method: 'facebook',
+                                    value: viableUser.facebook
+                                },
+                                viableUser.instagram && {
+                                    method: 'instagram',
+                                    value: viableUser.instagram
+                                },
+                                viableUser.x && {
+                                    method: 'x',
+                                    value: viableUser.x
+                                },
+                                viableUser.discord && {
+                                    method: 'discord',
+                                    value: viableUser.discord
+                                },
+                                viableUser.whatsapp && {
+                                    method: 'whatsapp',
+                                    value: viableUser.whatsapp
+                                }
+                            ].filter(
+                                (
+                                    contact
+                                ): contact is {
+                                    method: string
+                                    value: string
+                                } => Boolean(contact)
+                            )
                         })
                     }
                 }
@@ -102,8 +142,8 @@ const TradePage = () => {
     }
 
     return (
-        <Box>
-            <Flex alignItems="center" flexDirection="column" mt={3}>
+        <Flex flexDirection="column" gap={3}>
+            <Flex alignItems="center" flexDirection="column" mt={6}>
                 <UserSearch />
             </Flex>
 
@@ -182,7 +222,7 @@ const TradePage = () => {
                                 onValueChange={slideFn}
                                 width="100%"
                             >
-                                <HStack justifyContent="space-between" w="100%">
+                                <HStack justifyContent="space-between">
                                     <Slider.Label w="50%">
                                         Range: {sliderValue} km
                                     </Slider.Label>
@@ -197,7 +237,7 @@ const TradePage = () => {
                             </Slider.Root>
                         </Box>
                     </Flex>
-                    <Flex flexDirection="column" gap={6} alignItems="center">
+                    <Flex flexDirection="column" alignItems="center" gap={4}>
                         {(() => {
                             const filteredUsers = users.filter(
                                 (u) =>
@@ -250,7 +290,14 @@ const TradePage = () => {
                                             content: (
                                                 <TradeCardPopup
                                                     username={u.username}
+                                                    avatarUrl={u.avatarUrl}
                                                     contacts={u.contacts}
+                                                    user1Wishlist={
+                                                        u.user1Wishlist ?? []
+                                                    }
+                                                    user2Wishlist={
+                                                        u.user2Wishlist ?? []
+                                                    }
                                                 />
                                             ),
                                             onClickClose: () =>
@@ -263,7 +310,7 @@ const TradePage = () => {
                                         username={u.username}
                                         avatarUrl={u.avatarUrl}
                                         rating={u.rating}
-                                        cards={u.cards}
+                                        user1Wishlist={u.user1Wishlist ?? []}
                                         distance={u.distance}
                                     />
                                 </Box>
@@ -273,7 +320,7 @@ const TradePage = () => {
                     </Flex>
                 </Flex>
             )}
-        </Box>
+        </Flex>
     )
 }
 

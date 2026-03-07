@@ -32,7 +32,6 @@ import { getPokemonName, getGeneration } from '@/utils/pokedex'
 // Types
 import type { CardData } from '@/types/pokemon-card'
 
-
 const FilterCardsContent = () => {
     // Search Params
     const searchParams = useSearchParams()

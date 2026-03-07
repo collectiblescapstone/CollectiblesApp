@@ -73,10 +73,12 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         Record<string, { masterSet: number; grandmasterSet: number }>
     >({})
 
-    const { masterSetCount,
+    const {
+        masterSetCount,
         grandmasterSetCount,
         pokemonMasterSetCount,
-        pokemonGrandmasterSetCount } = usePokemonCards()
+        pokemonGrandmasterSetCount
+    } = usePokemonCards()
 
     const pokemon = ALL_POKEMON
 
@@ -181,7 +183,13 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchCounts()
-    }, [selectedEra, groupedSets, selected, grandmasterSetCount, masterSetCount])
+    }, [
+        selectedEra,
+        groupedSets,
+        selected,
+        grandmasterSetCount,
+        masterSetCount
+    ])
 
     /**
      * Use effect for fetching Pokemon card counts, grouped by Pokedex number.
@@ -209,7 +217,13 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchCounts()
-    }, [selectedGen, selected, filteredPokemon, pokemonMasterSetCount, pokemonGrandmasterSetCount])
+    }, [
+        selectedGen,
+        selected,
+        filteredPokemon,
+        pokemonMasterSetCount,
+        pokemonGrandmasterSetCount
+    ])
 
     useEffect(() => {
         const fetchNames = async () => {
@@ -233,8 +247,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         () =>
             filteredIds
                 ? filteredPokemon.filter((id) =>
-                    filteredIds.includes(id.toString())
-                )
+                      filteredIds.includes(id.toString())
+                  )
                 : filteredPokemon,
         [filteredPokemon, filteredIds]
     )

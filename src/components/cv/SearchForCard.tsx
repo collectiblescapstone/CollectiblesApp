@@ -21,7 +21,6 @@ import { CardSearcher } from '@/utils/identification/cardSearch'
 // Types
 import type { CardData } from '@/types/pokemon-card'
 
-
 export const SearchForCard: React.FC = () => {
     const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null)
     const [csReady, setCSReady] = useState(false)

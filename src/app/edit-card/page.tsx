@@ -21,7 +21,6 @@ import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { CapacitorHttp } from '@capacitor/core'
 
-
 // Context
 import { useAuth } from '@/context/AuthProvider'
 import { usePokemonCards } from '@/context/PokemonCardsProvider'
@@ -39,7 +38,6 @@ import {
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
 import { getSetName } from '@/utils/pokemonSet'
-
 
 interface FormValues {
     CardName: string
@@ -266,7 +264,7 @@ const EditCardPage = () => {
                         <Image
                             src={
                                 cardInfo?.image_url !== 'undefined/low.png' &&
-                                    cardInfo?.image_url !== ''
+                                cardInfo?.image_url !== ''
                                     ? cardInfo?.image_url
                                     : '/Images/PokemonCardBack.jpg'
                             }
@@ -332,8 +330,8 @@ const EditCardPage = () => {
                                             raw === undefined
                                                 ? []
                                                 : Array.isArray(raw)
-                                                    ? raw
-                                                    : [raw]
+                                                  ? raw
+                                                  : [raw]
                                         field.onChange(arr)
                                         setSelectedGrade(arr[0] ?? 'ungraded')
                                     }
@@ -482,8 +480,8 @@ const EditCardPage = () => {
                                                     raw === undefined
                                                         ? []
                                                         : Array.isArray(raw)
-                                                            ? raw
-                                                            : [raw]
+                                                          ? raw
+                                                          : [raw]
                                                 field.onChange(arr)
                                             }}
                                         >

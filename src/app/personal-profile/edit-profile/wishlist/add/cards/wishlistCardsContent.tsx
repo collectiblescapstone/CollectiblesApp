@@ -32,7 +32,6 @@ import { getPokemonName, getGeneration } from '@/utils/pokedex'
 // Types
 import type { CardData } from '@/types/pokemon-card'
 
-
 const WishlistCardsContent: React.FC = () => {
     // Search Params
     const searchParams = useSearchParams()

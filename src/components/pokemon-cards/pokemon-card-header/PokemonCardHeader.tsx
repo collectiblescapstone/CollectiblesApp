@@ -81,7 +81,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                     <Image
                         src={
                             cardInfo.image_url !== 'undefined/low.png' &&
-                                cardInfo.image_url !== ''
+                            cardInfo.image_url !== ''
                                 ? cardInfo.image_url
                                 : '/Images/PokemonCardBack.jpg'
                         }

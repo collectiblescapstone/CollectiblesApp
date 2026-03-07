@@ -23,6 +23,10 @@ import { CapacitorHttp } from '@capacitor/core'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
+
+// Types
+import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Utils
 import { baseUrl } from '@/utils/constants'
@@ -32,7 +36,6 @@ import {
     gradingCompanies
 } from '@/utils/cardInfo/cardGrading'
 import { capitalizeEachWord } from '@/utils/capitalize'
-import { getCardInformation, PokemonCard } from '@/utils/pokemonCard'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
 import { getSetName } from '@/utils/pokemonSet'
 
@@ -70,6 +73,7 @@ const conditions = createListCollection({
  */
 const EditCardPage = () => {
     type SelectPayload = { value?: string | string[] }
+    const { getCardInformation } = usePokemonCards()
 
     const { session, loading } = useAuth()
     const searchParams = useSearchParams()
@@ -115,7 +119,7 @@ const EditCardPage = () => {
         return () => {
             active = false
         }
-    }, [searchParams])
+    }, [searchParams, getCardInformation])
 
     useEffect(() => {
         let active = true

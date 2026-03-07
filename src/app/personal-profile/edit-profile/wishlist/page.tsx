@@ -1,21 +1,28 @@
 'use client'
 
 import React, { useCallback, useEffect, useState } from 'react'
-
 import { Box, Flex, Image, Button, Spinner, Text } from '@chakra-ui/react'
 import { FiPlusCircle, FiXCircle } from 'react-icons/fi'
-import { useAuth } from '@/context/AuthProvider'
-import { getWishlist, updateWishlist } from '@/utils/wishlist/wishlistQueries'
-import { getPokemonCards } from '@/utils/pokemonCard'
-import { CardData } from '@/types/pokemon-card'
 import { useRouter } from 'next/navigation'
 
-const WishScreen: React.FC = () => {
+// Context
+import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
+
+// Utils
+import { getWishlist, updateWishlist } from '@/utils/wishlist/wishlistQueries'
+
+// Types
+import { CardData } from '@/types/pokemon-card'
+
+const WishScreen = () => {
     const router = useRouter()
     const { session, loading } = useAuth()
     const [loadingWishlist, setLoadingWishlist] = useState(true)
     const [removingCard, setRemovingCard] = useState(false)
     const [cards, setCards] = useState<CardData[]>([])
+
+    const { getAllCards } = usePokemonCards()
 
     const removeCard = useCallback(
         async (cardId: string) => {
@@ -52,13 +59,13 @@ const WishScreen: React.FC = () => {
         const fetchWishlistCards = async () => {
             const wishlistEntries = await getWishlist(session.user.id)
             const cardIds = wishlistEntries.map(({ cardId }) => cardId)
-            const cards = await getPokemonCards({ ids: cardIds })
+            const cards = await getAllCards({ ids: cardIds })
             setCards(cards)
             setLoadingWishlist(false)
         }
 
         fetchWishlistCards()
-    }, [session?.user.id])
+    }, [session?.user.id, getAllCards])
 
     return (
         <Box bg="white" minH="100vh" color="black">

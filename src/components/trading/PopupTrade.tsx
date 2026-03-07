@@ -232,7 +232,7 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                         />
                     </Flex>
                     <Text fontSize="sm" fontWeight="semibold" mt={1}>
-                        Your cards
+                        Your hand
                     </Text>
                 </VStack>
             </Card.Body>

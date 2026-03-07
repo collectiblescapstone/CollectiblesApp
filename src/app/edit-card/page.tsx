@@ -70,19 +70,6 @@ interface FormValues {
     MarkedForTrade: boolean
 }
 
-// Form validation schema
-const formSchema = z.object({
-    CardName: z.string().min(1, 'Item name is required'),
-    CardSet: z.string().min(1, 'Item set is required'),
-    CardGrade: z.array(z.string()).min(1, 'Card Grade is required'),
-    CardGradeDetail: z.array(z.string()).optional(),
-    Condition: z.string().optional(),
-    FoilPattern: z.string().optional(),
-    Tags: z.array(z.string()).optional(),
-    Showcase: z.boolean(),
-    MarkedForTrade: z.boolean()
-})
-
 const grades = createListCollection({
     items: gradingCompanies
 })
@@ -96,8 +83,26 @@ const conditions = createListCollection({
  * @returns
  */
 const EditCardPage = () => {
+    // Use Effect for getting the number of cards that are on showcase
+    const [showcaseCount, setShowcaseCount] = useState(0)
+
+    // Form validation schema
+    const formSchema = z.object({
+        CardName: z.string().min(1, 'Item name is required'),
+        CardSet: z.string().min(1, 'Item set is required'),
+        CardGrade: z.array(z.string()).min(1, 'Card Grade is required'),
+        CardGradeDetail: z.array(z.string()).optional(),
+        Condition: z.string().optional(),
+        FoilPattern: z.string().optional(),
+        Tags: z.array(z.string()).optional(),
+        Showcase: z.boolean(), // Ensure it's a boolean
+        MarkedForTrade: z.boolean()
+    })
     type SelectPayload = { value?: string | string[] }
     const { getCardInformation } = usePokemonCards()
+
+    // Error display message for if the too many cards on showcase
+    const [showcaseError, setShowcaseError] = useState(false)
 
     const { session, loading } = useAuth()
     const searchParams = useSearchParams()
@@ -117,6 +122,7 @@ const EditCardPage = () => {
 
     useEffect(() => {
         let active = true
+        if (!session) return
 
         const fetchCardInfo = async () => {
             const info = await getCardInformation(id)
@@ -128,6 +134,17 @@ const EditCardPage = () => {
 
             // setShowcase(info.showcase || false)
             // setMarkedForTrade(info.markedForTrade || false)
+
+            // Get the number of cards that are on showcase
+            const res = await CapacitorHttp.post({
+                url: `${baseUrl}/api/collection/showcaseCount`,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                }
+            })
+            setShowcaseCount(res.data.showcaseCount)
 
             // Build holo patterns
             const items = info?.variants
@@ -151,7 +168,7 @@ const EditCardPage = () => {
         return () => {
             active = false
         }
-    }, [id, getCardInformation])
+    }, [id, getCardInformation, session])
 
     const {
         handleSubmit,
@@ -248,6 +265,12 @@ const EditCardPage = () => {
                 markedForTrade: markedForTrade ?? false
             }
 
+            // PREVENTS ADDING ADDITIONAL SHOWCASE CARDS BEYOND THE LIMIT OF 3
+            if (showcase && showcaseCount >= 3) {
+                setShowcaseError(true)
+                return
+            }
+            setShowcaseError(false)
             const url = entryId
                 ? `${baseUrl}/api/collection/edit`
                 : `${baseUrl}/api/collection/save`
@@ -351,6 +374,13 @@ const EditCardPage = () => {
                         </Text>
                     </Button>
                 </HStack>
+                {/*ADD ERROR MESSAGE*/}
+                {/*ADD ERROR MESSAGE*/}
+                {showcaseError && (
+                    <Text color="red">
+                        You can only have 3 cards showcased at a time.
+                    </Text>
+                )}
                 <Controller
                     name="FoilPattern"
                     control={control}

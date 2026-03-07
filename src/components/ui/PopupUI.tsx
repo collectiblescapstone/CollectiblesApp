@@ -4,7 +4,7 @@
 import { useRef } from 'react'
 
 // React
-import { IoMdClose } from 'react-icons/io'
+import { IoClose } from 'react-icons/io5'
 
 // Chakra UI
 import { Button, Dialog, Portal, createOverlay } from '@chakra-ui/react'
@@ -56,7 +56,7 @@ const PopupUI = createOverlay<DialogProps>((props) => {
                                     aspectRatio={1}
                                     background={'none'}
                                 >
-                                    <IoMdClose size={48} fill="black" />
+                                    <IoClose size={48} fill="black" />
                                 </Button>
                             </Dialog.Header>
                         )}

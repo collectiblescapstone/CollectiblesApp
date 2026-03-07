@@ -28,3 +28,7 @@ export const getRarityImage = (rarity: string): string => {
         '/Images/CardRarity/Rarity_Common.png'
     )
 }
+
+export const checkRarityExists = (rarity: string): boolean => {
+    return rarityImageMap.hasOwnProperty(rarity.toLowerCase())
+}

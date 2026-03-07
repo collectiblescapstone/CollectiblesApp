@@ -14,7 +14,10 @@ import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Utils
 import { capitalizeEachWord } from '@/utils/capitalize'
-import { getRarityImage } from '@/utils/cardInfo/raritytoImage'
+import {
+    checkRarityExists,
+    getRarityImage
+} from '@/utils/cardInfo/raritytoImage'
 
 interface PokemonCardHeaderProps {
     cardId: string
@@ -150,13 +153,21 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                     )}
                     <HStack gap={2} align="center">
                         <Image
-                            src={getRarityImage(cardInfo.rarity)}
+                            src={getRarityImage(
+                                checkRarityExists(cardInfo.rarity)
+                                    ? cardInfo.rarity
+                                    : 'Common'
+                            )}
                             alt={cardInfo.rarity}
                             height="1em"
                             width="auto"
                         />
                         <Text fontSize="sm" fontWeight="bold">
-                            {capitalizeEachWord(cardInfo.rarity)}
+                            {capitalizeEachWord(
+                                checkRarityExists(cardInfo.rarity)
+                                    ? cardInfo.rarity
+                                    : 'Common'
+                            )}
                         </Text>
                     </HStack>
                     <HStack gap={2}>

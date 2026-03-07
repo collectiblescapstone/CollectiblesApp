@@ -1,6 +1,3 @@
-// Utils
-import { capitalizeEachWord } from '../capitalize'
-
 export const cardConditions = [
     { label: 'Near Mint', value: 'near-mint' },
     { label: 'Lightly Played', value: 'lightly-played' },
@@ -40,22 +37,6 @@ export const parseGradeLevel = (company: string, gradeLevel: string) => {
         gradeDetailsMap[company].find((grade) => grade.value === gradeLevel)
             ?.label || gradeLevel
     )
-}
-
-const numericalGrade = (gradeValue: string) => {
-    if (gradeValue.includes('-')) {
-        const highName = capitalizeEachWord(gradeValue.split('-')[0])
-        return highName + ' ' + gradeValue.split('-')[1]
-    }
-    return gradeValue
-}
-
-export const gradeName = (grade: string) => {
-    const index = grade.indexOf('-')
-    const company = grade.substring(0, index)
-    const gradeValue = grade.substring(index + 1)
-    // console.log('company:', grade, '     gradeValue:', gradeValue) // Debug log
-    return `${gradingCompaniesMap[company]} ${numericalGrade(gradeValue)}`.trim()
 }
 
 export const gradeDetailsMap: Record<

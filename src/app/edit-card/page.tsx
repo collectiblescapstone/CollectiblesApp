@@ -2,6 +2,8 @@
 
 // Capacitor
 import { CapacitorHttp } from '@capacitor/core'
+
+// Chakra
 import {
     Button,
     Field,
@@ -18,13 +20,14 @@ import {
     Text
 } from '@chakra-ui/react'
 
+// Next.js
+import { useRouter } from 'next/navigation'
+
 // React
 import React, { useMemo, useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash, FaSlash } from 'react-icons/fa'
 import { IoSwapVertical } from 'react-icons/io5'
-
-import { useRouter } from 'next/navigation'
 
 // Next.js
 import { useSearchParams } from 'next/navigation'
@@ -267,6 +270,9 @@ const EditCardPage = () => {
 
             // Refresh the user data
             refreshPokemonCards(session.user.id)
+
+            // Redirect to the userCards page
+            router.replace(`/user-cards?cardId=${id}`)
         } catch (err) {
             console.error('Unexpected error saving card', err)
             alert('Unexpected error saving card')

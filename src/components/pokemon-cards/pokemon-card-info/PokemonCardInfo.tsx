@@ -1,6 +1,9 @@
 'use client'
 
+// React
 import { useEffect, useState } from 'react'
+
+// Chakra UI
 import { Box, Button, HStack, VStack } from '@chakra-ui/react'
 
 // Context
@@ -14,7 +17,6 @@ import { TbCards, TbPlayCard } from 'react-icons/tb'
 // Utils
 import {
     cardConditionsMap,
-    gradeName,
     parseGradeLevel
 } from '@/utils/cardInfo/cardGrading'
 import { getUserCard, refreshPokemonCards } from '@/utils/userPokemonCard'

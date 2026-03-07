@@ -20,8 +20,8 @@ import { fetchTradeOptions } from '@/utils/getTradeOptions'
 import { pfp_image_mapping } from '../personal-profile/edit-profile/constants'
 import { IoIosInformationCircleOutline } from 'react-icons/io'
 import UserSearch from '@/components/trading/UserSearch'
-import TradePopup from '@/components/ui/PopupUI';
-import TradeCardPopup from '@/components/trading/PopupTrade';
+import TradePopup from '@/components/ui/PopupUI'
+import TradeCardPopup from '@/components/trading/PopupTrade'
 
 const TradePage = () => {
     const { session } = useAuth()
@@ -269,6 +269,7 @@ const TradePage = () => {
                                 </Box>
                             ))
                         })()}
+                        <TradePopup.Viewport />
                     </Flex>
                 </Flex>
             )}

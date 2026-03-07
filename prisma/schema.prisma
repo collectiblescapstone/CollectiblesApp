@@ -10,7 +10,7 @@ datasource db {
 
 model User {
   email           String            @unique
-  username        String?           @unique
+  username        String            @unique
   id              String            @id @db.Uuid
   bio             String?
   facebook        String?

@@ -339,16 +339,12 @@ const PersonalProfileScreen: React.FC = () => {
                     </Flex>
                 </Button>
                 <AvatarPopup.Viewport />
-                <Field.Root required invalid={!!errors.firstName}>
-                    <Field.Label>
-                        First Name <Field.RequiredIndicator />
-                    </Field.Label>
+                <Field.Root invalid={!!errors.firstName}>
+                    <Field.Label>First Name</Field.Label>
                     <Input
                         placeholder="Enter your first name"
                         fontWeight="normal"
-                        {...register('firstName', {
-                            required: 'First name is required'
-                        })}
+                        {...register('firstName')}
                     />
                     <Field.HelperText>
                         Your first name displayed on your profile.
@@ -359,16 +355,12 @@ const PersonalProfileScreen: React.FC = () => {
                         </Field.ErrorText>
                     )}
                 </Field.Root>
-                <Field.Root required invalid={!!errors.lastName}>
-                    <Field.Label>
-                        Last Name <Field.RequiredIndicator />
-                    </Field.Label>
+                <Field.Root invalid={!!errors.lastName}>
+                    <Field.Label>Last Name</Field.Label>
                     <Input
                         placeholder="Enter your last name"
                         fontWeight="normal"
-                        {...register('lastName', {
-                            required: 'Last name is required'
-                        })}
+                        {...register('lastName')}
                     />
                     <Field.HelperText>
                         Your last name displayed on your profile.

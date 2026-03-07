@@ -58,7 +58,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }[]
     >()
     const [page, setPage] = useState(1)
-    const [selected, setSelected] = useState('set')
+    const [selected, setSelected] = useState('pokemon')
     const [selectedEra, setSelectedEra] = useState('sv')
     const [groupedSets, setGroupedSets] = useState<
         Record<string, PokemonSetType[]>
@@ -92,7 +92,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     // Generation options
     const genOptions = [
         { label: 'ALL', value: 'ALL' },
-        ...POKEMONGEN.map((last, index) => ({
+        ...POKEMONGEN.map((_, index) => ({
             label: `Gen ${index + 1}`,
             value: (index + 1).toString()
         }))
@@ -247,8 +247,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         () =>
             filteredIds
                 ? filteredPokemon.filter((id) =>
-                      filteredIds.includes(id.toString())
-                  )
+                    filteredIds.includes(id.toString())
+                )
                 : filteredPokemon,
         [filteredPokemon, filteredIds]
     )

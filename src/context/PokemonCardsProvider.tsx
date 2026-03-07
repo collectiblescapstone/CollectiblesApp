@@ -4,7 +4,7 @@ import { createContext, useContext, ReactNode } from 'react'
 import { CapacitorHttp } from '@capacitor/core'
 
 // Types
-import type { Set } from '@prisma/client'
+import type { Set as DatabaseSet } from '@prisma/client'
 import type { CardData } from '@/types/pokemon-card'
 import type { PokemonCard, PokemonSet } from '@/types/Cards/frontend-card'
 
@@ -12,17 +12,23 @@ import type { PokemonCard, PokemonSet } from '@/types/Cards/frontend-card'
 import { baseUrl } from '@/utils/constants'
 import { MAXPOKEDEXVALUE } from '@/utils/pokedex'
 
-/* ---------------- GLOBAL CACHE ---------------- */
 
+// GLOBAL CACHES
 const pokemonCards: Record<string, PokemonCard> = {}
 const pokemonSets: Record<string, PokemonSet> = {}
 
-let grandmasterSetCounts: Record<string, number> = {}
-let pokemonMasterCounts: number[] = []
-let pokemonGrandmasterCounts: number[] = []
+// Set counts based on set
+const masterSetCards: Record<string, Set<string>> = {}
+const grandmasterSetCards: Record<string, Record<string, Set<string>>> = {}
+
+// Set counts based on Pokedex ID
+const pokemonMasterSetCards: Record<number, Set<string>> = {}
+const pokemonGrandmasterSet: Record<number, Record<string, Set<string>>> = {}
 
 let pokemonCardsInit: Promise<void> | null = null
 let pokemonSetsInit: Promise<void> | null = null
+
+let allCards: CardData[] = []
 
 /* ---------------- API ---------------- */
 
@@ -33,6 +39,14 @@ export interface GetPokemonCardsFilters {
 export const getPokemonCards = async (
     filters?: GetPokemonCardsFilters
 ): Promise<CardData[]> => {
+
+    if (allCards.length !== 0) {
+        if (filters?.ids) {
+            const filteredCards = allCards.filter(card => filters.ids.includes(card.id))
+            return filteredCards
+        }
+        return allCards
+    }
     const response = await CapacitorHttp.post({
         url: `${baseUrl}/api/pokemon-card`,
         data: filters ?? {},
@@ -43,12 +57,12 @@ export const getPokemonCards = async (
     if (response.status < 200 || response.status >= 300) {
         throw new Error('Failed to fetch /api/pokemon-card')
     }
-
-    return await response.data
+    allCards = await response.data
+    return allCards
 }
 
-/* ---------------- FETCHERS ---------------- */
 
+// FETCHERS
 const fetchPokemonCards = async (): Promise<void> => {
     // If already initialized, just return the existing promise
     if (pokemonCardsInit) return pokemonCardsInit
@@ -56,11 +70,6 @@ const fetchPokemonCards = async (): Promise<void> => {
     pokemonCardsInit = (async () => {
         try {
             const cards = await getPokemonCards()
-
-            // Clear counts first
-            pokemonMasterCounts = []
-            pokemonGrandmasterCounts = []
-            grandmasterSetCounts = {}
 
             for (const pokemonCard of cards) {
                 pokemonCards[pokemonCard.id.toString()] = {
@@ -77,48 +86,50 @@ const fetchPokemonCards = async (): Promise<void> => {
 
                 const setId = pokemonCard.setId
 
-                if (!grandmasterSetCounts[setId]) {
-                    grandmasterSetCounts[setId] = 0
+                // Add to master and grandmaster sets
+
+                if (setId) {
+                    if (!masterSetCards[setId])
+                        masterSetCards[setId] = new Set<string>()
+                    masterSetCards[setId].add(pokemonCard.id.toString())
+
+                    if (!grandmasterSetCards[setId])
+                        grandmasterSetCards[setId] = {}
+                    if (!grandmasterSetCards[setId][pokemonCard.id.toString()])
+                        grandmasterSetCards[setId][pokemonCard.id.toString()] =
+                            new Set<string>()
+                    pokemonCard.variants.forEach(variant => {
+                        grandmasterSetCards[setId][pokemonCard.id.toString()].add(
+                            variant
+                        )
+                    })
                 }
 
-                // Add the variant count, defaulting to 1 if empty
-                const variantCount = pokemonCard.variants?.length ?? 0
-                grandmasterSetCounts[setId] +=
-                    variantCount > 0 ? Number(variantCount) : 1
-            }
+                // Add cards to the Pokemon master and grandmaster sets
+                // Sorted by dexId
+                const dexIds = pokemonCard.dexId || []
 
-            // Iterate through all the pokemon in the pokedex
-            // Required to do this since the names are different (Rowlet & Alolan Exeggutor GX)
-            // I might add substring parsing to make this faster in the future, but not now
+                for (const dexId of dexIds) {
+                    if (dexId > MAXPOKEDEXVALUE) continue
 
-            for (let i = 0; i < MAXPOKEDEXVALUE; i++) {
-                const pokedexValue = i + 1
+                    if (!pokemonMasterSetCards[dexId])
+                        pokemonMasterSetCards[dexId] = new Set<string>()
+                    pokemonMasterSetCards[dexId].add(pokemonCard.id.toString())
 
-                if (!pokemonMasterCounts[i]) pokemonMasterCounts.push(0)
-                if (!pokemonGrandmasterCounts[i])
-                    pokemonGrandmasterCounts.push(0)
-
-                for (const [, cardInfo] of Object.entries(pokemonCards)) {
-                    if (cardInfo.dexId.includes(pokedexValue)) {
-                        // Add the values to the arrays
-                        if (!pokemonGrandmasterCounts[i]) {
-                            pokemonGrandmasterCounts[i] = 0
-                        }
-
-                        // Add the variant count, defaulting to 1 if empty
-                        const variantCount = cardInfo.variants?.length ?? 0
-                        pokemonGrandmasterCounts[i] +=
-                            variantCount > 0 ? Number(variantCount) : 1
-
-                        if (!pokemonMasterCounts[i]) {
-                            pokemonMasterCounts[i] = 0
-                        }
-
-                        // Add the variant count, defaulting to 1 if empty
-
-                        pokemonMasterCounts[i] += 1
+                    if (!pokemonGrandmasterSet[dexId])
+                        pokemonGrandmasterSet[dexId] = {}
+                    if (!pokemonGrandmasterSet[dexId][pokemonCard.id.toString()]) {
+                        pokemonGrandmasterSet[dexId][pokemonCard.id.toString()] =
+                            new Set<string>()
                     }
+                    pokemonCard.variants.forEach(variant => {
+                        pokemonGrandmasterSet[dexId][pokemonCard.id.toString()].add(
+                            variant
+                        )
+                    })
                 }
+
+
             }
         } catch (err) {
             console.error('Fetch error for pokemon cards:', err)
@@ -135,7 +146,7 @@ const fetchPokemonSets = async (): Promise<void> => {
             const response = await fetch('/api/pokemon-set')
             if (!response.ok)
                 throw new Error(`Failed to fetch /api/pokemon-set`)
-            const sets: Set[] = await response.json()
+            const sets: DatabaseSet[] = await response.json()
 
             for (const pokemonSet of sets) {
                 pokemonSets[pokemonSet.id.toString()] = {
@@ -167,14 +178,14 @@ type PokemonCardsContextType = {
     grandmasterSetCount: (setId: string) => Promise<number>
     pokemonMasterSetCount: (pokedexId: number) => Promise<number>
     pokemonGrandmasterSetCount: (pokedexId: number) => Promise<number>
+    getAllCards: (filters?: GetPokemonCardsFilters) => Promise<CardData[]>
 }
 
 const PokemonCardsContext = createContext<PokemonCardsContextType | undefined>(
     undefined
 )
 
-/* ---------------- PROVIDER ---------------- */
-
+// PROVIDER
 export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     /**
      * Retrieves a Pokemon card from the cache or fetches it if not available
@@ -252,42 +263,111 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     }
 
     /**
-     * Gets the total cards for the master set
+     * Get the master set cards for a user based on setId
+     * @param userId
+     * @param setId
+     * @returns
+     */
+    const masterSet = async (
+        setId: string
+    ): Promise<string[]> => {
+        if (Object.keys(masterSetCards).length === 0)
+            await fetchPokemonCards()
+        return Array.from(masterSetCards[setId] ?? new Set<string>())
+    }
+
+    /**
+     * Gets the total cards for the master set based on setId
+     * @param userId
      * @param setId
      * @returns
      */
     const masterSetCount = async (
         setId: string
-    ): Promise<number | undefined> => {
-        const setInfo = await getSetInformation(setId)
-        return setInfo?.total
+    ): Promise<number> => {
+        return masterSet(setId).then((cards) => cards.length)
     }
 
     /**
-     * Calculates the grandmaster set count based on the variants of cards in the set
+     * Calculates the grandmaster set count based on the setId
+     * WILL NEED TO REFACTOR FOR THE SHOW ALL CARDS PAGE
+     * @param userId
      * @param setId
      * @returns
      */
-    const grandmasterSetCount = async (setId: string): Promise<number> => {
-        if (Object.keys(grandmasterSetCounts).length === 0)
+    const grandmasterSetCount = async (
+        setId: string
+    ): Promise<number> => {
+        if (Object.keys(grandmasterSetCards).length === 0)
             await fetchPokemonCards()
-        return grandmasterSetCounts[setId] ?? 0
+
+        const setData = grandmasterSetCards[setId]
+        if (!setData) return 0
+
+        let count = 0
+
+        for (const cardId in setData) {
+            count += setData[cardId].size
+        }
+
+        return count
     }
 
+    /**
+     * Get the master set cards for a user based on pokemonId
+     * @param userId
+     * @param pokemonId
+     * @returns
+     */
+    const pokemonMasterSet = async (
+        pokedexId: number
+    ): Promise<string[]> => {
+        if (Object.keys(pokemonMasterSetCards).length === 0)
+            await fetchPokemonCards()
+
+        return Array.from(pokemonMasterSetCards[pokedexId] || new Set<string>())
+    }
+
+    /**
+     * Gets the total cards for the master set based on pokemonId
+     * @param pokemonId
+     * @returns
+     */
     const pokemonMasterSetCount = async (
         pokedexId: number
     ): Promise<number> => {
-        if (pokemonMasterCounts.length === 0) await fetchPokemonCards()
-        return pokemonMasterCounts[pokedexId - 1] ?? 0
+        return pokemonMasterSet(pokedexId).then((cards) => cards.length)
     }
 
+    /**
+     * Calculates the grandmaster set count based on the pokemonId
+     * WILL NEED TO REFACTOR FOR THE SHOW ALL CARDS PAGE
+     * @param userId
+     * @param pokemonId
+     * @returns
+     */
     const pokemonGrandmasterSetCount = async (
         pokedexId: number
     ): Promise<number> => {
-        if (pokemonGrandmasterCounts.length === 0) await fetchPokemonCards()
-        return pokemonGrandmasterCounts[pokedexId - 1] ?? 0
+        if (Object.keys(pokemonGrandmasterSet).length === 0)
+            await fetchPokemonCards()
+
+        const pokeData = pokemonGrandmasterSet[pokedexId]
+        if (!pokeData) return 0
+
+        let count = 0
+
+        for (const cardId in pokeData) {
+            count += pokeData[cardId].size
+        }
+
+        return count
     }
 
+    const getAllCards = async (filters?: GetPokemonCardsFilters): Promise<CardData[]> => {
+        if (allCards.length !== 0) return allCards
+        return getPokemonCards(filters)
+    }
 
     return (
         <PokemonCardsContext.Provider
@@ -300,7 +380,8 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
                 masterSetCount,
                 grandmasterSetCount,
                 pokemonMasterSetCount,
-                pokemonGrandmasterSetCount
+                pokemonGrandmasterSetCount,
+                getAllCards
             }}
         >
             {children}
@@ -308,8 +389,7 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     )
 }
 
-/* ---------------- HOOK ---------------- */
-
+// HOOK
 export const usePokemonCards = () => {
     const context = useContext(PokemonCardsContext)
 

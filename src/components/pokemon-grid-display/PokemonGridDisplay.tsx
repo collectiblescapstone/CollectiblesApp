@@ -22,7 +22,6 @@ import PokemonPolaroidLoading from '@/components/pokemon-cards/pokemon-polaroid/
 import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet'
 import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSetLoading'
 import { CardSearch } from '@/components/card-filter/CardSearch'
-import { getSetGroups } from '@/utils/pokemonSet'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -35,6 +34,7 @@ import { FiltersProvider } from '@/hooks/useFilters'
 import { PokemonSetType } from '@/types/pokemon-grid'
 
 // Utils
+import { getSetGroups } from '@/utils/pokemonSet'
 import { POKEMONGEN, ALL_POKEMON, getPokemonName } from '@/utils/pokedex'
 
 const NUM_ITEMS_PER_PAGE = 24
@@ -44,7 +44,6 @@ interface PokemonGridDisplayProps {
 }
 
 const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
-    // EDIT THIS LINE FOR THE PAGE TYPE (WISHLIST)
     const nextPage =
         originalPage === 'pokemon-grid'
             ? '/filter-cards'

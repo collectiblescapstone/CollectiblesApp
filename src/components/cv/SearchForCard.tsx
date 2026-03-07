@@ -8,10 +8,19 @@ import React, {
     type KeyboardEvent
 } from 'react'
 import { Flex, Image, Input } from '@chakra-ui/react'
-import { CardSearcher } from '@/utils/identification/cardSearch'
+
+// Context
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
+
+// Child Components
 import Divider from '@/components/profiles/Divider'
-import { type CardData } from '@/types/pokemon-card'
-import { getPokemonCards } from '@/utils/pokemonCard'
+
+// Utils
+import { CardSearcher } from '@/utils/identification/cardSearch'
+
+// Types
+import type { CardData } from '@/types/pokemon-card'
+
 
 export const SearchForCard: React.FC = () => {
     const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null)
@@ -23,6 +32,9 @@ export const SearchForCard: React.FC = () => {
             card?: CardData
         }[]
     >()
+
+    // Context
+    const { getAllCards } = usePokemonCards()
 
     useEffect(() => {
         const init = async () => {
@@ -44,7 +56,7 @@ export const SearchForCard: React.FC = () => {
                     .search(evt.currentTarget.value)
                     .then(async (data) => {
                         const ids = data.map(({ id }) => id)
-                        const cards = await getPokemonCards({ ids })
+                        const cards = await getAllCards({ ids })
 
                         setMatches(
                             data.map((match) => ({
@@ -55,7 +67,7 @@ export const SearchForCard: React.FC = () => {
                     })
             }
         },
-        [csReady]
+        [csReady, getAllCards]
     )
 
     return (

@@ -4,7 +4,16 @@
 import { useEffect, useState } from 'react'
 
 // Chakra UI
-import { Box, Button, HStack, VStack } from '@chakra-ui/react'
+import {
+    Box,
+    Button,
+    CloseButton,
+    Dialog,
+    HStack,
+    Portal,
+    useDisclosure,
+    VStack
+} from '@chakra-ui/react'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -50,11 +59,12 @@ const PokemonCardInfo = ({
 
     const [isForShowcase, setIsForShowcase] = useState<boolean>(false)
 
-    const deleteCardHandler = () => {
+    const { open, onOpen, onClose } = useDisclosure()
+
+    const deleteCardHandler = async () => {
         if (!session) return
-        if (window.confirm('Are you sure you want to delete this card?')) {
-            // Call API to delete card
-            fetch('/api/collection/delete', {
+        try {
+            const response = await fetch('/api/collection/delete', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,19 +72,15 @@ const PokemonCardInfo = ({
                 },
                 body: JSON.stringify({ entryId })
             })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log('Delete response:', data)
-                    refreshPokemonCards(session.user.id)
-                    // Notify parent component of successful deletion
-                    if (onDelete) {
-                        onDelete(entryId)
-                    }
-                })
-                .catch((error) => {
-                    console.error('Error deleting card:', error)
-                    // Optionally, you can add some error feedback to the user here
-                })
+            const data = await response.json()
+            console.log('Delete response:', data)
+            refreshPokemonCards(session.user.id)
+            if (onDelete) {
+                onDelete(entryId)
+            }
+            onClose()
+        } catch (error) {
+            console.error('Error deleting card:', error)
         }
     }
 
@@ -147,16 +153,59 @@ const PokemonCardInfo = ({
                                 <FaPencilAlt size={24} fill="white" />
                             </Button>
                         ) : (
-                            <Button
-                                height="50px"
-                                width="50px"
-                                background="red"
-                                onClick={() => {
-                                    deleteCardHandler()
-                                }}
-                            >
-                                <FaRegTrashAlt size={24} fill="white" />
-                            </Button>
+                            <Dialog.Root>
+                                <Dialog.Trigger asChild>
+                                    <Button
+                                        height="50px"
+                                        width="50px"
+                                        background="red"
+                                        onClick={onOpen}
+                                    >
+                                        <FaRegTrashAlt size={24} fill="white" />
+                                    </Button>
+                                </Dialog.Trigger>
+                                <Portal>
+                                    <Dialog.Backdrop />
+                                    <Dialog.Positioner
+                                        display="flex"
+                                        alignItems="center"
+                                        justifyContent="center"
+                                    >
+                                        <Dialog.Content>
+                                            <Dialog.Header>
+                                                <Dialog.Title>
+                                                    Confirm deletion?
+                                                </Dialog.Title>
+                                            </Dialog.Header>
+                                            <Dialog.Body>
+                                                <p>
+                                                    Are you sure you want to
+                                                    delete this card? This
+                                                    action cannot be undone.
+                                                </p>
+                                            </Dialog.Body>
+                                            <Dialog.Footer>
+                                                <Dialog.ActionTrigger asChild>
+                                                    <Button variant="outline">
+                                                        Cancel
+                                                    </Button>
+                                                </Dialog.ActionTrigger>
+                                                <Button
+                                                    onClick={async () => {
+                                                        deleteCardHandler()
+                                                    }}
+                                                    background="red"
+                                                >
+                                                    Delete Card
+                                                </Button>
+                                            </Dialog.Footer>
+                                            <Dialog.CloseTrigger asChild>
+                                                <CloseButton size="sm" />
+                                            </Dialog.CloseTrigger>
+                                        </Dialog.Content>
+                                    </Dialog.Positioner>
+                                </Portal>
+                            </Dialog.Root>
                         )}
                     </HStack>
                 </Box>

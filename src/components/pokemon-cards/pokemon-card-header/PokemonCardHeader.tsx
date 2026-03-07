@@ -5,16 +5,16 @@ import { Box, Image, HStack, VStack, Spinner, Text } from '@chakra-ui/react'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
 
 // Icons
 import { FaPaintBrush, FaTools } from 'react-icons/fa'
 
 // Types
-import type { PokemonCard } from '@/utils/pokemonCard'
+import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Utils
 import { getSetName, getSetInfo } from '@/utils/pokemonSet'
-import { getCardInformation } from '@/utils/pokemonCard'
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { getRarityImage } from '@/utils/cardInfo/raritytoImage'
 
@@ -28,6 +28,9 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
     const [setCount, setSetCount] = useState<number>(0)
 
     const [cardInfo, setCardInfo] = useState<PokemonCard | null>(null)
+
+    // Context
+    const { getCardInformation } = usePokemonCards()
 
     useEffect(() => {
         const fetchCardInfo = async () => {
@@ -44,7 +47,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
             }
         }
         fetchCardInfo()
-    }, [cardId])
+    }, [cardId, getCardInformation])
 
     if (loading || authLoading || !session || !cardInfo)
         return (

@@ -250,7 +250,7 @@ const TradePage = () => {
                                 width="100%"
                             >
                                 <HStack justifyContent="space-between">
-                                    <Slider.Label w="50%">
+                                    <Slider.Label w="40%" textAlign="left">
                                         Range: {sliderValue} km
                                     </Slider.Label>
 

@@ -227,7 +227,9 @@ const EditCardPage = () => {
             if (!active || !res.data?.data) return
 
             const entry = res.data.data
-            console.log('Loading entry data:', entry)
+            if (process.env.NODE_ENV !== 'production') {
+                console.log('Loading entry data:', entry)
+            }
 
             // Set state for showcase and markedForTrade
             setShowcase(entry.showcase ?? false)

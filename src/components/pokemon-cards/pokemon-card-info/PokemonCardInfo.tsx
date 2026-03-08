@@ -7,17 +7,7 @@ import { useEffect, useState } from 'react'
 import { CapacitorHttp } from '@capacitor/core'
 
 // Chakra UI
-import {
-    Box,
-    Button,
-    HStack,
-    Text,
-    useDisclosure,
-    VStack
-} from '@chakra-ui/react'
-
-// Next.js
-import { useRouter } from 'next/navigation'
+import { Box, Button, HStack, Text, VStack } from '@chakra-ui/react'
 
 // Child Components
 import PopupUI from '@/components/ui/PopupUI'
@@ -58,7 +48,6 @@ const PokemonCardInfo = ({
 }: PokemonCardInfoProps) => {
     // Authentification
     const { session } = useAuth()
-    const router = useRouter()
 
     const [cardInfo, setCardInfo] = useState<Entry | null>(null)
 
@@ -67,8 +56,6 @@ const PokemonCardInfo = ({
     const [isForTrade, setIsForTrade] = useState<boolean>(false)
 
     const [isForShowcase, setIsForShowcase] = useState<boolean>(false)
-
-    const { onClose } = useDisclosure()
 
     const deleteCardHandler = async () => {
         if (!session) return

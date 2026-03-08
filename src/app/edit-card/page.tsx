@@ -415,8 +415,6 @@ const EditCardPage = () => {
                         size="sm"
                         variant="outline"
                         flex="1"
-                        // backgroundColor="brand.marigold"
-                        // color="brand.turtoise"
                         onClick={() => {
                             const nextShowcase = !showcase
                             setShowcase(nextShowcase)

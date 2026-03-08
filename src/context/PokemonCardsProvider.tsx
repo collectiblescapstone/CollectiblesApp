@@ -145,8 +145,7 @@ const fetchPokemonSets = async (): Promise<void> => {
     }
 }
 
-/* ---------------- CONTEXT ---------------- */
-
+// CONTEXT
 type PokemonCardsContextType = {
     getCardInformation: (id: string) => Promise<PokemonCard | undefined>
     getCardsBySetId: (setId: string) => Promise<Record<string, PokemonCard>>
@@ -158,6 +157,8 @@ type PokemonCardsContextType = {
     pokemonMasterSetCount: (pokedexId: number) => Promise<number>
     pokemonGrandmasterSetCount: (pokedexId: number) => Promise<number>
     getAllCards: (filters?: GetPokemonCardsFilters) => Promise<CardData[]>
+    getSetName: (id: string) => Promise<string | undefined>
+    getSetInfo: (id: string) => Promise<PokemonSet | undefined>
 }
 
 const PokemonCardsContext = createContext<PokemonCardsContextType | undefined>(
@@ -175,7 +176,6 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
         id: string
     ): Promise<PokemonCard | undefined> => {
         if (Object.keys(pokemonCards).length === 0) await fetchPokemonCards()
-        // console.log('getCardInformation: ', pokemonCards[id].name)
         return pokemonCards[id]
     }
 
@@ -344,6 +344,16 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
         return getPokemonCards(filters)
     }
 
+    const getSetName = async (id: string): Promise<string | undefined> => {
+        if (Object.keys(pokemonSets).length === 0) await fetchPokemonSets()
+        return pokemonSets[id]?.name
+    }
+
+    const getSetInfo = async (id: string): Promise<PokemonSet | undefined> => {
+        if (Object.keys(pokemonSets).length === 0) await fetchPokemonSets()
+        return pokemonSets[id]
+    }
+
     return (
         <PokemonCardsContext.Provider
             value={{
@@ -356,7 +366,9 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
                 grandmasterSetCount,
                 pokemonMasterSetCount,
                 pokemonGrandmasterSetCount,
-                getAllCards
+                getAllCards,
+                getSetName,
+                getSetInfo
             }}
         >
             {children}

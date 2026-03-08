@@ -1,25 +1,44 @@
 'use client'
 
-import React, { useMemo, useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+// Capacitor
+import { CapacitorHttp } from '@capacitor/core'
+
+// Chakra
 import {
     Button,
     Field,
-    Stack,
     TagsInput,
-    Image,
     Select,
     Portal,
     Box,
     createListCollection,
     Listbox,
     Spinner,
-    ListCollection
+    ListCollection,
+    VStack,
+    HStack,
+    Text
 } from '@chakra-ui/react'
-import { zodResolver } from '@hookform/resolvers/zod'
+
+// Next.js
+import { useRouter } from 'next/navigation'
+
+// React
+import React, { useMemo, useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { FaEye, FaEyeSlash, FaSlash } from 'react-icons/fa'
+import { IoSwapVertical } from 'react-icons/io5'
+
+// Next.js
+import { useSearchParams } from 'next/navigation'
+
+// Zod
+import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { CapacitorHttp } from '@capacitor/core'
+
+// Child Components
+import PopupUI from '@/components/ui/PopupUI'
+import PokemonCardHeader from '@/components/pokemon-cards/pokemon-card-header/PokemonCardHeader'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -37,8 +56,8 @@ import {
 } from '@/utils/cardInfo/cardGrading'
 import { capitalizeEachWord } from '@/utils/capitalize'
 import { refreshPokemonCards } from '@/utils/userPokemonCard'
-import { getSetName } from '@/utils/pokemonSet'
 
+// Form value types
 interface FormValues {
     CardName: string
     CardSet: string
@@ -47,17 +66,9 @@ interface FormValues {
     Condition?: string
     FoilPattern?: string
     Tags?: string[]
+    Showcase: boolean
+    MarkedForTrade: boolean
 }
-
-const formSchema = z.object({
-    CardName: z.string().min(1, 'Item name is required'),
-    CardSet: z.string().min(1, 'Item set is required'),
-    CardGrade: z.array(z.string()).min(1, 'Card Grade is required'),
-    CardGradeDetail: z.array(z.string()).optional(),
-    Condition: z.string().optional(),
-    FoilPattern: z.string().optional(),
-    Tags: z.array(z.string()).optional()
-})
 
 const grades = createListCollection({
     items: gradingCompanies
@@ -72,30 +83,67 @@ const conditions = createListCollection({
  * @returns
  */
 const EditCardPage = () => {
+    // Use Effect for getting the number of cards that are on showcase
+    const [showcaseCount, setShowcaseCount] = useState(0)
+    const [showcaseCardIds, setShowcaseCardIds] = useState<string[]>([])
+
+    // Form validation schema
+    const formSchema = z.object({
+        CardName: z.string().min(1, 'Item name is required'),
+        CardSet: z.string().min(1, 'Item set is required'),
+        CardGrade: z.array(z.string()).min(1, 'Card Grade is required'),
+        CardGradeDetail: z.array(z.string()).optional(),
+        Condition: z.string().optional(),
+        FoilPattern: z.string().optional(),
+        Tags: z.array(z.string()).optional(),
+        Showcase: z.boolean(), // Ensure it's a boolean
+        MarkedForTrade: z.boolean()
+    })
     type SelectPayload = { value?: string | string[] }
     const { getCardInformation } = usePokemonCards()
 
+    // Error display message for if the too many cards on showcase
+    const [showcaseError, setShowcaseError] = useState(false)
+
     const { session, loading } = useAuth()
     const searchParams = useSearchParams()
+    const router = useRouter()
+
+    // Showcase and Mark for Trade booleans
+    const [showcase, setShowcase] = useState(false)
+    const [markedForTrade, setMarkedForTrade] = useState(false)
+
+    const id = searchParams.get('cardId') ?? ''
+    const entryId = searchParams.get('entryId') ?? ''
 
     // Card information
-    const [cardId, setCardId] = useState<string>('')
     const [cardInfo, setCardInfo] = useState<PokemonCard | undefined>(undefined)
     const [cardFoils, setCardFoils] =
         useState<ListCollection<{ label: string; value: string }>>()
-    const [cardSet, setCardSet] = useState<string>('')
 
     useEffect(() => {
-        const id = searchParams.get('cardId') ?? ''
-        setCardId(id)
-
         let active = true
+        if (!session) return
 
         const fetchCardInfo = async () => {
             const info = await getCardInformation(id)
-            if (!active) return
+            if (!active || !info) return
 
             setCardInfo(info)
+
+            // Get the number of cards that are on showcase
+            const res = await CapacitorHttp.post({
+                url: `${baseUrl}/api/collection/showcase`,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                }
+            })
+            setShowcaseCount(res.data.showcaseCount)
+            setShowcaseCardIds(
+                res.data.data.map((card: { id: string }) => card.id)
+            )
 
             // Build holo patterns
             const items = info?.variants
@@ -119,45 +167,32 @@ const EditCardPage = () => {
         return () => {
             active = false
         }
-    }, [searchParams, getCardInformation])
-
-    useEffect(() => {
-        let active = true
-
-        const resolveSetName = async () => {
-            const name = await getSetName(cardInfo?.setId.toLowerCase() ?? '')
-            if (!active) return
-            setCardSet(name ?? 'N/A')
-        }
-
-        resolveSetName()
-
-        return () => {
-            active = false
-        }
-    }, [cardInfo])
+    }, [id, getCardInformation, session])
 
     const {
         handleSubmit,
         control,
         reset,
+        setValue,
         formState: { errors }
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            CardName: '',
-            CardSet: '',
+            CardName: cardInfo?.name ?? '',
+            CardSet: cardInfo?.setId ?? '',
             CardGrade: ['ungraded'],
             CardGradeDetail: [],
             Condition: undefined,
             FoilPattern: undefined,
+            Showcase: showcase,
+            MarkedForTrade: markedForTrade,
             Tags: []
         }
     })
 
-    // Reset form when cardInfo loads
+    // Reset form when cardInfo loads (only if not editing an existing entry)
     useEffect(() => {
-        if (cardInfo) {
+        if (cardInfo && !entryId) {
             reset({
                 CardName: cardInfo.name ?? '',
                 CardSet: cardInfo.setId ?? '',
@@ -165,20 +200,110 @@ const EditCardPage = () => {
                 CardGradeDetail: [],
                 Condition: undefined,
                 FoilPattern: undefined,
+                Showcase: false,
+                MarkedForTrade: false,
                 Tags: []
             })
         }
-    }, [cardInfo, reset])
+    }, [cardInfo, reset, entryId])
+
+    // Load existing entry data when editing
+    useEffect(() => {
+        if (!entryId || !session) return
+
+        let active = true
+
+        const loadEntryData = async () => {
+            const res = await CapacitorHttp.post({
+                url: `${baseUrl}/api/collection/read`,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                },
+                data: JSON.stringify({ cardId: entryId })
+            })
+
+            if (!active || !res.data?.data) return
+
+            const entry = res.data.data
+            if (process.env.NODE_ENV !== 'production') {
+                console.log('Loading entry data:', entry)
+            }
+
+            // Set state for showcase and markedForTrade
+            setShowcase(entry.showcase ?? false)
+            setMarkedForTrade(entry.forTrade ?? false)
+
+            // Extract and set the grade to control UI visibility
+            const loadedGrade = entry.grade?.toLowerCase() ?? 'ungraded'
+            setSelectedGrade(loadedGrade)
+
+            // Reset form with loaded data
+            reset({
+                CardName: cardInfo?.name ?? '',
+                CardSet: cardInfo?.setId ?? '',
+                CardGrade: [loadedGrade],
+                CardGradeDetail: entry.gradeLevel ? [entry.gradeLevel] : [],
+                Condition: entry.condition ?? undefined,
+                FoilPattern: entry.variant ?? undefined,
+                Showcase: entry.showcase ?? false,
+                MarkedForTrade: entry.forTrade ?? false,
+                Tags: entry.tags ?? []
+            })
+        }
+
+        loadEntryData()
+
+        return () => {
+            active = false
+        }
+    }, [entryId, session, reset, cardInfo])
+
+    // Keep FoilPattern initialized to the first available item (only for new cards).
+    useEffect(() => {
+        if (entryId) return // Don't auto-initialize when editing
+
+        const firstFoil = cardFoils?.items?.[0]?.value
+        if (firstFoil) {
+            setValue('FoilPattern', firstFoil, { shouldDirty: false })
+        }
+    }, [cardFoils, setValue, entryId])
 
     // keep track of the currently selected top-level grade so we can
     // enable/disable and populate the second select accordingly
     const [selectedGrade, setSelectedGrade] = useState<string>('ungraded')
+
+    // Keep Condition initialized to the first available item when card is ungraded (only for new cards).
+    useEffect(() => {
+        if (selectedGrade !== 'ungraded' || entryId) return
+
+        const firstCondition = conditions.items?.[0]?.value
+        if (firstCondition) {
+            setValue('Condition', firstCondition, { shouldDirty: false })
+        }
+    }, [selectedGrade, setValue, entryId])
 
     // memoize the second-select collection items for performance
     const detailOptions = useMemo(
         () => gradeDetailsMap[selectedGrade] ?? [],
         [selectedGrade]
     )
+
+    // Keep CardGradeDetail initialized to the first available number when graded (only for new cards).
+    useEffect(() => {
+        if (selectedGrade === 'ungraded' || entryId) {
+            if (selectedGrade === 'ungraded') {
+                setValue('CardGradeDetail', [], { shouldDirty: false })
+            }
+            return
+        }
+
+        const firstDetail = detailOptions[0]?.value
+        if (firstDetail) {
+            setValue('CardGradeDetail', [firstDetail], { shouldDirty: false })
+        }
+    }, [selectedGrade, detailOptions, setValue, entryId])
 
     const onSubmit = handleSubmit(async (data) => {
         try {
@@ -190,11 +315,27 @@ const EditCardPage = () => {
                 grade: data.CardGrade?.[0] ?? 'Ungraded',
                 gradeLevel: data.CardGradeDetail?.[0] ?? undefined,
                 tags: data.Tags ?? [],
-                cardId: cardId || undefined
+                cardId: id || undefined,
+                entryId: entryId || undefined,
+                showcase: showcase ?? false,
+                markedForTrade: markedForTrade ?? false
             }
 
+            // PREVENTS ADDING ADDITIONAL SHOWCASE CARDS BEYOND THE LIMIT OF 3
+            if (
+                showcase &&
+                showcaseCount >= 3 &&
+                !showcaseCardIds.includes(entryId)
+            ) {
+                setShowcaseError(true)
+                return
+            }
+            setShowcaseError(false)
+            const url = entryId
+                ? `${baseUrl}/api/collection/edit`
+                : `${baseUrl}/api/collection/save`
             const res = await CapacitorHttp.post({
-                url: `${baseUrl}/api/collection/save`,
+                url: url,
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -209,352 +350,314 @@ const EditCardPage = () => {
                 return
             }
 
-            alert('Card saved to your collection')
             // Refresh the user data
             refreshPokemonCards(session.user.id)
+
+            const closeAndRedirect = () => {
+                PopupUI.close('save-confirmation')
+                // Redirect to the userCards page if coming from there, otherwise go to userCards
+                // PREVENTS DOUBLE BACK BUTTON ISSUES!
+                const referrer = document.referrer
+                if (referrer.includes('/user-cards')) {
+                    router.back()
+                } else {
+                    router.replace('/user-cards?cardId=' + id)
+                }
+            }
+
+            // Show success popup - moved inside the success block
+            PopupUI.open('save-confirmation', {
+                title: 'Card Saved!',
+                content: (
+                    <VStack gap={2}>
+                        <Text>
+                            Your card has been saved to your collection!
+                        </Text>
+                        <HStack gap={2} width="100%">
+                            <Button
+                                onClick={closeAndRedirect}
+                                background="black"
+                            >
+                                OK
+                            </Button>
+                        </HStack>
+                    </VStack>
+                ),
+                onClickClose: closeAndRedirect
+            })
         } catch (err) {
             console.error('Unexpected error saving card', err)
             alert('Unexpected error saving card')
         }
     })
 
-    if (!session?.user?.id) return
-
-    if (loading || !session) {
+    if (loading || !session)
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />
             </Box>
         )
-    }
 
     return (
         <form onSubmit={onSubmit}>
             {/* Keep the card image to the left at all screen sizes and the form on the right */}
-            <Stack
+            <VStack
                 direction="row"
                 gap="6"
                 align="flex-start"
                 w="100%"
                 flexWrap="nowrap"
-                p={2}
+                padding={2}
             >
-                {/* Left column: card image (playing-card shape) with buttons underneath */}
-                <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                    gap={3}
-                >
-                    {/* Playing-card shaped preview */}
-                    <Box
-                        bg="tomato"
-                        width="170px"
-                        borderRadius="12px"
-                        boxShadow="md"
-                        color="white"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        style={{
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center'
+                <PokemonCardHeader cardId={id || ''} />
+                <HStack gap={1} width="100%">
+                    <Button
+                        size="sm"
+                        variant="outline"
+                        flex="1"
+                        onClick={() => {
+                            const nextShowcase = !showcase
+                            setShowcase(nextShowcase)
+                            if (!nextShowcase) {
+                                setShowcaseError(false)
+                            }
                         }}
                     >
-                        <Image
-                            src={
-                                cardInfo?.image_url !== 'undefined/low.png' &&
-                                cardInfo?.image_url !== ''
-                                    ? cardInfo?.image_url
-                                    : '/Images/PokemonCardBack.jpg'
-                            }
-                            alt={cardInfo?.name ?? 'Card Image'}
-                            objectFit="contain"
-                            width="100%"
-                        />
-                    </Box>
-
-                    {/* Buttons under the card image for quick actions */}
-                    <Stack direction="column" gap={2} width="170px">
-                        <Button size="sm" variant="outline">
-                            Add to Showcase
-                        </Button>
-                        <Button size="sm" variant="outline">
-                            Mark For Trade
-                        </Button>
-                    </Stack>
-                </Box>
-
-                {/* Right: form fields stacked vertically; take remaining width */}
-                <Stack
-                    as="div"
-                    gap="4"
-                    align="flex-start"
-                    flexGrow={1}
-                    minWidth={0}
-                >
-                    <Box fontSize="sm" fontWeight="bold">
-                        Card name
-                    </Box>
-                    <Box>{cardInfo?.name || 'N/A'}</Box>
-
-                    <Box fontSize="sm" fontWeight="bold">
-                        Card set
-                    </Box>
-                    {/* getSetName(cardInfo?.setId || '') */}
-                    <Box>{cardSet}</Box>
-
-                    <Stack
-                        direction="row"
-                        gap="3"
-                        align="flex-start"
-                        wrap="nowrap"
-                        width="-webkit-fill-available"
+                        {showcase ? <FaEyeSlash /> : <FaEye />}
+                        <Text ml={2}>{showcase ? "Don't" : ''} Showcase</Text>
+                    </Button>
+                    <Button
+                        size="sm"
+                        variant="outline"
+                        flex="1"
+                        onClick={() => setMarkedForTrade(!markedForTrade)}
                     >
-                        <Field.Root invalid={!!errors.CardGrade}>
-                            <Field.Label>Grading</Field.Label>
-                            <Controller
-                                control={control}
-                                name="CardGrade"
-                                render={({ field }) => {
-                                    // single selected value derived from the form's array value
-                                    const selected = Array.isArray(field.value)
-                                        ? (field.value[0] ?? 'ungraded')
-                                        : (field.value ?? 'ungraded')
-
-                                    const handleChange = (
-                                        payload: SelectPayload
-                                    ) => {
-                                        const raw = payload?.value
-                                        const arr =
-                                            raw === undefined
-                                                ? []
-                                                : Array.isArray(raw)
-                                                  ? raw
-                                                  : [raw]
-                                        field.onChange(arr)
-                                        setSelectedGrade(arr[0] ?? 'ungraded')
-                                    }
-
-                                    return (
-                                        <Select.Root
-                                            name={field.name}
-                                            value={[selected]}
-                                            onValueChange={handleChange}
-                                            onInteractOutside={field.onBlur}
-                                            collection={grades}
-                                        >
-                                            <Select.HiddenSelect />
-                                            <Select.Control
-                                                bg="white"
-                                                color="black"
-                                                style={{
-                                                    boxSizing: 'border-box',
-                                                    fontSize: 16
-                                                }}
-                                            >
-                                                <Select.Trigger>
-                                                    <Select.ValueText
-                                                        style={{
-                                                            maxWidth: 120,
-                                                            whiteSpace:
-                                                                'nowrap',
-                                                            overflow: 'hidden',
-                                                            textOverflow:
-                                                                'ellipsis'
-                                                        }}
-                                                        placeholder="Select card grade"
-                                                    />
-                                                </Select.Trigger>
-                                                <Select.IndicatorGroup>
-                                                    <Select.Indicator />
-                                                </Select.IndicatorGroup>
-                                            </Select.Control>
-                                            <Portal>
-                                                <Select.Positioner>
-                                                    <Select.Content
-                                                        style={{
-                                                            maxWidth: '100%',
-                                                            boxSizing:
-                                                                'border-box'
-                                                        }}
-                                                    >
-                                                        {grades.items.map(
-                                                            (grade) => (
-                                                                <Select.Item
-                                                                    item={grade}
-                                                                    key={
-                                                                        grade.value
-                                                                    }
-                                                                    _hover={{
-                                                                        bg: 'gray.100'
-                                                                    }}
-                                                                    _selected={{
-                                                                        bg: 'black',
-                                                                        color: 'white'
-                                                                    }}
-                                                                >
-                                                                    {
-                                                                        grade.label
-                                                                    }
-                                                                    <Select.ItemIndicator />
-                                                                </Select.Item>
-                                                            )
-                                                        )}
-                                                    </Select.Content>
-                                                </Select.Positioner>
-                                            </Portal>
-                                        </Select.Root>
-                                    )
-                                }}
-                            />
-                            <Field.ErrorText>
-                                {errors.CardGrade?.message}
-                            </Field.ErrorText>
-                        </Field.Root>
-
-                        {/* Second select: Grade Detail - disabled when ungraded */}
-                        <Field.Root
-                            invalid={!!errors.CardGradeDetail}
-                            width="50px"
+                        {markedForTrade ? <FaSlash /> : <IoSwapVertical />}
+                        <Text ml={2}>
+                            {markedForTrade ? 'Unmark' : 'Mark for'} Trade
+                        </Text>
+                    </Button>
+                </HStack>
+                {/*ADD ERROR MESSAGE*/}
+                {showcaseError && (
+                    <Text color="red">
+                        You can only have 3 cards showcased at a time.
+                    </Text>
+                )}
+                <Controller
+                    name="FoilPattern"
+                    control={control}
+                    render={({ field }) => (
+                        <Listbox.Root
+                            collection={
+                                cardFoils ||
+                                createListCollection<{
+                                    label: string
+                                    value: string
+                                }>({ items: [] })
+                            }
+                            deselectable
+                            value={
+                                field.value
+                                    ? [field.value]
+                                    : cardFoils?.items?.[0]?.value
+                                      ? [cardFoils.items[0].value]
+                                      : []
+                            }
+                            onValueChange={({ value }) =>
+                                field.onChange(value[0] || '')
+                            }
                         >
-                            <Field.Label>Number</Field.Label>
-                            <Controller
-                                control={control}
-                                name="CardGradeDetail"
-                                render={({ field }) => {
-                                    const selected = Array.isArray(field.value)
-                                        ? (field.value[0] ?? '')
-                                        : (field.value ?? '')
-                                    const disabled =
-                                        selectedGrade === 'ungraded' ||
-                                        detailOptions.length === 0
+                            <Listbox.Label>Card Foil/Pattern</Listbox.Label>
+                            <Listbox.Content>
+                                {cardFoils?.items.map((cardFoil) => (
+                                    <Listbox.Item
+                                        item={cardFoil}
+                                        key={cardFoil.value}
+                                    >
+                                        <Listbox.ItemText>
+                                            {cardFoil.label}
+                                        </Listbox.ItemText>
+                                        <Listbox.ItemIndicator />
+                                    </Listbox.Item>
+                                ))}
+                            </Listbox.Content>
+                        </Listbox.Root>
+                    )}
+                />
+                <Field.Root invalid={!!errors.CardGrade}>
+                    <Field.Label>Grading</Field.Label>
+                    <Controller
+                        control={control}
+                        name="CardGrade"
+                        render={({ field }) => {
+                            // single selected value derived from the form's array value
+                            const selected = Array.isArray(field.value)
+                                ? (field.value[0] ?? 'ungraded')
+                                : (field.value ?? 'ungraded')
 
-                                    if (disabled) {
-                                        return (
-                                            <select
-                                                name={field.name}
-                                                value={selected}
-                                                onChange={(e) =>
-                                                    field.onChange([
-                                                        e.target.value
-                                                    ])
-                                                }
-                                                onBlur={field.onBlur}
-                                                disabled
+                            const handleChange = (payload: SelectPayload) => {
+                                const raw = payload?.value
+                                const arr =
+                                    raw === undefined
+                                        ? []
+                                        : Array.isArray(raw)
+                                          ? raw
+                                          : [raw]
+                                field.onChange(arr)
+                                setSelectedGrade(arr[0] ?? 'ungraded')
+                            }
+
+                            return (
+                                <Select.Root
+                                    name={field.name}
+                                    value={[selected]}
+                                    onValueChange={handleChange}
+                                    onInteractOutside={field.onBlur}
+                                    collection={grades}
+                                    width="100%"
+                                >
+                                    <Select.HiddenSelect />
+                                    <Select.Control
+                                        bg="white"
+                                        color="black"
+                                        style={{
+                                            boxSizing: 'border-box',
+                                            fontSize: 16
+                                        }}
+                                    >
+                                        <Select.Trigger>
+                                            <Select.ValueText />
+                                        </Select.Trigger>
+                                        <Select.IndicatorGroup>
+                                            <Select.Indicator />
+                                        </Select.IndicatorGroup>
+                                    </Select.Control>
+                                    <Portal>
+                                        <Select.Positioner>
+                                            <Select.Content
                                                 style={{
-                                                    width: '100%',
-                                                    maxWidth: 50,
-                                                    padding: '8px 10px',
-                                                    borderRadius: 6,
-                                                    background: '#f0f0f0',
-                                                    border: '1px solid #ccc',
-                                                    color: '#666',
-                                                    fontSize: 16,
+                                                    maxWidth: '100%',
                                                     boxSizing: 'border-box'
                                                 }}
                                             >
-                                                <option
-                                                    value=""
-                                                    disabled
-                                                ></option>
-                                            </select>
-                                        )
-                                    }
-
-                                    const detailCollection =
-                                        createListCollection({
-                                            items: detailOptions
-                                        })
-
-                                    return (
-                                        <Select.Root
-                                            name={field.name}
-                                            collection={detailCollection}
-                                            value={[selected]}
-                                            onValueChange={(
-                                                payload: SelectPayload
-                                            ) => {
-                                                const raw = payload?.value
-                                                const arr =
-                                                    raw === undefined
-                                                        ? []
-                                                        : Array.isArray(raw)
-                                                          ? raw
-                                                          : [raw]
-                                                field.onChange(arr)
-                                            }}
-                                        >
-                                            <Select.HiddenSelect />
-                                            <Select.Control
-                                                bg="white"
-                                                color="black"
-                                                style={{
-                                                    width: 50,
-                                                    boxSizing: 'border-box',
-                                                    fontSize: 16
-                                                }}
-                                            >
-                                                <Select.Trigger>
-                                                    <Select.ValueText
-                                                        style={{
-                                                            maxWidth: 50,
-                                                            whiteSpace:
-                                                                'nowrap',
-                                                            overflow: 'hidden',
-                                                            textOverflow:
-                                                                'ellipsis'
+                                                {grades.items.map((grade) => (
+                                                    <Select.Item
+                                                        item={grade}
+                                                        key={grade.value}
+                                                        _hover={{
+                                                            bg: 'gray.100'
                                                         }}
-                                                        placeholder="#"
-                                                    />
-                                                </Select.Trigger>
-                                                <Select.IndicatorGroup>
-                                                    <Select.Indicator />
-                                                </Select.IndicatorGroup>
-                                            </Select.Control>
-                                            <Portal>
-                                                <Select.Positioner>
-                                                    <Select.Content
-                                                        style={{
-                                                            width: 150,
-                                                            maxWidth: '100%',
-                                                            boxSizing:
-                                                                'border-box'
+                                                        _selected={{
+                                                            bg: 'black',
+                                                            color: 'white'
                                                         }}
                                                     >
-                                                        {detailOptions.map(
-                                                            (opt) => (
-                                                                <Select.Item
-                                                                    key={
-                                                                        opt.value
-                                                                    }
-                                                                    item={opt}
-                                                                    _hover={{
-                                                                        bg: 'gray.100'
-                                                                    }}
-                                                                    _selected={{
-                                                                        bg: 'black',
-                                                                        color: 'white'
-                                                                    }}
-                                                                >
-                                                                    {opt.label}
-                                                                    <Select.ItemIndicator />
-                                                                </Select.Item>
-                                                            )
-                                                        )}
-                                                    </Select.Content>
-                                                </Select.Positioner>
-                                            </Portal>
-                                        </Select.Root>
-                                    )
-                                }}
-                            />
-                            <Field.ErrorText>
-                                {errors.CardGradeDetail?.message}
-                            </Field.ErrorText>
-                        </Field.Root>
-                    </Stack>
+                                                        {grade.label}
+                                                        <Select.ItemIndicator />
+                                                    </Select.Item>
+                                                ))}
+                                            </Select.Content>
+                                        </Select.Positioner>
+                                    </Portal>
+                                </Select.Root>
+                            )
+                        }}
+                    />
+                    <Field.ErrorText>
+                        {errors.CardGrade?.message}
+                    </Field.ErrorText>
+                </Field.Root>
+                {/* Second select: Grade Detail - disabled when ungraded */}
+                {selectedGrade !== 'ungraded' && (
+                    <Field.Root invalid={!!errors.CardGradeDetail} width="100%">
+                        <Field.Label>Grade Level</Field.Label>
+                        <Controller
+                            control={control}
+                            name="CardGradeDetail"
+                            render={({ field }) => {
+                                const selected = Array.isArray(field.value)
+                                    ? (field.value[0] ?? '')
+                                    : (field.value ?? '')
 
+                                const detailCollection = createListCollection({
+                                    items: detailOptions
+                                })
+
+                                return (
+                                    <Select.Root
+                                        name={field.name}
+                                        collection={detailCollection}
+                                        value={
+                                            selected
+                                                ? [selected]
+                                                : detailOptions[0]?.value
+                                                  ? [detailOptions[0].value]
+                                                  : []
+                                        }
+                                        onValueChange={(
+                                            payload: SelectPayload
+                                        ) => {
+                                            const raw = payload?.value
+                                            const arr =
+                                                raw === undefined
+                                                    ? []
+                                                    : Array.isArray(raw)
+                                                      ? raw
+                                                      : [raw]
+                                            field.onChange(arr)
+                                        }}
+                                    >
+                                        <Select.HiddenSelect />
+                                        <Select.Control
+                                            bg="white"
+                                            color="black"
+                                            style={{
+                                                boxSizing: 'border-box',
+                                                fontSize: 16
+                                            }}
+                                        >
+                                            <Select.Trigger>
+                                                <Select.ValueText />
+                                            </Select.Trigger>
+                                            <Select.IndicatorGroup>
+                                                <Select.Indicator />
+                                            </Select.IndicatorGroup>
+                                        </Select.Control>
+                                        <Portal>
+                                            <Select.Positioner>
+                                                <Select.Content>
+                                                    {detailOptions.map(
+                                                        (opt) => (
+                                                            <Select.Item
+                                                                key={opt.value}
+                                                                item={opt}
+                                                                _hover={{
+                                                                    bg: 'gray.100'
+                                                                }}
+                                                                _selected={{
+                                                                    bg: 'black',
+                                                                    color: 'white'
+                                                                }}
+                                                            >
+                                                                {opt.label}
+                                                                <Select.ItemIndicator />
+                                                            </Select.Item>
+                                                        )
+                                                    )}
+                                                </Select.Content>
+                                            </Select.Positioner>
+                                        </Portal>
+                                    </Select.Root>
+                                )
+                            }}
+                        />
+                        <Field.ErrorText>
+                            {errors.CardGradeDetail?.message}
+                        </Field.ErrorText>
+                    </Field.Root>
+                )}{' '}
+                {selectedGrade === 'ungraded' && (
                     <Controller
                         name="Condition"
                         control={control}
@@ -562,13 +665,19 @@ const EditCardPage = () => {
                             <Listbox.Root
                                 collection={conditions}
                                 deselectable
-                                maxW="320px"
-                                value={field.value ? [field.value] : []}
+                                width="100%"
+                                value={
+                                    field.value
+                                        ? [field.value]
+                                        : conditions.items?.[0]?.value
+                                          ? [conditions.items[0].value]
+                                          : []
+                                }
                                 onValueChange={({ value }) =>
                                     field.onChange(value[0] || '')
                                 }
                             >
-                                <Listbox.Label>Card condition</Listbox.Label>
+                                <Listbox.Label>Card Condition</Listbox.Label>
                                 <Listbox.Content>
                                     {conditions.items.map((condition) => (
                                         <Listbox.Item
@@ -585,97 +694,67 @@ const EditCardPage = () => {
                             </Listbox.Root>
                         )}
                     />
-
+                )}
+                <Field.Root>
                     <Controller
-                        name="FoilPattern"
+                        name="Tags"
                         control={control}
                         render={({ field }) => (
-                            <Listbox.Root
-                                collection={
-                                    cardFoils ||
-                                    createListCollection<{
-                                        label: string
-                                        value: string
-                                    }>({ items: [] })
+                            <TagsInput.Root
+                                name="Tags"
+                                value={
+                                    Array.isArray(field.value)
+                                        ? field.value
+                                        : []
                                 }
-                                deselectable
-                                maxW="320px"
-                                value={field.value ? [field.value] : []}
-                                onValueChange={({ value }) =>
-                                    field.onChange(value[0] || '')
-                                }
+                                onValueChange={(details) => {
+                                    field.onChange(details.value)
+                                }}
                             >
-                                <Listbox.Label>Card Foil Pattern</Listbox.Label>
-                                <Listbox.Content>
-                                    {cardFoils?.items.map((cardFoil) => (
-                                        <Listbox.Item
-                                            item={cardFoil}
-                                            key={cardFoil.value}
-                                        >
-                                            <Listbox.ItemText>
-                                                {cardFoil.label}
-                                            </Listbox.ItemText>
-                                            <Listbox.ItemIndicator />
-                                        </Listbox.Item>
-                                    ))}
-                                </Listbox.Content>
-                            </Listbox.Root>
-                        )}
-                    />
-
-                    <Field.Root>
-                        <Controller
-                            name="Tags"
-                            control={control}
-                            render={({ field }) => (
-                                <TagsInput.Root
-                                    name="Tags"
-                                    value={
-                                        Array.isArray(field.value)
-                                            ? field.value
-                                            : []
-                                    }
-                                    onValueChange={(details) => {
-                                        field.onChange(details.value)
+                                <TagsInput.Label>Tags</TagsInput.Label>
+                                {/* Make the tags control and its input use a dark background and light text so they match the other inputs */}
+                                <TagsInput.Control
+                                    className="tags-control"
+                                    style={{
+                                        borderRadius: 6,
+                                        padding: '6px'
                                     }}
                                 >
-                                    <TagsInput.Label>Tags</TagsInput.Label>
-                                    {/* Make the tags control and its input use a dark background and light text so they match the other inputs */}
-                                    <TagsInput.Control
-                                        className="tags-control"
+                                    <TagsInput.Items
+                                        style={{ color: 'black' }}
+                                    />
+                                    <TagsInput.Input
+                                        placeholder="Add tag..."
                                         style={{
-                                            borderRadius: 6,
-                                            padding: '6px'
+                                            background: 'transparent',
+                                            outline: 'none',
+                                            border: 'none'
                                         }}
-                                    >
-                                        <TagsInput.Items
-                                            style={{ color: 'black' }}
-                                        />
-                                        <TagsInput.Input
-                                            placeholder="Add tag..."
-                                            style={{
-                                                background: 'transparent',
-                                                outline: 'none',
-                                                border: 'none'
-                                            }}
-                                        />
-                                    </TagsInput.Control>
-                                    <TagsInput.HiddenInput />
-                                </TagsInput.Root>
-                            )}
-                        />
-                        <Field.HelperText>
-                            Add your own tags to better categorize your item!
-                        </Field.HelperText>
-                    </Field.Root>
-                    <Stack direction="column" gap={2}>
-                        <Button bg="red" onClick={() => reset()}>
-                            Discard Changes
-                        </Button>
-                        <Button type="submit">Save</Button>
-                    </Stack>
-                </Stack>
-            </Stack>
+                                    />
+                                </TagsInput.Control>
+                                <TagsInput.HiddenInput />
+                            </TagsInput.Root>
+                        )}
+                    />
+                    <Field.HelperText>
+                        Add your own tags to better categorize your item!
+                    </Field.HelperText>
+                </Field.Root>
+                <HStack direction="column" gap={1} width="100%">
+                    <Button bg="red" flex="1" onClick={() => router.back()}>
+                        Cancel
+                    </Button>
+                    <Button
+                        flex="1"
+                        backgroundColor="brand.marigold"
+                        color="brand.turtoise"
+                        type="submit"
+                    >
+                        Save
+                    </Button>
+                </HStack>
+            </VStack>
+            <PopupUI.Viewport />
         </form>
     )
 }

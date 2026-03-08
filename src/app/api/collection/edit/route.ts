@@ -68,8 +68,6 @@ export async function POST(request: NextRequest) {
                 }
             })
 
-            console.log(result)
-
             return NextResponse.json(
                 { message: 'Saved to collection', data: result },
                 { status: 200 }

@@ -346,7 +346,7 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
 
     const getSetName = async (id: string): Promise<string | undefined> => {
         if (Object.keys(pokemonSets).length === 0) await fetchPokemonSets()
-        return pokemonSets[id].name
+        return pokemonSets[id]?.name
     }
 
     const getSetInfo = async (id: string): Promise<PokemonSet | undefined> => {

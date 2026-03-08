@@ -24,9 +24,9 @@ export async function POST(request: NextRequest) {
         const body = await request.json()
         const { cardId } = body
 
-        if (!userId && !cardId) {
+        if (!cardId) {
             return NextResponse.json(
-                { error: 'cardName or cardId is required' },
+                { error: 'cardId is required' },
                 { status: 400 }
             )
         }

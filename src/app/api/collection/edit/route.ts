@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
             { status: 404 }
         )
     } catch (err) {
-        console.error('collection/save error', err)
+        console.error('collection/edit error', err)
         return NextResponse.json(
             { error: 'Internal Server Error', message: String(err) },
             { status: 500 }

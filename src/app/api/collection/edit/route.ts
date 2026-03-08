@@ -50,8 +50,6 @@ export async function POST(request: NextRequest) {
             }
         })
 
-        console.log(existingEntry)
-
         if (existingEntry) {
             result = await prisma.collectionEntry.update({
                 where: { id: existingEntry.id },

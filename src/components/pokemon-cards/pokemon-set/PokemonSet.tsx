@@ -78,18 +78,6 @@ const PokemonSet = ({
         fetchCards()
     }, [session?.user?.id, setID])
 
-    // console.log(
-    //     setID,
-    //     '| Master Set: ',
-    //     masterSetCount,
-    //     '/',
-    //     masterSet,
-    //     ' | Grandmaster Set: ',
-    //     grandmasterSetCount,
-    //     '/',
-    //     grandmasterSet
-    // );
-
     if (loading || masterSetCount === null || grandmasterSetCount === null) {
         return <PokemonSetLoading />
     }

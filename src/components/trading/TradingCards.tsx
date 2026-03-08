@@ -7,6 +7,7 @@ import { PokemonCardImage } from '@/types/personal-profile'
 const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
     cards = []
 }) => {
+    const card_length = cards.length
     return (
         <Flex
             flexDirection="column"
@@ -30,6 +31,13 @@ const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
                             alt={card.name}
                             w="105px"
                             h="auto"
+                            scale={
+                                card_length <= 2
+                                    ? '100%'
+                                    : card_length <= 4
+                                      ? '60%'
+                                      : '10%'
+                            }
                             borderRadius="none"
                         />
                     </Flex>

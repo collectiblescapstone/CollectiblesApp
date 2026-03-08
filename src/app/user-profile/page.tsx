@@ -14,6 +14,7 @@ import { useProfileSelected } from '@/context/ProfileSelectionProvider'
 
 const ProfileScreen = () => {
     const { setProfileID } = useHeader()
+
     const { profileSelected } = useProfileSelected()
 
     const [user, setUser] = useState<UserProfile | null>(null)

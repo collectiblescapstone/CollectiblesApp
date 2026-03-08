@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import {
     Avatar,
     Card,
@@ -8,12 +9,14 @@ import {
     VStack,
     Text,
     IconButton,
-    Flex
+    Flex,
+    Button
 } from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
 import { LuArrowUpDown } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaDiscord, FaWhatsapp } from 'react-icons/fa'
 import { RiTwitterXLine } from 'react-icons/ri'
+import { useProfileSelected } from '@/context/ProfileSelectionProvider'
 
 type ContactMethod = {
     method: string
@@ -26,11 +29,27 @@ type TradeCardPopupProps = {
     avatarUrl?: string
     user1Wishlist?: { name: string; image_url: string }[]
     user2Wishlist?: { name: string; image_url: string }[]
+    onNavigateToProfile: () => void
 }
 
 const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
-    const { username, contacts, avatarUrl, user1Wishlist, user2Wishlist } =
-        props
+    const {
+        username,
+        contacts,
+        avatarUrl,
+        user1Wishlist,
+        user2Wishlist,
+        onNavigateToProfile
+    } = props
+
+    const router = useRouter()
+    const { setProfileSelected } = useProfileSelected()
+
+    const goProfile = () => {
+        onNavigateToProfile()
+        setProfileSelected(username)
+        router.push(`/user-profile`)
+    }
 
     // Debug log to see what contacts are being passed
     console.log('PopupTrade contacts:', contacts)
@@ -123,14 +142,14 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                     <VStack align="center" gap="3">
                         <HStack>
                             <HStack gap="2" mt={1}>
-                                {/*TO DO: MAKE THE USERNAME CLICKABLE SO IT TAKES YOU TO THE USER PROFILE*/}
-                                {/*MAKE THIS A BOX AND MAKE THE BOX CLICKABLE*/}
-                                <Avatar.Root boxSize="30px" shape="rounded">
-                                    <Avatar.Image src={avatarUrl} />
-                                </Avatar.Root>
-                                <Text fontWeight="semibold" textStyle="sm">
-                                    {username}
-                                </Text>
+                                <Button variant="ghost" onClick={goProfile}>
+                                    <Avatar.Root boxSize="30px" shape="rounded">
+                                        <Avatar.Image src={avatarUrl} />
+                                    </Avatar.Root>
+                                    <Text fontWeight="semibold" textStyle="sm">
+                                        {username}
+                                    </Text>
+                                </Button>
                             </HStack>
                         </HStack>
                         <HStack>
@@ -138,6 +157,8 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                 <HStack key="instagram">
                                     <IconButton
                                         aria-label="instagram"
+                                        color="brand.turtoise"
+                                        bg="brand.marigold"
                                         onClick={() =>
                                             copyToClipboard(['instagram'])
                                         }
@@ -145,8 +166,11 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                         <FaInstagram size={20} />
                                     </IconButton>
                                     {copied === 'instagram' && (
-                                        <Text fontSize="xs" color="green.500">
-                                            Copied
+                                        <Text
+                                            fontSize="xs"
+                                            color="brand.turtoise"
+                                        >
+                                            Copied!
                                         </Text>
                                     )}
                                 </HStack>
@@ -155,6 +179,8 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                 <HStack key="x">
                                     <IconButton
                                         aria-label="x"
+                                        color="brand.turtoise"
+                                        bg="brand.marigold"
                                         onClick={() =>
                                             copyToClipboard(['x', 'twitter'])
                                         }
@@ -162,8 +188,11 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                         <RiTwitterXLine size={20} />
                                     </IconButton>
                                     {copied === 'x' && (
-                                        <Text fontSize="xs" color="green.500">
-                                            Copied
+                                        <Text
+                                            fontSize="xs"
+                                            color="brand.turtoise"
+                                        >
+                                            Copied!
                                         </Text>
                                     )}
                                 </HStack>
@@ -172,6 +201,8 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                 <HStack key="facebook">
                                     <IconButton
                                         aria-label="facebook"
+                                        color="brand.turtoise"
+                                        bg="brand.marigold"
                                         onClick={() =>
                                             copyToClipboard(['facebook'])
                                         }
@@ -179,8 +210,11 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                         <FaFacebook size={20} />
                                     </IconButton>
                                     {copied === 'facebook' && (
-                                        <Text fontSize="xs" color="green.500">
-                                            Copied
+                                        <Text
+                                            fontSize="xs"
+                                            color="brand.turtoise"
+                                        >
+                                            Copied!
                                         </Text>
                                     )}
                                 </HStack>
@@ -189,6 +223,8 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                 <HStack key="whatsapp">
                                     <IconButton
                                         aria-label="whatsapp"
+                                        color="brand.turtoise"
+                                        bg="brand.marigold"
                                         onClick={() =>
                                             copyToClipboard(['whatsapp'])
                                         }
@@ -196,8 +232,11 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                         <FaWhatsapp size={20} />
                                     </IconButton>
                                     {copied === 'whatsapp' && (
-                                        <Text fontSize="xs" color="green.500">
-                                            Copied
+                                        <Text
+                                            fontSize="xs"
+                                            color="brand.turtoise"
+                                        >
+                                            Copied!
                                         </Text>
                                     )}
                                 </HStack>
@@ -206,6 +245,8 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                 <HStack key="discord">
                                     <IconButton
                                         aria-label="discord"
+                                        color="brand.turtoise"
+                                        bg="brand.marigold"
                                         onClick={() =>
                                             copyToClipboard(['discord'])
                                         }
@@ -213,8 +254,11 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                                         <FaDiscord size={20} />
                                     </IconButton>
                                     {copied === 'discord' && (
-                                        <Text fontSize="xs" color="green.500">
-                                            Copied
+                                        <Text
+                                            fontSize="xs"
+                                            color="brand.turtoise"
+                                        >
+                                            Copied!
                                         </Text>
                                     )}
                                 </HStack>

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 import {
     Flex,
@@ -24,8 +25,23 @@ import TradePopup from '@/components/ui/PopupUI'
 import TradeCardPopup from '@/components/trading/PopupTrade'
 
 const TradePage = () => {
+    const pathname = usePathname()
     const { session } = useAuth()
     const userID = session?.user.id
+
+    const closeTradePopup = () => {
+        try {
+            TradePopup.close('trade')
+        } catch (error) {
+            if (
+                error instanceof Error &&
+                error.message.includes('Overlay with id trade not found')
+            ) {
+                return
+            }
+            throw error
+        }
+    }
 
     const [users, setUsers] = useState<TradeCardProps[]>([])
     const [loading, setLoading] = useState<boolean>(true)
@@ -117,6 +133,18 @@ const TradePage = () => {
 
         loadViableOptions()
     }, [userID])
+
+    useEffect(() => {
+        return () => {
+            closeTradePopup()
+        }
+    }, [])
+
+    useEffect(() => {
+        if (pathname !== '/trade') {
+            closeTradePopup()
+        }
+    }, [pathname])
 
     if (loading || !session) {
         return (
@@ -297,10 +325,12 @@ const TradePage = () => {
                                                     user2Wishlist={
                                                         u.user2Wishlist ?? []
                                                     }
+                                                    onNavigateToProfile={
+                                                        closeTradePopup
+                                                    }
                                                 />
                                             ),
-                                            onClickClose: () =>
-                                                TradePopup.close('trade')
+                                            onClickClose: closeTradePopup
                                         })
                                     }
                                 >

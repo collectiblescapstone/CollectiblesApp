@@ -1,8 +1,11 @@
 'use client'
 
+// React
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Box, Button, Spinner, VStack } from '@chakra-ui/react'
+
+// Chakra UI
+import { Box, Button, HStack, Spinner, VStack } from '@chakra-ui/react'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -27,6 +30,8 @@ const UserCardsPage: React.FC = () => {
 
     // Local States
     const [loading, setLoading] = useState(true)
+    const [deleteCards, setDeleteCards] = useState(false)
+    const [refreshTrigger, setRefreshTrigger] = useState(0)
 
     useEffect(() => {
         const loadData = async () => {
@@ -35,12 +40,20 @@ const UserCardsPage: React.FC = () => {
                 session.user.id,
                 cardId || ''
             )
-            // console.log('Fetched Cards:', fetchedCards) // Debug log
             setUserCards(fetchedCards)
             setLoading(false)
         }
         loadData()
     }, [cardId, session])
+
+    // Trigger card refresh when coming back from edit
+    useEffect(() => {
+        // Use a small delay to ensure edit page has finished
+        const timeout = setTimeout(() => {
+            setRefreshTrigger((prev) => prev + 1)
+        }, 500)
+        return () => clearTimeout(timeout)
+    }, [])
 
     if (loading || authLoading || !session)
         return (
@@ -54,21 +67,42 @@ const UserCardsPage: React.FC = () => {
             {/*CARD HEADER INFORMATION*/}
             <PokemonCardHeader cardId={cardId || ''} />
             {/*ADD NEW CARD BUTTON*/}
-            <VStack width={'100%'} padding={4} gap={4}>
-                <Button
-                    size="sm"
-                    backgroundColor="brand.marigold"
-                    color="brand.turtoise"
-                    onClick={() => {
-                        window.location.href = `/edit-card?cardId=${cardId}`
-                    }}
-                    width={'100%'}
-                >
-                    Add Card
-                </Button>
+            <VStack width={'100%'} padding={2} gap={1}>
+                <HStack width={'100%'} gap={1}>
+                    <Button
+                        size="sm"
+                        backgroundColor="brand.marigold"
+                        color="brand.turtoise"
+                        onClick={() => {
+                            window.location.href = `/edit-card?cardId=${cardId}`
+                        }}
+                        width={'50%'}
+                    >
+                        Add Card
+                    </Button>
+
+                    <Button
+                        size="sm"
+                        border={'2px solid'}
+                        borderColor={deleteCards ? 'red.500' : 'black'}
+                        background="none"
+                        color={deleteCards ? 'red.500' : 'black'}
+                        onClick={() => {
+                            setDeleteCards(!deleteCards)
+                        }}
+                        width={'50%'}
+                    >
+                        Delete Cards
+                    </Button>
+                </HStack>
                 {/*Cards Owned INFORMATION*/}
                 {Array.from(userCards).map((cardId, id) => (
-                    <PokemonCardInfo key={id} entryId={cardId} />
+                    <PokemonCardInfo
+                        key={id}
+                        entryId={cardId}
+                        deleteCard={deleteCards}
+                        refreshTrigger={refreshTrigger}
+                    />
                 ))}
             </VStack>
         </Box>

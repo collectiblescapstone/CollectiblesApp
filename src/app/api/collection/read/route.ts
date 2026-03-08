@@ -22,45 +22,28 @@ export async function POST(request: NextRequest) {
         const userId = data.user.id
 
         const body = await request.json()
-        const {
-            cardName,
-            condition,
-            variant,
-            grade,
-            gradeLevel,
-            tags,
-            cardId,
-            showcase,
-            markedForTrade
-        } = body
+        const { cardId } = body
 
-        if (!cardName && !cardId) {
+        if (!cardId) {
             return NextResponse.json(
-                { error: 'cardName or cardId is required' },
+                { error: 'cardId is required' },
                 { status: 400 }
             )
         }
 
-        const result = await prisma.collectionEntry.create({
-            data: {
-                userId: userId,
-                cardId: cardId ?? null,
-                condition: condition ?? null,
-                variant: variant ?? null,
-                grade: grade ?? null,
-                gradeLevel: gradeLevel ?? null,
-                tags: tags ?? [],
-                showcase: showcase ?? false,
-                forTrade: markedForTrade ?? false
+        const result = await prisma.collectionEntry.findFirst({
+            where: {
+                id: cardId,
+                userId: userId
             }
         })
 
         return NextResponse.json(
-            { message: 'Saved to collection', data: result },
+            { message: 'Collection card retrieved', data: result },
             { status: 200 }
         )
     } catch (err) {
-        console.error('collection/save error', err)
+        console.error('collection/read error', err)
         return NextResponse.json(
             { error: 'Internal Server Error', message: String(err) },
             { status: 500 }

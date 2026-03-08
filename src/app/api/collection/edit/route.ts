@@ -30,6 +30,7 @@ export async function POST(request: NextRequest) {
             gradeLevel,
             tags,
             cardId,
+            entryId,
             showcase,
             markedForTrade
         } = body
@@ -41,26 +42,41 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        const result = await prisma.collectionEntry.create({
-            data: {
+        let result
+        const existingEntry = await prisma.collectionEntry.findFirst({
+            where: {
                 userId: userId,
-                cardId: cardId ?? null,
-                condition: condition ?? null,
-                variant: variant ?? null,
-                grade: grade ?? null,
-                gradeLevel: gradeLevel ?? null,
-                tags: tags ?? [],
-                showcase: showcase ?? false,
-                forTrade: markedForTrade ?? false
+                id: entryId
             }
         })
 
+        if (existingEntry) {
+            result = await prisma.collectionEntry.update({
+                where: { id: existingEntry.id },
+                data: {
+                    userId: userId,
+                    cardId: cardId ?? null,
+                    condition: condition ?? null,
+                    variant: variant ?? null,
+                    grade: grade ?? null,
+                    gradeLevel: gradeLevel ?? null,
+                    tags: tags ?? [],
+                    showcase: showcase ?? false,
+                    forTrade: markedForTrade ?? false
+                }
+            })
+
+            return NextResponse.json(
+                { message: 'Saved to collection', data: result },
+                { status: 200 }
+            )
+        }
         return NextResponse.json(
-            { message: 'Saved to collection', data: result },
-            { status: 200 }
+            { message: 'Card ID invalid' },
+            { status: 404 }
         )
     } catch (err) {
-        console.error('collection/save error', err)
+        console.error('collection/edit error', err)
         return NextResponse.json(
             { error: 'Internal Server Error', message: String(err) },
             { status: 500 }

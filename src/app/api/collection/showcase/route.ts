@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
             { status: 200 }
         )
     } catch (err) {
-        console.error('collection/showcaseCount error', err)
+        console.error('collection/showcase error', err)
         return NextResponse.json(
             { error: 'Internal Server Error', message: String(err) },
             { status: 500 }

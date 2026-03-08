@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
             { status: 200 }
         )
     } catch (err) {
-        console.error('collection/save error', err)
+        console.error('collection/read error', err)
         return NextResponse.json(
             { error: 'Internal Server Error', message: String(err) },
             { status: 500 }

@@ -31,27 +31,6 @@ export interface GetPokemonCardsFilters {
     ids: string[]
 }
 
-const fetchPokemonSets = async (): Promise<void> => {
-    try {
-        const response = await fetch('/api/pokemon-set')
-        if (!response.ok) throw new Error(`Failed to fetch /api/pokemon-set`)
-        const sets: DatabaseSet[] = await response.json()
-
-        for (const pokemonSet of sets) {
-            pokemonSets[pokemonSet.id.toString()] = {
-                name: pokemonSet.name,
-                series: pokemonSet.series,
-                logo: pokemonSet.logo || '',
-                symbol: pokemonSet.symbol || '',
-                official: pokemonSet.official,
-                total: pokemonSet.total
-            }
-        }
-    } catch (err) {
-        console.error('Fetch error for pokemon sets:', err)
-    }
-}
-
 // CONTEXT
 type PokemonCardsContextType = {
     getCardInformation: (id: string) => Promise<PokemonCard | undefined>
@@ -180,7 +159,31 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
                 console.error('Fetch error for pokemon cards:', err)
             }
         }
+
+        const fetchPokemonSets = async (): Promise<void> => {
+            try {
+                const response = await fetch('/api/pokemon-set')
+                if (!response.ok)
+                    throw new Error(`Failed to fetch /api/pokemon-set`)
+                const sets: DatabaseSet[] = await response.json()
+
+                for (const pokemonSet of sets) {
+                    pokemonSets[pokemonSet.id.toString()] = {
+                        name: pokemonSet.name,
+                        series: pokemonSet.series,
+                        logo: pokemonSet.logo || '',
+                        symbol: pokemonSet.symbol || '',
+                        official: pokemonSet.official,
+                        total: pokemonSet.total
+                    }
+                }
+            } catch (err) {
+                console.error('Fetch error for pokemon sets:', err)
+            }
+        }
+
         fetchPokemonCards()
+        fetchPokemonSets()
     }, [])
 
     /**
@@ -253,7 +256,6 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     const getSetInformation = async (
         id: string
     ): Promise<PokemonSet | undefined> => {
-        if (Object.keys(pokemonSets).length === 0) await fetchPokemonSets()
         return pokemonSets[id]
     }
 
@@ -347,12 +349,10 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     }
 
     const getSetName = async (id: string): Promise<string | undefined> => {
-        if (Object.keys(pokemonSets).length === 0) await fetchPokemonSets()
         return pokemonSets[id]?.name
     }
 
     const getSetInfo = async (id: string): Promise<PokemonSet | undefined> => {
-        if (Object.keys(pokemonSets).length === 0) await fetchPokemonSets()
         return pokemonSets[id]
     }
 

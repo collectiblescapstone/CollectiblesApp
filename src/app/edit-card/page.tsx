@@ -359,7 +359,7 @@ const EditCardPage = () => {
                 if (referrer.includes('/user-cards')) {
                     router.back()
                 } else {
-                    router.push('/user-cards?cardId=' + id)
+                    router.replace('/user-cards?cardId=' + id)
                 }
             }
 

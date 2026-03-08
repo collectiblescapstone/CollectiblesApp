@@ -16,6 +16,9 @@ import {
     VStack
 } from '@chakra-ui/react'
 
+// Next.js
+import { useRouter } from 'next/navigation'
+
 // Child Components
 import PopupUI from '@/components/ui/PopupUI'
 
@@ -55,6 +58,7 @@ const PokemonCardInfo = ({
 }: PokemonCardInfoProps) => {
     // Authentification
     const { session } = useAuth()
+    const router = useRouter()
 
     const [cardInfo, setCardInfo] = useState<Entry | null>(null)
 
@@ -79,11 +83,16 @@ const PokemonCardInfo = ({
                 },
                 data: JSON.stringify({ entryId })
             })
-            refreshPokemonCards(session.user.id)
+
             if (onDelete) {
                 onDelete(entryId)
             }
-            onClose()
+
+            PopupUI.close('confirm-delete')
+
+            // Refresh data before router refresh
+            refreshPokemonCards(session.user.id)
+            window.location.reload()
         } catch (error) {
             console.error('Error deleting card:', error)
         }

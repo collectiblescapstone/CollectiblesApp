@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma'
 import { supabase } from '@/lib/supabase'
 
-export async function POST(request: NextRequest) {
+export async function DELETE(request: NextRequest) {
     try {
         const authHeader = request.headers.get('authorization')
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -22,45 +22,36 @@ export async function POST(request: NextRequest) {
         const userId = data.user.id
 
         const body = await request.json()
-        const {
-            cardName,
-            condition,
-            variant,
-            grade,
-            gradeLevel,
-            tags,
-            cardId,
-            showcase,
-            markedForTrade
-        } = body
+        const { entryId } = body
 
-        if (!cardName && !cardId) {
+        if (!entryId) {
             return NextResponse.json(
-                { error: 'cardName or cardId is required' },
+                { error: 'entryId is required' },
                 { status: 400 }
             )
         }
 
-        const result = await prisma.collectionEntry.create({
-            data: {
+        // Delete directly - single query instead of find + delete
+        const result = await prisma.collectionEntry.deleteMany({
+            where: {
                 userId: userId,
-                cardId: cardId ?? null,
-                condition: condition ?? null,
-                variant: variant ?? null,
-                grade: grade ?? null,
-                gradeLevel: gradeLevel ?? null,
-                tags: tags ?? [],
-                showcase: showcase ?? false,
-                forTrade: markedForTrade ?? false
+                id: entryId
             }
         })
 
+        if (result.count === 0) {
+            return NextResponse.json(
+                { message: 'Entry ID invalid' },
+                { status: 404 }
+            )
+        }
+
         return NextResponse.json(
-            { message: 'Saved to collection', data: result },
+            { message: 'Entry deleted from collection', data: result },
             { status: 200 }
         )
     } catch (err) {
-        console.error('collection/save error', err)
+        console.error('collection/delete error', err)
         return NextResponse.json(
             { error: 'Internal Server Error', message: String(err) },
             { status: 500 }

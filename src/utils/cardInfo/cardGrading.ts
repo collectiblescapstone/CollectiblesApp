@@ -1,6 +1,3 @@
-// Utils
-import { capitalizeEachWord } from '../capitalize'
-
 export const cardConditions = [
     { label: 'Near Mint', value: 'near-mint' },
     { label: 'Lightly Played', value: 'lightly-played' },
@@ -35,20 +32,11 @@ export const gradingCompaniesMap: Record<string, string> = {
     ace: 'ACE'
 }
 
-const numericalGrade = (gradeValue: string) => {
-    if (gradeValue.includes('-')) {
-        const highName = capitalizeEachWord(gradeValue.split('-')[0])
-        return highName + ' ' + gradeValue.split('-')[1]
-    }
-    return gradeValue
-}
-
-export const gradeName = (grade: string) => {
-    const index = grade.indexOf('-')
-    const company = grade.substring(0, index)
-    const gradeValue = grade.substring(index + 1)
-    // console.log('company:', grade, '     gradeValue:', gradeValue) // Debug log
-    return `${gradingCompaniesMap[company]} ${numericalGrade(gradeValue)}`.trim()
+export const parseGradeLevel = (company: string, gradeLevel: string) => {
+    return (
+        gradeDetailsMap[company].find((grade) => grade.value === gradeLevel)
+            ?.label || gradeLevel
+    )
 }
 
 export const gradeDetailsMap: Record<
@@ -69,7 +57,7 @@ export const gradeDetailsMap: Record<
         { label: '1', value: 'psa-1' }
     ],
     tag: [
-        { label: '10*', value: 'tag-pristine-10' },
+        { label: 'Pristine 10', value: 'tag-pristine-10' },
         { label: '10', value: 'tag-10' },
         { label: '9', value: 'tag-9' },
         { label: '8.5', value: 'tag-8.5' },
@@ -90,7 +78,7 @@ export const gradeDetailsMap: Record<
         { label: '1', value: 'tag-1' }
     ],
     cgc: [
-        { label: '10*', value: 'cgc-pristine-10' },
+        { label: 'Pristine 10', value: 'cgc-pristine-10' },
         { label: '10', value: 'cgc-10' },
         { label: '9.5', value: 'cgc-9.5' },
         { label: '9', value: 'cgc-9' },
@@ -113,8 +101,8 @@ export const gradeDetailsMap: Record<
         { label: 'AU', value: 'cgc-au' }
     ],
     beckett: [
-        { label: '10**', value: 'beckett-blacklabel-10' },
-        { label: '10*', value: 'beckett-pristine-10' },
+        { label: 'Black Label 10', value: 'beckett-blacklabel-10' },
+        { label: 'Pristine 10', value: 'beckett-pristine-10' },
         { label: '10', value: 'beckett-10' },
         { label: '9', value: 'beckett-9' },
         { label: '9.5', value: 'beckett-9.5' },

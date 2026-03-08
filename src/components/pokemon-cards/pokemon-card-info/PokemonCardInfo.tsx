@@ -173,7 +173,14 @@ const PokemonCardInfo = ({
                                                     width="100%"
                                                     justify="flex-start"
                                                 >
-                                                    <Button variant="outline">
+                                                    <Button
+                                                        variant="outline"
+                                                        onClick={() =>
+                                                            PopupUI.close(
+                                                                'confirm-delete'
+                                                            )
+                                                        }
+                                                    >
                                                         Cancel
                                                     </Button>
                                                     <Button

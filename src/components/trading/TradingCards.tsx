@@ -4,9 +4,11 @@ import React from 'react'
 import { Flex, Image } from '@chakra-ui/react'
 import { PokemonCardImage } from '@/types/personal-profile'
 
-const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
-    cards = []
-}) => {
+interface TradingCardsProps {
+    cards?: PokemonCardImage[]
+}
+
+const TradingCards = ({ cards = [] }: TradingCardsProps) => {
     const card_length = cards.length
     return (
         <Flex

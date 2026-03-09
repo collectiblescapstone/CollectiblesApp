@@ -54,7 +54,7 @@ const PopupUI = createOverlay<DialogProps>((props) => {
                                     size="sm"
                                     onClick={handleClose}
                                     aspectRatio={1}
-                                    bg="red.500"
+                                    background={'none'}
                                 >
                                     <IoClose size={48} fill="black" />
                                 </Button>

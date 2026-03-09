@@ -1,17 +1,18 @@
 'use client'
 import { Button, Field, Heading, Input, VStack, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { PasswordInput } from '@/components/ui/password-input'
 import { useAuth } from '@/context/AuthProvider'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { LoginFormValues } from '@/types/auth'
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller'
 
-export default function AuthForm() {
+const AuthForm = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    const { signIn } = useAuth()
+    const { signIn, signInWithGoogle } = useAuth()
     const { push } = useRouter()
+    const searchParams = useSearchParams()
 
     const {
         register,
@@ -24,6 +25,20 @@ export default function AuthForm() {
             password: ''
         }
     })
+
+    // Check for error query parameter on component mount
+    useEffect(() => {
+        const errorParam = searchParams.get('error')
+        if (errorParam === 'registration_failed') {
+            setError('root', {
+                type: 'registration_failed',
+                message:
+                    'Google sign-in failed during registration. Please try again or contact support if the issue persists.'
+            })
+            // Clean up the URL parameter
+            window.history.replaceState({}, '', '/sign-in')
+        }
+    }, [searchParams, setError])
 
     const onSubmit = async (values: LoginFormValues) => {
         setIsLoading(true)
@@ -73,6 +88,20 @@ export default function AuthForm() {
                         'An unknown error occurred during sign in. Please try again later.'
                 })
             }
+        }
+        setIsLoading(false)
+    }
+
+    const handleGoogleSignIn = async () => {
+        setIsLoading(true)
+        try {
+            await signInWithGoogle()
+        } catch {
+            setError('root', {
+                type: 'oauth_error',
+                message:
+                    'An error occurred during Google sign in. Please try again later.'
+            })
         }
         setIsLoading(false)
     }
@@ -160,19 +189,20 @@ export default function AuthForm() {
                     backgroundColor="brand.marigold"
                     color="brand.turtoise"
                     width="3/4"
-                    onClick={() => alert('Redirect to Google Sign-In')}
+                    onClick={handleGoogleSignIn}
                 >
                     Sign In With Google
                 </Button>
 
-                <Button
+                {/*Coming Soon: Apple Sign-In*/}
+                {/* <Button
                     backgroundColor="brand.marigold"
                     color="brand.turtoise"
                     width="3/4"
                     onClick={() => alert('Redirect to Apple Sign-In')}
                 >
                     Sign In With Apple
-                </Button>
+                </Button> */}
 
                 <Text>OR</Text>
 
@@ -188,3 +218,5 @@ export default function AuthForm() {
         </form>
     )
 }
+
+export default AuthForm

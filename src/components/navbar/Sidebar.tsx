@@ -19,7 +19,7 @@ const Sidebar = () => {
             p={8}
         >
             <Heading size="2xl" mb={16}>
-                Collectibles App
+                Kollec
             </Heading>
             {MENU_ITEMS.map((item) => (
                 <Flex

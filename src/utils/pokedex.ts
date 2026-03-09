@@ -13,7 +13,7 @@ export const ALL_POKEMON = Array.from(
 const pokedexData: string[] = []
 const fetchPokedex = async () => {
     try {
-        const specifiedCards = await fetch('/temporary_card_data/pokedex.json')
+        const specifiedCards = await fetch('/Pokedex/pokedex.json')
         const pokedexDataJSON: PokemonJSON[] = await specifiedCards.json()
         for (const pokemon of pokedexDataJSON) {
             pokedexData.push(pokemon.name)

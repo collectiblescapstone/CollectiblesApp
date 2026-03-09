@@ -18,8 +18,6 @@ import type { PokemonCard, PokemonSet } from '@/types/Cards/frontend-card'
 import { baseUrl } from '@/utils/constants'
 import { MAXPOKEDEXVALUE } from '@/utils/pokedex'
 
-// let allCards: CardData[] = []
-
 // API
 export interface GetPokemonCardsFilters {
     ids: string[]
@@ -127,11 +125,11 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
                     Record<string, Set<string>>
                 > = {}
                 const tempPokemonMasterSetCards: Record<
-                    string,
+                    number,
                     Set<string>
                 > = {}
                 const tempPokemonGrandmasterSet: Record<
-                    string,
+                    number,
                     Record<string, Set<string>>
                 > = {}
 
@@ -369,7 +367,7 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
      * @returns
      */
     const getPokemonName = async (id: number): Promise<string> => {
-        if (id < 1 || id > 1025) return 'N/A'
+        if (id < 1 || id > MAXPOKEDEXVALUE) return 'N/A'
         return pokedexData[id - 1]
     }
 

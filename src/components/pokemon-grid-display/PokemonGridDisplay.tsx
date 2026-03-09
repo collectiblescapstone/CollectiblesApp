@@ -38,7 +38,7 @@ import { PokemonSetType } from '@/types/pokemon-grid'
 
 // Utils
 import { getSetGroups } from '@/utils/pokemonSet'
-import { POKEMONGEN, ALL_POKEMON, getPokemonName } from '@/utils/pokedex'
+import { ALL_POKEMON } from '@/utils/pokedex'
 
 const NUM_ITEMS_PER_PAGE = 24
 
@@ -80,7 +80,9 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         masterSetCards,
         grandmasterSetCount,
         pokemonMasterSetCards,
-        pokemonGrandmasterSetCount
+        pokemonGrandmasterSetCount,
+        POKEMONGEN,
+        getPokemonName
     } = usePokemonCards()
 
     const pokemon = ALL_POKEMON
@@ -156,7 +158,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         const endId = POKEMONGEN[genIndex]
 
         return pokemon.filter((id) => id >= startId && id <= endId)
-    }, [selectedGen, pokemon])
+    }, [selectedGen, pokemon, POKEMONGEN])
 
     /**
      * useEffect to fetch set counts
@@ -244,7 +246,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchNames()
-    }, [filteredPokemon])
+    }, [filteredPokemon, getPokemonName])
 
     const displayablePokemon = useMemo(
         () =>

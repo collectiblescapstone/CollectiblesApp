@@ -18,15 +18,21 @@ import type { PokemonCard, PokemonSet } from '@/types/Cards/frontend-card'
 import { baseUrl } from '@/utils/constants'
 import { MAXPOKEDEXVALUE } from '@/utils/pokedex'
 
-let allCards: CardData[] = []
+// let allCards: CardData[] = []
 
 // API
 export interface GetPokemonCardsFilters {
     ids: string[]
 }
 
+interface PokemonJSON {
+    id: number
+    name: string
+}
+
 // CONTEXT
 type PokemonCardsContextType = {
+    POKEMONGEN: number[]
     pokemonCards: Record<string, PokemonCard>
     pokemonSets: Record<string, PokemonSet>
     masterSetCards: Record<string, Set<string>>
@@ -38,6 +44,8 @@ type PokemonCardsContextType = {
     grandmasterSetCount: (setId: string) => Promise<number>
     pokemonGrandmasterSetCount: (pokedexId: number) => Promise<number>
     getFilteredCards: (filters: GetPokemonCardsFilters) => Promise<CardData[]>
+    getPokemonName: (id: number) => Promise<string>
+    getGeneration: (dexNumber: number) => number
 }
 
 const PokemonCardsContext = createContext<PokemonCardsContextType | undefined>(
@@ -47,6 +55,7 @@ const PokemonCardsContext = createContext<PokemonCardsContextType | undefined>(
 const getPokemonCards = async (
     filters?: GetPokemonCardsFilters
 ): Promise<CardData[]> => {
+    let allCards: CardData[] = []
     if (allCards.length !== 0) {
         if (filters?.ids) {
             const filteredCards = allCards.filter((card) =>
@@ -100,6 +109,9 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
 
     // Local state for all cards (NO FILTERS)
     const [allCards, setAllCards] = useState<CardData[]>([])
+
+    // Local state for Pokedex data
+    const [pokedexData, setPokedexData] = useState<string[]>([])
 
     useEffect(() => {
         // FETCHERS
@@ -228,9 +240,27 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
                 console.error('Fetch error for pokemon sets:', err)
             }
         }
+
+        const fetchPokedex = async () => {
+            const tempPokedexData: string[] = []
+            try {
+                const specifiedCards = await fetch('/Pokedex/pokedex.json')
+                const pokedexDataJSON: PokemonJSON[] =
+                    await specifiedCards.json()
+                for (const pokemon of pokedexDataJSON) {
+                    tempPokedexData.push(pokemon.name)
+                }
+                setPokedexData(tempPokedexData)
+            } catch (err) {
+                console.error('Fetch error for pokedex:', err)
+            }
+        }
+        fetchPokedex()
         fetchPokemonCards()
         fetchPokemonSets()
     }, [])
+
+    const POKEMONGEN = [151, 251, 386, 493, 649, 721, 809, 905, 1025]
 
     /**
      * Returns Pokemon cards that belongs to a specific set
@@ -322,15 +352,43 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
         return count
     }
 
+    /**
+     * Returns all the filtered cards
+     * @param filters
+     * @returns
+     */
     const getFilteredCards = async (
         filters: GetPokemonCardsFilters
     ): Promise<CardData[]> => {
         return getPokemonCards(filters)
     }
 
+    /**
+     * Returns the Pokemon name based on the Pokedex ID
+     * @param id
+     * @returns
+     */
+    const getPokemonName = async (id: number): Promise<string> => {
+        if (id < 1 || id > 1025) return 'N/A'
+        return pokedexData[id - 1]
+    }
+
+    /**
+     * Returns the Pokemon generation based on the Pokedex ID
+     * @param dexNumber
+     * @returns
+     */
+    const getGeneration = (dexNumber: number) => {
+        for (let i = 0; i < POKEMONGEN.length; i++) {
+            if (dexNumber <= POKEMONGEN[i] && dexNumber > 0) return i + 1
+        }
+        return 0
+    }
+
     return (
         <PokemonCardsContext.Provider
             value={{
+                POKEMONGEN,
                 pokemonCards,
                 pokemonSets,
                 masterSetCards,
@@ -341,7 +399,9 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
                 getCardsByName,
                 grandmasterSetCount,
                 pokemonGrandmasterSetCount,
-                getFilteredCards
+                getFilteredCards,
+                getPokemonName,
+                getGeneration
             }}
         >
             {children}

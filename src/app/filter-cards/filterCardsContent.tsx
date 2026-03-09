@@ -27,7 +27,6 @@ import { useFilters } from '@/hooks/useFilters'
 
 // Utils
 import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard'
-import { getPokemonName, getGeneration } from '@/utils/pokedex'
 
 // Types
 import type { CardData } from '@/types/pokemon-card'
@@ -55,7 +54,7 @@ const FilterCardsContent = () => {
     const [ascending, setAscending] = useState(true)
     const [userCards, setUserCards] = useState<string[]>([])
 
-    const { allCards } = usePokemonCards()
+    const { allCards, getPokemonName, getGeneration } = usePokemonCards()
 
     // Fetch cards based on type & params
     useEffect(() => {
@@ -131,7 +130,7 @@ const FilterCardsContent = () => {
         } else {
             setPokemonName(null)
         }
-    }, [type, pId])
+    }, [type, pId, getPokemonName, getGeneration])
 
     // Reverse card order
     const toggleSortOrder = () => {

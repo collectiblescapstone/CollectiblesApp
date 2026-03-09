@@ -77,9 +77,9 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     >({})
 
     const {
-        masterSetCount,
+        masterSetCards,
         grandmasterSetCount,
-        pokemonMasterSetCount,
+        pokemonMasterSetCards,
         pokemonGrandmasterSetCount
     } = usePokemonCards()
 
@@ -173,7 +173,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
 
             await Promise.all(
                 groupedSets[selectedEra].map(async (set) => {
-                    const master = await masterSetCount(set.id)
+                    const master = masterSetCards[set.id]?.size
                     const grandmaster = await grandmasterSetCount(set.id)
                     counts[set.id] = {
                         masterSet: master ?? 0,
@@ -191,7 +191,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         groupedSets,
         selected,
         grandmasterSetCount,
-        masterSetCount
+        masterSetCards
     ])
 
     /**
@@ -207,7 +207,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
 
             await Promise.allSettled(
                 filteredPokemon.map(async (id) => {
-                    const master = await pokemonMasterSetCount(id)
+                    const master = pokemonMasterSetCards[id]?.size
                     const grandmaster = await pokemonGrandmasterSetCount(id)
                     counts[id] = {
                         masterSet: master ?? 0,
@@ -224,7 +224,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         selectedGen,
         selected,
         filteredPokemon,
-        pokemonMasterSetCount,
+        pokemonMasterSetCards,
         pokemonGrandmasterSetCount
     ])
 

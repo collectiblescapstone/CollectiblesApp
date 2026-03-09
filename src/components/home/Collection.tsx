@@ -4,7 +4,6 @@ import React from 'react'
 import Divider from '@/components/profiles/Divider'
 import { Flex, Image, Text } from '@chakra-ui/react'
 import { useRandomCards } from '@/components/personal-profile/RandomCard' // update to use sets rather than cards
-// import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet';
 import { PokemonCardImage } from '@/types/personal-profile'
 
 const Collection: React.FC = () => {

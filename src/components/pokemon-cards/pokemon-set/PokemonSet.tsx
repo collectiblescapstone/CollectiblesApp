@@ -142,9 +142,6 @@ const PokemonSet = ({
                         p={4}
                     >
                         <Heading size="md">{label}</Heading>
-                        {/* <Text color="gray.600" mt={2}>
-              {setID} Troubleshooting code to show the set ID
-            </Text> */}
 
                         {/* Progress bars section */}
                         <Box mt={4} w="100%">

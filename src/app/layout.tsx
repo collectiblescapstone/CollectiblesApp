@@ -10,7 +10,7 @@ import { ProfileSelectionProvider } from '@/context/ProfileSelectionProvider'
 import { PokemonCardsProvider } from '@/context/PokemonCardsProvider'
 
 export const metadata: Metadata = {
-    title: 'Collectibles App',
+    title: 'Kollec',
     description: 'Card Collectibles Application'
 }
 

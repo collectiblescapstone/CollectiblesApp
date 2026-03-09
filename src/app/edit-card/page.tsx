@@ -100,7 +100,7 @@ const EditCardPage = () => {
         MarkedForTrade: z.boolean()
     })
     type SelectPayload = { value?: string | string[] }
-    const { getCardInformation } = usePokemonCards()
+    const { pokemonCards } = usePokemonCards()
 
     // Error display message for if the too many cards on showcase
     const [showcaseError, setShowcaseError] = useState(false)
@@ -126,7 +126,7 @@ const EditCardPage = () => {
         if (!session) return
 
         const fetchCardInfo = async () => {
-            const info = await getCardInformation(id)
+            const info = pokemonCards[id]
             if (!active || !info) return
 
             setCardInfo(info)
@@ -167,7 +167,7 @@ const EditCardPage = () => {
         return () => {
             active = false
         }
-    }, [id, getCardInformation, session])
+    }, [id, pokemonCards, session])
 
     const {
         handleSubmit,

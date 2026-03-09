@@ -20,14 +20,17 @@ const DeleteAccount: React.FC = () => {
     }
 
     return (
-        <Button
-            variant="solid"
-            colorPalette="red"
-            size="lg"
-            onClick={openDeletePopup}
-        >
-            Delete my account
-        </Button>
+        <>
+            <Button
+                variant="solid"
+                colorPalette="red"
+                size="lg"
+                onClick={openDeletePopup}
+            >
+                Delete my account
+            </Button>
+            <PopupUI.Viewport />
+        </>
     )
 }
 

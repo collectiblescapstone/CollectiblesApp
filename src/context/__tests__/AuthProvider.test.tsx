@@ -561,7 +561,8 @@ describe('AuthProvider', () => {
                     url: expect.stringContaining('/api/cleanup-failed-auth'),
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer google-token'
                     },
                     data: { userId: 'failed-user-id' }
                 })

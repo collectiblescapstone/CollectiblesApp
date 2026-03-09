@@ -26,7 +26,8 @@ jest.mock('../../ui/PopupUI', () => ({
         },
         get close() {
             return mockPopupUIClose
-        }
+        },
+        Viewport: () => null
     }
 }))
 

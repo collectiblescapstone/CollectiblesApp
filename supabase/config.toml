@@ -280,7 +280,7 @@ email_optional = false
 
 [auth.external.google]
 enabled = true
-client_id = "409024826452-9aobui0o0r4l7dc10lgsohj1e7sr3ikk.apps.googleusercontent.com"
+client_id = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)"
 secret = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_SECRET)"
 skip_nonce_check = false
 

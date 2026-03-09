@@ -94,9 +94,8 @@ const AuthForm = () => {
 
     const handleGoogleSignIn = async () => {
         setIsLoading(true)
-        try {
-            await signInWithGoogle()
-        } catch {
+        const res = await signInWithGoogle()
+        if (!res.success) {
             setError('root', {
                 type: 'oauth_error',
                 message:

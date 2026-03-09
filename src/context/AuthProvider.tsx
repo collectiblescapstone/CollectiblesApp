@@ -207,13 +207,14 @@ export const AuthContextProvider = ({
     }
 
     // Cleanup failed auth user
-    const cleanupFailedAuth = async (userId: string) => {
+    const cleanupFailedAuth = async (userId: string, accessToken: string) => {
         try {
             await CapacitorHttp.post({
                 url: `${baseUrl}/api/cleanup-failed-auth`,
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${accessToken}`
                 },
                 data: { userId }
             })
@@ -244,7 +245,10 @@ export const AuthContextProvider = ({
                     if (!result.success) {
                         // Registration failed - cleanup and sign out
                         console.error('Registration failed:', result.error)
-                        await cleanupFailedAuth(session.user.id)
+                        await cleanupFailedAuth(
+                            session.user.id,
+                            session.access_token
+                        )
                         await supabase.auth.signOut()
                         router.push('/sign-in?error=registration_failed')
                         setSession(null)

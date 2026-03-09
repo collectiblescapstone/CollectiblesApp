@@ -172,9 +172,8 @@ describe('AuthForm', () => {
         })
     })
 
-    // Temporary tests for third-party sign-in buttons
     it('handles Google sign-in button click', () => {
-        window.alert = jest.fn() // Mock alert
+        signInWithGoogleMock.mockResolvedValue({ success: true })
 
         renderWithTheme(<AuthForm />)
         const googleButton = screen.getByRole('button', {
@@ -183,6 +182,25 @@ describe('AuthForm', () => {
         fireEvent.click(googleButton)
         // Add assertions for Google sign-in behavior when implemented
         expect(signInWithGoogleMock).toHaveBeenCalled()
+    })
+
+    it('handles error on Google sign-in button click', async () => {
+        signInWithGoogleMock.mockResolvedValue({ success: false })
+
+        renderWithTheme(<AuthForm />)
+        const googleButton = screen.getByRole('button', {
+            name: /sign in with google/i
+        })
+        fireEvent.click(googleButton)
+        // Add assertions for Google sign-in behavior when implemented
+        expect(signInWithGoogleMock).toHaveBeenCalled()
+        await waitFor(() => {
+            expect(
+                screen.getByText(
+                    /an error occurred during google sign in. please try again later./i
+                )
+            ).toBeInTheDocument()
+        })
     })
 
     // Leaving Apple sign-in test commented out until implemented

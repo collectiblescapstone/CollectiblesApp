@@ -3,8 +3,9 @@ import { supabase } from '@/lib/supabase'
 import { NextResponse } from 'next/server'
 
 export const POST = async (request: Request) => {
-    const { id, email } = await request.json()
     try {
+        const { id, email } = await request.json()
+
         const authHeader = request.headers.get('authorization')
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return NextResponse.json(

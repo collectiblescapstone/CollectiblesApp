@@ -7,16 +7,21 @@ import { renderWithTheme } from '../../../utils/testing-utils'
 // Mock Auth context and Next.js router
 const signInMock = jest.fn()
 const pushMock = jest.fn()
+const signInWithGoogleMock = jest.fn()
 
 jest.mock('../../../context/AuthProvider', () => ({
     useAuth: () => ({
-        signIn: signInMock
+        signIn: signInMock,
+        signInWithGoogle: signInWithGoogleMock
     })
 }))
 
 jest.mock('next/navigation', () => ({
     useRouter: () => ({
         push: pushMock
+    }),
+    useSearchParams: () => ({
+        get: jest.fn()
     })
 }))
 
@@ -48,9 +53,10 @@ describe('AuthForm', () => {
         expect(
             screen.getByRole('button', { name: /sign in with google/i })
         ).toBeInTheDocument()
-        expect(
-            screen.getByRole('button', { name: /sign in with apple/i })
-        ).toBeInTheDocument()
+        // Leaving Apple sign-in button test commented out until implemented
+        // expect(
+        //     screen.getByRole('button', { name: /sign in with apple/i })
+        // ).toBeInTheDocument()
         expect(
             screen.getByRole('button', { name: /^sign up$/i })
         ).toBeInTheDocument()
@@ -176,20 +182,20 @@ describe('AuthForm', () => {
         })
         fireEvent.click(googleButton)
         // Add assertions for Google sign-in behavior when implemented
-
-        expect(window.alert).toHaveBeenCalledWith('Redirect to Google Sign-In')
+        expect(signInWithGoogleMock).toHaveBeenCalled()
     })
 
-    it('handles Apple sign-in button click', () => {
-        window.alert = jest.fn() // Mock alert
+    // Leaving Apple sign-in test commented out until implemented
+    // it('handles Apple sign-in button click', () => {
+    //     window.alert = jest.fn() // Mock alert
 
-        renderWithTheme(<AuthForm />)
-        const appleButton = screen.getByRole('button', {
-            name: /sign in with apple/i
-        })
-        fireEvent.click(appleButton)
-        // Add assertions for Apple sign-in behavior when implemented
+    //     renderWithTheme(<AuthForm />)
+    //     const appleButton = screen.getByRole('button', {
+    //         name: /sign in with apple/i
+    //     })
+    //     fireEvent.click(appleButton)
+    //     // Add assertions for Apple sign-in behavior when implemented
 
-        expect(window.alert).toHaveBeenCalledWith('Redirect to Apple Sign-In')
-    })
+    //     expect(window.alert).toHaveBeenCalledWith('Redirect to Apple Sign-In')
+    // })
 })

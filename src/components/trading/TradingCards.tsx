@@ -21,7 +21,7 @@ const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
                 justifyContent="center"
                 alignItems="center"
                 wrap="wrap"
-                gap={5}
+                gap={4}
             >
                 {cards.map((card: PokemonCardImage, index: number) => (
                     <Flex key={index}>
@@ -31,7 +31,7 @@ const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
                             h="auto"
                             w={
                                 card_length <= 2
-                                    ? '105px'
+                                    ? '100px'
                                     : card_length <= 3
                                       ? '80px'
                                       : card_length <= 4

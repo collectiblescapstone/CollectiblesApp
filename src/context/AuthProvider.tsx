@@ -239,7 +239,6 @@ export const AuthContextProvider = ({
                 const provider = session.user.app_metadata.provider
 
                 if (provider === 'google') {
-                    console.log('Google OAuth detected, registering user...')
                     const result = await registerGoogleUser(session)
 
                     if (!result.success) {
@@ -251,12 +250,6 @@ export const AuthContextProvider = ({
                         setSession(null)
                         setLoading(false)
                         return
-                    }
-
-                    if (result.alreadyExists) {
-                        console.log('User already exists, continuing...')
-                    } else {
-                        console.log('User registered successfully')
                     }
                 }
             }

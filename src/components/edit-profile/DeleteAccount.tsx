@@ -1,147 +1,120 @@
 'use client'
 
-import React, { useEffect } from 'react'
-import { useState } from 'react'
-
-import { Button, Box, Flex, Text, Field } from '@chakra-ui/react'
-import { PasswordInput } from '@/components/ui/password-input'
+import React, { useState } from 'react'
+import { Button, Field, Input, Text, VStack } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
-import { FiXCircle } from 'react-icons/fi'
+import { useAuth } from '@/context/AuthProvider'
+import PopupUI from '@/components/ui/PopupUI'
 
 interface FormValues {
-    password: string
+    confirmationText: string
 }
 
 const DeleteAccount: React.FC = () => {
-    const [DeletePopUpOpen, setDeletePopUpOpen] = useState(false)
+    const { deleteAccount } = useAuth()
 
-    const PASSWORD = 'ishpreet'
-
-    const deletepressed = () => {
-        setDeletePopUpOpen(true)
+    const openDeletePopup = () => {
+        PopupUI.open('delete-account', {
+            title: '⚠️ Delete Account?',
+            content: <DeleteAccountForm />,
+            onClickClose: () => PopupUI.close('delete-account')
+        })
     }
 
-    const closePopup = () => {
-        setDeletePopUpOpen(false)
-        // reset password field if needed
-        reset({ password: '' })
-    }
+    return (
+        <Button
+            variant="solid"
+            colorPalette="red"
+            size="lg"
+            onClick={openDeletePopup}
+        >
+            Delete my account
+        </Button>
+    )
+}
 
-    useEffect(() => {
-        if (DeletePopUpOpen) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = ''
-        }
-    }, [DeletePopUpOpen])
+const DeleteAccountForm: React.FC = () => {
+    const [isDeleting, setIsDeleting] = useState(false)
+    const [errorMessage, setErrorMessage] = useState<string | null>(null)
+    const { deleteAccount } = useAuth()
 
     const {
         register,
         handleSubmit,
         setError,
-        reset,
         formState: { errors }
     } = useForm<FormValues>()
 
-    const confirmDelete = (data: FormValues) => {
-        if (data.password !== PASSWORD) {
-            setError('password', {
+    const confirmDelete = async (data: FormValues) => {
+        // Check if user typed exactly "delete_account"
+        if (data.confirmationText !== 'delete_account') {
+            setError('confirmationText', {
                 type: 'manual',
-                message: 'Incorrect password'
+                message: 'You must type "delete_account" exactly to confirm'
             })
             return
         }
-        // Proceed with account deletion logic here
-        closePopup()
+
+        setIsDeleting(true)
+        setErrorMessage(null)
+
+        // Call the deleteAccount function from AuthProvider
+        const result = await deleteAccount()
+
+        if (!result.success) {
+            setErrorMessage(
+                result.error || 'Failed to delete account. Please try again.'
+            )
+            setIsDeleting(false)
+        }
+        // If successful, user will be signed out and redirected automatically
     }
 
     return (
-        <>
+        <VStack gap={4} width="100%">
+            <Text fontSize="md" textAlign="center">
+                This action cannot be undone. All your data including your
+                collection, wishlist, and profile information will be
+                permanently deleted.
+            </Text>
+            <Text fontSize="md" fontWeight="bold" textAlign="center">
+                To confirm, please type{' '}
+                <Text as="span" color="red.500" fontFamily="monospace">
+                    delete_account
+                </Text>{' '}
+                below:
+            </Text>
+            <Field.Root invalid={!!errors.confirmationText} width="100%">
+                <Input
+                    {...register('confirmationText', {
+                        required: 'This field is required'
+                    })}
+                    placeholder="Type delete_account here"
+                    disabled={isDeleting}
+                    variant="subtle"
+                    size="lg"
+                />
+                <Field.ErrorText>
+                    {errors.confirmationText?.message}
+                </Field.ErrorText>
+            </Field.Root>
+            {errorMessage && (
+                <Text color="red.500" fontSize="sm" textAlign="center">
+                    {errorMessage}
+                </Text>
+            )}
             <Button
                 variant="solid"
                 colorPalette="red"
                 size="lg"
-                onClick={deletepressed}
+                width="100%"
+                onClick={handleSubmit(confirmDelete)}
+                loading={isDeleting}
+                disabled={isDeleting}
             >
-                Delete my account
+                {isDeleting ? 'Deleting Account...' : 'Delete My Account'}
             </Button>
-            {DeletePopUpOpen && (
-                <Box
-                    position="fixed"
-                    top="0"
-                    left="0"
-                    width="100vw"
-                    height="100vh"
-                    bg="blackAlpha.800"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    zIndex="1000"
-                >
-                    <Box
-                        bg="white"
-                        shadow={'md'}
-                        borderRadius="lg"
-                        alignItems={'center'}
-                        justifyContent={'center'}
-                        textAlign={'center'}
-                        p={7}
-                        width={'85vw'}
-                        height={'auto'}
-                        outlineColor={'red'}
-                        outlineWidth={2}
-                        outlineStyle={'solid'}
-                    >
-                        <Flex
-                            flexDirection="column"
-                            alignItems="center"
-                            gap={5}
-                        >
-                            <Button
-                                position="relative"
-                                alignSelf="flex-end"
-                                variant="ghost"
-                                mt={-7}
-                                mb={-14}
-                                left={8}
-                                size="2xl"
-                            >
-                                <FiXCircle color="black" onClick={closePopup} />
-                            </Button>
-                            <Text fontSize="xl" fontWeight="bold" color={'red'}>
-                                Are you sure?
-                            </Text>
-                            <Text fontSize={'md'} fontWeight={'normal'}>
-                                You are about to permanently delete your
-                                account. If you are sure you would like to
-                                proceed, please enter your account password.
-                            </Text>
-                            <Field.Root
-                                invalid={!!errors.password}
-                                width="100%"
-                            >
-                                <PasswordInput
-                                    {...register('password', {
-                                        required: 'Password is required'
-                                    })}
-                                />
-                                <Field.ErrorText>
-                                    {errors.password?.message}
-                                </Field.ErrorText>
-                            </Field.Root>
-                            <Button
-                                variant="solid"
-                                colorPalette="red"
-                                size="lg"
-                                onClick={handleSubmit(confirmDelete)}
-                            >
-                                Delete my account
-                            </Button>
-                        </Flex>
-                    </Box>
-                </Box>
-            )}
-        </>
+        </VStack>
     )
 }
 

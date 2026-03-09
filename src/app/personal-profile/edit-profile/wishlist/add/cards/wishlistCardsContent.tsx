@@ -56,7 +56,7 @@ const WishlistCardsContent: React.FC = () => {
     const [userCards, setUserCards] = useState<string[]>([])
 
     // Context
-    const { getAllCards } = usePokemonCards()
+    const { allCards } = usePokemonCards()
 
     // Fetch cards based on type & params
     useEffect(() => {
@@ -68,8 +68,7 @@ const WishlistCardsContent: React.FC = () => {
 
             setLoading(true)
             try {
-                const cards = await getAllCards()
-                const filteredCards = cards.filter((card) => {
+                const filteredCards = allCards.filter((card) => {
                     if (type === 'set') {
                         return card.setId === setId
                     }
@@ -124,7 +123,7 @@ const WishlistCardsContent: React.FC = () => {
         }
 
         loadData()
-    }, [type, setId, pId, session?.user?.id, getAllCards])
+    }, [type, setId, pId, session?.user?.id, allCards])
 
     // Fetch Pokémon name if viewing a single Pokémon
     useEffect(() => {

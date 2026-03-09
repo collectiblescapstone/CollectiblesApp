@@ -27,16 +27,17 @@ export interface GetPokemonCardsFilters {
 
 // CONTEXT
 type PokemonCardsContextType = {
-    getCardsBySetId: (setId: string) => Promise<Record<string, PokemonCard>>
-    getCardsByName: (name: string) => Promise<Record<string, PokemonCard>>
-    getCardsByPokedex: (pId: number) => Promise<Record<string, PokemonCard>>
     pokemonCards: Record<string, PokemonCard>
     pokemonSets: Record<string, PokemonSet>
     masterSetCards: Record<string, Set<string>>
-    grandmasterSetCount: (setId: string) => Promise<number>
     pokemonMasterSetCards: Record<number, Set<string>>
+    allCards: CardData[]
+    getCardsBySetId: (setId: string) => Promise<Record<string, PokemonCard>>
+    getCardsByName: (name: string) => Promise<Record<string, PokemonCard>>
+    getCardsByPokedex: (pId: number) => Promise<Record<string, PokemonCard>>
+    grandmasterSetCount: (setId: string) => Promise<number>
     pokemonGrandmasterSetCount: (pokedexId: number) => Promise<number>
-    getAllCards: (filters?: GetPokemonCardsFilters) => Promise<CardData[]>
+    getFilteredCards: (filters: GetPokemonCardsFilters) => Promise<CardData[]>
 }
 
 const PokemonCardsContext = createContext<PokemonCardsContextType | undefined>(
@@ -80,6 +81,7 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     )
 
     // Local state for master and grandmaster sets
+
     // Set counts based on set
     const [masterSetCards, setMasterSetCards] = useState<
         Record<string, Set<string>>
@@ -96,12 +98,16 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
         Record<number, Record<string, Set<string>>>
     >({})
 
+    // Local state for all cards (NO FILTERS)
+    const [allCards, setAllCards] = useState<CardData[]>([])
+
     useEffect(() => {
         // FETCHERS
         const fetchPokemonCards = async (): Promise<void> => {
             const tempCards: Record<string, PokemonCard> = {}
             try {
                 const cards = await getPokemonCards()
+                setAllCards(cards)
 
                 const tempMasterSetCards: Record<string, Set<string>> = {}
                 const tempGrandmasterSetCards: Record<
@@ -297,7 +303,6 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
 
     /**
      * Calculates the grandmaster set count based on the pokemonId
-     * WILL NEED TO REFACTOR FOR THE SHOW ALL CARDS PAGE
      * @param userId
      * @param pokemonId
      * @returns
@@ -317,8 +322,8 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
         return count
     }
 
-    const getAllCards = async (
-        filters?: GetPokemonCardsFilters
+    const getFilteredCards = async (
+        filters: GetPokemonCardsFilters
     ): Promise<CardData[]> => {
         return getPokemonCards(filters)
     }
@@ -326,16 +331,17 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     return (
         <PokemonCardsContext.Provider
             value={{
-                getCardsBySetId,
-                getCardsByPokedex,
-                getCardsByName,
                 pokemonCards,
                 pokemonSets,
                 masterSetCards,
-                grandmasterSetCount,
                 pokemonMasterSetCards,
+                allCards,
+                getCardsBySetId,
+                getCardsByPokedex,
+                getCardsByName,
+                grandmasterSetCount,
                 pokemonGrandmasterSetCount,
-                getAllCards
+                getFilteredCards
             }}
         >
             {children}

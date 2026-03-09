@@ -11,8 +11,6 @@ interface FormValues {
 }
 
 const DeleteAccount: React.FC = () => {
-    const { deleteAccount } = useAuth()
-
     const openDeletePopup = () => {
         PopupUI.open('delete-account', {
             title: '⚠️ Delete Account?',

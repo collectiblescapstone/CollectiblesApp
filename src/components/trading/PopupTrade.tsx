@@ -126,24 +126,24 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
             <Card.Body py={3}>
                 {/*their cards*/}
                 <VStack align="center" gap={2}>
-                    <TradingCards
-                        cards={user1Wishlist?.map((card) => ({
-                            name: card.name,
-                            image: card.image_url
-                        }))}
-                    />
+                    <VStack>
+                        <TradingCards
+                            cards={user1Wishlist?.map((card) => ({
+                                name: card.name,
+                                image: card.image_url
+                            }))}
+                        />
+                    </VStack>
                     <VStack align="center" gap={2}>
-                        <HStack>
-                            <HStack gap="2" mt={1}>
-                                <Button variant="ghost" onClick={goProfile}>
-                                    <Avatar.Root boxSize="30px" shape="rounded">
-                                        <Avatar.Image src={avatarUrl} />
-                                    </Avatar.Root>
-                                    <Text fontWeight="semibold" textStyle="sm">
-                                        {username}
-                                    </Text>
-                                </Button>
-                            </HStack>
+                        <HStack gap="2" mt={1}>
+                            <Button variant="ghost" onClick={goProfile}>
+                                <Avatar.Root boxSize="30px" shape="rounded">
+                                    <Avatar.Image src={avatarUrl} />
+                                </Avatar.Root>
+                                <Text fontWeight="semibold" textStyle="sm">
+                                    {username}
+                                </Text>
+                            </Button>
                         </HStack>
                         <HStack>
                             {hasContact(['instagram']) && (

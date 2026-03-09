@@ -52,6 +52,10 @@ interface AuthContextData {
           }
     >
     signOut: () => Promise<void>
+    deleteAccount: () => Promise<{
+        success: boolean
+        error?: string
+    }>
     session: Session | null
     loading: boolean
 }
@@ -174,12 +178,12 @@ export const AuthContextProvider = ({
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${accessToken}`
                 },
-                data: JSON.stringify({ id: userId, email })
+                data: { id: userId, email }
             })
 
-            const data = await response.data
+            const data = response.data
 
-            if (response.status !== 200 || response.status >= 400) {
+            if (response.status !== 200) {
                 console.error('Registration API error:', data)
                 return {
                     success: false,
@@ -211,7 +215,7 @@ export const AuthContextProvider = ({
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                data: JSON.stringify({ userId })
+                data: { userId }
             })
         } catch (error) {
             console.error('Error cleaning up failed auth:', error)
@@ -279,6 +283,48 @@ export const AuthContextProvider = ({
         }
     }
 
+    // Delete account
+    const deleteAccount = async () => {
+        try {
+            if (!session) {
+                return { success: false, error: 'No active session' }
+            }
+
+            const accessToken = session.access_token
+
+            const response = await CapacitorHttp.delete({
+                url: `${baseUrl}/api/delete-account`,
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${accessToken}`
+                }
+            })
+
+            const data = response.data
+
+            if (response.status !== 200) {
+                console.error('Delete account API error:', data)
+                return {
+                    success: false,
+                    error: data.error || 'Failed to delete account'
+                }
+            }
+
+            // Sign out after successful deletion
+            await supabase.auth.signOut()
+            router.push('/')
+
+            return { success: true }
+        } catch (error) {
+            console.error('Error deleting account:', error)
+            return {
+                success: false,
+                error: 'Network error during account deletion'
+            }
+        }
+    }
+
     return (
         <AuthContext.Provider
             value={{
@@ -286,6 +332,7 @@ export const AuthContextProvider = ({
                 signIn,
                 signInWithGoogle,
                 signOut,
+                deleteAccount,
                 session,
                 loading
             }}

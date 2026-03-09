@@ -264,7 +264,7 @@ const TradePage = () => {
                             </Slider.Root>
                         </Box>
                     </Flex>
-                    <Flex flexDirection="column" alignItems="center" gap={4}>
+                    <Flex flexDirection="column" alignItems="center" gap={2}>
                         {(() => {
                             const filteredUsers = users.filter(
                                 (u) =>

@@ -33,20 +33,13 @@ type TradeCardPopupProps = {
 }
 
 const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
-    const {
-        username,
-        contacts,
-        avatarUrl,
-        user1Wishlist,
-        user2Wishlist,
-        onNavigateToProfile
-    } = props
+    const { username, contacts, avatarUrl, user1Wishlist, user2Wishlist } =
+        props
 
     const router = useRouter()
     const { setProfileSelected } = useProfileSelected()
 
     const goProfile = () => {
-        onNavigateToProfile()
         setProfileSelected(username)
         router.push(`/user-profile`)
     }
@@ -139,7 +132,7 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                             image: card.image_url
                         }))}
                     />
-                    <VStack align="center" gap="3">
+                    <VStack align="center" gap={2}>
                         <HStack>
                             <HStack gap="2" mt={1}>
                                 <Button variant="ghost" onClick={goProfile}>

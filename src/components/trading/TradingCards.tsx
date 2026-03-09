@@ -15,7 +15,6 @@ const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
             justifyContent="flex-start"
             alignItems="center"
             w="100%"
-            px={4}
         >
             <Flex
                 flexDirection="row"
@@ -29,14 +28,15 @@ const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
                         <Image
                             src={`${card.image}`}
                             alt={card.name}
-                            w="105px"
                             h="auto"
-                            scale={
+                            w={
                                 card_length <= 2
-                                    ? '100%'
-                                    : card_length <= 4
-                                      ? '60%'
-                                      : '10%'
+                                    ? '105px'
+                                    : card_length <= 3
+                                      ? '80px'
+                                      : card_length <= 4
+                                        ? '60px'
+                                        : '40px'
                             }
                             borderRadius="none"
                         />

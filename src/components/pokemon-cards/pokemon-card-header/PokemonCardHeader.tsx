@@ -31,7 +31,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
     const [cardInfo, setCardInfo] = useState<PokemonCard | null>(null)
 
     // Context
-    const { getCardInformation, getSetInfo } = usePokemonCards()
+    const { pokemonCards, pokemonSets } = usePokemonCards()
 
     useEffect(() => {
         let isMounted = true
@@ -39,7 +39,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
         const fetchCardInfo = async () => {
             setLoading(true)
             try {
-                const fetchedCardInfo = await getCardInformation(cardId)
+                const fetchedCardInfo = pokemonCards[cardId]
 
                 if (!isMounted) return
 
@@ -52,7 +52,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                     return
                 }
 
-                const set = await getSetInfo(fetchedCardInfo?.setId || '')
+                const set = pokemonSets[fetchedCardInfo?.setId || '']
 
                 if (!isMounted) return
 
@@ -71,7 +71,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
         return () => {
             isMounted = false
         }
-    }, [cardId, getCardInformation, getSetInfo])
+    }, [cardId, pokemonCards, pokemonSets])
 
     if (loading || !cardInfo)
         return (

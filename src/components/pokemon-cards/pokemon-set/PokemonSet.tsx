@@ -142,9 +142,6 @@ const PokemonSet = ({
                         p={4}
                     >
                         <Heading size="md">{label}</Heading>
-                        {/* <Text color="gray.600" mt={2}>
-              {setID} Troubleshooting code to show the set ID
-            </Text> */}
 
                         {/* Progress bars section */}
                         <Box mt={4} w="100%">
@@ -160,7 +157,10 @@ const PokemonSet = ({
                                     boxSize={4}
                                 />
                                 <Progress.Root
-                                    value={masterSetCount || 0}
+                                    value={Math.min(
+                                        masterSetCount || 0,
+                                        masterSet || 1
+                                    )}
                                     max={masterSet || 1}
                                     w="100%"
                                     h="6px"
@@ -192,7 +192,10 @@ const PokemonSet = ({
                                     boxSize={4}
                                 />
                                 <Progress.Root
-                                    value={grandmasterSetCount || 0}
+                                    value={Math.min(
+                                        grandmasterSetCount || 0,
+                                        grandmasterSet || 1
+                                    )}
                                     max={grandmasterSet || 1}
                                     w="100%"
                                     h="6px"

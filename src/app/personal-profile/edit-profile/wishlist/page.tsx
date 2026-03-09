@@ -22,7 +22,7 @@ const WishScreen = () => {
     const [removingCard, setRemovingCard] = useState(false)
     const [cards, setCards] = useState<CardData[]>([])
 
-    const { getAllCards } = usePokemonCards()
+    const { getFilteredCards } = usePokemonCards()
 
     const removeCard = useCallback(
         async (cardId: string) => {
@@ -59,13 +59,13 @@ const WishScreen = () => {
         const fetchWishlistCards = async () => {
             const wishlistEntries = await getWishlist(session.user.id)
             const cardIds = wishlistEntries.map(({ cardId }) => cardId)
-            const cards = await getAllCards({ ids: cardIds })
+            const cards = await getFilteredCards({ ids: cardIds })
             setCards(cards)
             setLoadingWishlist(false)
         }
 
         fetchWishlistCards()
-    }, [session?.user.id, getAllCards])
+    }, [session?.user.id, getFilteredCards])
 
     return (
         <Box bg="white" minH="100vh" color="black">

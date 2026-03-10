@@ -4,61 +4,83 @@ import React, { useEffect, useState } from 'react'
 import { Box, Image, HStack, VStack, Spinner, Text } from '@chakra-ui/react'
 
 // Context
-import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
 
 // Icons
-import { FaPaintBrush, FaTools } from "react-icons/fa";
+import { FaPaintBrush, FaTools } from 'react-icons/fa'
 
 // Types
-import type { PokemonCard } from '@/utils/pokemonCard'
+import type { PokemonCard } from '@/types/Cards/frontend-card'
 
 // Utils
-import { getSetName, getSetInfo } from '@/utils/pokemonSet'
-import { getCardInformation } from '@/utils/pokemonCard'
-import { capitalizeEachWord } from '@/utils/capitalize';
-import { getRarityImage } from '@/utils/cardInfo/raritytoImage'
-
-
+import { capitalizeEachWord } from '@/utils/capitalize'
+import {
+    checkRarityExists,
+    getRarityImage
+} from '@/utils/cardInfo/raritytoImage'
 
 interface PokemonCardHeaderProps {
     cardId: string
 }
 
-const PokemonCardHeader = ({
-    cardId
-}: PokemonCardHeaderProps) => {
-
-    const { session, loading: authLoading } = useAuth()
+const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
     const [loading, setLoading] = useState(true)
     const [setCount, setSetCount] = useState<number>(0)
+    const [setName, setSetName] = useState<string>('')
 
     const [cardInfo, setCardInfo] = useState<PokemonCard | null>(null)
 
+    // Context
+    const { pokemonCards, pokemonSets } = usePokemonCards()
+
     useEffect(() => {
+        let isMounted = true
+
         const fetchCardInfo = async () => {
             setLoading(true)
             try {
-                const fetchedCardInfo = await getCardInformation(cardId)
+                const fetchedCardInfo = pokemonCards[cardId]
+
+                if (!isMounted) return
+
                 setCardInfo(fetchedCardInfo || null)
-                const set = await getSetInfo(fetchedCardInfo?.setId || '')
+
+                if (!fetchedCardInfo?.setId) {
+                    setSetCount(0)
+                    setSetName('')
+                    setLoading(false)
+                    return
+                }
+
+                const set = pokemonSets[fetchedCardInfo?.setId || '']
+
+                if (!isMounted) return
+
                 setSetCount(set?.official || 0)
+                setSetName(set?.name || '')
                 setLoading(false)
             } catch (error) {
                 console.error('Error fetching card information:', error)
+                if (!isMounted) return
                 setLoading(false)
             }
         }
-        fetchCardInfo()
-    }, [cardId])
 
-    if (loading || authLoading || !session || !cardInfo)
+        fetchCardInfo()
+
+        return () => {
+            isMounted = false
+        }
+    }, [cardId, pokemonCards, pokemonSets])
+
+    if (loading || !cardInfo)
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />
             </Box>
         )
 
-    const splitId = (cardId.split('-'))[1]
+    const splitId = cardId.split('-')[1]
 
     return (
         <Box
@@ -68,11 +90,10 @@ const PokemonCardHeader = ({
             display="flex"
             alignItems="center"
         >
-
-            <HStack gap={4} align="center" width={"100%"}>
+            <HStack gap={4} align="center" width={'100%'}>
                 <Box
                     bg="gray.50"
-                    width={"50%"}
+                    width={'50%'}
                     borderRadius="md"
                     overflow="hidden"
                     display="flex"
@@ -82,7 +103,8 @@ const PokemonCardHeader = ({
                 >
                     <Image
                         src={
-                            cardInfo.image_url !== 'undefined/low.png' && cardInfo.image_url !== ''
+                            cardInfo.image_url !== 'undefined/low.png' &&
+                            cardInfo.image_url !== ''
                                 ? cardInfo.image_url
                                 : '/Images/PokemonCardBack.jpg'
                         }
@@ -96,30 +118,26 @@ const PokemonCardHeader = ({
                     />
                 </Box>
 
-                <Box
-                    w="1px"
-                    h="full"
-                    bg="gray.300"
-                />
+                <Box w="1px" h="full" bg="gray.300" />
 
                 <VStack align="start" h="full" gap={4}>
-
                     <Text fontSize="xl" fontWeight="bold">
                         {cardInfo.name}
                     </Text>
                     <Text fontSize="sm" fontWeight="bold">
-                        {splitId +
-                            (setCount > 0
-                                ? '/' + setCount
-                                : '')
-                        }
+                        {splitId + (setCount > 0 ? '/' + setCount : '')}
                     </Text>
                     <Text fontSize="sm" fontWeight="bold">
-                        {getSetName(cardInfo.setId)}
+                        {setName}
                     </Text>
                     {cardInfo.category === 'Pokemon' && (
                         <HStack gap={2} align="center">
-                            <Image src="/Images/PokeBall.svg" alt="Pokémon" height="1em" width="auto" />
+                            <Image
+                                src="/Images/PokeBall.svg"
+                                alt="Pokémon"
+                                height="1em"
+                                width="auto"
+                            />
                             <Text fontSize="sm" fontWeight="bold">
                                 Pokémon
                             </Text>
@@ -134,9 +152,22 @@ const PokemonCardHeader = ({
                         </HStack>
                     )}
                     <HStack gap={2} align="center">
-                        <Image src={getRarityImage(cardInfo.rarity)} alt={cardInfo.rarity} height="1em" width="auto" />
+                        <Image
+                            src={getRarityImage(
+                                checkRarityExists(cardInfo.rarity)
+                                    ? cardInfo.rarity
+                                    : 'Common'
+                            )}
+                            alt={cardInfo.rarity}
+                            height="1em"
+                            width="auto"
+                        />
                         <Text fontSize="sm" fontWeight="bold">
-                            {capitalizeEachWord(cardInfo.rarity)}
+                            {capitalizeEachWord(
+                                checkRarityExists(cardInfo.rarity)
+                                    ? cardInfo.rarity
+                                    : 'Common'
+                            )}
                         </Text>
                     </HStack>
                     <HStack gap={2}>
@@ -145,10 +176,8 @@ const PokemonCardHeader = ({
                             {cardInfo.illustrator}
                         </Text>
                     </HStack>
-
                 </VStack>
             </HStack>
-
         </Box>
     )
 }

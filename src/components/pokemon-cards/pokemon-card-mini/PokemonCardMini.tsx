@@ -1,9 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { Box, Image, VStack, Text } from '@chakra-ui/react'
 import { CiCirclePlus } from 'react-icons/ci'
 import Link from 'next/link'
+import { useAuth } from '@/context/AuthProvider'
+import { updateWishlist } from '@/utils/wishlist/wishlistQueries'
+import { useRouter } from 'next/navigation'
 
 interface PokemonCardMiniProps {
     cardId: string
@@ -11,6 +14,7 @@ interface PokemonCardMiniProps {
     image: string
     cardOwned: boolean
     cardSetId: string // actual card ID, e.g., "sv01-001"
+    wishlist?: boolean
     // illustrator?: string;
     // rarity?: string;
 }
@@ -20,23 +24,46 @@ const PokemonCardMini = ({
     cardName,
     image,
     cardSetId,
-    cardOwned
+    cardOwned,
+    wishlist
     // illustrator,
     // rarity,
 }: PokemonCardMiniProps) => {
-
     // Determine path, either add card OR to the cards owned page, where you can click and edit the cards
-
     const path = cardOwned ? '/user-cards' : '/edit-card'
+
+    const { session } = useAuth()
+    const router = useRouter()
+    const [addingToWishlist, setAddingToWishlist] = useState(false)
+    const addToWishlist = useCallback(async () => {
+        if (!wishlist || session?.user.id == undefined || addingToWishlist) {
+            return
+        }
+
+        setAddingToWishlist(true)
+        try {
+            await updateWishlist(session.user.id, cardId)
+            router.push('/personal-profile/edit-profile/wishlist')
+        } catch (e) {
+            console.log(`Error trying to add card to wishlist: ${e}`)
+        }
+
+        setAddingToWishlist(false)
+    }, [wishlist, cardId, session?.user.id, addingToWishlist, router])
 
     return (
         <Link
-            href={{
-                pathname: path,
-                query: {
-                    cardId: cardId
-                }
-            }}
+            onClick={addToWishlist}
+            href={
+                wishlist
+                    ? {}
+                    : {
+                          pathname: path,
+                          query: {
+                              cardId: cardId
+                          }
+                      }
+            }
         >
             <Box
                 as="button"

@@ -13,7 +13,8 @@
         "start": "next start",
         "lint": "eslint src",
         "lint:fix": "eslint --fix src",
-        "prettier": "prettier --write .",
+        "format": "prettier --write .",
+        "prettier:check": "prettier --check .",
         "test": "jest",
         "test:watch": "jest --watch",
         "db:migrate": "npx prisma migrate dev",
@@ -22,6 +23,7 @@
     },
     "dependencies": {
         "@capacitor/android": "^8.0.0",
+        "@capacitor/clipboard": "^8.0.0",
         "@capacitor/core": "^8.0.0",
         "@capacitor/ios": "^8.0.0",
         "@capgo/camera-preview": "^8.1.3",

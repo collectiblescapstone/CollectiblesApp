@@ -10,27 +10,26 @@ import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller'
 import ProfileLayout from '@/components/profiles/ProfileLayout'
 import AccountOptions from '@/components/profiles/AccountOptions'
 import StarRating from '@/components/profiles/StarRating'
+import { useProfileSelected } from '@/context/ProfileSelectionProvider'
 
 const ProfileScreen = () => {
     const { setProfileID } = useHeader()
 
-    // This is a temporary username for testing purposes.
-    // Change the specific username to match the profile you have in your local database.
-    const userName = 'habibi_george_bush'
+    const { profileSelected } = useProfileSelected()
 
     const [user, setUser] = useState<UserProfile | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
-        if (!userName) {
+        if (!profileSelected) {
             setError('No user name found')
             setLoading(false)
             return
         }
         const loadUserProfile = async () => {
             try {
-                const data = await fetchUserProfile(userName)
+                const data = await fetchUserProfile(profileSelected)
                 setUser(data)
                 if (setProfileID) {
                     setProfileID(data.username)
@@ -45,9 +44,9 @@ const ProfileScreen = () => {
         }
 
         loadUserProfile()
-    }, [userName, setProfileID])
+    }, [profileSelected, setProfileID])
 
-    if (loading) {
+    if (loading || !user) {
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />

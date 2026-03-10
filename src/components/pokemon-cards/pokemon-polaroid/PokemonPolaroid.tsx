@@ -8,6 +8,7 @@ import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSet
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
 
 // Icons
 import { LuSparkle, LuSparkles } from 'react-icons/lu'
@@ -18,7 +19,6 @@ import {
     userPokemonGrandmasterSetCount
 } from '@/utils/userPokemonCard'
 import { getDynamicColour } from '@/utils/dynamicColours'
-import { getPokemonName } from '@/utils/pokedex'
 
 interface PokemonPolaroidProps {
     id: number
@@ -27,11 +27,11 @@ interface PokemonPolaroidProps {
     nextPage: string
 }
 
-const PokemonPolaroid = ({
-	id,
-	masterSet,
-	grandmasterSet,
-	nextPage
+const PokemonPolaroid: React.FC<PokemonPolaroidProps> = ({
+    id,
+    masterSet,
+    grandmasterSet,
+    nextPage
 }: PokemonPolaroidProps) => {
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
     const { session } = useAuth()
@@ -41,6 +41,8 @@ const PokemonPolaroid = ({
         number | null
     >(null)
     const [label, setLabel] = useState<string>()
+
+    const { getPokemonName } = usePokemonCards()
 
     useEffect(() => {
         if (!session?.user?.id) return
@@ -71,7 +73,7 @@ const PokemonPolaroid = ({
         }
 
         getLabel()
-    }, [id])
+    }, [id, getPokemonName])
 
     if (loading || masterSetCount === null || grandmasterSetCount === null) {
         return <PokemonSetLoading />
@@ -120,7 +122,7 @@ const PokemonPolaroid = ({
                         <Icon
                             as={LuSparkle}
                             color={getDynamicColour(
-                                masterSetCount || 0,
+                                Math.min(masterSetCount || 0, masterSet || 1),
                                 masterSet || 1,
                                 45,
                                 51
@@ -128,7 +130,10 @@ const PokemonPolaroid = ({
                             boxSize={4}
                         />
                         <Progress.Root
-                            value={masterSetCount || 0}
+                            value={Math.min(
+                                masterSetCount || 0,
+                                masterSet || 1
+                            )}
                             max={masterSet || 1}
                             w="100%"
                             h="6px"
@@ -160,7 +165,10 @@ const PokemonPolaroid = ({
                             boxSize={4}
                         />
                         <Progress.Root
-                            value={grandmasterSetCount || 0}
+                            value={Math.min(
+                                grandmasterSetCount || 0,
+                                grandmasterSet || 1
+                            )}
                             max={grandmasterSet || 1}
                             w="100%"
                             h="6px"
@@ -170,7 +178,10 @@ const PokemonPolaroid = ({
                             <Progress.Track bg="gray.100">
                                 <Progress.Range
                                     bg={getDynamicColour(
-                                        grandmasterSetCount || 0,
+                                        Math.min(
+                                            grandmasterSetCount || 0,
+                                            grandmasterSet || 1
+                                        ),
                                         grandmasterSet || 1,
                                         182,
                                         50

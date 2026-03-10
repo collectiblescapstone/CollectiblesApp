@@ -29,7 +29,9 @@ export async function POST(request: NextRequest) {
             grade,
             gradeLevel,
             tags,
-            cardId
+            cardId,
+            showcase,
+            markedForTrade
         } = body
 
         if (!cardName && !cardId) {
@@ -39,38 +41,19 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        let result
-        const existingEntry = await prisma.collectionEntry.findFirst({
-            where: {
+        const result = await prisma.collectionEntry.create({
+            data: {
                 userId: userId,
-                cardId: cardId
+                cardId: cardId ?? null,
+                condition: condition ?? null,
+                variant: variant ?? null,
+                grade: grade ?? null,
+                gradeLevel: gradeLevel ?? null,
+                tags: tags ?? [],
+                showcase: showcase ?? false,
+                forTrade: markedForTrade ?? false
             }
         })
-
-        if (existingEntry) {
-            result = await prisma.collectionEntry.update({
-                where: { id: existingEntry.id },
-                data: {
-                    condition: condition ?? null,
-                    variant: variant ?? null,
-                    grade: grade ?? null,
-                    gradeLevel: gradeLevel ?? null,
-                    tags: tags ?? []
-                }
-            })
-        } else {
-            result = await prisma.collectionEntry.create({
-                data: {
-                    userId: userId,
-                    cardId: cardId ?? null,
-                    condition: condition ?? null,
-                    variant: variant ?? null,
-                    grade: grade ?? null,
-                    gradeLevel: gradeLevel ?? null,
-                    tags: tags ?? []
-                }
-            })
-        }
 
         return NextResponse.json(
             { message: 'Saved to collection', data: result },

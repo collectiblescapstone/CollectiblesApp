@@ -1,0 +1,7 @@
+export type UserData = {
+    username: string
+    firstName: string
+    cardsInCollection: number
+    cardsForTrade: number
+    cardsLoggedthisMonth: number
+}

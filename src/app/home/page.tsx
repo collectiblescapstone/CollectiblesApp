@@ -1,4 +1,6 @@
 'use client'
+
+import React, { useEffect, useState } from 'react'
 import { useAuth } from '@/context/AuthProvider'
 
 import PopularCards from '@/components/home/PopularCards'
@@ -6,9 +8,39 @@ import Collection from '@/components/home/Collection'
 import TradeSuggestions from '@/components/home/TradeSuggestions'
 
 import { Box, Flex, Heading, Text, Spinner } from '@chakra-ui/react'
+import { UserProfile } from '@/types/personal-profile'
+import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
 
 const HomePage = () => {
-    const { loading, session } = useAuth()
+    const { session } = useAuth()
+
+    const userID = session?.user.id
+
+    const [user, setUser] = useState<UserProfile | null>(null)
+    const [loading, setLoading] = useState<boolean>(true)
+    const [error, setError] = useState<string | null>(null)
+
+    useEffect(() => {
+        if (!userID) {
+            setError('No user ID found')
+            setLoading(false)
+            return
+        }
+        const loadUserProfile = async () => {
+            try {
+                const data = await fetchUserProfile(userID)
+                setUser(data)
+                setLoading(false)
+            } catch (error) {
+                console.error(error)
+                setError('Failed to fetch user profile')
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadUserProfile()
+    }, [userID])
 
     if (loading || !session) {
         return (
@@ -18,22 +50,38 @@ const HomePage = () => {
         )
     }
 
+    if (error) {
+        return (
+            <Flex justifyContent="center" alignItems="center" height="50vh">
+                <Text>{error}</Text>
+            </Flex>
+        )
+    }
+
+    if (!user) {
+        return (
+            <Flex justifyContent="center" alignItems="center" height="50vh">
+                <Text>User not found</Text>
+            </Flex>
+        )
+    }
+
     return (
         <Flex
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
             minHeight="inherit"
-            py={2}
         >
             <Heading
-                mt={1}
+                mt={5}
                 fontSize="2xl"
                 textAlign="center"
                 fontWeight={'Bold'}
                 fontFamily="var(--font-sans)"
+                px={1}
             >
-                Welcome back [USERNAME]!
+                Welcome back {user?.firstName || user?.username}!
             </Heading>
 
             <Flex

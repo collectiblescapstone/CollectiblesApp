@@ -183,7 +183,7 @@ const CameraPage = () => {
         } catch (err) {
             console.error('Error accessing camera', err)
         }
-    }, [handleProcessed, stopCurrentStream, facingMode, isIOS])
+    }, [handleProcessed, facingMode, isIOS])
 
     useEffect(() => {
         return () => {

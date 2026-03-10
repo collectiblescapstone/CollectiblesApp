@@ -10,8 +10,9 @@ import {
     CameraPreview,
     CameraPreviewOptions,
     CameraPreviewPictureOptions,
-    PermissionRequestOptions
 } from '@capgo/camera-preview'
+
+import { Camera } from '@capacitor/camera'
 
 import { Capacitor } from '@capacitor/core'
 
@@ -135,13 +136,7 @@ const CameraPage = () => {
 
     const startCamera = useCallback(async () => {
         try {
-            const permissionOptions: PermissionRequestOptions = {
-                disableAudio: true,
-                cancelButtonTitle: 'Cancel',
-                message: 'This app needs camera access to scan your cards.',
-                title: 'Camera Permission'
-            }
-            await CameraPreview.requestPermissions(permissionOptions)
+            await Camera.requestPermissions()
         } catch (err) {
             const errorMessage =
                 err instanceof Error ? err.message : String(err)

@@ -1,21 +1,29 @@
 'use client'
 
 import React from 'react'
-import { Avatar, Card, Flex, HStack, Stack, Text, Box } from '@chakra-ui/react'
+import { Avatar, Card, Flex, HStack, Stack, Text } from '@chakra-ui/react'
 import TradingCards from '@/components/trading/TradingCards'
 import { TradeCardProps } from '@/types/tradepost'
-import { LuStar } from 'react-icons/lu'
+import StarRating from '@/components/profiles/StarRating'
 
 const ViableOptions: React.FC<TradeCardProps> = ({
     username,
     avatarUrl,
     rating,
-    cards,
-    distance
+    user1Wishlist,
+    distance,
+    ratingCount
 }) => {
-    const cardlength = cards?.length ?? 0
+    const cardsToDisplay = user1Wishlist ?? []
+    const cardlength = cardsToDisplay.length
     return (
-        <Card.Root width="85%">
+        <Card.Root
+            w="100%"
+            minW="350px"
+            maxW="350px"
+            borderRadius="md"
+            shadow="md"
+        >
             <Flex flexDirection="column">
                 <Flex
                     flexDirection="row"
@@ -46,7 +54,7 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                 </Flex>
                 <Card.Body>
                     <TradingCards
-                        cards={cards?.map((card) => ({
+                        cards={cardsToDisplay.map((card) => ({
                             name: card.name,
                             image: card.image_url
                         }))}
@@ -68,35 +76,16 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                                 </Text>
                             </Stack>
                         </Flex>
-                        <Flex align="center" gap={1}>
-                            <Stack gap="0">
-                                <HStack gap="1" align="center">
-                                    <Box>
-                                        {(() => {
-                                            const color =
-                                                rating <= 2.5
-                                                    ? '#ff3b30'
-                                                    : rating < 4.0
-                                                      ? '#ffd60a'
-                                                      : rating < 5
-                                                        ? '#32d74b'
-                                                        : '#08a9c6'
-                                            return (
-                                                <LuStar
-                                                    color={color}
-                                                    size={20}
-                                                />
-                                            )
-                                        })()}
-                                    </Box>
-                                    <Text fontSize="sm" fontWeight="semibold">
-                                        {Number.isFinite(rating)
-                                            ? rating.toFixed(1)
-                                            : '-'}
-                                    </Text>
-                                </HStack>
-                            </Stack>
-                        </Flex>
+                        <HStack gap="1" align="center">
+                            <StarRating
+                                rating={Number.isFinite(rating) ? rating : 0}
+                                ratingCount={
+                                    Number.isFinite(ratingCount)
+                                        ? ratingCount
+                                        : 0
+                                }
+                            />
+                        </HStack>
                     </Flex>
                 </Card.Footer>
             </Flex>

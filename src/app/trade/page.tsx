@@ -91,34 +91,30 @@ const TradePage = () => {
                                 })
                             ),
                             contacts: [
-                                viableUser.facebook && {
-                                    method: 'facebook',
-                                    value: viableUser.facebook
-                                },
-                                viableUser.instagram && {
-                                    method: 'instagram',
-                                    value: viableUser.instagram
-                                },
-                                viableUser.x && {
-                                    method: 'x',
-                                    value: viableUser.x
-                                },
-                                viableUser.discord && {
-                                    method: 'discord',
-                                    value: viableUser.discord
-                                },
-                                viableUser.whatsapp && {
-                                    method: 'whatsapp',
-                                    value: viableUser.whatsapp
-                                }
-                            ].filter(
-                                (
-                                    contact
-                                ): contact is {
-                                    method: string
-                                    value: string
-                                } => Boolean(contact)
-                            )
+                                'facebook',
+                                'instagram',
+                                'x',
+                                'discord',
+                                'whatsapp'
+                            ]
+                                .map((method) => {
+                                    const value =
+                                        viableUser[
+                                            method as keyof typeof viableUser
+                                        ]
+                                    if (value) {
+                                        return { method, value }
+                                    }
+                                    return null
+                                })
+                                .filter(
+                                    (
+                                        contact
+                                    ): contact is {
+                                        method: string
+                                        value: string
+                                    } => Boolean(contact)
+                                )
                         })
                     }
                 }

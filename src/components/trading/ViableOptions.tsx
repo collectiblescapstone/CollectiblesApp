@@ -80,8 +80,7 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                             <StarRating
                                 rating={Number.isFinite(rating) ? rating : 0}
                                 ratingCount={
-                                    Number.isFinite(ratingCount) &&
-                                    ratingCount !== undefined
+                                    Number.isFinite(ratingCount)
                                         ? ratingCount
                                         : 0
                                 }

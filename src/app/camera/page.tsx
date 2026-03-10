@@ -54,6 +54,7 @@ const CameraPage = () => {
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
         setTimeout(async () => {
+            if (!isCameraActive.current) return
             let width
             let height
             let toDraw: HTMLVideoElement | HTMLImageElement

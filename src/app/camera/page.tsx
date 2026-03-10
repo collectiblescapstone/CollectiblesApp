@@ -48,7 +48,7 @@ const CameraPage = () => {
         } catch (err) {
             console.error('Error stopping camera preview', err)
         }
-    }, [])
+    }, [isIOS])
 
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
@@ -129,7 +129,7 @@ const CameraPage = () => {
 
             setSourceImageData(imageData)
         }, 100)
-    }, [])
+    }, [isIOS])
 
     const startCamera = useCallback(async () => {
         try {
@@ -183,7 +183,7 @@ const CameraPage = () => {
         } catch (err) {
             console.error('Error accessing camera', err)
         }
-    }, [handleProcessed, stopCurrentStream])
+    }, [handleProcessed, stopCurrentStream, facingMode, isIOS])
 
     useEffect(() => {
         return () => {

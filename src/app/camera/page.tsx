@@ -44,6 +44,7 @@ const CameraPage = () => {
                         .forEach((track) => track.stop())
                     streamRef.current = null
                 }
+                isCameraActive.current = false
             }
         } catch (err) {
             console.error('Error stopping camera preview', err)
@@ -178,6 +179,7 @@ const CameraPage = () => {
                 streamRef.current = stream
                 video.srcObject = stream
                 await video.play()
+                isCameraActive.current = true
             }
             handleProcessed()
         } catch (err) {
@@ -196,6 +198,7 @@ const CameraPage = () => {
             if (isIOS) {
                 await CameraPreview.flip()
             } else {
+                stopCurrentStream()
                 setFacingMode((prev) =>
                     prev === 'environment' ? 'user' : 'environment'
                 )

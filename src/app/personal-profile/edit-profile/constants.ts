@@ -3,7 +3,8 @@ export const pfp_image_mapping: Record<number, string> = {
     1: '/user-profile/pfp_temp1.png',
     2: '/user-profile/pfp_temp2.png',
     3: '/user-profile/pfp_temp3.png',
-    4: '/user-profile/pfp_temp4.png'
+    4: '/user-profile/pfp_temp4.png',
+    5: '/user-profile/pfp_temp5.png'
 }
 
 export const visibilityOptions = [

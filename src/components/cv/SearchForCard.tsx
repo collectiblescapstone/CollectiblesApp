@@ -33,7 +33,7 @@ export const SearchForCard: React.FC = () => {
     >()
 
     // Context
-    const { getAllCards } = usePokemonCards()
+    const { getFilteredCards } = usePokemonCards()
 
     useEffect(() => {
         const init = async () => {
@@ -55,7 +55,7 @@ export const SearchForCard: React.FC = () => {
                     .search(evt.currentTarget.value)
                     .then(async (data) => {
                         const ids = data.map(({ id }) => id)
-                        const cards = await getAllCards({ ids })
+                        const cards = await getFilteredCards({ ids })
 
                         setMatches(
                             data.map((match) => ({
@@ -66,7 +66,7 @@ export const SearchForCard: React.FC = () => {
                     })
             }
         },
-        [csReady, getAllCards]
+        [csReady, getFilteredCards]
     )
 
     return (

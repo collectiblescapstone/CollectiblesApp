@@ -6,18 +6,45 @@ import { useAuth } from '@/context/AuthProvider'
 import { Box, Button, Spinner, Heading, Text, VStack } from '@chakra-ui/react'
 import TipsPopup from '@/components/ui/PopupUI'
 
+import {
+    CameraPreview,
+    CameraPreviewOptions,
+    CameraPreviewPictureOptions,
+    PermissionRequestOptions
+} from '@capgo/camera-preview'
+
+import { Capacitor } from '@capacitor/core'
+
 const CameraPage = () => {
     const [sourceImageData, setSourceImageData] = useState<ImageData | null>(
         null
     )
+    const [facingMode, setFacingMode] = useState<'environment' | 'user'>(
+        'environment'
+    )
     const inputCanvas = useRef<HTMLCanvasElement | null>(null)
     const overlayCanvas = useRef<HTMLCanvasElement | null>(null)
-    const videoRef = useRef<HTMLDivElement | null>(null)
+    const isCameraActive = useRef<boolean>(false)
+    const videoRef = useRef<HTMLVideoElement | null>(null)
+    const streamRef = useRef<MediaStream | null>(null)
+
     const { session, loading } = useAuth()
 
-    const stopCurrentStream = useCallback(() => {
+    const isIOS = Capacitor.getPlatform() === 'ios'
+
+    const stopCurrentStream = useCallback(async () => {
         try {
-            CameraPreview.stop()
+            if (isIOS) {
+                await CameraPreview.stop()
+                isCameraActive.current = false
+            } else {
+                if (streamRef.current) {
+                    streamRef.current
+                        .getTracks()
+                        .forEach((track) => track.stop())
+                    streamRef.current = null
+                }
+            }
         } catch (err) {
             console.error('Error stopping camera preview', err)
         }
@@ -26,22 +53,31 @@ const CameraPage = () => {
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
         setTimeout(async () => {
-            let result
-            try {
-                result = await CameraPreview.capture({ quality: 85 })
-
-            } catch (err) {
-                console.error('Error capturing camera sample', err)
-                return
+            let width
+            let height
+            let toDraw: HTMLVideoElement | HTMLImageElement
+            if (isIOS) {
+                const pictureOptions: CameraPreviewPictureOptions = {
+                    quality: 90,
+                    width: 1280,
+                    height: 1280
+                }
+                const result = await CameraPreview.capture(pictureOptions)
+                const img = new Image()
+                img.src = result.value
+                await new Promise((resolve) => {
+                    img.onload = resolve
+                })
+                width = img.width
+                height = img.height
+                toDraw = img
+            } else {
+                if (!videoRef.current) return
+                if (videoRef.current.paused || videoRef.current.ended) return
+                width = videoRef.current.videoWidth
+                height = videoRef.current.videoHeight
+                toDraw = videoRef.current
             }
-
-            const base64URL = result.value
-            const img = new Image()
-            img.crossOrigin = 'anonymous'
-            img.src = base64URL
-            await new Promise((resolve) => {
-                img.onload = resolve
-            })
 
             // create canvas if not exists
             if (!inputCanvas.current) {
@@ -53,27 +89,27 @@ const CameraPage = () => {
             if (!ctx) return
 
             // draw video centered while cutting off edges to fit model input size
-            const videoAspect = img.width / img.height
+            const videoAspect = width / height
             let sx = 0,
                 sy = 0,
-                sWidth = img.width,
-                sHeight = img.height
+                sWidth = width,
+                sHeight = height
 
             if (videoAspect > 1) {
                 // video is wider than canvas
-                sWidth = img.height
-                sx = (img.width - sWidth) / 2
+                sWidth = height
+                sx = (width - sWidth) / 2
             } else {
                 // video is taller than canvas
-                sHeight = img.width
-                sy = (img.height - sHeight) / 2
+                sHeight = width
+                sy = (height - sHeight) / 2
             }
             canvas.width = sWidth
             canvas.height = sHeight
 
             // grab frame from video, cropped to square
             ctx.drawImage(
-                img,
+                toDraw,
                 sx,
                 sy,
                 sWidth,
@@ -96,29 +132,53 @@ const CameraPage = () => {
     }, [])
 
     const startCamera = useCallback(async () => {
-
-        // try {
-        //     await Camera.requestPermissions()
-        // } catch (err) {
-        //     const errorMessage =
-        //         err instanceof Error ? err.message : String(err)
-        //     if (!errorMessage.includes('Not implemented on web')) {
-        //         console.error('Error requesting camera permissions', err)
-        //     }
-        // }
+        try {
+            const permissionOptions: PermissionRequestOptions = {
+                disableAudio: true,
+                cancelButtonTitle: 'Cancel',
+                message: 'This app needs camera access to scan your cards.',
+                title: 'Camera Permission'
+            }
+            await CameraPreview.requestPermissions(permissionOptions)
+        } catch (err) {
+            const errorMessage =
+                err instanceof Error ? err.message : String(err)
+            if (!errorMessage.includes('Not implemented on web')) {
+                console.error('Error requesting camera permissions', err)
+                return
+            }
+        }
 
         try {
-            stopCurrentStream()
+            if (isIOS) {
+                const cameraPreviewOptions: CameraPreviewOptions = {
+                    parent: 'cameraPreview',
+                    position: 'rear',
+                    toBack: false,
+                    disableAudio: true,
+                    storeToFile: true,
+                    enableOpacity: false
+                }
 
-            const cameraPreviewOptions: CameraPreviewOptions = {
-                parent: 'cameraPreview',
-                position: 'rear',
-                toBack: true,
-                disableAudio: true
+                await CameraPreview.start(cameraPreviewOptions)
+                isCameraActive.current = true
+            } else {
+                const video = videoRef.current
+                if (!video) return
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    audio: false,
+                    video: {
+                        facingMode: facingMode,
+                        frameRate: { ideal: 20 },
+                        width: { ideal: 1280 },
+                        height: { ideal: 1280 }
+                    }
+                })
+
+                streamRef.current = stream
+                video.srcObject = stream
+                await video.play()
             }
-
-            CameraPreview.start(cameraPreviewOptions)
-
             handleProcessed()
         } catch (err) {
             console.error('Error accessing camera', err)
@@ -126,16 +186,20 @@ const CameraPage = () => {
     }, [handleProcessed, stopCurrentStream])
 
     useEffect(() => {
-        if (loading || !session) return
-        startCamera()
         return () => {
             stopCurrentStream()
         }
-    }, [startCamera, loading, session, stopCurrentStream])
+    }, [stopCurrentStream])
 
-    const toggleCamera = () => {
+    const toggleCamera = async () => {
         try {
-            CameraPreview.flip()
+            if (isIOS) {
+                await CameraPreview.flip()
+            } else {
+                setFacingMode((prev) =>
+                    prev === 'environment' ? 'user' : 'environment'
+                )
+            }
         } catch (err) {
             console.error('Error flipping camera', err)
         }
@@ -209,8 +273,25 @@ const CameraPage = () => {
 
     return (
         <Box minW="39vw">
-            <Box position="relative" maxH="50vh" aspectRatio="1" mx="auto">
-                <div ref={videoRef} id="cameraPreview"></div>
+            <Box
+                id="cameraPreview"
+                position="relative"
+                maxH="50vh"
+                aspectRatio="1"
+                mx="auto"
+            >
+                {!isIOS && (
+                    <video
+                        ref={videoRef}
+                        style={{
+                            position: 'absolute',
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            border: '2px solid var(--chakra-colors-brand-turtoise)'
+                        }}
+                    />
+                )}
                 <canvas
                     ref={overlayCanvas}
                     style={{
@@ -222,19 +303,17 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
-            {videoRef.current !== null && videoRef.current.children.length === 0 && (
+            {!isCameraActive.current && (
                 <Button onClick={startCamera}>Start Camera</Button>
             )}
             <Box className="block flex justify-center landscape:hidden">
-                <Button onClick={toggleCamera}>
-                    Switch Camera
-                </Button>
+                <Button onClick={toggleCamera}>Switch Camera</Button>
             </Box>
             {sourceImageData ? (
                 <IdentifyCards
                     sourceImageData={sourceImageData}
                     onProcessed={handleProcessed}
-                    overlayRef={overlayCanvas}
+                    overlayRef={isIOS ? null : overlayCanvas}
                 />
             ) : (
                 <Box>No image captured.</Box>

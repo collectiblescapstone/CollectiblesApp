@@ -10,7 +10,7 @@ import {
     CameraPreview,
     CameraPreviewOptions,
     CameraPreviewPictureOptions,
-} from '@capgo/camera-preview'
+} from '@capacitor-community/camera-preview'
 
 import { Camera } from '@capacitor/camera'
 
@@ -67,9 +67,10 @@ const CameraPage = () => {
                 }
                 const result = await CameraPreview.capture(pictureOptions)
                 const img = new Image()
-                img.src = result.value
-                await new Promise((resolve) => {
+                await new Promise((resolve, reject) => {
                     img.onload = resolve
+                    img.onerror = reject
+                    img.src = `data:image/jpeg;base64,${result.value}`
                 })
                 width = img.width
                 height = img.height
@@ -153,7 +154,7 @@ const CameraPage = () => {
                     position: 'rear',
                     toBack: false,
                     disableAudio: true,
-                    storeToFile: true,
+                    storeToFile: false,
                     enableOpacity: false
                 }
 

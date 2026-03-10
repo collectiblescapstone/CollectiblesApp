@@ -11,7 +11,8 @@ const ViableOptions: React.FC<TradeCardProps> = ({
     avatarUrl,
     rating,
     user1Wishlist,
-    distance
+    distance,
+    ratingCount
 }) => {
     const cardsToDisplay = user1Wishlist ?? []
     const cardlength = cardsToDisplay.length
@@ -78,7 +79,12 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                         <HStack gap="1" align="center">
                             <StarRating
                                 rating={Number.isFinite(rating) ? rating : 0}
-                                ratingCount={Number.isFinite(rating) ? 1 : 0}
+                                ratingCount={
+                                    Number.isFinite(ratingCount) &&
+                                    ratingCount !== undefined
+                                        ? ratingCount
+                                        : 0
+                                }
                             />
                         </HStack>
                     </Flex>

@@ -76,6 +76,7 @@ const TradePage = () => {
                             avatarUrl:
                                 pfp_image_mapping[viableUser.profile_pic],
                             rating: 0,
+                            ratingCount: 0,
                             distance: viableUser.distance,
                             user1Wishlist: option.cardsUser1WantsFromUser2.map(
                                 (card) => ({
@@ -341,6 +342,7 @@ const TradePage = () => {
                                         rating={u.rating}
                                         user1Wishlist={u.user1Wishlist ?? []}
                                         distance={u.distance}
+                                        ratingCount={u.ratingCount}
                                     />
                                 </Box>
                             ))

@@ -17,6 +17,7 @@ import { LuArrowUpDown } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaDiscord, FaWhatsapp } from 'react-icons/fa'
 import { RiTwitterXLine } from 'react-icons/ri'
 import { useProfileSelected } from '@/context/ProfileSelectionProvider'
+import { Clipboard } from '@capacitor/clipboard'
 
 type ContactMethod = {
     method: string
@@ -33,19 +34,23 @@ type TradeCardPopupProps = {
 }
 
 const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
-    const { username, contacts, avatarUrl, user1Wishlist, user2Wishlist } =
-        props
+    const {
+        username,
+        contacts,
+        avatarUrl,
+        user1Wishlist,
+        user2Wishlist,
+        onNavigateToProfile
+    } = props
 
     const router = useRouter()
     const { setProfileSelected } = useProfileSelected()
 
     const goProfile = () => {
+        onNavigateToProfile()
         setProfileSelected(username)
         router.push(`/user-profile`)
     }
-
-    // Debug log to see what contacts are being passed
-    console.log('PopupTrade contacts:', contacts)
 
     // helper to normalise contact method names and check existence
     const normalize = (s?: string) =>
@@ -90,7 +95,7 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
         }
 
         try {
-            await navigator.clipboard.writeText(toCopy)
+            await Clipboard.write({ string: toCopy })
             setCopied(primary)
             // clear any existing timeout so a previous click doesn't clear the new indicator
             if (timeoutRef.current) {
@@ -261,7 +266,7 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
 
                     <LuArrowUpDown size={40} />
 
-                    {/*/!*your cards*!/*/}
+                    {/* your cards */}
                     <Flex mt={1}>
                         <TradingCards
                             cards={user2Wishlist?.map((card) => ({

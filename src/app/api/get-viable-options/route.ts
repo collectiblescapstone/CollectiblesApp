@@ -116,6 +116,8 @@ export const POST = async (request: Request) => {
                           x: true,
                           discord: true,
                           whatsapp: true,
+                          rating: true,
+                          rating_count: true,
                           wishlist: {
                               select: {
                                   card: {
@@ -140,13 +142,15 @@ export const POST = async (request: Request) => {
             user: {
                 id: string
                 username: string | null
-                profile_pic: number
+                profile_pic: number | null
                 distance: number | null
                 facebook: string | null
                 instagram: string | null
                 x: string | null
                 discord: string | null
                 whatsapp: string | null
+                rating: number
+                rating_count: number
             }
             // User 1 is logged in user, User 2 is the potential match - these names are from the perspective of the algorithm, not the frontend display
             cardsUser1WantsFromUser2: CardSummary[]
@@ -203,6 +207,8 @@ export const POST = async (request: Request) => {
                 x: match.user.x,
                 discord: match.user.discord,
                 whatsapp: match.user.whatsapp,
+                rating: match.user.rating,
+                rating_count: match.user.rating_count,
                 distance: hasValidCoords
                     ? calculateHaversineDistance(
                           user.latitude!,

@@ -26,10 +26,7 @@ const StarRating = ({ rating, ratingCount }: StarRatingProps) => {
 
     return (
         <Box display="flex" alignItems="center">
-            <LuStar
-                color={ratingCount > 0 ? 'brand.turtoise' : '#888888'}
-                size={20}
-            />
+            <LuStar color={ratingCount > 0 ? '#003B49' : '#888888'} size={20} />
             <Text
                 fontSize="sm"
                 fontWeight="semibold"

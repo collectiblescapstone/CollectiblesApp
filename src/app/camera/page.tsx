@@ -67,6 +67,7 @@ const CameraPage = () => {
                 }
                 const result = await CameraPreview.capture(pictureOptions)
                 const img = new Image()
+                img.crossOrigin = 'anonymous'
                 await new Promise((resolve, reject) => {
                     img.onload = resolve
                     img.onerror = reject
@@ -137,7 +138,7 @@ const CameraPage = () => {
 
     const startCamera = useCallback(async () => {
         try {
-            await Camera.requestPermissions()
+            await Camera.requestPermissions({ permissions: ['camera', 'photos'] })
         } catch (err) {
             const errorMessage =
                 err instanceof Error ? err.message : String(err)
@@ -155,7 +156,9 @@ const CameraPage = () => {
                     toBack: false,
                     disableAudio: true,
                     storeToFile: true,
-                    enableOpacity: false
+                    enableOpacity: false,
+                    height: 300,
+                    width: 300
                 }
 
                 await CameraPreview.start(cameraPreviewOptions)

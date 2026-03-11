@@ -70,7 +70,7 @@ const CameraPage = () => {
                 await new Promise((resolve, reject) => {
                     img.onload = resolve
                     img.onerror = reject
-                    img.src = `data:image/jpeg;base64,${result.value}`
+                    img.src = Capacitor.convertFileSrc(result.value)
                 })
                 width = img.width
                 height = img.height
@@ -154,7 +154,7 @@ const CameraPage = () => {
                     position: 'rear',
                     toBack: false,
                     disableAudio: true,
-                    storeToFile: false,
+                    storeToFile: true,
                     enableOpacity: false
                 }
 

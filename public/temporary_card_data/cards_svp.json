@@ -21,16 +21,8 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "mirage", "size": "standard" }
-            ],
+
+            "variants_detailed": [{ "type": "mirage", "size": "standard" }],
             "dexId": [906],
             "hp": 70,
             "types": ["Grass"],
@@ -62,16 +54,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "mirage", "size": "standard" }
-            ],
+            "variants_detailed": [{ "type": "mirage", "size": "standard" }],
             "dexId": [909],
             "hp": 80,
             "types": ["Fire"],
@@ -103,16 +86,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "mirage", "size": "standard" }
-            ],
+            "variants_detailed": [{ "type": "mirage", "size": "standard" }],
             "dexId": [912],
             "hp": 70,
             "types": ["Water"],
@@ -144,17 +118,10 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "holo", "size": "standard" },
+                { "type": "jumbo", "size": "jumbo" },
+                { "type": "play! pokémon prize pack", "size": "standard" }
             ],
             "dexId": [778],
             "hp": 190,
@@ -193,17 +160,9 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [914],
             "hp": 170,
@@ -243,17 +202,10 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [923],
             "hp": 130,
@@ -294,17 +246,10 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [701],
             "hp": 70,
@@ -343,17 +288,10 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [966],
             "hp": 140,
@@ -394,18 +332,8 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
-            ],
+
+            "variants_detailed": [{ "type": "cosmos", "size": "standard" }],
             "dexId": [918],
             "hp": 120,
             "types": ["Grass"],
@@ -443,18 +371,8 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
-            ],
+
+            "variants_detailed": [{ "type": "cosmos", "size": "standard" }],
             "dexId": [956],
             "hp": 110,
             "types": ["Psychic"],
@@ -492,18 +410,8 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
-            ],
+
+            "variants_detailed": [{ "type": "cosmos", "size": "standard" }],
             "dexId": [59],
             "hp": 130,
             "types": ["Fire"],
@@ -541,18 +449,8 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
-            ],
+
+            "variants_detailed": [{ "type": "cosmos", "size": "standard" }],
             "dexId": [977],
             "hp": 150,
             "types": ["Water"],
@@ -589,17 +487,10 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "holo", "size": "standard" },
+                { "type": "pokémon center", "size": "standard" }
             ],
             "dexId": [1008],
             "hp": 120,
@@ -637,17 +528,10 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "holo", "size": "standard" },
+                { "type": "pokémon center", "size": "standard" }
             ],
             "dexId": [1007],
             "hp": 130,
@@ -685,18 +569,8 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
-            "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
-            ],
+
+            "variants_detailed": [{ "type": "normal", "size": "standard" }],
             "dexId": [180],
             "hp": 90,
             "types": ["Lightning"],
@@ -730,17 +604,9 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "play! pokémon prize pack", "size": "standard" }
             ],
             "dexId": [181],
             "hp": 330,
@@ -775,17 +641,9 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "play! pokémon prize pack", "size": "standard" }
             ],
             "dexId": [448],
             "hp": 260,
@@ -824,17 +682,11 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "holo", "size": "standard" },
+                { "type": "jumbo", "size": "jumbo" },
+                { "type": "play! pokémon prize pack", "size": "standard" }
             ],
             "dexId": [967],
             "hp": 210,
@@ -873,17 +725,9 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [998],
             "hp": 160,
@@ -923,17 +767,9 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [959],
             "hp": 140,
@@ -974,17 +810,9 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [198],
             "hp": 60,
@@ -1023,17 +851,9 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
             "variants_detailed": [
-                { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" },
-                { "type": "holo", "size": "standard" }
+                { "type": "prerelease", "size": "standard" },
+                { "type": "prerelease (staff)", "size": "standard" }
             ],
             "dexId": [279],
             "hp": 120,
@@ -1073,13 +893,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1120,13 +934,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1167,13 +975,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1210,13 +1012,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1252,13 +1048,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1295,13 +1085,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1345,13 +1129,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1395,13 +1173,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1445,13 +1217,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1495,13 +1261,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1544,13 +1304,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1595,13 +1349,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1645,13 +1393,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1695,13 +1437,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1745,13 +1481,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1786,13 +1516,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1837,13 +1561,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1886,13 +1604,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1929,13 +1641,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -1976,13 +1682,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2024,13 +1724,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2071,13 +1765,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2114,13 +1802,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2146,13 +1828,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2188,13 +1864,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2231,13 +1901,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2274,13 +1938,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2324,13 +1982,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2374,13 +2026,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2424,13 +2070,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2473,13 +2113,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2522,13 +2156,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2571,13 +2199,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2619,13 +2241,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2670,13 +2286,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2718,13 +2328,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2768,13 +2372,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2818,13 +2416,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2869,13 +2461,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2907,13 +2493,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -2950,13 +2530,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3000,13 +2574,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3048,13 +2616,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3091,13 +2653,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3141,13 +2697,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3189,13 +2739,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3239,13 +2783,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3281,13 +2819,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3324,13 +2856,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3367,13 +2893,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3417,13 +2937,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3460,13 +2974,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3511,13 +3019,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3560,13 +3062,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3603,13 +3099,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3648,13 +3138,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3699,13 +3183,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3735,13 +3213,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3783,13 +3255,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3833,13 +3299,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3876,13 +3336,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3920,13 +3374,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -3969,13 +3417,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4010,13 +3452,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4060,13 +3496,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4104,13 +3534,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4151,13 +3575,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4202,13 +3620,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4252,13 +3664,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4301,13 +3707,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4349,13 +3749,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4387,13 +3781,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4436,13 +3824,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4477,13 +3859,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4525,13 +3901,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4575,13 +3945,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4628,13 +3992,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4672,13 +4030,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4722,13 +4074,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4764,13 +4110,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4806,13 +4146,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4856,13 +4190,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4910,13 +4238,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4954,13 +4276,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -4996,13 +4312,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5039,13 +4349,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5083,13 +4387,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5126,13 +4424,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5173,13 +4465,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5211,13 +4497,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5248,13 +4528,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5292,13 +4566,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5324,13 +4592,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5370,13 +4632,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5421,13 +4677,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5471,13 +4721,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5516,13 +4760,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5559,13 +4797,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5604,13 +4836,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5653,13 +4879,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5700,13 +4920,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5748,13 +4962,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5780,13 +4988,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5831,13 +5033,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5882,13 +5078,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5932,13 +5122,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -5982,13 +5166,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6032,13 +5210,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6080,13 +5252,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6129,13 +5295,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6178,13 +5338,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6229,13 +5383,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6286,13 +5434,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6330,13 +5472,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6380,13 +5516,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6416,13 +5546,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6460,13 +5584,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6509,13 +5627,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6559,13 +5671,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6609,13 +5715,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6658,13 +5758,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6707,13 +5801,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6755,13 +5843,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6803,13 +5885,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6852,13 +5928,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6901,13 +5971,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6948,13 +6012,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -6998,13 +6056,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7030,13 +6082,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7074,13 +6120,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7124,13 +6164,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7174,13 +6208,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7223,13 +6251,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7266,13 +6288,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7311,13 +6327,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7359,13 +6369,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7406,13 +6410,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7456,13 +6454,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7506,13 +6498,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7556,13 +6542,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7600,13 +6580,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7649,13 +6623,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7697,13 +6665,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7746,13 +6708,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7796,13 +6752,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7846,13 +6796,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7896,13 +6840,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7945,13 +6883,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -7993,13 +6925,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8042,13 +6968,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8091,13 +7011,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8141,13 +7055,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8190,13 +7098,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8246,13 +7148,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8295,13 +7191,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8343,13 +7233,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8392,13 +7276,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8442,13 +7320,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8492,13 +7364,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8538,13 +7404,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8588,13 +7448,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8631,13 +7485,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8674,13 +7522,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8718,13 +7560,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8766,13 +7602,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8803,13 +7633,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8921,13 +7745,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -8970,13 +7788,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -9026,13 +7838,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -9128,13 +7934,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -9176,13 +7976,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -9555,13 +8349,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },
@@ -9598,13 +8386,7 @@
                 "id": "svp",
                 "name": "SVP Black Star Promos"
             },
-            "variants": {
-                "firstEdition": false,
-                "holo": true,
-                "normal": true,
-                "reverse": true,
-                "wPromo": false
-            },
+
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" },

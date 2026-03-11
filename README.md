@@ -133,7 +133,14 @@ click run in android studio
 
 TODO add instructions
 
-You will also need to add a permission to `Info.plist`. Follow the [Capacitor docs](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) and add permissions with the raw keys `NSCameraUsageDescription`
+You will also need to add a permission to `Info.plist`. Follow the [Capacitor docs](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) and add permissions with the raw keys `NSCameraUsageDescription` and `NSPhotoLibraryUsageDescription`
+
+```
+<key>NSCameraUsageDescription</key>
+<string>To take photos and videos</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>To save photos and videos</string>
+```
 
 ### Running your own local database
 

@@ -44,7 +44,7 @@ const HomePage = () => {
     if (loading || !session) {
         return (
             <Box textAlign="center" mt={10}>
-                Loading... <Spinner size="xl" />
+                <Spinner size="xl" />
             </Box>
         )
     }

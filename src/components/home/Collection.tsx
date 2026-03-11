@@ -10,6 +10,45 @@ interface RecentCardsProps {
 }
 
 const Collection = ({ cards = [] }: RecentCardsProps) => {
+    if (cards.length === 0) {
+        return (
+            <Flex
+                flexDirection="column"
+                gap={2}
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                w="100%"
+                px={4}
+            >
+                <Divider />
+                <Flex mt={1}>
+                    <Text
+                        fontSize="md"
+                        color="gray.700"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Recently Added Cards
+                    </Text>
+                </Flex>
+                <Flex
+                    w="100%"
+                    justifyContent="center"
+                    alignItems="center"
+                    py={3}
+                >
+                    <Text
+                        fontSize="md"
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Psst...you got cards on your phone?
+                    </Text>
+                </Flex>
+            </Flex>
+        )
+    }
     return (
         <Flex
             flexDirection="column"
@@ -27,7 +66,7 @@ const Collection = ({ cards = [] }: RecentCardsProps) => {
                     fontWeight="semibold"
                     mb={2}
                 >
-                    Recently Logged Cards
+                    Recently Added Cards
                 </Text>
             </Flex>
             <Flex

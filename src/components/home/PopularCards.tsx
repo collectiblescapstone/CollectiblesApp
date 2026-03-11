@@ -11,6 +11,48 @@ interface PopularCardsProps {
 }
 
 const PopularCards = ({ cards = [] }: PopularCardsProps) => {
+    if (cards.length === 0) {
+        return (
+            <Flex
+                flexDirection="column"
+                gap={2}
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                w="100%"
+                px={4}
+            >
+                <Divider />
+                <Flex mt={1}>
+                    <HStack gap={1} alignItems="center">
+                        <LuFlame color="#d35400" />
+                        <Text
+                            fontSize="md"
+                            color="gray.700"
+                            fontWeight="semibold"
+                            mb={0}
+                        >
+                            Popular This Month
+                        </Text>
+                    </HStack>
+                </Flex>
+                <Flex
+                    w="100%"
+                    justifyContent="center"
+                    alignItems="center"
+                    py={3}
+                >
+                    <Text
+                        fontSize="md"
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Be the first to get a trend going!
+                    </Text>
+                </Flex>
+            </Flex>
+        )
+    }
     return (
         <Flex
             flexDirection="column"

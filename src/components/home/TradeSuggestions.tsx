@@ -139,6 +139,47 @@ const TradeSuggestions: React.FC = () => {
         )
     }
 
+    if (users.length === 0) {
+        return (
+            <Flex
+                flexDirection="column"
+                gap={2}
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                w="100%"
+                px={4}
+            >
+                <Divider />
+                <Flex mt={1}>
+                    <Text
+                        fontSize="md"
+                        color="gray.700"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        TradePost Suggestion
+                    </Text>
+                </Flex>
+                <Flex
+                    w="100%"
+                    justifyContent="center"
+                    alignItems="center"
+                    py={3}
+                >
+                    <Text
+                        fontSize="md"
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Lets add some more cards to that TradeList and WishList,
+                        watcha say?
+                    </Text>
+                </Flex>
+            </Flex>
+        )
+    }
+
     const closestUser = users.reduce<TradeCardProps | null>((closest, user) => {
         const distance = user.distance
         if (distance == null) {
@@ -205,13 +246,22 @@ const TradeSuggestions: React.FC = () => {
                 </Box>
             ))}
             {/* Button below navigates to /trade/page.tsx */}
-            <Button
-                size="xs"
-                aria-label="See more trade suggestions"
-                onClick={() => router.push('/trade')}
+            <Flex
+                justifyContent="center"
+                alignItems="center"
+                w="100%"
+                pt={2}
+                pb={5}
             >
-                + Go to TradePost
-            </Button>
+                <Button
+                    size="xs"
+                    aria-label="See more trade suggestions"
+                    bg={'brand.turtoise'}
+                    onClick={() => router.push('/trade')}
+                >
+                    Go to TradePost
+                </Button>
+            </Flex>
             <TradePopup.Viewport />
         </Flex>
     )

@@ -24,7 +24,7 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
                 <Divider />
                 <Flex mt={1}>
                     <HStack gap={1} alignItems="center">
-                        <LuFlame color="#d35400" />
+                        <LuFlame color="#d35400" size={20} />
                         <Text
                             fontSize="md"
                             color="gray.700"
@@ -65,7 +65,7 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
             <Divider />
             <Flex mt={1}>
                 <HStack gap={1} alignItems="center">
-                    <LuFlame color="#d35400" />
+                    <LuFlame color="#d35400" size={20} />
                     <Text
                         fontSize="md"
                         color="gray.700"

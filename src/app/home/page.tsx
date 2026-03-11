@@ -89,10 +89,10 @@ const HomePage = () => {
                 mt={4}
                 mx="auto"
                 alignSelf="center"
-                wrap="nowrap"
+                wrap="wrap"
                 justifyContent="space-between"
                 alignItems="center"
-                px={7}
+                px={8}
             >
                 <Flex direction="column" alignItems="center" w="25%">
                     <Text fontSize="2xl" fontWeight="bold" color="#5D49C3">

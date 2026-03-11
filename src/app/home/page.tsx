@@ -70,7 +70,6 @@ const HomePage = () => {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
-            minHeight="inherit"
         >
             <Heading
                 mt={5}
@@ -84,36 +83,40 @@ const HomePage = () => {
             </Heading>
 
             <Flex
+                flexDirection="row"
+                w="fit-content"
+                maxW="100%"
                 mt={4}
-                px={4}
-                w="100%"
-                justifyContent="space-around"
-                flexWrap="wrap"
-                gap={6}
+                mx="auto"
+                alignSelf="center"
+                wrap="nowrap"
+                justifyContent="space-between"
+                alignItems="center"
+                px={7}
             >
-                <Flex direction="column" alignItems="center" minW="180px">
-                    <Text fontSize="2xl" fontWeight="bold">
+                <Flex direction="column" alignItems="center" w="25%">
+                    <Text fontSize="2xl" fontWeight="bold" color="#5D49C3">
                         {user.cardsLoggedthisMonth}
                     </Text>
-                    <Text fontSize="sm" color="gray.600">
+                    <Text fontSize="xs" color="gray.600" textAlign="center">
                         cards logged this month
                     </Text>
                 </Flex>
 
-                <Flex direction="column" alignItems="center" minW="180px">
-                    <Text fontSize="2xl" fontWeight="bold">
+                <Flex direction="column" alignItems="center" w="25%">
+                    <Text fontSize="2xl" fontWeight="bold" color="#5D49C3">
                         {user.cardsInCollection}
                     </Text>
-                    <Text fontSize="sm" color="gray.600">
+                    <Text fontSize="xs" color="gray.600" textAlign="center">
                         total cards in collection
                     </Text>
                 </Flex>
 
-                <Flex direction="column" alignItems="center" minW="180px">
-                    <Text fontSize="2xl" fontWeight="bold">
+                <Flex direction="column" alignItems="center" w="25%">
+                    <Text fontSize="2xl" fontWeight="bold" color="#5D49C3">
                         {user.cardsForTrade}
                     </Text>
-                    <Text fontSize="sm" color="gray.600">
+                    <Text fontSize="xs" color="gray.600" textAlign="center">
                         cards up for trade
                     </Text>
                 </Flex>

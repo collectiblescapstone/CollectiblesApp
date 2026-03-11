@@ -13,7 +13,7 @@ import { useAuth } from '@/context/AuthProvider'
 interface IdentifyCardsProps {
     sourceImageData?: ImageData
     onProcessed: () => void
-    overlayRef: React.RefObject<HTMLCanvasElement | null>
+    overlayRef: React.RefObject<HTMLCanvasElement | null> | null
 }
 
 type PredictedCard = { data: CardData; imageURL: string }[]

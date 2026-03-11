@@ -71,6 +71,8 @@ export const CardClassifier = async (): Promise<
             }
         }
 
+        grayImage.delete()
+        resizedImage.delete()
         return getBits(pixels)
     }
 

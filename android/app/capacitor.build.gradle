@@ -9,8 +9,9 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
+    implementation project(':capacitor-camera')
     implementation project(':capacitor-clipboard')
-    implementation project(':capgo-camera-preview')
+    implementation project(':capacitor-community-camera-preview')
 
 }
 

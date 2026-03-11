@@ -1,1 +1,1300 @@
-{"cardCount": {"firstEd": 0, "holo": 6, "normal": 8, "official": 17, "reverse": 0, "total": 17}, "cards": [{"category": "Pokemon", "id": "pop2-1", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/pop/pop2/1", "localId": "1", "name": "Entei", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [244], "hp": 70, "types": ["Fire"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Stomp", "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage.", "damage": "10+"}, {"cost": ["Fire", "Fire", "Colorless"], "name": "Fire Spin", "effect": "Discard 2 basic Energy cards attached to Entei or this attack does nothing.", "damage": 50}], "weaknesses": [{"type": "Water"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:11:01+01:00", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277432, "avg": 80, "low": 19.94, "trend": 39.8, "avg1": 50, "avg7": 45.56, "avg30": 34.45, "avg-holo": null, "low-holo": null, "trend-holo": 15.85, "avg1-holo": 10, "avg7-holo": 11.07, "avg30-holo": 11.03}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 85271, "lowPrice": 37.75, "midPrice": 43.38, "highPrice": 49, "marketPrice": 29.66, "directLowPrice": null}, "holofoil": {"productId": 85271, "lowPrice": 20, "midPrice": 110.66, "highPrice": 117.01, "marketPrice": 32.6, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-2", "illustrator": "Ken Sugimori", "image": "https://assets.tcgdex.net/en/pop/pop2/2", "localId": "2", "name": "Pidgeot", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [18], "hp": 80, "types": ["Colorless"], "evolveFrom": "Pidgeotto", "stage": "Stage2", "abilities": [{"type": "Poke-POWER", "name": "Beating Wings", "effect": "Once during your turn (before your attack), if Pidgeot is your Active Pok\u00e9mon, you may shuffle 1 of your Benched Pok\u00e9mon and all cards attached to it into your deck. This power can\u2019t be used if Pidgeot is affected by a Special Condition."}], "attacks": [{"cost": ["Colorless", "Colorless", "Colorless"], "name": "Sharp Beak", "effect": "Flip a coin. If heads, this attack does 20 damage plus 30 more damage.", "damage": "20+"}], "weaknesses": [{"type": "Lightning"}], "resistances": [{"type": "Fighting", "value": "-30"}], "retreat": 0, "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:11:01+01:00", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277433, "avg": 15.75, "low": 4.5, "trend": 13.47, "avg1": 13.99, "avg7": 10.63, "avg30": 12.99, "avg-holo": null, "low-holo": null, "trend-holo": 6.88, "avg1-holo": 4, "avg7-holo": 4.37, "avg30-holo": 5.2}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 88032, "lowPrice": 24.99, "midPrice": 29.37, "highPrice": 33.75, "marketPrice": 8.16, "directLowPrice": null}, "holofoil": {"productId": 88032, "lowPrice": 4.32, "midPrice": 5.69, "highPrice": 9.99, "marketPrice": 5.6, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-3", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/pop/pop2/3", "localId": "3", "name": "Raikou", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [243], "hp": 70, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Roar", "effect": "Your opponent switches the Defending Pok\u00e9mon with 1 of his or her Benched Pok\u00e9mon, if any."}, {"cost": ["Lightning", "Lightning", "Colorless"], "name": "Thunder", "effect": "Flip a coin. If tails, Raikou does 20 damage to itself.", "damage": 50}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277434, "avg": 114, "low": 10, "trend": 64.64, "avg1": 220, "avg7": 71.14, "avg30": 38.47, "avg-holo": null, "low-holo": null, "trend-holo": 20.57, "avg1-holo": 17.5, "avg7-holo": 15.04, "avg30-holo": 14.46}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 88533, "lowPrice": 15, "midPrice": 22.47, "highPrice": 49, "marketPrice": 22.06, "directLowPrice": null}, "holofoil": {"productId": 88533, "lowPrice": 17.68, "midPrice": 18.67, "highPrice": 99.99, "marketPrice": 25.99, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-4", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/pop/pop2/4", "localId": "4", "name": "Suicune", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [245], "hp": 70, "types": ["Water"], "stage": "Basic", "abilities": [{"type": "Poke-BODY", "name": "Mirror Coat", "effect": "If Suicune is Burned or Poisoned by an opponent\u2019s attack (even if Suicune is Knocked Out), the Attacking Pok\u00e9mon is now affected by the same Special Conditions (1 if there is only 1)."}], "attacks": [{"cost": ["Water", "Colorless"], "name": "Bubblebeam", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.", "damage": 20}], "weaknesses": [{"type": "Lightning"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:11:01+01:00", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277435, "avg": 27.5, "low": 24.95, "trend": 26.68, "avg1": 39.5, "avg7": 24.81, "avg30": 30.61, "avg-holo": null, "low-holo": null, "trend-holo": 21.07, "avg1-holo": 24.99, "avg7-holo": 17.08, "avg30-holo": 16.68}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 89602, "lowPrice": 10.99, "midPrice": 14.83, "highPrice": 29.99, "marketPrice": 19.28, "directLowPrice": null}, "holofoil": {"productId": 89602, "lowPrice": 19.83, "midPrice": 21.73, "highPrice": 37.94, "marketPrice": 28.17, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-5", "illustrator": "Kouki Saitou", "image": "https://assets.tcgdex.net/en/pop/pop2/5", "localId": "5", "name": "Tauros", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [128], "hp": 70, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "name": "Rage", "effect": "Does 10 damage plus 10 more damage for each damage counter on Tauros.", "damage": "10+"}, {"cost": ["Colorless", "Colorless", "Colorless"], "name": "Take Down", "effect": "Tauros does 10 damage to itself.", "damage": 40}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277436, "avg": 4.74, "low": 0.6, "trend": 7, "avg1": 5, "avg7": 4.93, "avg30": 7.12, "avg-holo": null, "low-holo": null, "trend-holo": 11.85, "avg1-holo": 6.7, "avg7-holo": 8.85, "avg30-holo": 6.94}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 89762, "lowPrice": 1.25, "midPrice": 3.07, "highPrice": 4.99, "marketPrice": 3.37, "directLowPrice": null}, "holofoil": {"productId": 89762, "lowPrice": 1.49, "midPrice": 2.86, "highPrice": 96.95, "marketPrice": 2.72, "directLowPrice": 96.95}}}}, {"category": "Pokemon", "id": "pop2-6", "illustrator": "Mitsuhiro Arita", "image": "https://assets.tcgdex.net/en/pop/pop2/6", "localId": "6", "name": "Venusaur", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [3], "hp": 120, "types": ["Grass"], "evolveFrom": "Ivysaur", "stage": "Stage2", "attacks": [{"cost": ["Grass", "Grass", "Colorless"], "name": "Wide Solarbeam", "effect": "Does 20 damage to 2 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)", "damage": 20}, {"cost": ["Grass", "Grass", "Grass", "Colorless"], "name": "Hard Plant", "effect": "Venusaur can\u2019t use Hard Plant during your next turn.", "damage": 80}], "weaknesses": [{"type": "Fire"}], "retreat": 3, "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:11:01+01:00", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277437, "avg": 32.16, "low": 25, "trend": 45.35, "avg1": 39.95, "avg7": 33.99, "avg30": 40.34, "avg-holo": null, "low-holo": null, "trend-holo": 33.8, "avg1-holo": 25, "avg7-holo": 25.42, "avg30-holo": 21.27}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 90317, "lowPrice": 11.52, "midPrice": 27.01, "highPrice": 49, "marketPrice": 25.18, "directLowPrice": null}, "holofoil": {"productId": 90317, "lowPrice": 14, "midPrice": 28.15, "highPrice": 49.99, "marketPrice": 28.84, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-7", "illustrator": "Ken Sugimori", "image": "https://assets.tcgdex.net/en/pop/pop2/7", "localId": "7", "name": "Ivysaur", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "dexId": [2], "hp": 80, "types": ["Grass"], "evolveFrom": "Bulbasaur", "stage": "Stage1", "attacks": [{"cost": ["Colorless"], "name": "Poison Seed", "effect": "The Defending Pok\u00e9mon is now Poisoned."}, {"cost": ["Grass", "Grass", "Colorless"], "name": "Razor Leaf", "damage": 50}], "weaknesses": [{"type": "Psychic"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:11:01+01:00", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277438, "avg": 12.99, "low": 3.75, "trend": 11.9, "avg1": 5.99, "avg7": 13.03, "avg30": 8.86, "avg-holo": null, "low-holo": null, "trend-holo": 15, "avg1-holo": 15, "avg7-holo": 8, "avg30-holo": 8}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 86298, "lowPrice": 11.7, "midPrice": 24.99, "highPrice": 29.99, "marketPrice": 20.28, "directLowPrice": null}}}}, {"category": "Trainer", "id": "pop2-8", "illustrator": "Ken Sugimori", "image": "https://assets.tcgdex.net/en/pop/pop2/8", "localId": "8", "name": "Mr. Briney\u2019s Compassion", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "effect": "Choose 1 of your Pok\u00e9mon in play (excluding Pok\u00e9mon-ex). Return that Pok\u00e9mon and all cards attached to it to your hand.", "trainerType": "Supporter", "legal": {"standard": false, "expanded": false}, "updated": "2021-11-16T10:08:20+01:00", "pricing": {"cardmarket": null, "tcgplayer": null}}, {"category": "Trainer", "id": "pop2-9", "illustrator": "\"Big Mama\" Tagawa", "image": "https://assets.tcgdex.net/en/pop/pop2/9", "localId": "9", "name": "Multi Technical Machine 01", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": false, "reverse": false, "wPromo": false}, "attacks": [{"cost": ["Colorless"], "name": "Paralyzing Gaze", "effect": "The Defending Pok\u00e9mon is now Paralyzed."}], "effect": "Attach this card to 1 of your Pok\u00e9mon in play. That Pok\u00e9mon may use this card\u2019s attack instead of its own. At the end of your turn, discard Multi Technical Machine 01.", "trainerType": "Technical Machine", "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:11:01+01:00", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277440, "avg": 1.5, "low": 0.8, "trend": 1.63, "avg1": 1.5, "avg7": 2, "avg30": 1.74, "avg-holo": null, "low-holo": null, "trend-holo": 1.55, "avg1-holo": 1.2, "avg7-holo": 2.32, "avg30-holo": 2.32}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 87636, "lowPrice": 2, "midPrice": 2.99, "highPrice": 3.71, "marketPrice": 2.5, "directLowPrice": null}}}}, {"category": "Trainer", "id": "pop2-10", "illustrator": "Kazuo Yazawa", "image": "https://assets.tcgdex.net/en/pop/pop2/10", "localId": "10", "name": "Pok\u00e9mon Park", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": false, "normal": true, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}], "effect": "Once during each player\u2019s turn, when that player attaches an Energy card from his or her hand to 1 of his or her Benched Pok\u00e9mon, he or she removes 1 damage counter from that Pok\u00e9mon.", "trainerType": "Stadium", "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277441, "avg": 2.5, "low": 2.29, "trend": 3.5, "avg1": 2.5, "avg7": 3.38, "avg30": 3.42, "avg-holo": null, "low-holo": null, "trend-holo": 15, "avg1-holo": 15, "avg7-holo": 15, "avg30-holo": 15}, "tcgplayer": null}}, {"category": "Trainer", "id": "pop2-11", "illustrator": "Ken Sugimori", "image": "https://assets.tcgdex.net/en/pop/pop2/11", "localId": "11", "name": "TV Reporter", "rarity": "Uncommon", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "effect": "Draw 3 cards. Then discard any 1 card from your hand.", "trainerType": "Supporter", "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277442, "avg": 2.74, "low": 0.39, "trend": 2.55, "avg1": 0.5, "avg7": 3.07, "avg30": 2.24, "avg-holo": null, "low-holo": null, "trend-holo": 15, "avg1-holo": 15, "avg7-holo": 15, "avg30-holo": 15}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 90084, "lowPrice": 1.82, "midPrice": 2.25, "highPrice": 7, "marketPrice": 3.12, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-12", "illustrator": "Midori Harada", "image": "https://assets.tcgdex.net/en/pop/pop2/12", "localId": "12", "name": "Bulbasaur", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [1], "hp": 40, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Bite", "damage": 10}, {"cost": ["Grass", "Colorless"], "name": "Razor Leaf", "damage": 20}], "weaknesses": [{"type": "Psychic"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277443, "avg": 10.08, "low": 4.5, "trend": 18.01, "avg1": 21.99, "avg7": 11.59, "avg30": 17.06, "avg-holo": null, "low-holo": null, "trend-holo": 5, "avg1-holo": 5, "avg7-holo": 5, "avg30-holo": 5}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 84031, "lowPrice": 39.99, "midPrice": 49.99, "highPrice": 9999, "marketPrice": 26.54, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-13", "illustrator": "Ken Sugimori", "image": "https://assets.tcgdex.net/en/pop/pop2/13", "localId": "13", "name": "Cacnea", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [331], "hp": 40, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Sand Attack", "effect": "If the Defending Pok\u00e9mon tries to attack during your opponent\u2019s next turn, your opponent flips a coin. If tails, that attack does nothing.", "damage": 10}], "weaknesses": [{"type": "Fire"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277444, "avg": 0.73, "low": 0.1, "trend": 0.96, "avg1": 0.38, "avg7": 0.9, "avg30": 0.78, "avg-holo": null, "low-holo": null, "trend-holo": 3, "avg1-holo": 3, "avg7-holo": 1.63, "avg30-holo": 1.63}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 84072, "lowPrice": 0.4, "midPrice": 0.79, "highPrice": 5, "marketPrice": 0.72, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-14", "illustrator": "Atsuko Nishida", "image": "https://assets.tcgdex.net/en/pop/pop2/14", "localId": "14", "name": "Luvdisc", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [370], "hp": 60, "types": ["Water"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Paralyzing Kiss", "effect": "If there are 2 Defending Pok\u00e9mon in play, choose 1 of the Defending Pok\u00e9mon. That Pok\u00e9mon is now Paralyzed. (If there is only 1 Defending Pok\u00e9mon, this attack does nothing.)"}, {"cost": ["Water", "Colorless"], "name": "Fast Stream", "effect": "Move 1 Energy card attached to the Defending Pok\u00e9mon to the other Defending Pok\u00e9mon. (Ignore this effect if your opponent has only 1 Defending Pok\u00e9mon.)", "damage": 20}], "weaknesses": [{"type": "Lightning"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277445, "avg": 1.64, "low": 0.1, "trend": 1.58, "avg1": 1, "avg7": 1.17, "avg30": 0.9, "avg-holo": null, "low-holo": null, "trend-holo": 3, "avg1-holo": 3, "avg7-holo": 3, "avg30-holo": 3}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 86934, "lowPrice": 0.84, "midPrice": 1.5, "highPrice": 1.99, "marketPrice": 1.21, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-15", "illustrator": "Tomokazu Komiya", "image": "https://assets.tcgdex.net/en/pop/pop2/15", "localId": "15", "name": "Phanpy", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [231], "hp": 50, "types": ["Fighting"], "stage": "Basic", "attacks": [{"cost": ["Fighting"], "name": "Double Spin", "effect": "Flip 2 coins. This attack does 10 damage times the number of heads.", "damage": "10\u00d7"}, {"cost": ["Colorless", "Colorless"], "name": "Body Slam", "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.", "damage": 10}], "weaknesses": [{"type": "Grass"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277446, "avg": 10.05, "low": 6.95, "trend": 10.7, "avg1": 17.75, "avg7": 8.69, "avg30": 6.53, "avg-holo": null, "low-holo": null, "trend-holo": 3, "avg1-holo": 3, "avg7-holo": 3, "avg30-holo": 3}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 88000, "lowPrice": 12, "midPrice": 15.33, "highPrice": 19.99, "marketPrice": 12.63, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-16", "illustrator": "Yuka Morii", "image": "https://assets.tcgdex.net/en/pop/pop2/16", "localId": "16", "name": "Pikachu", "rarity": "Common", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [25], "hp": 40, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "name": "Gnaw", "damage": 10}, {"cost": ["Lightning", "Colorless"], "name": "Thunder Jolt", "effect": "Flip a coin. If tails, Pikachu does 10 damage to itself.", "damage": 30}], "weaknesses": [{"type": "Fighting"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2025-08-16T20:39:55Z", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277447, "avg": 19.38, "low": 5, "trend": 22.35, "avg1": 13, "avg7": 22.69, "avg30": 18.85, "avg-holo": null, "low-holo": 17, "trend-holo": 8.61, "avg1-holo": 8.5, "avg7-holo": 7.83, "avg30-holo": 7.83}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 88081, "lowPrice": 29.95, "midPrice": 34.5, "highPrice": 9999, "marketPrice": 31.38, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "pop2-17", "illustrator": "Ryo Ueda", "image": "https://assets.tcgdex.net/en/pop/pop2/17", "localId": "17", "name": "Celebi ex", "rarity": "Rare", "set": {"cardCount": {"official": 17, "total": 17}, "id": "pop2", "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"}, "variants": {"firstEdition": false, "holo": true, "normal": true, "reverse": true, "wPromo": false}, "variants_detailed": [{"type": "normal", "size": "standard"}, {"type": "reverse", "size": "standard"}, {"type": "holo", "size": "standard"}], "dexId": [251], "hp": 80, "types": ["Psychic"], "stage": "Basic", "suffix": "EX", "abilities": [{"type": "Poke-POWER", "name": "Time Reversal", "effect": "Once during your turn, when you put Celebi ex from your hand onto your Bench, you may search your discard pile for a card, show it to your opponent, and put it on top of your deck."}], "attacks": [{"cost": ["Psychic", "Colorless"], "name": "Psychic Shield", "effect": "Prevent all effects of attacks, including damage, done to Celebi ex by your opponent\u2019s Pok\u00e9mon-ex during your opponent\u2019s next turn.", "damage": 30}], "weaknesses": [{"type": "Psychic"}], "retreat": 1, "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:11:01+01:00", "pricing": {"cardmarket": {"updated": "2026-03-01T01:50:01.000Z", "unit": "EUR", "idProduct": 277448, "avg": 12.93, "low": 3, "trend": 13.2, "avg1": 9, "avg7": 12.31, "avg30": 11.76, "avg-holo": null, "low-holo": null, "trend-holo": 6.5, "avg1-holo": 2, "avg7-holo": 6.05, "avg30-holo": 7.44}, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "normal": {"productId": 84151, "lowPrice": 59.85, "midPrice": 99.99, "highPrice": 200, "marketPrice": 39.99, "directLowPrice": null}}}}], "id": "pop2", "legal": {"expanded": false, "standard": false}, "logo": "https://assets.tcgdex.net/en/pop/pop2/logo", "name": "POP Series 2", "releaseDate": "2005-08-01", "serie": {"id": "pop", "name": "POP"}, "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol", "abbreviation": {"official": "P2"}}
+{
+    "cardCount": {
+        "firstEd": 0,
+        "holo": 6,
+        "normal": 8,
+        "official": 17,
+        "reverse": 0,
+        "total": 17
+    },
+    "cards": [
+        {
+            "category": "Pokemon",
+            "id": "pop2-1",
+            "illustrator": "Kouki Saitou",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/1",
+            "localId": "1",
+            "name": "Entei",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [244],
+            "hp": 70,
+            "types": ["Fire"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Stomp",
+                    "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage.",
+                    "damage": "10+"
+                },
+                {
+                    "cost": ["Fire", "Fire", "Colorless"],
+                    "name": "Fire Spin",
+                    "effect": "Discard 2 basic Energy cards attached to Entei or this attack does nothing.",
+                    "damage": 50
+                }
+            ],
+            "weaknesses": [{ "type": "Water" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:11:01+01:00",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277432,
+                    "avg": 80,
+                    "low": 19.94,
+                    "trend": 39.8,
+                    "avg1": 50,
+                    "avg7": 45.56,
+                    "avg30": 34.45,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 15.85,
+                    "avg1-holo": 10,
+                    "avg7-holo": 11.07,
+                    "avg30-holo": 11.03
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 85271,
+                        "lowPrice": 37.75,
+                        "midPrice": 43.38,
+                        "highPrice": 49,
+                        "marketPrice": 29.66,
+                        "directLowPrice": null
+                    },
+                    "holofoil": {
+                        "productId": 85271,
+                        "lowPrice": 20,
+                        "midPrice": 110.66,
+                        "highPrice": 117.01,
+                        "marketPrice": 32.6,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-2",
+            "illustrator": "Ken Sugimori",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/2",
+            "localId": "2",
+            "name": "Pidgeot",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [18],
+            "hp": 80,
+            "types": ["Colorless"],
+            "evolveFrom": "Pidgeotto",
+            "stage": "Stage2",
+            "abilities": [
+                {
+                    "type": "Poke-POWER",
+                    "name": "Beating Wings",
+                    "effect": "Once during your turn (before your attack), if Pidgeot is your Active Pok\u00e9mon, you may shuffle 1 of your Benched Pok\u00e9mon and all cards attached to it into your deck. This power can\u2019t be used if Pidgeot is affected by a Special Condition."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Sharp Beak",
+                    "effect": "Flip a coin. If heads, this attack does 20 damage plus 30 more damage.",
+                    "damage": "20+"
+                }
+            ],
+            "weaknesses": [{ "type": "Lightning" }],
+            "resistances": [{ "type": "Fighting", "value": "-30" }],
+            "retreat": 0,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:11:01+01:00",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277433,
+                    "avg": 15.75,
+                    "low": 4.5,
+                    "trend": 13.47,
+                    "avg1": 13.99,
+                    "avg7": 10.63,
+                    "avg30": 12.99,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 6.88,
+                    "avg1-holo": 4,
+                    "avg7-holo": 4.37,
+                    "avg30-holo": 5.2
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 88032,
+                        "lowPrice": 24.99,
+                        "midPrice": 29.37,
+                        "highPrice": 33.75,
+                        "marketPrice": 8.16,
+                        "directLowPrice": null
+                    },
+                    "holofoil": {
+                        "productId": 88032,
+                        "lowPrice": 4.32,
+                        "midPrice": 5.69,
+                        "highPrice": 9.99,
+                        "marketPrice": 5.6,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-3",
+            "illustrator": "Kouki Saitou",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/3",
+            "localId": "3",
+            "name": "Raikou",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [243],
+            "hp": 70,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Roar",
+                    "effect": "Your opponent switches the Defending Pok\u00e9mon with 1 of his or her Benched Pok\u00e9mon, if any."
+                },
+                {
+                    "cost": ["Lightning", "Lightning", "Colorless"],
+                    "name": "Thunder",
+                    "effect": "Flip a coin. If tails, Raikou does 20 damage to itself.",
+                    "damage": 50
+                }
+            ],
+            "weaknesses": [{ "type": "Fighting" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277434,
+                    "avg": 114,
+                    "low": 10,
+                    "trend": 64.64,
+                    "avg1": 220,
+                    "avg7": 71.14,
+                    "avg30": 38.47,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 20.57,
+                    "avg1-holo": 17.5,
+                    "avg7-holo": 15.04,
+                    "avg30-holo": 14.46
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 88533,
+                        "lowPrice": 15,
+                        "midPrice": 22.47,
+                        "highPrice": 49,
+                        "marketPrice": 22.06,
+                        "directLowPrice": null
+                    },
+                    "holofoil": {
+                        "productId": 88533,
+                        "lowPrice": 17.68,
+                        "midPrice": 18.67,
+                        "highPrice": 99.99,
+                        "marketPrice": 25.99,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-4",
+            "illustrator": "Kouki Saitou",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/4",
+            "localId": "4",
+            "name": "Suicune",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [245],
+            "hp": 70,
+            "types": ["Water"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Poke-BODY",
+                    "name": "Mirror Coat",
+                    "effect": "If Suicune is Burned or Poisoned by an opponent\u2019s attack (even if Suicune is Knocked Out), the Attacking Pok\u00e9mon is now affected by the same Special Conditions (1 if there is only 1)."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Water", "Colorless"],
+                    "name": "Bubblebeam",
+                    "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+                    "damage": 20
+                }
+            ],
+            "weaknesses": [{ "type": "Lightning" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:11:01+01:00",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277435,
+                    "avg": 27.5,
+                    "low": 24.95,
+                    "trend": 26.68,
+                    "avg1": 39.5,
+                    "avg7": 24.81,
+                    "avg30": 30.61,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 21.07,
+                    "avg1-holo": 24.99,
+                    "avg7-holo": 17.08,
+                    "avg30-holo": 16.68
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 89602,
+                        "lowPrice": 10.99,
+                        "midPrice": 14.83,
+                        "highPrice": 29.99,
+                        "marketPrice": 19.28,
+                        "directLowPrice": null
+                    },
+                    "holofoil": {
+                        "productId": 89602,
+                        "lowPrice": 19.83,
+                        "midPrice": 21.73,
+                        "highPrice": 37.94,
+                        "marketPrice": 28.17,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-5",
+            "illustrator": "Kouki Saitou",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/5",
+            "localId": "5",
+            "name": "Tauros",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [128],
+            "hp": 70,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Rage",
+                    "effect": "Does 10 damage plus 10 more damage for each damage counter on Tauros.",
+                    "damage": "10+"
+                },
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Take Down",
+                    "effect": "Tauros does 10 damage to itself.",
+                    "damage": 40
+                }
+            ],
+            "weaknesses": [{ "type": "Fighting" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277436,
+                    "avg": 4.74,
+                    "low": 0.6,
+                    "trend": 7,
+                    "avg1": 5,
+                    "avg7": 4.93,
+                    "avg30": 7.12,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 11.85,
+                    "avg1-holo": 6.7,
+                    "avg7-holo": 8.85,
+                    "avg30-holo": 6.94
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 89762,
+                        "lowPrice": 1.25,
+                        "midPrice": 3.07,
+                        "highPrice": 4.99,
+                        "marketPrice": 3.37,
+                        "directLowPrice": null
+                    },
+                    "holofoil": {
+                        "productId": 89762,
+                        "lowPrice": 1.49,
+                        "midPrice": 2.86,
+                        "highPrice": 96.95,
+                        "marketPrice": 2.72,
+                        "directLowPrice": 96.95
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-6",
+            "illustrator": "Mitsuhiro Arita",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/6",
+            "localId": "6",
+            "name": "Venusaur",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [3],
+            "hp": 120,
+            "types": ["Grass"],
+            "evolveFrom": "Ivysaur",
+            "stage": "Stage2",
+            "attacks": [
+                {
+                    "cost": ["Grass", "Grass", "Colorless"],
+                    "name": "Wide Solarbeam",
+                    "effect": "Does 20 damage to 2 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+                    "damage": 20
+                },
+                {
+                    "cost": ["Grass", "Grass", "Grass", "Colorless"],
+                    "name": "Hard Plant",
+                    "effect": "Venusaur can\u2019t use Hard Plant during your next turn.",
+                    "damage": 80
+                }
+            ],
+            "weaknesses": [{ "type": "Fire" }],
+            "retreat": 3,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:11:01+01:00",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277437,
+                    "avg": 32.16,
+                    "low": 25,
+                    "trend": 45.35,
+                    "avg1": 39.95,
+                    "avg7": 33.99,
+                    "avg30": 40.34,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 33.8,
+                    "avg1-holo": 25,
+                    "avg7-holo": 25.42,
+                    "avg30-holo": 21.27
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 90317,
+                        "lowPrice": 11.52,
+                        "midPrice": 27.01,
+                        "highPrice": 49,
+                        "marketPrice": 25.18,
+                        "directLowPrice": null
+                    },
+                    "holofoil": {
+                        "productId": 90317,
+                        "lowPrice": 14,
+                        "midPrice": 28.15,
+                        "highPrice": 49.99,
+                        "marketPrice": 28.84,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-7",
+            "illustrator": "Ken Sugimori",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/7",
+            "localId": "7",
+            "name": "Ivysaur",
+            "rarity": "Uncommon",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": false,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "normal", "size": "standard" }],
+            "dexId": [2],
+            "hp": 80,
+            "types": ["Grass"],
+            "evolveFrom": "Bulbasaur",
+            "stage": "Stage1",
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Poison Seed",
+                    "effect": "The Defending Pok\u00e9mon is now Poisoned."
+                },
+                {
+                    "cost": ["Grass", "Grass", "Colorless"],
+                    "name": "Razor Leaf",
+                    "damage": 50
+                }
+            ],
+            "weaknesses": [{ "type": "Psychic" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:11:01+01:00",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277438,
+                    "avg": 12.99,
+                    "low": 3.75,
+                    "trend": 11.9,
+                    "avg1": 5.99,
+                    "avg7": 13.03,
+                    "avg30": 8.86,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 15,
+                    "avg1-holo": 15,
+                    "avg7-holo": 8,
+                    "avg30-holo": 8
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 86298,
+                        "lowPrice": 11.7,
+                        "midPrice": 24.99,
+                        "highPrice": 29.99,
+                        "marketPrice": 20.28,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "pop2-8",
+            "illustrator": "Ken Sugimori",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/8",
+            "localId": "8",
+            "name": "Mr. Briney\u2019s Compassion",
+            "rarity": "Uncommon",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": false,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "normal", "size": "standard" }],
+            "effect": "Choose 1 of your Pok\u00e9mon in play (excluding Pok\u00e9mon-ex). Return that Pok\u00e9mon and all cards attached to it to your hand.",
+            "trainerType": "Supporter",
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2021-11-16T10:08:20+01:00",
+            "pricing": { "cardmarket": null, "tcgplayer": null }
+        },
+        {
+            "category": "Trainer",
+            "id": "pop2-9",
+            "illustrator": "\"Big Mama\" Tagawa",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/9",
+            "localId": "9",
+            "name": "Multi Technical Machine 01",
+            "rarity": "Uncommon",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": false,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Paralyzing Gaze",
+                    "effect": "The Defending Pok\u00e9mon is now Paralyzed."
+                }
+            ],
+            "effect": "Attach this card to 1 of your Pok\u00e9mon in play. That Pok\u00e9mon may use this card\u2019s attack instead of its own. At the end of your turn, discard Multi Technical Machine 01.",
+            "trainerType": "Technical Machine",
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:11:01+01:00",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277440,
+                    "avg": 1.5,
+                    "low": 0.8,
+                    "trend": 1.63,
+                    "avg1": 1.5,
+                    "avg7": 2,
+                    "avg30": 1.74,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 1.55,
+                    "avg1-holo": 1.2,
+                    "avg7-holo": 2.32,
+                    "avg30-holo": 2.32
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 87636,
+                        "lowPrice": 2,
+                        "midPrice": 2.99,
+                        "highPrice": 3.71,
+                        "marketPrice": 2.5,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "pop2-10",
+            "illustrator": "Kazuo Yazawa",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/10",
+            "localId": "10",
+            "name": "Pok\u00e9mon Park",
+            "rarity": "Uncommon",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": false,
+                "normal": true,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "normal", "size": "standard" }],
+            "effect": "Once during each player\u2019s turn, when that player attaches an Energy card from his or her hand to 1 of his or her Benched Pok\u00e9mon, he or she removes 1 damage counter from that Pok\u00e9mon.",
+            "trainerType": "Stadium",
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277441,
+                    "avg": 2.5,
+                    "low": 2.29,
+                    "trend": 3.5,
+                    "avg1": 2.5,
+                    "avg7": 3.38,
+                    "avg30": 3.42,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 15,
+                    "avg1-holo": 15,
+                    "avg7-holo": 15,
+                    "avg30-holo": 15
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "pop2-11",
+            "illustrator": "Ken Sugimori",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/11",
+            "localId": "11",
+            "name": "TV Reporter",
+            "rarity": "Uncommon",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "effect": "Draw 3 cards. Then discard any 1 card from your hand.",
+            "trainerType": "Supporter",
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277442,
+                    "avg": 2.74,
+                    "low": 0.39,
+                    "trend": 2.55,
+                    "avg1": 0.5,
+                    "avg7": 3.07,
+                    "avg30": 2.24,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 15,
+                    "avg1-holo": 15,
+                    "avg7-holo": 15,
+                    "avg30-holo": 15
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 90084,
+                        "lowPrice": 1.82,
+                        "midPrice": 2.25,
+                        "highPrice": 7,
+                        "marketPrice": 3.12,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-12",
+            "illustrator": "Midori Harada",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/12",
+            "localId": "12",
+            "name": "Bulbasaur",
+            "rarity": "Common",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [1],
+            "hp": 40,
+            "types": ["Grass"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Colorless"], "name": "Bite", "damage": 10 },
+                {
+                    "cost": ["Grass", "Colorless"],
+                    "name": "Razor Leaf",
+                    "damage": 20
+                }
+            ],
+            "weaknesses": [{ "type": "Psychic" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277443,
+                    "avg": 10.08,
+                    "low": 4.5,
+                    "trend": 18.01,
+                    "avg1": 21.99,
+                    "avg7": 11.59,
+                    "avg30": 17.06,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 5,
+                    "avg1-holo": 5,
+                    "avg7-holo": 5,
+                    "avg30-holo": 5
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 84031,
+                        "lowPrice": 39.99,
+                        "midPrice": 49.99,
+                        "highPrice": 9999,
+                        "marketPrice": 26.54,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-13",
+            "illustrator": "Ken Sugimori",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/13",
+            "localId": "13",
+            "name": "Cacnea",
+            "rarity": "Common",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [331],
+            "hp": 40,
+            "types": ["Grass"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Sand Attack",
+                    "effect": "If the Defending Pok\u00e9mon tries to attack during your opponent\u2019s next turn, your opponent flips a coin. If tails, that attack does nothing.",
+                    "damage": 10
+                }
+            ],
+            "weaknesses": [{ "type": "Fire" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277444,
+                    "avg": 0.73,
+                    "low": 0.1,
+                    "trend": 0.96,
+                    "avg1": 0.38,
+                    "avg7": 0.9,
+                    "avg30": 0.78,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 3,
+                    "avg1-holo": 3,
+                    "avg7-holo": 1.63,
+                    "avg30-holo": 1.63
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 84072,
+                        "lowPrice": 0.4,
+                        "midPrice": 0.79,
+                        "highPrice": 5,
+                        "marketPrice": 0.72,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-14",
+            "illustrator": "Atsuko Nishida",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/14",
+            "localId": "14",
+            "name": "Luvdisc",
+            "rarity": "Common",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [370],
+            "hp": 60,
+            "types": ["Water"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Paralyzing Kiss",
+                    "effect": "If there are 2 Defending Pok\u00e9mon in play, choose 1 of the Defending Pok\u00e9mon. That Pok\u00e9mon is now Paralyzed. (If there is only 1 Defending Pok\u00e9mon, this attack does nothing.)"
+                },
+                {
+                    "cost": ["Water", "Colorless"],
+                    "name": "Fast Stream",
+                    "effect": "Move 1 Energy card attached to the Defending Pok\u00e9mon to the other Defending Pok\u00e9mon. (Ignore this effect if your opponent has only 1 Defending Pok\u00e9mon.)",
+                    "damage": 20
+                }
+            ],
+            "weaknesses": [{ "type": "Lightning" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277445,
+                    "avg": 1.64,
+                    "low": 0.1,
+                    "trend": 1.58,
+                    "avg1": 1,
+                    "avg7": 1.17,
+                    "avg30": 0.9,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 3,
+                    "avg1-holo": 3,
+                    "avg7-holo": 3,
+                    "avg30-holo": 3
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 86934,
+                        "lowPrice": 0.84,
+                        "midPrice": 1.5,
+                        "highPrice": 1.99,
+                        "marketPrice": 1.21,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-15",
+            "illustrator": "Tomokazu Komiya",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/15",
+            "localId": "15",
+            "name": "Phanpy",
+            "rarity": "Common",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [231],
+            "hp": 50,
+            "types": ["Fighting"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Fighting"],
+                    "name": "Double Spin",
+                    "effect": "Flip 2 coins. This attack does 10 damage times the number of heads.",
+                    "damage": "10\u00d7"
+                },
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Body Slam",
+                    "effect": "Flip a coin. If heads, the Defending Pok\u00e9mon is now Paralyzed.",
+                    "damage": 10
+                }
+            ],
+            "weaknesses": [{ "type": "Grass" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277446,
+                    "avg": 10.05,
+                    "low": 6.95,
+                    "trend": 10.7,
+                    "avg1": 17.75,
+                    "avg7": 8.69,
+                    "avg30": 6.53,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 3,
+                    "avg1-holo": 3,
+                    "avg7-holo": 3,
+                    "avg30-holo": 3
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 88000,
+                        "lowPrice": 12,
+                        "midPrice": 15.33,
+                        "highPrice": 19.99,
+                        "marketPrice": 12.63,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-16",
+            "illustrator": "Yuka Morii",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/16",
+            "localId": "16",
+            "name": "Pikachu",
+            "rarity": "Common",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [25],
+            "hp": 40,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Colorless"], "name": "Gnaw", "damage": 10 },
+                {
+                    "cost": ["Lightning", "Colorless"],
+                    "name": "Thunder Jolt",
+                    "effect": "Flip a coin. If tails, Pikachu does 10 damage to itself.",
+                    "damage": 30
+                }
+            ],
+            "weaknesses": [{ "type": "Fighting" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277447,
+                    "avg": 19.38,
+                    "low": 5,
+                    "trend": 22.35,
+                    "avg1": 13,
+                    "avg7": 22.69,
+                    "avg30": 18.85,
+                    "avg-holo": null,
+                    "low-holo": 17,
+                    "trend-holo": 8.61,
+                    "avg1-holo": 8.5,
+                    "avg7-holo": 7.83,
+                    "avg30-holo": 7.83
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 88081,
+                        "lowPrice": 29.95,
+                        "midPrice": 34.5,
+                        "highPrice": 9999,
+                        "marketPrice": 31.38,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "pop2-17",
+            "illustrator": "Ryo Ueda",
+            "image": "https://assets.tcgdex.net/en/pop/pop2/17",
+            "localId": "17",
+            "name": "Celebi ex",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 17, "total": 17 },
+                "id": "pop2",
+                "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+                "name": "POP Series 2",
+                "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" }
+            ],
+            "dexId": [251],
+            "hp": 80,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "suffix": "EX",
+            "abilities": [
+                {
+                    "type": "Poke-POWER",
+                    "name": "Time Reversal",
+                    "effect": "Once during your turn, when you put Celebi ex from your hand onto your Bench, you may search your discard pile for a card, show it to your opponent, and put it on top of your deck."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Colorless"],
+                    "name": "Psychic Shield",
+                    "effect": "Prevent all effects of attacks, including damage, done to Celebi ex by your opponent\u2019s Pok\u00e9mon-ex during your opponent\u2019s next turn.",
+                    "damage": 30
+                }
+            ],
+            "weaknesses": [{ "type": "Psychic" }],
+            "retreat": 1,
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:11:01+01:00",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 277448,
+                    "avg": 12.93,
+                    "low": 3,
+                    "trend": 13.2,
+                    "avg1": 9,
+                    "avg7": 12.31,
+                    "avg30": 11.76,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 6.5,
+                    "avg1-holo": 2,
+                    "avg7-holo": 6.05,
+                    "avg30-holo": 7.44
+                },
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "normal": {
+                        "productId": 84151,
+                        "lowPrice": 59.85,
+                        "midPrice": 99.99,
+                        "highPrice": 200,
+                        "marketPrice": 39.99,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        }
+    ],
+    "id": "pop2",
+    "legal": { "expanded": false, "standard": false },
+    "logo": "https://assets.tcgdex.net/en/pop/pop2/logo",
+    "name": "POP Series 2",
+    "releaseDate": "2005-08-01",
+    "serie": { "id": "pop", "name": "POP" },
+    "symbol": "https://assets.tcgdex.net/univ/pop/pop2/symbol",
+    "abbreviation": { "official": "P2" }
+}

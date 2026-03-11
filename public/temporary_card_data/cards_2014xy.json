@@ -1,1 +1,542 @@
-{"cardCount": {"firstEd": 0, "holo": 12, "normal": 0, "official": 12, "reverse": 0, "total": 12}, "cards": [{"category": "Pokemon", "id": "2014xy-1", "localId": "1", "name": "Weedle", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [13], "hp": 40, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Grass"], "damage": "10"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110406, "lowPrice": 4.78, "midPrice": 9.99, "highPrice": 20.75, "marketPrice": 13.76, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-2", "localId": "2", "name": "Chespin", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [650], "hp": 60, "types": ["Grass"], "stage": "Basic", "attacks": [{"cost": ["Grass"], "damage": "10"}, {"cost": ["Grass", "Colorless"], "damage": "20"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110407, "lowPrice": 1.1, "midPrice": 2.17, "highPrice": 11.99, "marketPrice": 7.74, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-3", "localId": "3", "name": "Fennekin", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [653], "hp": 60, "types": ["Fire"], "stage": "Basic", "attacks": [{"cost": ["Fire"], "damage": "10"}, {"cost": ["Fire", "Colorless"], "damage": "20"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110408, "lowPrice": 5, "midPrice": 16.25, "highPrice": 24.95, "marketPrice": 16.99, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-4", "localId": "4", "name": "Froakie", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [656], "hp": 60, "types": ["Water"], "stage": "Basic", "attacks": [{"cost": ["Water"], "damage": "10"}, {"cost": ["Water", "Colorless"], "damage": "20"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110409, "lowPrice": 6.5, "midPrice": 7.28, "highPrice": 96.95, "marketPrice": 6.87, "directLowPrice": 96.95}}}}, {"category": "Pokemon", "id": "2014xy-5", "localId": "5", "name": "Pikachu", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [25], "hp": 60, "types": ["Lightning"], "stage": "Basic", "attacks": [{"cost": ["Colorless"]}, {"cost": ["Colorless", "Colorless"], "damage": "20+"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110410, "lowPrice": 16.4, "midPrice": 38.14, "highPrice": 99.99, "marketPrice": 31.28, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-6", "localId": "6", "name": "Inkay", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [686], "hp": 60, "types": ["Darkness"], "stage": "Basic", "attacks": [{"cost": ["Darkness"], "damage": "10"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110411, "lowPrice": 1.59, "midPrice": 2.33, "highPrice": 8.78, "marketPrice": 6, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-7", "localId": "7", "name": "Honedge", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [679], "hp": 60, "types": ["Metal"], "stage": "Basic", "attacks": [{"cost": ["Metal", "Colorless"], "damage": "30\u00d7"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110412, "lowPrice": 3.4, "midPrice": 4.5, "highPrice": 7.77, "marketPrice": 6.03, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-8", "localId": "8", "name": "Snubbull", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [209], "hp": 70, "types": ["Fairy"], "stage": "Basic", "attacks": [{"cost": ["Fairy", "Colorless"], "damage": "20"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110413, "lowPrice": 6, "midPrice": 6.77, "highPrice": 7.54, "marketPrice": 7.34, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-9", "localId": "9", "name": "Swirlix", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [684], "hp": 60, "types": ["Fairy"], "stage": "Basic", "attacks": [{"cost": ["Fairy"], "damage": "10"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110414, "lowPrice": 4.07, "midPrice": 5.25, "highPrice": 96.95, "marketPrice": 6.29, "directLowPrice": 96.95}}}}, {"category": "Pokemon", "id": "2014xy-10", "localId": "10", "name": "Bunnelby", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [659], "hp": 60, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "damage": "20"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110415, "lowPrice": 6, "midPrice": 6.57, "highPrice": 19.99, "marketPrice": 6.44, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-11", "localId": "11", "name": "Fletchling", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [661], "hp": 50, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless"], "damage": "20"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110416, "lowPrice": 4.11, "midPrice": 5.74, "highPrice": 6.75, "marketPrice": 6.23, "directLowPrice": null}}}}, {"category": "Pokemon", "id": "2014xy-12", "localId": "12", "name": "Furfrou", "rarity": "None", "set": {"cardCount": {"official": 12, "total": 12}, "id": "2014xy", "name": "Macdonald's Collection 2014"}, "variants": {"firstEdition": false, "holo": true, "normal": false, "reverse": false, "wPromo": false}, "variants_detailed": [{"type": "holo", "size": "standard"}], "dexId": [676], "hp": 90, "types": ["Colorless"], "stage": "Basic", "attacks": [{"cost": ["Colorless", "Colorless"], "damage": "20"}, {"cost": ["Colorless", "Colorless", "Colorless"], "damage": "50"}], "legal": {"standard": false, "expanded": false}, "updated": "2026-01-24T23:09:39+01:00", "pricing": {"cardmarket": null, "tcgplayer": {"updated": "2026-02-28T20:04:49.000Z", "unit": "USD", "holofoil": {"productId": 110417, "lowPrice": 3.11, "midPrice": 6.33, "highPrice": 14.02, "marketPrice": 9.09, "directLowPrice": null}}}}], "id": "2014xy", "legal": {"expanded": false, "standard": false}, "name": "Macdonald's Collection 2014", "releaseDate": "2014-05-23", "serie": {"id": "mc", "name": "McDonald's Collection"}, "abbreviation": {"official": "MCD14"}}
+{
+    "cardCount": {
+        "firstEd": 0,
+        "holo": 12,
+        "normal": 0,
+        "official": 12,
+        "reverse": 0,
+        "total": 12
+    },
+    "cards": [
+        {
+            "category": "Pokemon",
+            "id": "2014xy-1",
+            "localId": "1",
+            "name": "Weedle",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [13],
+            "hp": 40,
+            "types": ["Grass"],
+            "stage": "Basic",
+            "attacks": [{ "cost": ["Grass"], "damage": "10" }],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110406,
+                        "lowPrice": 4.78,
+                        "midPrice": 9.99,
+                        "highPrice": 20.75,
+                        "marketPrice": 13.76,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-2",
+            "localId": "2",
+            "name": "Chespin",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [650],
+            "hp": 60,
+            "types": ["Grass"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Grass"], "damage": "10" },
+                { "cost": ["Grass", "Colorless"], "damage": "20" }
+            ],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110407,
+                        "lowPrice": 1.1,
+                        "midPrice": 2.17,
+                        "highPrice": 11.99,
+                        "marketPrice": 7.74,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-3",
+            "localId": "3",
+            "name": "Fennekin",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [653],
+            "hp": 60,
+            "types": ["Fire"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Fire"], "damage": "10" },
+                { "cost": ["Fire", "Colorless"], "damage": "20" }
+            ],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110408,
+                        "lowPrice": 5,
+                        "midPrice": 16.25,
+                        "highPrice": 24.95,
+                        "marketPrice": 16.99,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-4",
+            "localId": "4",
+            "name": "Froakie",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [656],
+            "hp": 60,
+            "types": ["Water"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Water"], "damage": "10" },
+                { "cost": ["Water", "Colorless"], "damage": "20" }
+            ],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110409,
+                        "lowPrice": 6.5,
+                        "midPrice": 7.28,
+                        "highPrice": 96.95,
+                        "marketPrice": 6.87,
+                        "directLowPrice": 96.95
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-5",
+            "localId": "5",
+            "name": "Pikachu",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [25],
+            "hp": 60,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Colorless"] },
+                { "cost": ["Colorless", "Colorless"], "damage": "20+" }
+            ],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110410,
+                        "lowPrice": 16.4,
+                        "midPrice": 38.14,
+                        "highPrice": 99.99,
+                        "marketPrice": 31.28,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-6",
+            "localId": "6",
+            "name": "Inkay",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [686],
+            "hp": 60,
+            "types": ["Darkness"],
+            "stage": "Basic",
+            "attacks": [{ "cost": ["Darkness"], "damage": "10" }],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110411,
+                        "lowPrice": 1.59,
+                        "midPrice": 2.33,
+                        "highPrice": 8.78,
+                        "marketPrice": 6,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-7",
+            "localId": "7",
+            "name": "Honedge",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [679],
+            "hp": 60,
+            "types": ["Metal"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Metal", "Colorless"], "damage": "30\u00d7" }
+            ],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110412,
+                        "lowPrice": 3.4,
+                        "midPrice": 4.5,
+                        "highPrice": 7.77,
+                        "marketPrice": 6.03,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-8",
+            "localId": "8",
+            "name": "Snubbull",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [209],
+            "hp": 70,
+            "types": ["Fairy"],
+            "stage": "Basic",
+            "attacks": [{ "cost": ["Fairy", "Colorless"], "damage": "20" }],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110413,
+                        "lowPrice": 6,
+                        "midPrice": 6.77,
+                        "highPrice": 7.54,
+                        "marketPrice": 7.34,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-9",
+            "localId": "9",
+            "name": "Swirlix",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [684],
+            "hp": 60,
+            "types": ["Fairy"],
+            "stage": "Basic",
+            "attacks": [{ "cost": ["Fairy"], "damage": "10" }],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110414,
+                        "lowPrice": 4.07,
+                        "midPrice": 5.25,
+                        "highPrice": 96.95,
+                        "marketPrice": 6.29,
+                        "directLowPrice": 96.95
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-10",
+            "localId": "10",
+            "name": "Bunnelby",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [659],
+            "hp": 60,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "attacks": [{ "cost": ["Colorless", "Colorless"], "damage": "20" }],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110415,
+                        "lowPrice": 6,
+                        "midPrice": 6.57,
+                        "highPrice": 19.99,
+                        "marketPrice": 6.44,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-11",
+            "localId": "11",
+            "name": "Fletchling",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [661],
+            "hp": 50,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "attacks": [{ "cost": ["Colorless"], "damage": "20" }],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110416,
+                        "lowPrice": 4.11,
+                        "midPrice": 5.74,
+                        "highPrice": 6.75,
+                        "marketPrice": 6.23,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "2014xy-12",
+            "localId": "12",
+            "name": "Furfrou",
+            "rarity": "None",
+            "set": {
+                "cardCount": { "official": 12, "total": 12 },
+                "id": "2014xy",
+                "name": "Macdonald's Collection 2014"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [676],
+            "hp": 90,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Colorless", "Colorless"], "damage": "20" },
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "damage": "50"
+                }
+            ],
+            "legal": { "standard": false, "expanded": false },
+            "updated": "2026-01-24T23:09:39+01:00",
+            "pricing": {
+                "cardmarket": null,
+                "tcgplayer": {
+                    "updated": "2026-02-28T20:04:49.000Z",
+                    "unit": "USD",
+                    "holofoil": {
+                        "productId": 110417,
+                        "lowPrice": 3.11,
+                        "midPrice": 6.33,
+                        "highPrice": 14.02,
+                        "marketPrice": 9.09,
+                        "directLowPrice": null
+                    }
+                }
+            }
+        }
+    ],
+    "id": "2014xy",
+    "legal": { "expanded": false, "standard": false },
+    "name": "Macdonald's Collection 2014",
+    "releaseDate": "2014-05-23",
+    "serie": { "id": "mc", "name": "McDonald's Collection" },
+    "abbreviation": { "official": "MCD14" }
+}

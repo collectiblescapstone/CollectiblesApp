@@ -1,11 +1,10 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 import { Flex, Text, Box, Spinner, Button } from '@chakra-ui/react'
 import Divider from '@/components/profiles/Divider'
-import { useRandomCards } from '@/components/personal-profile/RandomCard' // for now, change later
-import { PokemonCardImage } from '@/types/personal-profile'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/context/AuthProvider'
 import { fetchTradeOptions } from '@/utils/getTradeOptions'
@@ -18,7 +17,7 @@ import ViableOptions from '@/components/trading/ViableOptions'
 const TradeSuggestions: React.FC = () => {
     const { session } = useAuth()
     const router = useRouter()
-
+    const pathname = usePathname()
     const userID = session?.user.id
 
     const [users, setUsers] = useState<TradeCardProps[]>([])
@@ -118,6 +117,12 @@ const TradeSuggestions: React.FC = () => {
         loadViableOptions()
     }, [userID])
 
+    useEffect(() => {
+        if (pathname !== '/trade' && pathname !== '/home') {
+            closeTradePopup()
+        }
+    }, [pathname])
+
     if (loading || !session) {
         return (
             <Box textAlign="center" mt={10}>
@@ -133,12 +138,19 @@ const TradeSuggestions: React.FC = () => {
             </Flex>
         )
     }
-    
-    useEffect(() => {
-            if (pathname !== '/trade') {
-                closeTradePopup()
-            }
-        }, [pathname])
+
+    const closestUser = users.reduce<TradeCardProps | null>((closest, user) => {
+        const distance = user.distance
+        if (distance == null) {
+            return closest
+        }
+
+        if (closest?.distance == null || distance < closest.distance) {
+            return user
+        }
+
+        return closest
+    }, null)
 
     return (
         <Flex
@@ -160,44 +172,38 @@ const TradeSuggestions: React.FC = () => {
                     TradePost Suggestion
                 </Text>
             </Flex>
-            <Box
-                key={u.username}
-                cursor="pointer"
-                alignItems="center"
-                onClick={() =>
-                    TradePopup.open('trade', {
-                        title: 'Trade with ' + u.username,
-                        content: (
-                            <TradeCardPopup
-                                username={u.username}
-                                avatarUrl={u.avatarUrl}
-                                contacts={u.contacts}
-                                user1Wishlist={
-                                    u.user1Wishlist ?? []
-                                }
-                                user2Wishlist={
-                                    u.user2Wishlist ?? []
-                                }
-                                onNavigateToProfile={
-                                    closeTradePopup
-                                }
-                            />
-                        ),
-                        onClickClose: closeTradePopup
-                    })
-                }
-            >
-                <ViableOptions
+            {(closestUser ? [closestUser] : []).map((u) => (
+                <Box
                     key={u.username}
-                    username={u.username}
-                    avatarUrl={u.avatarUrl}
-                    rating={u.rating}
-                    user1Wishlist={u.user1Wishlist ?? []}
-                    distance={u.distance}
-                    ratingCount={u.ratingCount}
-                />
-            </Box>
-            </Flex>
+                    cursor="pointer"
+                    alignItems="center"
+                    onClick={() =>
+                        TradePopup.open('trade', {
+                            title: 'Trade with ' + u.username,
+                            content: (
+                                <TradeCardPopup
+                                    username={u.username}
+                                    avatarUrl={u.avatarUrl}
+                                    contacts={u.contacts}
+                                    user1Wishlist={u.user1Wishlist ?? []}
+                                    user2Wishlist={u.user2Wishlist ?? []}
+                                    onNavigateToProfile={closeTradePopup}
+                                />
+                            ),
+                            onClickClose: closeTradePopup
+                        })
+                    }
+                >
+                    <ViableOptions
+                        username={u.username}
+                        avatarUrl={u.avatarUrl}
+                        rating={u.rating}
+                        user1Wishlist={u.user1Wishlist ?? []}
+                        distance={u.distance}
+                        ratingCount={u.ratingCount}
+                    />
+                </Box>
+            ))}
             {/* Button below navigates to /trade/page.tsx */}
             <Button
                 size="xs"
@@ -206,6 +212,7 @@ const TradeSuggestions: React.FC = () => {
             >
                 + Go to TradePost
             </Button>
+            <TradePopup.Viewport />
         </Flex>
     )
 }

@@ -9,7 +9,7 @@ import TipsPopup from '@/components/ui/PopupUI'
 import {
     CameraPreview,
     CameraPreviewOptions,
-    CameraPreviewPictureOptions,
+    CameraPreviewPictureOptions
 } from '@capacitor-community/camera-preview'
 
 import { Camera } from '@capacitor/camera'
@@ -138,7 +138,9 @@ const CameraPage = () => {
 
     const startCamera = useCallback(async () => {
         try {
-            await Camera.requestPermissions({ permissions: ['camera', 'photos'] })
+            await Camera.requestPermissions({
+                permissions: ['camera', 'photos']
+            })
         } catch (err) {
             const errorMessage =
                 err instanceof Error ? err.message : String(err)

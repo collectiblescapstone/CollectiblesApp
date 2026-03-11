@@ -962,7 +962,7 @@
         "symbol": "https://assets.tcgdex.net/univ/sm/sm12/symbol"
     },
     {
-        "cardCount": { "official": 107, "total": 287 },
+        "cardCount": { "official": 0, "total": 287 },
         "id": "swshp",
         "logo": "https://assets.tcgdex.net/en/swsh/swshp/logo",
         "name": "SWSH Black Star Promos",
@@ -1144,6 +1144,7 @@
     {
         "cardCount": { "official": 162, "total": 218 },
         "id": "sv05",
+        "logo": "https://archives.bulbagarden.net/media/upload/d/d9/SV5_Logo_EN.png",
         "name": "Temporal Forces",
         "symbol": "https://assets.tcgdex.net/univ/sv/sv05/symbol"
     },

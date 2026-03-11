@@ -532,7 +532,11 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                             label={set.name}
                                             image={
                                                 imageSrc
-                                                    ? `${imageSrc}.png`
+                                                    ? /\.(png|jpg|jpeg|webp|gif)$/i.test(
+                                                          imageSrc
+                                                      )
+                                                        ? imageSrc
+                                                        : `${imageSrc}.png`
                                                     : '/Images/temp_icon.svg'
                                             }
                                             setName={set.name}

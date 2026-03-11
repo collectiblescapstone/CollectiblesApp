@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 import {
     Flex,
@@ -20,10 +21,27 @@ import { fetchTradeOptions } from '@/utils/getTradeOptions'
 import { pfp_image_mapping } from '../personal-profile/edit-profile/constants'
 import { IoIosInformationCircleOutline } from 'react-icons/io'
 import UserSearch from '@/components/trading/UserSearch'
+import TradePopup from '@/components/ui/PopupUI'
+import TradeCardPopup from '@/components/trading/PopupTrade'
 
 const TradePage = () => {
+    const pathname = usePathname()
     const { session } = useAuth()
     const userID = session?.user.id
+
+    const closeTradePopup = () => {
+        try {
+            TradePopup.close('trade')
+        } catch (error) {
+            if (
+                error instanceof Error &&
+                error.message.includes('Overlay with id trade not found')
+            ) {
+                return
+            }
+            throw error
+        }
+    }
 
     const [users, setUsers] = useState<TradeCardProps[]>([])
     const [loading, setLoading] = useState<boolean>(true)
@@ -58,12 +76,48 @@ const TradePage = () => {
                             avatarUrl:
                                 pfp_image_mapping[viableUser.profile_pic],
                             rating: 0,
+                            ratingCount: 0,
                             distance: viableUser.distance,
-                            cards: option.cards
+                            user1Wishlist: option.cardsUser1WantsFromUser2.map(
+                                (card) => ({
+                                    name: card.name,
+                                    image_url: card.image_url
+                                })
+                            ),
+                            user2Wishlist: option.cardsUser2WantsFromUser1.map(
+                                (card) => ({
+                                    name: card.name,
+                                    image_url: card.image_url
+                                })
+                            ),
+                            contacts: [
+                                'facebook',
+                                'instagram',
+                                'x',
+                                'discord',
+                                'whatsapp'
+                            ]
+                                .map((method) => {
+                                    const value =
+                                        viableUser[
+                                            method as keyof typeof viableUser
+                                        ]
+                                    if (value) {
+                                        return { method, value }
+                                    }
+                                    return null
+                                })
+                                .filter(
+                                    (
+                                        contact
+                                    ): contact is {
+                                        method: string
+                                        value: string
+                                    } => Boolean(contact)
+                                )
                         })
                     }
                 }
-
                 setUsers(Array.from(userMap.values()))
                 setError(null)
             } catch (error) {
@@ -76,6 +130,18 @@ const TradePage = () => {
 
         loadViableOptions()
     }, [userID])
+
+    useEffect(() => {
+        return () => {
+            closeTradePopup()
+        }
+    }, [])
+
+    useEffect(() => {
+        if (pathname !== '/trade') {
+            closeTradePopup()
+        }
+    }, [pathname])
 
     if (loading || !session) {
         return (
@@ -100,8 +166,8 @@ const TradePage = () => {
     }
 
     return (
-        <Box>
-            <Flex alignItems="center" flexDirection="column" mt={3}>
+        <Flex flexDirection="column" gap={3}>
+            <Flex alignItems="center" flexDirection="column" mt={6}>
                 <UserSearch />
             </Flex>
 
@@ -180,8 +246,8 @@ const TradePage = () => {
                                 onValueChange={slideFn}
                                 width="100%"
                             >
-                                <HStack justifyContent="space-between" w="100%">
-                                    <Slider.Label w="50%">
+                                <HStack justifyContent="space-between">
+                                    <Slider.Label w="40%" textAlign="left">
                                         Range: {sliderValue} km
                                     </Slider.Label>
 
@@ -195,7 +261,7 @@ const TradePage = () => {
                             </Slider.Root>
                         </Box>
                     </Flex>
-                    <Flex flexDirection="column" gap={6} alignItems="center">
+                    <Flex flexDirection="column" alignItems="center" gap={2}>
                         {(() => {
                             const filteredUsers = users.filter(
                                 (u) =>
@@ -238,20 +304,50 @@ const TradePage = () => {
                                 )
                             }
                             return filteredUsers.map((u) => (
-                                <ViableOptions
+                                <Box
                                     key={u.username}
-                                    username={u.username}
-                                    avatarUrl={u.avatarUrl}
-                                    rating={u.rating}
-                                    cards={u.cards}
-                                    distance={u.distance}
-                                />
+                                    cursor="pointer"
+                                    alignItems="center"
+                                    onClick={() =>
+                                        TradePopup.open('trade', {
+                                            title: 'Trade with ' + u.username,
+                                            content: (
+                                                <TradeCardPopup
+                                                    username={u.username}
+                                                    avatarUrl={u.avatarUrl}
+                                                    contacts={u.contacts}
+                                                    user1Wishlist={
+                                                        u.user1Wishlist ?? []
+                                                    }
+                                                    user2Wishlist={
+                                                        u.user2Wishlist ?? []
+                                                    }
+                                                    onNavigateToProfile={
+                                                        closeTradePopup
+                                                    }
+                                                />
+                                            ),
+                                            onClickClose: closeTradePopup
+                                        })
+                                    }
+                                >
+                                    <ViableOptions
+                                        key={u.username}
+                                        username={u.username}
+                                        avatarUrl={u.avatarUrl}
+                                        rating={u.rating}
+                                        user1Wishlist={u.user1Wishlist ?? []}
+                                        distance={u.distance}
+                                        ratingCount={u.ratingCount}
+                                    />
+                                </Box>
                             ))
                         })()}
+                        <TradePopup.Viewport />
                     </Flex>
                 </Flex>
             )}
-        </Box>
+        </Flex>
     )
 }
 

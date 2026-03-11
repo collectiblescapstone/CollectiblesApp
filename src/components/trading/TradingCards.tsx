@@ -4,9 +4,12 @@ import React from 'react'
 import { Flex, Image } from '@chakra-ui/react'
 import { PokemonCardImage } from '@/types/personal-profile'
 
-const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
-    cards = []
-}) => {
+interface TradingCardsProps {
+    cards?: PokemonCardImage[]
+}
+
+const TradingCards = ({ cards = [] }: TradingCardsProps) => {
+    const card_length = cards.length
     return (
         <Flex
             flexDirection="column"
@@ -14,22 +17,29 @@ const TradingCards: React.FC<{ cards?: PokemonCardImage[] }> = ({
             justifyContent="flex-start"
             alignItems="center"
             w="100%"
-            px={4}
         >
             <Flex
                 flexDirection="row"
                 justifyContent="center"
                 alignItems="center"
                 wrap="wrap"
-                gap={5}
+                gap={4}
             >
                 {cards.map((card: PokemonCardImage, index: number) => (
                     <Flex key={index}>
                         <Image
                             src={`${card.image}`}
                             alt={card.name}
-                            w="105px"
                             h="auto"
+                            w={
+                                card_length <= 2
+                                    ? '100px'
+                                    : card_length <= 3
+                                      ? '80px'
+                                      : card_length <= 4
+                                        ? '60px'
+                                        : '40px'
+                            }
                             borderRadius="none"
                         />
                     </Flex>

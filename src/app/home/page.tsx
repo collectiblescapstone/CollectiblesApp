@@ -38,7 +38,6 @@ const HomePage = () => {
                 setLoading(false)
             }
         }
-
         loadUserProfile()
     }, [userID])
 

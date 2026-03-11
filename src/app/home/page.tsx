@@ -8,15 +8,15 @@ import Collection from '@/components/home/Collection'
 import TradeSuggestions from '@/components/home/TradeSuggestions'
 
 import { Box, Flex, Heading, Text, Spinner } from '@chakra-ui/react'
-import { UserProfile } from '@/types/personal-profile'
-import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
+import { UserData } from '@/types/user-data'
+import { fetchUserData } from '@/utils/userDataPuller'
 
 const HomePage = () => {
     const { session } = useAuth()
 
     const userID = session?.user.id
 
-    const [user, setUser] = useState<UserProfile | null>(null)
+    const [user, setUser] = useState<UserData | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
@@ -28,12 +28,12 @@ const HomePage = () => {
         }
         const loadUserProfile = async () => {
             try {
-                const data = await fetchUserProfile(userID)
+                const data = await fetchUserData(userID)
                 setUser(data)
                 setLoading(false)
             } catch (error) {
                 console.error(error)
-                setError('Failed to fetch user profile')
+                setError('Failed to fetch user data')
             } finally {
                 setLoading(false)
             }
@@ -94,7 +94,7 @@ const HomePage = () => {
             >
                 <Flex direction="column" alignItems="center" minW="180px">
                     <Text fontSize="2xl" fontWeight="bold">
-                        0
+                        {user.cardsLoggedthisMonth}
                     </Text>
                     <Text fontSize="sm" color="gray.600">
                         cards logged this month
@@ -103,7 +103,7 @@ const HomePage = () => {
 
                 <Flex direction="column" alignItems="center" minW="180px">
                     <Text fontSize="2xl" fontWeight="bold">
-                        0
+                        {user.cardsInCollection}
                     </Text>
                     <Text fontSize="sm" color="gray.600">
                         total cards in collection
@@ -112,7 +112,7 @@ const HomePage = () => {
 
                 <Flex direction="column" alignItems="center" minW="180px">
                     <Text fontSize="2xl" fontWeight="bold">
-                        0
+                        {user.cardsForTrade}
                     </Text>
                     <Text fontSize="sm" color="gray.600">
                         cards up for trade
@@ -120,8 +120,19 @@ const HomePage = () => {
                 </Flex>
             </Flex>
 
-            <PopularCards />
-            <Collection />
+            <PopularCards
+                cards={user.popularCards.map((card) => ({
+                    name: card.name,
+                    imageUrl: card.imageUrl,
+                    count: card.count
+                }))}
+            />
+            <Collection
+                cards={user.recentCards.map((card) => ({
+                    name: card.name,
+                    image: card.imageUrl
+                }))}
+            />
             <TradeSuggestions />
         </Flex>
     )

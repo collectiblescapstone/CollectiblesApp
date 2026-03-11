@@ -1,6 +1,6 @@
-import { UserData } from '../types/user-data'
+import { UserData } from '@/types/user-data'
 import { CapacitorHttp } from '@capacitor/core'
-import { baseUrl } from '../constants'
+import { baseUrl } from '@/utils/constants'
 
 export const fetchUserData = async (userID: string): Promise<UserData> => {
     const response = await CapacitorHttp.post({

@@ -28,7 +28,13 @@ export const POST = async (request: Request) => {
             userId: userID
         },
         select: {
-            card: {}
+            createdAt: true,
+            card: {
+                select: {
+                    name: true,
+                    image_url: true
+                }
+            }
         }
     })
 
@@ -57,10 +63,58 @@ export const POST = async (request: Request) => {
         }
     })
 
+    const cardCountById = await prisma.collectionEntry.groupBy({
+        by: ['cardId'],
+        _count: {
+            cardId: true
+        }
+    })
+
+    const cardIds = cardCountById.map((entry) => entry.cardId)
+
+    const cards =
+        cardIds.length > 0
+            ? await prisma.card.findMany({
+                  where: {
+                      id: {
+                          in: cardIds
+                      }
+                  },
+                  select: {
+                      id: true,
+                      name: true,
+                      image_url: true
+                  }
+              })
+            : []
+
+    const countLookup = new Map(
+        cardCountById.map((entry) => [entry.cardId, entry._count.cardId])
+    )
+
+    const allCards = cards.map((card) => ({
+        name: card.name,
+        imageUrl: card.image_url,
+        count: countLookup.get(card.id) ?? 0
+    }))
+
+    const sortedCards = allCards.sort((a, b) => b.count - a.count)
+
+    totalcollection.sort(
+        (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
+    )
+
     return NextResponse.json({
         ...user,
         cardsInCollection,
         cardsForTrade,
-        cardsLoggedthisMonth
+        cardsLoggedthisMonth,
+        // Slice returnes the top 3 popular cards, if there are less than 3 cards in the collection it will return all of them
+        popularCards: sortedCards.slice(0, 3),
+        // Slice returns the 3 most recently logged cards, if there are less than 3 cards in the collection it will return all of them
+        recentCards: totalcollection.slice(0, 3).map((entry) => ({
+            name: entry.card.name,
+            imageUrl: entry.card.image_url
+        }))
     })
 }

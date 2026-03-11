@@ -3,16 +3,14 @@
 import React from 'react'
 import Divider from '@/components/profiles/Divider'
 import { Flex, Image, Text, HStack } from '@chakra-ui/react'
-import { useRandomCards } from '@/components/personal-profile/RandomCard' // for now, change later
-import { PokemonCardImage } from '@/types/personal-profile'
+import { PopCards } from '@/types/user-data'
 import { LuFlame } from 'react-icons/lu'
 
-const PopularCards: React.FC = () => {
-    const { cards, loading } = useRandomCards('ex5', 3)
+interface PopularCardsProps {
+    cards?: PopCards[]
+}
 
-    if (loading) return <Text>Loading cards...</Text>
-    if (cards.length === 0) return null
-
+const PopularCards = ({ cards = [] }: PopularCardsProps) => {
     return (
         <Flex
             flexDirection="column"
@@ -43,10 +41,10 @@ const PopularCards: React.FC = () => {
                 wrap="wrap"
                 gap={5}
             >
-                {cards.map((card: PokemonCardImage, index: number) => (
+                {cards.map((card: PopCards, index: number) => (
                     <Flex key={index}>
                         <Image
-                            src={`${card.image}/high.png`}
+                            src={`${card.imageUrl}`}
                             alt={card.name}
                             w="105px"
                             h="auto"

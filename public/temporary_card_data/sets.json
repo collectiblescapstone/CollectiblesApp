@@ -1102,6 +1102,13 @@
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12/symbol"
     },
     {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "swsh12.1",
+        "logo": "https://assets.tcgdex.net/en/swsh/swsh12/logo",
+        "name": "Silver Tempest Trainer Gallery",
+        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12/symbol"
+    },
+    {
         "cardCount": { "official": 159, "total": 230 },
         "id": "swsh12.5",
         "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",

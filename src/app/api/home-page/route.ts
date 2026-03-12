@@ -23,33 +23,30 @@ export const POST = async (request: Request) => {
         return NextResponse.json({ error: 'User not found' }, { status: 404 })
     }
 
-    const totalcollection = await prisma.collectionEntry.findMany({
-        where: {
-            userId: userID
-        },
-        select: {
-            createdAt: true,
-            card: {
+    const [cardsInCollection, cardsForTrade, recentEntries] = await Promise.all(
+        [
+            prisma.collectionEntry.count({
+                where: { userId: userID }
+            }),
+            prisma.collectionEntry.count({
+                where: { userId: userID, forTrade: true }
+            }),
+            prisma.collectionEntry.findMany({
+                where: { userId: userID },
+                orderBy: { createdAt: 'desc' },
+                take: 3,
                 select: {
-                    name: true,
-                    image_url: true
+                    card: {
+                        select: {
+                            name: true,
+                            image_url: true
+                        }
+                    }
                 }
-            }
-        }
-    })
+            })
+        ]
+    )
 
-    const tradeList = await prisma.collectionEntry.findMany({
-        where: {
-            userId: userID,
-            forTrade: true
-        },
-        select: {
-            card: {}
-        }
-    })
-
-    const cardsInCollection = totalcollection.length
-    const cardsForTrade = tradeList.length
     const cardsLoggedthisMonth = await prisma.collectionEntry.count({
         where: {
             userId: userID,
@@ -67,6 +64,15 @@ export const POST = async (request: Request) => {
         by: ['cardId'],
         _count: {
             cardId: true
+        },
+        where: {
+            createdAt: {
+                gte: new Date(
+                    new Date().getFullYear(),
+                    new Date().getMonth(),
+                    1
+                )
+            }
         }
     })
 
@@ -100,19 +106,14 @@ export const POST = async (request: Request) => {
 
     const sortedCards = allCards.sort((a, b) => b.count - a.count)
 
-    totalcollection.sort(
-        (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
-    )
-
     return NextResponse.json({
         ...user,
         cardsInCollection,
         cardsForTrade,
         cardsLoggedthisMonth,
-        // Slice returnes the top 3 popular cards, if there are less than 3 cards in the collection it will return all of them
+        // Slice returns the top 3 popular cards, if there are less than 3 cards in the collection it will return all of them
         popularCards: sortedCards.slice(0, 3),
-        // Slice returns the 3 most recently logged cards, if there are less than 3 cards in the collection it will return all of them
-        recentCards: totalcollection.slice(0, 3).map((entry) => ({
+        recentCards: recentEntries.map((entry) => ({
             name: entry.card.name,
             imageUrl: entry.card.image_url
         }))

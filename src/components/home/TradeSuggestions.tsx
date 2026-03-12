@@ -15,7 +15,7 @@ import TradeCardPopup from '@/components/trading/PopupTrade'
 import ViableOptions from '@/components/trading/ViableOptions'
 
 const TradeSuggestions: React.FC = () => {
-    const { session } = useAuth()
+    const { session, loading: authLoading } = useAuth()
     const router = useRouter()
     const pathname = usePathname()
     const userID = session?.user.id
@@ -39,12 +39,10 @@ const TradeSuggestions: React.FC = () => {
     }
 
     useEffect(() => {
-        if (!userID) {
-            setError('No user ID found')
+        if (!userID || !session?.access_token) {
             setLoading(false)
             return
         }
-
         const loadViableOptions = async () => {
             try {
                 const data = await fetchTradeOptions(userID)
@@ -115,7 +113,7 @@ const TradeSuggestions: React.FC = () => {
         }
 
         loadViableOptions()
-    }, [userID])
+    }, [userID, session?.access_token])
 
     useEffect(() => {
         if (pathname !== '/trade' && pathname !== '/home') {
@@ -123,10 +121,10 @@ const TradeSuggestions: React.FC = () => {
         }
     }, [pathname])
 
-    if (loading || !session) {
+    if (authLoading || loading) {
         return (
             <Box textAlign="center" mt={10}>
-                Loading... <Spinner size="xl" />
+                <Spinner size="xl" />
             </Box>
         )
     }
@@ -172,8 +170,8 @@ const TradeSuggestions: React.FC = () => {
                         fontWeight="semibold"
                         mb={2}
                     >
-                        Lets add some more cards to that TradeList and WishList,
-                        watcha say?
+                        Let&apos;s add some more cards to that TradeList and
+                        WishList, watcha say?
                     </Text>
                 </Flex>
             </Flex>

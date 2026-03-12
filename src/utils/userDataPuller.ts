@@ -2,12 +2,16 @@ import { UserData } from '@/types/user-data'
 import { CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
 
-export const fetchUserData = async (userID: string): Promise<UserData> => {
+export const fetchUserData = async (
+    userID: string,
+    accessToken: string
+): Promise<UserData> => {
     const response = await CapacitorHttp.post({
         url: `${baseUrl}/api/home-page`,
         data: { userID },
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {})
         }
     })
 

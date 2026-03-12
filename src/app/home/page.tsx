@@ -12,8 +12,7 @@ import { UserData } from '@/types/user-data'
 import { fetchUserData } from '@/utils/userDataPuller'
 
 const HomePage = () => {
-    const { session } = useAuth()
-
+    const { session, loading: authLoading } = useAuth()
     const userID = session?.user.id
 
     const [user, setUser] = useState<UserData | null>(null)
@@ -21,27 +20,27 @@ const HomePage = () => {
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
-        if (!userID) {
-            setError('No user ID found')
+        if (!userID || !session?.access_token) {
             setLoading(false)
             return
         }
         const loadUserProfile = async () => {
             try {
-                const data = await fetchUserData(userID)
+                const data = await fetchUserData(userID, session.access_token)
                 setUser(data)
-                setLoading(false)
-            } catch (error) {
-                console.error(error)
+                setError(null)
+            } catch (err) {
+                console.error(err)
                 setError('Failed to fetch user data')
             } finally {
                 setLoading(false)
             }
         }
-        loadUserProfile()
-    }, [userID])
 
-    if (loading || !session) {
+        loadUserProfile()
+    }, [userID, session?.access_token])
+
+    if (authLoading || loading) {
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />

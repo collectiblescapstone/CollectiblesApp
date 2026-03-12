@@ -1,6 +1,6 @@
 export type UserData = {
     username: string
-    firstName: string
+    firstName: string | null
     cardsInCollection: number
     cardsForTrade: number
     cardsLoggedthisMonth: number

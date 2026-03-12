@@ -3,8 +3,6 @@ import prisma from '@/lib/prisma'
 import { supabase } from '@/lib/supabase'
 import { FormValues } from '@/types/personal-profile'
 
-export const dynamic = 'force-static'
-
 // PATCH /api/profile
 export async function PATCH(request: NextRequest) {
     try {
@@ -48,6 +46,10 @@ export async function PATCH(request: NextRequest) {
                 { error: 'Missing identifier (id)' },
                 { status: 400 }
             )
+        }
+
+        if (body.id !== userData.user.id) {
+            return NextResponse.json({error:'Forbidden'}, {status:403})
         }
 
         const data: Partial<

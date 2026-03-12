@@ -26,6 +26,13 @@ export const POST = async (request: NextRequest) => {
         })
     }
 
+    if (userId !== data.user.id) {
+        return NextResponse.json(
+            { error: 'Forbidden - cannot access other user data' },
+            { status: 403 }
+        )
+    }
+
     try {
         const cards = await prisma.collectionEntry.findMany({
             where: {

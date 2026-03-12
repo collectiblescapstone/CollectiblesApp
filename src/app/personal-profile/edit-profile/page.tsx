@@ -115,7 +115,10 @@ const PersonalProfileScreen: React.FC = () => {
             const res = await CapacitorHttp.patch({
                 url: `${baseUrl}/api/edit-profile`,
                 method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                },
                 data: JSON.stringify({ id: session?.user?.id, ...data })
             })
 

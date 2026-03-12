@@ -1060,6 +1060,13 @@
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
     },
     {
+        "cardCount": { "official": 172, "total": 216 },
+        "id": "swsh9.1",
+        "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+        "name": "Brilliant Stars Trainer Gallery",
+        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+    },
+    {
         "cardCount": { "official": 189, "total": 246 },
         "id": "swsh10",
         "logo": "https://assets.tcgdex.net/en/swsh/swsh10/logo",

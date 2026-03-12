@@ -1,0 +1,1891 @@
+{
+    "cardCount": {
+        "firstEd": 0,
+        "holo": 30,
+        "normal": 0,
+        "official": 30,
+        "reverse": 0,
+        "total": 30
+    },
+    "cards": [
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG01",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG01",
+            "localId": "TG01",
+            "name": "Flareon",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [136],
+            "hp": 110,
+            "types": ["Fire"],
+            "evolveFrom": "Eevee",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Incandescent Awakening",
+                    "effect": "If this Pok\u00e9mon has a Memory Capsule attached, Grass Pok\u00e9mon in play (both yours and your opponent's) have no Abilities."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Fire", "Fire", "Colorless"],
+                    "name": "Fire Mane",
+                    "damage": 100
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608733,
+                    "avg": 10.96,
+                    "low": 4.5,
+                    "trend": 11.22,
+                    "avg1": 11.37,
+                    "avg7": 11.45,
+                    "avg30": 10.83,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG02",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG02",
+            "localId": "TG02",
+            "name": "Vaporeon",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [134],
+            "hp": 110,
+            "types": ["Water"],
+            "evolveFrom": "Eevee",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Torrential Awakening",
+                    "effect": "If this Pok\u00e9mon has a Memory Capsule attached, Fire Pok\u00e9mon in play (both yours and your opponent's) have no Abilities."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Water", "Colorless"],
+                    "name": "Aurora Beam",
+                    "damage": 70
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608734,
+                    "avg": 11.89,
+                    "low": 3,
+                    "trend": 10.24,
+                    "avg1": 11.18,
+                    "avg7": 11.44,
+                    "avg30": 11.89,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG03",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG03",
+            "localId": "TG03",
+            "name": "Octillery",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [224],
+            "hp": 110,
+            "types": ["Water"],
+            "evolveFrom": "Remoraid",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Rapid Strike Search",
+                    "effect": "Once during your turn, you may search your deck for a Rapid Strike card, reveal it, and put it into your hand. Then, shuffle your deck. You can't use more than 1 Rapid Strike Search Ability each turn."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Water", "Colorless", "Colorless"],
+                    "name": "Waterfall",
+                    "damage": 50
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608735,
+                    "avg": 1.74,
+                    "low": 0.5,
+                    "trend": 1.5,
+                    "avg1": 1.38,
+                    "avg7": 1.59,
+                    "avg30": 1.74,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG04",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG04",
+            "localId": "TG04",
+            "name": "Jolteon",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [135],
+            "hp": 100,
+            "types": ["Lightning"],
+            "evolveFrom": "Eevee",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Thunderous Awakening",
+                    "effect": "If this Pok\u00e9mon has a Memory Capsule attached, Water Pok\u00e9mon in play (both yours and your opponent's) have no Abilities."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Lightning", "Colorless", "Colorless"],
+                    "name": "Electric Ball",
+                    "damage": 90
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608736,
+                    "avg": 8.42,
+                    "low": 4.9,
+                    "trend": 8.7,
+                    "avg1": 9.5,
+                    "avg7": 8.52,
+                    "avg30": 8.35,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG05",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG05",
+            "localId": "TG05",
+            "name": "Zekrom",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [644],
+            "hp": 130,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Slash",
+                    "damage": 30
+                },
+                {
+                    "cost": ["Lightning", "Lightning", "Colorless"],
+                    "name": "Wild Shock",
+                    "effect": "This Pok\u00e9mon also does 60 damage to itself. Your opponent's Active Pok\u00e9mon is now Paralyzed.",
+                    "damage": 130
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608737,
+                    "avg": 9.6,
+                    "low": 5,
+                    "trend": 9.23,
+                    "avg1": 9.74,
+                    "avg7": 9.2,
+                    "avg30": 9.61,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG06",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG06",
+            "localId": "TG06",
+            "name": "Dusknoir",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [477],
+            "hp": 150,
+            "types": ["Psychic"],
+            "evolveFrom": "Dusclops",
+            "stage": "Stage2",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Spectral Breach",
+                    "effect": "All Special Energy attached to Pok\u00e9mon (both yours and your opponent's) provide Colorless Energy and have no other effect."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Colorless", "Colorless"],
+                    "name": "Spooky Shot",
+                    "damage": 120
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608512,
+                    "avg": 0.15,
+                    "low": 0.02,
+                    "trend": 0.17,
+                    "avg1": 0.13,
+                    "avg7": 0.11,
+                    "avg30": 0.13,
+                    "avg-holo": 0.23,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.14,
+                    "avg1-holo": 0.16,
+                    "avg7-holo": 0.25,
+                    "avg30-holo": 0.27
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG07",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG07",
+            "localId": "TG07",
+            "name": "Dedenne",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [702],
+            "hp": 70,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Psychic"],
+                    "name": "Dede-Flash",
+                    "effect": "If your opponent has exactly 1 Prize card remaining, this attack does 60 more damage, and your opponent's Active Pok\u00e9mon is now Confused.",
+                    "damage": "20+"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608517,
+                    "avg": 0.05,
+                    "low": 0.02,
+                    "trend": 0.04,
+                    "avg1": 0.02,
+                    "avg7": 0.03,
+                    "avg30": 0.03,
+                    "avg-holo": 0.16,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.17,
+                    "avg1-holo": 0.14,
+                    "avg7-holo": 0.2,
+                    "avg30-holo": 0.15
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG08",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG08",
+            "localId": "TG08",
+            "name": "Alcremie",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [869],
+            "hp": 90,
+            "types": ["Psychic"],
+            "evolveFrom": "Milcery",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Additional Order",
+                    "effect": "As long as this Pok\u00e9mon is in the Active Spot, your turn does not end when you use Caf\u00e9 Master."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Rainbow Flavor",
+                    "effect": "This attack does 40 more damage for each type of basic Energy attached to all of your Pok\u00e9mon.",
+                    "damage": "10+"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608521,
+                    "avg": 0.1,
+                    "low": 0.02,
+                    "trend": 0.13,
+                    "avg1": 0.06,
+                    "avg7": 0.07,
+                    "avg30": 0.1,
+                    "avg-holo": 0.27,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.27,
+                    "avg1-holo": 0.49,
+                    "avg7-holo": 0.26,
+                    "avg30-holo": 0.27
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG09",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG09",
+            "localId": "TG09",
+            "name": "Ariados",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [168],
+            "hp": 110,
+            "types": ["Darkness"],
+            "evolveFrom": "Spinarak",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Spider Net",
+                    "effect": "When you play this Pok\u00e9mon from your hand to evolve 1 of your Pok\u00e9mon during your turn, you may switch 1 of your opponent's Benched Evolution Pok\u00e9mon with their Active Pok\u00e9mon."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Darkness", "Colorless"],
+                    "name": "Poison Sting",
+                    "effect": "Your opponent's Active Pok\u00e9mon is now Poisoned.",
+                    "damage": 30
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608741,
+                    "avg": 1.56,
+                    "low": 0.75,
+                    "trend": 1.64,
+                    "avg1": 1.19,
+                    "avg7": 1.63,
+                    "avg30": 1.52,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG10",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG10",
+            "localId": "TG10",
+            "name": "Houndoom",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [229],
+            "hp": 130,
+            "types": ["Darkness"],
+            "evolveFrom": "Houndour",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Single Strike Roar",
+                    "effect": "Once during your turn, you may search your deck for a Single Strike Energy card and attach it to 1 of your Single Strike Pok\u00e9mon. Then, shuffle your deck. If you attached Energy to a Pok\u00e9mon in this way, put 2 damage counters on that Pok\u00e9mon."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Darkness", "Colorless"],
+                    "name": "Darkness Fang",
+                    "damage": 50
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608742,
+                    "avg": 1.81,
+                    "low": 0.9,
+                    "trend": 1.68,
+                    "avg1": 1.69,
+                    "avg7": 1.75,
+                    "avg30": 1.81,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG11",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG11",
+            "localId": "TG11",
+            "name": "Eevee",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [133],
+            "hp": 70,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Vee-Search",
+                    "effect": "Search your deck for up to 3 Pok\u00e9mon V, reveal them, and put them into your hand. Then, shuffle your deck."
+                },
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Stampede",
+                    "damage": 20
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608743,
+                    "avg": 8.57,
+                    "low": 3.5,
+                    "trend": 8.77,
+                    "avg1": 9.28,
+                    "avg7": 9,
+                    "avg30": 8.51,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG12",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG12",
+            "localId": "TG12",
+            "name": "Oranguru",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [765],
+            "hp": 120,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Primate Wisdom",
+                    "effect": "Once during your turn, you may switch a card from your hand with the top card of your deck."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Whap Down",
+                    "damage": 70
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608744,
+                    "avg": 1.64,
+                    "low": 0.9,
+                    "trend": 1.66,
+                    "avg1": 1.57,
+                    "avg7": 1.66,
+                    "avg30": 1.61,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG13",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG13",
+            "localId": "TG13",
+            "name": "Boltund V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [836],
+            "hp": 200,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Lightning"],
+                    "name": "Electrify",
+                    "effect": "Search your deck for up to 2 Lightning Energy cards and attach them to your Benched Pok\u00e9mon in any way you like. Then, shuffle your deck."
+                },
+                {
+                    "cost": ["Lightning", "Colorless"],
+                    "name": "Bolt Storm",
+                    "effect": "This attack does 30 more damage for each Lightning Energy attached to all of your Pok\u00e9mon.",
+                    "damage": "10+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "D",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608745,
+                    "avg": 8.07,
+                    "low": 4,
+                    "trend": 8.22,
+                    "avg1": 7.83,
+                    "avg7": 8.1,
+                    "avg30": 7.98,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG14",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG14",
+            "localId": "TG14",
+            "name": "Sylveon V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [700],
+            "hp": 200,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Dream Gift",
+                    "effect": "Once during your turn, you may search your deck for an Item card, reveal it, and put it into your hand. Then, shuffle your deck. If you use this Ability, your turn ends."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Magical Shot",
+                    "damage": 60
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608746,
+                    "avg": 32.45,
+                    "low": 19.5,
+                    "trend": 31.87,
+                    "avg1": 34.99,
+                    "avg7": 33.22,
+                    "avg30": 33.73,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG15",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG15",
+            "localId": "TG15",
+            "name": "Sylveon VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [700],
+            "hp": 310,
+            "types": ["Psychic"],
+            "evolveFrom": "Sylveon V",
+            "stage": "VMAX",
+            "attacks": [
+                {
+                    "cost": ["Psychic"],
+                    "name": "Precious Touch",
+                    "effect": "Attach an Energy card from your hand to 1 of your Benched Pok\u00e9mon. If you do, heal 120 damage from that Pok\u00e9mon."
+                },
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Max Harmony",
+                    "effect": "This attack does 30 more damage for each different type of Pok\u00e9mon on your Bench.",
+                    "damage": "70+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608747,
+                    "avg": 39.02,
+                    "low": 15,
+                    "trend": 39.1,
+                    "avg1": 70.23,
+                    "avg7": 45.46,
+                    "avg30": 39.82,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG16",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG16",
+            "localId": "TG16",
+            "name": "Mimikyu V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [778],
+            "hp": 160,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Dummy Doll",
+                    "effect": "When you play this Pok\u00e9mon from your hand onto your Bench during your turn, you may prevent all damage done to this Mimikyu V by attacks from your opponent's Pok\u00e9mon until the end of your opponent's next turn."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Psychic"],
+                    "name": "Jealous Eyes",
+                    "effect": "Put 3 damage counters on your opponent's Active Pok\u00e9mon for each Prize card your opponent has taken."
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608518,
+                    "avg": 1,
+                    "low": 0.15,
+                    "trend": 1.13,
+                    "avg1": 1.14,
+                    "avg7": 1.13,
+                    "avg30": 1.01,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG17",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG17",
+            "localId": "TG17",
+            "name": "Mimikyu VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [778],
+            "hp": 300,
+            "types": ["Psychic"],
+            "evolveFrom": "Mimikyu V",
+            "stage": "VMAX",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Ominous Numbers",
+                    "effect": "Put 4 damage counters on your opponent's Pok\u00e9mon in any way you like. If you played Acerola's Premonition from your hand during this turn, place 13 damage counters instead."
+                },
+                {
+                    "cost": ["Psychic", "Psychic"],
+                    "name": "Max Shadow",
+                    "effect": "Discard a random card from your opponent's hand.",
+                    "damage": 120
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608519,
+                    "avg": 2.1,
+                    "low": 0.35,
+                    "trend": 2.04,
+                    "avg1": 2.63,
+                    "avg7": 2.29,
+                    "avg30": 2.11,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG18",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG18",
+            "localId": "TG18",
+            "name": "Single Strike Urshifu V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [892],
+            "hp": 220,
+            "types": ["Fighting"],
+            "stage": "Basic",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Fighting"],
+                    "name": "Laser Focus",
+                    "effect": "Search your deck for up to 2 Fighting Energy cards and attach them to this Pok\u00e9mon. Then, shuffle your deck."
+                },
+                {
+                    "cost": ["Fighting", "Fighting", "Colorless"],
+                    "name": "Impact Blow",
+                    "effect": "During your next turn, this Pok\u00e9mon can't use Impact Blow.",
+                    "damage": 180
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608750,
+                    "avg": 4.38,
+                    "low": 1.99,
+                    "trend": 4.22,
+                    "avg1": 4.08,
+                    "avg7": 4.13,
+                    "avg30": 4.4,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG19",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG19",
+            "localId": "TG19",
+            "name": "Single Strike Urshifu VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [892],
+            "hp": 330,
+            "types": ["Fighting"],
+            "evolveFrom": "Single Strike Urshifu V",
+            "stage": "VMAX",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Beatdown",
+                    "damage": 100
+                },
+                {
+                    "cost": ["Fighting", "Fighting", "Fighting", "Colorless"],
+                    "name": "G-Max One Blow",
+                    "effect": "Discard all Energy from this Pok\u00e9mon. This attack's damage isn't affected by any effects on your opponent's Active Pok\u00e9mon.",
+                    "damage": 270
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608751,
+                    "avg": 6.76,
+                    "low": 2.99,
+                    "trend": 6.59,
+                    "avg1": 8.1,
+                    "avg7": 6.68,
+                    "avg30": 6.86,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG20",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG20",
+            "localId": "TG20",
+            "name": "Rapid Strike Urshifu V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [892],
+            "hp": 220,
+            "types": ["Fighting"],
+            "stage": "Basic",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Fighting"],
+                    "name": "Strafe",
+                    "effect": "You may switch this Pok\u00e9mon with 1 of your Benched Pok\u00e9mon.",
+                    "damage": 30
+                },
+                {
+                    "cost": ["Fighting", "Fighting", "Colorless"],
+                    "name": "Hundred Furious Blows",
+                    "damage": 150
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608752,
+                    "avg": 4.7,
+                    "low": 2.5,
+                    "trend": 4.86,
+                    "avg1": 5.69,
+                    "avg7": 4.53,
+                    "avg30": 4.7,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG21",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG21",
+            "localId": "TG21",
+            "name": "Rapid Strike Urshifu VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [892],
+            "hp": 330,
+            "types": ["Fighting"],
+            "evolveFrom": "Rapid Strike Urshifu V",
+            "stage": "VMAX",
+            "attacks": [
+                {
+                    "cost": ["Fighting"],
+                    "name": "Gale Thrust",
+                    "effect": "If this Pok\u00e9mon moved from your Bench to the Active Spot this turn, this attack does 120 more damage.",
+                    "damage": "30+"
+                },
+                {
+                    "cost": ["Fighting", "Fighting", "Colorless"],
+                    "name": "G-Max Rapid Flow",
+                    "effect": "Discard all Energy from this Pok\u00e9mon. This attack does 120 damage to 2 of your opponent's Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608753,
+                    "avg": 9.07,
+                    "low": 4.95,
+                    "trend": 9.6,
+                    "avg1": 8.99,
+                    "avg7": 9.17,
+                    "avg30": 9.06,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG22",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG22",
+            "localId": "TG22",
+            "name": "Umbreon V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [197],
+            "hp": 200,
+            "types": ["Darkness"],
+            "stage": "Basic",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Darkness"],
+                    "name": "Mean Look",
+                    "effect": "During your opponent's next turn, the Defending Pok\u00e9mon can't retreat.",
+                    "damage": 30
+                },
+                {
+                    "cost": ["Darkness", "Colorless", "Colorless"],
+                    "name": "Moonlight Blade",
+                    "effect": "If this Pok\u00e9mon has any damage counters on it, this attack does 80 more damage.",
+                    "damage": "80+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608754,
+                    "avg": 51.89,
+                    "low": 10,
+                    "trend": 58.18,
+                    "avg1": 39.99,
+                    "avg7": 43.64,
+                    "avg30": 53,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG23",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG23",
+            "localId": "TG23",
+            "name": "Umbreon VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [197],
+            "hp": 310,
+            "types": ["Darkness"],
+            "evolveFrom": "Umbreon V",
+            "stage": "VMAX",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Dark Signal",
+                    "effect": "When you play this Pok\u00e9mon from your hand to evolve 1 of your Pok\u00e9mon during your turn, you may switch 1 of your opponent's Benched Pok\u00e9mon with their Active Pok\u00e9mon."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Darkness", "Colorless", "Colorless"],
+                    "name": "Max Darkness",
+                    "damage": 160
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608755,
+                    "avg": 68.17,
+                    "low": 20,
+                    "trend": 79.95,
+                    "avg1": 79.12,
+                    "avg7": 69.22,
+                    "avg30": 64.6,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh9.1-TG24",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG24",
+            "localId": "TG24",
+            "name": "Acerola's Premonition",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Your opponent reveals their hand, and you draw a card for each Trainer card you find there.",
+            "trainerType": "Supporter",
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608675,
+                    "avg": 0.1,
+                    "low": 0.02,
+                    "trend": 0.17,
+                    "avg1": 0.15,
+                    "avg7": 0.2,
+                    "avg30": 0.08,
+                    "avg-holo": 0.22,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.22,
+                    "avg1-holo": 0.2,
+                    "avg7-holo": 0.26,
+                    "avg30-holo": 0.19
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh9.1-TG25",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG25",
+            "localId": "TG25",
+            "name": "Caf\u00e9 Master",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Choose up to 3 of your Benched Pok\u00e9mon. For each of those Pok\u00e9mon, search your deck for a different type of basic Energy card and attach it to that Pok\u00e9mon. Then, shuffle your deck. Your turn ends.",
+            "trainerType": "Supporter",
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608679,
+                    "avg": 0.07,
+                    "low": 0.02,
+                    "trend": 0.05,
+                    "avg1": 0.06,
+                    "avg7": 0.04,
+                    "avg30": 0.06,
+                    "avg-holo": 0.14,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.13,
+                    "avg1-holo": 0.13,
+                    "avg7-holo": 0.14,
+                    "avg30-holo": 0.17
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh9.1-TG26",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG26",
+            "localId": "TG26",
+            "name": "Gloria",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Search your deck for up to 3 Basic Pok\u00e9mon that don't have a Rule Box and put them onto your Bench. Then, shuffle your deck. (Pok\u00e9mon V, Pok\u00e9mon-GX, etc. have Rule Boxes.)",
+            "trainerType": "Supporter",
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608687,
+                    "avg": 0.06,
+                    "low": 0.02,
+                    "trend": 0.05,
+                    "avg1": 0.03,
+                    "avg7": 0.06,
+                    "avg30": 0.06,
+                    "avg-holo": 0.15,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.14,
+                    "avg1-holo": 0.17,
+                    "avg7-holo": 0.14,
+                    "avg30-holo": 0.16
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh9.1-TG27",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG27",
+            "localId": "TG27",
+            "name": "Rapid Strike Style Mustard",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "$$$CARD.RULES.MISSING.TOKEN$$$",
+            "trainerType": "Supporter",
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608759,
+                    "avg": 1.5,
+                    "low": 0.5,
+                    "trend": 1.83,
+                    "avg1": 1.5,
+                    "avg7": 1.6,
+                    "avg30": 1.53,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh9.1-TG28",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG28",
+            "localId": "TG28",
+            "name": "Single Strike Style Mustard",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "$$$CARD.RULES.MISSING.TOKEN$$$",
+            "trainerType": "Supporter",
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608760,
+                    "avg": 1.72,
+                    "low": 0.4,
+                    "trend": 1.75,
+                    "avg1": 1.8,
+                    "avg7": 1.61,
+                    "avg30": 1.7,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG29",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG29",
+            "localId": "TG29",
+            "name": "Single Strike Urshifu VMAX",
+            "rarity": "Secret Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [892],
+            "hp": 330,
+            "types": ["Fighting"],
+            "evolveFrom": "Single Strike Urshifu V",
+            "stage": "VMAX",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Beatdown",
+                    "damage": 100
+                },
+                {
+                    "cost": ["Fighting", "Fighting", "Fighting", "Colorless"],
+                    "name": "G-Max One Blow",
+                    "effect": "Discard all Energy from this Pok\u00e9mon. This attack's damage isn't affected by any effects on your opponent's Active Pok\u00e9mon.",
+                    "damage": 270
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608751,
+                    "avg": 6.76,
+                    "low": 2.99,
+                    "trend": 6.59,
+                    "avg1": 8.1,
+                    "avg7": 6.68,
+                    "avg30": 6.86,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh9.1-TG30",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh9/TG30",
+            "localId": "TG30",
+            "name": "Rapid Strike Urshifu VMAX",
+            "rarity": "Secret Rare",
+            "set": {
+                "cardCount": { "official": 30, "total": 30 },
+                "id": "swsh9.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+                "name": "Brilliant Stars",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [892],
+            "hp": 330,
+            "types": ["Fighting"],
+            "evolveFrom": "Rapid Strike Urshifu V",
+            "stage": "VMAX",
+            "attacks": [
+                {
+                    "cost": ["Fighting"],
+                    "name": "Gale Thrust",
+                    "effect": "If this Pok\u00e9mon moved from your Bench to the Active Spot this turn, this attack does 120 more damage.",
+                    "damage": "30+"
+                },
+                {
+                    "cost": ["Fighting", "Fighting", "Colorless"],
+                    "name": "G-Max Rapid Flow",
+                    "effect": "Discard all Energy from this Pok\u00e9mon. This attack does 120 damage to 2 of your opponent's Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 608753,
+                    "avg": 9.07,
+                    "low": 4.95,
+                    "trend": 9.6,
+                    "avg1": 8.99,
+                    "avg7": 9.17,
+                    "avg30": 9.06,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        }
+    ],
+    "id": "swsh9.1",
+    "legal": { "expanded": true, "standard": false },
+    "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
+    "name": "Brilliant Stars",
+    "releaseDate": "2022-02-25",
+    "serie": { "id": "swsh", "name": "Sword & Shield" },
+    "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol",
+    "tcgOnline": "BRS",
+    "abbreviation": { "official": "BRS" }
+}

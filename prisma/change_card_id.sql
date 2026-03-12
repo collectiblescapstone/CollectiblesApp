@@ -1,3 +1,3 @@
 UPDATE "Card"
-SET id = CONCAT('new_prefix', SUBSTRING(id FROM LENGTH('old_prefix') + 1))
-WHERE id LIKE 'old_prefix%';
+SET id = CONCAT('swsh9.1-TG', SUBSTRING(id FROM LENGTH('swsh9-TG') + 1))
+WHERE id LIKE 'swsh9-TG%';

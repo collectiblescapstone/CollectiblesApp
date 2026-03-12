@@ -78,7 +78,7 @@ model CollectionEntry {
   grade      String   @default("Ungraded")
   gradeLevel String?
   tags       String[] @default([])
-  card       Card     @relation(fields: [cardId], references: [id])
+  card       Card     @relation(fields: [cardId], references: [id], onUpdate: Cascade)
   user       User     @relation(fields: [userId], references: [id])
 
   @@index([cardId])
@@ -90,7 +90,7 @@ model WishlistEntry {
   userId  String  @db.Uuid
   cardId  String
   variant String?
-  card    Card    @relation(fields: [cardId], references: [id])
+  card    Card    @relation(fields: [cardId], references: [id], onUpdate: Cascade)
   user    User    @relation(fields: [userId], references: [id])
 
   @@unique([userId, cardId, variant])

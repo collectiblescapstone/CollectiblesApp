@@ -30,6 +30,7 @@ import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard'
 
 // Types
 import type { CardData } from '@/types/pokemon-card'
+import { sortCardId } from '@/utils/sortCardId'
 
 const FilterCardsContent = () => {
     // Search Params
@@ -66,7 +67,7 @@ const FilterCardsContent = () => {
 
             setLoading(true)
             try {
-                const filteredCards = allCards.filter((card) => {
+                let filteredCards = allCards.filter((card) => {
                     if (type === 'set') {
                         return card.setId === setId
                     }
@@ -97,6 +98,10 @@ const FilterCardsContent = () => {
                         setUserCards(userCards)
                     }
                 }
+
+                filteredCards = filteredCards
+                    .slice()
+                    .sort((a, b) => sortCardId(a.id, b.id))
 
                 const cardNums: Record<string, string> = {}
                 for (const card of filteredCards) {

@@ -32,7 +32,7 @@
                 { "type": "reverse", "size": "standard" },
                 { "type": "holo", "size": "standard" }
             ],
-            "dexId": [251],
+            "dexId": [10],
             "hp": 50,
             "types": ["Grass"],
             "stage": "Basic",

@@ -34,7 +34,7 @@
                 { "type": "normal", "size": "standard" },
                 { "type": "reverse", "size": "standard" }
             ],
-            "dexId": [251],
+            "dexId": [10],
             "hp": 50,
             "types": ["Grass"],
             "description": "For protection, it releases a horrible stench from the antenna on its head to drive away enemies.",

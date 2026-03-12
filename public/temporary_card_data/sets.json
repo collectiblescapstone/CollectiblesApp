@@ -1067,6 +1067,13 @@
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh10/symbol"
     },
     {
+        "cardCount": { "official": 30, "total": 30 },
+        "id": "swsh10.1",
+        "logo": "https://assets.tcgdex.net/en/swsh/swsh10/logo",
+        "name": "Astral Radiance Trainer Gallery",
+        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh10/symbol"
+    },
+    {
         "cardCount": { "official": 78, "total": 88 },
         "id": "swsh10.5",
         "logo": "https://assets.tcgdex.net/en/swsh/swsh10.5/logo",
@@ -1095,7 +1102,7 @@
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
     },
     {
-        "cardCount": { "official": 70 },
+        "cardCount": { "official": 70, "total": 70 },
         "id": "swsh12.5.1",
         "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
         "name": "Crown Zenith Galarian Gallery",

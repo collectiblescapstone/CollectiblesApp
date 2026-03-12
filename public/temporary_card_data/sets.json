@@ -13,7 +13,7 @@
         "symbol": "https://assets.tcgdex.net/univ/base/base2/symbol"
     },
     {
-        "cardCount": { "official": 53, "total": 53 },
+        "cardCount": { "official": 0, "total": 53 },
         "id": "basep",
         "logo": "https://assets.tcgdex.net/en/base/basep/logo",
         "name": "Wizards Black Star Promos",
@@ -449,7 +449,7 @@
         "symbol": "https://assets.tcgdex.net/univ/tk/tk-sm-l/symbol"
     },
     {
-        "cardCount": { "official": 56, "total": 56 },
+        "cardCount": { "official": 0, "total": 56 },
         "id": "dpp",
         "logo": "https://assets.tcgdex.net/en/dp/dpp/logo",
         "name": "DP Black Star Promos",
@@ -547,7 +547,7 @@
         "symbol": "https://assets.tcgdex.net/univ/hgss/hgss1/symbol"
     },
     {
-        "cardCount": { "official": 25, "total": 25 },
+        "cardCount": { "official": 0, "total": 25 },
         "id": "hgssp",
         "logo": "https://assets.tcgdex.net/en/hgss/hgssp/logo",
         "name": "HGSS Black Star Promos",
@@ -589,7 +589,7 @@
         "symbol": "https://assets.tcgdex.net/univ/bw/bw1/symbol"
     },
     {
-        "cardCount": { "official": 101, "total": 101 },
+        "cardCount": { "official": 0, "total": 101 },
         "id": "bwp",
         "logo": "https://assets.tcgdex.net/en/bw/bwp/logo",
         "name": "BW Black Star Promos",
@@ -724,7 +724,7 @@
         "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
     },
     {
-        "cardCount": { "official": 211, "total": 216 },
+        "cardCount": { "official": 0, "total": 216 },
         "id": "xyp",
         "logo": "https://assets.tcgdex.net/en/xy/xyp/logo",
         "name": "XY Black Star Promos",
@@ -841,7 +841,7 @@
         "symbol": "https://assets.tcgdex.net/univ/xy/xy12/symbol"
     },
     {
-        "cardCount": { "official": 236, "total": 244 },
+        "cardCount": { "official": 0, "total": 244 },
         "id": "smp",
         "logo": "https://assets.tcgdex.net/en/sm/smp/logo",
         "name": "SM Black Star Promos",
@@ -1092,6 +1092,13 @@
         "id": "swsh12.5",
         "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
         "name": "Crown Zenith",
+        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+    },
+    {
+        "cardCount": { "official": 70 },
+        "id": "swsh12.5.1",
+        "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+        "name": "Crown Zenith Galarian Gallery",
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
     },
     {

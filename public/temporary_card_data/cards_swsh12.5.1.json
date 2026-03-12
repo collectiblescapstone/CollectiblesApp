@@ -1,0 +1,4344 @@
+{
+    "cardCount": {
+        "firstEd": 0,
+        "holo": 137,
+        "normal": 93,
+        "official": 159,
+        "reverse": 112,
+        "total": 230
+    },
+    "cards": [
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG01",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG01",
+            "localId": "GG01",
+            "name": "Hisuian Voltorb",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [100],
+            "hp": 50,
+            "types": ["Grass"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "name": "Cheerful Charge",
+                    "effect": "You can use this attack only if you go second, and only during your first turn. Choose up to 2 of your Benched Pok\u00e9mon. For each of those Pok\u00e9mon, search your deck for a basic Energy card and attach it to that Pok\u00e9mon. Then, shuffle your deck."
+                },
+                { "cost": ["Grass"], "name": "Ram", "damage": 10 }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691880,
+                    "avg": 1.91,
+                    "low": 0.59,
+                    "trend": 1.8,
+                    "avg1": 1.61,
+                    "avg7": 1.69,
+                    "avg30": 1.83,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG02",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG02",
+            "localId": "GG02",
+            "name": "Kricketune",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [402],
+            "hp": 90,
+            "types": ["Grass"],
+            "evolveFrom": "Kricketot",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Swelling Tune",
+                    "effect": "Your Grass Pok\u00e9mon in play, except any Kricketune, get +40 HP. You can't apply more than 1 Swelling Tune Ability at a time."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Grass", "Colorless"],
+                    "name": "Slash",
+                    "damage": 50
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691881,
+                    "avg": 4.13,
+                    "low": 0.99,
+                    "trend": 4.28,
+                    "avg1": 3.8,
+                    "avg7": 4.2,
+                    "avg30": 4.07,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG03",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG03",
+            "localId": "GG03",
+            "name": "Magmortar",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [467],
+            "hp": 140,
+            "types": ["Fire"],
+            "evolveFrom": "Magmar",
+            "stage": "Stage1",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Mega Punch",
+                    "damage": 50
+                },
+                {
+                    "cost": ["Fire", "Fire", "Colorless"],
+                    "name": "Boltsplosion",
+                    "effect": "If Electivire is on your Bench, this attack does 120 more damage.",
+                    "damage": "120+"
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691882,
+                    "avg": 7.39,
+                    "low": 3.99,
+                    "trend": 7.37,
+                    "avg1": 6.86,
+                    "avg7": 7.07,
+                    "avg30": 7.34,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG04",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG04",
+            "localId": "GG04",
+            "name": "Oricorio",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [741],
+            "hp": 90,
+            "types": ["Fire"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Lesson in Zeal",
+                    "effect": "All of your Fusion Strike Pok\u00e9mon take 20 less damage from attacks from your opponent's Pok\u00e9mon (after applying Weakness and Resistance). You can't apply more than 1 Lesson in Zeal Ability at a time."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Fire", "Colorless"],
+                    "name": "Glistening Droplets",
+                    "effect": "Put 5 damage counters on your opponent's Pok\u00e9mon in any way you like."
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691883,
+                    "avg": 2.42,
+                    "low": 1.49,
+                    "trend": 2.32,
+                    "avg1": 2.59,
+                    "avg7": 2.38,
+                    "avg30": 2.38,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG05",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG05",
+            "localId": "GG05",
+            "name": "Lapras",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [131],
+            "hp": 130,
+            "types": ["Water"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Water", "Water", "Colorless"],
+                    "name": "Raging Freeze",
+                    "effect": "If any of your Pok\u00e9mon were Knocked Out by damage from an attack from your opponent's Pok\u00e9mon during their last turn, your opponent's Active Pok\u00e9mon is now Paralyzed.",
+                    "damage": 110
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691884,
+                    "avg": 12.58,
+                    "low": 6.9,
+                    "trend": 13.74,
+                    "avg1": 12,
+                    "avg7": 13.7,
+                    "avg30": 13.07,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG06",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG06",
+            "localId": "GG06",
+            "name": "Manaphy",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [490],
+            "hp": 70,
+            "types": ["Water"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Wave Veil",
+                    "effect": "Prevent all damage done to your Benched Pok\u00e9mon by attacks from your opponent's Pok\u00e9mon."
+                }
+            ],
+            "attacks": [
+                { "cost": ["Water"], "name": "Rain Splash", "damage": 20 }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691885,
+                    "avg": 4.19,
+                    "low": 1.5,
+                    "trend": 3.94,
+                    "avg1": 4,
+                    "avg7": 4.18,
+                    "avg30": 4.14,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG07",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG07",
+            "localId": "GG07",
+            "name": "Keldeo",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [647],
+            "hp": 110,
+            "types": ["Water"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Colorless"], "name": "Smash Kick", "damage": 20 },
+                {
+                    "cost": ["Water", "Colorless"],
+                    "name": "Line Force",
+                    "effect": "This attack does 20 more damage for each of your Benched Pok\u00e9mon.",
+                    "damage": "10+"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691886,
+                    "avg": 8.63,
+                    "low": 5,
+                    "trend": 8.29,
+                    "avg1": 6.74,
+                    "avg7": 8.24,
+                    "avg30": 8.48,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG08",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG08",
+            "localId": "GG08",
+            "name": "Electivire",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [466],
+            "hp": 140,
+            "types": ["Lightning"],
+            "evolveFrom": "Electabuzz",
+            "stage": "Stage1",
+            "attacks": [
+                {
+                    "cost": ["Lightning"],
+                    "name": "Explosive Bolt",
+                    "effect": "If any of your Benched Magmortar have any damage counters on them, this attack does 90 more damage.",
+                    "damage": "30+"
+                },
+                {
+                    "cost": ["Lightning", "Lightning", "Colorless"],
+                    "name": "High-Voltage Current",
+                    "effect": "This attack does 50 damage to each of your opponent's Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691887,
+                    "avg": 6.13,
+                    "low": 2.98,
+                    "trend": 6.16,
+                    "avg1": 5.94,
+                    "avg7": 6.27,
+                    "avg30": 6.22,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG09",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG09",
+            "localId": "GG09",
+            "name": "Toxtricity",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [849],
+            "hp": 120,
+            "types": ["Lightning"],
+            "evolveFrom": "Toxel",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Maximum Downer",
+                    "effect": "If all your Pok\u00e9mon in play are Fusion Strike Pok\u00e9mon, your opponent's Pok\u00e9mon VMAX in play get -30 HP."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Lightning", "Lightning", "Colorless"],
+                    "name": "Head Bolt",
+                    "damage": 90
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691888,
+                    "avg": 1.94,
+                    "low": 0.9,
+                    "trend": 1.79,
+                    "avg1": 1.8,
+                    "avg7": 1.79,
+                    "avg30": 1.93,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG10",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG10",
+            "localId": "GG10",
+            "name": "Mew",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [151],
+            "hp": 60,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Mysterious Tail",
+                    "effect": "Once during your turn, if this Pok\u00e9mon is in the Active Spot, you may look at the top 6 cards of your deck, reveal an Item card you find there, and put it into your hand. Shuffle the other cards back into your deck."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Colorless"],
+                    "name": "Psyshot",
+                    "damage": 30
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691776,
+                    "avg": 1.22,
+                    "low": 0.1,
+                    "trend": 1.11,
+                    "avg1": 1.74,
+                    "avg7": 1.2,
+                    "avg30": 1.2,
+                    "avg-holo": 1.64,
+                    "low-holo": 0.45,
+                    "trend-holo": 1.69,
+                    "avg1-holo": 1,
+                    "avg7-holo": 1.68,
+                    "avg30-holo": 1.64
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG11",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG11",
+            "localId": "GG11",
+            "name": "Lunatone",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [337],
+            "hp": 90,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Psychic"],
+                    "name": "Cycle Draw",
+                    "effect": "Discard a card from your hand. If you do, draw 3 cards."
+                },
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Moon Kinesis",
+                    "effect": "This attack does 30 more damage for each Psychic Energy attached to this Pok\u00e9mon.",
+                    "damage": "30+"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691779,
+                    "avg": 0.03,
+                    "low": 0.02,
+                    "trend": 0.03,
+                    "avg1": 0.02,
+                    "avg7": 0.02,
+                    "avg30": 0.03,
+                    "avg-holo": 0.29,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.3,
+                    "avg1-holo": 0.3,
+                    "avg7-holo": 0.25,
+                    "avg30-holo": 0.27
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG12",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG12",
+            "localId": "GG12",
+            "name": "Deoxys",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [386],
+            "hp": 120,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Photon Boost",
+                    "effect": "If this Pok\u00e9mon has any Fusion Strike Energy attached, this attack does 80 more damage.",
+                    "damage": "80+"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691891,
+                    "avg": 9.94,
+                    "low": 6.94,
+                    "trend": 9.57,
+                    "avg1": 9.6,
+                    "avg7": 9.58,
+                    "avg30": 10.04,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG13",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG13",
+            "localId": "GG13",
+            "name": "Diancie",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [719],
+            "hp": 90,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Princess's Curtain",
+                    "effect": "As long as this Pok\u00e9mon is in the Active Spot, whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to your Benched Basic Pok\u00e9mon."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Spike Draw",
+                    "effect": "Draw 2 cards.",
+                    "damage": 20
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691892,
+                    "avg": 2.66,
+                    "low": 1,
+                    "trend": 2.79,
+                    "avg1": 2.75,
+                    "avg7": 2.54,
+                    "avg30": 2.62,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG14",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG14",
+            "localId": "GG14",
+            "name": "Comfey",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [764],
+            "hp": 70,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Flower Selecting",
+                    "effect": "Once during your turn, if this Pok\u00e9mon is in the Active Spot, you may look at the top 2 cards of your deck and put 1 of them into your hand. Put the other card in the Lost Zone."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Colorless"],
+                    "name": "Spinning Attack",
+                    "damage": 30
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691893,
+                    "avg": 1.63,
+                    "low": 0.49,
+                    "trend": 1.63,
+                    "avg1": 1.57,
+                    "avg7": 1.61,
+                    "avg30": 1.63,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG15",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG15",
+            "localId": "GG15",
+            "name": "Solrock",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [338],
+            "hp": 90,
+            "types": ["Fighting"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Sun Energy",
+                    "effect": "Once during your turn, you may attach a Psychic Energy card from your discard pile to 1 of your Lunatone."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Fighting", "Colorless"],
+                    "name": "Spinning Attack",
+                    "damage": 50
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691787,
+                    "avg": 0.04,
+                    "low": 0.02,
+                    "trend": 0.03,
+                    "avg1": 0.03,
+                    "avg7": 0.03,
+                    "avg30": 0.04,
+                    "avg-holo": 0.32,
+                    "low-holo": 0.04,
+                    "trend-holo": 0.22,
+                    "avg1-holo": 0.3,
+                    "avg7-holo": 0.22,
+                    "avg30-holo": 0.28
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG16",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG16",
+            "localId": "GG16",
+            "name": "Absol",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [359],
+            "hp": 100,
+            "types": ["Darkness"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Darkness"],
+                    "name": "Swirling Disaster",
+                    "effect": "This attack does 10 damage to each of your opponent's Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+                },
+                {
+                    "cost": ["Darkness", "Colorless"],
+                    "name": "Claw Rend",
+                    "effect": "If your opponent's Active Pok\u00e9mon already has any damage counters on it, this attack does 70 more damage.",
+                    "damage": "50+"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691794,
+                    "avg": 0.49,
+                    "low": 0.02,
+                    "trend": 0.26,
+                    "avg1": 0.49,
+                    "avg7": 0.36,
+                    "avg30": 0.48,
+                    "avg-holo": 0.76,
+                    "low-holo": 0.04,
+                    "trend-holo": 0.83,
+                    "avg1-holo": 1.3,
+                    "avg7-holo": 0.73,
+                    "avg30-holo": 0.72
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG17",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG17",
+            "localId": "GG17",
+            "name": "Thievul",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [828],
+            "hp": 100,
+            "types": ["Darkness"],
+            "evolveFrom": "Nickit",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Baffling",
+                    "effect": "If your opponent has 2 or fewer Prize cards remaining, whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to your Benched Pok\u00e9mon V."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Darkness", "Darkness", "Colorless"],
+                    "name": "Sharp Fang",
+                    "damage": 110
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691896,
+                    "avg": 2.03,
+                    "low": 0.99,
+                    "trend": 1.91,
+                    "avg1": 2.09,
+                    "avg7": 2.01,
+                    "avg30": 2.01,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG18",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG18",
+            "localId": "GG18",
+            "name": "Magnezone",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [462],
+            "hp": 150,
+            "types": ["Metal"],
+            "evolveFrom": "Magneton",
+            "stage": "Stage2",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Giga Magnet",
+                    "effect": "Once during your turn, you may look at the top 6 cards of your deck and attach any number of Metal Energy cards you find there to your Pok\u00e9mon in any way you like. Shuffle the other cards back into your deck."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Metal", "Colorless", "Colorless"],
+                    "name": "Power Beam",
+                    "damage": 120
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691897,
+                    "avg": 3.21,
+                    "low": 0.5,
+                    "trend": 3.37,
+                    "avg1": 3.28,
+                    "avg7": 3.45,
+                    "avg30": 3.24,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG19",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG19",
+            "localId": "GG19",
+            "name": "Altaria",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [334],
+            "hp": 90,
+            "types": ["Dragon"],
+            "evolveFrom": "Swablu",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Tempting Tune",
+                    "effect": "Once during your turn, you may search your deck for a Supporter card, reveal it, shuffle your deck, then put that card on top of it."
+                }
+            ],
+            "attacks": [
+                { "cost": ["Water", "Metal"], "name": "Glide", "damage": 60 }
+            ],
+            "retreat": 0,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691898,
+                    "avg": 4.88,
+                    "low": 2.4,
+                    "trend": 4.36,
+                    "avg1": 5.33,
+                    "avg7": 4.32,
+                    "avg30": 4.77,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG20",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG20",
+            "localId": "GG20",
+            "name": "Latias",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [380],
+            "hp": 120,
+            "types": ["Dragon"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Red Assist",
+                    "effect": "Once during your turn, you may attach a Psychic Energy card from your hand to 1 of your Latios."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Fire", "Psychic", "Colorless"],
+                    "name": "Dyna Barrier",
+                    "effect": "During your opponent's next turn, prevent all damage done to this Pok\u00e9mon by attacks from Pok\u00e9mon VMAX.",
+                    "damage": 70
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691899,
+                    "avg": 14.07,
+                    "low": 4.99,
+                    "trend": 15.63,
+                    "avg1": 13.08,
+                    "avg7": 15.27,
+                    "avg30": 14.38,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG21",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG21",
+            "localId": "GG21",
+            "name": "Hisuian Goodra",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [706],
+            "hp": 160,
+            "types": ["Dragon"],
+            "evolveFrom": "Hisuian Sliggoo",
+            "stage": "Stage2",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Metal Lodging",
+                    "effect": "Prevent all damage done to each of your Basic Pok\u00e9mon that has any Metal Energy attached by attacks from your opponent's Pok\u00e9mon V."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Water", "Metal", "Colorless"],
+                    "name": "Heavy Impact",
+                    "damage": 140
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691900,
+                    "avg": 2.56,
+                    "low": 1.39,
+                    "trend": 2.73,
+                    "avg1": 2.12,
+                    "avg7": 2.47,
+                    "avg30": 2.68,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG22",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG22",
+            "localId": "GG22",
+            "name": "Ditto",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [132],
+            "hp": 70,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Sudden Transformation",
+                    "effect": "This Pok\u00e9mon can use the attacks of any Basic Pok\u00e9mon in your discard pile, except for Pok\u00e9mon with a Rule Box (Pok\u00e9mon V, Pok\u00e9mon-GX, etc. have Rule Boxes). (You still need the necessary Energy to use each attack.)"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691826,
+                    "avg": 0.8,
+                    "low": 0.04,
+                    "trend": 0.79,
+                    "avg1": 0.75,
+                    "avg7": 0.68,
+                    "avg30": 0.77,
+                    "avg-holo": 1.09,
+                    "low-holo": 0.15,
+                    "trend-holo": 1.12,
+                    "avg1-holo": 0.5,
+                    "avg7-holo": 0.95,
+                    "avg30-holo": 1.05
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG23",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG23",
+            "localId": "GG23",
+            "name": "Dunsparce",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [206],
+            "hp": 60,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Mysterious Nest",
+                    "effect": "Colorless Pok\u00e9mon in play (both yours and your opponent's) have no Weakness."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Rollout",
+                    "damage": 30
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691902,
+                    "avg": 1.96,
+                    "low": 0.85,
+                    "trend": 1.98,
+                    "avg1": 1.82,
+                    "avg7": 2.36,
+                    "avg30": 2.04,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG24",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG24",
+            "localId": "GG24",
+            "name": "Miltank",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [241],
+            "hp": 110,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Miracle Body",
+                    "effect": "Prevent all damage done to this Pok\u00e9mon by attacks from your opponent's Pok\u00e9mon V."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Rout",
+                    "effect": "This attack does 20 more damage for each of your opponent's Benched Pok\u00e9mon.",
+                    "damage": "10+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691903,
+                    "avg": 5.1,
+                    "low": 2.74,
+                    "trend": 5,
+                    "avg1": 5.06,
+                    "avg7": 4.96,
+                    "avg30": 5.08,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG25",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG25",
+            "localId": "GG25",
+            "name": "Bibarel",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [400],
+            "hp": 120,
+            "types": ["Colorless"],
+            "evolveFrom": "Bidoof",
+            "stage": "Stage1",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Industrious Incisors",
+                    "effect": "Once during your turn, you may draw cards until you have 5 cards in your hand."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Tail Smash",
+                    "effect": "Flip a coin. If tails, this attack does nothing.",
+                    "damage": 100
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691904,
+                    "avg": 2.37,
+                    "low": 0.97,
+                    "trend": 2.5,
+                    "avg1": 2.21,
+                    "avg7": 2.57,
+                    "avg30": 2.48,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG26",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG26",
+            "localId": "GG26",
+            "name": "Riolu",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [447],
+            "hp": 60,
+            "types": ["Fighting"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Fighting", "Fighting"],
+                    "name": "Low Kick",
+                    "damage": 50
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691789,
+                    "avg": 0.04,
+                    "low": 0.02,
+                    "trend": 0.04,
+                    "avg1": 0.05,
+                    "avg7": 0.05,
+                    "avg30": 0.04,
+                    "avg-holo": 0.33,
+                    "low-holo": 0.09,
+                    "trend-holo": 0.28,
+                    "avg1-holo": 0.3,
+                    "avg7-holo": 0.3,
+                    "avg30-holo": 0.32
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG27",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG27",
+            "localId": "GG27",
+            "name": "Swablu",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [333],
+            "hp": 50,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Surprise Attack",
+                    "effect": "Flip a coin. If tails, this attack does nothing.",
+                    "damage": 30
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691906,
+                    "avg": 4.18,
+                    "low": 2.5,
+                    "trend": 4.18,
+                    "avg1": 3.81,
+                    "avg7": 4.17,
+                    "avg30": 4.19,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG28",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG28",
+            "localId": "GG28",
+            "name": "Duskull",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [355],
+            "hp": 60,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Psychic"],
+                    "name": "Perplex",
+                    "effect": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Confused.",
+                    "damage": 10
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691907,
+                    "avg": 3.48,
+                    "low": 2.2,
+                    "trend": 3.86,
+                    "avg1": 3.26,
+                    "avg7": 3.82,
+                    "avg30": 3.55,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG29",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG29",
+            "localId": "GG29",
+            "name": "Bidoof",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [399],
+            "hp": 60,
+            "types": ["Colorless"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Carefree Countenance",
+                    "effect": "As long as this Pok\u00e9mon is on your Bench, prevent all damage done to this Pok\u00e9mon by attacks (both yours and your opponent's)."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Hyper Fang",
+                    "effect": "Flip a coin. If tails, this attack does nothing.",
+                    "damage": 30
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691830,
+                    "avg": 0.05,
+                    "low": 0.02,
+                    "trend": 0.04,
+                    "avg1": 0.04,
+                    "avg7": 0.05,
+                    "avg30": 0.05,
+                    "avg-holo": 0.15,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.19,
+                    "avg1-holo": 0.13,
+                    "avg7-holo": 0.18,
+                    "avg30-holo": 0.17
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG30",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG30",
+            "localId": "GG30",
+            "name": "Pikachu",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [25],
+            "hp": 60,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Pika Dash",
+                    "effect": "If this Pok\u00e9mon has any Energy attached, it has no Retreat Cost."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Lightning", "Colorless", "Colorless"],
+                    "name": "Whimsy Tackle",
+                    "effect": "Flip a coin. If tails, this attack does nothing.",
+                    "damage": 50
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691879,
+                    "avg": 33.03,
+                    "low": 10,
+                    "trend": 31.03,
+                    "avg1": 28.49,
+                    "avg7": 29.23,
+                    "avg30": 32.9,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG31",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG31",
+            "localId": "GG31",
+            "name": "Turtwig",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [387],
+            "hp": 80,
+            "types": ["Grass"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Grass"], "name": "Bite", "damage": 10 },
+                {
+                    "cost": ["Grass", "Colorless"],
+                    "name": "Headbutt Bounce",
+                    "damage": 20
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691910,
+                    "avg": 6.14,
+                    "low": 3.49,
+                    "trend": 6.37,
+                    "avg1": 6.38,
+                    "avg7": 6.3,
+                    "avg30": 6.2,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG32",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG32",
+            "localId": "GG32",
+            "name": "Paras",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [46],
+            "hp": 70,
+            "types": ["Grass"],
+            "stage": "Basic",
+            "attacks": [
+                {
+                    "cost": ["Grass", "Colorless"],
+                    "name": "Absorb",
+                    "effect": "Heal 10 damage from this Pok\u00e9mon.",
+                    "damage": 20
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691911,
+                    "avg": 5.28,
+                    "low": 1.99,
+                    "trend": 5.99,
+                    "avg1": 4.93,
+                    "avg7": 5.78,
+                    "avg30": 5.61,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG33",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG33",
+            "localId": "GG33",
+            "name": "Poochyena",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [261],
+            "hp": 60,
+            "types": ["Darkness"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Colorless"], "name": "Gnaw", "damage": 10 },
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Slight Intrusion",
+                    "effect": "This Pok\u00e9mon also does 10 damage to itself.",
+                    "damage": 30
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691912,
+                    "avg": 3.98,
+                    "low": 1.5,
+                    "trend": 3.82,
+                    "avg1": 3.95,
+                    "avg7": 3.82,
+                    "avg30": 3.92,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG34",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG34",
+            "localId": "GG34",
+            "name": "Mareep",
+            "rarity": "Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [179],
+            "hp": 60,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "attacks": [
+                { "cost": ["Colorless"], "name": "Rear Kick", "damage": 10 },
+                {
+                    "cost": ["Lightning", "Colorless"],
+                    "name": "Electro Ball",
+                    "damage": 30
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691913,
+                    "avg": 5.16,
+                    "low": 2.95,
+                    "trend": 4.79,
+                    "avg1": 4.4,
+                    "avg7": 4.74,
+                    "avg30": 5.02,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG35",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG35",
+            "localId": "GG35",
+            "name": "Leafeon VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [470],
+            "hp": 260,
+            "types": ["Grass"],
+            "evolveFrom": "Leafeon V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Grass", "Grass", "Colorless"],
+                    "name": "Leaf Guard",
+                    "effect": "During your opponent's next turn, this Pok\u00e9mon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+                    "damage": 180
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691731,
+                    "avg": 2.7,
+                    "low": 1,
+                    "trend": 3.22,
+                    "avg1": 2.26,
+                    "avg7": 4.29,
+                    "avg30": 2.78,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG36",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG36",
+            "localId": "GG36",
+            "name": "Entei V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [244],
+            "hp": 230,
+            "types": ["Fire"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Fleet-Footed",
+                    "effect": "Once during your turn, if this Pok\u00e9mon is in the Active Spot, you may draw a card."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Fire", "Colorless"],
+                    "name": "Burning Rondo",
+                    "effect": "This attack does 20 more damage for each Benched Pok\u00e9mon (both yours and your opponent's).",
+                    "damage": "20+"
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691916,
+                    "avg": 38.21,
+                    "low": 16.9,
+                    "trend": 43.64,
+                    "avg1": 33.25,
+                    "avg7": 37.63,
+                    "avg30": 37.93,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG37",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG37",
+            "localId": "GG37",
+            "name": "Simisear VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [514],
+            "hp": 260,
+            "types": ["Fire"],
+            "evolveFrom": "Simisear V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Fire", "Colorless", "Colorless"],
+                    "name": "Fireball Fever",
+                    "effect": "You may discard up to 5 cards from the top of your deck. This attack does 40 more damage for each card you discarded in this way.",
+                    "damage": "40+"
+                },
+                {
+                    "cost": ["Fire"],
+                    "name": "Ember Star",
+                    "effect": "This attack does 30 damage for each Energy card in your discard pile. (You can't use more than 1 VSTAR Power in a game.)",
+                    "damage": "30\u00d7"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691740,
+                    "avg": 1.17,
+                    "low": 0.4,
+                    "trend": 0.93,
+                    "avg1": 0.69,
+                    "avg7": 0.94,
+                    "avg30": 1.13,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG38",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG38",
+            "localId": "GG38",
+            "name": "Suicune V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [245],
+            "hp": 210,
+            "types": ["Water"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Fleet-Footed",
+                    "effect": "Once during your turn, if this Pok\u00e9mon is in the Active Spot, you may draw a card."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Water", "Colorless"],
+                    "name": "Blizzard Rondo",
+                    "effect": "This attack does 20 more damage for each Benched Pok\u00e9mon (both yours and your opponent's).",
+                    "damage": "20+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691918,
+                    "avg": 45.87,
+                    "low": 29.95,
+                    "trend": 54.67,
+                    "avg1": 38.83,
+                    "avg7": 51.71,
+                    "avg30": 46.76,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG39",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG39",
+            "localId": "GG39",
+            "name": "Lumineon V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [457],
+            "hp": 170,
+            "types": ["Water"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Luminous Sign",
+                    "effect": "When you play this Pok\u00e9mon from your hand onto your Bench during your turn, you may search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Water", "Colorless", "Colorless"],
+                    "name": "Aqua Return",
+                    "effect": "Shuffle this Pok\u00e9mon and all attached cards into your deck.",
+                    "damage": 120
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691919,
+                    "avg": 14.12,
+                    "low": 8,
+                    "trend": 14.31,
+                    "avg1": 12.51,
+                    "avg7": 14.44,
+                    "avg30": 13.85,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG40",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG40",
+            "localId": "GG40",
+            "name": "Glaceon VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [471],
+            "hp": 260,
+            "types": ["Water"],
+            "evolveFrom": "Glaceon V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Water", "Water", "Colorless"],
+                    "name": "Icicle Shot",
+                    "effect": "During your opponent's next turn, the Defending Pok\u00e9mon can't retreat.",
+                    "damage": 180
+                },
+                {
+                    "cost": ["Water", "Water", "Colorless"],
+                    "name": "Crystal Star",
+                    "effect": "During your opponent's next turn, prevent all damage from and effects of attacks done to this Pok\u00e9mon. (You can't use more than 1 VSTAR Power in a game.)",
+                    "damage": 220
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691920,
+                    "avg": 56.32,
+                    "low": 20,
+                    "trend": 50.48,
+                    "avg1": 48.98,
+                    "avg7": 56.45,
+                    "avg30": 57.63,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG41",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG41",
+            "localId": "GG41",
+            "name": "Raikou V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [243],
+            "hp": 200,
+            "types": ["Lightning"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Fleet-Footed",
+                    "effect": "Once during your turn, if this Pok\u00e9mon is in the Active Spot, you may draw a card."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Lightning", "Colorless"],
+                    "name": "Lightning Rondo",
+                    "effect": "This attack does 20 more damage for each Benched Pok\u00e9mon (both yours and your opponent's).",
+                    "damage": "20+"
+                }
+            ],
+            "retreat": 1,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691921,
+                    "avg": 42.46,
+                    "low": 18.5,
+                    "trend": 55.48,
+                    "avg1": 40.07,
+                    "avg7": 50.02,
+                    "avg30": 42.13,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG42",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG42",
+            "localId": "GG42",
+            "name": "Zeraora VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [807],
+            "hp": 320,
+            "types": ["Lightning"],
+            "evolveFrom": "Zeraora V",
+            "stage": "VMAX",
+            "attacks": [
+                {
+                    "cost": ["Lightning", "Lightning"],
+                    "name": "Reactive Pulse",
+                    "effect": "This attack does 60 damage for each of your opponent's Pok\u00e9mon in play that has an Ability.",
+                    "damage": "60\u00d7"
+                },
+                {
+                    "cost": ["Lightning", "Lightning", "Colorless"],
+                    "name": "Max Fist",
+                    "effect": "Discard 2 Energy from this Pok\u00e9mon.",
+                    "damage": 240
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691771,
+                    "avg": 2.26,
+                    "low": 1,
+                    "trend": 1.72,
+                    "avg1": 1.85,
+                    "avg7": 1.83,
+                    "avg30": 2.16,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG43",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG43",
+            "localId": "GG43",
+            "name": "Zeraora VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [807],
+            "hp": 270,
+            "types": ["Lightning"],
+            "evolveFrom": "Zeraora V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Lightning", "Lightning", "Colorless"],
+                    "name": "Crushing Beat",
+                    "effect": "You may discard a Stadium in play.",
+                    "damage": 190
+                },
+                {
+                    "cost": [
+                        "Lightning",
+                        "Lightning",
+                        "Lightning",
+                        "Colorless"
+                    ],
+                    "name": "Lightning Storm Star",
+                    "effect": "Choose 1 of your opponent's Pok\u00e9mon 4 times. (You can choose the same Pok\u00e9mon more than once.) For each time you chose a Pok\u00e9mon, do 60 damage to it. This damage isn't affected by Weakness or Resistance. (You can't use more than 1 VSTAR Power in a game.)"
+                }
+            ],
+            "retreat": 0,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691772,
+                    "avg": 1.89,
+                    "low": 1,
+                    "trend": 1.75,
+                    "avg1": 1.55,
+                    "avg7": 1.85,
+                    "avg30": 1.81,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG44",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG44",
+            "localId": "GG44",
+            "name": "Mewtwo VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [150],
+            "hp": 280,
+            "types": ["Psychic"],
+            "evolveFrom": "Mewtwo V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Colorless"],
+                    "name": "Psy Purge",
+                    "effect": "Discard up to 3 Psychic Energy from your Pok\u00e9mon. This attack does 90 damage for each card you discarded in this way.",
+                    "damage": "90\u00d7"
+                },
+                {
+                    "cost": ["Psychic", "Colorless"],
+                    "name": "Star Raid",
+                    "effect": "This attack does 120 damage to each of your opponent's Pok\u00e9mon V. This damage isn't affected by Weakness or Resistance. (You can't use more than 1 VSTAR Power in a game.)"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691924,
+                    "avg": 159.14,
+                    "low": 69.9,
+                    "trend": 143.53,
+                    "avg1": 192.49,
+                    "avg7": 148.15,
+                    "avg30": 154.52,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG45",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG45",
+            "localId": "GG45",
+            "name": "Deoxys VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [386],
+            "hp": 330,
+            "types": ["Psychic"],
+            "evolveFrom": "Deoxys V",
+            "stage": "VMAX",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Protective DNA",
+                    "effect": "All of your Pok\u00e9mon take 30 less damage from attacks from your opponent's Pok\u00e9mon VSTAR (after applying Weakness and Resistance)."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Colorless", "Colorless"],
+                    "name": "Max Drain",
+                    "effect": "Heal 30 damage from this Pok\u00e9mon.",
+                    "damage": 160
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691925,
+                    "avg": 31.45,
+                    "low": 12,
+                    "trend": 37.38,
+                    "avg1": 75,
+                    "avg7": 37.62,
+                    "avg30": 31.11,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG46",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG46",
+            "localId": "GG46",
+            "name": "Deoxys VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [386],
+            "hp": 270,
+            "types": ["Psychic"],
+            "evolveFrom": "Deoxys V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Psychic", "Colorless"],
+                    "name": "Psychic Javelin",
+                    "effect": "This attack also does 60 damage to 1 of your opponent's Benched Pok\u00e9mon V. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+                    "damage": 190
+                },
+                {
+                    "cost": ["Psychic"],
+                    "name": "Star Force",
+                    "effect": "This attack does 60 damage for each Energy attached to both Active Pok\u00e9mon. (You can't use more than 1 VSTAR Power in a game.)",
+                    "damage": "60\u00d7"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691926,
+                    "avg": 28.37,
+                    "low": 10,
+                    "trend": 34.65,
+                    "avg1": 24.13,
+                    "avg7": 36.38,
+                    "avg30": 30.31,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG47",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG47",
+            "localId": "GG47",
+            "name": "Hatterene VMAX",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [858],
+            "hp": 320,
+            "types": ["Psychic"],
+            "evolveFrom": "Hatterene V",
+            "stage": "VMAX",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Witch's Domain",
+                    "effect": "Once during your turn, you may move up to 2 damage counters from your Pok\u00e9mon to your opponent's Active Pok\u00e9mon."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Psychic", "Colorless", "Colorless"],
+                    "name": "G-Max Smite",
+                    "effect": "Your opponent's Active Pok\u00e9mon is now Confused.",
+                    "damage": 150
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691783,
+                    "avg": 1.54,
+                    "low": 0.68,
+                    "trend": 1.44,
+                    "avg1": 1.07,
+                    "avg7": 1.47,
+                    "avg30": 1.53,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG48",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG48",
+            "localId": "GG48",
+            "name": "Zacian V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [888],
+            "hp": 220,
+            "types": ["Psychic"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Roar of the Sword",
+                    "effect": "Once during your turn, you may search your deck for a Psychic Energy card and attach it to 1 of your Pok\u00e9mon. Then, shuffle your deck. If you use this Ability, your turn ends."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Storm Slash",
+                    "effect": "This attack does 30 more damage for each Psychic Energy attached to this Pok\u00e9mon.",
+                    "damage": "60+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691814,
+                    "avg": 0.75,
+                    "low": 0.2,
+                    "trend": 0.89,
+                    "avg1": 0.73,
+                    "avg7": 0.72,
+                    "avg30": 0.71,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG49",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG49",
+            "localId": "GG49",
+            "name": "Drapion V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [452],
+            "hp": 210,
+            "types": ["Darkness"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Wild Style",
+                    "effect": "This Pok\u00e9mon's attacks cost Colorless less for each of your opponent's Single Strike, Rapid Strike, and Fusion Strike Pok\u00e9mon in play."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": [
+                        "Colorless",
+                        "Colorless",
+                        "Colorless",
+                        "Colorless"
+                    ],
+                    "name": "Dynamic Tail",
+                    "effect": "This attack also does 60 damage to 1 of your Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon.)",
+                    "damage": 190
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691929,
+                    "avg": 6.18,
+                    "low": 3,
+                    "trend": 6.94,
+                    "avg1": 5.5,
+                    "avg7": 6.91,
+                    "avg30": 6.36,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG50",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG50",
+            "localId": "GG50",
+            "name": "Darkrai VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [491],
+            "hp": 270,
+            "types": ["Darkness"],
+            "evolveFrom": "Darkrai V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Dark Pulse",
+                    "effect": "This attack does 30 more damage for each Darkness Energy attached to all of your Pok\u00e9mon.",
+                    "damage": "30+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691930,
+                    "avg": 52.2,
+                    "low": 35,
+                    "trend": 46.7,
+                    "avg1": 44.98,
+                    "avg7": 46.1,
+                    "avg30": 52.34,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG51",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG51",
+            "localId": "GG51",
+            "name": "Hisuian Samurott V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [503],
+            "hp": 220,
+            "types": ["Darkness"],
+            "stage": "Basic",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Darkness"],
+                    "name": "Basket Crash",
+                    "effect": "Discard up to 2 Pok\u00e9mon Tools from your opponent's Pok\u00e9mon."
+                },
+                {
+                    "cost": ["Darkness", "Darkness", "Darkness"],
+                    "name": "Shadow Slash",
+                    "effect": "Discard an Energy from this Pok\u00e9mon.",
+                    "damage": 180
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691931,
+                    "avg": 12.25,
+                    "low": 9.99,
+                    "trend": 12.13,
+                    "avg1": 11.08,
+                    "avg7": 11.4,
+                    "avg30": 11.97,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG52",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG52",
+            "localId": "GG52",
+            "name": "Hisuian Samurott VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [503],
+            "hp": 270,
+            "types": ["Darkness"],
+            "evolveFrom": "Hisuian Samurott V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Darkness", "Darkness"],
+                    "name": "Merciless Blade",
+                    "effect": "If your opponent's Active Pok\u00e9mon already has any damage counters on it, this attack does 110 more damage.",
+                    "damage": "110+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691932,
+                    "avg": 10.08,
+                    "low": 5.49,
+                    "trend": 9.14,
+                    "avg1": 9.1,
+                    "avg7": 9.31,
+                    "avg30": 9.93,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG53",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG53",
+            "localId": "GG53",
+            "name": "Hoopa V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [720],
+            "hp": 220,
+            "types": ["Darkness"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Two-Faced",
+                    "effect": "As long as this Pok\u00e9mon is in play, it is Psychic and Darkness type."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Darkness", "Darkness", "Colorless"],
+                    "name": "Shadow Impact",
+                    "effect": "Put 3 damage counters on 1 of your Pok\u00e9mon.",
+                    "damage": 170
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691933,
+                    "avg": 9.39,
+                    "low": 3.5,
+                    "trend": 9.04,
+                    "avg1": 9.23,
+                    "avg7": 8.91,
+                    "avg30": 9.18,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG54",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG54",
+            "localId": "GG54",
+            "name": "Zamazenta V",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [889],
+            "hp": 220,
+            "types": ["Metal"],
+            "stage": "Basic",
+            "suffix": "V",
+            "abilities": [
+                {
+                    "type": "Ability",
+                    "name": "Regal Stance",
+                    "effect": "Once during your turn, you may discard your hand and draw 5 cards. If you use this Ability, your turn ends."
+                }
+            ],
+            "attacks": [
+                {
+                    "cost": ["Metal", "Colorless", "Colorless"],
+                    "name": "Revenge Blast",
+                    "effect": "This attack does 30 more damage for each Prize card your opponent has taken.",
+                    "damage": "120+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691817,
+                    "avg": 0.87,
+                    "low": 0.25,
+                    "trend": 0.79,
+                    "avg1": 0.92,
+                    "avg7": 0.85,
+                    "avg30": 0.91,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG55",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG55",
+            "localId": "GG55",
+            "name": "Regigigas VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [486],
+            "hp": 300,
+            "types": ["Colorless"],
+            "evolveFrom": "Regigigas V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Giga Impact",
+                    "effect": "During your next turn, this Pok\u00e9mon can't attack.",
+                    "damage": 230
+                }
+            ],
+            "retreat": 4,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691833,
+                    "avg": 1.44,
+                    "low": 0.3,
+                    "trend": 1.29,
+                    "avg1": 1.1,
+                    "avg7": 1.27,
+                    "avg30": 1.41,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG56",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG56",
+            "localId": "GG56",
+            "name": "Hisuian Zoroark VSTAR",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [571],
+            "hp": 270,
+            "types": ["Colorless"],
+            "evolveFrom": "Hisuian Zoroark V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless"],
+                    "name": "Ticking Curse",
+                    "effect": "This attack does 50 damage for each of your Pok\u00e9mon that has any damage counters on it.",
+                    "damage": "50\u00d7"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691936,
+                    "avg": 34.21,
+                    "low": 18,
+                    "trend": 34.93,
+                    "avg1": 30,
+                    "avg7": 37.7,
+                    "avg30": 34.24,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG57",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG57",
+            "localId": "GG57",
+            "name": "Adaman",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "You can use this card only if you discard 2 Metal Energy cards from your hand.\nSearch your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691937,
+                    "avg": 5.43,
+                    "low": 3.8,
+                    "trend": 5.5,
+                    "avg1": 5.21,
+                    "avg7": 5.06,
+                    "avg30": 5.43,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG58",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG58",
+            "localId": "GG58",
+            "name": "Cheren's Care",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Put 1 of your Colorless Pok\u00e9mon that has any damage counters on it and all attached cards into your hand.",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691938,
+                    "avg": 4.79,
+                    "low": 2,
+                    "trend": 5.42,
+                    "avg1": 4.26,
+                    "avg7": 5.23,
+                    "avg30": 4.98,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG59",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG59",
+            "localId": "GG59",
+            "name": "Colress's Experiment",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Look at the top 5 cards of your deck and put 3 of them into your hand. Put the other cards in the Lost Zone.",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691939,
+                    "avg": 4.1,
+                    "low": 2.49,
+                    "trend": 4.3,
+                    "avg1": 4.12,
+                    "avg7": 4.24,
+                    "avg30": 4.19,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG60",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG60",
+            "localId": "GG60",
+            "name": "Cynthia's Ambition",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Draw cards until you have 5 cards in your hand. If any of your Pok\u00e9mon were Knocked Out during your opponent's last turn, draw cards until you have 8 cards in your hand instead.",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691940,
+                    "avg": 21.55,
+                    "low": 17,
+                    "trend": 21.28,
+                    "avg1": 20.65,
+                    "avg7": 20.92,
+                    "avg30": 21.56,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG61",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG61",
+            "localId": "GG61",
+            "name": "Gardenia's Vigor",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Draw 2 cards. If you drew any cards in this way, attach up to 2 Grass Energy cards from your hand to 1 of your Benched Pok\u00e9mon.",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691941,
+                    "avg": 10.44,
+                    "low": 4,
+                    "trend": 10.25,
+                    "avg1": 9.5,
+                    "avg7": 10.42,
+                    "avg30": 10.5,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG62",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG62",
+            "localId": "GG62",
+            "name": "Grant",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "During this turn, your Fighting Pok\u00e9mon's attacks do 30 more damage to your opponent's Active Pok\u00e9mon (before applying Weakness and Resistance).\nDuring your turn, if this Grant is in your discard pile, you may discard 2 cards, except any Grant, from your hand. If you do, put this Grant into your hand. (This effect doesn't use up your Supporter card for the turn.)",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691942,
+                    "avg": 3.51,
+                    "low": 2,
+                    "trend": 3.27,
+                    "avg1": 3.37,
+                    "avg7": 3.39,
+                    "avg30": 3.55,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG63",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG63",
+            "localId": "GG63",
+            "name": "Irida",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Search your deck for a Water Pok\u00e9mon and an Item card, reveal them, and put them into your hand. Then, shuffle your deck.",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691943,
+                    "avg": 7.46,
+                    "low": 3.19,
+                    "trend": 7.83,
+                    "avg1": 7.23,
+                    "avg7": 8.7,
+                    "avg30": 7.89,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG64",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG64",
+            "localId": "GG64",
+            "name": "Melony",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "Attach a Water Energy card from your discard pile to 1 of your Pok\u00e9mon V. If you do, draw 3 cards.",
+            "trainerType": "Supporter",
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691944,
+                    "avg": 5.18,
+                    "low": 2.9,
+                    "trend": 5.25,
+                    "avg1": 4.58,
+                    "avg7": 5.07,
+                    "avg30": 5.23,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG65",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG65",
+            "localId": "GG65",
+            "name": "Raihan",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "You can play this card only if any of your Pok\u00e9mon were Knocked Out during your opponent's last turn.\nAttach a basic Energy card from your discard pile to 1 of your Pok\u00e9mon. If you do, search your deck for a card and put it into your hand. Then, shuffle your deck.",
+            "trainerType": "Supporter",
+            "regulationMark": "E",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691859,
+                    "avg": 0.32,
+                    "low": 0.02,
+                    "trend": 0.34,
+                    "avg1": 0.28,
+                    "avg7": 0.36,
+                    "avg30": 0.33,
+                    "avg-holo": 0.52,
+                    "low-holo": 0.02,
+                    "trend-holo": 0.53,
+                    "avg1-holo": 0.35,
+                    "avg7-holo": 0.57,
+                    "avg30-holo": 0.54
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Trainer",
+            "id": "swsh12.5.1-GG66",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG66",
+            "localId": "GG66",
+            "name": "Roxanne",
+            "rarity": "Ultra Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "effect": "You can use this card only if your opponent has 3 or fewer Prize cards remaining.\nEach player shuffles their hand into their deck. Then, you draw 6 cards, and your opponent draws 2 cards.",
+            "trainerType": "Supporter",
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691946,
+                    "avg": 6.05,
+                    "low": 3.4,
+                    "trend": 4.96,
+                    "avg1": 4.83,
+                    "avg7": 4.75,
+                    "avg30": 5.43,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG67",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG67",
+            "localId": "GG67",
+            "name": "Origin Forme Palkia VSTAR",
+            "rarity": "Secret Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [484],
+            "hp": 280,
+            "types": ["Water"],
+            "evolveFrom": "Origin Forme Palkia V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Water", "Water"],
+                    "name": "Subspace Swell",
+                    "effect": "This attack does 20 more damage for each Benched Pok\u00e9mon (both yours and your opponent's).",
+                    "damage": "60+"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691947,
+                    "avg": 85.12,
+                    "low": 44.98,
+                    "trend": 84.77,
+                    "avg1": 78.29,
+                    "avg7": 82.82,
+                    "avg30": 85.63,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG68",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG68",
+            "localId": "GG68",
+            "name": "Origin Forme Dialga VSTAR",
+            "rarity": "Secret Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [483],
+            "hp": 280,
+            "types": ["Metal"],
+            "evolveFrom": "Origin Forme Dialga V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Colorless"],
+                    "name": "Metal Blast",
+                    "effect": "This attack does 40 more damage for each Metal Energy attached to this Pok\u00e9mon.",
+                    "damage": "40+"
+                },
+                {
+                    "cost": ["Metal", "Metal", "Metal", "Metal", "Colorless"],
+                    "name": "Star Chronos",
+                    "effect": "Take another turn after this one. (Skip Pok\u00e9mon Checkup.) (You can't use more than 1 VSTAR Power in a game.)",
+                    "damage": 220
+                }
+            ],
+            "retreat": 3,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691948,
+                    "avg": 91.78,
+                    "low": 60,
+                    "trend": 86.16,
+                    "avg1": 80.63,
+                    "avg7": 84.23,
+                    "avg30": 91.01,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG69",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG69",
+            "localId": "GG69",
+            "name": "Giratina VSTAR",
+            "rarity": "Secret Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [487],
+            "hp": 280,
+            "types": ["Dragon"],
+            "evolveFrom": "Giratina V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Grass", "Psychic", "Colorless"],
+                    "name": "Lost Impact",
+                    "effect": "Put 2 Energy attached to your Pok\u00e9mon in the Lost Zone.",
+                    "damage": 280
+                },
+                {
+                    "cost": ["Grass", "Psychic"],
+                    "name": "Star Requiem",
+                    "effect": "You can use this attack only if you have 10 or more cards in the Lost Zone. Your opponent's Active Pok\u00e9mon is Knocked Out. (You can't use more than 1 VSTAR Power in a game.)"
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691949,
+                    "avg": 207.55,
+                    "low": 130,
+                    "trend": 202.69,
+                    "avg1": 149,
+                    "avg7": 205.82,
+                    "avg30": 209.39,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        },
+        {
+            "category": "Pokemon",
+            "id": "swsh12.5.1-GG70",
+            "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/GG70",
+            "localId": "GG70",
+            "name": "Arceus VSTAR",
+            "rarity": "Secret Rare",
+            "set": {
+                "cardCount": { "official": 159, "total": 230 },
+                "id": "swsh12.5.1",
+                "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+                "name": "Crown Zenith",
+                "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": false,
+                "reverse": false,
+                "wPromo": false
+            },
+            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "dexId": [493],
+            "hp": 280,
+            "types": ["Colorless"],
+            "evolveFrom": "Arceus V",
+            "stage": "VSTAR",
+            "suffix": "V",
+            "attacks": [
+                {
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "name": "Trinity Nova",
+                    "effect": "Search your deck for up to 3 basic Energy cards and attach them to your Pok\u00e9mon V in any way you like. Then, shuffle your deck.",
+                    "damage": 200
+                }
+            ],
+            "retreat": 2,
+            "regulationMark": "F",
+            "legal": { "standard": false, "expanded": true },
+            "updated": "2025-08-16T20:39:55Z",
+            "pricing": {
+                "cardmarket": {
+                    "updated": "2026-03-01T01:50:01.000Z",
+                    "unit": "EUR",
+                    "idProduct": 691950,
+                    "avg": 128.86,
+                    "low": 60,
+                    "trend": 115.05,
+                    "avg1": 50,
+                    "avg7": 111.88,
+                    "avg30": 128.66,
+                    "avg-holo": null,
+                    "low-holo": null,
+                    "trend-holo": 0,
+                    "avg1-holo": null,
+                    "avg7-holo": null,
+                    "avg30-holo": null
+                },
+                "tcgplayer": null
+            }
+        }
+    ],
+    "id": "swsh12.5.1.1",
+    "legal": { "expanded": true, "standard": false },
+    "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
+    "name": "Crown Zenith Galarian Gallery",
+    "releaseDate": "2023-01-20",
+    "serie": { "id": "swsh", "name": "Sword & Shield" },
+    "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol",
+    "abbreviation": { "official": "CRZ" }
+}

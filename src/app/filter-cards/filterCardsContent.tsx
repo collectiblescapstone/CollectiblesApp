@@ -219,12 +219,43 @@ const FilterCardsContent = () => {
                             cardId={card.id}
                             key={index}
                             cardName={card.name}
-                            cardSetId={
-                                cardNumbers[card.id] +
-                                (Number(card.set.official) > 0
-                                    ? '/' + card.set.official
-                                    : '')
-                            }
+                            cardSetId={(() => {
+                                const fullId = cardNumbers[card.id] ?? card.id // e.g., "GG1" or "001"
+                                const lettersMatch = fullId.match(/^[A-Za-z]+/) // extract letters at start
+                                const letters = lettersMatch
+                                    ? lettersMatch[0]
+                                    : '' // "GG" or ""
+                                const numberPartRaw = fullId.replace(
+                                    letters,
+                                    ''
+                                ) // "1" or "01"
+
+                                const officialCount =
+                                    Number(card.set?.official) || 0
+                                const padLength =
+                                    officialCount > 0
+                                        ? String(officialCount).length
+                                        : 2 // dynamic padding
+                                const numberPart = numberPartRaw.padStart(
+                                    padLength,
+                                    '0'
+                                )
+
+                                // If letters exist and official count > 0, prepend letters to official count
+                                const officialPart =
+                                    officialCount > 0
+                                        ? '/' +
+                                          (letters
+                                              ? letters + officialCount
+                                              : officialCount)
+                                        : ''
+
+                                return (
+                                    (letters ? letters : '') +
+                                    numberPart +
+                                    officialPart
+                                ) // e.g., "GG001/GG070"
+                            })()}
                             cardOwned={userCards.includes(card.id)}
                             image={card.image_url}
                         />

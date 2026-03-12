@@ -1,25 +1,29 @@
 -- To run this setup script, execute: npx prisma db execute --file prisma\setup.sql --schema prisma\schema.prisma
 
--- (re)create function
-CREATE OR REPLACE FUNCTION public.handle_new_user()
-RETURNS trigger
-LANGUAGE plpgsql
-SECURITY DEFINER
-AS $$
-BEGIN
-  INSERT INTO public."User" (id, email)
-  VALUES (NEW.id, NEW.email);
-  RETURN NEW;
-END;
-$$;
+-- DISABLED: Automatic user creation trigger
+-- User creation is now handled by the register-user and register-user/google API endpoint
+-- This prevents duplicate user creation and ensures proper username generation
 
--- (re)create trigger
-DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+-- -- (re)create function
+-- CREATE OR REPLACE FUNCTION public.handle_new_user()
+-- RETURNS trigger
+-- LANGUAGE plpgsql
+-- SECURITY DEFINER
+-- AS $$
+-- BEGIN
+--   INSERT INTO public."User" (id, email)
+--   VALUES (NEW.id, NEW.email);
+--   RETURN NEW;
+-- END;
+-- $$;
 
-CREATE TRIGGER on_auth_user_created
-  AFTER INSERT ON auth.users
-  FOR EACH ROW
-  EXECUTE PROCEDURE public.handle_new_user();
+-- -- (re)create trigger
+-- DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+
+-- CREATE TRIGGER on_auth_user_created
+--   AFTER INSERT ON auth.users
+--   FOR EACH ROW
+--   EXECUTE PROCEDURE public.handle_new_user();
 
 INSERT INTO public."User" (id, email)
 SELECT 

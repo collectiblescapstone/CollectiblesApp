@@ -16,6 +16,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import UserSearchList from './UserSearchList'
 import { useRouter } from 'next/navigation'
 import { useProfileSelected } from '@/context/ProfileSelectionProvider'
+import { CiSearch } from 'react-icons/ci'
 
 const UserSearch = () => {
     const { session } = useAuth()
@@ -108,7 +109,11 @@ const UserSearch = () => {
             open={open}
         >
             <Popover.Trigger asChild>
-                <InputGroup endElement={clearSearch} w="11/12">
+                <InputGroup
+                    endElement={clearSearch}
+                    w="11/12"
+                    startElement={<CiSearch size={20} />}
+                >
                     <Input
                         placeholder={`Search user by username or profile name`}
                         ref={searchRef}

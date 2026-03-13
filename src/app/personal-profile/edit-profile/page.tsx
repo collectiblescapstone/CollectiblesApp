@@ -203,7 +203,6 @@ const PersonalProfileScreen: React.FC = () => {
                     console.error('API error:', res.data.error)
                     setPredictions([])
                 } else {
-                    console.log('Location predictions:', res.data.predictions)
                     setPredictions(res.data.predictions || [])
                 }
             } catch (err) {

@@ -10,7 +10,7 @@ interface HeaderContextType {
 }
 
 export const HeaderProvider = ({ children }: { children: ReactNode }) => {
-    const [profileId, setProfileID] = useState('Collectibles App')
+    const [profileId, setProfileID] = useState('Kollec')
 
     return (
         <HeaderContext.Provider value={{ profileId, setProfileID }}>

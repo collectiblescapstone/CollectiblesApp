@@ -16,19 +16,20 @@ import { LuChevronUp, LuChevronDown } from 'react-icons/lu'
 // Child Components
 import PokemonCardMini from '@/components/pokemon-cards/pokemon-card-mini/PokemonCardMini'
 import CardFilter from '@/components/card-filter/CardFilter'
+import { CardSearch } from '@/components/card-filter/CardSearch'
+
+// Context
+import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
 
 // Hooks
 import { useFilters } from '@/hooks/useFilters'
 
 // Utils
 import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard'
-import { getPokemonName, getGeneration } from '@/utils/pokedex'
 
 // Types
 import type { CardData } from '@/types/pokemon-card'
-import { useAuth } from '@/context/AuthProvider'
-import { getPokemonCards } from '@/utils/pokemonCard'
-import { CardSearch } from '@/components/card-filter/CardSearch'
 
 const WishlistCardsContent: React.FC = () => {
     // Search Params
@@ -53,6 +54,9 @@ const WishlistCardsContent: React.FC = () => {
     const [ascending, setAscending] = useState(true)
     const [userCards, setUserCards] = useState<string[]>([])
 
+    // Context
+    const { allCards, getPokemonName, getGeneration } = usePokemonCards()
+
     // Fetch cards based on type & params
     useEffect(() => {
         const loadData = async () => {
@@ -63,8 +67,7 @@ const WishlistCardsContent: React.FC = () => {
 
             setLoading(true)
             try {
-                const cards = await getPokemonCards()
-                const filteredCards = cards.filter((card) => {
+                const filteredCards = allCards.filter((card) => {
                     if (type === 'set') {
                         return card.setId === setId
                     }
@@ -119,7 +122,7 @@ const WishlistCardsContent: React.FC = () => {
         }
 
         loadData()
-    }, [type, setId, pId, session?.user?.id])
+    }, [type, setId, pId, session?.user?.id, allCards])
 
     // Fetch Pokémon name if viewing a single Pokémon
     useEffect(() => {
@@ -128,7 +131,7 @@ const WishlistCardsContent: React.FC = () => {
         } else {
             setPokemonName(null)
         }
-    }, [type, pId])
+    }, [type, pId, getPokemonName])
 
     // Reverse card order
     const toggleSortOrder = () => {

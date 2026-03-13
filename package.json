@@ -23,8 +23,10 @@
     },
     "dependencies": {
         "@capacitor/android": "^7.4.3",
-        "@capacitor/camera": "^7.0.2",
+        "@capacitor/camera": "^7.0.4",
+        "@capacitor/clipboard": "^7.0.4",
         "@capacitor/core": "^7.4.3",
+        "@capacitor-community/camera-preview": "^7.0.0",
         "@capacitor/ios": "^7.4.3",
         "@chakra-ui/icons": "^2.2.4",
         "@chakra-ui/react": "^3.28.0",

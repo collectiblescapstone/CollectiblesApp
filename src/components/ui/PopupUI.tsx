@@ -1,5 +1,12 @@
 'use client'
 
+// React
+import { useRef } from 'react'
+
+// React
+import { IoClose } from 'react-icons/io5'
+
+// Chakra UI
 import { Button, Dialog, Portal, createOverlay } from '@chakra-ui/react'
 
 interface DialogProps {
@@ -11,11 +18,30 @@ interface DialogProps {
 
 const PopupUI = createOverlay<DialogProps>((props) => {
     const { title, description, content, onClickClose, ...rest } = props
+
+    // Ensure close side-effects run once regardless of how the dialog closes.
+    const hasHandledClose = useRef(false)
+    const handleClose = () => {
+        if (hasHandledClose.current) return
+        hasHandledClose.current = true
+        onClickClose()
+    }
+
     return (
-        <Dialog.Root {...rest}>
+        <Dialog.Root
+            {...rest}
+            onOpenChange={({ open }) => {
+                if (open) {
+                    hasHandledClose.current = false
+                    return
+                }
+
+                handleClose()
+            }}
+        >
             <Portal>
                 <Dialog.Backdrop />
-                <Dialog.Positioner>
+                <Dialog.Positioner justifyContent="center" alignItems="center">
                     <Dialog.Content>
                         {title && (
                             <Dialog.Header
@@ -25,15 +51,16 @@ const PopupUI = createOverlay<DialogProps>((props) => {
                             >
                                 <Dialog.Title>{title}</Dialog.Title>
                                 <Button
-                                    variant="outline"
                                     size="sm"
-                                    onClick={onClickClose}
+                                    onClick={handleClose}
+                                    aspectRatio={1}
+                                    background={'none'}
                                 >
-                                    Close
+                                    <IoClose size={48} fill="black" />
                                 </Button>
                             </Dialog.Header>
                         )}
-                        <Dialog.Body spaceY="4">
+                        <Dialog.Body spaceY="4" gap={2}>
                             {description && (
                                 <Dialog.Description>
                                     {description}

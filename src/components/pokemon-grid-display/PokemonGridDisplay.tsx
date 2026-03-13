@@ -1,6 +1,10 @@
 'use client'
 
+// React
 import React, { useEffect, useState, useMemo } from 'react'
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
+
+// Chakra UI
 import {
     Box,
     HStack,
@@ -14,7 +18,6 @@ import {
     Stack,
     IconButton
 } from '@chakra-ui/react'
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 
 // Child Components
 import PokemonPolaroid from '@/components/pokemon-cards/pokemon-polaroid/PokemonPolaroid'
@@ -22,23 +25,20 @@ import PokemonPolaroidLoading from '@/components/pokemon-cards/pokemon-polaroid/
 import PokemonSet from '@/components/pokemon-cards/pokemon-set/PokemonSet'
 import PokemonSetLoading from '@/components/pokemon-cards/pokemon-set/PokemonSetLoading'
 import { CardSearch } from '@/components/card-filter/CardSearch'
-import { getSetGroups } from '@/utils/pokemonSet'
+
+// Context
+import { useAuth } from '@/context/AuthProvider'
+import { usePokemonCards } from '@/context/PokemonCardsProvider'
 
 // Hooks
 import { FiltersProvider } from '@/hooks/useFilters'
 
 // Types
 import { PokemonSetType } from '@/types/pokemon-grid'
-import { useAuth } from '@/context/AuthProvider'
 
 // Utils
-import { POKEMONGEN, ALL_POKEMON, getPokemonName } from '@/utils/pokedex'
-import {
-    masterSetCount,
-    grandmasterSetCount,
-    pokemonMasterSetCount,
-    pokemonGrandmasterSetCount
-} from '@/utils/pokemonCard'
+import { getSetGroups } from '@/utils/pokemonSet'
+import { ALL_POKEMON } from '@/utils/pokedex'
 
 const NUM_ITEMS_PER_PAGE = 24
 
@@ -47,7 +47,6 @@ interface PokemonGridDisplayProps {
 }
 
 const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
-    // EDIT THIS LINE FOR THE PAGE TYPE (WISHLIST)
     const nextPage =
         originalPage === 'pokemon-grid'
             ? '/filter-cards'
@@ -62,7 +61,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }[]
     >()
     const [page, setPage] = useState(1)
-    const [selected, setSelected] = useState('set')
+    const [selected, setSelected] = useState('pokemon')
     const [selectedEra, setSelectedEra] = useState('sv')
     const [groupedSets, setGroupedSets] = useState<
         Record<string, PokemonSetType[]>
@@ -77,6 +76,15 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         Record<string, { masterSet: number; grandmasterSet: number }>
     >({})
 
+    const {
+        masterSetCards,
+        grandmasterSetCount,
+        pokemonMasterSetCards,
+        pokemonGrandmasterSetCount,
+        POKEMONGEN,
+        getPokemonName
+    } = usePokemonCards()
+
     const pokemon = ALL_POKEMON
 
     const frameworks = createListCollection({
@@ -89,7 +97,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
     // Generation options
     const genOptions = [
         { label: 'ALL', value: 'ALL' },
-        ...POKEMONGEN.map((last, index) => ({
+        ...POKEMONGEN.map((_, index) => ({
             label: `Gen ${index + 1}`,
             value: (index + 1).toString()
         }))
@@ -150,7 +158,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         const endId = POKEMONGEN[genIndex]
 
         return pokemon.filter((id) => id >= startId && id <= endId)
-    }, [selectedGen, pokemon])
+    }, [selectedGen, pokemon, POKEMONGEN])
 
     /**
      * useEffect to fetch set counts
@@ -167,7 +175,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
 
             await Promise.all(
                 groupedSets[selectedEra].map(async (set) => {
-                    const master = await masterSetCount(set.id)
+                    const master = masterSetCards[set.id]?.size
                     const grandmaster = await grandmasterSetCount(set.id)
                     counts[set.id] = {
                         masterSet: master ?? 0,
@@ -180,7 +188,13 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchCounts()
-    }, [selectedEra, groupedSets, selected])
+    }, [
+        selectedEra,
+        groupedSets,
+        selected,
+        grandmasterSetCount,
+        masterSetCards
+    ])
 
     /**
      * Use effect for fetching Pokemon card counts, grouped by Pokedex number.
@@ -195,7 +209,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
 
             await Promise.allSettled(
                 filteredPokemon.map(async (id) => {
-                    const master = await pokemonMasterSetCount(id)
+                    const master = pokemonMasterSetCards[id]?.size
                     const grandmaster = await pokemonGrandmasterSetCount(id)
                     counts[id] = {
                         masterSet: master ?? 0,
@@ -208,7 +222,13 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchCounts()
-    }, [selectedGen, selected, filteredPokemon])
+    }, [
+        selectedGen,
+        selected,
+        filteredPokemon,
+        pokemonMasterSetCards,
+        pokemonGrandmasterSetCount
+    ])
 
     useEffect(() => {
         const fetchNames = async () => {
@@ -226,7 +246,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
         }
 
         fetchNames()
-    }, [filteredPokemon])
+    }, [filteredPokemon, getPokemonName])
 
     const displayablePokemon = useMemo(
         () =>

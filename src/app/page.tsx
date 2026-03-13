@@ -607,8 +607,7 @@ const Landing: React.FC = () => {
                                                 gap: '10px'
                                             }}
                                         >
-                                            <strong>Geon Youn</strong> — ML
-                                            Lead
+                                            <strong>Geon Youn</strong> — ML Lead
                                             <div
                                                 className="links"
                                                 style={{

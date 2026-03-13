@@ -261,19 +261,19 @@ const Landing: React.FC = () => {
                                         Features
                                     </Button>
                                 </a>
-                                <a
-                                    href="#faq"
-                                    onClick={handleAnchorClick}
-                                    style={{ textDecoration: 'none' }}
-                                    aria-label="Scroll to FAQ section"
-                                >
-                                    <Button
-                                        variant="ghost"
-                                        color="brand.turtoise"
-                                    >
-                                        FAQ
-                                    </Button>
-                                </a>
+                                {/*<a*/}
+                                {/*    href="#faq"*/}
+                                {/*    onClick={handleAnchorClick}*/}
+                                {/*    style={{ textDecoration: 'none' }}*/}
+                                {/*    aria-label="Scroll to FAQ section"*/}
+                                {/*>*/}
+                                {/*    <Button*/}
+                                {/*        variant="ghost"*/}
+                                {/*        color="brand.turtoise"*/}
+                                {/*    >*/}
+                                {/*        FAQ*/}
+                                {/*    </Button>*/}
+                                {/*</a>*/}
                                 <Link
                                     href={{ pathname: '/sign-up', query: {} }}
                                     style={{ textDecoration: 'none' }}
@@ -706,16 +706,17 @@ const Landing: React.FC = () => {
                                 </Tabs.Root>
                             </div>
 
-                            <div className="card" id="faq" tabIndex={-1}>
-                                <h2>FAQ</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Metus nunc ullamcorper
-                                    ipsum enim natoque orci dignissim consequat
-                                    nascetur. Molestie inceptos phasellus purus
-                                    sapien; nam ligula adipiscing.
-                                </p>
-                            </div>
+                            {/*comment out for now in case we add back*/}
+                            {/*<div className="card" id="faq" tabIndex={-1}>*/}
+                            {/*    <h2>FAQ</h2>*/}
+                            {/*    <p>*/}
+                            {/*        Lorem ipsum dolor sit amet, consectetur*/}
+                            {/*        adipiscing elit. Metus nunc ullamcorper*/}
+                            {/*        ipsum enim natoque orci dignissim consequat*/}
+                            {/*        nascetur. Molestie inceptos phasellus purus*/}
+                            {/*        sapien; nam ligula adipiscing.*/}
+                            {/*    </p>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

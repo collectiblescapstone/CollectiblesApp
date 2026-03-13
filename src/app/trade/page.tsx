@@ -132,12 +132,6 @@ const TradePage = () => {
     }, [userID])
 
     useEffect(() => {
-        return () => {
-            closeTradePopup()
-        }
-    }, [])
-
-    useEffect(() => {
         if (pathname !== '/trade') {
             closeTradePopup()
         }

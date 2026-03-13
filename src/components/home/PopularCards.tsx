@@ -3,16 +3,14 @@
 import React from 'react'
 import Divider from '@/components/profiles/Divider'
 import { Flex, Image, Text, HStack } from '@chakra-ui/react'
-import { useRandomCards } from '@/components/personal-profile/RandomCard' // for now, change later
-import { PokemonCardImage } from '@/types/personal-profile'
+import { PopCards } from '@/types/user-data'
 import { LuFlame } from 'react-icons/lu'
 
-const PopularCards: React.FC = () => {
-    const { cards, loading } = useRandomCards('ex5', 3)
+interface PopularCardsProps {
+    cards?: PopCards[]
+}
 
-    if (loading) return <Text>Loading cards...</Text>
-    if (cards.length === 0) return null
-
+const PopularCards = ({ cards = [] }: PopularCardsProps) => {
     return (
         <Flex
             flexDirection="column"
@@ -25,7 +23,7 @@ const PopularCards: React.FC = () => {
             <Divider />
             <Flex mt={1}>
                 <HStack gap={1} alignItems="center">
-                    <LuFlame color="#d35400" />
+                    <LuFlame color="#d35400" size={20} />
                     <Text
                         fontSize="md"
                         color="gray.700"
@@ -36,25 +34,43 @@ const PopularCards: React.FC = () => {
                     </Text>
                 </HStack>
             </Flex>
-            <Flex
-                flexDirection="row"
-                justifyContent="center"
-                alignItems="center"
-                wrap="wrap"
-                gap={5}
-            >
-                {cards.map((card: PokemonCardImage, index: number) => (
-                    <Flex key={index}>
-                        <Image
-                            src={`${card.image}/high.png`}
-                            alt={card.name}
-                            w="105px"
-                            h="auto"
-                            borderRadius="none"
-                        />
-                    </Flex>
-                ))}
-            </Flex>
+            {cards.length !== 0 ? (
+                <Flex
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    wrap="wrap"
+                    gap={5}
+                >
+                    {cards.map((card: PopCards, index: number) => (
+                        <Flex key={index}>
+                            <Image
+                                src={`${card.imageUrl}`}
+                                alt={card.name}
+                                w="105px"
+                                h="auto"
+                                borderRadius="none"
+                            />
+                        </Flex>
+                    ))}
+                </Flex>
+            ) : (
+                <Flex
+                    w="100%"
+                    justifyContent="center"
+                    alignItems="center"
+                    py={3}
+                >
+                    <Text
+                        fontSize="md"
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Be the first to get a trend going!
+                    </Text>
+                </Flex>
+            )}
         </Flex>
     )
 }

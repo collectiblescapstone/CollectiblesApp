@@ -49,7 +49,7 @@ export async function PATCH(request: NextRequest) {
         }
 
         if (body.id !== userData.user.id) {
-            return NextResponse.json({error:'Forbidden'}, {status:403})
+            return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
         }
 
         const data: Partial<

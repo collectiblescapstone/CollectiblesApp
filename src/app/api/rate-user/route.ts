@@ -22,10 +22,7 @@ export const POST = async (request: NextRequest) => {
     const { username, rating, currentUserId } = await request.json()
 
     if (currentUserId !== data.user.id) {
-        return NextResponse.json(
-            { error: 'Forbidden' },
-            { status: 403 }
-        )
+        return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
     const isValidRating =

@@ -3,8 +3,13 @@ import { Button, Heading, Text, Tabs } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import React, { useEffect, useState } from 'react'
-import { LuHandshake, LuScanEye, LuSearch } from 'react-icons/lu'
-
+import {
+    LuHandshake,
+    LuScanEye,
+    LuSearch,
+    LuLinkedin,
+    LuGithub
+} from 'react-icons/lu'
 
 const Landing: React.FC = () => {
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -200,6 +205,12 @@ const Landing: React.FC = () => {
             font-size: 1.3em;
             color: #003b49;
           }
+          
+          .card li p {
+            font-size: 0.8em;
+            color: #000000;
+            margin-left: 8px; /* space between bullet and text */
+          }
 
           .footer {
             margin-top: 20px;
@@ -312,13 +323,323 @@ const Landing: React.FC = () => {
                             <div className="card" id="about" tabIndex={-1}>
                                 <h1>About Us</h1>
                                 <p>
-                                    Kollec is a final year computer science
-                                    capstone project created by Tania Da Silva,
-                                    Norman Liang, Elite Lu, Ishpreet Nagi, James
-                                    Nickoli, Kenneth Ong, and Geon Youn.
+                                    Kollec is a collection management platform
+                                    developed as a final year Computer Science
+                                    capstone project at McMaster University. Our
+                                    mission is to bridge the gap between
+                                    physical collectibles and digital
+                                    organization using Computer Vision and
+                                    Natural Language Processing.
+                                </p>
+                                <p>
+                                    Beyond organization, Kollec actively
+                                    facilitates community engagement by
+                                    intelligently matching users who possess
+                                    viable, mutually beneficial trades.
                                 </p>
                                 <ul>
-                                    <li>hi</li>
+                                    {/*Tania*/}
+                                    <li>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px'
+                                            }}
+                                        >
+                                            <strong>Tânia Da Silva</strong> —
+                                            Front-end Lead
+                                            {/* Icons now sit on the same line */}
+                                            <div
+                                                className="links"
+                                                style={{
+                                                    display: 'flex',
+                                                    gap: '8px',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <a
+                                                    href="https://github.com/taniadasilva17"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuGithub />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/in/tania-da-silva823"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuLinkedin />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Architected the front-end framework
+                                            and developed the application's page
+                                            structures, ensuring a UI layout
+                                            prepared for full-stack integration.
+                                        </p>
+                                    </li>
+
+                                    {/*Norman*/}
+                                    <li>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px'
+                                            }}
+                                        >
+                                            <strong>Norman Liang</strong> — Data
+                                            Lead
+                                            <div
+                                                className="links"
+                                                style={{
+                                                    display: 'flex',
+                                                    gap: '8px',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <a
+                                                    href="https://github.com/Norman-Liang"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuGithub />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/in/norman-liang-03261122a"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuLinkedin />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Architected the database framework
+                                            and proper API routing, integrating
+                                            the dynamic data with front end
+                                            functionalities.
+                                        </p>
+                                    </li>
+
+                                    {/* Elite */}
+                                    <li>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px'
+                                            }}
+                                        >
+                                            <strong>Elite Lu</strong> — Design
+                                            Lead
+                                            <div
+                                                className="links"
+                                                style={{
+                                                    display: 'flex',
+                                                    gap: '8px',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <a
+                                                    href="https://github.com/honkita"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuGithub />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/in/elitelu"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuLinkedin />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Directed the end-to-end UX design
+                                            and facilitated full-stack
+                                            connectivity while managing dataset
+                                            accuracy and co-facilitated the
+                                            weekly Scrum meetings.
+                                        </p>
+                                    </li>
+
+                                    {/* Ishpreet */}
+                                    <li>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px'
+                                            }}
+                                        >
+                                            <strong>Ishpreet Nagi</strong> —
+                                            Back-end Lead
+                                            <div
+                                                className="links"
+                                                style={{
+                                                    display: 'flex',
+                                                    gap: '8px',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <a
+                                                    href="https://github.com/IshpreetNagi"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuGithub />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/in/ishpreetnagi"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuLinkedin />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Integrated the front-end with
+                                            back-end services to transform
+                                            static pages into a functional,
+                                            data-driven application.
+                                        </p>
+                                    </li>
+
+                                    {/* James */}
+                                    <li>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px'
+                                            }}
+                                        >
+                                            <strong>James Nickoli</strong> —
+                                            Vision Model Lead
+                                            <div
+                                                className="links"
+                                                style={{
+                                                    display: 'flex',
+                                                    gap: '8px',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <a
+                                                    href="https://github.com/rsninja722"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuGithub />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/in/james-nickoli"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuLinkedin />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Developed the Computer Vision model
+                                            responsible for real-time card
+                                            identification and recognition from
+                                            camera input.
+                                        </p>
+                                    </li>
+
+                                    {/* kenneth */}
+                                    <li>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px'
+                                            }}
+                                        >
+                                            <strong>Kenneth Ong</strong> — QA
+                                            Lead
+                                            <div
+                                                className="links"
+                                                style={{
+                                                    display: 'flex',
+                                                    gap: '8px',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <a
+                                                    href="https://github.com/kennethkvs"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuGithub />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/in/kennethkvs"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuLinkedin />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Developed the user authentication
+                                            flows and testing framework while
+                                            co-managing project milestones and
+                                            weekly Scrum meetings.
+                                        </p>
+                                    </li>
+
+                                    {/* Geon */}
+                                    <li>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px'
+                                            }}
+                                        >
+                                            <strong>Geon Youn</strong> — ML
+                                            Lead
+                                            <div
+                                                className="links"
+                                                style={{
+                                                    display: 'flex',
+                                                    gap: '8px',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <a
+                                                    href="https://github.com/geon-youn"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuGithub />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/in/geon-youn"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <LuLinkedin />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Engineered the NLP search features
+                                            and semantic matching engine while
+                                            assisting with the development of
+                                            the camera vision system.
+                                        </p>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -353,8 +674,8 @@ const Landing: React.FC = () => {
                                             Using advance machine learning
                                             techniques, Kollec can rapidly
                                             identify collectibles in real time
-                                            using just your phone&apos;s camera. No
-                                            more manual entry or searching
+                                            using just your phone&apos;s camera.
+                                            No more manual entry or searching
                                             through endless lists!
                                         </Text>
                                         <Heading as="h4">
@@ -364,8 +685,8 @@ const Landing: React.FC = () => {
                                             Kollec first uses a custom trained
                                             YOLO segmentation machine learning
                                             model to locate any cards in view of
-                                            your device&apos;s camera. We then use
-                                            perceptual hashing to match the
+                                            your device&apos;s camera. We then
+                                            use perceptual hashing to match the
                                             found cards against our database of
                                             known cards. Once a match is found,
                                             it is shown to you so you can

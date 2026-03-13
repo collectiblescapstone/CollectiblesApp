@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 
-import Showcase from '@/components/edit-profile/Showcase'
 import DeleteAccount from '@/components/edit-profile/DeleteAccount'
 import { FormValues, VisibilityValues } from '@/types/personal-profile'
 import { GeoLocation } from '@/types/geolocation'
@@ -97,6 +96,7 @@ const PersonalProfileScreen: React.FC = () => {
     }
 
     const [isSaving, setIsSaving] = useState(false)
+    const [loadingUserData, setLoadingUserData] = useState(true)
 
     const bioVal = watch('bio')
     const profilePicVal = watch('profilePic')
@@ -166,6 +166,8 @@ const PersonalProfileScreen: React.FC = () => {
             } catch (err) {
                 console.error('Error loading profile', err)
             }
+
+            setLoadingUserData(false)
         }
 
         fetchProfile()
@@ -262,7 +264,7 @@ const PersonalProfileScreen: React.FC = () => {
         )
     }
 
-    if (loading || !session) {
+    if (loading || !session || loadingUserData) {
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />
@@ -538,7 +540,6 @@ const PersonalProfileScreen: React.FC = () => {
                         />
                     </InputGroup>
                 </Field.Root>
-                <Showcase />
                 <Text
                     fontSize="sm"
                     color="gray.700"

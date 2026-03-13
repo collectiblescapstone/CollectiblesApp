@@ -30,38 +30,43 @@ const Collection = ({ cards = [] }: RecentCardsProps) => {
                     Recently Added Cards
                 </Text>
             </Flex>
-            (cards.length !== 0) ? (
-            <Flex
-                flexDirection="row"
-                justifyContent="center"
-                alignItems="center"
-                wrap="wrap"
-                gap={5}
-            >
-                {cards.map((card: PokemonCardImage, index: number) => (
-                    <Flex key={index}>
-                        <Image
-                            src={card.image}
-                            alt={card.name}
-                            w="105px"
-                            h="auto"
-                            borderRadius="none"
-                        />
-                    </Flex>
-                ))}
-            </Flex>
-            ) : (
-            <Flex w="100%" justifyContent="center" alignItems="center" py={3}>
-                <Text
-                    fontSize="md"
-                    color="gray.600"
-                    fontWeight="semibold"
-                    mb={2}
+            {cards.length !== 0 ? (
+                <Flex
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    wrap="wrap"
+                    gap={5}
                 >
-                    Psst...you got cards on your phone?
-                </Text>
-            </Flex>
-            )
+                    {cards.map((card: PokemonCardImage, index: number) => (
+                        <Flex key={index}>
+                            <Image
+                                src={card.image}
+                                alt={card.name}
+                                w="105px"
+                                h="auto"
+                                borderRadius="none"
+                            />
+                        </Flex>
+                    ))}
+                </Flex>
+            ) : (
+                <Flex
+                    w="100%"
+                    justifyContent="center"
+                    alignItems="center"
+                    py={3}
+                >
+                    <Text
+                        fontSize="md"
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Psst...you got cards on your phone?
+                    </Text>
+                </Flex>
+            )}
         </Flex>
     )
 }

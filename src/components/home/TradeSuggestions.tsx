@@ -137,47 +137,6 @@ const TradeSuggestions: React.FC = () => {
         )
     }
 
-    if (users.length === 0) {
-        return (
-            <Flex
-                flexDirection="column"
-                gap={2}
-                justifyContent="flex-start"
-                alignItems="flex-start"
-                w="100%"
-                px={4}
-            >
-                <Divider />
-                <Flex mt={1}>
-                    <Text
-                        fontSize="md"
-                        color="gray.700"
-                        fontWeight="semibold"
-                        mb={2}
-                    >
-                        TradePost Suggestion
-                    </Text>
-                </Flex>
-                <Flex
-                    w="100%"
-                    justifyContent="center"
-                    alignItems="center"
-                    py={3}
-                >
-                    <Text
-                        fontSize="md"
-                        color="gray.600"
-                        fontWeight="semibold"
-                        mb={2}
-                    >
-                        Let&apos;s add some more cards to that TradeList and
-                        WishList, watcha say?
-                    </Text>
-                </Flex>
-            </Flex>
-        )
-    }
-
     const closestUser = users.reduce<TradeCardProps | null>((closest, user) => {
         if (users.length === 0) {
             return null

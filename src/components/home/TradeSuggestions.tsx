@@ -179,6 +179,9 @@ const TradeSuggestions: React.FC = () => {
     }
 
     const closestUser = users.reduce<TradeCardProps | null>((closest, user) => {
+        if (users.length === 0) {
+            return null
+        }
         const distance = user.distance
         if (distance == null) {
             return closest
@@ -211,38 +214,57 @@ const TradeSuggestions: React.FC = () => {
                     TradePost Suggestion
                 </Text>
             </Flex>
-            {(closestUser ? [closestUser] : []).map((u) => (
-                <Box
-                    key={u.username}
-                    cursor="pointer"
+            {closestUser ? (
+                [closestUser].map((u) => (
+                    <Box
+                        key={u.username}
+                        cursor="pointer"
+                        alignItems="center"
+                        onClick={() =>
+                            TradePopup.open('trade', {
+                                title: 'Trade with ' + u.username,
+                                content: (
+                                    <TradeCardPopup
+                                        username={u.username}
+                                        avatarUrl={u.avatarUrl}
+                                        contacts={u.contacts}
+                                        user1Wishlist={u.user1Wishlist ?? []}
+                                        user2Wishlist={u.user2Wishlist ?? []}
+                                        onNavigateToProfile={closeTradePopup}
+                                    />
+                                ),
+                                onClickClose: closeTradePopup
+                            })
+                        }
+                    >
+                        <ViableOptions
+                            username={u.username}
+                            avatarUrl={u.avatarUrl}
+                            rating={u.rating}
+                            user1Wishlist={u.user1Wishlist ?? []}
+                            distance={u.distance}
+                            ratingCount={u.ratingCount}
+                        />
+                    </Box>
+                ))
+            ) : (
+                <Flex
+                    w="100%"
+                    justifyContent="center"
                     alignItems="center"
-                    onClick={() =>
-                        TradePopup.open('trade', {
-                            title: 'Trade with ' + u.username,
-                            content: (
-                                <TradeCardPopup
-                                    username={u.username}
-                                    avatarUrl={u.avatarUrl}
-                                    contacts={u.contacts}
-                                    user1Wishlist={u.user1Wishlist ?? []}
-                                    user2Wishlist={u.user2Wishlist ?? []}
-                                    onNavigateToProfile={closeTradePopup}
-                                />
-                            ),
-                            onClickClose: closeTradePopup
-                        })
-                    }
+                    py={3}
                 >
-                    <ViableOptions
-                        username={u.username}
-                        avatarUrl={u.avatarUrl}
-                        rating={u.rating}
-                        user1Wishlist={u.user1Wishlist ?? []}
-                        distance={u.distance}
-                        ratingCount={u.ratingCount}
-                    />
-                </Box>
-            ))}
+                    <Text
+                        fontSize="md"
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Let&apos;s add some more cards to that TradeList and
+                        WishList, watcha say?
+                    </Text>
+                </Flex>
+            )}
             {/* Button below navigates to /trade/page.tsx */}
             <Flex
                 justifyContent="center"

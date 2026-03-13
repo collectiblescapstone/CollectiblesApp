@@ -11,7 +11,7 @@ export const fetchUserData = async (
         data: { userID },
         headers: {
             'Content-Type': 'application/json',
-            ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {})
+            Authorization: `Bearer ${accessToken}`
         }
     })
 

@@ -3,15 +3,13 @@
 import React from 'react'
 import Divider from '@/components/profiles/Divider'
 import { Flex, Image, Text } from '@chakra-ui/react'
-import { useRandomCards } from '@/components/personal-profile/RandomCard' // update to use sets rather than cards
 import { PokemonCardImage } from '@/types/personal-profile'
 
-const Collection: React.FC = () => {
-    const { cards, loading } = useRandomCards('ex5', 3)
+interface RecentCardsProps {
+    cards?: PokemonCardImage[]
+}
 
-    if (loading) return <Text>Loading cards...</Text>
-    if (cards.length === 0) return null
-
+const Collection = ({ cards = [] }: RecentCardsProps) => {
     return (
         <Flex
             flexDirection="column"
@@ -29,28 +27,46 @@ const Collection: React.FC = () => {
                     fontWeight="semibold"
                     mb={2}
                 >
-                    Your collection at a glance
+                    Recently Added Cards
                 </Text>
             </Flex>
-            <Flex
-                flexDirection="row"
-                justifyContent="center"
-                alignItems="center"
-                wrap="wrap"
-                gap={5}
-            >
-                {cards.map((card: PokemonCardImage, index: number) => (
-                    <Flex key={index}>
-                        <Image
-                            src={`${card.image}/high.png`}
-                            alt={card.name}
-                            w="105px"
-                            h="auto"
-                            borderRadius="none"
-                        />
-                    </Flex>
-                ))}
-            </Flex>
+            {cards.length !== 0 ? (
+                <Flex
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    wrap="wrap"
+                    gap={5}
+                >
+                    {cards.map((card: PokemonCardImage, index: number) => (
+                        <Flex key={index}>
+                            <Image
+                                src={card.image}
+                                alt={card.name}
+                                w="105px"
+                                h="auto"
+                                borderRadius="none"
+                            />
+                        </Flex>
+                    ))}
+                </Flex>
+            ) : (
+                <Flex
+                    w="100%"
+                    justifyContent="center"
+                    alignItems="center"
+                    py={3}
+                >
+                    <Text
+                        fontSize="md"
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        Psst...you got cards on your phone?
+                    </Text>
+                </Flex>
+            )}
         </Flex>
     )
 }

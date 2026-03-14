@@ -40,6 +40,13 @@ Object.defineProperty(window, 'matchMedia', {
     }))
 })
 
+// ResizeObserver mock
+global.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn()
+}))
+
 // Error handling
 const originalError = console.error
 console.error = (...args) => {

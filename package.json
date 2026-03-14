@@ -22,11 +22,11 @@
         "ci:db:deploy": "npx prisma migrate deploy"
     },
     "dependencies": {
+        "@capacitor-community/camera-preview": "^7.0.0",
         "@capacitor/android": "^7.4.3",
         "@capacitor/camera": "^7.0.4",
         "@capacitor/clipboard": "^7.0.4",
         "@capacitor/core": "^7.4.3",
-        "@capacitor-community/camera-preview": "^7.0.0",
         "@capacitor/ios": "^7.4.3",
         "@chakra-ui/icons": "^2.2.4",
         "@chakra-ui/react": "^3.28.0",
@@ -53,7 +53,7 @@
         "lightningcss-linux-x64-gnu": "^1.31.1"
     },
     "devDependencies": {
-        "@capacitor/cli": "^8.0.2",
+        "@capacitor/cli": "^8.2.0",
         "@chakra-ui/cli": "^2.5.8",
         "@eslint/eslintrc": "^3",
         "@swc/core": "^1.15.1",

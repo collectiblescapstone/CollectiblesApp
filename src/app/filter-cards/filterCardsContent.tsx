@@ -30,6 +30,7 @@ import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard'
 
 // Types
 import type { CardData } from '@/types/pokemon-card'
+import { sortCardId } from '@/utils/sortCardId'
 
 const FilterCardsContent = () => {
     // Search Params
@@ -66,7 +67,7 @@ const FilterCardsContent = () => {
 
             setLoading(true)
             try {
-                const filteredCards = allCards.filter((card) => {
+                let filteredCards = allCards.filter((card) => {
                     if (type === 'set') {
                         return card.setId === setId
                     }
@@ -97,6 +98,10 @@ const FilterCardsContent = () => {
                         setUserCards(userCards)
                     }
                 }
+
+                filteredCards = filteredCards
+                    .slice()
+                    .sort((a, b) => sortCardId(a.id, b.id))
 
                 const cardNums: Record<string, string> = {}
                 for (const card of filteredCards) {
@@ -214,12 +219,43 @@ const FilterCardsContent = () => {
                             cardId={card.id}
                             key={index}
                             cardName={card.name}
-                            cardSetId={
-                                cardNumbers[card.id] +
-                                (Number(card.set.official) > 0
-                                    ? '/' + card.set.official
-                                    : '')
-                            }
+                            cardSetId={(() => {
+                                const fullId = cardNumbers[card.id] ?? card.id // e.g., "GG1" or "001"
+                                const lettersMatch = fullId.match(/^[A-Za-z]+/) // extract letters at start
+                                const letters = lettersMatch
+                                    ? lettersMatch[0]
+                                    : '' // "GG" or ""
+                                const numberPartRaw = fullId.replace(
+                                    letters,
+                                    ''
+                                ) // "1" or "01"
+
+                                const officialCount =
+                                    Number(card.set?.official) || 0
+                                const padLength =
+                                    officialCount > 0
+                                        ? String(officialCount).length
+                                        : 2 // dynamic padding
+                                const numberPart = numberPartRaw.padStart(
+                                    padLength,
+                                    '0'
+                                )
+
+                                // If letters exist and official count > 0, prepend letters to official count
+                                const officialPart =
+                                    officialCount > 0
+                                        ? '/' +
+                                          (letters
+                                              ? letters + officialCount
+                                              : officialCount)
+                                        : ''
+
+                                return (
+                                    (letters ? letters : '') +
+                                    numberPart +
+                                    officialPart
+                                ) // e.g., "GG001/GG070"
+                            })()}
                             cardOwned={userCards.includes(card.id)}
                             image={card.image_url}
                         />

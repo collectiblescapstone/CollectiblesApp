@@ -56,8 +56,6 @@ export async function PATCH(request: Request) {
         if (typeof visibility === 'string')
             data.visibility = visibility as FormValues['visibility']
 
-        console.log('Data to update:', data)
-
         const updated = await prisma.user.update({
             where: { id: identifier },
             data

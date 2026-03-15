@@ -55,8 +55,8 @@ const PersonalProfileScreen: React.FC = () => {
             username: '',
             bio: '',
             location: '',
-            longitude: NaN,
-            latitude: NaN,
+            longitude: null,
+            latitude: null,
             instagram: '',
             x: '',
             facebook: '',
@@ -89,10 +89,10 @@ const PersonalProfileScreen: React.FC = () => {
             value.trim() === ''
         ) {
             setSelectedPlace(null)
-            setValue('latitude', NaN, {
+            setValue('latitude', null, {
                 shouldValidate: false
             })
-            setValue('longitude', NaN, {
+            setValue('longitude', null, {
                 shouldValidate: false
             })
         }
@@ -154,8 +154,8 @@ const PersonalProfileScreen: React.FC = () => {
                     email: data.email ?? '',
                     bio: data.bio ?? '',
                     location: data.location ?? '',
-                    latitude: data.latitude ?? NaN,
-                    longitude: data.longitude ?? NaN,
+                    latitude: data.latitude ?? null,
+                    longitude: data.longitude ?? null,
                     instagram: data.instagram ?? '',
                     x: data.x ?? '',
                     facebook: data.facebook ?? '',

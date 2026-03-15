@@ -1,0 +1,30 @@
+[
+    {
+        "cardCount": 30,
+        "originalSet": "swsh10",
+        "id": "swsh9.1",
+        "subsetName": "Trainer Gallery",
+        "prefix": "TG"
+    },
+    {
+        "cardCount": 30,
+        "originalSet": "swsh10",
+        "id": "swsh10.1",
+        "subsetName": "Trainer Gallery",
+        "prefix": "TG"
+    },
+    {
+        "cardCount": 30,
+        "originalSet": "swsh12",
+        "id": "swsh12.1",
+        "subsetName": "Trainer Gallery",
+        "prefix": "TG"
+    },
+    {
+        "cardCount": 70,
+        "originalSet": "swsh12.5",
+        "id": "swsh12.5.1",
+        "subsetName": "Galarian Gallery",
+        "prefix": "GG"
+    }
+]

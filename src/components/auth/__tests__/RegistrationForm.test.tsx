@@ -141,8 +141,7 @@ describe('RegistrationForm', () => {
         ;(CapacitorHttp.post as jest.Mock).mockResolvedValue({
             ok: true,
             data: {
-                error: true,
-                message: { code: 'P2002' }
+                error: { code: 'P2002' }
             }
         })
 

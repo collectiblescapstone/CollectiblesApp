@@ -119,7 +119,13 @@ const PersonalProfileScreen: React.FC = () => {
                 data: JSON.stringify({ id: session?.user?.id, ...data })
             })
 
-            if (res.status !== 200) {
+            if (res.data.error && res.data.error.code === 'P2002') {
+                setError('username', {
+                    type: 'username_taken',
+                    message:
+                        'An account with this username already exists. Please pick a different username.'
+                })
+            } else if (res.status !== 200) {
                 const err = res.data.error
                 console.error(err)
             } else {
@@ -429,18 +435,11 @@ const PersonalProfileScreen: React.FC = () => {
                         Write a little about yourself for others to see.
                     </Field.HelperText>
                 </Field.Root>
-                <Field.Root
-                    required
-                    invalid={!!errors.location}
-                    position="relative"
-                >
-                    <Field.Label>
-                        Location <Field.RequiredIndicator />
-                    </Field.Label>
+                <Field.Root invalid={!!errors.location} position="relative">
+                    <Field.Label>Location</Field.Label>
                     <Controller
                         name="location"
                         control={control}
-                        rules={{ required: 'Location is required' }}
                         render={({ field }) => (
                             <Input
                                 type="text"

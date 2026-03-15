@@ -75,11 +75,7 @@ const RegistrationForm = () => {
             }).then((res) => res.data)
 
             // Check for username uniqueness error
-            if (
-                response.error &&
-                response.message &&
-                response.message.code === 'P2002'
-            ) {
+            if (response.error && response.error.code === 'P2002') {
                 setError('root', {
                     type: 'username_taken',
                     message:

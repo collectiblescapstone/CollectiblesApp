@@ -84,7 +84,10 @@ const PersonalProfileScreen: React.FC = () => {
     const handleInputChange = (value: string) => {
         setShowLocationSuggestions(value)
         setValue('location', value, { shouldValidate: true })
-        if (selectedPlace && value !== selectedPlace.formatted) {
+        if (
+            (selectedPlace && value !== selectedPlace.formatted) ||
+            value.trim() === ''
+        ) {
             setSelectedPlace(null)
             setValue('latitude', NaN, {
                 shouldValidate: false

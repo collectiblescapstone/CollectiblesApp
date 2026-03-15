@@ -44,7 +44,9 @@ export async function PATCH(request: Request) {
         if (typeof bio === 'string') data.bio = bio
         if (typeof location === 'string') data.location = location
         if (typeof latitude === 'number') data.latitude = latitude
+        if (latitude === null) data.latitude = null
         if (typeof longitude === 'number') data.longitude = longitude
+        if (longitude === null) data.longitude = null
         if (typeof instagram === 'string') data.instagram = instagram
         if (typeof x === 'string') data.x = x
         if (typeof facebook === 'string') data.facebook = facebook
@@ -53,6 +55,8 @@ export async function PATCH(request: Request) {
         if (typeof profilePic === 'number') data.profile_pic = profilePic
         if (typeof visibility === 'string')
             data.visibility = visibility as FormValues['visibility']
+
+        console.log('Data to update:', data)
 
         const updated = await prisma.user.update({
             where: { id: identifier },

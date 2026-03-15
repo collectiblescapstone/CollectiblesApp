@@ -4,6 +4,10 @@ import * as path from 'path'
 
 const prisma = new PrismaClient()
 
+// ----------------------
+// Types
+// ----------------------
+
 type CardFromFile = {
     id: string
     name: string
@@ -11,15 +15,9 @@ type CardFromFile = {
     category: string
     illustrator: string | null
     rarity: string
-    set: {
-        id: string
-        name: string
-    }
+    set: { id: string; name: string }
     variants?: { [key: string]: boolean }
-    variants_detailed?: {
-        type: string
-        size?: string
-    }[]
+    variants_detailed?: { type: string; size?: string }[]
     dexId: number[] | null
     image: string
 }
@@ -27,9 +25,7 @@ type CardFromFile = {
 type SetFromFile = {
     id: string
     name: string
-    serie?: {
-        name: string
-    }
+    serie?: { name: string }
     logo?: string
     symbol?: string
     cardCount: {
@@ -38,23 +34,50 @@ type SetFromFile = {
     }
 }
 
+type SubsetFromFile = {
+    cardCount: number
+    originalSet: string
+    id: string
+    subsetName: string
+    prefix: string
+}
+
+// ----------------------
+// Helpers
+// ----------------------
+
+function normalizeVariants(card: CardFromFile): string[] {
+    let variants: string[] = []
+
+    if (card.variants_detailed?.length) {
+        variants = card.variants_detailed.map((v) => v.type)
+    } else if (card.variants) {
+        variants = Object.keys(card.variants).filter((k) => card.variants?.[k])
+    }
+
+    return [...new Set(variants)].sort()
+}
+
+// ----------------------
+// Main
+// ----------------------
+
 async function main() {
-    console.log('Start seeding process...')
+    console.log('Starting seed...')
 
     const dataPath = path.join(process.cwd(), 'public', 'temporary_card_data')
 
-    // -------------------------
-    // Seed Sets
-    // -------------------------
+    // =====================================================
+    // SETS
+    // =====================================================
 
-    console.log('Seeding sets...')
+    console.log('Loading sets...')
 
-    const setsPath = path.join(dataPath, 'sets.json')
-    const setsFileContents = fs.readFileSync(setsPath, 'utf-8')
+    const sets: SetFromFile[] = JSON.parse(
+        fs.readFileSync(path.join(dataPath, 'sets.json'), 'utf8')
+    )
 
-    const allSetsFromFile: SetFromFile[] = JSON.parse(setsFileContents)
-
-    const setList = allSetsFromFile.map((set) => ({
+    const normalizedSets = sets.map((set) => ({
         id: set.id,
         name: set.name,
         series: set.serie?.name || 'Other',
@@ -64,102 +87,106 @@ async function main() {
         total: set.cardCount.total
     }))
 
-    for (const set of setList) {
-        await prisma.set.upsert({
-            where: { id: set.id },
-            update: set,
-            create: set
-        })
-    }
+    await prisma.set.createMany({
+        data: normalizedSets,
+        skipDuplicates: true
+    })
 
-    console.log(`Processed ${setList.length} sets.`)
+    console.log(`Sets processed: ${normalizedSets.length}`)
 
-    // -------------------------
-    // Load card files
-    // -------------------------
+    // =====================================================
+    // SUBSETS
+    // =====================================================
 
-    console.log('Reading card files...')
+    console.log('Loading subsets...')
+
+    const subsets: SubsetFromFile[] = JSON.parse(
+        fs.readFileSync(path.join(dataPath, 'subsets.json'), 'utf8')
+    )
+
+    const normalizedSubsets = subsets.map((subset) => ({
+        id: subset.id,
+        setId: subset.originalSet,
+        name: subset.subsetName,
+        prefix: subset.prefix,
+        official: subset.cardCount
+    }))
+
+    await prisma.subset.createMany({
+        data: normalizedSubsets,
+        skipDuplicates: true
+    })
+
+    console.log(`Subsets processed: ${normalizedSubsets.length}`)
+
+    // =====================================================
+    // LOAD CARD FILES
+    // =====================================================
+
+    console.log('Loading card files...')
+
+    const filenames = fs
+        .readdirSync(dataPath)
+        .filter(
+            (f) =>
+                f.endsWith('.json') && f !== 'sets.json' && f !== 'subsets.json'
+        )
 
     const allCards: CardFromFile[] = []
 
-    const cardFilenames = fs
-        .readdirSync(dataPath)
-        .filter((f) => f.endsWith('.json') && f !== 'sets.json')
+    for (const file of filenames) {
+        const filePath = path.join(dataPath, file)
 
-    console.log(`Found ${cardFilenames.length} card data files.`)
+        const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'))
 
-    for (const filename of cardFilenames) {
-        const filePath = path.join(dataPath, filename)
-
-        console.log(`Reading ${filename}...`)
-
-        const fileContents = fs.readFileSync(filePath, 'utf-8')
-        const parsedJson = JSON.parse(fileContents)
-
-        if (parsedJson.cards && Array.isArray(parsedJson.cards)) {
-            allCards.push(...parsedJson.cards)
+        if (Array.isArray(parsed.cards)) {
+            allCards.push(...parsed.cards)
         }
     }
 
     console.log(`Total cards loaded: ${allCards.length}`)
 
-    const validCards = allCards.filter((card) => card?.set?.id)
+    const validCards = allCards.filter((c) => c?.set?.id)
 
     console.log(`Valid cards: ${validCards.length}`)
 
-    // -------------------------
-    // Normalize card data
-    // -------------------------
+    // =====================================================
+    // NORMALIZE CARDS
+    // =====================================================
 
-    const normalizedCards = validCards.map((card) => {
-        let cardVariants: string[] = []
+    const normalizedCards = validCards.map((card) => ({
+        id: card.id,
+        name: card.name ?? '',
+        category: card.category ?? '',
+        types: card.types ?? [],
+        illustrator: card.illustrator ?? 'Unknown',
+        rarity: card.rarity ?? '',
+        variants: normalizeVariants(card),
+        dexId: card.dexId ?? [],
+        setId: card.set.id,
+        image_url: `${card.image}/low.png`
+    }))
 
-        if (card.variants_detailed && card.variants_detailed.length > 0) {
-            cardVariants = card.variants_detailed.map((v) => v.type)
-        } else if (card.variants) {
-            cardVariants = Object.keys(card.variants).filter(
-                (key) => card.variants?.[key]
-            )
-        }
+    // =====================================================
+    // INSERT CARDS
+    // =====================================================
 
-        // remove duplicates + stable ordering
-        cardVariants = [...new Set(cardVariants)].sort()
-
-        return {
-            id: card.id,
-            name: card.name ?? '',
-            category: card.category ?? '',
-            types: card.types ?? [],
-            illustrator: card.illustrator ?? 'Unknown',
-            rarity: card.rarity ?? '',
-            variants: cardVariants,
-            dexId: card.dexId ?? [],
-            setId: card.set.id,
-            image_url: `${card.image}/low.png`
-        }
-    })
-
-    // -------------------------
-    // Insert new cards
-    // -------------------------
-
-    console.log('Creating new cards with createMany...')
+    console.log('Inserting new cards...')
 
     await prisma.card.createMany({
         data: normalizedCards,
         skipDuplicates: true
     })
 
-    console.log('Initial insert complete.')
+    console.log('Initial card insert complete.')
 
-    // -------------------------
-    // Update existing cards
-    // -------------------------
+    // =====================================================
+    // UPDATE CARDS
+    // =====================================================
 
     console.log('Updating existing cards...')
 
     const batchSize = 100
-    let updated = 0
 
     for (let i = 0; i < normalizedCards.length; i += batchSize) {
         const batch = normalizedCards.slice(i, i + batchSize)
@@ -183,19 +210,19 @@ async function main() {
             )
         )
 
-        updated += batch.length
-
         console.log(
-            `Processed batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(
+            `Batch ${Math.floor(i / batchSize) + 1} / ${Math.ceil(
                 normalizedCards.length / batchSize
             )}`
         )
     }
 
-    console.log(`Updated ${updated} cards.`)
+    console.log('Card updates complete.')
 
-    console.log('Seeding complete.')
+    console.log('Seed complete.')
 }
+
+// ----------------------
 
 main()
     .catch((e) => {

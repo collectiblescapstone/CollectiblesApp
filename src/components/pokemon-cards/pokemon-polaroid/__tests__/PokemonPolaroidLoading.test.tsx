@@ -1,4 +1,3 @@
-import { screen } from '@testing-library/react'
 import { renderWithTheme } from '../../../../utils/testing-utils'
 import PokemonPolaroidLoading from '../PokemonPolaroidLoading'
 

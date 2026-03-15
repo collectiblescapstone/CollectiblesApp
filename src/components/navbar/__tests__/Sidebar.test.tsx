@@ -211,9 +211,6 @@ describe('Sidebar', () => {
         })
 
         it('calls custom onClick handler when provided', async () => {
-            const { MENU_ITEMS } = require('../constants')
-            const customOnClick = MENU_ITEMS[2].onClick
-
             renderWithTheme(<Sidebar />)
 
             const cameraButton = screen.getByRole('button', {
@@ -222,7 +219,7 @@ describe('Sidebar', () => {
             fireEvent.click(cameraButton)
 
             await waitFor(() => {
-                expect(customOnClick).toHaveBeenCalled()
+                expect(mockPush).toHaveBeenCalledWith('/custom-camera')
             })
         })
 
@@ -262,9 +259,6 @@ describe('Sidebar', () => {
         })
 
         it('calls custom onClick with Enter key', async () => {
-            const { MENU_ITEMS } = require('../constants')
-            const customOnClick = MENU_ITEMS[2].onClick
-
             renderWithTheme(<Sidebar />)
 
             const cameraButton = screen.getByRole('button', {
@@ -273,7 +267,7 @@ describe('Sidebar', () => {
             fireEvent.keyDown(cameraButton, { key: 'Enter', code: 'Enter' })
 
             await waitFor(() => {
-                expect(customOnClick).toHaveBeenCalled()
+                expect(mockPush).toHaveBeenCalledWith('/custom-camera')
             })
         })
     })

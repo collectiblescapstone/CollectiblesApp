@@ -78,15 +78,14 @@ const mockUseAuth = AuthProviderModule.useAuth as jest.MockedFunction<
 const mockTradePopupOpen = TradePopup.open as jest.MockedFunction<
     typeof TradePopup.open
 >
-const mockTradePopupClose = TradePopup.close as jest.MockedFunction<
-    typeof TradePopup.close
->
 
 describe('TradeSuggestions', () => {
+    type AuthState = ReturnType<typeof AuthProviderModule.useAuth>
+
     const mockSession = {
-        user: { id: 'user123' } as any,
+        user: { id: 'user123' },
         access_token: 'mock-token'
-    } as any
+    } as unknown as AuthState['session']
 
     const mockViableOptions: ViableOption[] = [
         {
@@ -164,7 +163,7 @@ describe('TradeSuggestions', () => {
         mockUseAuth.mockReturnValue({
             session: mockSession,
             loading: false
-        } as any)
+        } as unknown as AuthState)
         mockFetchTradeOptions.mockResolvedValue({
             viableOptions: mockViableOptions
         })
@@ -179,7 +178,7 @@ describe('TradeSuggestions', () => {
             mockUseAuth.mockReturnValue({
                 session: null,
                 loading: true
-            } as any)
+            } as unknown as AuthState)
 
             renderWithTheme(<TradeSuggestions />)
 
@@ -223,7 +222,7 @@ describe('TradeSuggestions', () => {
             mockUseAuth.mockReturnValue({
                 session: null,
                 loading: false
-            } as any)
+            } as unknown as AuthState)
 
             renderWithTheme(<TradeSuggestions />)
 

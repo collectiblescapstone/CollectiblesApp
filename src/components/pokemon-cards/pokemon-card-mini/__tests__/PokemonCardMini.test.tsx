@@ -2,10 +2,17 @@ import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { renderWithTheme } from '../../../../utils/testing-utils'
 import PokemonCardMini from '../PokemonCardMini'
 import * as wishlistQueries from '../../../../utils/wishlist/wishlistQueries'
+import * as AuthProvider from '../../../../context/AuthProvider'
+
+type LinkLikeProps = {
+    children: React.ReactNode
+    href: string | { pathname?: string }
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>
+}
 
 // Mock next/link
 jest.mock('next/link', () => {
-    return ({ children, href, onClick }: any) => {
+    const MockLink = ({ children, href, onClick }: LinkLikeProps) => {
         return (
             <a
                 href={typeof href === 'string' ? href : href.pathname}
@@ -15,6 +22,8 @@ jest.mock('next/link', () => {
             </a>
         )
     }
+    MockLink.displayName = 'MockLink'
+    return MockLink
 })
 
 // Mock next/navigation
@@ -36,6 +45,11 @@ jest.mock('../../../../context/AuthProvider', () => ({
         session: mockSession
     }))
 }))
+
+const mockUseAuth = AuthProvider.useAuth as jest.MockedFunction<
+    typeof AuthProvider.useAuth
+>
+type AuthState = ReturnType<typeof AuthProvider.useAuth>
 
 // Mock wishlist utilities
 jest.mock('../../../../utils/wishlist/wishlistQueries', () => ({
@@ -164,8 +178,7 @@ describe('PokemonCardMini', () => {
 
     describe('Wishlist Functionality', () => {
         it('calls updateWishlist when wishlist card is clicked', async () => {
-            const { useAuth } = require('../../../../context/AuthProvider')
-            useAuth.mockReturnValue({ session: mockSession })
+            mockUseAuth.mockReturnValue({ session: mockSession } as AuthState)
 
             mockUpdateWishlist.mockResolvedValue(undefined)
 
@@ -185,8 +198,7 @@ describe('PokemonCardMini', () => {
         })
 
         it('navigates to wishlist page after adding to wishlist', async () => {
-            const { useAuth } = require('../../../../context/AuthProvider')
-            useAuth.mockReturnValue({ session: mockSession })
+            mockUseAuth.mockReturnValue({ session: mockSession } as AuthState)
 
             mockUpdateWishlist.mockResolvedValue(undefined)
 
@@ -205,8 +217,9 @@ describe('PokemonCardMini', () => {
         })
 
         it('does not call updateWishlist if session is undefined', async () => {
-            const { useAuth } = require('../../../../context/AuthProvider')
-            useAuth.mockReturnValue({ session: undefined })
+            mockUseAuth.mockReturnValue({
+                session: undefined
+            } as unknown as AuthState)
 
             const { container } = renderWithTheme(
                 <PokemonCardMini {...defaultProps} wishlist={true} />
@@ -222,8 +235,7 @@ describe('PokemonCardMini', () => {
 
         it('handles error when adding to wishlist fails', async () => {
             const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-            const { useAuth } = require('../../../../context/AuthProvider')
-            useAuth.mockReturnValue({ session: mockSession })
+            mockUseAuth.mockReturnValue({ session: mockSession } as AuthState)
 
             mockUpdateWishlist.mockRejectedValue(new Error('Network error'))
 
@@ -242,8 +254,7 @@ describe('PokemonCardMini', () => {
         })
 
         it('prevents multiple simultaneous wishlist additions', async () => {
-            const { useAuth } = require('../../../../context/AuthProvider')
-            useAuth.mockReturnValue({ session: mockSession })
+            mockUseAuth.mockReturnValue({ session: mockSession } as AuthState)
 
             mockUpdateWishlist.mockImplementation(
                 () => new Promise((resolve) => setTimeout(resolve, 100))
@@ -292,9 +303,7 @@ describe('PokemonCardMini', () => {
         })
 
         it('has hover effects configured', () => {
-            const { container } = renderWithTheme(
-                <PokemonCardMini {...defaultProps} />
-            )
+            renderWithTheme(<PokemonCardMini {...defaultProps} />)
 
             const button = screen.getByRole('button')
             expect(button).toBeInTheDocument()

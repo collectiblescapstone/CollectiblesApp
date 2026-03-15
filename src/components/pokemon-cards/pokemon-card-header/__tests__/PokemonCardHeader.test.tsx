@@ -1,9 +1,28 @@
 import { screen, waitFor } from '@testing-library/react'
 import { renderWithTheme } from '../../../../utils/testing-utils'
 import PokemonCardHeader from '../PokemonCardHeader'
+import * as PokemonCardsProvider from '../../../../context/PokemonCardsProvider'
+
+type PokemonCardsContextState = ReturnType<
+    typeof PokemonCardsProvider.usePokemonCards
+>
+
+type MockPokemonCard = {
+    name: string
+    image_url: string
+    setId?: string
+    category: string
+    rarity: string
+    illustrator: string
+}
+
+type MockPokemonSet = {
+    name: string
+    official: number
+}
 
 // Mock PokemonCardsProvider
-const mockPokemonCards: Record<string, any> = {
+const mockPokemonCards: Record<string, MockPokemonCard> = {
     'sv01-001': {
         name: 'Pikachu',
         image_url: 'https://example.com/pikachu.png',
@@ -30,7 +49,7 @@ const mockPokemonCards: Record<string, any> = {
     }
 }
 
-const mockPokemonSets: Record<string, any> = {
+const mockPokemonSets: Record<string, MockPokemonSet> = {
     sv01: {
         name: 'Scarlet & Violet',
         official: 150
@@ -51,6 +70,31 @@ jest.mock('../../../../context/PokemonCardsProvider', () => ({
         pokemonSets: mockPokemonSets
     }))
 }))
+
+const mockUsePokemonCards =
+    PokemonCardsProvider.usePokemonCards as jest.MockedFunction<
+        typeof PokemonCardsProvider.usePokemonCards
+    >
+
+const createMockPokemonCardsContext = (
+    overrides?: Partial<PokemonCardsContextState>
+): PokemonCardsContextState => ({
+    POKEMONGEN: [],
+    pokemonCards: {},
+    pokemonSets: {},
+    masterSetCards: {},
+    pokemonMasterSetCards: {},
+    allCards: [],
+    getCardsBySetId: jest.fn(async () => ({})),
+    getCardsByName: jest.fn(async () => ({})),
+    getCardsByPokedex: jest.fn(async () => ({})),
+    grandmasterSetCount: jest.fn(async () => 0),
+    pokemonGrandmasterSetCount: jest.fn(async () => 0),
+    getFilteredCards: jest.fn(async () => []),
+    getPokemonName: jest.fn(async () => ''),
+    getGeneration: jest.fn(() => 0),
+    ...overrides
+})
 
 // Mock utility functions
 jest.mock('../../../../utils/capitalize', () => ({
@@ -229,13 +273,12 @@ describe('PokemonCardHeader', () => {
 
     describe('Error Handling', () => {
         it('handles missing card data gracefully', async () => {
-            const {
-                usePokemonCards
-            } = require('../../../../context/PokemonCardsProvider')
-            usePokemonCards.mockReturnValue({
-                pokemonCards: {},
-                pokemonSets: {}
-            })
+            mockUsePokemonCards.mockReturnValue(
+                createMockPokemonCardsContext({
+                    pokemonCards: {},
+                    pokemonSets: {}
+                })
+            )
 
             renderWithTheme(<PokemonCardHeader cardId="nonexistent" />)
 
@@ -246,22 +289,24 @@ describe('PokemonCardHeader', () => {
         })
 
         it('handles missing set information', async () => {
-            const {
-                usePokemonCards
-            } = require('../../../../context/PokemonCardsProvider')
-            usePokemonCards.mockReturnValue({
-                pokemonCards: {
-                    'test-001': {
-                        name: 'Test Card',
-                        image_url: 'test.png',
-                        setId: undefined,
-                        category: 'Pokemon',
-                        rarity: 'Common',
-                        illustrator: 'Test'
-                    }
-                },
-                pokemonSets: {}
-            })
+            mockUsePokemonCards.mockReturnValue(
+                createMockPokemonCardsContext({
+                    pokemonCards: {
+                        'test-001': {
+                            name: 'Test Card',
+                            image_url: 'test.png',
+                            setId: 'missing-set',
+                            category: 'Pokemon',
+                            types: [],
+                            rarity: 'Common',
+                            variants: [],
+                            dexId: [],
+                            illustrator: 'Test'
+                        }
+                    },
+                    pokemonSets: {}
+                })
+            )
 
             renderWithTheme(<PokemonCardHeader cardId="test-001" />)
 

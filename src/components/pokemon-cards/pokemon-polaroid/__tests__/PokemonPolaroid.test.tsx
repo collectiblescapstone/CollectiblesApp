@@ -5,15 +5,22 @@ import * as userPokemonCard from '../../../../utils/userPokemonCard'
 import * as AuthProvider from '../../../../context/AuthProvider'
 import * as PokemonCardsProvider from '../../../../context/PokemonCardsProvider'
 
+type LinkLikeProps = {
+    children: React.ReactNode
+    href: string | { pathname?: string }
+}
+
 // Mock next/link
 jest.mock('next/link', () => {
-    return ({ children, href }: any) => {
+    const MockLink = ({ children, href }: LinkLikeProps) => {
         return (
             <a href={typeof href === 'string' ? href : href.pathname}>
                 {children}
             </a>
         )
     }
+    MockLink.displayName = 'MockLink'
+    return MockLink
 })
 
 // Mock AuthProvider
@@ -31,6 +38,7 @@ jest.mock('../../../../context/AuthProvider', () => ({
 const mockUseAuth = AuthProvider.useAuth as jest.MockedFunction<
     typeof AuthProvider.useAuth
 >
+type AuthState = ReturnType<typeof AuthProvider.useAuth>
 
 // Mock PokemonCardsProvider
 const mockGetPokemonName = jest.fn()
@@ -44,6 +52,7 @@ const mockUsePokemonCards =
     PokemonCardsProvider.usePokemonCards as jest.MockedFunction<
         typeof PokemonCardsProvider.usePokemonCards
     >
+type PokemonCardsState = ReturnType<typeof PokemonCardsProvider.usePokemonCards>
 
 // Mock user pokemon card utilities
 jest.mock('../../../../utils/userPokemonCard', () => ({
@@ -88,10 +97,10 @@ describe('PokemonPolaroid', () => {
 
     beforeEach(() => {
         jest.clearAllMocks()
-        mockUseAuth.mockReturnValue({ session: mockSession } as any)
+        mockUseAuth.mockReturnValue({ session: mockSession } as AuthState)
         mockUsePokemonCards.mockReturnValue({
             getPokemonName: mockGetPokemonName
-        } as any)
+        } as unknown as PokemonCardsState)
         mockGetPokemonName.mockResolvedValue('Pikachu')
         mockUserPokemonMasterSetCount.mockResolvedValue(50)
         mockUserPokemonGrandmasterSetCount.mockResolvedValue(75)
@@ -115,7 +124,7 @@ describe('PokemonPolaroid', () => {
         })
 
         it('shows loading when masterSetCount is null', async () => {
-            mockUseAuth.mockReturnValue({ session: null } as any)
+            mockUseAuth.mockReturnValue({ session: null } as AuthState)
 
             renderWithTheme(<PokemonPolaroid {...defaultProps} />)
 
@@ -212,7 +221,7 @@ describe('PokemonPolaroid', () => {
 
     describe('Session Handling', () => {
         it('does not fetch when session is missing', async () => {
-            mockUseAuth.mockReturnValue({ session: null } as any)
+            mockUseAuth.mockReturnValue({ session: null } as AuthState)
 
             renderWithTheme(<PokemonPolaroid {...defaultProps} />)
 

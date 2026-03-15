@@ -73,7 +73,7 @@ describe('Footer', () => {
         it('highlights the active menu item based on current pathname', () => {
             mockPathname.mockReturnValue('/home')
 
-            const { container } = renderWithTheme(<Footer />)
+            renderWithTheme(<Footer />)
             const homeButton = screen.getByRole('button', {
                 name: 'Navigate to Home'
             })
@@ -125,9 +125,6 @@ describe('Footer', () => {
         })
 
         it('calls custom onClick handler when provided', async () => {
-            const { MENU_ITEMS } = require('../constants')
-            const customOnClick = MENU_ITEMS[2].onClick
-
             renderWithTheme(<Footer />)
 
             const cameraButton = screen.getByRole('button', {
@@ -136,7 +133,7 @@ describe('Footer', () => {
             fireEvent.click(cameraButton)
 
             await waitFor(() => {
-                expect(customOnClick).toHaveBeenCalled()
+                expect(mockPush).toHaveBeenCalledWith('/custom-camera')
             })
         })
 

@@ -1,7 +1,6 @@
 import { renderWithTheme } from '@/utils/testing-utils'
 import { screen } from '@testing-library/react'
 import PopularCards from '../PopularCards'
-import { count } from 'console'
 
 describe('PopularCards', () => {
     beforeEach(() => {

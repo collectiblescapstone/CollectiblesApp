@@ -4,15 +4,22 @@ import PokemonSet from '../PokemonSet'
 import * as userPokemonCard from '../../../../utils/userPokemonCard'
 import * as AuthProvider from '../../../../context/AuthProvider'
 
+type LinkLikeProps = {
+    children: React.ReactNode
+    href: string | { pathname?: string }
+}
+
 // Mock next/link
 jest.mock('next/link', () => {
-    return ({ children, href }: any) => {
+    const MockLink = ({ children, href }: LinkLikeProps) => {
         return (
             <a href={typeof href === 'string' ? href : href.pathname}>
                 {children}
             </a>
         )
     }
+    MockLink.displayName = 'MockLink'
+    return MockLink
 })
 
 // Mock AuthProvider
@@ -30,6 +37,7 @@ jest.mock('../../../../context/AuthProvider', () => ({
 const mockUseAuth = AuthProvider.useAuth as jest.MockedFunction<
     typeof AuthProvider.useAuth
 >
+type AuthState = ReturnType<typeof AuthProvider.useAuth>
 
 // Mock user pokemon card utilities
 jest.mock('../../../../utils/userPokemonCard', () => ({
@@ -77,7 +85,7 @@ describe('PokemonSet', () => {
 
     beforeEach(() => {
         jest.clearAllMocks()
-        mockUseAuth.mockReturnValue({ session: mockSession } as any)
+        mockUseAuth.mockReturnValue({ session: mockSession } as AuthState)
         mockUserMasterSetCount.mockResolvedValue(50)
         mockUserGrandmasterSetCount.mockResolvedValue(75)
     })
@@ -100,7 +108,7 @@ describe('PokemonSet', () => {
         })
 
         it('shows loading when masterSetCount is null', async () => {
-            mockUseAuth.mockReturnValue({ session: null } as any)
+            mockUseAuth.mockReturnValue({ session: null } as AuthState)
 
             renderWithTheme(<PokemonSet {...defaultProps} />)
 
@@ -110,7 +118,7 @@ describe('PokemonSet', () => {
         })
 
         it('shows loading when grandmasterSetCount is null', async () => {
-            mockUseAuth.mockReturnValue({ session: null } as any)
+            mockUseAuth.mockReturnValue({ session: null } as AuthState)
 
             renderWithTheme(<PokemonSet {...defaultProps} />)
 
@@ -207,7 +215,7 @@ describe('PokemonSet', () => {
 
     describe('Session Handling', () => {
         it('does not fetch when session is missing', async () => {
-            mockUseAuth.mockReturnValue({ session: null } as any)
+            mockUseAuth.mockReturnValue({ session: null } as AuthState)
 
             renderWithTheme(<PokemonSet {...defaultProps} />)
 

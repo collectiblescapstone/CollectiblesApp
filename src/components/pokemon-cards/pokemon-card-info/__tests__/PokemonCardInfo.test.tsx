@@ -3,6 +3,7 @@ import { renderWithTheme } from '../../../../utils/testing-utils'
 import PokemonCardInfo from '../PokemonCardInfo'
 import { CapacitorHttp } from '@capacitor/core'
 import * as AuthProvider from '../../../../context/AuthProvider'
+import type { Entry } from '../../../../utils/userPokemonCard'
 
 // Mock CapacitorHttp
 jest.mock('@capacitor/core', () => ({
@@ -30,6 +31,7 @@ jest.mock('../../../../context/AuthProvider', () => ({
 const mockUseAuth = AuthProvider.useAuth as jest.MockedFunction<
     typeof AuthProvider.useAuth
 >
+type AuthState = ReturnType<typeof AuthProvider.useAuth>
 
 // Mock PopupUI
 jest.mock('../../../../components/ui/PopupUI', () => ({
@@ -57,10 +59,6 @@ import * as userPokemonCard from '../../../../utils/userPokemonCard'
 const mockGetUserCard = userPokemonCard.getUserCard as jest.MockedFunction<
     typeof userPokemonCard.getUserCard
 >
-const mockRefreshPokemonCards =
-    userPokemonCard.refreshPokemonCards as jest.MockedFunction<
-        typeof userPokemonCard.refreshPokemonCards
-    >
 
 jest.mock('../../../../utils/cardInfo/cardGrading', () => ({
     cardConditionsMap: {
@@ -96,20 +94,23 @@ jest.mock('react-icons/tb', () => ({
 }))
 
 describe('PokemonCardInfo', () => {
-    const mockCardInfo = {
+    const mockCardInfo: Entry = {
         cardId: 'sv01-001',
         variant: 'normal',
         condition: 'near-mint',
+        setId: 'sv01',
+        forTrade: false,
+        showcase: false,
         grade: null,
         gradeLevel: null,
-        forTrade: false,
-        showcase: false
+        tags: [],
+        dexId: []
     }
 
     beforeEach(() => {
         jest.clearAllMocks()
-        mockUseAuth.mockReturnValue({ session: mockSession } as any)
-        mockGetUserCard.mockResolvedValue(mockCardInfo as any)
+        mockUseAuth.mockReturnValue({ session: mockSession } as AuthState)
+        mockGetUserCard.mockResolvedValue(mockCardInfo)
     })
 
     describe('Rendering', () => {
@@ -148,7 +149,7 @@ describe('PokemonCardInfo', () => {
                 ...mockCardInfo,
                 grade: 'PSA',
                 gradeLevel: '10'
-            } as any)
+            })
 
             renderWithTheme(
                 <PokemonCardInfo entryId="entry-123" deleteCard={false} />
@@ -175,7 +176,7 @@ describe('PokemonCardInfo', () => {
             mockGetUserCard.mockResolvedValue({
                 ...mockCardInfo,
                 showcase: true
-            } as any)
+            })
 
             renderWithTheme(
                 <PokemonCardInfo entryId="entry-123" deleteCard={false} />
@@ -190,7 +191,7 @@ describe('PokemonCardInfo', () => {
             mockGetUserCard.mockResolvedValue({
                 ...mockCardInfo,
                 forTrade: true
-            } as any)
+            })
 
             renderWithTheme(
                 <PokemonCardInfo entryId="entry-123" deleteCard={false} />
@@ -206,7 +207,7 @@ describe('PokemonCardInfo', () => {
                 ...mockCardInfo,
                 showcase: true,
                 forTrade: true
-            } as any)
+            })
 
             renderWithTheme(
                 <PokemonCardInfo entryId="entry-123" deleteCard={false} />
@@ -309,7 +310,9 @@ describe('PokemonCardInfo', () => {
     describe('Delete Handler', () => {
         it('deletes card and calls onDelete callback', async () => {
             const mockOnDelete = jest.fn()
-            mockDelete.mockResolvedValue({} as any)
+            mockDelete.mockResolvedValue(
+                {} as Awaited<ReturnType<typeof CapacitorHttp.delete>>
+            )
 
             renderWithTheme(
                 <PokemonCardInfo
@@ -328,8 +331,14 @@ describe('PokemonCardInfo', () => {
 
             // Get the popup config and extract the delete button onClick
             const popupConfig = mockPopupOpen.mock.calls[0][1]
-            const deleteButtonOnClick = (popupConfig.content as any).props
-                .children[1].props.children[1].props.onClick
+            const deleteButtonOnClick = (
+                (
+                    (popupConfig.content as { props: { children: unknown[] } })
+                        .props.children[1] as { props: { children: unknown[] } }
+                ).props.children[1] as {
+                    props: { onClick: () => Promise<void> | void }
+                }
+            ).props.onClick
 
             await deleteButtonOnClick()
 
@@ -349,7 +358,7 @@ describe('PokemonCardInfo', () => {
         })
 
         it('does not delete card when session is missing', async () => {
-            mockUseAuth.mockReturnValue({ session: null } as any)
+            mockUseAuth.mockReturnValue({ session: null } as AuthState)
 
             const mockOnDelete = jest.fn()
 
@@ -388,8 +397,14 @@ describe('PokemonCardInfo', () => {
             })
 
             const popupConfig = mockPopupOpen.mock.calls[0][1]
-            const deleteButtonOnClick = (popupConfig.content as any).props
-                .children[1].props.children[1].props.onClick
+            const deleteButtonOnClick = (
+                (
+                    (popupConfig.content as { props: { children: unknown[] } })
+                        .props.children[1] as { props: { children: unknown[] } }
+                ).props.children[1] as {
+                    props: { onClick: () => Promise<void> | void }
+                }
+            ).props.onClick
 
             await deleteButtonOnClick()
 
@@ -448,7 +463,7 @@ describe('PokemonCardInfo', () => {
         })
 
         it('does not fetch when session is missing', async () => {
-            mockUseAuth.mockReturnValue({ session: null } as any)
+            mockUseAuth.mockReturnValue({ session: null } as AuthState)
 
             renderWithTheme(
                 <PokemonCardInfo entryId="entry-123" deleteCard={false} />

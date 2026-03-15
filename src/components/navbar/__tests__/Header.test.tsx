@@ -1,6 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { renderWithTheme } from '../../../utils/testing-utils'
 import Header from '../Header'
+import * as HeaderProvider from '../../../context/HeaderProvider'
 
 // Mock next/navigation
 const mockBack = jest.fn()
@@ -27,6 +28,10 @@ jest.mock('../../../context/HeaderProvider', () => ({
         setProfileID: mockSetProfileID
     }))
 }))
+
+const mockUseHeader = HeaderProvider.useHeader as jest.MockedFunction<
+    typeof HeaderProvider.useHeader
+>
 
 // Mock the constants
 jest.mock('../constants', () => ({
@@ -111,9 +116,8 @@ describe('Header', () => {
 
     describe('Profile Page Handling', () => {
         it('displays profileId when pathname includes "profile"', () => {
-            const { useHeader } = require('../../../context/HeaderProvider')
             mockProfileId = 'TestUser123'
-            useHeader.mockReturnValue({
+            mockUseHeader.mockReturnValue({
                 profileId: mockProfileId,
                 setProfileID: mockSetProfileID
             })
@@ -126,9 +130,8 @@ describe('Header', () => {
         })
 
         it('displays profileId for uppercase PROFILE in pathname', () => {
-            const { useHeader } = require('../../../context/HeaderProvider')
             mockProfileId = 'AnotherUser'
-            useHeader.mockReturnValue({
+            mockUseHeader.mockReturnValue({
                 profileId: mockProfileId,
                 setProfileID: mockSetProfileID
             })

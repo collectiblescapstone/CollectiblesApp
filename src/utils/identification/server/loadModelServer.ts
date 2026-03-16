@@ -1,4 +1,4 @@
-import { InferenceSession, Tensor, env } from 'onnxruntime-node'
+import { InferenceSession, Tensor } from 'onnxruntime-node'
 
 let sessionNode: InferenceSession | null = null
 

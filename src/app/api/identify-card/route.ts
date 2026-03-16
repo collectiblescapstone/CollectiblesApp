@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server'
-import sharp from 'sharp'
 import { locateWithYOLOServer } from '@/utils/identification/server/locateWithYOLOServer'
 import cvReadyPromise, { CV } from '@techstark/opencv-js'
 import { CardClassifierServer } from '@/utils/identification/server/classifyNormalizedCardServer'
@@ -17,6 +16,7 @@ const getCVInstance = async (): Promise<CV> => {
 
 export const POST = async (request: Request) => {
     try {
+        const { default: sharp } = await import('sharp')
         const buffer = Buffer.from(await request.arrayBuffer())
 
         const { data, info } = await sharp(buffer)
@@ -35,7 +35,6 @@ export const POST = async (request: Request) => {
         const cv = await getCVInstance()
 
         const doLogging = false
-        const isLocal = false
         console.log('Running locateWithYOLOServer...')
         const res = await locateWithYOLOServer(imageData, cv, doLogging)
 

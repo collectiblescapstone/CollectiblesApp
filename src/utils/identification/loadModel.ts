@@ -46,3 +46,10 @@ export const loadModel = async (
 
     return session
 }
+
+export const releaseModel = () => {
+    if (session) {
+        session.release()
+        session = null
+    }
+}

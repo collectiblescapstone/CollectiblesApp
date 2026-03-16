@@ -33,7 +33,7 @@ export const IdentifyCards = ({
 
     const { session } = useAuth()
 
-    const isIOS = true //Capacitor.getPlatform() === 'ios'
+    const isIOS = Capacitor.getPlatform() === 'ios'
 
     useEffect(() => {
         // called when new image data is made available by parent, runs the whole identification pipeline and updates state with results
@@ -141,7 +141,7 @@ export const IdentifyCards = ({
         if (sourceImageData) {
             processImage(sourceImageData, onProcessed)
         }
-    }, [sourceImageData, onProcessed, overlayRef])
+    }, [sourceImageData, onProcessed, overlayRef, inputCanvasForIOS, isIOS])
 
     useEffect(() => {
         // remove instant added cards that are no longer identified

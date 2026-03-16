@@ -1,13 +1,12 @@
 import { CV, Mat } from '@techstark/opencv-js'
 
 import { CardData, CardDataObj } from '@/types/identification'
-
-let cardDataCacheServer: CardDataObj | null = null
-
 import path from 'path'
 import fs from 'fs/promises'
 
-export const CardClassifier = async (): Promise<
+let cardDataCacheServer: CardDataObj | null = null
+
+export const CardClassifierServer = async (): Promise<
     (cv: CV, image: Mat, k?: number) => CardData[]
 > => {
     /**

@@ -30,15 +30,17 @@ export const locateWithYOLOServer = async (
     logging: boolean = false
 ): Promise<{ results: NormalizeCardResult[] } | null> => {
     if (errorCountServer >= 5) {
-        console.warn('Too many errors in locateWithYOLOServer, skipping processing.')
+        console.warn(
+            'Too many errors in locateWithYOLOServer, skipping processing.'
+        )
         return null
     }
     let res = null
 
     const matsToDelete: Mat[] = []
-    let inputTensor: Tensor| null = null
-    let detections: Tensor| null = null
-    let proto: Tensor| null = null
+    let inputTensor: Tensor | null = null
+    let detections: Tensor | null = null
+    let proto: Tensor | null = null
 
     const srcWidth = imageData.width
     const srcHeight = imageData.height
@@ -77,18 +79,14 @@ export const locateWithYOLOServer = async (
         // ----------
         const tensorShape = [1, 3, MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH] // [batch, channel, height, width]
 
-            inputTensor = new Tensor(
-                'float32',
-                preProcessed.data32F,
-                tensorShape
-            )
+        inputTensor = new Tensor('float32', preProcessed.data32F, tensorShape)
         preProcessed.delete()
 
         if (logging) console.log('loading YOLO ONNX model')
         // ----------
         const session = await loadModelServer(
-                  path.join(process.cwd(), 'public', 'models', 'card_yolo.onnx')
-              )
+            path.join(process.cwd(), 'public', 'models', 'card_yolo.onnx')
+        )
 
         if (logging) console.log('running YOLO ONNX model inference')
         // ----------
@@ -196,11 +194,10 @@ export const locateWithYOLOServer = async (
                 corners: scaledCorners as Corners
             } as NormalizeCardResult)
         }
-        
+
         if (foundCards.length !== 0) {
             res = { results: foundCards }
         }
-
     } catch (e) {
         console.error('Error in locateWithYOLO:', e)
         errorCountServer++

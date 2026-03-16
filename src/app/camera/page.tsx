@@ -5,6 +5,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useAuth } from '@/context/AuthProvider'
 import { Box, Button, Spinner, Heading, Text, VStack } from '@chakra-ui/react'
 import TipsPopup from '@/components/ui/PopupUI'
+import { releaseModel } from '@/utils/identification/loadModel'
 
 import {
     CameraPreview,
@@ -32,10 +33,11 @@ const CameraPage = () => {
     const { session, loading } = useAuth()
 
     const isIOS = Capacitor.getPlatform() === 'ios'
+    const isNative = Capacitor.isNativePlatform()
 
     const stopCurrentStream = useCallback(async () => {
         try {
-            if (isIOS) {
+            if (isIOS && isNative) {
                 await CameraPreview.stop()
                 isCameraActive.current = false
             } else {
@@ -50,7 +52,7 @@ const CameraPage = () => {
         } catch (err) {
             console.error('Error stopping camera preview', err)
         }
-    }, [isIOS])
+    }, [isIOS, isNative])
 
     // Called by IdentifyCards when it's ready for the next frame
     const handleProcessed = useCallback(() => {
@@ -59,7 +61,7 @@ const CameraPage = () => {
             let width
             let height
             let toDraw: HTMLVideoElement | HTMLImageElement
-            if (isIOS) {
+            if (isIOS && isNative) {
                 const pictureOptions: CameraPreviewPictureOptions = {
                     quality: 90,
                     width: 1280,
@@ -134,7 +136,7 @@ const CameraPage = () => {
 
             setSourceImageData(imageData)
         }, 100)
-    }, [isIOS])
+    }, [isIOS, isNative])
 
     const startCamera = useCallback(async () => {
         try {
@@ -151,7 +153,7 @@ const CameraPage = () => {
         }
 
         try {
-            if (isIOS) {
+            if (isIOS && isNative) {
                 const cameraPreviewOptions: CameraPreviewOptions = {
                     parent: 'cameraPreview',
                     position: 'rear',
@@ -187,7 +189,7 @@ const CameraPage = () => {
         } catch (err) {
             console.error('Error accessing camera', err)
         }
-    }, [handleProcessed, facingMode, isIOS])
+    }, [handleProcessed, facingMode, isIOS, isNative])
 
     useEffect(() => {
         return () => {
@@ -195,9 +197,15 @@ const CameraPage = () => {
         }
     }, [stopCurrentStream])
 
+    useEffect(() => {
+        return () => {
+            releaseModel()
+        }
+    }, [])
+
     const toggleCamera = async () => {
         try {
-            if (isIOS) {
+            if (isIOS && isNative) {
                 await CameraPreview.flip()
             } else {
                 stopCurrentStream()
@@ -285,7 +293,7 @@ const CameraPage = () => {
                 aspectRatio="1"
                 mx="auto"
             >
-                {!isIOS && (
+                {!(isIOS && isNative) && (
                     <video
                         ref={videoRef}
                         style={{
@@ -319,8 +327,7 @@ const CameraPage = () => {
                     sourceImageData={sourceImageData}
                     onProcessed={handleProcessed}
                     overlayRef={isIOS ? null : overlayCanvas}
-                    // TODO fix
-                    inputCanvasForIOS={isIOS ? inputCanvas : inputCanvas}
+                    inputCanvasForIOS={isIOS ? inputCanvas : undefined}
                 />
             ) : (
                 <Box>No image captured.</Box>

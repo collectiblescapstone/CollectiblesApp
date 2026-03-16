@@ -32,7 +32,8 @@ const CameraPage = () => {
 
     const { session, loading } = useAuth()
 
-    const isIOS = Capacitor.getPlatform() === 'ios'
+    // Determine if running on iOS or native platform also use user-agent check to avoid issues with next.js dynamic imports of capacitor plugins on web
+    const isIOS = Capacitor.getPlatform() === 'ios' || (typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent))
     const isNative = Capacitor.isNativePlatform()
 
     const stopCurrentStream = useCallback(async () => {

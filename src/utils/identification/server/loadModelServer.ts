@@ -35,8 +35,11 @@ export const loadModelServer = async (
         new Float32Array(DEFAULT_INPUT_SIZE.reduce((a, b) => a * b)),
         DEFAULT_INPUT_SIZE
     )
-    const { output0 } = await sessionNode.run({ images: dummyInput })
-    output0.dispose()
+    const output = await sessionNode.run({ images: dummyInput })
+    const outputKeys = sessionNode.outputNames
+    for (const key of outputKeys) {
+        output[key].dispose()
+    }
     dummyInput.dispose()
 
     return sessionNode

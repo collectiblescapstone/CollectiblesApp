@@ -4,6 +4,8 @@ import cvReadyPromise, { CV } from '@techstark/opencv-js'
 import { CardClassifierServer } from '@/utils/identification/server/classifyNormalizedCardServer'
 import { PredictedCards } from '@/types/identification'
 
+export const runtime = 'nodejs'
+
 let cvInstance: CV | null = null
 
 const getCVInstance = async (): Promise<CV> => {
@@ -36,10 +38,8 @@ export const POST = async (request: Request) => {
         const cv = await getCVInstance()
 
         const doLogging = false
-        console.log('Running locateWithYOLOServer...')
         const res = await locateWithYOLOServer(imageData, cv, doLogging)
 
-        console.log('locateWithYOLOServer completed. Running CardClassifier...')
         // for each detected card
         const classifier = await CardClassifierServer()
         const similar: PredictedCards = []
@@ -54,7 +54,6 @@ export const POST = async (request: Request) => {
                 })
             }
         }
-        console.log('CardClassifier completed.')
 
         // cleanup
         for (const r of res?.results ?? []) {
@@ -63,7 +62,6 @@ export const POST = async (request: Request) => {
             }
         }
 
-        console.log('Returning response with predicted cards:', similar)
         return NextResponse.json({ predictedCards: similar })
     } catch (err) {
         console.error('Fetch error:', err)

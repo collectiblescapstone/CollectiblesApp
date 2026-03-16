@@ -33,7 +33,8 @@ export const IdentifyCards = ({
 
     const { session } = useAuth()
 
-    const isIOS = Capacitor.getPlatform() === 'ios'
+    // Determine if running on iOS or native platform also use user-agent check to avoid issues with next.js dynamic imports of capacitor plugins on web
+    const isIOS = Capacitor.getPlatform() === 'ios' || (typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent))
 
     useEffect(() => {
         // called when new image data is made available by parent, runs the whole identification pipeline and updates state with results

@@ -150,15 +150,17 @@ const postProcessMaskServer = (
         )
 
         const weightsMulProtoMat = new cv.Mat()
+        const empty = new cv.Mat()
         cv.gemm(
             maskWeightsMat, // [N, 32]
             protoMaskMat, // [32, 160*160]
             1.0,
-            new cv.Mat(),
+            empty,
             0.0,
             weightsMulProtoMat, // [N, 160*160]
             0
         )
+        empty.delete()
 
         protoMaskMat.delete()
         maskWeightsMat.delete()
@@ -267,12 +269,11 @@ const postProcessMaskServer = (
                     )
 
                     // Copy to overlay mat at the specific bbox location
-                    maskColoredMat.copyTo(
-                        overlayMat.roi(
-                            new cv.Rect(targetX, targetY, targetW, targetH)
-                        ),
-                        maskBinaryU8Mat
+                    const overlayRoi = overlayMat.roi(
+                        new cv.Rect(targetX, targetY, targetW, targetH)
                     )
+                    maskColoredMat.copyTo(overlayRoi, maskBinaryU8Mat)
+                    overlayRoi.delete()
 
                     maskColoredMat.delete()
                 }

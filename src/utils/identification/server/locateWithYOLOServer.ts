@@ -1,4 +1,4 @@
-import { CV, Mat } from '@techstark/opencv-js'
+import { CV, Mat, MatVector } from '@techstark/opencv-js'
 import {
     CARD_WIDTH_PX,
     CARD_HEIGHT_PX,
@@ -37,7 +37,7 @@ export const locateWithYOLOServer = async (
     }
     let res = null
 
-    const matsToDelete: Mat[] = []
+    const matsToDelete: (Mat | MatVector)[] = []
     let inputTensor: Tensor | null = null
     let detections: Tensor | null = null
     let proto: Tensor | null = null
@@ -121,6 +121,7 @@ export const locateWithYOLOServer = async (
         matsToDelete.push(singleChannelMat)
 
         const contours = new cv.MatVector()
+        matsToDelete.push(contours)
         const hierarchy = new cv.Mat()
         matsToDelete.push(hierarchy)
         cv.findContours(

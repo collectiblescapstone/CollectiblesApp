@@ -290,7 +290,8 @@ const FilterCardsContent = () => {
                                                 pokemonSets[card.setId]
                                                     ?.official,
                                                 pokemonSubsets,
-                                                pokemonSets[card.setId]?.name ?? ''
+                                                pokemonSets[card.setId]?.name ??
+                                                    ''
                                             )}
                                         />
                                     ))}

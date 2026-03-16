@@ -16,6 +16,7 @@ const getCVInstance = async (): Promise<CV> => {
 
 export const POST = async (request: Request) => {
     try {
+        // load sharp dynamically to avoid issues with next.js and native modules, also only load in server environment
         const { default: sharp } = await import('sharp')
         const buffer = Buffer.from(await request.arrayBuffer())
 

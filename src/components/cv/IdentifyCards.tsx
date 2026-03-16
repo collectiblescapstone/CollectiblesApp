@@ -72,7 +72,7 @@ export const IdentifyCards = ({
 
                 const arrayBuffer = await blob.arrayBuffer()
 
-                // just use a fetch request
+                // needed to use a normal fetch as CapacitorHTTP always encoded the image as json, which massively increases payload size
                 const response = await fetch(`${baseUrl}/api/identify-card`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/octet-stream' },

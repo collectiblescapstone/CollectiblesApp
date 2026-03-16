@@ -58,8 +58,6 @@ model Subset {
   official Int
 
   set      Set     @relation(fields: [setId], references: [id], onUpdate: Cascade)
-
-  @@index([setId])
 }
 
 model Card {

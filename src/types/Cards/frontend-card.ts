@@ -18,3 +18,9 @@ export type PokemonSet = {
     official: number
     total: number
 }
+
+export type PokemonSubset = {
+    name: string
+    prefix: string
+    official: number
+}

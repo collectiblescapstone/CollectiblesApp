@@ -1,19 +1,19 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { useSearchParams } from 'next/navigation'
 import {
     Box,
     Flex,
     HStack,
+    VStack,
     Heading,
     IconButton,
-    Spinner,
-    Text
+    Spinner
 } from '@chakra-ui/react'
 import { LuChevronUp, LuChevronDown } from 'react-icons/lu'
 
-// Child Components
+// Components
 import PokemonCardMini from '@/components/pokemon-cards/pokemon-card-mini/PokemonCardMini'
 import CardFilter from '@/components/card-filter/CardFilter'
 import { CardSearch } from '@/components/card-filter/CardSearch'
@@ -27,27 +27,23 @@ import { useFilters } from '@/hooks/useFilters'
 
 // Utils
 import { userMasterSet, userPokemonMasterSet } from '@/utils/userPokemonCard'
+import { sortCardId } from '@/utils/sortCardId'
+import { formatCardNumber } from '@/utils/formatCardNumber'
 
 // Types
 import type { CardData } from '@/types/pokemon-card'
-import { sortCardId } from '@/utils/sortCardId'
 
 const FilterCardsContent = () => {
-    // Search Params
     const searchParams = useSearchParams()
     const type = searchParams.get('type')
     const setId = searchParams.get('setId')
     const pId = searchParams.get('pId')
     const setName = searchParams.get('setName')
 
-    // Filters from context
     const { filters } = useFilters()
     const { session, loading: authLoading } = useAuth()
 
-    // Filters from search
     const [filteredIds, setFilteredIds] = useState<string[]>()
-
-    // Local States
     const [pokemonName, setPokemonName] = useState<string | null>(null)
     const [cards, setCards] = useState<CardData[]>([])
     const [cardNumbers, setCardNumbers] = useState<Record<string, string>>({})
@@ -55,9 +51,15 @@ const FilterCardsContent = () => {
     const [ascending, setAscending] = useState(true)
     const [userCards, setUserCards] = useState<string[]>([])
 
-    const { allCards, getPokemonName, getGeneration } = usePokemonCards()
+    const {
+        allCards,
+        getPokemonName,
+        getGeneration,
+        pokemonSubsets,
+        pokemonSets
+    } = usePokemonCards()
 
-    // Fetch cards based on type & params
+    // Load cards
     useEffect(() => {
         const loadData = async () => {
             if (!type) {
@@ -66,23 +68,15 @@ const FilterCardsContent = () => {
             }
 
             setLoading(true)
+
             try {
                 let filteredCards = allCards.filter((card) => {
-                    if (type === 'set') {
-                        return card.setId === setId
-                    }
-
-                    if (type === 'pokemon') {
-                        return (
-                            Array.isArray(card.dexId) &&
-                            card.dexId.includes(Number(pId))
-                        )
-                    }
-
+                    if (type === 'set') return card.setId === setId
+                    if (type === 'pokemon')
+                        return card.dexId?.includes(Number(pId))
                     return true
                 })
 
-                // Get the user card data
                 if (session?.user?.id) {
                     if (type === 'set') {
                         const userCards = await userMasterSet(
@@ -109,16 +103,13 @@ const FilterCardsContent = () => {
                     cardNums[card.id] = splitId[splitId.length - 1]
                 }
 
-                // Sort by numeric id
                 filteredCards.sort(
-                    (a: CardData, b: CardData) =>
-                        Number(cardNums[a.id]) - Number(cardNums[b.id])
+                    (a, b) => Number(cardNums[a.id]) - Number(cardNums[b.id])
                 )
-
-                setCards(Array.isArray(filteredCards) ? filteredCards : [])
+                setCards(filteredCards)
                 setCardNumbers(cardNums)
-            } catch (error) {
-                console.error('Error loading data:', error)
+            } catch (err) {
+                console.error('Error loading data:', err)
                 setCards([])
             } finally {
                 setLoading(false)
@@ -128,7 +119,7 @@ const FilterCardsContent = () => {
         loadData()
     }, [type, setId, pId, session?.user?.id, allCards])
 
-    // Fetch Pokémon name if viewing a single Pokémon
+    // Load Pokémon name
     useEffect(() => {
         if (type === 'pokemon' && pId) {
             getPokemonName(Number(pId)).then(setPokemonName)
@@ -137,20 +128,16 @@ const FilterCardsContent = () => {
         }
     }, [type, pId, getPokemonName, getGeneration])
 
-    // Reverse card order
+    // Toggle sort
     const toggleSortOrder = () => {
         setAscending((prev) => !prev)
-        setCards((prevCards) => [...prevCards].reverse())
+        setCards((prev) => [...prev].reverse())
     }
 
-    // Filter cards based on FiltersContext
+    // Filter by category/type/generation
     const filteredCards = cards.filter((card) => {
-        // Filtered Ids
-        if (filteredIds) {
-            return filteredIds.includes(card.id)
-        }
+        if (filteredIds) return filteredIds.includes(card.id)
 
-        // CATEGORY
         if (
             !filters.categories.includes(card.category) &&
             !(
@@ -160,25 +147,43 @@ const FilterCardsContent = () => {
         )
             return false
 
-        // TYPE
         if (card.types?.length) {
-            const hasEnabledType = card.types.some(
-                (type) => filters.types[type]
-            )
-            if (!hasEnabledType) return false
+            if (!card.types.some((type) => filters.types[type])) return false
         }
 
-        // GENERATION
         if (card.dexId?.length) {
-            const matchesGeneration = card.dexId.some((dexNumber) => {
-                const generation = getGeneration(dexNumber)
-                return filters.generations.includes(generation)
-            })
-            if (!matchesGeneration) return false
+            if (
+                !card.dexId.some((dexNumber) =>
+                    filters.generations.includes(getGeneration(dexNumber))
+                )
+            )
+                return false
         }
 
         return true
     })
+
+    // Group cards for display
+    const groupedCards = useMemo(() => {
+        if (!setId) return { base: filteredCards, subsets: {} }
+
+        const base: CardData[] = []
+        const subsets: Record<string, CardData[]> = {}
+
+        for (const card of filteredCards) {
+            const number = cardNumbers[card.id] || ''
+            const prefixMatch = number.match(/^[A-Za-z]+/)
+            const prefix = prefixMatch ? prefixMatch[0] : null
+
+            if (!prefix) base.push(card)
+            else {
+                if (!subsets[prefix]) subsets[prefix] = []
+                subsets[prefix].push(card)
+            }
+        }
+
+        return { base, subsets }
+    }, [filteredCards, cardNumbers, setId])
 
     if (loading || authLoading || !session)
         return (
@@ -194,9 +199,10 @@ const FilterCardsContent = () => {
                     <Heading>
                         {type === 'set'
                             ? `${setName} Card Set`
-                            : `${type === 'set' ? setName : pokemonName} Cards`}
+                            : `${pokemonName} Cards`}
                     </Heading>
-                    <Flex gap={1} align="right">
+
+                    <Flex gap={1}>
                         <IconButton
                             aria-label="Toggle sort order"
                             size="lg"
@@ -205,63 +211,87 @@ const FilterCardsContent = () => {
                         >
                             {ascending ? <LuChevronUp /> : <LuChevronDown />}
                         </IconButton>
+
                         <CardFilter />
                     </Flex>
                 </Flex>
+
                 <CardSearch cards={cards} setFilteredIds={setFilteredIds} />
             </Flex>
-            {filteredCards.length === 0 ? (
-                <Text>No cards match the selected filters.</Text>
-            ) : (
-                <HStack justify="center" gap={4} flexWrap="wrap" mb={4}>
-                    {filteredCards.map((card, index) => (
-                        <PokemonCardMini
-                            cardId={card.id}
-                            key={index}
-                            cardName={card.name}
-                            cardSetId={(() => {
-                                const fullId = cardNumbers[card.id] ?? card.id // e.g., "GG1" or "001"
-                                const lettersMatch = fullId.match(/^[A-Za-z]+/) // extract letters at start
-                                const letters = lettersMatch
-                                    ? lettersMatch[0]
-                                    : '' // "GG" or ""
-                                const numberPartRaw = fullId.replace(
-                                    letters,
-                                    ''
-                                ) // "1" or "01"
 
-                                const officialCount =
-                                    Number(card.set?.official) || 0
-                                const padLength =
-                                    officialCount > 0
-                                        ? String(officialCount).length
-                                        : 2 // dynamic padding
-                                const numberPart = numberPartRaw.padStart(
-                                    padLength,
-                                    '0'
-                                )
+            <VStack gap={8} width="100%">
+                {/* Base set */}
+                {groupedCards.base.length > 0 && (
+                    <Box>
+                        <HStack justify="center" gap={4} flexWrap="wrap">
+                            {groupedCards.base.map((card, idx) => (
+                                <PokemonCardMini
+                                    key={idx}
+                                    cardId={card.id}
+                                    cardName={card.name}
+                                    image={card.image_url}
+                                    cardOwned={userCards.includes(card.id)}
+                                    cardSetId={formatCardNumber(
+                                        card.id,
+                                        cardNumbers[card.id],
+                                        card.setId,
+                                        pokemonSets[card.setId]?.official,
+                                        pokemonSubsets
+                                    )}
+                                />
+                            ))}
+                        </HStack>
+                    </Box>
+                )}
 
-                                // If letters exist and official count > 0, prepend letters to official count
-                                const officialPart =
-                                    officialCount > 0
-                                        ? '/' +
-                                          (letters
-                                              ? letters + officialCount
-                                              : officialCount)
-                                        : ''
-
-                                return (
-                                    (letters ? letters : '') +
-                                    numberPart +
-                                    officialPart
-                                ) // e.g., "GG001/GG070"
-                            })()}
-                            cardOwned={userCards.includes(card.id)}
-                            image={card.image_url}
-                        />
-                    ))}
-                </HStack>
-            )}
+                {/* Subsets */}
+                {Object.entries(groupedCards.subsets).map(
+                    ([prefix, subsetCards]) => {
+                        const subset = pokemonSubsets[setId!]?.find(
+                            (s) => s.prefix === prefix
+                        )
+                        return (
+                            <Flex
+                                mb={6}
+                                key={prefix}
+                                flexDirection="column"
+                                pl={5}
+                                pr={5}
+                                pt={5}
+                            >
+                                <Heading size="lg" mb={3}>
+                                    {subset?.name ?? prefix}
+                                </Heading>
+                                <HStack
+                                    justify="center"
+                                    gap={4}
+                                    flexWrap="wrap"
+                                >
+                                    {subsetCards.map((card, idx) => (
+                                        <PokemonCardMini
+                                            key={idx}
+                                            cardId={card.id}
+                                            cardName={card.name}
+                                            image={card.image_url}
+                                            cardOwned={userCards.includes(
+                                                card.id
+                                            )}
+                                            cardSetId={formatCardNumber(
+                                                card.id,
+                                                cardNumbers[card.id],
+                                                card.setId,
+                                                pokemonSets[card.setId]
+                                                    ?.official,
+                                                pokemonSubsets
+                                            )}
+                                        />
+                                    ))}
+                                </HStack>
+                            </Flex>
+                        )
+                    }
+                )}
+            </VStack>
         </Box>
     )
 }

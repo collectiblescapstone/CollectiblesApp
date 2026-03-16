@@ -13,10 +13,8 @@ interface PokemonCardMiniProps {
     cardName: string
     image: string
     cardOwned: boolean
-    cardSetId: string // actual card ID, e.g., "sv01-001"
+    cardSetId: string
     wishlist?: boolean
-    // illustrator?: string;
-    // rarity?: string;
 }
 
 const PokemonCardMini = ({
@@ -26,8 +24,6 @@ const PokemonCardMini = ({
     cardSetId,
     cardOwned,
     wishlist
-    // illustrator,
-    // rarity,
 }: PokemonCardMiniProps) => {
     // Determine path, either add card OR to the cards owned page, where you can click and edit the cards
     const path = cardOwned ? '/user-cards' : '/edit-card'
@@ -129,18 +125,28 @@ const PokemonCardMini = ({
                 </Box>
 
                 {/* Text Info */}
-                <VStack mt={2} w="100%" textAlign="center">
+                <VStack mt={2} w="100%" textAlign="center" maxW="100%" px={1}>
                     <Text
                         fontWeight="bold"
                         fontSize="md"
-                        color="black" // high contrast
-                        textShadow="0 0 2px rgba(255, 255, 255, 0.8)" // subtle outline
+                        color="black"
+                        textShadow="0 0 2px rgba(255, 255, 255, 0.8)"
+                        whiteSpace="nowrap"
+                        overflow="hidden"
+                        textOverflow="ellipsis"
+                        maxW="100%"
                     >
                         {cardName}
                     </Text>
 
-                    {/* Show the actual card ID */}
-                    <Text fontSize="sm" color="gray.600">
+                    <Text
+                        fontSize="sm"
+                        color="gray.600"
+                        whiteSpace="nowrap"
+                        overflow="hidden"
+                        textOverflow="ellipsis"
+                        maxW="100%"
+                    >
                         {cardSetId}
                     </Text>
                 </VStack>

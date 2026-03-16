@@ -9,33 +9,33 @@ datasource db {
 }
 
 model User {
-  email           String            @unique
-  username        String            @unique
-  id              String            @id @db.Uuid
-  bio             String?
-  facebook        String?
-  firstName       String?
-  instagram       String?
-  lastName        String?
-  location        String?
-  x               String?
-  discord         String?
-  whatsapp        String?
-  profile_pic     Int               @default(0)
-  visibility      String            @default("public")
-  latitude        Float?
-  longitude       Float?
-  rating          Float             @default(0)
-  rating_count    Int               @default(0)
+  email        String  @unique
+  username     String  @unique
+  id           String  @id @db.Uuid
+  bio          String?
+  facebook     String?
+  firstName    String?
+  instagram    String?
+  lastName     String?
+  location     String?
+  x            String?
+  discord      String?
+  whatsapp     String?
+  profile_pic  Int     @default(0)
+  visibility   String  @default("public")
+  latitude     Float?
+  longitude    Float?
+  rating       Float   @default(0)
+  rating_count Int     @default(0)
 
-  collection      CollectionEntry[]
-  wishlist        WishlistEntry[]
+  collection CollectionEntry[]
+  wishlist   WishlistEntry[]
 
-  blockedUsers    BlockList[]       @relation("Blocker")
-  blockedBy       BlockList[]       @relation("Blocked")
+  blockedUsers BlockList[] @relation("Blocker")
+  blockedBy    BlockList[] @relation("Blocked")
 
-  reportedUsers   ReportedUser[]    @relation("Reporter")
-  reportedBy      ReportedUser[]    @relation("Reported")
+  reportedUsers ReportedUser[] @relation("Reporter")
+  reportedBy    ReportedUser[] @relation("Reported")
 }
 
 model Set {
@@ -78,7 +78,7 @@ model CollectionEntry {
   grade      String   @default("Ungraded")
   gradeLevel String?
   tags       String[] @default([])
-  card       Card     @relation(fields: [cardId], references: [id])
+  card       Card     @relation(fields: [cardId], references: [id], onUpdate: Cascade)
   user       User     @relation(fields: [userId], references: [id])
 
   @@index([cardId])
@@ -90,41 +90,41 @@ model WishlistEntry {
   userId  String  @db.Uuid
   cardId  String
   variant String?
-  card    Card    @relation(fields: [cardId], references: [id])
+  card    Card    @relation(fields: [cardId], references: [id], onUpdate: Cascade)
   user    User    @relation(fields: [userId], references: [id])
 
   @@unique([userId, cardId, variant])
 }
 
 model BlockList {
-  id              String   @id @default(cuid())
-  userId          String   @db.Uuid
-  blockedUserId   String   @db.Uuid
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  user            User     @relation("Blocker", fields: [userId], references: [id])
-  blockedUser     User     @relation("Blocked", fields: [blockedUserId], references: [id])
+  id            String   @id @default(cuid())
+  userId        String   @db.Uuid
+  blockedUserId String   @db.Uuid
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  user          User     @relation("Blocker", fields: [userId], references: [id])
+  blockedUser   User     @relation("Blocked", fields: [blockedUserId], references: [id])
 
   @@unique([userId, blockedUserId])
 }
 
 model ReportedUser {
-  id              String   @id @default(cuid())
-  reporterId      String   @db.Uuid
-  reportedUserId  String   @db.Uuid
+  id             String   @id @default(cuid())
+  reporterId     String   @db.Uuid
+  reportedUserId String   @db.Uuid
   // Report types
-  isVerbalAbuse   Boolean  @default(false)
-  isSpamming      Boolean  @default(false)
-  isHarassment    Boolean  @default(false)
-  isScamming      Boolean  @default(false)
-  isBadName       Boolean  @default(false)
-  isBadBio        Boolean  @default(false)
+  isVerbalAbuse  Boolean  @default(false)
+  isSpamming     Boolean  @default(false)
+  isHarassment   Boolean  @default(false)
+  isScamming     Boolean  @default(false)
+  isBadName      Boolean  @default(false)
+  isBadBio       Boolean  @default(false)
   // Additional field for reason
-  reason          String
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  reporter        User     @relation("Reporter", fields: [reporterId], references: [id])
-  reportedUser    User     @relation("Reported", fields: [reportedUserId], references: [id])
+  reason         String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  reporter       User     @relation("Reporter", fields: [reporterId], references: [id])
+  reportedUser   User     @relation("Reported", fields: [reportedUserId], references: [id])
 
   @@index([reporterId, reportedUserId, createdAt])
 }

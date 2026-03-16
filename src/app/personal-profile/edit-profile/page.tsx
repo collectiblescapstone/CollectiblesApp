@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 
-import Showcase from '@/components/edit-profile/Showcase'
 import DeleteAccount from '@/components/edit-profile/DeleteAccount'
 import { FormValues, VisibilityValues } from '@/types/personal-profile'
 import { GeoLocation } from '@/types/geolocation'
@@ -56,8 +55,8 @@ const PersonalProfileScreen: React.FC = () => {
             username: '',
             bio: '',
             location: '',
-            longitude: NaN,
-            latitude: NaN,
+            longitude: null,
+            latitude: null,
             instagram: '',
             x: '',
             facebook: '',
@@ -85,18 +84,22 @@ const PersonalProfileScreen: React.FC = () => {
     const handleInputChange = (value: string) => {
         setShowLocationSuggestions(value)
         setValue('location', value, { shouldValidate: true })
-        if (selectedPlace && value !== selectedPlace.formatted) {
+        if (
+            (selectedPlace && value !== selectedPlace.formatted) ||
+            value.trim() === ''
+        ) {
             setSelectedPlace(null)
-            setValue('latitude', NaN, {
+            setValue('latitude', null, {
                 shouldValidate: false
             })
-            setValue('longitude', NaN, {
+            setValue('longitude', null, {
                 shouldValidate: false
             })
         }
     }
 
     const [isSaving, setIsSaving] = useState(false)
+    const [loadingUserData, setLoadingUserData] = useState(true)
 
     const bioVal = watch('bio')
     const profilePicVal = watch('profilePic')
@@ -122,7 +125,13 @@ const PersonalProfileScreen: React.FC = () => {
                 data: JSON.stringify({ id: session?.user?.id, ...data })
             })
 
-            if (res.status !== 200) {
+            if (res.data.error && res.data.error.code === 'P2002') {
+                setError('username', {
+                    type: 'username_taken',
+                    message:
+                        'An account with this username already exists. Please pick a different username.'
+                })
+            } else if (res.status !== 200) {
                 const err = res.data.error
                 console.error(err)
             } else {
@@ -148,8 +157,8 @@ const PersonalProfileScreen: React.FC = () => {
                     email: data.email ?? '',
                     bio: data.bio ?? '',
                     location: data.location ?? '',
-                    latitude: data.latitude ?? NaN,
-                    longitude: data.longitude ?? NaN,
+                    latitude: data.latitude ?? null,
+                    longitude: data.longitude ?? null,
                     instagram: data.instagram ?? '',
                     x: data.x ?? '',
                     facebook: data.facebook ?? '',
@@ -169,6 +178,8 @@ const PersonalProfileScreen: React.FC = () => {
             } catch (err) {
                 console.error('Error loading profile', err)
             }
+
+            setLoadingUserData(false)
         }
 
         fetchProfile()
@@ -265,7 +276,7 @@ const PersonalProfileScreen: React.FC = () => {
         )
     }
 
-    if (loading || !session) {
+    if (loading || !session || loadingUserData) {
         return (
             <Box textAlign="center" mt={10}>
                 <Spinner size="xl" />
@@ -430,18 +441,11 @@ const PersonalProfileScreen: React.FC = () => {
                         Write a little about yourself for others to see.
                     </Field.HelperText>
                 </Field.Root>
-                <Field.Root
-                    required
-                    invalid={!!errors.location}
-                    position="relative"
-                >
-                    <Field.Label>
-                        Location <Field.RequiredIndicator />
-                    </Field.Label>
+                <Field.Root invalid={!!errors.location} position="relative">
+                    <Field.Label>Location</Field.Label>
                     <Controller
                         name="location"
                         control={control}
-                        rules={{ required: 'Location is required' }}
                         render={({ field }) => (
                             <Input
                                 type="text"
@@ -541,7 +545,6 @@ const PersonalProfileScreen: React.FC = () => {
                         />
                     </InputGroup>
                 </Field.Root>
-                <Showcase />
                 <Text
                     fontSize="sm"
                     color="gray.700"

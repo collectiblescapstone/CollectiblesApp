@@ -63,7 +63,9 @@ export async function PATCH(request: NextRequest) {
         if (typeof bio === 'string') data.bio = bio
         if (typeof location === 'string') data.location = location
         if (typeof latitude === 'number') data.latitude = latitude
+        if (latitude === null) data.latitude = null
         if (typeof longitude === 'number') data.longitude = longitude
+        if (longitude === null) data.longitude = null
         if (typeof instagram === 'string') data.instagram = instagram
         if (typeof x === 'string') data.x = x
         if (typeof facebook === 'string') data.facebook = facebook

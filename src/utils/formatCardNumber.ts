@@ -5,7 +5,8 @@ export const formatCardNumber = (
     cardNumber: string | undefined,
     setId: string,
     setOfficial: number | undefined,
-    pokemonSubsets: Record<string, PokemonSubset[]>
+    pokemonSubsets: Record<string, PokemonSubset[]>,
+    setName: string
 ) => {
     const fullId = cardNumber ?? cardId
 
@@ -21,6 +22,8 @@ export const formatCardNumber = (
         (subset) => subset.prefix === letters
     )
 
+    const padLengthOverride = setName.includes("McDonald's") ? 0 : 3
+
     // Determine official count and pad length
     const officialCount = subsetMatch
         ? subsetMatch.official
@@ -30,7 +33,7 @@ export const formatCardNumber = (
     // Base set: at least 3
     const padLength = subsetMatch
         ? String(officialCount).length
-        : Math.max(3, String(officialCount).length)
+        : padLengthOverride
 
     // Pad number part
     const numberPart = numberPartRaw.padStart(padLength, '0')

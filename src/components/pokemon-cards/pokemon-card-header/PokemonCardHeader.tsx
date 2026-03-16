@@ -68,7 +68,8 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
             rawNumber,
             cardInfo.setId,
             pokemonSets[cardInfo.setId]?.official,
-            pokemonSubsets
+            pokemonSubsets,
+            pokemonSets[cardInfo.setId].name
         )
     }, [cardInfo, pokemonSets, pokemonSubsets, cardId])
 

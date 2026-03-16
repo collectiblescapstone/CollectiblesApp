@@ -34,11 +34,11 @@ import { formatCardNumber } from '@/utils/formatCardNumber'
 import type { CardData } from '@/types/pokemon-card'
 
 const FilterCardsContent = () => {
+    // Search params
     const searchParams = useSearchParams()
     const type = searchParams.get('type')
     const setId = searchParams.get('setId')
     const pId = searchParams.get('pId')
-    // const setName = searchParams.get('setName')
 
     const { filters } = useFilters()
     const { session, loading: authLoading } = useAuth()
@@ -239,7 +239,8 @@ const FilterCardsContent = () => {
                                         cardNumbers[card.id],
                                         card.setId,
                                         pokemonSets[card.setId]?.official,
-                                        pokemonSubsets
+                                        pokemonSubsets,
+                                        pokemonSets[card.setId].name
                                     )}
                                 />
                             ))}
@@ -288,7 +289,8 @@ const FilterCardsContent = () => {
                                                 card.setId,
                                                 pokemonSets[card.setId]
                                                     ?.official,
-                                                pokemonSubsets
+                                                pokemonSubsets,
+                                                pokemonSets[card.setId].name
                                             )}
                                         />
                                     ))}

@@ -260,7 +260,10 @@ const FilterCardsContent = () => {
                                 pt={5}
                             >
                                 <Heading size="lg" mb={3}>
-                                    {subset?.name ?? prefix}
+                                    {Object.keys(groupedCards.subsets).length >
+                                        1 || groupedCards.base.length > 0
+                                        ? (subset?.name ?? prefix)
+                                        : ''}
                                 </Heading>
                                 <HStack
                                     justify="center"

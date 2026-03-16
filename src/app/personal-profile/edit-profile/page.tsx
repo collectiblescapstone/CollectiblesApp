@@ -55,8 +55,8 @@ const PersonalProfileScreen: React.FC = () => {
             username: '',
             bio: '',
             location: '',
-            longitude: NaN,
-            latitude: NaN,
+            longitude: null,
+            latitude: null,
             instagram: '',
             x: '',
             facebook: '',
@@ -84,12 +84,15 @@ const PersonalProfileScreen: React.FC = () => {
     const handleInputChange = (value: string) => {
         setShowLocationSuggestions(value)
         setValue('location', value, { shouldValidate: true })
-        if (selectedPlace && value !== selectedPlace.formatted) {
+        if (
+            (selectedPlace && value !== selectedPlace.formatted) ||
+            value.trim() === ''
+        ) {
             setSelectedPlace(null)
-            setValue('latitude', NaN, {
+            setValue('latitude', null, {
                 shouldValidate: false
             })
-            setValue('longitude', NaN, {
+            setValue('longitude', null, {
                 shouldValidate: false
             })
         }
@@ -115,7 +118,10 @@ const PersonalProfileScreen: React.FC = () => {
             const res = await CapacitorHttp.patch({
                 url: `${baseUrl}/api/edit-profile`,
                 method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session?.access_token}`
+                },
                 data: JSON.stringify({ id: session?.user?.id, ...data })
             })
 
@@ -151,8 +157,8 @@ const PersonalProfileScreen: React.FC = () => {
                     email: data.email ?? '',
                     bio: data.bio ?? '',
                     location: data.location ?? '',
-                    latitude: data.latitude ?? NaN,
-                    longitude: data.longitude ?? NaN,
+                    latitude: data.latitude ?? null,
+                    longitude: data.longitude ?? null,
                     instagram: data.instagram ?? '',
                     x: data.x ?? '',
                     facebook: data.facebook ?? '',

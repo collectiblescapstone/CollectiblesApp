@@ -38,7 +38,7 @@ const FilterCardsContent = () => {
     const type = searchParams.get('type')
     const setId = searchParams.get('setId')
     const pId = searchParams.get('pId')
-    const setName = searchParams.get('setName')
+    // const setName = searchParams.get('setName')
 
     const { filters } = useFilters()
     const { session, loading: authLoading } = useAuth()
@@ -50,6 +50,8 @@ const FilterCardsContent = () => {
     const [loading, setLoading] = useState(true)
     const [ascending, setAscending] = useState(true)
     const [userCards, setUserCards] = useState<string[]>([])
+
+    const [setName, setSetName] = useState<string>('')
 
     const {
         allCards,
@@ -83,6 +85,7 @@ const FilterCardsContent = () => {
                             session.user.id,
                             setId!
                         )
+                        setSetName(pokemonSets[setId!]?.name ?? '')
                         setUserCards(userCards)
                     } else {
                         const userCards = await userPokemonMasterSet(
@@ -117,7 +120,7 @@ const FilterCardsContent = () => {
         }
 
         loadData()
-    }, [type, setId, pId, session?.user?.id, allCards])
+    }, [type, setId, pId, session?.user?.id, allCards, pokemonSets])
 
     // Load Pokémon name
     useEffect(() => {

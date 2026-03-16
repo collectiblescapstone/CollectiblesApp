@@ -537,7 +537,6 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                                         : `${imageSrc}.png`
                                                     : '/Images/temp_icon.svg'
                                             }
-                                            setName={set.name}
                                             setID={set.id}
                                             masterSet={counts.masterSet}
                                             grandmasterSet={

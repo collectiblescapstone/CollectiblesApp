@@ -1,12 +1,12 @@
 import type { PokemonSubset } from '@/types/Cards/frontend-card'
 
-export function formatCardNumber(
+export const formatCardNumber = (
     cardId: string,
     cardNumber: string | undefined,
     setId: string,
     setOfficial: number | undefined,
     pokemonSubsets: Record<string, PokemonSubset[]>
-) {
+) => {
     const fullId = cardNumber ?? cardId
 
     // Extract prefix (TG, GG, etc.)
@@ -21,18 +21,26 @@ export function formatCardNumber(
         (subset) => subset.prefix === letters
     )
 
+    // Determine official count and pad length
     const officialCount = subsetMatch
         ? subsetMatch.official
         : Number(setOfficial) || 0
 
-    // 🔹 NEW LOGIC
-    const padLength = letters ? String(officialCount).length : 3
+    // For subsets, pad to length of subset official
+    // Base set: at least 3
+    const padLength = subsetMatch
+        ? String(officialCount).length
+        : Math.max(3, String(officialCount).length)
 
+    // Pad number part
     const numberPart = numberPartRaw.padStart(padLength, '0')
 
+    // Pad official part
     const officialPart =
         officialCount > 0
-            ? '/' + (letters ? letters + officialCount : officialCount)
+            ? '/' +
+              (letters ? letters : '') +
+              String(officialCount).padStart(padLength, '0')
             : ''
 
     return (letters ? letters : '') + numberPart + officialPart

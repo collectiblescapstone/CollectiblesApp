@@ -1,29 +1,36 @@
 [
     {
+        "cardCount": 112,
+        "originalSet": "swsh4.5",
+        "id": "swsh4.51",
+        "subsetName": "Shiny Vault",
+        "prefix": "SV"
+    },
+    {
         "cardCount": 30,
-        "originalSet": "swsh10",
-        "id": "swsh9.0.1",
+        "originalSet": "swsh9",
+        "id": "swsh9.01",
         "subsetName": "Trainer Gallery",
         "prefix": "TG"
     },
     {
         "cardCount": 30,
         "originalSet": "swsh10",
-        "id": "swsh10.0.1",
+        "id": "swsh10.01",
         "subsetName": "Trainer Gallery",
         "prefix": "TG"
     },
     {
         "cardCount": 30,
         "originalSet": "swsh12",
-        "id": "swsh12.0.1",
+        "id": "swsh12.01",
         "subsetName": "Trainer Gallery",
         "prefix": "TG"
     },
     {
         "cardCount": 70,
         "originalSet": "swsh12.5",
-        "id": "swsh12.5.1",
+        "id": "swsh12.51",
         "subsetName": "Galarian Gallery",
         "prefix": "GG"
     }

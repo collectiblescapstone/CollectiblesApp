@@ -262,7 +262,7 @@
         "symbol": "https://assets.tcgdex.net/univ/ex/ex16/symbol"
     },
     {
-        "cardCount": { "official": 40, "total": 40 },
+        "cardCount": { "official": 0 },
         "id": "np",
         "logo": "https://assets.tcgdex.net/en/pop/np/logo",
         "name": "Nintendo Black Star Promos",

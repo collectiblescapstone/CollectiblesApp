@@ -87,10 +87,21 @@ async function main() {
         total: set.cardCount.total
     }))
 
-    await prisma.set.createMany({
-        data: normalizedSets,
-        skipDuplicates: true
-    })
+    // Upsert sets: update if exists, create if not
+    for (const set of normalizedSets) {
+        await prisma.set.upsert({
+            where: { id: set.id },
+            update: {
+                name: set.name,
+                series: set.series,
+                logo: set.logo,
+                symbol: set.symbol,
+                official: set.official,
+                total: set.total
+            },
+            create: set
+        })
+    }
 
     console.log(`Sets processed: ${normalizedSets.length}`)
 
@@ -112,10 +123,19 @@ async function main() {
         official: subset.cardCount
     }))
 
-    await prisma.subset.createMany({
-        data: normalizedSubsets,
-        skipDuplicates: true
-    })
+    // Upsert subsets: update if exists, create if not
+    for (const subset of normalizedSubsets) {
+        await prisma.subset.upsert({
+            where: { id: subset.id },
+            update: {
+                name: subset.name,
+                setId: subset.setId,
+                prefix: subset.prefix,
+                official: subset.official
+            },
+            create: subset
+        })
+    }
 
     console.log(`Subsets processed: ${normalizedSubsets.length}`)
 
@@ -136,7 +156,6 @@ async function main() {
 
     for (const file of filenames) {
         const filePath = path.join(dataPath, file)
-
         const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'))
 
         if (Array.isArray(parsed.cards)) {
@@ -147,7 +166,6 @@ async function main() {
     console.log(`Total cards loaded: ${allCards.length}`)
 
     const validCards = allCards.filter((c) => c?.set?.id)
-
     console.log(`Valid cards: ${validCards.length}`)
 
     // =====================================================
@@ -168,23 +186,10 @@ async function main() {
     }))
 
     // =====================================================
-    // INSERT CARDS
+    // INSERT / UPDATE CARDS
     // =====================================================
 
-    console.log('Inserting new cards...')
-
-    await prisma.card.createMany({
-        data: normalizedCards,
-        skipDuplicates: true
-    })
-
-    console.log('Initial card insert complete.')
-
-    // =====================================================
-    // UPDATE CARDS
-    // =====================================================
-
-    console.log('Updating existing cards...')
+    console.log('Upserting cards...')
 
     const batchSize = 100
 
@@ -193,9 +198,9 @@ async function main() {
 
         await Promise.all(
             batch.map((card) =>
-                prisma.card.updateMany({
+                prisma.card.upsert({
                     where: { id: card.id },
-                    data: {
+                    update: {
                         name: card.name,
                         category: card.category,
                         types: { set: card.types },
@@ -205,7 +210,8 @@ async function main() {
                         dexId: { set: card.dexId },
                         setId: card.setId,
                         image_url: card.image_url
-                    }
+                    },
+                    create: card
                 })
             )
         )
@@ -216,8 +222,6 @@ async function main() {
             )}`
         )
     }
-
-    console.log('Card updates complete.')
 
     console.log('Seed complete.')
 }

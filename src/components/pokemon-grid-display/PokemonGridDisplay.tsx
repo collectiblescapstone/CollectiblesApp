@@ -39,7 +39,7 @@ import { PokemonSetType } from '@/types/pokemon-grid'
 // Utils
 import { getSetGroups } from '@/utils/pokemonSet'
 import { ALL_POKEMON } from '@/utils/pokedex'
-import { sortCardId } from '@/utils/sortCardId'
+import { sortSetIds } from '@/utils/formatSetNumber'
 
 const NUM_ITEMS_PER_PAGE = 24
 
@@ -511,7 +511,7 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                     <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
                         {(groupedSets[selectedEra] || []) // ✅ default empty array
                             .slice() // copy array
-                            .sort((a, b) => sortCardId(a.id, b.id))
+                            .sort((a, b) => sortSetIds(a.id, b.id))
                             .map((set) => {
                                 const imageSrc = set.logo || set.symbol
                                 const counts = setCounts[set.id]

@@ -20,7 +20,8 @@ const nextConfig: NextConfig = {
         }
 
         return config
-    }
+    },
+    serverExternalPackages: ['sharp', 'onnxruntime-node'],
 }
 
 export default nextConfig

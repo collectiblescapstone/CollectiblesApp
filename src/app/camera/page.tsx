@@ -319,6 +319,8 @@ const CameraPage = () => {
                     sourceImageData={sourceImageData}
                     onProcessed={handleProcessed}
                     overlayRef={isIOS ? null : overlayCanvas}
+                    // TODO fix
+                    inputCanvasForIOS={isIOS ? inputCanvas : inputCanvas}
                 />
             ) : (
                 <Box>No image captured.</Box>

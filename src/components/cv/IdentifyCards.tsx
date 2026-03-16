@@ -3,33 +3,37 @@
 import { useRef, useEffect, useState } from 'react'
 import { Box, ScrollArea, Text, VStack } from '@chakra-ui/react'
 
-import { CardData } from '@/types/identification'
+import { PredictedCards } from '@/types/identification'
 import cvReadyPromise, { CV } from '@techstark/opencv-js'
 import { locateWithYOLO } from '@/utils/identification/locateWithYOLO'
 import { CardClassifier } from '@/utils/identification/classifyNormalizedCard'
 import { IdentifiedCard } from './IdentifiedCard'
 import { useAuth } from '@/context/AuthProvider'
+import { Capacitor } from '@capacitor/core'
+import { baseUrl } from '@/utils/constants'
 
 interface IdentifyCardsProps {
     sourceImageData?: ImageData
     onProcessed: () => void
     overlayRef: React.RefObject<HTMLCanvasElement | null> | null
+    inputCanvasForIOS?: React.RefObject<HTMLCanvasElement | null>
 }
-
-type PredictedCard = { data: CardData; imageURL: string }[]
 
 export const IdentifyCards = ({
     sourceImageData,
     onProcessed,
-    overlayRef
+    overlayRef,
+    inputCanvasForIOS
 }: IdentifyCardsProps) => {
     const isProcessing = useRef<boolean>(false)
     const cv = useRef<CV | null>(null)
 
-    const [predictedCards, setPredictedCards] = useState<PredictedCard>()
+    const [predictedCards, setPredictedCards] = useState<PredictedCards>()
     const [instantAddedCards, setInstantAddedCards] = useState<string[]>([]) // list of ids that have been instant added
 
     const { session } = useAuth()
+
+    const isIOS = true //Capacitor.getPlatform() === 'ios'
 
     useEffect(() => {
         // called when new image data is made available by parent, runs the whole identification pipeline and updates state with results
@@ -40,43 +44,94 @@ export const IdentifyCards = ({
             if (isProcessing.current) return
             isProcessing.current = true
 
-            // get openCV instance
-            if (!cv.current) {
-                const cvInstance = await cvReadyPromise
-                cv.current = cvInstance
-            }
-
-            const res = await locateWithYOLO(imageData, cv.current!, false)
-
-            // display overlay of detected cards in parent component
-            if (res && res.results.length > 0 && overlayRef) {
-                overlayRef.current!.width = res.overlay.width
-                overlayRef.current!.height = res.overlay.height
-                overlayRef
-                    .current!.getContext('2d')!
-                    .putImageData(res.overlay, 0, 0)
-            }
-
-            // for each detected card
-            const classifier = await CardClassifier()
-            const similar: PredictedCard = []
-            for (const card of res?.results ?? []) {
-                // find most similar card
-                const similarCards = classifier(cv.current!, card.image)
-                if (similarCards.length > 0) {
-                    // update list of identified cards with closest result
-                    similar.push({
-                        data: similarCards[0],
-                        imageURL: similarCards[0].card.image + '/low.jpg'
-                    })
+            if (isIOS) {
+                if (!inputCanvasForIOS?.current) {
+                    console.error(
+                        'Input canvas ref not provided for iOS processing.'
+                    )
+                    isProcessing.current = false
+                    onProcessed()
+                    return
                 }
-            }
-            setPredictedCards(similar)
+                // create blob from canvas
+                const blob = await new Promise<Blob | null>((resolve) => {
+                    inputCanvasForIOS.current!.toBlob(
+                        (b) => resolve(b),
+                        'image/jpeg',
+                        0.85
+                    )
+                })
+                if (!blob) {
+                    console.error(
+                        'Failed to create blob from canvas for iOS processing.'
+                    )
+                    isProcessing.current = false
+                    onProcessed()
+                    return
+                }
 
-            // cleanup
-            for (const r of res?.results ?? []) {
-                if (r.image && !r.image.isDeleted()) {
-                    r.image.delete()
+                const arrayBuffer = await blob.arrayBuffer()
+
+                // just use a fetch request
+                const response = await fetch(`${baseUrl}/api/identify-card`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/octet-stream' },
+                    body: arrayBuffer
+                })
+
+                if (response.status === 200) {
+                    const resData = await response.json()
+                    const predictedCards: PredictedCards =
+                        resData.predictedCards
+                    setPredictedCards(predictedCards)
+                } else {
+                    console.error(
+                        'Failed to identify cards on server:',
+                        response.statusText
+                    )
+
+                    // return without setting isProcessing to false or calling onProcessed to prevent further processing attempts so server isn't spammed
+                    return
+                }
+            } else {
+                // get openCV instance
+                if (!cv.current) {
+                    const cvInstance = await cvReadyPromise
+                    cv.current = cvInstance
+                }
+
+                const res = await locateWithYOLO(imageData, cv.current!, false)
+
+                // display overlay of detected cards in parent component
+                if (res && res.results.length > 0 && overlayRef) {
+                    overlayRef.current!.width = res.overlay.width
+                    overlayRef.current!.height = res.overlay.height
+                    overlayRef
+                        .current!.getContext('2d')!
+                        .putImageData(res.overlay, 0, 0)
+                }
+
+                // for each detected card
+                const classifier = await CardClassifier()
+                const similar: PredictedCards = []
+                for (const card of res?.results ?? []) {
+                    // find most similar card
+                    const similarCards = classifier(cv.current!, card.image)
+                    if (similarCards.length > 0) {
+                        // update list of identified cards with closest result
+                        similar.push({
+                            data: similarCards[0],
+                            imageURL: similarCards[0].card.image + '/low.jpg'
+                        })
+                    }
+                }
+                setPredictedCards(similar)
+
+                // cleanup
+                for (const r of res?.results ?? []) {
+                    if (r.image && !r.image.isDeleted()) {
+                        r.image.delete()
+                    }
                 }
             }
 

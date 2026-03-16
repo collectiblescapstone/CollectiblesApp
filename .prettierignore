@@ -1,5 +1,3 @@
-# public
-# !public/temporary_card_data
+public
 android/*
 ios/*
-*.json

@@ -1060,26 +1060,13 @@
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
     },
     {
-        "cardCount": { "official": 172, "total": 216 },
-        "id": "swsh9.1",
-        "logo": "https://assets.tcgdex.net/en/swsh/swsh9/logo",
-        "name": "Brilliant Stars Trainer Gallery",
-        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol"
-    },
-    {
         "cardCount": { "official": 189, "total": 246 },
         "id": "swsh10",
         "logo": "https://assets.tcgdex.net/en/swsh/swsh10/logo",
         "name": "Astral Radiance",
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh10/symbol"
     },
-    {
-        "cardCount": { "official": 30, "total": 30 },
-        "id": "swsh10.1",
-        "logo": "https://assets.tcgdex.net/en/swsh/swsh10/logo",
-        "name": "Astral Radiance Trainer Gallery",
-        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh10/symbol"
-    },
+
     {
         "cardCount": { "official": 78, "total": 88 },
         "id": "swsh10.5",
@@ -1102,24 +1089,10 @@
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12/symbol"
     },
     {
-        "cardCount": { "official": 30, "total": 30 },
-        "id": "swsh12.1",
-        "logo": "https://assets.tcgdex.net/en/swsh/swsh12/logo",
-        "name": "Silver Tempest Trainer Gallery",
-        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12/symbol"
-    },
-    {
         "cardCount": { "official": 159, "total": 230 },
         "id": "swsh12.5",
         "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
         "name": "Crown Zenith",
-        "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
-    },
-    {
-        "cardCount": { "official": 70, "total": 70 },
-        "id": "swsh12.5.1",
-        "logo": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo",
-        "name": "Crown Zenith Galarian Gallery",
         "symbol": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol"
     },
     {

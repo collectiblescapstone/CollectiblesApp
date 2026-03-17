@@ -135,6 +135,29 @@ export const POST = async (request: Request) => {
           })
         : []
 
+    // Filtering through the matches and removing any matches where either user has blocked the other.
+    const filteredTradeMatches = []
+    for (const match of tradeMatches) {
+        const isBlocked = await prisma.blockList.findFirst({
+            where: {
+                OR: [
+                    {
+                        userId: userID,
+                        blockedUserId: match.user.id
+                    },
+                    {
+                        userId: match.user.id,
+                        blockedUserId: userID
+                    }
+                ]
+            }
+        })
+
+        if (isBlocked === null) {
+            filteredTradeMatches.push(match)
+        }
+    }
+
     // Group viable options by User 2 with cards each side wants.
     const viableOptionsMap = new Map<
         string,
@@ -158,7 +181,7 @@ export const POST = async (request: Request) => {
         }
     >()
 
-    for (const match of tradeMatches) {
+    for (const match of filteredTradeMatches) {
         const cardsUser2WantsFromUser1 = match.user.wishlist
             .map((wishlistEntry) =>
                 tradeListCardsById.get(wishlistEntry.card.id)

@@ -47,6 +47,17 @@ model Set {
   symbol   String?
   total    Int     @default(0)
   cards    Card[]
+  subsets  Subset[]
+}
+
+model Subset {
+  id       String  @id
+  setId    String
+  name     String
+  prefix   String
+  official Int
+
+  set      Set     @relation(fields: [setId], references: [id], onUpdate: Cascade)
 }
 
 model Card {

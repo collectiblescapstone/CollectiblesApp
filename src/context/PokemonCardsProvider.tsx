@@ -10,9 +10,16 @@ import {
 import { CapacitorHttp } from '@capacitor/core'
 
 // Types
-import type { Set as DatabaseSet } from '@prisma/client'
+import type {
+    Set as DatabaseSet,
+    Subset as DatabaseSubset
+} from '@prisma/client'
 import type { CardData } from '@/types/pokemon-card'
-import type { PokemonCard, PokemonSet } from '@/types/Cards/frontend-card'
+import type {
+    PokemonCard,
+    PokemonSet,
+    PokemonSubset
+} from '@/types/Cards/frontend-card'
 
 // Utils
 import { baseUrl } from '@/utils/constants'
@@ -33,6 +40,7 @@ type PokemonCardsContextType = {
     POKEMONGEN: number[]
     pokemonCards: Record<string, PokemonCard>
     pokemonSets: Record<string, PokemonSet>
+    pokemonSubsets: Record<string, PokemonSubset[]>
     masterSetCards: Record<string, Set<string>>
     pokemonMasterSetCards: Record<number, Set<string>>
     allCards: CardData[]
@@ -86,6 +94,11 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
     const [pokemonSets, setPokemonSets] = useState<Record<string, PokemonSet>>(
         {}
     )
+
+    // Local state for Pokemon subsets, grouped by original set
+    const [pokemonSubsets, setPokemonSubsets] = useState<
+        Record<string, PokemonSubset[]>
+    >({})
 
     // Local state for master and grandmaster sets
 
@@ -239,6 +252,30 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
             }
         }
 
+        const fetchPokemonSubsets = async (): Promise<void> => {
+            try {
+                const response = await fetch('/api/pokemon-subset')
+                if (!response.ok)
+                    throw new Error(`Failed to fetch /api/pokemon-subset`)
+                const subsets: DatabaseSubset[] = await response.json()
+
+                const tempSubsets: Record<string, PokemonSubset[]> = {}
+                for (const subset of subsets) {
+                    if (!tempSubsets[subset.setId]) {
+                        tempSubsets[subset.setId] = []
+                    }
+                    tempSubsets[subset.setId].push({
+                        name: subset.name,
+                        prefix: subset.prefix,
+                        official: subset.official
+                    })
+                }
+                setPokemonSubsets(tempSubsets)
+            } catch (err) {
+                console.error('Fetch error for pokemon subsets:', err)
+            }
+        }
+
         const fetchPokedex = async () => {
             const tempPokedexData: string[] = []
             try {
@@ -256,6 +293,7 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
         fetchPokedex()
         fetchPokemonCards()
         fetchPokemonSets()
+        fetchPokemonSubsets()
     }, [])
 
     const POKEMONGEN = [151, 251, 386, 493, 649, 721, 809, 905, 1025]
@@ -389,6 +427,7 @@ export const PokemonCardsProvider = ({ children }: { children: ReactNode }) => {
                 POKEMONGEN,
                 pokemonCards,
                 pokemonSets,
+                pokemonSubsets,
                 masterSetCards,
                 pokemonMasterSetCards,
                 allCards,

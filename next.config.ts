@@ -21,9 +21,13 @@ const nextConfig: NextConfig = {
 
         return config
     },
+    serverExternalPackages: ['sharp', 'onnxruntime-node'],
     outputFileTracingExcludes: {
         '/': [
-            'node_modules/@huggingface/transformers/node_modules/onnxruntime-node/bin/napi-v3/linux/x64/!(libonnxruntime.so.1|onnxruntime_binding.node)'
+            'node_modules/onnxruntime-node/bin/napi-v6/linux/x64/!(libonnxruntime.so.1|onnxruntime_binding.node)',
+            'node_modules/onnxruntime-node/bin/napi-v6/linux/arm64/!(libonnxruntime.so.1|onnxruntime_binding.node)',
+            'node_modules/onnxruntime-node/bin/napi-v6/win/*',
+            'node_modules/onnxruntime-node/bin/napi-v6/darwin/*'
         ]
     }
 }

@@ -16,7 +16,7 @@ export const loadModelServer = async (
 
     const DEFAULT_INPUT_SIZE = [1, 3, 640, 640]
     const settings: InferenceSession.SessionOptions = {
-        executionProviders: ['cuda', 'cpu', 'coreml'],
+        executionProviders: ['cpu'],
         graphOptimizationLevel: 'all'
     }
 

@@ -195,10 +195,15 @@ describe('CardFilter', () => {
         const cancelButton = screen.getByRole('button', { name: /cancel/i })
         fireEvent.click(cancelButton)
 
-        // Check if the popover state changed to closed
+        // Chakra may either keep dialog mounted (data-state=closed)
+        // or unmount it entirely depending on runtime timing.
         await waitFor(() => {
-            const popoverContent = screen.getByRole('dialog')
-            expect(popoverContent).toHaveAttribute('data-state', 'closed')
+            const popoverContent = screen.queryByRole('dialog')
+            if (popoverContent) {
+                expect(popoverContent).toHaveAttribute('data-state', 'closed')
+            } else {
+                expect(screen.queryByText('Filters')).not.toBeInTheDocument()
+            }
         })
     })
 
@@ -217,8 +222,12 @@ describe('CardFilter', () => {
 
         await waitFor(() => {
             expect(mockSetFilters).toHaveBeenCalled()
-            const popoverContent = screen.getByRole('dialog')
-            expect(popoverContent).toHaveAttribute('data-state', 'closed')
+            const popoverContent = screen.queryByRole('dialog')
+            if (popoverContent) {
+                expect(popoverContent).toHaveAttribute('data-state', 'closed')
+            } else {
+                expect(screen.queryByText('Filters')).not.toBeInTheDocument()
+            }
         })
     })
 
@@ -378,20 +387,15 @@ describe('CardFilter', () => {
             expect(screen.getByText('Filters')).toBeInTheDocument()
         })
 
-        // Uncheck generation 1
-        const gen1Label = screen.getByText('1')
-        const gen1Checkbox = gen1Label
-            .closest('label')
-            ?.querySelector('input[type="checkbox"]')
+        // Uncheck generation 1 via the accessible checkbox control
+        const gen1Checkbox = screen.getByRole('checkbox', { name: '1' })
+        expect(gen1Checkbox).toBeChecked()
+        fireEvent.click(gen1Checkbox)
 
-        if (gen1Checkbox) {
-            fireEvent.click(gen1Checkbox)
-
-            // Wait for checkbox to be unchecked
-            await waitFor(() => {
-                expect(gen1Checkbox).not.toBeChecked()
-            })
-        }
+        // Wait for checkbox to be unchecked
+        await waitFor(() => {
+            expect(gen1Checkbox).not.toBeChecked()
+        })
 
         // Click Confirm
         const confirmButton = screen.getByRole('button', { name: /confirm/i })

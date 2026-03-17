@@ -12,6 +12,14 @@ jest.mock('@capacitor/core', () => ({
     }
 }))
 
+// Mock Next.js router
+const mockPush = jest.fn()
+jest.mock('next/navigation', () => ({
+    useRouter: () => ({
+        push: mockPush
+    })
+}))
+
 const mockDelete = CapacitorHttp.delete as jest.MockedFunction<
     typeof CapacitorHttp.delete
 >
@@ -157,6 +165,112 @@ describe('PokemonCardInfo', () => {
 
             await waitFor(() => {
                 expect(screen.getByText('PSA 10')).toBeInTheDocument()
+            })
+        })
+
+        it('handles empty string grade and gradeLevel', async () => {
+            mockGetUserCard.mockResolvedValue({
+                ...mockCardInfo,
+                grade: '',
+                gradeLevel: ''
+            })
+
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={false} />
+            )
+
+            // Empty strings are falsy, so should trigger || '' fallback
+            // and parseGradeLevel should receive empty strings
+            // The result should be "grade + ' ' + gradeLevel" = " "
+            await waitFor(() => {
+                expect(screen.getByTestId('cards-icon')).toBeInTheDocument()
+            })
+        })
+
+        it('displays default condition when condition is undefined', async () => {
+            mockGetUserCard.mockResolvedValue({
+                ...mockCardInfo,
+                condition: undefined as unknown as string,
+                grade: null,
+                gradeLevel: null
+            })
+
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={false} />
+            )
+
+            await waitFor(() => {
+                expect(screen.getByText('Near Mint')).toBeInTheDocument()
+            })
+        })
+
+        it('displays default condition when condition is not in map', async () => {
+            mockGetUserCard.mockResolvedValue({
+                ...mockCardInfo,
+                condition: 'unknown-condition',
+                grade: null,
+                gradeLevel: null
+            })
+
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={false} />
+            )
+
+            await waitFor(() => {
+                expect(screen.getByText('Near Mint')).toBeInTheDocument()
+            })
+        })
+
+        it('handles card with only grade (no gradeLevel)', async () => {
+            mockGetUserCard.mockResolvedValue({
+                ...mockCardInfo,
+                grade: 'PSA',
+                gradeLevel: null
+            })
+
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={false} />
+            )
+
+            // When gradeLevel is null, it should use condition instead
+            await waitFor(() => {
+                expect(screen.getByText('Near Mint')).toBeInTheDocument()
+            })
+        })
+
+        it('handles card with only gradeLevel (no grade)', async () => {
+            mockGetUserCard.mockResolvedValue({
+                ...mockCardInfo,
+                grade: null,
+                gradeLevel: '10'
+            })
+
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={false} />
+            )
+
+            // When grade is null, it should use condition instead
+            await waitFor(() => {
+                expect(screen.getByText('Near Mint')).toBeInTheDocument()
+            })
+        })
+
+        it('handles undefined forTrade and showcase', async () => {
+            mockGetUserCard.mockResolvedValue({
+                ...mockCardInfo,
+                forTrade: undefined as unknown as boolean,
+                showcase: undefined as unknown as boolean
+            })
+
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={false} />
+            )
+
+            await waitFor(() => {
+                expect(screen.queryByTestId('eye-icon')).not.toBeInTheDocument()
+                expect(
+                    screen.queryByTestId('swap-icon')
+                ).not.toBeInTheDocument()
             })
         })
 
@@ -355,6 +469,88 @@ describe('PokemonCardInfo', () => {
                 expect(mockOnDelete).toHaveBeenCalledWith('entry-123')
                 expect(mockPopupClose).toHaveBeenCalledWith('confirm-delete')
             })
+        })
+
+        it('deletes card without onDelete callback', async () => {
+            mockDelete.mockResolvedValue(
+                {} as Awaited<ReturnType<typeof CapacitorHttp.delete>>
+            )
+
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={true} />
+            )
+
+            await waitFor(() => {
+                const deleteButton = screen
+                    .getByTestId('trash-icon')
+                    .closest('button')
+                fireEvent.click(deleteButton!)
+            })
+
+            const popupConfig = mockPopupOpen.mock.calls[0][1]
+            const deleteButtonOnClick = (
+                (
+                    (popupConfig.content as { props: { children: unknown[] } })
+                        .props.children[1] as { props: { children: unknown[] } }
+                ).props.children[1] as {
+                    props: { onClick: () => Promise<void> | void }
+                }
+            ).props.onClick
+
+            await deleteButtonOnClick()
+
+            await waitFor(() => {
+                expect(mockDelete).toHaveBeenCalled()
+                expect(mockPopupClose).toHaveBeenCalledWith('confirm-delete')
+            })
+        })
+
+        it('closes popup when cancel button is clicked', async () => {
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={true} />
+            )
+
+            await waitFor(() => {
+                const deleteButton = screen
+                    .getByTestId('trash-icon')
+                    .closest('button')
+                fireEvent.click(deleteButton!)
+            })
+
+            const popupConfig = mockPopupOpen.mock.calls[0][1]
+            // Extract the cancel button onClick (first button in HStack)
+            const cancelButtonOnClick = (
+                (
+                    (popupConfig.content as { props: { children: unknown[] } })
+                        .props.children[1] as { props: { children: unknown[] } }
+                ).props.children[0] as {
+                    props: { onClick: () => void }
+                }
+            ).props.onClick
+
+            cancelButtonOnClick()
+
+            expect(mockPopupClose).toHaveBeenCalledWith('confirm-delete')
+        })
+
+        it('closes popup via onClickClose handler', async () => {
+            renderWithTheme(
+                <PokemonCardInfo entryId="entry-123" deleteCard={true} />
+            )
+
+            await waitFor(() => {
+                const deleteButton = screen
+                    .getByTestId('trash-icon')
+                    .closest('button')
+                fireEvent.click(deleteButton!)
+            })
+
+            const popupConfig = mockPopupOpen.mock.calls[0][1]
+            const onClickClose = popupConfig.onClickClose as () => void
+
+            onClickClose()
+
+            expect(mockPopupClose).toHaveBeenCalledWith('confirm-delete')
         })
 
         it('does not delete card when session is missing', async () => {

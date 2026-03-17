@@ -33,7 +33,11 @@ const config: Config = {
         '!src/**/*.d.ts', // Exclude declaration files
         '!src/components/ui/**/*', // Exclude Chakra UI components
         '!src/context/ChakraUIProvider.tsx', // Exclude Chakra UI provider
-        '!src/lib/*' // Exclude library files
+        '!src/lib/*', // Exclude library files
+        '!src/utils/testing-utils.tsx', // Exclude testing utilities
+        '!src/**/{constants,constants}.{ts,tsx}', // Exclude constants files
+        '!src/**/{types,type}.{ts,tsx}', // Exclude type files
+        '!src/**/types/*' // Exclude types directory
     ],
 
     // The directory where Jest should output its coverage files

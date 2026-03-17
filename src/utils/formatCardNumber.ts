@@ -5,8 +5,8 @@ export const formatCardNumber = (
     cardNumber: string | undefined,
     setId: string,
     setOfficial: number | undefined,
-    pokemonSubsets: Record<string, PokemonSubset[]>,
-    setName: string
+    pokemonSubsets: Record<string, PokemonSubset[]> | undefined,
+    setName: string | undefined
 ) => {
     const fullId = cardNumber ?? cardId
 
@@ -16,13 +16,13 @@ export const formatCardNumber = (
 
     const numberPartRaw = fullId.replace(letters, '')
 
-    const subsetsForSet = pokemonSubsets[setId] || []
+    const subsetsForSet = pokemonSubsets?.[setId] || []
 
     const subsetMatch = subsetsForSet.find(
         (subset) => subset.prefix === letters
     )
 
-    const padLengthOverride = setName.includes("McDonald's") ? 0 : 3
+    const padLengthOverride = setName?.includes("McDonald's") ? 0 : 3
 
     // Determine official count and pad length
     const officialCount = subsetMatch

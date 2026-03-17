@@ -9,7 +9,7 @@ import { locateWithYOLO } from '@/utils/identification/locateWithYOLO'
 import { CardClassifier } from '@/utils/identification/classifyNormalizedCard'
 import { IdentifiedCard } from './IdentifiedCard'
 import { useAuth } from '@/context/AuthProvider'
-import { Capacitor } from '@capacitor/core'
+import { Capacitor, CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
 
 interface IdentifyCardsProps {
@@ -57,41 +57,26 @@ export const IdentifyCards = ({
                     onProcessed()
                     return
                 }
-                // create blob from canvas
-                const blob = await new Promise<Blob | null>((resolve) => {
-                    inputCanvasForIOS.current!.toBlob(
-                        (b) => resolve(b),
-                        'image/jpeg',
-                        0.85
-                    )
-                })
-                if (!blob) {
-                    console.error(
-                        'Failed to create blob from canvas for iOS processing.'
-                    )
-                    isProcessing.current = false
-                    onProcessed()
-                    return
-                }
+                const imageDataUrl = inputCanvasForIOS.current.toDataURL(
+                    'image/jpeg',
+                    0.85
+                )
 
-                const arrayBuffer = await blob.arrayBuffer()
-
-                // needed to use a normal fetch as CapacitorHTTP always encoded the image as json, which massively increases payload size
-                const response = await fetch(`${baseUrl}/api/identify-card`, {
+                const response = await CapacitorHttp.post({
+                    url: `${baseUrl}/api/identify-card`,
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/octet-stream' },
-                    body: arrayBuffer
+                    headers: { 'Content-Type': 'application/json' },
+                    data: { imageDataUrl }
                 })
 
                 if (response.status === 200) {
-                    const resData = await response.json()
                     const predictedCards: PredictedCards =
-                        resData.predictedCards
+                        response.data.predictedCards
                     setPredictedCards(predictedCards)
                 } else {
                     console.error(
                         'Failed to identify cards on server:',
-                        response.statusText
+                        response.data
                     )
 
                     // return without setting isProcessing to false or calling onProcessed to prevent further processing attempts so server isn't spammed

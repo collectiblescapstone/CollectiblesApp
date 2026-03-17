@@ -20,7 +20,28 @@ export const POST = async (request: Request) => {
     try {
         // load sharp dynamically to avoid issues with next.js and native modules, also only load in server environment
         const { default: sharp } = await import('sharp')
-        const buffer = Buffer.from(await request.arrayBuffer())
+        const { imageDataUrl } = (await request.json()) as {
+            imageDataUrl?: string
+        }
+
+        if (!imageDataUrl || typeof imageDataUrl !== 'string') {
+            return NextResponse.json(
+                { error: 'Missing imageDataUrl in request body' },
+                { status: 400 }
+            )
+        }
+
+        const dataUrlMatch = imageDataUrl.match(
+            /^data:image\/[a-zA-Z0-9.+-]+;base64,(.+)$/
+        )
+        if (!dataUrlMatch?.[1]) {
+            return NextResponse.json(
+                { error: 'Invalid imageDataUrl format' },
+                { status: 400 }
+            )
+        }
+
+        const buffer = Buffer.from(dataUrlMatch[1], 'base64')
 
         const { data, info } = await sharp(buffer)
             .raw()

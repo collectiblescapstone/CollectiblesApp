@@ -8,9 +8,40 @@ import { Filters } from '@/hooks/useFilters'
 // Mock setFilters before mocks
 const mockSetFilters = jest.fn()
 
+// Define default filters inline to avoid hoisting issues
+const testDefaultFilters: Filters = {
+    generations: Array.from({ length: 9 }, (_, i) => i + 1),
+    types: {
+        Grass: true,
+        Fire: true,
+        Water: true,
+        Lightning: true,
+        Psychic: true,
+        Fighting: true,
+        Darkness: true,
+        Metal: true,
+        Fairy: true,
+        Dragon: true,
+        Colorless: true
+    },
+    categories: ['Pokémon', 'Item', 'Trainer', 'Energy']
+}
+
+const buildDefaultFilters = (): Filters => ({
+    ...testDefaultFilters,
+    types: { ...testDefaultFilters.types },
+    generations: [...testDefaultFilters.generations],
+    categories: [...testDefaultFilters.categories]
+})
+let mockFilters: Filters = buildDefaultFilters()
+
 // Mock the useFilters hook - using relative path
-jest.mock('../../../hooks/useFilters', () => {
-    const filter: Filters = {
+jest.mock('../../../hooks/useFilters', () => ({
+    useFilters: () => ({
+        filters: mockFilters,
+        setFilters: mockSetFilters
+    }),
+    defaultFilters: {
         generations: Array.from({ length: 9 }, (_, i) => i + 1),
         types: {
             Grass: true,
@@ -27,14 +58,7 @@ jest.mock('../../../hooks/useFilters', () => {
         },
         categories: ['Pokémon', 'Item', 'Trainer', 'Energy']
     }
-    return {
-        useFilters: () => ({
-            filters: filter,
-            setFilters: mockSetFilters
-        }),
-        defaultFilters: filter
-    }
-})
+}))
 
 // Mock imgPuller utility
 jest.mock('../../../utils/imgPuller', () => ({
@@ -47,6 +71,7 @@ jest.mock('../../../utils/imgPuller', () => ({
 describe('CardFilter', () => {
     beforeEach(() => {
         jest.clearAllMocks()
+        mockFilters = buildDefaultFilters()
     })
 
     it('renders the filter button', () => {
@@ -383,5 +408,30 @@ describe('CardFilter', () => {
         expect(callArg.generations).toEqual(
             expect.arrayContaining([2, 3, 4, 5, 6, 7, 8, 9])
         )
+    })
+
+    it('shows active filter icon when filters are not default', () => {
+        mockFilters = {
+            generations: [1],
+            types: {
+                Grass: true,
+                Fire: false,
+                Water: false,
+                Lightning: false,
+                Psychic: false,
+                Fighting: false,
+                Darkness: false,
+                Metal: false,
+                Fairy: false,
+                Dragon: false,
+                Colorless: false
+            },
+            categories: ['Pokémon']
+        }
+
+        renderWithTheme(<CardFilter />)
+        expect(
+            screen.getByRole('button', { name: /filter/i })
+        ).toBeInTheDocument()
     })
 })

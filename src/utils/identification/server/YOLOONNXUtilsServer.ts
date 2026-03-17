@@ -1,17 +1,17 @@
 // credit: https://github.com/nomi30701/yolo-multi-task-onnxruntime-web
 import { CV, Mat } from '@techstark/opencv-js'
-import { Tensor } from 'onnxruntime-web'
+import { Tensor } from 'onnxruntime-node'
 
 import { MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT } from '@/utils/constants'
 
-type postProcessSegmentResult = {
+type postProcessSegmentResultServer = {
     bbox: { x1: number; y1: number; w: number; h: number }
     classIdx: number
     score: number
     maskWeightIdx: number
 }
 
-type MaskData = {
+type MaskDataServer = {
     protoMask: Float32Array
     maskWeightsData: Float32Array
     MASK_CHANNELS: number
@@ -19,8 +19,8 @@ type MaskData = {
     MASK_WIDTH: number
 }
 
-export type PostProcessResult = {
-    results: postProcessSegmentResult[]
+export type PostProcessResultServer = {
+    results: postProcessSegmentResultServer[]
     masksMat: Mat | null
 }
 
@@ -33,11 +33,11 @@ export type PostProcessResult = {
  * @param scoreThreshold - Threshold for confidence score.
  * @returns Tuple of [results, masksData].
  */
-const postProcessSegment = (
+const postProcessSegmentServer = (
     rawTensor: Tensor,
     rawMaskTensor: Tensor,
     scoreThreshold: number
-): [Array<postProcessSegmentResult>, MaskData] => {
+): [Array<postProcessSegmentResultServer>, MaskDataServer] => {
     const NUM_PREDICTIONS = rawTensor.dims[1]
     const NUM_ATTRIBUTES = rawTensor.dims[2]
     // const NUM_BBOX_ATTRS = 6; // x1, y1, x2, y2, score, classidx
@@ -50,7 +50,7 @@ const postProcessSegment = (
     const MASK_HEIGHT = rawMaskTensor.dims[2]
     const MASK_WIDTH = rawMaskTensor.dims[3]
 
-    const results = new Array<postProcessSegmentResult>()
+    const results = new Array<postProcessSegmentResultServer>()
     const maskWeightsData = new Float32Array(NUM_PREDICTIONS * NUM_MASK_WEIGHTS)
 
     let resultCount = 0
@@ -84,7 +84,7 @@ const postProcessSegment = (
         }
     }
 
-    const masksData: MaskData = {
+    const masksData: MaskDataServer = {
         protoMask,
         maskWeightsData,
         MASK_CHANNELS,
@@ -103,10 +103,10 @@ const postProcessSegment = (
  * @param masksData - Object containing mask prototypes and weights.
  * @returns Resulting mask image data, or null if no results.
  */
-const postProcessMask = (
+const postProcessMaskServer = (
     cv: CV,
-    filteredResults: postProcessSegmentResult[],
-    masksData: MaskData
+    filteredResults: postProcessSegmentResultServer[],
+    masksData: MaskDataServer
 ): Mat | null => {
     if (!filteredResults || filteredResults.length === 0) return null
     const {
@@ -302,22 +302,22 @@ const postProcessMask = (
  * @param proto mask protos tensor
  * @returns
  */
-export const processONNXSessionResults = (
+export const processONNXSessionResultsServer = (
     cv: CV,
     detections: Tensor,
     proto: Tensor
-): PostProcessResult => {
+): PostProcessResultServer => {
     const scoreThreshold = 0.5
-    const [results, masksData] = postProcessSegment(
+    const [results, masksData] = postProcessSegmentServer(
         detections,
         proto,
         scoreThreshold
     )
 
-    const masksMat = postProcessMask(cv, results, masksData)
+    const masksMat = postProcessMaskServer(cv, results, masksData)
 
     return {
         results: results,
         masksMat: masksMat
-    } as PostProcessResult
+    } as PostProcessResultServer
 }

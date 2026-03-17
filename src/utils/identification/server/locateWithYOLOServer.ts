@@ -8,12 +8,13 @@ import {
 
 import { Corners, NormalizeCardResult } from '@/types/identification'
 
-import { Tensor } from 'onnxruntime-web'
-import { filterContours, reorderCorners } from './cvutils'
-import { processONNXSessionResults } from './YOLOONNXUtils'
-import { loadModel } from './loadModel'
+import { Tensor } from 'onnxruntime-node'
+import { filterContours, reorderCorners } from '../cvutils'
+import { processONNXSessionResultsServer } from './YOLOONNXUtilsServer'
+import { loadModelServer } from './loadModelServer'
+import path from 'path'
 
-let errorCount = 0
+let errorCountServer = 0
 
 /**
  * uses a custom yolo segmentation model to locate and identify cards from imagedata (MUST BE SQUARE ASPECT RATIO)
@@ -23,13 +24,15 @@ let errorCount = 0
  * @param logging should logging be enabled
  * @returns
  */
-export const locateWithYOLO = async (
+export const locateWithYOLOServer = async (
     imageData: ImageData,
     cv: CV,
     logging: boolean = false
-): Promise<{ results: NormalizeCardResult[]; overlay: ImageData } | null> => {
-    if (errorCount >= 5) {
-        console.warn('Too many errors in locateWithYOLO, skipping processing.')
+): Promise<{ results: NormalizeCardResult[] } | null> => {
+    if (errorCountServer >= 5) {
+        console.warn(
+            'Too many errors in locateWithYOLOServer, skipping processing.'
+        )
         return null
     }
     let res = null
@@ -38,6 +41,7 @@ export const locateWithYOLO = async (
     let inputTensor: Tensor | null = null
     let detections: Tensor | null = null
     let proto: Tensor | null = null
+
     const srcWidth = imageData.width
     const srcHeight = imageData.height
 
@@ -74,12 +78,15 @@ export const locateWithYOLO = async (
         if (logging) console.log('creating input tensor')
         // ----------
         const tensorShape = [1, 3, MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH] // [batch, channel, height, width]
+
         inputTensor = new Tensor('float32', preProcessed.data32F, tensorShape)
         preProcessed.delete()
 
         if (logging) console.log('loading YOLO ONNX model')
         // ----------
-        const session = await loadModel('/models/card_yolo.onnx')
+        const session = await loadModelServer(
+            path.join(process.cwd(), 'public', 'models', 'card_yolo.onnx')
+        )
 
         if (logging) console.log('running YOLO ONNX model inference')
         // ----------
@@ -89,7 +96,7 @@ export const locateWithYOLO = async (
 
         if (logging) console.log('post-processing')
         // ----------
-        const resultsProcessed = processONNXSessionResults(
+        const resultsProcessed = processONNXSessionResultsServer(
             cv,
             detections,
             proto
@@ -189,33 +196,12 @@ export const locateWithYOLO = async (
             } as NormalizeCardResult)
         }
 
-        if (foundCards.length > 0) {
-            // draw overlay
-            const overlayCanvas = document.createElement('canvas')
-            overlayCanvas.width = srcWidth
-            overlayCanvas.height = srcHeight
-            const overlayCtx = overlayCanvas.getContext('2d')!
-            overlayCtx.strokeStyle = 'rgba(0, 255, 0, 0.5)'
-            overlayCtx.lineWidth = 4
-
-            for (const card of foundCards) {
-                overlayCtx.beginPath()
-                overlayCtx.moveTo(card.corners[0][0], card.corners[0][1])
-                overlayCtx.lineTo(card.corners[1][0], card.corners[1][1])
-                overlayCtx.lineTo(card.corners[3][0], card.corners[3][1])
-                overlayCtx.lineTo(card.corners[2][0], card.corners[2][1])
-                overlayCtx.closePath()
-                overlayCtx.stroke()
-            }
-
-            const overlayImageData = overlayCanvas
-                .getContext('2d')!
-                .getImageData(0, 0, srcWidth, srcHeight)
-            res = { results: foundCards, overlay: overlayImageData }
+        if (foundCards.length !== 0) {
+            res = { results: foundCards }
         }
     } catch (e) {
         console.error('Error in locateWithYOLO:', e)
-        errorCount++
+        errorCountServer++
     } finally {
         // garbage collection
         matsToDelete.forEach((mat) => {

@@ -22,11 +22,11 @@
         "ci:db:deploy": "npx prisma migrate deploy"
     },
     "dependencies": {
+        "@capacitor-community/camera-preview": "^7.0.0",
         "@capacitor/android": "^7.4.3",
         "@capacitor/camera": "^7.0.4",
         "@capacitor/clipboard": "^7.0.4",
         "@capacitor/core": "^7.4.3",
-        "@capacitor-community/camera-preview": "^7.0.0",
         "@capacitor/ios": "^7.4.3",
         "@chakra-ui/icons": "^2.2.4",
         "@chakra-ui/react": "^3.28.0",
@@ -42,11 +42,13 @@
         "dotenv": "^17.2.3",
         "framer-motion": "^12.23.24",
         "next": "^15.5.12",
+        "onnxruntime-node": "1.23.0",
         "onnxruntime-web": "^1.24.2",
         "react": "19.1.0",
         "react-dom": "19.1.0",
         "react-hook-form": "^7.66.0",
         "react-icons": "^5.5.0",
+        "sharp": "^0.34.5",
         "zod": "^4.1.12"
     },
     "optionalDependencies": {

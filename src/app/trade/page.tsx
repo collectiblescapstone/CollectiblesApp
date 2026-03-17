@@ -75,8 +75,8 @@ const TradePage = () => {
                             username: viableUser.username ?? 'Unknown User',
                             avatarUrl:
                                 pfp_image_mapping[viableUser.profile_pic],
-                            rating: 0,
-                            ratingCount: 0,
+                            rating: viableUser.rating ?? 0,
+                            ratingCount: viableUser.rating_count ?? 0,
                             distance: viableUser.distance,
                             user1Wishlist: option.cardsUser1WantsFromUser2.map(
                                 (card) => ({

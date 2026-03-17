@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import DeleteAccount from '@/components/edit-profile/DeleteAccount'
 import { FormValues, VisibilityValues } from '@/types/personal-profile'
 import { GeoLocation } from '@/types/geolocation'
+import { Filter } from 'bad-words'
 
 import {
     Box,
@@ -98,6 +99,8 @@ const PersonalProfileScreen: React.FC = () => {
         }
     }
 
+    const filter = new Filter()
+
     const [isSaving, setIsSaving] = useState(false)
     const [loadingUserData, setLoadingUserData] = useState(true)
 
@@ -112,6 +115,22 @@ const PersonalProfileScreen: React.FC = () => {
                 message: 'Please select a valid location from the suggestions.'
             })
             return
+        }
+        const profanityCheck = [
+            { field: 'firstName', value: data.firstName },
+            { field: 'lastName', value: data.lastName },
+            { field: 'username', value: data.username },
+            { field: 'bio', value: data.bio }
+        ]
+
+        for (const item of profanityCheck) {
+            if (filter.isProfane(item.value)) {
+                setError(item.field as keyof FormValues, {
+                    type: 'profanity',
+                    message: 'Please remove the profanity.'
+                })
+                return
+            }
         }
         setIsSaving(true)
         try {
@@ -424,7 +443,7 @@ const PersonalProfileScreen: React.FC = () => {
                         </Field.ErrorText>
                     )}
                 </Field.Root>
-                <Field.Root>
+                <Field.Root invalid={!!errors.bio}>
                     <Field.Label>Bio</Field.Label>
                     <Span color="gray.500" textStyle="xs">
                         {bioVal.length} / {MAX_CHARACTERS}
@@ -440,6 +459,9 @@ const PersonalProfileScreen: React.FC = () => {
                     <Field.HelperText>
                         Write a little about yourself for others to see.
                     </Field.HelperText>
+                    {errors.bio && (
+                        <Field.ErrorText>{errors.bio.message}</Field.ErrorText>
+                    )}
                 </Field.Root>
                 <Field.Root invalid={!!errors.location} position="relative">
                     <Field.Label>Location</Field.Label>

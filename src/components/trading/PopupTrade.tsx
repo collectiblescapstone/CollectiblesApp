@@ -17,7 +17,7 @@ import { LuArrowUpDown } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaDiscord, FaWhatsapp } from 'react-icons/fa'
 import { RiTwitterXLine } from 'react-icons/ri'
 import { useProfileSelected } from '@/context/ProfileSelectionProvider'
-// import { Clipboard } from '@capacitor/clipboard'
+import { Clipboard } from '@capacitor/clipboard'
 
 type ContactMethod = {
     method: string

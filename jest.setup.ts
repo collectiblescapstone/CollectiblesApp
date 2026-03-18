@@ -1,5 +1,11 @@
 import '@testing-library/jest-dom'
 
+jest.mock('bad-words', () => ({
+    Filter: jest.fn().mockImplementation(() => ({
+        isProfane: jest.fn(() => false)
+    }))
+}))
+
 // implementation of structuredClone polyfill
 
 if (typeof global.structuredClone !== 'function') {

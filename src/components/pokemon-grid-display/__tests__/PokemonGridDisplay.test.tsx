@@ -86,8 +86,6 @@ jest.mock('../../../utils/sortCardId', () => ({
 // Store callbacks for select components to trigger changes in tests
 let sortByOnValueChange: ((e: { value: string[] }) => void) | null = null
 let generationOnValueChange: ((e: { value: string[] }) => void) | null = null
-// This is actually used, idk why the linter thinks it's not used. Tests fail when this is removed!
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let eraOnValueChange: ((e: { value: string[] }) => void) | null = null
 
 // Mock Chakra UI Select component to capture onValueChange callbacks

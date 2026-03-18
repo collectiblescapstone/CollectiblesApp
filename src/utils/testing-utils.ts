@@ -7,7 +7,7 @@ export const renderWithTheme = (ui: React.ReactNode) => {
     })
 }
 
-type TransactionCallback = (tx: any) => Promise<unknown>
+type TransactionCallback = (tx: unknown) => Promise<unknown>
 
 export const mockPrisma = {
     $transaction: jest.fn(),

@@ -6,26 +6,48 @@ import {
     ButtonProps,
     FlexProps,
     HeadingProps,
-    TextProps,
+    TextProps
 } from '@chakra-ui/react'
 
 jest.mock('@chakra-ui/react', () => {
     return {
         __esModule: true,
 
-        Flex: ({ children }: FlexProps & { children?: React.ReactNode }) => <div>{children}</div>,
-        Heading: ({ children }: HeadingProps & { children?: React.ReactNode }) => <h1>{children}</h1>,
-        Text: ({ children }: TextProps & { children?: React.ReactNode }) => <p>{children}</p>,
-        Button: ({ children, onClick }: ButtonProps & { children?: React.ReactNode; onClick?: () => void }) => (
-            <button onClick={onClick}>{children}</button>
+        Flex: ({ children }: FlexProps & { children?: React.ReactNode }) => (
+            <div>{children}</div>
         ),
+        Heading: ({
+            children
+        }: HeadingProps & { children?: React.ReactNode }) => (
+            <h1>{children}</h1>
+        ),
+        Text: ({ children }: TextProps & { children?: React.ReactNode }) => (
+            <p>{children}</p>
+        ),
+        Button: ({
+            children,
+            onClick
+        }: ButtonProps & {
+            children?: React.ReactNode
+            onClick?: () => void
+        }) => <button onClick={onClick}>{children}</button>,
 
         Tabs: {
-            Root: ({ children }: { children?: React.ReactNode }) => <div data-testid="tabs-root">{children}</div>,
-            List: ({ children }: { children?: React.ReactNode }) => <div data-testid="tabs-list">{children}</div>,
-            Trigger: ({ children }: { children?: React.ReactNode }) => <button type="button">{children}</button>,
-            Indicator: ({ children }: { children?: React.ReactNode }) => <div data-testid="tabs-indicator">{children}</div>,
-            Content: ({ children }: { children?: React.ReactNode }) => <div>{children}</div>,
+            Root: ({ children }: { children?: React.ReactNode }) => (
+                <div data-testid="tabs-root">{children}</div>
+            ),
+            List: ({ children }: { children?: React.ReactNode }) => (
+                <div data-testid="tabs-list">{children}</div>
+            ),
+            Trigger: ({ children }: { children?: React.ReactNode }) => (
+                <button type="button">{children}</button>
+            ),
+            Indicator: ({ children }: { children?: React.ReactNode }) => (
+                <div data-testid="tabs-indicator">{children}</div>
+            ),
+            Content: ({ children }: { children?: React.ReactNode }) => (
+                <div>{children}</div>
+            )
         }
     }
 })

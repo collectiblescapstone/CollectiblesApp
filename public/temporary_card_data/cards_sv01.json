@@ -1059,7 +1059,10 @@
             },
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" }
+                { "type": "reverse", "size": "standard" },
+                { "type": "mirage", "size": "standard" },
+                { "type": "jumbo", "size": "jumbo" },
+                { "type": "beginner's session", "size": "standard" }
             ],
             "dexId": [906],
             "hp": 70,
@@ -1141,7 +1144,8 @@
             },
             "variants_detailed": [
                 { "type": "normal", "size": "standard" },
-                { "type": "reverse", "size": "standard" }
+                { "type": "reverse", "size": "standard" },
+                { "type": "jumbo", "size": "jumbo" }
             ],
             "dexId": [907],
             "hp": 90,
@@ -1222,7 +1226,13 @@
                 "reverse": false,
                 "wPromo": false
             },
-            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "variants_detailed": [
+                { "type": "holo", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "cosmos", "size": "standard" },
+                { "type": "jumbo", "size": "jumbo" },
+                { "type": "starlight", "size": "starlight" }
+            ],
             "dexId": [908],
             "hp": 160,
             "types": ["Grass"],
@@ -1553,7 +1563,10 @@
                 "reverse": false,
                 "wPromo": false
             },
-            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "variants_detailed": [
+                { "type": "holo", "size": "standard" },
+                { "type": "play! pokémon prize pack", "size": "standard" }
+            ],
             "dexId": [918],
             "hp": 260,
             "types": ["Grass"],
@@ -1883,7 +1896,12 @@
                 "reverse": false,
                 "wPromo": false
             },
-            "variants_detailed": [{ "type": "holo", "size": "standard" }],
+            "variants_detailed": [
+                { "type": "normal", "size": "standard" },
+                { "type": "reverse", "size": "standard" },
+                { "type": "holo", "size": "standard" },
+                { "type": "vertical", "size": "standard" }
+            ],
             "dexId": [930],
             "hp": 150,
             "types": ["Grass"],

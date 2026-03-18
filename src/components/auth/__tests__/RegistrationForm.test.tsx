@@ -312,11 +312,11 @@ describe('RegistrationForm', () => {
         fireEvent.change(
             screen.getByPlaceholderText(/enter your username or email/i),
             {
-                target: { value: 'test@email.com' }
+                target: { value: 'fuck' }
             }
         )
         fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
-            target: { value: 'testuser' }
+            target: { value: 'bittch' }
         })
         fireEvent.change(
             screen.getByPlaceholderText(/^enter your password$/i),

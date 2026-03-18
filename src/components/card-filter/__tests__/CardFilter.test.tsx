@@ -242,10 +242,7 @@ describe('CardFilter', () => {
         })
 
         // Find the checkbox for generation 1
-        const gen1Label = screen.getByText('1')
-        const gen1Checkbox = gen1Label
-            .closest('label')
-            ?.querySelector('input[type="checkbox"]')
+        const gen1Checkbox = screen.getByRole('checkbox', { name: '1' })
 
         expect(gen1Checkbox).toBeChecked()
 
@@ -325,10 +322,7 @@ describe('CardFilter', () => {
         })
 
         // Uncheck a generation
-        const gen1Label = screen.getByText('1')
-        const gen1Checkbox = gen1Label
-            .closest('label')
-            ?.querySelector('input[type="checkbox"]')
+        const gen1Checkbox = screen.getByRole('checkbox', { name: '1' })
 
         if (gen1Checkbox) {
             fireEvent.click(gen1Checkbox)
@@ -359,10 +353,7 @@ describe('CardFilter', () => {
         })
 
         // Uncheck a generation
-        const gen1Label = screen.getByText('1')
-        const gen1Checkbox = gen1Label
-            .closest('label')
-            ?.querySelector('input[type="checkbox"]')
+        const gen1Checkbox = screen.getByRole('checkbox', { name: '1' })
 
         if (gen1Checkbox) {
             fireEvent.click(gen1Checkbox)
@@ -404,14 +395,14 @@ describe('CardFilter', () => {
         // Verify setFilters was called
         await waitFor(() => {
             expect(mockSetFilters).toHaveBeenCalled()
-        })
 
-        // Check that the filter argument has generations without 1
-        const callArg = mockSetFilters.mock.calls[0][0]
-        expect(callArg.generations).not.toContain(1)
-        expect(callArg.generations).toEqual(
-            expect.arrayContaining([2, 3, 4, 5, 6, 7, 8, 9])
-        )
+            // Check that the filter argument has generations without 1
+            const callArg = mockSetFilters.mock.calls[0][0]
+            expect(callArg.generations).not.toContain(1)
+            expect(callArg.generations).toEqual(
+                expect.arrayContaining([2, 3, 4, 5, 6, 7, 8, 9])
+            )
+        })
     })
 
     it('shows active filter icon when filters are not default', () => {

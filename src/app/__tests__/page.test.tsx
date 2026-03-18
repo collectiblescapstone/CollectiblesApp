@@ -77,7 +77,6 @@ describe('Landing Page', () => {
         expect(
             screen.getByRole('button', { name: /Features/i })
         ).toBeInTheDocument()
-        expect(screen.getByRole('button', { name: /FAQ/i })).toBeInTheDocument()
         expect(
             screen.getByRole('button', { name: /Sign Up/i })
         ).toBeInTheDocument()

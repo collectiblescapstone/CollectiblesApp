@@ -1,14 +1,31 @@
 'use client'
-import { Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
+
+// React
 import React, { useState } from 'react'
-import { PasswordInput } from '@/components/ui/password-input'
-import { useAuth } from '@/context/AuthProvider'
-import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
-import { SignupFormValues } from '@/types/auth'
+
+// Next.js
+import { useRouter } from 'next/navigation'
+
+// Chakra UI
+import { Box, Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
+
+// Capacitor
 import { CapacitorHttp } from '@capacitor/core'
+
+// Child Components
+import { Logo } from '@/components/logo/Logo'
+import { PasswordInput } from '@/components/ui/password-input'
+
+// Context
+import { useAuth } from '@/context/AuthProvider'
+
+// Utils
 import { baseUrl } from '@/utils/constants'
 import { profanityChecker } from '@/utils/profanityCheck'
+
+// Types
+import { SignupFormValues } from '@/types/auth'
 
 const RegistrationForm = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -146,9 +163,18 @@ const RegistrationForm = () => {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <Heading size="5xl" pb={12}>
-                    Kollec {/* LOGO PLACEHOLDER */}
-                </Heading>
+                <Box pb={12}>
+                    <Box display="flex" justifyContent="center">
+                        <Logo
+                            data-testid="logo"
+                            style={{
+                                color: '#F2C75C',
+                                width: '50%',
+                                height: '50%'
+                            }}
+                        />
+                    </Box>
+                </Box>
 
                 <Heading size="lg">Sign Up for an account</Heading>
 

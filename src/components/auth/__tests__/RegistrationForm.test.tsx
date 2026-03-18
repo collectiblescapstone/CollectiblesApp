@@ -8,6 +8,7 @@ import { CapacitorHttp } from '@capacitor/core'
 // Mock Auth context and Next.js router
 const signUpMock = jest.fn()
 const pushMock = jest.fn()
+const isProfaneMock = jest.fn()
 
 jest.mock('../../../context/AuthProvider', () => ({
     useAuth: () => ({
@@ -31,8 +32,17 @@ jest.mock('../../../utils/profiles/userNameProfilePuller', () => ({
     fetchUserProfile: jest.fn().mockResolvedValue({ email: 'test@example.com' })
 }))
 
+jest.mock('bad-words', () => {
+    return {
+        Filter: jest.fn().mockImplementation(() => ({
+            isProfane: (value: string) => isProfaneMock(value)
+        }))
+    }
+})
+
 describe('RegistrationForm', () => {
     beforeEach(() => {
+        isProfaneMock.mockReturnValue(false)
         jest.clearAllMocks()
     })
 
@@ -291,6 +301,40 @@ describe('RegistrationForm', () => {
                 screen.getByText(
                     /An unexpected error occurred. Please try again./i
                 )
+            ).toBeInTheDocument()
+        })
+    })
+
+    it('shows error when bad words are detected in the input fields', async () => {
+        isProfaneMock.mockReturnValue(true)
+
+        renderWithTheme(<RegistrationForm />)
+        fireEvent.change(
+            screen.getByPlaceholderText(/enter your username or email/i),
+            {
+                target: { value: 'fuck' }
+            }
+        )
+        fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
+            target: { value: 'bittch' }
+        })
+        fireEvent.change(
+            screen.getByPlaceholderText(/^enter your password$/i),
+            {
+                target: { value: 'password123' }
+            }
+        )
+        fireEvent.change(
+            screen.getByPlaceholderText(/^re-enter your password$/i),
+            {
+                target: { value: 'password123' }
+            }
+        )
+        fireEvent.click(screen.getByRole('button', { name: /^sign up$/i }))
+
+        await waitFor(() => {
+            expect(
+                screen.getByText(/Please remove profanity from this field./i)
             ).toBeInTheDocument()
         })
     })

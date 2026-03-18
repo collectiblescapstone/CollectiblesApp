@@ -185,8 +185,8 @@ const TradePage = () => {
                         </Text>
                         <Text fontSize="sm" color="gray.600">
                             We could not find any viable trades for you at the
-                            moment. Try editing your collection or wishlist to
-                            find some matches!
+                            moment. Try editing your collection, wishlist, or
+                            location info to find some matches!
                         </Text>
                     </Flex>
                 </Box>

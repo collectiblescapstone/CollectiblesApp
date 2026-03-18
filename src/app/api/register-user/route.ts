@@ -1,5 +1,6 @@
 import prisma from '@/lib/prisma'
 import { supabaseAdmin } from '@/lib/supabaseAdmin'
+import { profanityChecker } from '@/utils/profanityCheck'
 
 export const POST = async (request: Request) => {
     const { id, email, username, firstName, lastName } = await request.json()
@@ -15,6 +16,35 @@ export const POST = async (request: Request) => {
                     headers: { 'Content-Type': 'application/json' }
                 }
             )
+        }
+
+        const profanityCheck = [
+            {
+                field: 'firstName',
+                value: firstName
+            },
+            {
+                field: 'lastName',
+                value: lastName
+            },
+            {
+                field: 'username',
+                value: username
+            }
+        ]
+
+        for (const { field, value } of profanityCheck) {
+            if (profanityChecker(value)) {
+                return new Response(
+                    JSON.stringify({
+                        error: `Profanity detected in ${field}, please remove it.`
+                    }),
+                    {
+                        status: 400,
+                        headers: { 'Content-Type': 'application/json' }
+                    }
+                )
+            }
         }
 
         await prisma.user.create({

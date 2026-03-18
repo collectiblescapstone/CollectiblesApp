@@ -1,6 +1,6 @@
 'use client'
 
-import { Flex, Heading } from '@chakra-ui/react'
+import { Box, Flex, Heading, Image } from '@chakra-ui/react'
 import { usePathname, useRouter } from 'next/navigation'
 import { MENU_ITEMS } from './constants'
 
@@ -18,9 +18,20 @@ const Sidebar = () => {
             alignItems="flex-start"
             p={8}
         >
-            <Heading size="2xl" mb={16}>
-                Kollec
-            </Heading>
+            <Box
+                as="span"
+                color="brand.turtoise"
+                width="5rem"
+                pb={4}
+                alignSelf="center"
+            >
+                <Image
+                    src="/Assets/img/Logo/kollecLogo.svg"
+                    alt="Kollec Logo"
+                    width="100%"
+                    display="inline-block"
+                />
+            </Box>
             {MENU_ITEMS.map((item) => (
                 <Flex
                     key={item.path}

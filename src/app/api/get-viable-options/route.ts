@@ -85,13 +85,37 @@ export const POST = async (request: Request) => {
 
     const wishlistCardIds = user.wishlist.map((item) => item.card.id)
 
+    // Fetching all block relations that invlove the user - either they blocked someone or someone blocked them.
+    const blockRelations = await prisma.blockList.findMany({
+        where: {
+            OR: [{ userId: userID }, { blockedUserId: userID }]
+        },
+        select: {
+            userId: true,
+            blockedUserId: true
+        }
+    })
+
+    // Create a set of user IDs that are blocked by or have blocked the user, to easily filter them out later.
+    const blockedUserIds = new Set<string>()
+    for (const relation of blockRelations) {
+        if (relation.userId === userID) {
+            blockedUserIds.add(relation.blockedUserId)
+        } else {
+            blockedUserIds.add(relation.userId)
+        }
+    }
+
     // Find all collection entries that are up for trade and match any card in the user's wishlist.
     const tradeMatches = wishlistCardIds.length
         ? await prisma.collectionEntry.findMany({
               where: {
                   forTrade: true,
                   cardId: { in: wishlistCardIds },
-                  userId: { not: userID },
+                  // Filtering out users that are blocked or have blocked the user
+                  userId: {
+                      notIn: [userID, ...blockedUserIds]
+                  },
                   user: {
                       visibility: 'public'
                   }

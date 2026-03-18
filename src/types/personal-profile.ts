@@ -5,8 +5,8 @@ export interface FormValues {
     username: string
     bio: string
     location: string
-    longitude: number
-    latitude: number
+    longitude: number | null
+    latitude: number | null
     instagram: string
     x: string
     facebook: string

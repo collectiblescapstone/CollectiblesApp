@@ -75,8 +75,8 @@ const TradePage = () => {
                             username: viableUser.username ?? 'Unknown User',
                             avatarUrl:
                                 pfp_image_mapping[viableUser.profile_pic],
-                            rating: 0,
-                            ratingCount: 0,
+                            rating: viableUser.rating ?? 0,
+                            ratingCount: viableUser.rating_count ?? 0,
                             distance: viableUser.distance,
                             user1Wishlist: option.cardsUser1WantsFromUser2.map(
                                 (card) => ({
@@ -185,8 +185,8 @@ const TradePage = () => {
                         </Text>
                         <Text fontSize="sm" color="gray.600">
                             We could not find any viable trades for you at the
-                            moment. Try editing your collection or wishlist to
-                            find some matches!
+                            moment. Try editing your collection, wishlist, or
+                            location info to find some matches!
                         </Text>
                     </Flex>
                 </Box>

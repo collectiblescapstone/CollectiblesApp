@@ -31,6 +31,10 @@ const RatingForm = ({ user, closeOnSubmit }: RatingFormProps) => {
         setSubmitting(true)
         const res = await CapacitorHttp.post({
             url: `${baseUrl}/api/rate-user`,
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${session?.access_token}`
+            },
             data: {
                 username: user.username,
                 rating: ratings,

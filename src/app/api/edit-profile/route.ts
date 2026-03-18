@@ -1,12 +1,28 @@
-import { NextResponse } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma'
+import { supabase } from '@/lib/supabase'
 import { FormValues } from '@/types/personal-profile'
-
-export const dynamic = 'force-static'
+import { profanityChecker } from '@/utils/profanityCheck'
 
 // PATCH /api/profile
-export async function PATCH(request: Request) {
+export async function PATCH(request: NextRequest) {
     try {
+        const authHeader = request.headers.get('authorization')
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return NextResponse.json(
+                { error: 'Unauthorized - missing token' },
+                { status: 401 }
+            )
+        }
+        const token = authHeader.substring(7)
+        const { data: userData, error } = await supabase.auth.getUser(token)
+        if (error || !userData.user) {
+            return NextResponse.json(
+                { error: 'Unauthorized - invalid token' },
+                { status: 401 }
+            )
+        }
+
         const body = await request.json()
         const {
             id: identifier,
@@ -33,6 +49,40 @@ export async function PATCH(request: Request) {
             )
         }
 
+        if (body.id !== userData.user.id) {
+            return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+        }
+
+        const profanityCheck = [
+            {
+                field: 'firstName',
+                value: firstName
+            },
+            {
+                field: 'lastName',
+                value: lastName
+            },
+            {
+                field: 'username',
+                value: username
+            },
+            {
+                field: 'bio',
+                value: bio
+            }
+        ]
+
+        for (const { field, value } of profanityCheck) {
+            if (typeof value === 'string' && profanityChecker(value)) {
+                return NextResponse.json(
+                    {
+                        error: `Profanity detected in ${field}, please remove it.`
+                    },
+                    { status: 400 }
+                )
+            }
+        }
+
         const data: Partial<
             Omit<FormValues, 'profilePic'> & { profile_pic?: number }
         > = {}
@@ -44,7 +94,9 @@ export async function PATCH(request: Request) {
         if (typeof bio === 'string') data.bio = bio
         if (typeof location === 'string') data.location = location
         if (typeof latitude === 'number') data.latitude = latitude
+        if (latitude === null) data.latitude = null
         if (typeof longitude === 'number') data.longitude = longitude
+        if (longitude === null) data.longitude = null
         if (typeof instagram === 'string') data.instagram = instagram
         if (typeof x === 'string') data.x = x
         if (typeof facebook === 'string') data.facebook = facebook

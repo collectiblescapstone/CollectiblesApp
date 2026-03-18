@@ -2,6 +2,7 @@
 
 // React
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 // Capacitor
 import { CapacitorHttp } from '@capacitor/core'
@@ -48,6 +49,7 @@ const PokemonCardInfo = ({
 }: PokemonCardInfoProps) => {
     // Authentification
     const { session } = useAuth()
+    const { push } = useRouter()
 
     const [cardInfo, setCardInfo] = useState<Entry | null>(null)
 
@@ -148,7 +150,9 @@ const PokemonCardInfo = ({
                                 width="50px"
                                 background="black"
                                 onClick={() => {
-                                    window.location.href = `/edit-card?cardId=${cardInfo.cardId}&entryId=${entryId}`
+                                    push(
+                                        `/edit-card?cardId=${cardInfo.cardId}&entryId=${entryId}`
+                                    )
                                 }}
                             >
                                 <FaPencilAlt size={24} fill="white" />

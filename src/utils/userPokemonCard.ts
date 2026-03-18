@@ -4,6 +4,7 @@ import { CapacitorHttp } from '@capacitor/core'
 // Utils
 import { baseUrl } from '@/utils/constants'
 import { MAXPOKEDEXVALUE } from '@/utils/pokedex'
+import { supabase } from '@/lib/supabase'
 
 export type Entry = {
     cardId: string
@@ -12,8 +13,8 @@ export type Entry = {
     setId: string
     forTrade: boolean
     showcase: boolean
-    grade: string
-    gradeLevel: string
+    grade: string | null
+    gradeLevel: string | null
     tags: string[]
     dexId: number[]
 }
@@ -49,10 +50,23 @@ const fetchPokemonCards = async (userId: string): Promise<void> => {
 
     pokemonCardsInit = (async () => {
         try {
+            // grab the latest session token so we can authenticate our request
+            const {
+                data: { session }
+            } = await supabase.auth.getSession()
+            const token = session?.access_token
+
+            const headers: Record<string, string> = {
+                'Content-Type': 'application/json'
+            }
+            if (token) {
+                headers.Authorization = `Bearer ${token}`
+            }
+
             const res = await CapacitorHttp.post({
                 url: `${baseUrl}/api/user-cards`,
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers,
                 data: {
                     userId: userId
                 }

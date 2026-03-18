@@ -33,7 +33,6 @@ interface PokemonSetProps {
     label: string
     image: string
     setID: string
-    setName: string
     masterSet: number
     grandmasterSet: number
     nextPage: string
@@ -43,7 +42,6 @@ const PokemonSet = ({
     label,
     image,
     setID,
-    setName,
     masterSet,
     grandmasterSet,
     nextPage
@@ -87,7 +85,7 @@ const PokemonSet = ({
             <Link
                 href={{
                     pathname: nextPage,
-                    query: { type: 'set', setId: setID, setName: setName }
+                    query: { type: 'set', setId: setID }
                 }}
                 style={{ textDecoration: 'none' }}
             >

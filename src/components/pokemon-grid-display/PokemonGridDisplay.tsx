@@ -39,6 +39,7 @@ import { PokemonSetType } from '@/types/pokemon-grid'
 // Utils
 import { getSetGroups } from '@/utils/pokemonSet'
 import { ALL_POKEMON } from '@/utils/pokedex'
+import { sortSetIds } from '@/utils/formatSetNumber'
 
 const NUM_ITEMS_PER_PAGE = 24
 
@@ -506,15 +507,12 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                 )}
 
                 {/* Set Era View */}
-                {selected === 'set' &&
-                    selectedEra &&
-                    groupedSets[selectedEra] && (
-                        <Grid
-                            mt="30px"
-                            templateColumns="repeat(1, 1fr)"
-                            gap="20px"
-                        >
-                            {groupedSets[selectedEra].map((set) => {
+                {selected === 'set' && selectedEra && (
+                    <Grid mt="30px" templateColumns="repeat(1, 1fr)" gap="20px">
+                        {(groupedSets[selectedEra] || []) // ✅ default empty array
+                            .slice() // copy array
+                            .sort((a, b) => sortSetIds(a.id, b.id))
+                            .map((set) => {
                                 const imageSrc = set.logo || set.symbol
                                 const counts = setCounts[set.id]
 
@@ -532,10 +530,13 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                             label={set.name}
                                             image={
                                                 imageSrc
-                                                    ? `${imageSrc}.png`
+                                                    ? /\.(png|jpg|jpeg|webp|gif)$/i.test(
+                                                          imageSrc
+                                                      )
+                                                        ? imageSrc
+                                                        : `${imageSrc}.png`
                                                     : '/Images/temp_icon.svg'
                                             }
-                                            setName={set.name}
                                             setID={set.id}
                                             masterSet={counts.masterSet}
                                             grandmasterSet={
@@ -546,8 +547,8 @@ const PokemonGridDisplay = ({ originalPage }: PokemonGridDisplayProps) => {
                                     </GridItem>
                                 )
                             })}
-                        </Grid>
-                    )}
+                    </Grid>
+                )}
             </Box>
         </FiltersProvider>
     )

@@ -23,10 +23,10 @@ const rarityImageMap: Record<string, string> = {
  * @returns
  */
 export const getRarityImage = (rarity: string): string => {
-    return (
-        '/Images/CardRarity/' + rarityImageMap[rarity.toLowerCase()] ||
-        '/Images/CardRarity/Rarity_Common.png'
-    )
+    const imageName = rarityImageMap[rarity.toLowerCase()]
+    return imageName
+        ? `/Images/CardRarity/${imageName}`
+        : '/Images/CardRarity/Rarity_Common.png'
 }
 
 export const checkRarityExists = (rarity: string): boolean => {

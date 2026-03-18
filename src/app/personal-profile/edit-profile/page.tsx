@@ -119,7 +119,10 @@ const PersonalProfileScreen: React.FC = () => {
         const profanityCheck = [
             { field: 'firstName', value: data.firstName },
             { field: 'lastName', value: data.lastName },
-            { field: 'username', value: data.username },
+            {
+                field: 'username',
+                value: data.username.toLowerCase().replace(/[^a-z]/g, '')
+            },
             { field: 'bio', value: data.bio }
         ]
 
@@ -132,6 +135,7 @@ const PersonalProfileScreen: React.FC = () => {
                 return
             }
         }
+
         setIsSaving(true)
         try {
             const res = await CapacitorHttp.patch({

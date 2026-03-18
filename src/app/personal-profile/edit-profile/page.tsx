@@ -116,13 +116,34 @@ const PersonalProfileScreen: React.FC = () => {
             return
         }
         const profanityCheck = [
-            { field: 'firstName', value: data.firstName },
-            { field: 'lastName', value: data.lastName },
+            {
+                field: 'firstName',
+                value: data.firstName
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
+            },
+            {
+                field: 'lastName',
+                value: data.lastName
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
+            },
             {
                 field: 'username',
-                value: data.username.toLowerCase().replace(/[^a-z]/g, '')
+                value: data.username
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
             },
-            { field: 'bio', value: data.bio }
+            {
+                field: 'bio',
+                value: data.bio
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
+            }
         ]
 
         for (const item of profanityCheck) {

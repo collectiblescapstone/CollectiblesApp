@@ -21,11 +21,26 @@ export const POST = async (request: Request) => {
         }
 
         const profanityCheck = [
-            { field: 'firstName', value: firstName },
-            { field: 'lastName', value: lastName },
+            {
+                field: 'firstName',
+                value: firstName
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
+            },
+            {
+                field: 'lastName',
+                value: lastName
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
+            },
             {
                 field: 'username',
-                value: username.toLowerCase().replace(/[^a-z]/g, '')
+                value: username
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
             }
         ]
 

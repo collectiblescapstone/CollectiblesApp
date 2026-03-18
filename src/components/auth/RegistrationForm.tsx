@@ -61,10 +61,25 @@ const RegistrationForm = () => {
 
         // Check if any of the fields contain profanity
         const fieldsToCheck = [
-            { value: values.firstName, name: 'firstName' as const },
-            { value: values.lastName, name: 'lastName' as const },
             {
-                value: values.username.toLowerCase().replace(/[^a-z]/g, ''),
+                value: values.firstName
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1'),
+                name: 'firstName' as const
+            },
+            {
+                value: values.lastName
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1'),
+                name: 'lastName' as const
+            },
+            {
+                value: values.username
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1'),
                 name: 'username' as const
             }
         ]

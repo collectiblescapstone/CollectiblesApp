@@ -56,13 +56,27 @@ export async function PATCH(request: NextRequest) {
         }
 
         const profanityCheck = [
-            { field: 'firstName', value: firstName },
-            { field: 'lastName', value: lastName },
+            {
+                field: 'firstName',
+                value: firstName
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
+            },
+            {
+                field: 'lastName',
+                value: lastName.replace(/[^a-z]/g, ' ').replace(/(.)\1+/g, '$1')
+            },
             {
                 field: 'username',
-                value: username.toLowerCase().replace(/[^a-z]/g, '')
+                value: username
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
             },
-            { field: 'bio', value: bio }
+            {
+                field: 'bio',
+                value: bio.replace(/[^a-z]/g, ' ').replace(/(.)\1+/g, '$1')
+            }
         ]
 
         for (const { field, value } of profanityCheck) {

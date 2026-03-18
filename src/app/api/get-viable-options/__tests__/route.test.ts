@@ -12,6 +12,7 @@ import { POST } from '../route'
 describe('POST /api/get-viable-options', () => {
     beforeEach(() => {
         resetApiMocks()
+        mockPrisma.blockList.findMany.mockResolvedValue([])
     })
 
     it('returns 400 when userID is missing', async () => {

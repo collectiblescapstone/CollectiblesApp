@@ -38,6 +38,7 @@ export const mockPrisma = {
     },
     blockList: {
         deleteMany: jest.fn(),
+        findMany: jest.fn(),
         findUnique: jest.fn(),
         create: jest.fn()
     },

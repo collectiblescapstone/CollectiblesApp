@@ -1,8 +1,6 @@
 import prisma from '@/lib/prisma'
 import { supabaseAdmin } from '@/lib/supabaseAdmin'
-import { Filter } from 'bad-words'
-
-const filter = new Filter()
+import { profanityChecker } from '@/utils/profanityCheck'
 
 export const POST = async (request: Request) => {
     const { id, email, username, firstName, lastName } = await request.json()
@@ -24,28 +22,19 @@ export const POST = async (request: Request) => {
             {
                 field: 'firstName',
                 value: firstName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'lastName',
                 value: lastName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'username',
                 value: username
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             }
         ]
 
         for (const { field, value } of profanityCheck) {
-            if (filter.isProfane(value)) {
+            if (profanityChecker(value)) {
                 return new Response(
                     JSON.stringify({
                         error: `Profanity detected in ${field}, please remove it.`

@@ -8,9 +8,7 @@ import { useForm } from 'react-hook-form'
 import { SignupFormValues } from '@/types/auth'
 import { CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
-import { Filter } from 'bad-words'
-
-const filter = new Filter()
+import { profanityChecker } from '@/utils/profanityCheck'
 
 const RegistrationForm = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -62,30 +60,21 @@ const RegistrationForm = () => {
         // Check if any of the fields contain profanity
         const fieldsToCheck = [
             {
-                value: values.firstName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1'),
+                value: values.firstName,
                 name: 'firstName' as const
             },
             {
-                value: values.lastName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1'),
+                value: values.lastName,
                 name: 'lastName' as const
             },
             {
-                value: values.username
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1'),
+                value: values.username,
                 name: 'username' as const
             }
         ]
 
         for (const field of fieldsToCheck) {
-            if (filter.isProfane(field.value)) {
+            if (profanityChecker(field.value)) {
                 setError(field.name, {
                     type: 'profanity',
                     message: 'Please remove profanity from this field.'

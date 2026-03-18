@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import DeleteAccount from '@/components/edit-profile/DeleteAccount'
 import { FormValues, VisibilityValues } from '@/types/personal-profile'
 import { GeoLocation } from '@/types/geolocation'
-import { Filter } from 'bad-words'
+import { profanityChecker } from '@/utils/profanityCheck'
 
 import {
     Box,
@@ -34,7 +34,6 @@ import { baseUrl } from '@/utils/constants'
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
 
 const MAX_CHARACTERS = 110
-const filter = new Filter()
 
 const PersonalProfileScreen: React.FC = () => {
     const router = useRouter()
@@ -119,35 +118,23 @@ const PersonalProfileScreen: React.FC = () => {
             {
                 field: 'firstName',
                 value: data.firstName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'lastName',
                 value: data.lastName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'username',
                 value: data.username
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'bio',
                 value: data.bio
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             }
         ]
 
         for (const item of profanityCheck) {
-            if (filter.isProfane(item.value)) {
+            if (profanityChecker(item.value)) {
                 setError(item.field as keyof FormValues, {
                     type: 'profanity',
                     message: 'Please remove the profanity from this field.'

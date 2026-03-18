@@ -2,9 +2,7 @@ import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma'
 import { supabase } from '@/lib/supabase'
 import { FormValues } from '@/types/personal-profile'
-import { Filter } from 'bad-words'
-
-const filter = new Filter()
+import { profanityChecker } from '@/utils/profanityCheck'
 
 // PATCH /api/profile
 export async function PATCH(request: NextRequest) {
@@ -59,35 +57,23 @@ export async function PATCH(request: NextRequest) {
             {
                 field: 'firstName',
                 value: firstName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'lastName',
                 value: lastName
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'username',
                 value: username
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'bio',
                 value: bio
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, ' ')
-                    .replace(/(.)\1+/g, '$1')
             }
         ]
 
         for (const { field, value } of profanityCheck) {
-            if (typeof value === 'string' && filter.isProfane(value)) {
+            if (typeof value === 'string' && profanityChecker(value)) {
                 return NextResponse.json(
                     {
                         error: `Profanity detected in ${field}, please remove it.`

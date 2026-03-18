@@ -59,12 +59,16 @@ export async function PATCH(request: NextRequest) {
             {
                 field: 'firstName',
                 value: firstName
+                    .toLowerCase()
                     .replace(/[^a-z]/g, ' ')
                     .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'lastName',
-                value: lastName.replace(/[^a-z]/g, ' ').replace(/(.)\1+/g, '$1')
+                value: lastName
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
             },
             {
                 field: 'username',
@@ -75,7 +79,10 @@ export async function PATCH(request: NextRequest) {
             },
             {
                 field: 'bio',
-                value: bio.replace(/[^a-z]/g, ' ').replace(/(.)\1+/g, '$1')
+                value: bio
+                    .toLowerCase()
+                    .replace(/[^a-z]/g, ' ')
+                    .replace(/(.)\1+/g, '$1')
             }
         ]
 

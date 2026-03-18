@@ -65,7 +65,7 @@ describe('Landing Page', () => {
 
         expect(
             screen.getByText(
-                /Kollec is a final year computer science capstone project/i
+                /Kollec is a collection management platform developed as a final year Computer Science capstone project at McMaster University/i
             )
         ).toBeInTheDocument()
         expect(screen.getByText(/2026 TSH B129/i)).toBeInTheDocument()

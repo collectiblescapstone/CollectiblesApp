@@ -363,9 +363,10 @@ const Landing: React.FC = () => {
                                         </div>
                                         <p>
                                             Architected the front-end framework
-                                            and developed the application's page
-                                            structures, ensuring a UI layout
-                                            prepared for full-stack integration.
+                                            and developed the application&apos;s
+                                            page structures, ensuring a UI
+                                            layout prepared for full-stack
+                                            integration.
                                         </p>
                                     </li>
 
@@ -738,7 +739,7 @@ const Landing: React.FC = () => {
                                             real-time distances between
                                             collectors. The system filters the
                                             database for users with active
-                                            "forTrade" flags and
+                                            &quot;forTrade&quot; flags and
                                             cross-references them against your
                                             specific WishlistEntry table to find
                                             mutual matches. By applying a

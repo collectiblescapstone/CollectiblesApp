@@ -34,6 +34,7 @@ import { baseUrl } from '@/utils/constants'
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
 
 const MAX_CHARACTERS = 110
+const filter = new Filter()
 
 const PersonalProfileScreen: React.FC = () => {
     const router = useRouter()
@@ -99,8 +100,6 @@ const PersonalProfileScreen: React.FC = () => {
         }
     }
 
-    const filter = new Filter()
-
     const [isSaving, setIsSaving] = useState(false)
     const [loadingUserData, setLoadingUserData] = useState(true)
 
@@ -130,7 +129,7 @@ const PersonalProfileScreen: React.FC = () => {
             if (filter.isProfane(item.value)) {
                 setError(item.field as keyof FormValues, {
                     type: 'profanity',
-                    message: 'Please remove the profanity.'
+                    message: 'Please remove the profanity from this field.'
                 })
                 return
             }

@@ -2,6 +2,9 @@ import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma'
 import { supabase } from '@/lib/supabase'
 import { FormValues } from '@/types/personal-profile'
+import { Filter } from 'bad-words'
+
+const filter = new Filter()
 
 // PATCH /api/profile
 export async function PATCH(request: NextRequest) {
@@ -50,6 +53,27 @@ export async function PATCH(request: NextRequest) {
 
         if (body.id !== userData.user.id) {
             return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+        }
+
+        const profanityCheck = [
+            { field: 'firstName', value: firstName },
+            { field: 'lastName', value: lastName },
+            {
+                field: 'username',
+                value: username.toLowerCase().replace(/[^a-z]/g, '')
+            },
+            { field: 'bio', value: bio }
+        ]
+
+        for (const { field, value } of profanityCheck) {
+            if (typeof value === 'string' && filter.isProfane(value)) {
+                return NextResponse.json(
+                    {
+                        error: `Profanity detected in ${field}, please remove it.`
+                    },
+                    { status: 400 }
+                )
+            }
         }
 
         const data: Partial<

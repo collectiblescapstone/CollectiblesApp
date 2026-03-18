@@ -10,12 +10,12 @@ import { CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
 import { Filter } from 'bad-words'
 
+const filter = new Filter()
+
 const RegistrationForm = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const { signUp } = useAuth()
     const { push } = useRouter()
-
-    const filter = new Filter()
 
     const {
         register,

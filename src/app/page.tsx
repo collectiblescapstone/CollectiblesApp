@@ -261,19 +261,6 @@ const Landing: React.FC = () => {
                                         Features
                                     </Button>
                                 </a>
-                                {/*<a*/}
-                                {/*    href="#faq"*/}
-                                {/*    onClick={handleAnchorClick}*/}
-                                {/*    style={{ textDecoration: 'none' }}*/}
-                                {/*    aria-label="Scroll to FAQ section"*/}
-                                {/*>*/}
-                                {/*    <Button*/}
-                                {/*        variant="ghost"*/}
-                                {/*        color="brand.turtoise"*/}
-                                {/*    >*/}
-                                {/*        FAQ*/}
-                                {/*    </Button>*/}
-                                {/*</a>*/}
                                 <Link
                                     href={{ pathname: '/sign-up', query: {} }}
                                     style={{ textDecoration: 'none' }}
@@ -695,28 +682,75 @@ const Landing: React.FC = () => {
                                     </Tabs.Content>
                                     <Tabs.Content value="Search">
                                         <Heading as="h3">Card Search</Heading>
-                                        <Text>TODO</Text>
+                                        <Text>
+                                            Kollec allows you to search your
+                                            Pokémon collection using natural
+                                            language. Whether you remember the
+                                            exact name of the card or just a
+                                            description of the Pokémon, our
+                                            intelligent search understands the
+                                            visual context of your cards to
+                                            bring you the right results
+                                            instantly.
+                                        </Text>
+                                        <Heading as="h4">
+                                            The Technology
+                                        </Heading>
+                                        <Text>
+                                            We utilize a CLIP (Contrastive
+                                            Language-Image Pre-training) model
+                                            to generate mathematical embeddings
+                                            for every card image, which are
+                                            stored and loaded at startup. When
+                                            you enter a query, a quantized
+                                            version of the model runs locally on
+                                            your device to turn your text into a
+                                            vector and compare it against our
+                                            database. By calculating the
+                                            shortest distance between these
+                                            embeddings, the app identifies and
+                                            displays the top 15 most relevant
+                                            cards within your current context.
+                                        </Text>
                                     </Tabs.Content>
                                     <Tabs.Content value="Trading">
                                         <Heading as="h3">
                                             Trading Algorithm
                                         </Heading>
-                                        <Text>TODO</Text>
+                                        <Text>
+                                            Connect with local collectors to
+                                            complete your set through our
+                                            intelligent TradePost matching
+                                            system. By syncing your location and
+                                            wishlist, Kollec automatically pairs
+                                            you with nearby trainers who have
+                                            the specific cards you need and are
+                                            looking for the ones you have.
+                                        </Text>
+                                        <Heading as="h4">
+                                            The Technology
+                                        </Heading>
+                                        <Text>
+                                            TradePost utilizes a location-based
+                                            algorithm that converts user
+                                            addresses into precise longitude and
+                                            latitude coordinates to calculate
+                                            real-time distances between
+                                            collectors. The system filters the
+                                            database for users with active
+                                            "forTrade" flags and
+                                            cross-references them against your
+                                            specific WishlistEntry table to find
+                                            mutual matches. By applying a
+                                            customizable distance radius the
+                                            algorithm ensures you only see
+                                            relevant trade opportunities within
+                                            a reachable proximity for safe,
+                                            in-person exchanges.
+                                        </Text>
                                     </Tabs.Content>
                                 </Tabs.Root>
                             </div>
-
-                            {/*comment out for now in case we add back*/}
-                            {/*<div className="card" id="faq" tabIndex={-1}>*/}
-                            {/*    <h2>FAQ</h2>*/}
-                            {/*    <p>*/}
-                            {/*        Lorem ipsum dolor sit amet, consectetur*/}
-                            {/*        adipiscing elit. Metus nunc ullamcorper*/}
-                            {/*        ipsum enim natoque orci dignissim consequat*/}
-                            {/*        nascetur. Molestie inceptos phasellus purus*/}
-                            {/*        sapien; nam ligula adipiscing.*/}
-                            {/*    </p>*/}
-                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

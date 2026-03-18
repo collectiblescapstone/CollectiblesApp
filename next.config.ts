@@ -20,7 +20,19 @@ const nextConfig: NextConfig = {
         }
 
         return config
-    }
+    },
+    ...(isStatic
+        ? {}
+        : {
+              outputFileTracingExcludes: {
+                  '/': [
+                      'node_modules/onnxruntime-node/bin/napi-v6/linux/x64/!(libonnxruntime.so.1|onnxruntime_binding.node)',
+                      'node_modules/onnxruntime-node/bin/napi-v6/linux/arm64/!(libonnxruntime.so.1|onnxruntime_binding.node)',
+                      'node_modules/onnxruntime-node/bin/napi-v6/win/*',
+                      'node_modules/onnxruntime-node/bin/napi-v6/darwin/*'
+                  ]
+              }
+          })
 }
 
 export default nextConfig

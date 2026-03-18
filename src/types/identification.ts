@@ -35,3 +35,5 @@ export enum rotation {
     COUNTERCLOCKWISE,
     UPSIDE_DOWN
 }
+
+export type PredictedCards = { data: CardData; imageURL: string }[]

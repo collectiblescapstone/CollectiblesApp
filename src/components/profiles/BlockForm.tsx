@@ -43,7 +43,10 @@ const BlockForm = ({ onCancel, userId }: BlockFormProps) => {
 
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
-            <Text fontSize="lg">Are you sure you want to block this user?</Text>
+            <Text fontSize="lg">
+                Are you sure you want to block this user? This action cannot be
+                undone.
+            </Text>
             {error && (
                 <Text color="red.500" mt={2}>
                     {error}

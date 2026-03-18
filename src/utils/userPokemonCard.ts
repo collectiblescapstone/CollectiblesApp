@@ -13,8 +13,8 @@ export type Entry = {
     setId: string
     forTrade: boolean
     showcase: boolean
-    grade: string
-    gradeLevel: string
+    grade: string | null
+    gradeLevel: string | null
     tags: string[]
     dexId: number[]
 }

@@ -33,7 +33,12 @@ const config: Config = {
         '!src/**/*.d.ts', // Exclude declaration files
         '!src/components/ui/**/*', // Exclude Chakra UI components
         '!src/context/ChakraUIProvider.tsx', // Exclude Chakra UI provider
-        '!src/lib/*' // Exclude library files
+        '!src/lib/*', // Exclude library files
+        '!src/utils/testing-utils.ts', // Exclude testing utilities
+        '!src/**/{constants,constants}.{ts,tsx}', // Exclude constants files
+        '!src/**/{types,type}.{ts,tsx}', // Exclude type files
+        '!src/**/types/*', // Exclude types directory
+        '!src/**/cv/identificationTesting/*' // Exclude CV identification testing files
     ],
 
     // The directory where Jest should output its coverage files
@@ -104,7 +109,9 @@ const config: Config = {
     // ],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    moduleNameMapper: {
+        '^@/(.*)$': '<rootDir>/src/$1'
+    },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],

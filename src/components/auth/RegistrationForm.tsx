@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 import { SignupFormValues } from '@/types/auth'
 import { CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
+import { profanityChecker } from '@/utils/profanityCheck'
 
 const RegistrationForm = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -54,6 +55,33 @@ const RegistrationForm = () => {
             })
             setIsLoading(false)
             return
+        }
+
+        // Check if any of the fields contain profanity
+        const fieldsToCheck = [
+            {
+                value: values.firstName,
+                name: 'firstName' as const
+            },
+            {
+                value: values.lastName,
+                name: 'lastName' as const
+            },
+            {
+                value: values.username,
+                name: 'username' as const
+            }
+        ]
+
+        for (const field of fieldsToCheck) {
+            if (profanityChecker(field.value)) {
+                setError(field.name, {
+                    type: 'profanity',
+                    message: 'Please remove profanity from this field.'
+                })
+                setIsLoading(false)
+                return
+            }
         }
 
         // Supabase Auth sign up user
@@ -158,12 +186,11 @@ const RegistrationForm = () => {
                             placeholder="my_username"
                             disabled={isLoading}
                         />
-                        {errors.username &&
-                            errors.username.type === 'required' && (
-                                <Field.ErrorText>
-                                    {errors.username.message}
-                                </Field.ErrorText>
-                            )}
+                        {errors.username && (
+                            <Field.ErrorText>
+                                {errors.username.message}
+                            </Field.ErrorText>
+                        )}
                     </Field.Root>
 
                     <Field.Root invalid={!!errors.firstName}>
@@ -175,6 +202,11 @@ const RegistrationForm = () => {
                             placeholder="First Name"
                             disabled={isLoading}
                         />
+                        {errors.firstName && (
+                            <Field.ErrorText>
+                                {errors.firstName.message}
+                            </Field.ErrorText>
+                        )}
                     </Field.Root>
 
                     <Field.Root invalid={!!errors.lastName}>
@@ -186,6 +218,11 @@ const RegistrationForm = () => {
                             placeholder="Last Name"
                             disabled={isLoading}
                         />
+                        {errors.lastName && (
+                            <Field.ErrorText>
+                                {errors.lastName.message}
+                            </Field.ErrorText>
+                        )}
                     </Field.Root>
 
                     <Field.Root invalid={!!errors.password} required>

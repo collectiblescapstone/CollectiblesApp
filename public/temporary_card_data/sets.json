@@ -262,7 +262,7 @@
         "symbol": "https://assets.tcgdex.net/univ/ex/ex16/symbol"
     },
     {
-        "cardCount": { "official": 40, "total": 40 },
+        "cardCount": { "official": 0 },
         "id": "np",
         "logo": "https://assets.tcgdex.net/en/pop/np/logo",
         "name": "Nintendo Black Star Promos",
@@ -680,47 +680,47 @@
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2011bw",
-        "name": "Macdonald's Collection 2011"
+        "name": "McDonald's Collection 2011"
     },
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2012bw",
-        "name": "Macdonald's Collection 2012"
+        "name": "McDonald's Collection 2012"
     },
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2014xy",
-        "name": "Macdonald's Collection 2014"
+        "name": "McDonald's Collection 2014"
     },
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2015xy",
-        "name": "Macdonald's Collection 2015"
+        "name": "McDonald's Collection 2015"
     },
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2016xy",
-        "name": "Macdonald's Collection 2016"
+        "name": "McDonald's Collection 2016"
     },
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2017sm",
-        "name": "Macdonald's Collection 2017"
+        "name": "McDonald's Collection 2017"
     },
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2018sm",
-        "name": "Macdonald's Collection 2018"
+        "name": "McDonald's Collection 2018"
     },
     {
         "cardCount": { "official": 12, "total": 12 },
         "id": "2019sm",
-        "name": "Macdonald's Collection 2019"
+        "name": "McDonald's Collection 2019"
     },
     {
         "cardCount": { "official": 25, "total": 25 },
         "id": "2021swsh",
-        "name": "Macdonald's Collection 2021",
+        "name": "McDonald's Collection 2021",
         "symbol": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol"
     },
     {

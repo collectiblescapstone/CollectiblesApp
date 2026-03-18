@@ -1,5 +1,11 @@
 import '@testing-library/jest-dom'
 
+jest.mock('bad-words', () => ({
+    Filter: jest.fn().mockImplementation(() => ({
+        isProfane: jest.fn(() => false)
+    }))
+}))
+
 // implementation of structuredClone polyfill
 
 if (typeof global.structuredClone !== 'function') {
@@ -25,20 +31,29 @@ if (typeof global.structuredClone !== 'function') {
     }
 }
 
-// Window matchMedia mock
-Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    value: jest.fn().mockImplementation((query) => ({
-        matches: false,
-        media: query,
-        onchange: null,
-        addListener: jest.fn(),
-        removeListener: jest.fn(),
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
-        dispatchEvent: jest.fn()
+if (typeof window !== 'undefined') {
+    // Window matchMedia mock
+    Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        value: jest.fn().mockImplementation((query) => ({
+            matches: false,
+            media: query,
+            onchange: null,
+            addListener: jest.fn(),
+            removeListener: jest.fn(),
+            addEventListener: jest.fn(),
+            removeEventListener: jest.fn(),
+            dispatchEvent: jest.fn()
+        }))
+    })
+
+    // ResizeObserver mock
+    global.ResizeObserver = jest.fn().mockImplementation(() => ({
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn()
     }))
-})
+}
 
 // Error handling
 const originalError = console.error

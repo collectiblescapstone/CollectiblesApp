@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { Box, Image, HStack, VStack, Spinner, Text } from '@chakra-ui/react'
 
 // Context
@@ -18,6 +18,7 @@ import {
     checkRarityExists,
     getRarityImage
 } from '@/utils/cardInfo/raritytoImage'
+import { formatCardNumber } from '@/utils/formatCardNumber'
 
 interface PokemonCardHeaderProps {
     cardId: string
@@ -25,13 +26,10 @@ interface PokemonCardHeaderProps {
 
 const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
     const [loading, setLoading] = useState(true)
-    const [setCount, setSetCount] = useState<number>(0)
-    const [setName, setSetName] = useState<string>('')
-
     const [cardInfo, setCardInfo] = useState<PokemonCard | null>(null)
 
     // Context
-    const { pokemonCards, pokemonSets } = usePokemonCards()
+    const { pokemonCards, pokemonSets, pokemonSubsets } = usePokemonCards()
 
     useEffect(() => {
         let isMounted = true
@@ -44,25 +42,10 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                 if (!isMounted) return
 
                 setCardInfo(fetchedCardInfo || null)
-
-                if (!fetchedCardInfo?.setId) {
-                    setSetCount(0)
-                    setSetName('')
-                    setLoading(false)
-                    return
-                }
-
-                const set = pokemonSets[fetchedCardInfo?.setId || '']
-
-                if (!isMounted) return
-
-                setSetCount(set?.official || 0)
-                setSetName(set?.name || '')
-                setLoading(false)
             } catch (error) {
                 console.error('Error fetching card information:', error)
-                if (!isMounted) return
-                setLoading(false)
+            } finally {
+                if (isMounted) setLoading(false)
             }
         }
 
@@ -71,7 +54,24 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
         return () => {
             isMounted = false
         }
-    }, [cardId, pokemonCards, pokemonSets])
+    }, [cardId, pokemonCards])
+
+    // Formatted card number
+    const formattedCardNumber = useMemo(() => {
+        if (!cardInfo) return ''
+
+        const splitId = cardId.split('-')
+        const rawNumber = splitId[splitId.length - 1]
+
+        return formatCardNumber(
+            cardId,
+            rawNumber,
+            cardInfo.setId,
+            pokemonSets[cardInfo.setId]?.official,
+            pokemonSubsets,
+            pokemonSets[cardInfo.setId]?.name
+        )
+    }, [cardInfo, pokemonSets, pokemonSubsets, cardId])
 
     if (loading || !cardInfo)
         return (
@@ -79,8 +79,6 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                 <Spinner size="xl" />
             </Box>
         )
-
-    const splitId = cardId.split('-')[1]
 
     return (
         <Box
@@ -124,12 +122,16 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                     <Text fontSize="xl" fontWeight="bold">
                         {cardInfo.name}
                     </Text>
+
+                    {/* Use formattedCardNumber instead of simple split */}
                     <Text fontSize="sm" fontWeight="bold">
-                        {splitId + (setCount > 0 ? '/' + setCount : '')}
+                        {formattedCardNumber}
                     </Text>
+
                     <Text fontSize="sm" fontWeight="bold">
-                        {setName}
+                        {pokemonSets[cardInfo.setId]?.name || ''}
                     </Text>
+
                     {cardInfo.category === 'Pokemon' && (
                         <HStack gap={2} align="center">
                             <Image
@@ -143,6 +145,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                             </Text>
                         </HStack>
                     )}
+
                     {cardInfo.category === 'Trainer' && (
                         <HStack gap={2} align="center">
                             <FaTools height="1em" width="auto" />
@@ -151,6 +154,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                             </Text>
                         </HStack>
                     )}
+
                     <HStack gap={2} align="center">
                         <Image
                             src={getRarityImage(
@@ -170,6 +174,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
                             )}
                         </Text>
                     </HStack>
+
                     <HStack gap={2}>
                         <FaPaintBrush />
                         <Text fontSize="sm" fontWeight="bold">

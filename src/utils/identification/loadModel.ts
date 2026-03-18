@@ -40,9 +40,19 @@ export const loadModel = async (
         new Float32Array(DEFAULT_INPUT_SIZE.reduce((a, b) => a * b)),
         DEFAULT_INPUT_SIZE
     )
-    const { output0 } = await session.run({ images: dummyInput })
-    output0.dispose()
+    const output = await session.run({ images: dummyInput })
+    const outputKeys = session.outputNames
+    for (const key of outputKeys) {
+        output[key].dispose()
+    }
     dummyInput.dispose()
 
     return session
+}
+
+export const releaseModel = () => {
+    if (session) {
+        session.release()
+        session = null
+    }
 }

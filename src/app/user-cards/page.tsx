@@ -2,7 +2,7 @@
 
 // React
 import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 // Chakra UI
 import { Box, Button, HStack, Spinner, VStack } from '@chakra-ui/react'
@@ -20,6 +20,7 @@ import { getUserCards } from '@/utils/userPokemonCard'
 const UserCardsPage: React.FC = () => {
     // Search Params
     const searchParams = useSearchParams()
+    const { push } = useRouter()
     const cardId = searchParams.get('cardId')
 
     // Authentification
@@ -74,7 +75,7 @@ const UserCardsPage: React.FC = () => {
                         backgroundColor="brand.marigold"
                         color="brand.turtoise"
                         onClick={() => {
-                            window.location.href = `/edit-card?cardId=${cardId}`
+                            push(`/edit-card?cardId=${cardId ?? ''}`)
                         }}
                         width={'50%'}
                     >

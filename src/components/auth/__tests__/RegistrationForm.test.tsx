@@ -305,6 +305,41 @@ describe('RegistrationForm', () => {
         })
     })
 
+    it('shows error message for invalid username format', async () => {
+        renderWithTheme(<RegistrationForm />)
+        fireEvent.change(
+            screen.getByPlaceholderText(/enter your username or email/i),
+            {
+                target: { value: 'test@email.com' }
+            }
+        )
+        fireEvent.change(screen.getByPlaceholderText(/my_username/i), {
+            target: { value: 'Invalid-Username!' }
+        })
+        fireEvent.change(
+            screen.getByPlaceholderText(/^enter your password$/i),
+            {
+                target: { value: 'password123' }
+            }
+        )
+        fireEvent.change(
+            screen.getByPlaceholderText(/^re-enter your password$/i),
+            {
+                target: { value: 'password123' }
+            }
+        )
+        fireEvent.click(screen.getByRole('button', { name: /^sign up$/i }))
+
+        await waitFor(() => {
+            expect(signUpMock).not.toHaveBeenCalled()
+            expect(
+                screen.getByText(
+                    /username can only contain lowercase letters, numbers, and underscores/i
+                )
+            ).toBeInTheDocument()
+        })
+    })
+
     it('shows error when bad words are detected in the input fields', async () => {
         isProfaneMock.mockReturnValue(true)
 

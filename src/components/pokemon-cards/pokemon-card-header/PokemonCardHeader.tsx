@@ -69,7 +69,7 @@ const PokemonCardHeader = ({ cardId }: PokemonCardHeaderProps) => {
             cardInfo.setId,
             pokemonSets[cardInfo.setId]?.official,
             pokemonSubsets,
-            pokemonSets[cardInfo.setId].name
+            pokemonSets[cardInfo.setId]?.name
         )
     }, [cardInfo, pokemonSets, pokemonSubsets, cardId])
 

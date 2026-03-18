@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 import AddWishScreen from '../page'
+import { ReactNode } from 'react'
 
 jest.mock('../wishlistCardsContent.tsx', () => ({
     __esModule: true,
@@ -11,7 +12,7 @@ jest.mock('../wishlistCardsContent.tsx', () => ({
 }))
 
 jest.mock('../../../../../../../hooks/useFilters.tsx', () => ({
-    FiltersProvider: ({ children }: { children: React.ReactNode }) => (
+    FiltersProvider: ({ children }: { children: ReactNode }) => (
         <div data-testid="filters-provider">{children}</div>
     )
 }))

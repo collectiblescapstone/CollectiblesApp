@@ -1,6 +1,7 @@
 import { renderWithTheme } from '@/utils/testing-utils'
 import { screen } from '@testing-library/react'
 import PokemonGrid from '../page'
+import { ReactNode } from 'react'
 
 jest.mock('../../../components/pokemon-grid-display/PokemonGridDisplay', () => {
     return jest.fn(() => <div>Mocked PokemonGridDisplay</div>)
@@ -8,7 +9,7 @@ jest.mock('../../../components/pokemon-grid-display/PokemonGridDisplay', () => {
 
 jest.mock('../../../hooks/useFilters', () => ({
     __esModule: true,
-    FiltersProvider: ({ children }: { children: React.ReactNode }) => (
+    FiltersProvider: ({ children }: { children: ReactNode }) => (
         <div data-testid="filters-provider">{children}</div>
     )
 }))

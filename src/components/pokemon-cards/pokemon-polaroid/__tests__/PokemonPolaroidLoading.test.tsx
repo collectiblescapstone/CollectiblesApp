@@ -24,12 +24,5 @@ describe('PokemonPolaroidLoading', () => {
             const buttonElement = container.querySelector('button')
             expect(buttonElement).toBeInTheDocument()
         })
-
-        it('has hover and active states configured', () => {
-            const { container } = renderWithTheme(<PokemonPolaroidLoading />)
-
-            const boxElement = container.firstChild as HTMLElement
-            expect(boxElement).toBeInTheDocument()
-        })
     })
 })

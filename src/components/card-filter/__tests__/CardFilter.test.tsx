@@ -395,14 +395,14 @@ describe('CardFilter', () => {
         // Verify setFilters was called
         await waitFor(() => {
             expect(mockSetFilters).toHaveBeenCalled()
-
-            // Check that the filter argument has generations without 1
-            const callArg = mockSetFilters.mock.calls[0][0]
-            expect(callArg.generations).not.toContain(1)
-            expect(callArg.generations).toEqual(
-                expect.arrayContaining([2, 3, 4, 5, 6, 7, 8, 9])
-            )
         })
+
+        // Check that the filter argument has generations without 1
+        const callArg = mockSetFilters.mock.calls[0][0]
+        expect(callArg.generations).not.toContain(1)
+        expect(callArg.generations).toEqual(
+            expect.arrayContaining([2, 3, 4, 5, 6, 7, 8, 9])
+        )
     })
 
     it('shows active filter icon when filters are not default', () => {

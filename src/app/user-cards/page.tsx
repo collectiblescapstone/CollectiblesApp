@@ -75,7 +75,7 @@ const UserCardsPage: React.FC = () => {
                         backgroundColor="brand.marigold"
                         color="brand.turtoise"
                         onClick={() => {
-                            push(`/edit-card?cardId=${cardId}`)
+                            push(`/edit-card?cardId=${cardId ?? ''}`)
                         }}
                         width={'50%'}
                     >

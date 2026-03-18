@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom'
-import { screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { fireEvent, screen, waitFor } from '@testing-library/react'
 
 import WishScreen from '../page'
 import { useAuth } from '@/context/AuthProvider'
@@ -133,7 +132,6 @@ describe('WishScreen (Edit Wishlist)', () => {
     })
 
     it('navigates to add wishlist page when add button is clicked', async () => {
-        const user = userEvent.setup()
         mockedUseAuth.mockReturnValue({
             session: { user: { id: 'user-1' } },
             loading: false
@@ -150,10 +148,10 @@ describe('WishScreen (Edit Wishlist)', () => {
         })
 
         // Find the add button by looking for the parent button containing the icon
-        const addButton = document.querySelector('button')
+        const addButton = screen.getAllByRole('button')[0] // Assuming the first button is "Add"
         expect(addButton).toBeInTheDocument()
 
-        await user.click(addButton!)
+        fireEvent.click(addButton!)
 
         expect(mockRouterPush).toHaveBeenCalledWith(
             '/personal-profile/edit-profile/wishlist/add'
@@ -161,7 +159,6 @@ describe('WishScreen (Edit Wishlist)', () => {
     })
 
     it('removes card from wishlist when remove button is clicked', async () => {
-        const user = userEvent.setup()
         mockedUseAuth.mockReturnValue({
             session: { user: { id: 'user-1' } },
             loading: false
@@ -177,10 +174,9 @@ describe('WishScreen (Edit Wishlist)', () => {
         })
 
         // Find the remove button (second button)
-        const buttons = document.querySelectorAll('button')
-        const removeButton = buttons[1] // First is add, second is remove for first card
+        const removeButton = screen.getAllByRole('button')[1] // Assuming the first button is "Add" and the second is "Remove"
 
-        await user.click(removeButton)
+        fireEvent.click(removeButton)
 
         await waitFor(() => {
             expect(mockedUpdateWishlist).toHaveBeenCalledWith(
@@ -192,7 +188,6 @@ describe('WishScreen (Edit Wishlist)', () => {
     })
 
     it('updates local state after removing card', async () => {
-        const user = userEvent.setup()
         mockedUseAuth.mockReturnValue({
             session: { user: { id: 'user-1' } },
             loading: false
@@ -207,10 +202,9 @@ describe('WishScreen (Edit Wishlist)', () => {
             expect(screen.getByAltText('Pikachu')).toBeInTheDocument()
         })
 
-        const buttons = document.querySelectorAll('button')
-        const removeButton = buttons[1]
+        const removeButton = screen.getAllByRole('button')[1]
 
-        await user.click(removeButton)
+        fireEvent.click(removeButton)
 
         await waitFor(() => {
             expect(screen.queryByAltText('Pikachu')).not.toBeInTheDocument()

@@ -1,8 +1,9 @@
 import { act, renderHook } from '@testing-library/react'
 import { HeaderProvider, useHeader } from '../HeaderProvider'
+import { ReactNode } from 'react'
 
 describe('HeaderProvider', () => {
-    const wrapper = ({ children }: { children: React.ReactNode }) => (
+    const wrapper = ({ children }: { children: ReactNode }) => (
         <HeaderProvider>{children}</HeaderProvider>
     )
 

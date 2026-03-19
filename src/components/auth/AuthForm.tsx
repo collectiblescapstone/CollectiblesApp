@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 
 // Child Components
+import TitleLogo from '@/components/auth/TitleLogo'
 import { PasswordInput } from '@/components/ui/password-input'
 import { Logo } from '@/components/logo/Logo'
 
@@ -135,21 +136,7 @@ const AuthForm = () => {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <VStack pb={2}>
-                    <Box display="flex" justifyContent="center">
-                        <Logo
-                            data-testid="logo"
-                            style={{
-                                color: '#F2C75C',
-                                width: '50%',
-                                height: '50%'
-                            }}
-                        />
-                    </Box>
-                    <Heading size="5xl" color="brand.turtoise">
-                        Kollec
-                    </Heading>
-                </VStack>
+                <TitleLogo />
 
                 <Heading size="lg">Sign In to your account</Heading>
 

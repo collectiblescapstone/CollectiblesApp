@@ -4,7 +4,7 @@
 import { usePathname, useRouter } from 'next/navigation'
 
 // Chakra UI
-import { HStack, Flex, Heading } from '@chakra-ui/react'
+import { Flex, Heading, VStack } from '@chakra-ui/react'
 
 // Child Components
 import { Logo } from '@/components/logo/Logo'
@@ -26,20 +26,20 @@ const Sidebar = () => {
             alignItems="flex-start"
             p={8}
         >
-            <HStack width="100%" pb={6} alignSelf="center">
+            <VStack width="100%" pb={6} alignSelf="center">
                 <Logo
                     data-testid="logo"
                     aria-hidden="true"
                     style={{
                         color: '#003B49',
-                        width: '50%',
-                        height: '50%'
+                        width: '5rem',
+                        height: '5rem'
                     }}
                 />
                 <Heading size="2xl" textAlign="center">
                     Kollec
                 </Heading>
-            </HStack>
+            </VStack>
             {MENU_ITEMS.map((item) => (
                 <Flex
                     key={item.path}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) - Modified to square canvas and centered -->
+<svg fill="#F2C75C" stroke="#F2C75C" viewBox="0 0 200 200" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs1"/>
+  <g id="layer1">
+    <!-- Background rectangle (now fits within the square canvas, centered) -->
+    <rect style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke-width:5.194;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+      id="rect1" width="114.45789" height="150.58418" x="42.771" y="24.708" rx="6.1977" ry="7.0909"/>
+    
+    <!-- Lower mailbox body (centered) -->
+    <path id="rect3" style="fill-opacity:1;fill-rule:evenodd;stroke:#e02424;stroke-width:0;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+      d="m 44.675,106.234 v 67.548 h 111.178 v -67.548 h -51.378 l 18.732,23.44 c 1.148,1.438 1.412,3.123 0.592,3.779 l -9.979,7.974 c -0.821,0.656 -2.406,0.026 -3.555,-1.411 l -17.968,-22.486 v 21.315 c 0,1.429 -0.846,2.579 -1.896,2.579 H 77.628 c -1.05,0 -1.896,-1.15 -1.896,-2.579 v -32.611 z m 16.212,36.713 a 14.359,14.359 0 0 1 14.359,14.359 14.359,14.359 0 0 1 -14.359,14.359 14.359,14.359 0 0 1 -14.36,-14.359 14.359,14.359 0 0 1 14.36,-14.359 z"/>
+    
+    <!-- Front flag (centered) -->
+    <path id="rect4" style="fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+      d="m 77.628,50.788 c -1.05,0 -1.896,1.15 -1.896,2.579 v 52.869 h 16.566 V 53.367 c 0,-1.429 -0.846,-2.579 -1.896,-2.579 z"/>
+    
+    <!-- Upper flag (centered) -->
+    <path id="rect3-8-7-4" style="fill-opacity:1;fill-rule:evenodd;stroke:#e02424;stroke-width:0;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+      d="m 113.781,77.027 c -0.777,0.013 -1.746,0.429 -2.601,1.185 l -20.26,17.894 v 10.128 h 13.558 l 17.668,-15.606 c 1.368,-1.209 1.91,-2.816 1.215,-3.603 l -8.457,-9.574 c -0.26,-0.295 -0.657,-0.432 -1.123,-0.424 z"/>
+    
+    <!-- Circle (centered) -->
+    <circle style="fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+      id="path4-3" cx="136.965" cy="45.253" r="14.359"/>
+  </g>
+</svg>

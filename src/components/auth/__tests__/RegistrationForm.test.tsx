@@ -40,14 +40,24 @@ jest.mock('bad-words', () => {
     }
 })
 
+jest.mock('@/components/logo/Logo', () => ({
+    Logo: () => <svg data-testid="logo" />
+}))
+
 describe('RegistrationForm', () => {
     beforeEach(() => {
         isProfaneMock.mockReturnValue(false)
         jest.clearAllMocks()
     })
 
+    it('renders the logo', () => {
+        renderWithTheme(<RegistrationForm />)
+        expect(screen.getByTestId('logo')).toBeInTheDocument()
+    })
+
     it('renders Sign In form if session exists', () => {
         renderWithTheme(<RegistrationForm />)
+        expect(screen.getByTestId('logo')).toBeInTheDocument()
         expect(
             screen.getByRole('heading', { name: /sign up for an account/i })
         ).toBeInTheDocument()

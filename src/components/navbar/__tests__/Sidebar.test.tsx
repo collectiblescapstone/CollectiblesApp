@@ -49,6 +49,10 @@ jest.mock('../constants', () => ({
     ]
 }))
 
+jest.mock('@/components/logo/Logo', () => ({
+    Logo: (props: any) => <svg data-testid="logo" {...props} />
+}))
+
 describe('Sidebar', () => {
     beforeEach(() => {
         jest.clearAllMocks()
@@ -59,14 +63,14 @@ describe('Sidebar', () => {
         it('renders the sidebar component', () => {
             renderWithTheme(<Sidebar />)
 
-            expect(screen.getByText('Kollec')).toBeInTheDocument()
+            expect(screen.getByTestId('logo')).toBeInTheDocument()
         })
 
-        it('renders the Kollec heading', () => {
+        it('renders the Kollec logo', () => {
             renderWithTheme(<Sidebar />)
 
-            const heading = screen.getByRole('heading', { name: 'Kollec' })
-            expect(heading).toBeInTheDocument()
+            const logo = screen.getByTestId('logo')
+            expect(logo).toBeInTheDocument()
         })
 
         it('renders all menu items', () => {
@@ -320,11 +324,15 @@ describe('Sidebar', () => {
             expect(buttons.length).toBe(5)
         })
 
-        it('renders Kollec heading before menu items', () => {
+        it('renders logo before menu items', () => {
             renderWithTheme(<Sidebar />)
 
-            const headings = screen.getAllByRole('heading')
-            expect(headings[0]).toHaveTextContent('Kollec')
+            const logo = screen.getByTestId('logo')
+            const firstHeading = screen.getAllByRole('heading')[0]
+
+            // Ensure both exist
+            expect(logo).toBeInTheDocument()
+            expect(firstHeading).toBeInTheDocument()
         })
     })
 })

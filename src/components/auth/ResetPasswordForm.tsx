@@ -1,12 +1,20 @@
 'use client'
-import { Box, Button, Field, Heading, Spinner, VStack } from '@chakra-ui/react'
-import { PasswordInput } from '@/components/ui/password-input'
+
+// React
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+
+// Chakra UI
+import { Box, Button, Field, Heading, Spinner, VStack } from '@chakra-ui/react'
+import { PasswordInput } from '@/components/ui/password-input'
+
 import { ResetPasswordFormValues } from '@/types/auth'
 import { supabase } from '@/lib/supabase'
 import { useAuth } from '@/context/AuthProvider'
 import { useRouter } from 'next/navigation'
+
+// Child Components
+import { Logo } from '@/components/logo/Logo'
 
 export default function ResetPasswordForm() {
     const { session, loading, signOut } = useAuth()
@@ -87,9 +95,18 @@ export default function ResetPasswordForm() {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <Heading size="5xl" pb={12}>
-                    Kollec {/* LOGO PLACEHOLDER */}
-                </Heading>
+                <Box pb={12}>
+                    <Box display="flex" justifyContent="center">
+                        <Logo
+                            data-testid="logo"
+                            style={{
+                                color: '#F2C75C',
+                                width: '50%',
+                                height: '50%'
+                            }}
+                        />
+                    </Box>
+                </Box>
 
                 <Heading size="lg">Reset your password</Heading>
 

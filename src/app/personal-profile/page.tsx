@@ -13,7 +13,6 @@ import { FiEdit3 } from 'react-icons/fi'
 import { useAuth } from '@/context/AuthProvider'
 import ProfileLayout from '@/components/profiles/ProfileLayout'
 import StarRating from '@/components/profiles/StarRating'
-import { TestSearchMetrics } from '@/components/cv/identificationTesting/testSearchMetrics'
 
 const PersonalProfileScreen: React.FC = () => {
     const router = useRouter()
@@ -98,8 +97,6 @@ const PersonalProfileScreen: React.FC = () => {
             <StarRating rating={user.rating} ratingCount={user.rating_count} />
         </Box>
     )
-
-    return <TestSearchMetrics />
 
     return (
         <ProfileLayout

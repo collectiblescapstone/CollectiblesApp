@@ -8,14 +8,14 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 
 // Chakra UI
-import { Box, Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
+import { Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
 
 // Capacitor
 import { CapacitorHttp } from '@capacitor/core'
 
 // Child Components
-import { Logo } from '@/components/logo/Logo'
 import { PasswordInput } from '@/components/ui/password-input'
+import TitleLogo from '@/components/auth/TitleLogo'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'
@@ -163,18 +163,7 @@ const RegistrationForm = () => {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <Box pb={12}>
-                    <Box display="flex" justifyContent="center">
-                        <Logo
-                            data-testid="logo"
-                            style={{
-                                color: '#F2C75C',
-                                width: '50%',
-                                height: '50%'
-                            }}
-                        />
-                    </Box>
-                </Box>
+                <TitleLogo />
 
                 <Heading size="lg">Sign Up for an account</Heading>
 

@@ -5,10 +5,10 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 // Chakra UI
-import { Box, Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
+import { Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
 
 // Child Components
-import { Logo } from '@/components/logo/Logo'
+import TitleLogo from '@/components/auth/TitleLogo'
 
 // Lib
 import { supabase } from '@/lib/supabase'
@@ -63,18 +63,7 @@ export default function ForgetPasswordForm() {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <Box pb={12}>
-                    <Box display="flex" justifyContent="center">
-                        <Logo
-                            data-testid="logo"
-                            style={{
-                                color: '#F2C75C',
-                                width: '50%',
-                                height: '50%'
-                            }}
-                        />
-                    </Box>
-                </Box>
+                <TitleLogo />
 
                 <Heading size="lg">Forgot your password?</Heading>
 

@@ -135,7 +135,7 @@ const AuthForm = () => {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <Box pb={12}>
+                <VStack pb={2}>
                     <Box display="flex" justifyContent="center">
                         <Logo
                             data-testid="logo"
@@ -146,7 +146,10 @@ const AuthForm = () => {
                             }}
                         />
                     </Box>
-                </Box>
+                    <Heading size="5xl" color="brand.turtoise">
+                        Kollec
+                    </Heading>
+                </VStack>
 
                 <Heading size="lg">Sign In to your account</Heading>
 

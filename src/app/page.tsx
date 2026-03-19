@@ -239,7 +239,7 @@ const Landing: React.FC = () => {
                                     <Logo
                                         data-testid="logo"
                                         style={{
-                                            color: '#003B49',
+                                            color: '#F2C75C',
                                             width: '100%',
                                             height: '100%'
                                         }}

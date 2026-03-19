@@ -1,7 +1,7 @@
 import { CardClassifier } from '@/utils/identification/classifyNormalizedCard'
 import cvReadyPromise from '@techstark/opencv-js'
 
-import { PredictedImageResult, rotation } from '@/types/identification'
+import { PredictedImageResult } from '@/types/identification'
 import { locateWithYOLO } from './locateWithYOLO'
 
 /**
@@ -14,12 +14,13 @@ import { locateWithYOLO } from './locateWithYOLO'
  * @returns ProcessedImageResult | undefined
  */
 export const IdentifyCardInImage = async (
-    src: string,
-    rot: rotation = rotation.NONE
-): Promise<PredictedImageResult | undefined> => {
-    if (!rot) console.log('fuck the linter bro')
-
+    src: string
+): Promise<{res: PredictedImageResult, speeds: {label:string, time:number}[]} | undefined> => {
+    const speeds: {label:string, time:number}[] = []
+    let lastTime = performance.now()
     const cv = await cvReadyPromise
+    speeds.push({label: 'load cv', time: performance.now() - lastTime})
+    lastTime = performance.now()
 
     // get imagedata from src
     const img = new Image()
@@ -37,17 +38,27 @@ export const IdentifyCardInImage = async (
     ctx.drawImage(img, 0, 0)
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
 
+    speeds.push({label: 'load image and get data', time: performance.now() - lastTime})
+    
     const result = await locateWithYOLO(imageData, cv, false)
-
     const first = result?.results[0]
+    const locateWithYOLOSpeeds = result?.speeds ?? []
+    speeds.push(...locateWithYOLOSpeeds)
+    lastTime = performance.now()
 
     if (!first || !first.image) {
         return undefined
     }
 
+    
     const classifier = await CardClassifier()
+    speeds.push({label: 'load classifier', time: performance.now() - lastTime})
+    lastTime = performance.now()
 
     const similarCards = classifier(cv, first.image)
+    speeds.push({label: 'classify card', time: performance.now() - lastTime})
+    lastTime = performance.now()
+
 
     // cleanup
     for (const r of result?.results ?? []) {
@@ -62,5 +73,7 @@ export const IdentifyCardInImage = async (
         corners: first?.corners
     }
 
-    return ret
+    speeds.push({label: 'cleanup', time: performance.now() - lastTime})
+
+    return {res: ret, speeds}
 }

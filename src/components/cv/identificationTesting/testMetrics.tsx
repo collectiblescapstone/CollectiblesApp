@@ -10,19 +10,21 @@ import {
     ScrollArea,
     HStack,
     Grid,
-    GridItem
+    GridItem,
+    Image
 } from '@chakra-ui/react'
 import { HiUpload } from 'react-icons/hi'
 
 import { IdentifyCardInImage } from '@/utils/identification/identify'
-import { rotation, PredictedImageResult } from '@/types/identification'
+import { PredictedImageResult } from '@/types/identification'
 import cvReadyPromise from '@techstark/opencv-js'
+import { loadModel } from '@/utils/identification/loadModel'
 
 type FileItem = {
     id: string
     file: File
-    foundCard: PredictedImageResult
-    cardId: string
+    foundCard: string,
+    cardId: string,
 }
 
 const idFor = (f: File) => `${f.name}-${f.size}-${f.lastModified}`
@@ -33,7 +35,7 @@ export const TestMetrics = () => {
     const [precision, setPrecision] = useState<number>(0)
     const [recall, setRecall] = useState<number>(0)
     const [f1Score, setF1Score] = useState<number>(0)
-    const [speeds, setSpeeds] = useState<number[]>([])
+    const [speeds, setSpeeds] = useState<{label:string, time:number}[][]>([])
 
     const updateCardId = (fileId: string, cardId: string): void => {
         setFiles((prevFiles) =>
@@ -45,7 +47,7 @@ export const TestMetrics = () => {
 
     const updateFoundCard = (
         fileId: string,
-        foundCard: PredictedImageResult
+        foundCard: string
     ): void => {
         setFiles((prevFiles) =>
             prevFiles.map((item) =>
@@ -57,6 +59,9 @@ export const TestMetrics = () => {
     const clearAll = () => setFiles([])
 
     const identifyFiles = async () => {
+        // warmup model
+        await loadModel('/models/card_yolo.onnx')
+
         for (const { file, id } of files) {
             try {
                 const imgSrc = await new Promise<string>((resolve, reject) => {
@@ -91,28 +96,20 @@ export const TestMetrics = () => {
                     reader.readAsDataURL(file)
                 })
 
-                // start timing
-                const startTime = performance.now()
-
                 // identify card in image
-                const result: PredictedImageResult | undefined =
-                    await IdentifyCardInImage(imgSrc, rotation.NONE)
+                const result = await IdentifyCardInImage(imgSrc)
 
-                // end timing
-                const endTime = performance.now()
-                const duration = endTime - startTime
-                setSpeeds((prevSpeeds) => [...prevSpeeds, duration])
+                if (result) {
+                    setSpeeds((prev) => [...prev, result.speeds])
+                }
 
                 // update with results
-                if (result && result.predictedCard) {
-                    updateCardId(id, result.predictedCard.card.id)
+                if (result && result.res.predictedCard) {
+                    updateCardId(id, result.res.predictedCard.card.id)
 
                     // draw identified card image to canvas, and update foundCard
-                    if (result.foundCardImage) {
-                        updateFoundCard(id, result)
-
-                        const cv = await cvReadyPromise
-                        cv.imshow(`canvas-found-${id}`, result.foundCardImage)
+                    if (result.res.foundCardImage) {
+                        updateFoundCard(id, result.res.predictedCard.card.image)
                     }
                 }
             } catch (err) {
@@ -128,7 +125,7 @@ export const TestMetrics = () => {
         const uploaded = Array.from(fl).map((file) => ({
             id: idFor(file),
             file,
-            foundCard: {} as PredictedImageResult,
+            foundCard: "",
             cardId: 'NoCard'
         }))
         setFiles(uploaded)
@@ -215,13 +212,14 @@ export const TestMetrics = () => {
                     </HStack>
 
                     {/* scrollable  container*/}
+
                     <ScrollArea.Root variant="hover" maxHeight="90vh">
                         <ScrollArea.Viewport>
                             <Grid
                                 templateColumns="repeat(auto-fill, minmax(420px, 1fr))"
                                 gap={4}
                             >
-                                {files.map(({ id, file, cardId }) => (
+                                {files.map(({ id, file, cardId, foundCard }) => (
                                     <GridItem
                                         key={id}
                                         padding="2"
@@ -270,12 +268,7 @@ export const TestMetrics = () => {
                                                     width="200px"
                                                     height="275px"
                                                 >
-                                                    <canvas
-                                                        id={`canvas-found-${id}`}
-                                                        style={{
-                                                            width: '100%'
-                                                        }}
-                                                    />
+                                                    {foundCard ? <Image src={`${foundCard}/low.jpg`} /> : null}
                                                 </Box>
                                                 <Text
                                                     flex="1"
@@ -301,15 +294,28 @@ export const TestMetrics = () => {
                 <Button onClick={updateMetrics}>Update</Button>
                 <Box>
                     <Text fontWeight="semibold">Results:</Text>
-                    <Text>
-                        Speed (ms per image):{' '}
-                        {speeds.length > 0
-                            ? (
-                                  speeds.reduce((a, b) => a + b, 0) /
-                                  speeds.length
-                              ).toFixed(2)
-                            : 'N/A'}
-                    </Text>
+                    {speeds[0] && speeds.length > 0
+                        ? speeds[0].map(({ label }) => {
+                            const totalTime = speeds.reduce(
+                                (sum, run) =>
+                                    sum +
+                                    (run.find((entry) => entry.label === label)
+                                        ?.time ?? 0),
+                                0
+                            )
+                            const amount = speeds.filter((run) =>
+                                run.some((entry) => entry.label === label)
+                            ).length
+                            const avgTime = totalTime / amount
+
+                            return (
+                                <React.Fragment key={label}>
+                                    <Text>{label}</Text>
+                                    <Text>{avgTime.toPrecision(4)}ms</Text>
+                                </React.Fragment>
+                            )
+                        })
+                        : null}
                     <Text>Accuracy: {accuracy.toFixed(2)}</Text>
                     <Text>Precision: {precision.toFixed(2)}</Text>
                     <Text>Recall: {recall.toFixed(2)}</Text>

@@ -57,8 +57,8 @@ const Content = ({ children }: { children: React.ReactNode }) => {
         <Suspense fallback={<Spinner size="xl" />}>
             <Flex flexDirection="row">
                 <Sidebar />
-                <Flex minWidth="75dvw" minHeight="dvh" justifyContent="center">
-                    <Box maxWidth="40dvw">{children}</Box>
+                <Flex minWidth="85dvw" minHeight="dvh" justifyContent="center">
+                    <Box width="100%">{children}</Box>
                 </Flex>
             </Flex>
         </Suspense>

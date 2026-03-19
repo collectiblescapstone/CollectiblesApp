@@ -27,11 +27,13 @@ export const locateWithYOLO = async (
     imageData: ImageData,
     cv: CV,
     logging: boolean = false
-): Promise<{ results: NormalizeCardResult[]; overlay: ImageData } | null> => {
+): Promise<{ results: NormalizeCardResult[], speeds: { label: string, time: number }[]; overlay: ImageData } | null> => {
     if (errorCount >= 5) {
         console.warn('Too many errors in locateWithYOLO, skipping processing.')
         return null
     }
+    let lastTime = performance.now()
+    const speeds: { label: string, time: number }[] = []
     let res = null
 
     const matsToDelete: (Mat | MatVector)[] = []
@@ -83,9 +85,15 @@ export const locateWithYOLO = async (
 
         if (logging) console.log('running YOLO ONNX model inference')
         // ----------
+
+        speeds.push({ label: 'preprocessing', time: performance.now() - lastTime })
+        lastTime = performance.now()
         const output = await session.run({ images: inputTensor })
         detections = output[session.outputNames[0]] // 1, 300, 38
         proto = output[session.outputNames[1]] // 1, 32, 160, 160
+
+        speeds.push({ label: 'inference', time: performance.now() - lastTime })
+        lastTime = performance.now()
 
         if (logging) console.log('post-processing')
         // ----------
@@ -94,13 +102,15 @@ export const locateWithYOLO = async (
             detections,
             proto
         )
+        speeds.push({ label: 'post-processing', time: performance.now() - lastTime })
+        lastTime = performance.now()
 
         if (
             !resultsProcessed ||
             !resultsProcessed.masksMat ||
             resultsProcessed.results.length === 0
         ) {
-            return null
+            return { results: [], speeds, overlay: new ImageData(1, 1) }
         }
 
         if (logging) console.log('finding contours')
@@ -190,29 +200,31 @@ export const locateWithYOLO = async (
         }
 
         if (foundCards.length > 0) {
-            // draw overlay
-            const overlayCanvas = document.createElement('canvas')
-            overlayCanvas.width = srcWidth
-            overlayCanvas.height = srcHeight
-            const overlayCtx = overlayCanvas.getContext('2d')!
-            overlayCtx.strokeStyle = 'rgba(0, 255, 0, 0.5)'
-            overlayCtx.lineWidth = 4
+        //     // draw overlay
+        //     const overlayCanvas = document.createElement('canvas')
+        //     overlayCanvas.width = srcWidth
+        //     overlayCanvas.height = srcHeight
+        //     const overlayCtx = overlayCanvas.getContext('2d')!
+        //     overlayCtx.strokeStyle = 'rgba(0, 255, 0, 0.5)'
+        //     overlayCtx.lineWidth = 4
 
-            for (const card of foundCards) {
-                overlayCtx.beginPath()
-                overlayCtx.moveTo(card.corners[0][0], card.corners[0][1])
-                overlayCtx.lineTo(card.corners[1][0], card.corners[1][1])
-                overlayCtx.lineTo(card.corners[3][0], card.corners[3][1])
-                overlayCtx.lineTo(card.corners[2][0], card.corners[2][1])
-                overlayCtx.closePath()
-                overlayCtx.stroke()
-            }
+        //     for (const card of foundCards) {
+        //         overlayCtx.beginPath()
+        //         overlayCtx.moveTo(card.corners[0][0], card.corners[0][1])
+        //         overlayCtx.lineTo(card.corners[1][0], card.corners[1][1])
+        //         overlayCtx.lineTo(card.corners[3][0], card.corners[3][1])
+        //         overlayCtx.lineTo(card.corners[2][0], card.corners[2][1])
+        //         overlayCtx.closePath()
+        //         overlayCtx.stroke()
+        //     }
 
-            const overlayImageData = overlayCanvas
-                .getContext('2d')!
-                .getImageData(0, 0, srcWidth, srcHeight)
-            res = { results: foundCards, overlay: overlayImageData }
+        //     const overlayImageData = overlayCanvas
+        //         .getContext('2d')!
+        //         .getImageData(0, 0, srcWidth, srcHeight)
+            speeds.push({ label: 'card extraction', time: performance.now() - lastTime })
+            res = { results: foundCards, overlay: new ImageData(1, 1), speeds }
         }
+
     } catch (e) {
         console.error('Error in locateWithYOLO:', e)
         errorCount++

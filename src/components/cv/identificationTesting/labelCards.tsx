@@ -16,7 +16,7 @@ import {
 import { HiUpload } from 'react-icons/hi'
 
 import { IdentifyCardInImage } from '@/utils/identification/identify'
-import { rotation, PredictedImageResult } from '@/types/identification'
+import { PredictedImageResult } from '@/types/identification'
 import cvReadyPromise from '@techstark/opencv-js'
 
 type FileItem = {
@@ -32,7 +32,6 @@ const idFor = (f: File) => `${f.name}-${f.size}-${f.lastModified}`
 
 export const LabelCards = () => {
     const [files, setFiles] = useState<FileItem[]>([])
-    const [rot, setRot] = useState<rotation>(rotation.NONE)
     const [backImageOption, setBackImageOption] = useState<number>(0)
 
     const updateCardId = (fileId: string, cardId: string): void => {
@@ -86,39 +85,14 @@ export const LabelCards = () => {
             `canvas-${id}`
         ) as HTMLCanvasElement
 
-        // set canvas size based on rotation
-        if (rot === rotation.CLOCKWISE || rot === rotation.COUNTERCLOCKWISE) {
-            canvas.width = img.height
-            canvas.height = img.width
-        } else {
-            canvas.width = img.width
-            canvas.height = img.height
-        }
+        // set canvas size 
+        canvas.width = img.width
+        canvas.height = img.height
 
         // draw image to canvas with rotation
         const ctx = canvas.getContext('2d')
         if (ctx) {
-            if (rot === rotation.CLOCKWISE) {
-                // rotate canvas 90 degrees clockwise
-                ctx.translate(canvas.width / 2, canvas.height / 2)
-                ctx.rotate((90 * Math.PI) / 180)
-                ctx.translate(-canvas.height / 2, -canvas.width / 2)
-                ctx.drawImage(img, 0, 0, canvas.height, canvas.width)
-            } else if (rot === rotation.COUNTERCLOCKWISE) {
-                // rotate canvas 90 degrees counterclockwise
-                ctx.translate(canvas.width / 2, canvas.height / 2)
-                ctx.rotate((-90 * Math.PI) / 180)
-                ctx.translate(-canvas.height / 2, -canvas.width / 2)
-                ctx.drawImage(img, 0, 0, canvas.height, canvas.width)
-            } else if (rot === rotation.UPSIDE_DOWN) {
-                // rotate canvas 180 degrees
-                ctx.translate(canvas.width / 2, canvas.height / 2)
-                ctx.rotate((180 * Math.PI) / 180)
-                ctx.translate(-canvas.width / 2, -canvas.height / 2)
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-            } else {
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-            }
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
         }
     }
 
@@ -206,29 +180,28 @@ export const LabelCards = () => {
                 await drawImageToCanvas(imgSrc, id)
 
                 // identify card in image
-                const result: PredictedImageResult | undefined =
-                    await IdentifyCardInImage(imgSrc, rot)
-                if (result && result.predictedCard) {
+                const result = await IdentifyCardInImage(imgSrc)
+                if (result && result.res.predictedCard) {
                     // set id
                     if (isBackImage) {
                         updateCardId(id, 'back')
                     } else {
-                        updateCardId(id, result.predictedCard.card.id)
+                        updateCardId(id, result.res.predictedCard.card.id)
                     }
 
                     // draw identified card image to canvas, and update foundCard
-                    if (result.foundCardImage) {
-                        updateFoundCard(id, result)
+                    if (result.res.foundCardImage) {
+                        updateFoundCard(id, result.res)
 
                         const cv = await cvReadyPromise
-                        cv.imshow(`canvas-${id}`, result.foundCardImage)
+                        cv.imshow(`canvas-${id}`, result.res.foundCardImage)
 
                         if (!isBackImage) {
                             const imageElement = document.getElementById(
                                 `image-${id}`
                             ) as HTMLImageElement
                             imageElement.src =
-                                result.predictedCard.card.image + '/low.jpg'
+                                result.res.predictedCard.card.image + '/low.jpg'
                         }
                     }
                 }
@@ -257,21 +230,6 @@ export const LabelCards = () => {
     return (
         <Box maxW="90vw" fontFamily="sans-serif">
             <Text display="inline-flex">1.</Text>
-
-            <NativeSelect.Root width="20em" display="inline-flex">
-                <NativeSelect.Field
-                    value={rot}
-                    onChange={(e) => setRot(Number(e.target.value) as rotation)}
-                >
-                    <option value={rotation.NONE}>No Rotation</option>
-                    <option value={rotation.CLOCKWISE}>Rotate Clockwise</option>
-                    <option value={rotation.COUNTERCLOCKWISE}>
-                        Rotate Counterclockwise
-                    </option>
-                    <option value={rotation.UPSIDE_DOWN}>Rotate 180°</option>
-                </NativeSelect.Field>
-                <NativeSelect.Indicator />
-            </NativeSelect.Root>
 
             <NativeSelect.Root width="20em" display="inline-flex">
                 <NativeSelect.Field

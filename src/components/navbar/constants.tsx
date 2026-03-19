@@ -3,7 +3,8 @@ import {
     LuLibrary,
     LuUser,
     LuHouse,
-    LuArrowRightLeft
+    LuArrowRightLeft,
+    LuFlaskConical
 } from 'react-icons/lu'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
 
@@ -33,7 +34,12 @@ export const MENU_ITEMS: {
         path: '/pokemon-grid',
         name: 'Collections'
     },
-    { icon: <LuUser size={36} />, path: '/personal-profile', name: 'Profile' }
+    { icon: <LuUser size={36} />, path: '/personal-profile', name: 'Profile' },
+    {
+        icon: <LuFlaskConical size={36} />,
+        path: '/metrics',
+        name: 'Metrics'
+    }
 ]
 
 export const PAGE_HEADINGS: Record<string, string> = {
@@ -41,5 +47,6 @@ export const PAGE_HEADINGS: Record<string, string> = {
     '/trade': 'TradePost',
     '/pokemon-grid': 'kollections',
     '/camera': 'camera',
-    '/personal-profile': 'profile'
+    '/personal-profile': 'profile',
+    '/metrics': 'Metrics'
 }

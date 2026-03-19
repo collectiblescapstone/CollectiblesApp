@@ -12,7 +12,7 @@ const Sidebar = () => {
         <Flex
             color="brand.turtoise"
             background="brand.marigold"
-            minWidth="25dvw"
+            minWidth="15dvw"
             minHeight="dvh"
             flexDir="column"
             alignItems="flex-start"

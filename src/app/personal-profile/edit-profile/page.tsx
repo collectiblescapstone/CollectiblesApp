@@ -562,7 +562,7 @@ const PersonalProfileScreen: React.FC = () => {
                     <Field.Label>WhatsApp</Field.Label>
                     <InputGroup startAddon={<Span color="gray.800">#</Span>}>
                         <Input
-                            placeholder="WhatsApp nummber"
+                            placeholder="WhatsApp number"
                             fontWeight="normal"
                             {...register('whatsapp')}
                         />

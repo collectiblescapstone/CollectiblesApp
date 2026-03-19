@@ -29,6 +29,7 @@ const Sidebar = () => {
             <HStack width="100%" pb={6} alignSelf="center">
                 <Logo
                     data-testid="logo"
+                    aria-hidden="true"
                     style={{
                         color: '#003B49',
                         width: '50%',

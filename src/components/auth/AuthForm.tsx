@@ -8,20 +8,11 @@ import { useForm } from 'react-hook-form'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 // Chakra
-import {
-    Box,
-    Button,
-    Field,
-    Heading,
-    Input,
-    VStack,
-    Text
-} from '@chakra-ui/react'
+import { Button, Field, Heading, Input, VStack, Text } from '@chakra-ui/react'
 
 // Child Components
 import TitleLogo from '@/components/auth/TitleLogo'
 import { PasswordInput } from '@/components/ui/password-input'
-import { Logo } from '@/components/logo/Logo'
 
 // Context
 import { useAuth } from '@/context/AuthProvider'

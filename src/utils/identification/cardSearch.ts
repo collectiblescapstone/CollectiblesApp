@@ -12,8 +12,15 @@ export const CardSearcher = async () => {
     const init = async () => {
         // Initialize Transformers.js
         const model_id = 'Xenova/clip-vit-base-patch32'
-        tokenizer = await AutoTokenizer.from_pretrained(model_id)
-        textModel = await CLIPTextModelWithProjection.from_pretrained(model_id)
+        tokenizer = await AutoTokenizer.from_pretrained(model_id, {
+            local_files_only: true
+        })
+        textModel = await CLIPTextModelWithProjection.from_pretrained(
+            model_id,
+            {
+                local_files_only: true
+            }
+        )
 
         // Load and decompress gzip'd embeddings binary file
         const CACHE_NAME = 'pokemon-embeddings-cache'
@@ -35,7 +42,11 @@ export const CardSearcher = async () => {
 
     const embeddings = await init()
 
-    const search = async (query: string, embeds?: Record<string, number[]>) => {
+    const search = async (
+        query: string,
+        embeds?: Record<string, number[]>,
+        k = 20
+    ) => {
         // Convert query text to vector
         const inputs = tokenizer(query)
         const { text_embeds } = await textModel(inputs)
@@ -53,12 +64,17 @@ export const CardSearcher = async () => {
         }
 
         // Sort
-        const sorted = matches.sort((a, b) => b.score - a.score).slice(0, 15)
-        return sorted
+        const sorted = matches.sort((a, b) => b.score - a.score)
+
+        if (!k) {
+            return sorted
+        }
+
+        return sorted.slice(0, Math.min(k, matches.length))
     }
 
     // Avoid searching entire card set
-    const getFilteredSearch = (ids: string[]) => {
+    const getFilteredSearch = (ids: string[], k = 20) => {
         const embeds: Record<string, number[]> = {}
         for (const id of ids) {
             if (embeddings[id]) {
@@ -66,7 +82,7 @@ export const CardSearcher = async () => {
             }
         }
 
-        return (query: string) => search(query, embeds)
+        return (query: string) => search(query, embeds, k)
     }
 
     return { search, getFilteredSearch }

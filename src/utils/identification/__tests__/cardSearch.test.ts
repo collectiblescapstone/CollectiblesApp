@@ -106,10 +106,12 @@ describe('CardSearcher', () => {
         const results = await searcher.search('grass starter')
 
         expect(tokenizerFromPretrained).toHaveBeenCalledWith(
-            'Xenova/clip-vit-base-patch32'
+            'Xenova/clip-vit-base-patch32',
+            { local_files_only: true }
         )
         expect(textModelFromPretrained).toHaveBeenCalledWith(
-            'Xenova/clip-vit-base-patch32'
+            'Xenova/clip-vit-base-patch32',
+            { local_files_only: true }
         )
         expect(mockTokenizer).toHaveBeenCalledWith('grass starter')
         expect(mockTextModel).toHaveBeenCalledWith({ query: 'grass starter' })
@@ -140,7 +142,7 @@ describe('CardSearcher', () => {
         const searcher = await CardSearcher()
 
         const all = await searcher.search('query')
-        expect(all).toHaveLength(15)
+        expect(all).toHaveLength(20)
         expect(all[0].id).toBe('c0')
         expect(all[14].id).toBe('c14')
 

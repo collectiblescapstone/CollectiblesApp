@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         optimizePackageImports: ['@chakra-ui/react']
     },
     webpack: (config) => {
+        // Import the svg stuff
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ['@svgr/webpack']
+        })
         // required for opencv-js to work in the browser
         config.resolve.fallback = {
             ...config.resolve.fallback,

@@ -30,6 +30,7 @@ const Sidebar = () => {
                 <Logo
                     data-testid="logo"
                     aria-hidden="true"
+                    aria-hidden="true"
                     style={{
                         color: '#003B49',
                         width: '50%',

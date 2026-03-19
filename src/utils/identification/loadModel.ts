@@ -17,35 +17,62 @@ export const loadModel = async (
 
     const DEFAULT_INPUT_SIZE = [1, 3, 640, 640]
     const settings: InferenceSession.SessionOptions = {
-        executionProviders: ['wasm'],
-        graphOptimizationLevel: 'all',
+        executionProviders: ['nnapi', 'webgpu'],
         enableCpuMemArena: true,
-        enableMemPattern: true
+        enableMemPattern: true,
+        graphOptimizationLevel: 'all'
     }
-
-    env.wasm.simd = false
 
     // create model session
     try {
         session = await InferenceSession.create(modelPath, settings)
-    } catch (err) {
-        throw new Error(
-            `Failed to load model at ${modelPath}: ${err instanceof Error ? err.message : String(err)}`
-        )
-    }
 
-    // warm up model with dummy input
-    const dummyInput = new Tensor(
-        'float32',
-        new Float32Array(DEFAULT_INPUT_SIZE.reduce((a, b) => a * b)),
-        DEFAULT_INPUT_SIZE
-    )
-    const output = await session.run({ images: dummyInput })
-    const outputKeys = session.outputNames
-    for (const key of outputKeys) {
-        output[key].dispose()
+        // warm up model with dummy input
+        const dummyInput = new Tensor(
+            'float32',
+            new Float32Array(DEFAULT_INPUT_SIZE.reduce((a, b) => a * b)),
+            DEFAULT_INPUT_SIZE
+        )
+        const output = await session.run({ images: dummyInput })
+        const outputKeys = session.outputNames
+        for (const key of outputKeys) {
+            output[key].dispose()
+        }
+        dummyInput.dispose()
+    } catch (err) {
+        console.log('failed creating webgpu session, falling back to wasm', err)
+
+        try {
+            const settingsCPU: InferenceSession.SessionOptions = {
+                executionProviders: ['wasm'],
+                enableCpuMemArena: true,
+                enableMemPattern: true,
+                graphOptimizationLevel: 'all'
+            }
+
+            env.wasm.simd = true
+
+            session = await InferenceSession.create(modelPath, settingsCPU)
+
+            // warm up model with dummy input
+            const dummyInput = new Tensor(
+                'float32',
+                new Float32Array(DEFAULT_INPUT_SIZE.reduce((a, b) => a * b)),
+                DEFAULT_INPUT_SIZE
+            )
+            const output = await session.run({ images: dummyInput })
+            const outputKeys = session.outputNames
+            for (const key of outputKeys) {
+                output[key].dispose()
+            }
+            dummyInput.dispose()
+        } catch (err) {
+            throw new Error(
+                'failed to create ONNX Runtime session with both webgpu and wasm backends: ' +
+                    err
+            )
+        }
     }
-    dummyInput.dispose()
 
     return session
 }

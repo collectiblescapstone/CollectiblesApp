@@ -16,15 +16,13 @@ import {
 import { HiUpload } from 'react-icons/hi'
 
 import { IdentifyCardInImage } from '@/utils/identification/identify'
-import { PredictedImageResult } from '@/types/identification'
-import cvReadyPromise from '@techstark/opencv-js'
 import { loadModel } from '@/utils/identification/loadModel'
 
 type FileItem = {
     id: string
     file: File
-    foundCard: string,
-    cardId: string,
+    foundCard: string
+    cardId: string
 }
 
 const idFor = (f: File) => `${f.name}-${f.size}-${f.lastModified}`
@@ -35,7 +33,9 @@ export const TestMetrics = () => {
     const [precision, setPrecision] = useState<number>(0)
     const [recall, setRecall] = useState<number>(0)
     const [f1Score, setF1Score] = useState<number>(0)
-    const [speeds, setSpeeds] = useState<{label:string, time:number}[][]>([])
+    const [speeds, setSpeeds] = useState<{ label: string; time: number }[][]>(
+        []
+    )
 
     const updateCardId = (fileId: string, cardId: string): void => {
         setFiles((prevFiles) =>
@@ -45,10 +45,7 @@ export const TestMetrics = () => {
         )
     }
 
-    const updateFoundCard = (
-        fileId: string,
-        foundCard: string
-    ): void => {
+    const updateFoundCard = (fileId: string, foundCard: string): void => {
         setFiles((prevFiles) =>
             prevFiles.map((item) =>
                 item.id === fileId ? { ...item, foundCard } : item
@@ -125,7 +122,7 @@ export const TestMetrics = () => {
         const uploaded = Array.from(fl).map((file) => ({
             id: idFor(file),
             file,
-            foundCard: "",
+            foundCard: '',
             cardId: 'NoCard'
         }))
         setFiles(uploaded)
@@ -219,68 +216,75 @@ export const TestMetrics = () => {
                                 templateColumns="repeat(auto-fill, minmax(420px, 1fr))"
                                 gap={4}
                             >
-                                {files.map(({ id, file, cardId, foundCard }) => (
-                                    <GridItem
-                                        key={id}
-                                        padding="2"
-                                        borderBottom="1px solid"
-                                        borderColor="gray.200"
-                                        backgroundColor={
-                                            file.name
-                                                .split('.')
-                                                .slice(0, -1)
-                                                .join('.')
-                                                .includes('NoCard')
-                                                ? cardId === 'NoCard'
-                                                    ? 'green.500'
-                                                    : 'red.500'
-                                                : cardId ===
-                                                    file.name
-                                                        .split('.')
-                                                        .slice(0, -1)
-                                                        .join('.')
-                                                  ? 'green.500'
-                                                  : 'red.500'
-                                        }
-                                    >
-                                        <HStack>
-                                            <VStack>
-                                                <Box
-                                                    width="200px"
-                                                    height="275px"
-                                                >
-                                                    <canvas
-                                                        id={`canvas-${id}`}
-                                                        style={{
-                                                            width: '100%'
-                                                        }}
-                                                    />
-                                                </Box>
-                                                <Text flex="1">
-                                                    {file.name
-                                                        .split('.')
-                                                        .slice(0, -1)
-                                                        .join('.')}
-                                                </Text>
-                                            </VStack>
-                                            <VStack>
-                                                <Box
-                                                    width="200px"
-                                                    height="275px"
-                                                >
-                                                    {foundCard ? <Image src={`${foundCard}/low.jpg`} /> : null}
-                                                </Box>
-                                                <Text
-                                                    flex="1"
-                                                    textAlign="right"
-                                                    paddingRight="8"
-                                                >
-                                                    {cardId}
-                                                </Text>
-                                            </VStack>
-                                        </HStack>
-                                    </GridItem>
-                                ))}
+                                {files.map(
+                                    ({ id, file, cardId, foundCard }) => (
+                                        <GridItem
+                                            key={id}
+                                            padding="2"
+                                            borderBottom="1px solid"
+                                            borderColor="gray.200"
+                                            backgroundColor={
+                                                file.name
+                                                    .split('.')
+                                                    .slice(0, -1)
+                                                    .join('.')
+                                                    .includes('NoCard')
+                                                    ? cardId === 'NoCard'
+                                                        ? 'green.500'
+                                                        : 'red.500'
+                                                    : cardId ===
+                                                        file.name
+                                                            .split('.')
+                                                            .slice(0, -1)
+                                                            .join('.')
+                                                      ? 'green.500'
+                                                      : 'red.500'
+                                            }
+                                        >
+                                            <HStack>
+                                                <VStack>
+                                                    <Box
+                                                        width="200px"
+                                                        height="275px"
+                                                    >
+                                                        <canvas
+                                                            id={`canvas-${id}`}
+                                                            style={{
+                                                                width: '100%'
+                                                            }}
+                                                        />
+                                                    </Box>
+                                                    <Text flex="1">
+                                                        {file.name
+                                                            .split('.')
+                                                            .slice(0, -1)
+                                                            .join('.')}
+                                                    </Text>
+                                                </VStack>
+                                                <VStack>
+                                                    <Box
+                                                        width="200px"
+                                                        height="275px"
+                                                    >
+                                                        {foundCard ? (
+                                                            <Image
+                                                                src={`${foundCard}/low.jpg`}
+                                                                alt="found card"
+                                                            />
+                                                        ) : null}
+                                                    </Box>
+                                                    <Text
+                                                        flex="1"
+                                                        textAlign="right"
+                                                        paddingRight="8"
+                                                    >
+                                                        {cardId}
+                                                    </Text>
+                                                </VStack>
+                                            </HStack>
+                                        </GridItem>
+                                    )
+                                )}
                             </Grid>
                         </ScrollArea.Viewport>
                         <ScrollArea.Scrollbar></ScrollArea.Scrollbar>
@@ -296,25 +300,26 @@ export const TestMetrics = () => {
                     <Text fontWeight="semibold">Results:</Text>
                     {speeds[0] && speeds.length > 0
                         ? speeds[0].map(({ label }) => {
-                            const totalTime = speeds.reduce(
-                                (sum, run) =>
-                                    sum +
-                                    (run.find((entry) => entry.label === label)
-                                        ?.time ?? 0),
-                                0
-                            )
-                            const amount = speeds.filter((run) =>
-                                run.some((entry) => entry.label === label)
-                            ).length
-                            const avgTime = totalTime / amount
+                              const totalTime = speeds.reduce(
+                                  (sum, run) =>
+                                      sum +
+                                      (run.find(
+                                          (entry) => entry.label === label
+                                      )?.time ?? 0),
+                                  0
+                              )
+                              const amount = speeds.filter((run) =>
+                                  run.some((entry) => entry.label === label)
+                              ).length
+                              const avgTime = totalTime / amount
 
-                            return (
-                                <React.Fragment key={label}>
-                                    <Text>{label}</Text>
-                                    <Text>{avgTime.toPrecision(4)}ms</Text>
-                                </React.Fragment>
-                            )
-                        })
+                              return (
+                                  <React.Fragment key={label}>
+                                      <Text>{label}</Text>
+                                      <Text>{avgTime.toPrecision(4)}ms</Text>
+                                  </React.Fragment>
+                              )
+                          })
                         : null}
                     <Text>Accuracy: {accuracy.toFixed(2)}</Text>
                     <Text>Precision: {precision.toFixed(2)}</Text>

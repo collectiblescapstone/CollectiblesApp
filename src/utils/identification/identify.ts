@@ -15,11 +15,14 @@ import { locateWithYOLO } from './locateWithYOLO'
  */
 export const IdentifyCardInImage = async (
     src: string
-): Promise<{res: PredictedImageResult, speeds: {label:string, time:number}[]} | undefined> => {
-    const speeds: {label:string, time:number}[] = []
+): Promise<
+    | { res: PredictedImageResult; speeds: { label: string; time: number }[] }
+    | undefined
+> => {
+    const speeds: { label: string; time: number }[] = []
     let lastTime = performance.now()
     const cv = await cvReadyPromise
-    speeds.push({label: 'load cv', time: performance.now() - lastTime})
+    speeds.push({ label: 'load cv', time: performance.now() - lastTime })
     lastTime = performance.now()
 
     // get imagedata from src
@@ -38,8 +41,11 @@ export const IdentifyCardInImage = async (
     ctx.drawImage(img, 0, 0)
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
 
-    speeds.push({label: 'load image and get data', time: performance.now() - lastTime})
-    
+    speeds.push({
+        label: 'load image and get data',
+        time: performance.now() - lastTime
+    })
+
     const result = await locateWithYOLO(imageData, cv, false)
     const first = result?.results[0]
     const locateWithYOLOSpeeds = result?.speeds ?? []
@@ -50,15 +56,16 @@ export const IdentifyCardInImage = async (
         return undefined
     }
 
-    
     const classifier = await CardClassifier()
-    speeds.push({label: 'load classifier', time: performance.now() - lastTime})
+    speeds.push({
+        label: 'load classifier',
+        time: performance.now() - lastTime
+    })
     lastTime = performance.now()
 
     const similarCards = classifier(cv, first.image)
-    speeds.push({label: 'classify card', time: performance.now() - lastTime})
+    speeds.push({ label: 'classify card', time: performance.now() - lastTime })
     lastTime = performance.now()
-
 
     // cleanup
     for (const r of result?.results ?? []) {
@@ -73,7 +80,7 @@ export const IdentifyCardInImage = async (
         corners: first?.corners
     }
 
-    speeds.push({label: 'cleanup', time: performance.now() - lastTime})
+    speeds.push({ label: 'cleanup', time: performance.now() - lastTime })
 
-    return {res: ret, speeds}
+    return { res: ret, speeds }
 }

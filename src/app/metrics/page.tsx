@@ -1,6 +1,6 @@
 'use client'
 
-import { TestMetrics } from "@/components/cv/identificationTesting/testMetrics"
+import { TestMetrics } from '@/components/cv/identificationTesting/testMetrics'
 
 const MetricsPage = () => {
     return (

@@ -85,7 +85,7 @@ export const LabelCards = () => {
             `canvas-${id}`
         ) as HTMLCanvasElement
 
-        // set canvas size 
+        // set canvas size
         canvas.width = img.width
         canvas.height = img.height
 

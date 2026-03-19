@@ -105,14 +105,11 @@ export const IdentifyCards = ({
                 const similar: PredictedCards = []
                 for (const card of res?.results ?? []) {
                     // find most similar card
-                    const similarCards = classifier(cv.current!, card.image)
-                    if (similarCards.length > 0) {
-                        // update list of identified cards with closest result
-                        similar.push({
-                            data: similarCards[0],
-                            imageURL: similarCards[0].card.image + '/low.jpg'
-                        })
-                    }
+                    const mostSimilarCards = classifier(cv.current!, card.image)
+                    similar.push({
+                        data: mostSimilarCards,
+                        imageURL: mostSimilarCards.card.image + '/low.jpg'
+                    })
                 }
                 setPredictedCards(similar)
 

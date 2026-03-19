@@ -1,13 +1,11 @@
 import { CV, Mat } from '@techstark/opencv-js'
 
-import { CardData, CardDataObj } from '@/types/identification'
-import path from 'path'
-import fs from 'fs/promises'
+import { CardDataTwo, CardDataObjTwo } from '@/types/identification'
 
-let cardDataCacheServer: CardDataObj | null = null
+let cardDataCacheServer: CardDataObjTwo | null = null
 
 export const CardClassifierServer = async (): Promise<
-    (cv: CV, image: Mat, k?: number) => CardData[]
+    (cv: CV, image: Mat, k?: number) => CardDataTwo
 > => {
     /**
      * Converts hexadecimal string to binary string
@@ -28,12 +26,14 @@ export const CardClassifierServer = async (): Promise<
         if (cardDataCacheServer) {
             return cardDataCacheServer
         }
-        const filePath = path.join(process.cwd(), 'public', 'card_data.json')
-        const fileContent = await fs.readFile(filePath, 'utf-8')
-        const cardData = JSON.parse(fileContent) as CardDataObj
+        const cardDataReq = await fetch('/card_data.json')
+        if (!cardDataReq.ok) {
+            return {} as CardDataObjTwo
+        }
 
+        const cardData = (await cardDataReq.json()) as CardDataObjTwo
         for (const id in cardData) {
-            cardData[id].hashBits = hexToBin(cardData[id].hash)
+            cardData[id].hashBytes = hexToBin(cardData[id].hash)
         }
 
         cardDataCacheServer = cardData
@@ -81,20 +81,23 @@ export const CardClassifierServer = async (): Promise<
      */
     const getSimilarCards = (cv: CV, image: Mat, k = 4) => {
         const dHash = dhash(cv, image)
-        const distances: [distance: number, id: string][] = []
+        let closestID = 'base1-1'
+        let closestDistance = Infinity
         for (const id in cardData) {
             let distance = 0
             for (let i = 0; i < dHash.length; i++) {
-                if (dHash[i] !== cardData[id].hashBits[i]) {
+                if (dHash[i] !== cardData[id].hashBytes[i]) {
                     distance++
                 }
             }
 
-            distances.push([distance, id])
+            if (distance < closestDistance) {
+                closestDistance = distance
+                closestID = id
+            }
         }
 
-        distances.sort((a, b) => a[0] - b[0])
-        return distances.slice(0, k).map(([, id]) => cardData[id])
+        return cardData[closestID]
     }
 
     return getSimilarCards

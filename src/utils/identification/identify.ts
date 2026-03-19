@@ -1,8 +1,9 @@
 import { CardClassifier } from '@/utils/identification/classifyNormalizedCard'
 import cvReadyPromise from '@techstark/opencv-js'
 
-import { PredictedImageResult } from '@/types/identification'
+import { CardData, PredictedImageResult } from '@/types/identification'
 import { locateWithYOLO } from './locateWithYOLO'
+// import { CardClassifierServer } from './server/classifyNormalizedCardServer'
 
 /**
  * DELETE foundCardImage after use to free up memory
@@ -56,14 +57,25 @@ export const IdentifyCardInImage = async (
         return undefined
     }
 
+    // preprocessing, if card image is dark, increase brightness to improve classification results
+    const meanScalar = cv.mean(first.image)
+    const meanBrightness =
+        (meanScalar[0] + meanScalar[1] + meanScalar[2]) / 3 / 255
+    if (meanBrightness < 0.5) {
+        const alpha = meanBrightness < 0.25 ? 2 : 1.5
+        const beta = meanBrightness < 0.25 ? 50 : 30
+        first.image.convertTo(first.image, -1, alpha, beta)
+    }
+
     const classifier = await CardClassifier()
+    // const classifier = await CardClassifierServer()
     speeds.push({
         label: 'load classifier',
         time: performance.now() - lastTime
     })
     lastTime = performance.now()
 
-    const similarCards = classifier(cv, first.image)
+    const mostSimilarCard = classifier(cv, first.image)
     speeds.push({ label: 'classify card', time: performance.now() - lastTime })
     lastTime = performance.now()
 
@@ -75,7 +87,7 @@ export const IdentifyCardInImage = async (
     }
 
     const ret: PredictedImageResult = {
-        predictedCard: similarCards[0],
+        predictedCard: mostSimilarCard,
         foundCardImage: first?.image,
         corners: first?.corners
     }

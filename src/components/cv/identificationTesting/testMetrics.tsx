@@ -17,6 +17,7 @@ import { HiUpload } from 'react-icons/hi'
 
 import { IdentifyCardInImage } from '@/utils/identification/identify'
 import { loadModel } from '@/utils/identification/loadModel'
+import { CardClassifier } from '@/utils/identification/classifyNormalizedCard'
 
 type FileItem = {
     id: string
@@ -58,6 +59,7 @@ export const TestMetrics = () => {
     const identifyFiles = async () => {
         // warmup model
         await loadModel('/models/card_yolo.onnx')
+        await CardClassifier()
 
         for (const { file, id } of files) {
             try {
@@ -158,6 +160,8 @@ export const TestMetrics = () => {
             }
         }
 
+        console.log({ tp, fp, fn, tn })
+        console.log('Accuracy:', (tp + tn) / (tp + tn + fp + fn))
         setAccuracy((tp + tn) / (tp + tn + fp + fn))
         const precision = tp / (tp + fp + 0.000000001)
         setPrecision(precision)
@@ -321,10 +325,10 @@ export const TestMetrics = () => {
                               )
                           })
                         : null}
-                    <Text>Accuracy: {accuracy.toFixed(2)}</Text>
-                    <Text>Precision: {precision.toFixed(2)}</Text>
-                    <Text>Recall: {recall.toFixed(2)}</Text>
-                    <Text>F1 Score: {f1Score.toFixed(2)}</Text>
+                    <Text>Accuracy: {accuracy.toFixed(3)}</Text>
+                    <Text>Precision: {precision.toFixed(3)}</Text>
+                    <Text>Recall: {recall.toFixed(3)}</Text>
+                    <Text>F1 Score: {f1Score.toFixed(3)}</Text>
                 </Box>
             </VStack>
         </HStack>

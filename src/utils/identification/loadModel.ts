@@ -17,11 +17,14 @@ export const loadModel = async (
 
     const DEFAULT_INPUT_SIZE = [1, 3, 640, 640]
     const settings: InferenceSession.SessionOptions = {
-        executionProviders: ['nnapi', 'webgpu'],
+        executionProviders: ['webgpu'],
         enableCpuMemArena: true,
         enableMemPattern: true,
         graphOptimizationLevel: 'all'
     }
+
+    env.wasm.simd = true
+    env.wasm.numThreads = navigator.hardwareConcurrency || 1
 
     // create model session
     try {
@@ -49,8 +52,6 @@ export const loadModel = async (
                 enableMemPattern: true,
                 graphOptimizationLevel: 'all'
             }
-
-            env.wasm.simd = true
 
             session = await InferenceSession.create(modelPath, settingsCPU)
 

@@ -5,18 +5,30 @@ import { CardData, CardDataObj } from '@/types/identification'
 let cardDataCache: CardDataObj | null = null
 
 export const CardClassifier = async (): Promise<
-    (cv: CV, image: Mat, k?: number) => CardData[]
+    (cv: CV, image: Mat, k?: number) => CardData
 > => {
-    /**
-     * Converts hexadecimal string to binary string
-     */
-    const hexToBin = (hex: string) => {
-        let bits = ''
-        for (const char of hex) {
-            bits += parseInt(char, 16).toString(2).padStart(4, '0')
-        }
+    const popcount8 = new Uint8Array(256)
 
-        return bits
+    for (let i = 0; i < 256; i++) {
+        let x = i,
+            c = 0
+        while (x) {
+            x &= x - 1
+            c++
+        }
+        popcount8[i] = c
+    }
+
+    /**
+     * Converts hexadecimal string to byte array
+     */
+    const hexToBytes = (hex: string): Uint8Array => {
+        const len = hex.length >> 1
+        const out = new Uint8Array(len)
+        for (let i = 0; i < len; i++) {
+            out[i] = parseInt(hex.substring(i * 2, i * 2 + 2), 16)
+        }
+        return out
     }
 
     /**
@@ -33,7 +45,7 @@ export const CardClassifier = async (): Promise<
 
         const cardData = (await cardDataReq.json()) as CardDataObj
         for (const id in cardData) {
-            cardData[id].hashBits = hexToBin(cardData[id].hash)
+            cardData[id].hashBytes = hexToBytes(cardData[id].hash)
         }
 
         cardDataCache = cardData
@@ -43,10 +55,20 @@ export const CardClassifier = async (): Promise<
     const cardData = await loadCards()
 
     /**
-     * Returns the binary representation of a boolean array
+     * Returns the hexadecimal string representation of a boolean array
      */
-    const getBits = (binaryArray: boolean[]) =>
-        binaryArray.reduce((str, val) => str + (val ? '1' : '0'), '')
+    const getHex = (binaryArray: boolean[]): string => {
+        const bin = binaryArray.reduce(
+            (str, val) => str + (val ? '1' : '0'),
+            ''
+        )
+        let hex = ''
+        for (let i = 0; i < bin.length; i += 4) {
+            const chunk = bin.substring(i, i + 4)
+            hex += parseInt(chunk, 2).toString(16).padStart(1, '0')
+        }
+        return hex
+    }
 
     /**
      * Calculates difference hash
@@ -54,12 +76,10 @@ export const CardClassifier = async (): Promise<
      */
     const dhash = (cv: CV, image: Mat, hashSize = 16): string => {
         // Convert image to a greyscale (hashSize + 1) x (hashSize) image
-        const grayImage = new cv.Mat()
-        cv.cvtColor(image, grayImage, cv.COLOR_RGB2GRAY)
 
         const resizedImage = new cv.Mat()
         const dsize = new cv.Size(hashSize + 1, hashSize)
-        cv.resize(grayImage, resizedImage, dsize, 0, 0, cv.INTER_AREA)
+        cv.resize(image, resizedImage, dsize, 0, 0, cv.INTER_AREA)
 
         // Get (hashSize) x (hashSize) boolean array by checking if each pixel (other than last column) is smaller than its right pixel
         const pixels = new Array<boolean>(hashSize * hashSize)
@@ -71,30 +91,46 @@ export const CardClassifier = async (): Promise<
             }
         }
 
-        grayImage.delete()
         resizedImage.delete()
-        return getBits(pixels)
+        return getHex(pixels)
     }
 
     /**
      * Given a card image, returns the (k) most similar card(s)
      */
-    const getSimilarCards = (cv: CV, image: Mat, k = 4) => {
-        const dHash = dhash(cv, image)
-        const distances: [distance: number, id: string][] = []
+    const getSimilarCards = (cv: CV, image: Mat) => {
+        image.convertTo(image, cv.CV_8UC3)
+        const channels = new cv.MatVector()
+        cv.split(image, channels)
+        const imageR = channels.get(0)
+        const imageG = channels.get(1)
+        const imageB = channels.get(2)
+        const dHash =
+            dhash(cv, imageR, 16) +
+            dhash(cv, imageG, 16) +
+            dhash(cv, imageB, 16)
+        imageR.delete()
+        imageG.delete()
+        imageB.delete()
+        channels.delete()
+
+        const dHashBytes = hexToBytes(dHash)
+        let bestDist = Infinity
+        let bestId = 'base1-1'
         for (const id in cardData) {
-            let distance = 0
-            for (let i = 0; i < dHash.length; i++) {
-                if (dHash[i] !== cardData[id].hashBits[i]) {
-                    distance++
-                }
+            let dist = 0
+            let cardBytes = cardData[id].hashBytes
+            for (let i = 0; i < dHashBytes.length; i++) {
+                dist += popcount8[dHashBytes[i] ^ cardBytes[i]]
             }
 
-            distances.push([distance, id])
+            if (dist < bestDist) {
+                bestDist = dist
+                bestId = id
+            }
         }
 
-        distances.sort((a, b) => a[0] - b[0])
-        return distances.slice(0, k).map(([, id]) => cardData[id])
+        return cardData[bestId]
     }
 
     return getSimilarCards

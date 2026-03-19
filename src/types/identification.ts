@@ -3,12 +3,22 @@ import cvReadyPromise from '@techstark/opencv-js'
 
 export type CardData = {
     hash: string
-    hashBits: string
+    hashBytes: Uint8Array
+    card: PokemonCard
+}
+
+export type CardDataTwo = {
+    hash: string
+    hashBytes: string
     card: PokemonCard
 }
 
 export type CardDataObj = {
     [id: string]: CardData
+}
+
+export type CardDataObjTwo = {
+    [id: string]: CardDataTwo
 }
 
 export interface PredictedImageResult {

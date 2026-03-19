@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Text, VStack, Image, Flex, Grid } from '@chakra-ui/react'
+import { Box, Text, VStack, Image, Grid } from '@chakra-ui/react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { usePokemonCards } from '@/context/PokemonCardsProvider'
 import { CardData } from '@/types/pokemon-card'
@@ -155,11 +155,12 @@ export const TestSearchMetrics = () => {
                             >
                                 <Text>{cardName}</Text>
                                 <Text fontSize="small" textAlign="center">
-                                    "{cardDescription}"
+                                    &quot;{cardDescription}&quot;
                                 </Text>
                                 {match && (
                                     <Image
                                         src={match.card?.image_url}
+                                        alt={match.card?.name}
                                         w="105px"
                                         h="auto"
                                         borderRadius="none"

@@ -26,13 +26,7 @@ const Sidebar = () => {
             alignItems="flex-start"
             p={8}
         >
-            <HStack
-                as="span"
-                color="brand.turtoise"
-                width="100%"
-                pb={6}
-                alignSelf="center"
-            >
+            <HStack width="100%" pb={6} alignSelf="center">
                 <Logo
                     data-testid="logo"
                     style={{

@@ -4,9 +4,6 @@ import '@testing-library/jest-dom'
 import AuthForm from '../AuthForm'
 import { renderWithTheme } from '../../../utils/testing-utils'
 
-// --------------------
-// Mock Auth context
-// --------------------
 const signInMock = jest.fn()
 const signInWithGoogleMock = jest.fn()
 
@@ -17,32 +14,20 @@ jest.mock('../../../context/AuthProvider', () => ({
     })
 }))
 
-// --------------------
-// Mock Next.js router
-// --------------------
 const pushMock = jest.fn()
 jest.mock('next/navigation', () => ({
     useRouter: () => ({ push: pushMock }),
     useSearchParams: () => ({ get: jest.fn() })
 }))
 
-// --------------------
-// Mock fetchUserProfile
-// --------------------
 jest.mock('../../../utils/profiles/userNameProfilePuller', () => ({
     fetchUserProfile: jest.fn().mockResolvedValue({ email: 'test@example.com' })
 }))
 
-// --------------------
-// Mock Logo SVG
-// --------------------
 jest.mock('@/components/logo/Logo', () => ({
     Logo: () => <svg data-testid="logo" />
 }))
 
-// --------------------
-// Tests
-// --------------------
 describe('AuthForm', () => {
     beforeEach(() => {
         jest.clearAllMocks()

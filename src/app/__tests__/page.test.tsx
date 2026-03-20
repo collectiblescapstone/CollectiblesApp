@@ -9,6 +9,18 @@ import {
     TextProps
 } from '@chakra-ui/react'
 
+jest.mock('next/link', () => ({
+    __esModule: true,
+    default: ({ href, children, ...props }: any) => {
+        const resolved = typeof href === 'string' ? href : href?.pathname || ''
+        return (
+            <a href={resolved} {...props}>
+                {children}
+            </a>
+        )
+    }
+}))
+
 jest.mock('@chakra-ui/react', () => {
     return {
         __esModule: true,

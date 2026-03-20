@@ -11,8 +11,18 @@ import {
 
 jest.mock('next/link', () => ({
     __esModule: true,
-    default: ({ href, children, ...props }: any) => {
-        const resolved = typeof href === 'string' ? href : href?.pathname || ''
+    default: ({
+        href,
+        children,
+        ...props
+    }: {
+        href?: string | { pathname?: string }
+        children?: React.ReactNode
+    }) => {
+        const resolved =
+            typeof href === 'string'
+                ? href
+                : (href && (href as { pathname?: string }).pathname) || ''
         return (
             <a href={resolved} {...props}>
                 {children}
@@ -43,6 +53,14 @@ jest.mock('@chakra-ui/react', () => {
             children?: React.ReactNode
             onClick?: () => void
         }) => <button onClick={onClick}>{children}</button>,
+
+        // Add missing HStack and VStack mocks used by the page
+        HStack: ({ children }: FlexProps & { children?: React.ReactNode }) => (
+            <div data-testid="hstack">{children}</div>
+        ),
+        VStack: ({ children }: FlexProps & { children?: React.ReactNode }) => (
+            <div data-testid="vstack">{children}</div>
+        ),
 
         Tabs: {
             Root: ({ children }: { children?: React.ReactNode }) => (

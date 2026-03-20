@@ -694,7 +694,7 @@ const Landing: React.FC = () => {
                                             Card Identification
                                         </Heading>
                                         <Text>
-                                            Using advance machine learning
+                                            Using advanced machine learning
                                             techniques, Kollec can rapidly
                                             identify collectibles in real time
                                             using just your phone&apos;s camera.

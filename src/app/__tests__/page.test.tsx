@@ -175,7 +175,7 @@ describe('Landing Page', () => {
                 return id === 'about' ? mockEl : null
             })
 
-        fireEvent.click(screen.getByRole('button', { name: /About/i }))
+        fireEvent.click(screen.getByLabelText('Scroll to About section'))
 
         expect(spy).toHaveBeenCalledWith('about')
 

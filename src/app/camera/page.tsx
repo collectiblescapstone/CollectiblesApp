@@ -139,7 +139,7 @@ const CameraPage = () => {
             )
 
             setSourceImageData(imageData)
-        }, 100)
+        }, 10)
     }, [isIOS, isNative])
 
     const startCamera = useCallback(async () => {

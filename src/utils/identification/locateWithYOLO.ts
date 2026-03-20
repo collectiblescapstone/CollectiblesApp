@@ -26,7 +26,8 @@ let errorCount = 0
 export const locateWithYOLO = async (
     imageData: ImageData,
     cv: CV,
-    logging: boolean = false
+    logging: boolean = false,
+    scoreThreshold: number = 0.6
 ): Promise<{
     results: NormalizeCardResult[]
     speeds: { label: string; time: number }[]
@@ -107,7 +108,8 @@ export const locateWithYOLO = async (
         const resultsProcessed = processONNXSessionResults(
             cv,
             detections,
-            proto
+            proto,
+            scoreThreshold
         )
         speeds.push({
             label: 'post-processing',

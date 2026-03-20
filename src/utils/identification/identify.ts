@@ -12,13 +12,15 @@ import { locateWithYOLO } from './locateWithYOLO'
  * returns undefined if no card found, otherwise returns ProcessedImageResult
  *
  * @param src - URL of the image to identify the card in
- * @returns ProcessedImageResult | undefined
+ * @returns ProcessedImageResult | string
  */
 export const IdentifyCardInImage = async (
-    src: string
+    src: string,
+    scoreThreshold: number = 0.6,
+    hashThreshold: number = 0.25
 ): Promise<
     | { res: PredictedImageResult; speeds: { label: string; time: number }[] }
-    | undefined
+    | string
 > => {
     const speeds: { label: string; time: number }[] = []
     let lastTime = performance.now()
@@ -47,14 +49,14 @@ export const IdentifyCardInImage = async (
         time: performance.now() - lastTime
     })
 
-    const result = await locateWithYOLO(imageData, cv, false)
+    const result = await locateWithYOLO(imageData, cv, false, scoreThreshold)
     const first = result?.results[0]
     const locateWithYOLOSpeeds = result?.speeds ?? []
     speeds.push(...locateWithYOLOSpeeds)
     lastTime = performance.now()
 
     if (!first || !first.image) {
-        return undefined
+        return "NoCard"
     }
 
     // preprocessing, if card image is dark, increase brightness to improve classification results
@@ -75,7 +77,7 @@ export const IdentifyCardInImage = async (
     })
     lastTime = performance.now()
 
-    const mostSimilarCard = classifier(cv, first.image)
+    const mostSimilarCard = classifier(cv, first.image, hashThreshold)
     speeds.push({ label: 'classify card', time: performance.now() - lastTime })
     lastTime = performance.now()
 
@@ -84,6 +86,10 @@ export const IdentifyCardInImage = async (
         if (r.image && !r.image.isDeleted()) {
             r.image.delete()
         }
+    }
+
+    if (!mostSimilarCard) {
+        return "CantClassify"
     }
 
     const ret: PredictedImageResult = {

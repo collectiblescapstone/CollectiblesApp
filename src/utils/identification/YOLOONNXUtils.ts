@@ -305,9 +305,9 @@ const postProcessMask = (
 export const processONNXSessionResults = (
     cv: CV,
     detections: Tensor,
-    proto: Tensor
+    proto: Tensor,
+    scoreThreshold: number = 0.5
 ): PostProcessResult => {
-    const scoreThreshold = 0.5
     const [results, masksData] = postProcessSegment(
         detections,
         proto,

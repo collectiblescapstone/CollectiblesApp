@@ -5,7 +5,7 @@ import { CardData, CardDataObj } from '@/types/identification'
 let cardDataCache: CardDataObj | null = null
 
 export const CardClassifier = async (): Promise<
-    (cv: CV, image: Mat, k?: number) => CardData
+    (cv: CV, image: Mat, hashThreshold?: number) => CardData | null
 > => {
     const popcount8 = new Uint8Array(256)
 
@@ -98,7 +98,7 @@ export const CardClassifier = async (): Promise<
     /**
      * Given a card image, returns the (k) most similar card(s)
      */
-    const getSimilarCards = (cv: CV, image: Mat) => {
+    const getSimilarCards = (cv: CV, image: Mat, hashThreshold: number = 0.33) => {
         image.convertTo(image, cv.CV_8UC3)
         const channels = new cv.MatVector()
         cv.split(image, channels)
@@ -129,6 +129,11 @@ export const CardClassifier = async (): Promise<
                 bestId = id
             }
         }
+
+        if (bestDist / (dHashBytes.length * 8) > hashThreshold) {
+            return null
+        }
+
 
         return cardData[bestId]
     }

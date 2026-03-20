@@ -98,12 +98,17 @@ export const TestMetrics = () => {
                 // identify card in image
                 const result = await IdentifyCardInImage(imgSrc)
 
-                if (result) {
+                if (typeof result === 'string') {
+                    updateCardId(id, result)
+                    continue
+                }
+
+                if (typeof result !== 'string') {
                     setSpeeds((prev) => [...prev, result.speeds])
                 }
 
                 // update with results
-                if (result && result.res.predictedCard) {
+                if (typeof result !== 'string' && result.res.predictedCard) {
                     updateCardId(id, result.res.predictedCard.card.id)
 
                     // draw identified card image to canvas, and update foundCard
@@ -115,6 +120,112 @@ export const TestMetrics = () => {
                 console.error('Error processing file', file.name, err)
             }
         }
+    }
+
+    const createCurve = async () => {
+        // warmup model
+        await loadModel('/models/card_yolo.onnx')
+        await CardClassifier()
+
+        const tests: { imgSrc: string, id: string }[] = []
+
+        for (const { file, id } of files) {
+            try {
+                const imgSrc = await new Promise<string>((resolve, reject) => {
+                    const reader = new FileReader()
+
+                    reader.onload = () => {
+                        const dataUrl = reader.result as string
+                        const img = new window.Image()
+
+                        // load and process image
+                        img.onload = () => {
+                            const w = img.width
+                            const h = img.height
+                            const canvas = document.getElementById(
+                                `canvas-${id}`
+                            ) as HTMLCanvasElement
+                            canvas.width = w
+                            canvas.height = h
+                            const ctx = canvas.getContext('2d')
+                            ctx!.drawImage(img, 0, 0, w, h)
+                            try {
+                                resolve(canvas.toDataURL())
+                            } catch (err) {
+                                reject(err)
+                            }
+                        }
+
+                        img.onerror = reject
+                        img.src = dataUrl
+                    }
+                    reader.onerror = () => reject(reader.error)
+                    reader.readAsDataURL(file)
+                })
+                tests.push({ imgSrc, id: file.name.split('.').slice(0, -1).join('.') })
+            } catch (err) {
+                console.error('Error processing file', file.name, err)
+            }
+        }
+
+        const resolution = 40
+
+        const p = tests.filter(({ id }) => !id.toLowerCase().includes('nocard')).length
+        const n = tests.filter(({ id }) => id.toLowerCase().includes('nocard')).length
+
+        let results: { tpr: number, fpr: number }[] = []
+
+        
+        for (let i = 1; i <= resolution; i++) {
+            let tp = 0
+            let fp = 0
+            for (const { imgSrc, id } of tests) {
+
+                // identify card in image
+                const result = await IdentifyCardInImage(imgSrc, 0.01, i / resolution)
+
+
+                const guess = typeof result === 'string' ? result : result.res.predictedCard?.card.id ?? 'NoCard'
+
+                const truth = id
+
+                if (truth.toLowerCase().includes('nocard') && guess !== 'NoCard') {
+                    fp++
+                } else if (truth === guess) {
+                    tp++
+                }
+            }
+
+            console.log(`Threshold: ${(i / resolution).toFixed(2)}, TPR: ${(tp / p).toFixed(3)}, FPR: ${(fp / n).toFixed(3)}`)
+            results.push({ tpr: tp / p, fpr: fp / n })
+        }
+        
+        // remove duplicate points
+        const uniquePoints: { tpr: number, fpr: number }[] = []
+        results.forEach((point) => {
+            if (!uniquePoints.some((p) => p.tpr === point.tpr && p.fpr === point.fpr)) {
+                uniquePoints.push(point)
+            }
+        })
+
+        // take point with highest TPR for each FPR, to avoid duplicates in curve
+        const filteredPoints: { tpr: number, fpr: number }[] = []
+        uniquePoints.forEach((point) => {
+            const existing = filteredPoints.find((p) => p.fpr === point.fpr)
+            if (!existing || point.tpr > existing.tpr) {
+                // if no existing point with same FPR, or this point has higher TPR, add/update it
+                const index = filteredPoints.findIndex((p) => p.fpr === point.fpr)
+                if (index !== -1) {
+                    filteredPoints[index] = point
+                } else {
+                    filteredPoints.push(point)
+                }
+            }
+        })
+
+        const msg = "# FPR,TPR\ndata = [\n" + filteredPoints.map((p) => `[${p.fpr.toFixed(3)},${p.tpr.toFixed(3)}],`).join('\n') + "\n]"
+        console.log(msg)
+
     }
 
     const onFilesSelected = (e: ChangeEvent<HTMLInputElement>) => {
@@ -143,8 +254,8 @@ export const TestMetrics = () => {
 
             const guess = cardId
 
-            if (truth.includes('NoCard')) {
-                if (guess === 'NoCard') {
+            if (truth.toLowerCase().includes('nocard')) {
+                if (guess === 'NoCard' || guess === "CantClassify") {
                     tn++
                 } else {
                     fp++
@@ -152,7 +263,7 @@ export const TestMetrics = () => {
             } else {
                 if (guess === 'NoCard') {
                     fn++
-                } else if (truth === guess) {
+                } else if (truth === guess || guess === "CantClassify") {
                     tp++
                 } else {
                     fp++
@@ -160,8 +271,6 @@ export const TestMetrics = () => {
             }
         }
 
-        console.log({ tp, fp, fn, tn })
-        console.log('Accuracy:', (tp + tn) / (tp + tn + fp + fn))
         setAccuracy((tp + tn) / (tp + tn + fp + fn))
         const precision = tp / (tp + fp + 0.000000001)
         setPrecision(precision)
@@ -198,6 +307,7 @@ export const TestMetrics = () => {
                 <br></br>
                 <Text display="inline-flex">2. Run identifications</Text>
                 <Button onClick={identifyFiles}>Run</Button>
+                <Button onClick={createCurve}>Calc Curve</Button>
 
                 <VStack align="stretch">
                     <HStack>
@@ -232,11 +342,17 @@ export const TestMetrics = () => {
                                                     .split('.')
                                                     .slice(0, -1)
                                                     .join('.')
-                                                    .includes('NoCard')
+                                                    .toLowerCase()
+                                                    .includes('nocard')
                                                     ? cardId === 'NoCard'
                                                         ? 'green.500'
-                                                        : 'red.500'
-                                                    : cardId ===
+                                                        : cardId === 'CantClassify'
+                                                            ? 'yellow.500'
+                                                            : 'red.500'
+                                                    : cardId === 'CantClassify'
+                                                        ? 'yellow.500'
+                                                        :
+                                                    cardId ===
                                                         file.name
                                                             .split('.')
                                                             .slice(0, -1)

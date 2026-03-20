@@ -106,12 +106,17 @@ export const IdentifyCards = ({
                 for (const card of res?.results ?? []) {
                     // find most similar card
                     const mostSimilarCards = classifier(cv.current!, card.image)
+                    if (!mostSimilarCards) {
+                        continue
+                    }
                     similar.push({
                         data: mostSimilarCards,
                         imageURL: mostSimilarCards.card.image + '/low.jpg'
                     })
                 }
-                setPredictedCards(similar)
+                if (similar.length > 0) {
+                    setPredictedCards(similar)
+                }
 
                 // cleanup
                 for (const r of res?.results ?? []) {

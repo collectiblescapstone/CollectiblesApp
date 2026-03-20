@@ -97,9 +97,9 @@ jest.mock('../SocialLinks', () => {
     }
 })
 
-// Mock pfp_image_mapping
+// Mock profilePictures
 jest.mock('../../../app/personal-profile/edit-profile/constants', () => ({
-    pfp_image_mapping: {
+    profilePictures: {
         0: '/user-profile/pfp_temp.jpg',
         1: '/user-profile/pfp_temp1.png',
         2: '/user-profile/pfp_temp2.png',

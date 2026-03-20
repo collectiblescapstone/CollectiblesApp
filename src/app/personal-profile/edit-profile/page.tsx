@@ -22,12 +22,13 @@ import {
     Spinner,
     SimpleGrid,
     RadioCard,
-    Fieldset
+    Fieldset,
+    Image
 } from '@chakra-ui/react'
 import { Avatar } from '@chakra-ui/react'
 import { FiEdit3, FiCheck, FiEdit2 } from 'react-icons/fi'
 import { useAuth } from '@/context/AuthProvider'
-import { pfp_image_mapping, visibilityOptions } from './constants'
+import { profilePictures, visibilityOptions } from './constants'
 import AvatarPopup from '@/components/ui/PopupUI'
 import { CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
@@ -277,27 +278,36 @@ const PersonalProfileScreen: React.FC = () => {
                             }
                             name={field.name}
                         >
-                            <SimpleGrid columns={{ base: 2, md: 3 }} gap={4}>
-                                {Object.entries(pfp_image_mapping).map(
-                                    ([key, src]) => (
-                                        <RadioCard.Item key={key} value={key}>
-                                            <RadioCard.ItemHiddenInput />
-                                            <RadioCard.ItemControl>
-                                                <RadioCard.ItemIndicator />
-                                                <RadioCard.ItemContent>
-                                                    <Avatar.Root
-                                                        boxSize="100px"
-                                                        shape="rounded"
-                                                    >
-                                                        <Avatar.Image
-                                                            src={src}
-                                                        />
-                                                    </Avatar.Root>
-                                                </RadioCard.ItemContent>
-                                            </RadioCard.ItemControl>
-                                        </RadioCard.Item>
-                                    )
-                                )}
+                            <SimpleGrid
+                                padding={4}
+                                columns={{ base: 2, md: 3 }}
+                                gap={4}
+                                maxH="50vh"
+                                overflowX="scroll"
+                                width="100%"
+                            >
+                                {profilePictures.map(({ id, name, path }) => (
+                                    <RadioCard.Item
+                                        key={id}
+                                        value={id.toString()}
+                                    >
+                                        <RadioCard.ItemHiddenInput />
+                                        <RadioCard.ItemControl>
+                                            <RadioCard.ItemContent
+                                                alignItems={'center'}
+                                            >
+                                                <Image
+                                                    src={path}
+                                                    alt={name}
+                                                    maxH={'96px'}
+                                                />
+                                                <RadioCard.ItemText>
+                                                    {name}
+                                                </RadioCard.ItemText>
+                                            </RadioCard.ItemContent>
+                                        </RadioCard.ItemControl>
+                                    </RadioCard.Item>
+                                ))}
                             </SimpleGrid>
                         </RadioCard.Root>
                     )}
@@ -357,8 +367,18 @@ const PersonalProfileScreen: React.FC = () => {
                         })
                     }
                 >
-                    <Avatar.Root boxSize="100px" shape="rounded">
-                        <Avatar.Image src={pfp_image_mapping[profilePicVal]} />
+                    <Avatar.Root
+                        boxSize="100px"
+                        shape="rounded"
+                        background={'white'}
+                    >
+                        <Avatar.Image
+                            objectFit="contain"
+                            src={
+                                profilePictures[profilePicVal]?.path ??
+                                profilePictures[0].path
+                            }
+                        />
                     </Avatar.Root>
                     <Box
                         position="absolute"

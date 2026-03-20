@@ -3,7 +3,7 @@ import WishList from './WishList'
 import TradeList from './TradeList'
 import Showcase from './Showcase'
 import SocialLinks from './SocialLinks'
-import { pfp_image_mapping } from '@/app/personal-profile/edit-profile/constants'
+import { profilePictures } from '@/app/personal-profile/edit-profile/constants'
 import { UserProfile } from '@/types/personal-profile'
 import { FiMapPin } from 'react-icons/fi'
 import React from 'react'
@@ -39,8 +39,14 @@ const ProfileLayout = ({
             {rightInteractible && <Box>{rightInteractible}</Box>}
         </Flex>
         <Flex flexDirection="column" alignItems="center" gap={2} px={4}>
-            <Avatar.Root boxSize="100px" shape="rounded" mt={-20}>
-                <Avatar.Image src={pfp_image_mapping[user.profile_pic]} />
+            <Avatar.Root boxSize="100px" mt={-20} p={2} background="white">
+                <Avatar.Image
+                    objectFit="contain"
+                    src={
+                        profilePictures[user.profile_pic]?.path ??
+                        profilePictures[0].path
+                    }
+                />
             </Avatar.Root>
             {(user.firstName || user.lastName) && (
                 <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>

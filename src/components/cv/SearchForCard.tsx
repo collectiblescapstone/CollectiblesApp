@@ -52,7 +52,7 @@ export const SearchForCard: React.FC = () => {
 
             if (evt.key === 'Enter') {
                 cardSearch.current
-                    .search(evt.currentTarget.value)
+                    .search(evt.currentTarget.value, undefined, 100)
                     .then(async (data) => {
                         const ids = data.map(({ id }) => id)
                         const cards = await getFilteredCards({ ids })
@@ -96,6 +96,7 @@ export const SearchForCard: React.FC = () => {
                         <div>
                             Score: {Math.round(match.score * 1000) / 1000}
                         </div>
+                        <div>{match.card?.name}</div>
                         <Image
                             src={match.card?.image_url}
                             alt={match.id}

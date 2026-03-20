@@ -31,6 +31,10 @@ jest.mock('next/navigation', () => ({
     })
 }))
 
+jest.mock('@/components/logo/Logo', () => ({
+    Logo: () => <svg data-testid="logo" />
+}))
+
 describe('ResetPasswordForm', () => {
     beforeEach(() => {
         jest.clearAllMocks()
@@ -38,6 +42,7 @@ describe('ResetPasswordForm', () => {
 
     it('renders Sign In form if session exists', () => {
         renderWithTheme(<ResetPasswordForm />)
+        expect(screen.getByTestId('logo')).toBeInTheDocument()
         expect(
             screen.getByRole('heading', { name: /reset your password/i })
         ).toBeInTheDocument()

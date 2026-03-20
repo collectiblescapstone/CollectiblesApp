@@ -1,7 +1,15 @@
 'use client'
 
-import { Flex, Heading } from '@chakra-ui/react'
+// Next.js
 import { usePathname, useRouter } from 'next/navigation'
+
+// Chakra UI
+import { Flex, Heading, VStack } from '@chakra-ui/react'
+
+// Child Components
+import { Logo } from '@/components/logo/Logo'
+
+// Constants
 import { MENU_ITEMS } from './constants'
 
 const Sidebar = () => {
@@ -18,9 +26,20 @@ const Sidebar = () => {
             alignItems="flex-start"
             p={8}
         >
-            <Heading size="2xl" mb={16}>
-                Kollec
-            </Heading>
+            <VStack width="100%" pb={6} alignSelf="center">
+                <Logo
+                    data-testid="logo"
+                    aria-hidden="true"
+                    style={{
+                        color: '#003B49',
+                        width: '5rem',
+                        height: '5rem'
+                    }}
+                />
+                <Heading size="2xl" textAlign="center">
+                    Kollec
+                </Heading>
+            </VStack>
             {MENU_ITEMS.map((item) => (
                 <Flex
                     key={item.path}

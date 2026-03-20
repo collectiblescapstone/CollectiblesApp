@@ -1,10 +1,15 @@
-import { render } from '@testing-library/react'
+import { render, RenderOptions } from '@testing-library/react'
+import React, { ReactNode } from 'react'
 import { ChakraUIProvider } from '@/context/ChakraUIProvider'
 
-export const renderWithTheme = (ui: React.ReactNode) => {
-    return render(ui, {
-        wrapper: ChakraUIProvider
-    })
+export const renderWithTheme = (
+    ui: React.ReactElement,
+    options?: Omit<RenderOptions, 'wrapper'>
+) => {
+    const Wrapper = ({ children }: { children: ReactNode }) =>
+        React.createElement(ChakraUIProvider, null, children)
+
+    return render(ui, { wrapper: Wrapper, ...options })
 }
 
 type TransactionCallback = (tx: unknown) => Promise<unknown>

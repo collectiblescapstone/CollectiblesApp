@@ -1,12 +1,27 @@
 'use client'
-import { Button, Field, Heading, Input, VStack, Text } from '@chakra-ui/react'
+
+// React
 import React, { useState, useEffect } from 'react'
-import { PasswordInput } from '@/components/ui/password-input'
-import { useAuth } from '@/context/AuthProvider'
-import { useRouter, useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
-import { LoginFormValues } from '@/types/auth'
+
+// Next.js
+import { useRouter, useSearchParams } from 'next/navigation'
+
+// Chakra
+import { Button, Field, Heading, Input, VStack, Text } from '@chakra-ui/react'
+
+// Child Components
+import TitleLogo from '@/components/auth/TitleLogo'
+import { PasswordInput } from '@/components/ui/password-input'
+
+// Context
+import { useAuth } from '@/context/AuthProvider'
+
+// Utils
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller'
+
+// Types
+import { LoginFormValues } from '@/types/auth'
 
 const AuthForm = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -112,9 +127,7 @@ const AuthForm = () => {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <Heading size="5xl" pb={12}>
-                    Kollec {/* LOGO PLACEHOLDER */}
-                </Heading>
+                <TitleLogo />
 
                 <Heading size="lg">Sign In to your account</Heading>
 

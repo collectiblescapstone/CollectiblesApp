@@ -13,6 +13,10 @@ jest.mock('../../../lib/supabase', () => ({
     }
 }))
 
+jest.mock('@/components/logo/Logo', () => ({
+    Logo: () => <svg data-testid="logo" />
+}))
+
 const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL ?? `https://${process.env.VERCEL_URL}`
 
@@ -23,6 +27,7 @@ describe('ForgetPasswordForm', () => {
 
     it('renders Forget Password Form', () => {
         renderWithTheme(<ForgetPasswordForm />)
+        expect(screen.getByTestId('logo')).toBeInTheDocument()
         expect(
             screen.getByRole('heading', { name: /forgot your password?/i })
         ).toBeInTheDocument()

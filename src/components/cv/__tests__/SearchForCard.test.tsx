@@ -76,7 +76,7 @@ describe('SearchForCard', () => {
         fireEvent.keyDown(input, { key: 'Enter' })
 
         await waitFor(() => {
-            expect(mockSearch).toHaveBeenCalledWith('bulbasaur')
+            expect(mockSearch).toHaveBeenCalledWith('bulbasaur', undefined, 100)
             expect(mockGetFilteredCards).toHaveBeenCalledWith({
                 ids: ['sv1-1', 'sv1-2']
             })

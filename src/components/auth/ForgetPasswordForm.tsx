@@ -1,10 +1,23 @@
 'use client'
-import { Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
+
+// React
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { ForgetPasswordFormValues } from '@/types/auth'
+
+// Chakra UI
+import { Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
+
+// Child Components
+import TitleLogo from '@/components/auth/TitleLogo'
+
+// Lib
 import { supabase } from '@/lib/supabase'
+
+// Utils
 import { baseUrl } from '@/utils/constants'
+
+// Types
+import { ForgetPasswordFormValues } from '@/types/auth'
 
 export default function ForgetPasswordForm() {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -50,9 +63,7 @@ export default function ForgetPasswordForm() {
                 width={{ base: 'full', lg: '1/3' }}
                 padding={{ base: '8', lg: '16' }}
             >
-                <Heading size="5xl" pb={12}>
-                    Kollec {/* LOGO PLACEHOLDER */}
-                </Heading>
+                <TitleLogo />
 
                 <Heading size="lg">Forgot your password?</Heading>
 

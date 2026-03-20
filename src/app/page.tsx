@@ -1,7 +1,8 @@
 'use client'
-import { Button, Heading, Text, Tabs } from '@chakra-ui/react'
+import { Button, Heading, Text, Tabs, HStack, VStack  } from '@chakra-ui/react'
 import Link from 'next/link'
 
+// React
 import React, { useEffect, useState } from 'react'
 import {
     LuHandshake,
@@ -10,6 +11,9 @@ import {
     LuLinkedin,
     LuGithub
 } from 'react-icons/lu'
+
+// Child Components
+import { Logo } from '@/components/logo/Logo'
 
 const Landing: React.FC = () => {
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -110,9 +114,10 @@ const Landing: React.FC = () => {
             width: 100%; 
             background-color: #f2f2f2;
             border-radius: 10px;
-            padding: 15px 20px;
+            padding: 10px 20px;
             border: 2px inset #003b49;
             box-sizing: border-box;
+            height: 8rem;
           }
 
           .nav-actions {
@@ -121,6 +126,8 @@ const Landing: React.FC = () => {
             align-items: center;
             gap: 8px;
             flex-wrap: wrap;
+            width: 80%;
+            min-width: 80%;
           }
 
           /* keep nav title and actions aligned */
@@ -230,62 +237,91 @@ const Landing: React.FC = () => {
                             className="navigation"
                             aria-label="Kollec main navigation"
                         >
-                            <h2>Kollec</h2>
-                            <div
-                                className="nav-actions"
-                                style={{ marginBottom: '8px' }}
+                            <HStack
+                                height="100%"
+                                width="100%"
+                                align="center"
+                                pt={1}
+                                pb={1}
                             >
-                                <a
-                                    href="#about"
-                                    onClick={handleAnchorClick}
-                                    style={{ textDecoration: 'none' }}
-                                    aria-label="Scroll to About section"
-                                >
-                                    <Button
-                                        variant="ghost"
+                                <VStack height="100%">
+                                    <Logo
+                                        data-testid="logo"
+                                        style={{
+                                            color: '#F2C75C',
+                                            width: '100%',
+                                            height: '100%'
+                                        }}
+                                    />
+
+                                    <Text
+                                        fontSize="md"
+                                        fontWeight="bold"
                                         color="brand.turtoise"
                                     >
-                                        About
-                                    </Button>
-                                </a>
-                                <a
-                                    href="#features"
-                                    onClick={handleAnchorClick}
-                                    style={{ textDecoration: 'none' }}
-                                    aria-label="Scroll to Features section"
-                                >
-                                    <Button
-                                        variant="ghost"
-                                        color="brand.turtoise"
+                                        Kollec
+                                    </Text>
+                                </VStack>
+
+                                <div className="nav-actions">
+                                    <a
+                                        href="#about"
+                                        onClick={handleAnchorClick}
+                                        style={{ textDecoration: 'none' }}
+                                        aria-label="Scroll to About section"
                                     >
-                                        Features
-                                    </Button>
-                                </a>
-                                <Link
-                                    href={{ pathname: '/sign-up', query: {} }}
-                                    style={{ textDecoration: 'none' }}
-                                    aria-label="Go to Sign Up page"
-                                >
-                                    <Button
-                                        variant="ghost"
-                                        color="brand.turtoise"
+                                        <Button
+                                            variant="ghost"
+                                            color="brand.turtoise"
+                                        >
+                                            About
+                                        </Button>
+                                    </a>
+                                    <a
+                                        href="#features"
+                                        onClick={handleAnchorClick}
+                                        style={{ textDecoration: 'none' }}
+                                        aria-label="Scroll to Features section"
                                     >
-                                        Sign Up
-                                    </Button>
-                                </Link>
-                                <Link
-                                    href={{ pathname: '/sign-in', query: {} }}
-                                    style={{ textDecoration: 'none' }}
-                                    aria-label="Go to Login page"
-                                >
-                                    <Button
-                                        variant="ghost"
-                                        color="brand.turtoise"
+                                        <Button
+                                            variant="ghost"
+                                            color="brand.turtoise"
+                                        >
+                                            Features
+                                        </Button>
+                                    </a>
+                                    <Link
+                                        href={{
+                                            pathname: '/sign-up',
+                                            query: {}
+                                        }}
+                                        style={{ textDecoration: 'none' }}
+                                        aria-label="Go to Sign Up page"
                                     >
-                                        Login
-                                    </Button>
-                                </Link>
-                            </div>
+                                        <Button
+                                            variant="ghost"
+                                            color="brand.turtoise"
+                                        >
+                                            Sign Up
+                                        </Button>
+                                    </Link>
+                                    <Link
+                                        href={{
+                                            pathname: '/sign-in',
+                                            query: {}
+                                        }}
+                                        style={{ textDecoration: 'none' }}
+                                        aria-label="Go to Login page"
+                                    >
+                                        <Button
+                                            variant="ghost"
+                                            color="brand.turtoise"
+                                        >
+                                            Login
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </HStack>
                         </nav>
 
                         {/* Content Section */}

@@ -1,5 +1,5 @@
 'use client'
-import { Button, Heading, Text, Tabs, HStack, VStack  } from '@chakra-ui/react'
+import { Button, Heading, Text, Tabs, HStack, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 
 // React

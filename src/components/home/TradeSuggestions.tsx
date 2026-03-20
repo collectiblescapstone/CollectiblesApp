@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import { useAuth } from '@/context/AuthProvider'
 import { fetchTradeOptions } from '@/utils/getTradeOptions'
 import { TradeCardProps, ViableOption } from '@/types/tradepost'
-import { pfp_image_mapping } from '@/app/personal-profile/edit-profile/constants'
+import { profilePictures } from '@/app/personal-profile/edit-profile/constants'
 import TradePopup from '@/components/ui/PopupUI'
 import TradeCardPopup from '@/components/trading/PopupTrade'
 import ViableOptions from '@/components/trading/ViableOptions'
@@ -58,7 +58,7 @@ const TradeSuggestions: React.FC = () => {
                         userMap.set(viableUser.id, {
                             username: viableUser.username ?? 'Unknown User',
                             avatarUrl:
-                                pfp_image_mapping[viableUser.profile_pic],
+                                profilePictures[viableUser.profile_pic].path,
                             rating: 0,
                             ratingCount: 0,
                             distance: viableUser.distance,

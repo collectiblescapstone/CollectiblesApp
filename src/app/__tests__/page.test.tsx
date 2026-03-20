@@ -107,7 +107,7 @@ describe('Landing Page', () => {
         const start = new Date(2026, 3, 7, 9, 59, 50)
 
         ;(
-          jest as unknown as { setSystemTime?: (date: number | Date) => void }
+            jest as unknown as { setSystemTime?: (date: number | Date) => void }
         ).setSystemTime?.(start)
 
         act(() => {
@@ -130,11 +130,11 @@ describe('Landing Page', () => {
     it('shows launch message when target time is reached or passed', () => {
         jest.useFakeTimers()
 
-      // Set time just after target
-      const afterTarget = new Date(2026, 3, 7, 10, 0, 1)
-      ;(
-        jest as unknown as { setSystemTime?: (date: number | Date) => void }
-      ).setSystemTime?.(afterTarget)
+        // Set time just after target
+        const afterTarget = new Date(2026, 3, 7, 10, 0, 1)
+        ;(
+            jest as unknown as { setSystemTime?: (date: number | Date) => void }
+        ).setSystemTime?.(afterTarget)
 
         act(() => {
             render(<Page />)

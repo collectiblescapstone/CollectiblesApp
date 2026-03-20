@@ -103,9 +103,12 @@ describe('Landing Page', () => {
     it('shows a countdown timer and updates as time advances', () => {
         jest.useFakeTimers()
 
+        // Start 10 seconds before target
         const start = new Date(2026, 3, 7, 9, 59, 50)
 
-        ;(jest as any).setSystemTime(start)
+        ;(
+          jest as unknown as { setSystemTime?: (date: number | Date) => void }
+        ).setSystemTime?.(start)
 
         act(() => {
             render(<Page />)
@@ -127,9 +130,11 @@ describe('Landing Page', () => {
     it('shows launch message when target time is reached or passed', () => {
         jest.useFakeTimers()
 
-        const afterTarget = new Date(2026, 3, 7, 10, 0, 1)
-
-        ;(jest as any).setSystemTime(afterTarget)
+      // Set time just after target
+      const afterTarget = new Date(2026, 3, 7, 10, 0, 1)
+      ;(
+        jest as unknown as { setSystemTime?: (date: number | Date) => void }
+      ).setSystemTime?.(afterTarget)
 
         act(() => {
             render(<Page />)

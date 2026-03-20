@@ -189,7 +189,7 @@ export const TestMetrics = () => {
 
                 const truth = id
 
-                if (truth.toLowerCase().includes('nocard') && guess !== 'NoCard') {
+                if (truth.toLowerCase().includes('nocard') && (guess !== 'NoCard' && guess !== "CantClassify")) {
                     fp++
                 } else if (truth === guess) {
                     tp++

@@ -711,7 +711,7 @@ const Landing: React.FC = () => {
                                             shortest distance between these
                                             embeddings, the app identifies and
                                             displays the top 15 most relevant
-                                            cards within your current context.
+                                            cards.
                                         </Text>
                                     </Tabs.Content>
                                     <Tabs.Content value="Trading">

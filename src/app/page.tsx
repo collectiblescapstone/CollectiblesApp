@@ -136,7 +136,8 @@ const Landing: React.FC = () => {
             ],
             description: (
                 <p>
-                    Integrated the front-end with back-end services to transform
+                    Developed the core trade-matching algorithm and integrated 
+                    the front-end with back-end services to transform
                     static pages into a functional, data-driven application.
                 </p>
             )

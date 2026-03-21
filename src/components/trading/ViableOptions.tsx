@@ -68,7 +68,10 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                     >
                         <Flex align="center" gap={3}>
                             <Avatar.Root boxSize="45px" shape="rounded">
-                                <Avatar.Image src={avatarUrl} />
+                                <Avatar.Image
+                                    objectFit="contain"
+                                    src={avatarUrl}
+                                />
                             </Avatar.Root>
                             <Stack gap="0">
                                 <Text fontWeight="semibold" textStyle="sm">

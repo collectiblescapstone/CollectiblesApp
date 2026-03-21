@@ -18,7 +18,7 @@ import ViableOptions from '@/components/trading/ViableOptions'
 import { TradeCardProps, ViableOption } from '@/types/tradepost'
 import { useAuth } from '@/context/AuthProvider'
 import { fetchTradeOptions } from '@/utils/getTradeOptions'
-import { pfp_image_mapping } from '../personal-profile/edit-profile/constants'
+import { profilePictures } from '../personal-profile/edit-profile/constants'
 import { IoIosInformationCircleOutline } from 'react-icons/io'
 import UserSearch from '@/components/trading/UserSearch'
 import TradePopup from '@/components/ui/PopupUI'
@@ -74,7 +74,7 @@ const TradePage = () => {
                         userMap.set(viableUser.id, {
                             username: viableUser.username ?? 'Unknown User',
                             avatarUrl:
-                                pfp_image_mapping[viableUser.profile_pic],
+                                profilePictures[viableUser.profile_pic].path,
                             rating: viableUser.rating ?? 0,
                             ratingCount: viableUser.rating_count ?? 0,
                             distance: viableUser.distance,

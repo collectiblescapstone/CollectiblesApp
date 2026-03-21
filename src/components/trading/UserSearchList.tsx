@@ -1,4 +1,4 @@
-import { pfp_image_mapping } from '@/app/personal-profile/edit-profile/constants'
+import { profilePictures } from '@/app/personal-profile/edit-profile/constants'
 import { Avatar, Box, Text } from '@chakra-ui/react'
 import StarRating from '../profiles/StarRating'
 
@@ -33,7 +33,10 @@ const UserSearchList = ({
             _hover={{ backgroundColor: 'gray.100', cursor: 'pointer' }}
         >
             <Avatar.Root boxSize="50px" shape="rounded">
-                <Avatar.Image src={pfp_image_mapping[profile_pic]} />
+                <Avatar.Image
+                    objectFit="contain"
+                    src={profilePictures[profile_pic].path}
+                />
             </Avatar.Root>
             <Box
                 display="flex"

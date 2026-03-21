@@ -14,6 +14,7 @@ import {
 
 // Child Components
 import { Logo } from '@/components/logo/Logo'
+import TeamMember from '@/components/landing/TeamMember'
 
 const Landing: React.FC = () => {
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -64,6 +65,137 @@ const Landing: React.FC = () => {
 
         return () => clearInterval(interval)
     }, [])
+
+    // New data-driven team members list (replaces the inline repeated blocks)
+    const teamMembers = [
+        {
+            name: 'Tânia Da Silva',
+            role: 'Front-end Lead',
+            links: [
+                {
+                    href: 'https://github.com/taniadasilva17',
+                    icon: <LuGithub />
+                },
+                {
+                    href: 'https://www.linkedin.com/in/tania-da-silva823',
+                    icon: <LuLinkedin />
+                }
+            ],
+            description: (
+                <p>
+                    Architected the front-end framework and developed the
+                    application&apos;s page structures, ensuring a UI layout
+                    prepared for full-stack integration.
+                </p>
+            )
+        },
+        {
+            name: 'Norman Liang',
+            role: 'Data Lead',
+            links: [
+                { href: 'https://github.com/Norman-Liang', icon: <LuGithub /> },
+                {
+                    href: 'https://www.linkedin.com/in/norman-liang-03261122a',
+                    icon: <LuLinkedin />
+                }
+            ],
+            description: (
+                <p>
+                    Architected the database framework and proper API routing,
+                    integrating the dynamic data with front end functionalities.
+                </p>
+            )
+        },
+        {
+            name: 'Elite Lu',
+            role: 'Design Lead',
+            links: [
+                { href: 'https://github.com/honkita', icon: <LuGithub /> },
+                {
+                    href: 'https://www.linkedin.com/in/elitelu',
+                    icon: <LuLinkedin />
+                }
+            ],
+            description: (
+                <p>
+                    Directed the end-to-end UX design and facilitated full-stack
+                    connectivity while managing dataset accuracy and
+                    co-facilitated the weekly Scrum meetings.
+                </p>
+            )
+        },
+        {
+            name: 'Ishpreet Nagi',
+            role: 'Back-end Lead',
+            links: [
+                { href: 'https://github.com/IshpreetNagi', icon: <LuGithub /> },
+                {
+                    href: 'https://www.linkedin.com/in/ishpreetnagi',
+                    icon: <LuLinkedin />
+                }
+            ],
+            description: (
+                <p>
+                    Integrated the front-end with back-end services to transform
+                    static pages into a functional, data-driven application.
+                </p>
+            )
+        },
+        {
+            name: 'James Nickoli',
+            role: 'Vision Model Lead',
+            links: [
+                { href: 'https://github.com/rsninja722', icon: <LuGithub /> },
+                {
+                    href: 'https://www.linkedin.com/in/james-nickoli',
+                    icon: <LuLinkedin />
+                }
+            ],
+            description: (
+                <p>
+                    Developed the Computer Vision model responsible for
+                    real-time card identification and recognition from camera
+                    input.
+                </p>
+            )
+        },
+        {
+            name: 'Kenneth Ong',
+            role: 'QA Lead',
+            links: [
+                { href: 'https://github.com/kennethkvs', icon: <LuGithub /> },
+                {
+                    href: 'https://www.linkedin.com/in/kennethkvs',
+                    icon: <LuLinkedin />
+                }
+            ],
+            description: (
+                <p>
+                    Developed the user authentication flows and testing
+                    framework while co-managing project milestones and weekly
+                    Scrum meetings.
+                </p>
+            )
+        },
+        {
+            name: 'Geon Youn',
+            role: 'ML Lead',
+            links: [
+                { href: 'https://github.com/geon-youn', icon: <LuGithub /> },
+                {
+                    href: 'https://www.linkedin.com/in/geon-youn',
+                    icon: <LuLinkedin />
+                }
+            ],
+            description: (
+                <p>
+                    Engineered the NLP search features and semantic matching
+                    engine while assisting with the development of the camera
+                    vision system.
+                </p>
+            )
+        }
+    ]
 
     return (
         <>
@@ -361,308 +493,16 @@ const Landing: React.FC = () => {
                                     viable, mutually beneficial trades.
                                 </p>
                                 <ul>
-                                    {/*Tania*/}
-                                    <li>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '10px'
-                                            }}
-                                        >
-                                            <strong>Tânia Da Silva</strong> —
-                                            Front-end Lead
-                                            {/* Icons now sit on the same line */}
-                                            <div
-                                                className="links"
-                                                style={{
-                                                    display: 'flex',
-                                                    gap: '8px',
-                                                    alignItems: 'center'
-                                                }}
-                                            >
-                                                <a
-                                                    href="https://github.com/taniadasilva17"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuGithub />
-                                                </a>
-                                                <a
-                                                    href="https://www.linkedin.com/in/tania-da-silva823"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuLinkedin />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Architected the front-end framework
-                                            and developed the application&apos;s
-                                            page structures, ensuring a UI
-                                            layout prepared for full-stack
-                                            integration.
-                                        </p>
-                                    </li>
-
-                                    {/*Norman*/}
-                                    <li>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '10px'
-                                            }}
-                                        >
-                                            <strong>Norman Liang</strong> — Data
-                                            Lead
-                                            <div
-                                                className="links"
-                                                style={{
-                                                    display: 'flex',
-                                                    gap: '8px',
-                                                    alignItems: 'center'
-                                                }}
-                                            >
-                                                <a
-                                                    href="https://github.com/Norman-Liang"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuGithub />
-                                                </a>
-                                                <a
-                                                    href="https://www.linkedin.com/in/norman-liang-03261122a"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuLinkedin />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Architected the database framework
-                                            and proper API routing, integrating
-                                            the dynamic data with front end
-                                            functionalities.
-                                        </p>
-                                    </li>
-
-                                    {/* Elite */}
-                                    <li>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '10px'
-                                            }}
-                                        >
-                                            <strong>Elite Lu</strong> — Design
-                                            Lead
-                                            <div
-                                                className="links"
-                                                style={{
-                                                    display: 'flex',
-                                                    gap: '8px',
-                                                    alignItems: 'center'
-                                                }}
-                                            >
-                                                <a
-                                                    href="https://github.com/honkita"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuGithub />
-                                                </a>
-                                                <a
-                                                    href="https://www.linkedin.com/in/elitelu"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuLinkedin />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Directed the end-to-end UX design
-                                            and facilitated full-stack
-                                            connectivity while managing dataset
-                                            accuracy and co-facilitated the
-                                            weekly Scrum meetings.
-                                        </p>
-                                    </li>
-
-                                    {/* Ishpreet */}
-                                    <li>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '10px'
-                                            }}
-                                        >
-                                            <strong>Ishpreet Nagi</strong> —
-                                            Back-end Lead
-                                            <div
-                                                className="links"
-                                                style={{
-                                                    display: 'flex',
-                                                    gap: '8px',
-                                                    alignItems: 'center'
-                                                }}
-                                            >
-                                                <a
-                                                    href="https://github.com/IshpreetNagi"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuGithub />
-                                                </a>
-                                                <a
-                                                    href="https://www.linkedin.com/in/ishpreetnagi"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuLinkedin />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Integrated the front-end with
-                                            back-end services to transform
-                                            static pages into a functional,
-                                            data-driven application.
-                                        </p>
-                                    </li>
-
-                                    {/* James */}
-                                    <li>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '10px'
-                                            }}
-                                        >
-                                            <strong>James Nickoli</strong> —
-                                            Vision Model Lead
-                                            <div
-                                                className="links"
-                                                style={{
-                                                    display: 'flex',
-                                                    gap: '8px',
-                                                    alignItems: 'center'
-                                                }}
-                                            >
-                                                <a
-                                                    href="https://github.com/rsninja722"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuGithub />
-                                                </a>
-                                                <a
-                                                    href="https://www.linkedin.com/in/james-nickoli"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuLinkedin />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Developed the Computer Vision model
-                                            responsible for real-time card
-                                            identification and recognition from
-                                            camera input.
-                                        </p>
-                                    </li>
-
-                                    {/* kenneth */}
-                                    <li>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '10px'
-                                            }}
-                                        >
-                                            <strong>Kenneth Ong</strong> — QA
-                                            Lead
-                                            <div
-                                                className="links"
-                                                style={{
-                                                    display: 'flex',
-                                                    gap: '8px',
-                                                    alignItems: 'center'
-                                                }}
-                                            >
-                                                <a
-                                                    href="https://github.com/kennethkvs"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuGithub />
-                                                </a>
-                                                <a
-                                                    href="https://www.linkedin.com/in/kennethkvs"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuLinkedin />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Developed the user authentication
-                                            flows and testing framework while
-                                            co-managing project milestones and
-                                            weekly Scrum meetings.
-                                        </p>
-                                    </li>
-
-                                    {/* Geon */}
-                                    <li>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '10px'
-                                            }}
-                                        >
-                                            <strong>Geon Youn</strong> — ML Lead
-                                            <div
-                                                className="links"
-                                                style={{
-                                                    display: 'flex',
-                                                    gap: '8px',
-                                                    alignItems: 'center'
-                                                }}
-                                            >
-                                                <a
-                                                    href="https://github.com/geon-youn"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuGithub />
-                                                </a>
-                                                <a
-                                                    href="https://www.linkedin.com/in/geon-youn"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <LuLinkedin />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Engineered the NLP search features
-                                            and semantic matching engine while
-                                            assisting with the development of
-                                            the camera vision system.
-                                        </p>
-                                    </li>
+                                    {teamMembers.map((m) => (
+                                        <li key={m.name}>
+                                            <TeamMember
+                                                name={m.name}
+                                                role={m.role}
+                                                links={m.links}
+                                                description={m.description}
+                                            />
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 
@@ -677,12 +517,10 @@ const Landing: React.FC = () => {
                                             <LuScanEye />
                                             Identification
                                         </Tabs.Trigger>
-                                        <Tabs.Indicator />
                                         <Tabs.Trigger value="Search">
                                             <LuSearch />
                                             Search
                                         </Tabs.Trigger>
-                                        <Tabs.Indicator />
                                         <Tabs.Trigger value="Trading">
                                             <LuHandshake />
                                             Trading
@@ -746,8 +584,7 @@ const Landing: React.FC = () => {
                                             database. By calculating the
                                             shortest distance between these
                                             embeddings, the app identifies and
-                                            displays the top 15 most relevant
-                                            cards.
+                                            displays the most relevant cards.
                                         </Text>
                                     </Tabs.Content>
                                     <Tabs.Content value="Trading">

@@ -2,7 +2,7 @@ import React from 'react'
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import Page from '../page'
-import {
+import type {
     ButtonProps,
     FlexProps,
     HeadingProps,
@@ -135,10 +135,7 @@ describe('Landing Page', () => {
 
         // Start 10 seconds before target
         const start = new Date(2026, 3, 7, 9, 59, 50)
-
-        ;(
-            jest as unknown as { setSystemTime?: (date: number | Date) => void }
-        ).setSystemTime?.(start)
+        jest.setSystemTime(start)
 
         act(() => {
             render(<Page />)
@@ -162,9 +159,7 @@ describe('Landing Page', () => {
 
         // Set time just after target
         const afterTarget = new Date(2026, 3, 7, 10, 0, 1)
-        ;(
-            jest as unknown as { setSystemTime?: (date: number | Date) => void }
-        ).setSystemTime?.(afterTarget)
+        jest.setSystemTime(afterTarget)
 
         act(() => {
             render(<Page />)

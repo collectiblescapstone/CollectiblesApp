@@ -66,7 +66,7 @@ const Landing: React.FC = () => {
         return () => clearInterval(interval)
     }, [])
 
-    // New data-driven team members list (replaces the inline repeated blocks)
+    // team members list
     const teamMembers = [
         {
             name: 'Tânia Da Silva',

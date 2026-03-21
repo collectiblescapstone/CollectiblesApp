@@ -51,7 +51,11 @@ const SocialLinks = ({
                     gap={1}
                 >
                     <Icon as={social.icon} boxSize={4} />
-                    <Text fontSize="xs" color="gray.600" fontWeight="semibold">
+                    <Text
+                        fontSize={{ base: 'xs', lg: 'sm' }}
+                        color="gray.600"
+                        fontWeight="semibold"
+                    >
                         {social.handle}
                     </Text>
                 </Flex>

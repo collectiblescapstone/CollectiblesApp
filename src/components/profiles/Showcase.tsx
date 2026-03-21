@@ -4,7 +4,6 @@ import React from 'react'
 import Divider from '@/components/profiles/Divider'
 import { Flex, Image, Text, SimpleGrid } from '@chakra-ui/react'
 import { PokemonCardImage } from '@/types/personal-profile'
-import { useMobileView } from '@/utils/mobileViewFinder'
 
 interface ShowcaseProps {
     showcaseList: PokemonCardImage[]
@@ -12,12 +11,6 @@ interface ShowcaseProps {
 
 const Showcase: React.FC<ShowcaseProps> = ({ showcaseList }) => {
     const display = showcaseList.slice(0, 3)
-
-    const isMobileView = useMobileView()
-
-    const cardWidth = isMobileView ? '105px' : '140px'
-    const gapSize = isMobileView ? 10 : 14
-    const fontsize = isMobileView ? 'md' : 'lg'
 
     if (showcaseList.length === 0) {
         return (
@@ -32,7 +25,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ showcaseList }) => {
                 <Divider />
                 <Flex mt={1}>
                     <Text
-                        fontSize={fontsize}
+                        fontSize={{ base: 'md', lg: 'lg' }}
                         color="gray.900"
                         fontWeight="semibold"
                         mb={2}
@@ -47,7 +40,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ showcaseList }) => {
                     py={3}
                 >
                     <Text
-                        fontSize={fontsize}
+                        fontSize={{ base: 'md', lg: 'lg' }}
                         color="gray.600"
                         fontWeight="semibold"
                         mb={2}
@@ -71,7 +64,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ showcaseList }) => {
             <Divider />
             <Flex mt={1}>
                 <Text
-                    fontSize={fontsize}
+                    fontSize={{ base: 'md', lg: 'lg' }}
                     color="gray.900"
                     fontWeight="semibold"
                     mb={2}
@@ -79,13 +72,17 @@ const Showcase: React.FC<ShowcaseProps> = ({ showcaseList }) => {
                     Showcase
                 </Text>
             </Flex>
-            <SimpleGrid columns={{ base: 3 }} w="100%" gap={gapSize}>
+            <SimpleGrid
+                columns={{ base: 3 }}
+                w="100%"
+                gap={{ base: 10, lg: 14 }}
+            >
                 {display.map((item: PokemonCardImage, index: number) => (
                     <Flex key={index}>
                         <Image
                             src={`${item.image}`}
                             alt={item.name}
-                            w={cardWidth}
+                            w="100%"
                             h="auto"
                             borderRadius="none"
                         />

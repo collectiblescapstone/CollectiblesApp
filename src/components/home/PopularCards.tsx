@@ -5,16 +5,24 @@ import Divider from '@/components/profiles/Divider'
 import { Flex, Image, Text, HStack } from '@chakra-ui/react'
 import { PopCards } from '@/types/user-data'
 import { LuFlame } from 'react-icons/lu'
+import { useMobileView } from '@/utils/mobileViewFinder'
 
 interface PopularCardsProps {
     cards?: PopCards[]
 }
 
 const PopularCards = ({ cards = [] }: PopularCardsProps) => {
+    const isMobileView = useMobileView()
+
+    const cardWidth = isMobileView ? '105px' : '140px'
+    const gapSize = isMobileView ? 10 : 14
+    const fontsize = isMobileView ? 'md' : 'lg'
+    const iconsize = isMobileView ? 20 : 30
+
     return (
         <Flex
             flexDirection="column"
-            gap={2}
+            gap={3}
             justifyContent="flex-start"
             alignItems="flex-start"
             w="100%"
@@ -23,9 +31,9 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
             <Divider />
             <Flex mt={1}>
                 <HStack gap={1} alignItems="center">
-                    <LuFlame color="#d35400" size={20} />
+                    <LuFlame color="#d35400" size={iconsize} />
                     <Text
-                        fontSize="md"
+                        fontSize={fontsize}
                         color="gray.700"
                         fontWeight="semibold"
                         mb={0}
@@ -40,14 +48,14 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
                     justifyContent="center"
                     alignItems="center"
                     wrap="wrap"
-                    gap={5}
+                    gap={gapSize}
                 >
                     {cards.map((card: PopCards, index: number) => (
                         <Flex key={index}>
                             <Image
                                 src={`${card.imageUrl}`}
                                 alt={card.name}
-                                w="105px"
+                                w={cardWidth}
                                 h="auto"
                                 borderRadius="none"
                             />
@@ -62,7 +70,7 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
                     py={3}
                 >
                     <Text
-                        fontSize="md"
+                        fontSize={fontsize}
                         color="gray.600"
                         fontWeight="semibold"
                         mb={2}

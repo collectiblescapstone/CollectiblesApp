@@ -4,12 +4,15 @@ import React from 'react'
 import Divider from '@/components/profiles/Divider'
 import { Flex, Image, Text } from '@chakra-ui/react'
 import { PokemonCardImage } from '@/types/personal-profile'
+import { useMobileView } from '@/utils/mobileViewFinder'
 
 interface RecentCardsProps {
     cards?: PokemonCardImage[]
 }
 
 const Collection = ({ cards = [] }: RecentCardsProps) => {
+    const isMobileView = useMobileView()
+
     return (
         <Flex
             flexDirection="column"

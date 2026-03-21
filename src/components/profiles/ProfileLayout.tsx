@@ -7,7 +7,6 @@ import { profilePictures } from '@/app/personal-profile/edit-profile/constants'
 import { UserProfile } from '@/types/personal-profile'
 import { FiMapPin } from 'react-icons/fi'
 import React from 'react'
-import { useMobileView } from '@/utils/mobileViewFinder'
 
 interface ProfileLayoutProps {
     user: UserProfile

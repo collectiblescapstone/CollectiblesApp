@@ -160,7 +160,7 @@ const TradePage = () => {
     }
 
     return (
-        <Flex flexDirection="column" gap={3}>
+        <Flex flexDirection="column" gap={3} w="100%">
             <Flex alignItems="center" flexDirection="column" mt={6}>
                 <UserSearch />
             </Flex>
@@ -191,12 +191,11 @@ const TradePage = () => {
                     </Flex>
                 </Box>
             ) : (
-                <Flex flexDirection="column" gap={6} mt={1}>
+                <Flex flexDirection="column" gap={6} mt={1} w="100%">
                     <Flex
                         flexDirection="row"
                         justifyContent="center"
                         alignItems="center"
-                        w="100%"
                         gap={0}
                         pr={9}
                         pl={3}

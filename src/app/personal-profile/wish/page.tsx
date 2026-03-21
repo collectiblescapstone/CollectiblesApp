@@ -17,6 +17,7 @@ import { UserProfile } from '@/types/personal-profile'
 import { useAuth } from '@/context/AuthProvider'
 import { useHeader } from '@/context/HeaderProvider'
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
+import { useMobileView } from '@/utils/mobileViewFinder'
 
 const WishScreen: React.FC = () => {
     const [user, setUser] = useState<UserProfile | null>(null)
@@ -24,8 +25,11 @@ const WishScreen: React.FC = () => {
     const [error, setError] = useState<string | null>(null)
     const { setProfileID } = useHeader()
     const { session } = useAuth()
-
     const userID = session?.user.id
+    const isMobileView = useMobileView()
+
+    const cardWidth = isMobileView ? '105px' : '140px'
+    const gapSize = isMobileView ? 10 : 14
 
     useEffect(() => {
         if (!userID) {
@@ -87,7 +91,7 @@ const WishScreen: React.FC = () => {
             <Flex flexDirection="column" gap={6} mt={4}>
                 <Flex
                     flexDirection="row"
-                    justifyContent="center"
+                    justifyContent="flex-start"
                     alignItems="center"
                     px={4}
                     gap={4}
@@ -120,15 +124,15 @@ const WishScreen: React.FC = () => {
                     </Flex>
                 </Flex>
                 <Flex justifyContent="center" alignItems="center" mt={-4}>
-                    <Box height="2px" width="90%" bg="gray.600" mt={5} />
+                    <Box height="3px" width="94%" bg="gray.600" mt={5} />
                 </Flex>
-                <SimpleGrid columns={{ base: 3 }} w="100%" gap={10} px={6}>
+                <SimpleGrid columns={{ base: 3 }} w="100%" gap={gapSize} px={3}>
                     {cards.map((card: PokemonCardImage, index: number) => (
                         <Flex key={index}>
                             <Image
                                 src={`${card.image}`}
                                 alt={card.name}
-                                w="105px"
+                                w={cardWidth}
                                 h="auto"
                                 borderRadius="none"
                             />

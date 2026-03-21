@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { Button, Flex, Image, Text, SimpleGrid } from '@chakra-ui/react'
 import { FiPlus } from 'react-icons/fi'
 import { PokemonCardImage } from '@/types/personal-profile'
+import { useMobileView } from '@/utils/mobileViewFinder'
 
 interface TradeListProps {
     type?: 'personal' | 'user'
@@ -18,6 +19,12 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
 
     const display = tradelist.slice(0, 3)
     const viewmore = tradelist.length > 3
+
+    const isMobileView = useMobileView()
+
+    const cardWidth = isMobileView ? '105px' : '140px'
+    const gapSize = isMobileView ? 10 : 14
+    const fontsize = isMobileView ? 'md' : 'lg'
 
     const press = () => {
         if (type === 'personal') {
@@ -40,7 +47,7 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
                 <Divider />
                 <Flex mt={1}>
                     <Text
-                        fontSize="md"
+                        fontSize={fontsize}
                         color="gray.900"
                         fontWeight="semibold"
                         mb={2}
@@ -55,7 +62,7 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
                     py={3}
                 >
                     <Text
-                        fontSize="md"
+                        fontSize={fontsize}
                         color="gray.600"
                         fontWeight="semibold"
                         mb={2}
@@ -79,7 +86,7 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
             <Divider />
             <Flex mt={1}>
                 <Text
-                    fontSize="md"
+                    fontSize={fontsize}
                     color="gray.900"
                     fontWeight="semibold"
                     mb={2}
@@ -87,21 +94,21 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
                     Trade List
                 </Text>
             </Flex>
-            <SimpleGrid columns={{ base: 3 }} w="100%" gap={10}>
+            <SimpleGrid columns={{ base: 3 }} w="100%" gap={gapSize}>
                 {display.map((item, index: number) => (
                     <Flex key={index}>
                         <Image
                             src={`${item.image}`}
                             alt={item.name}
-                            w="105px"
+                            w={cardWidth}
                             h="auto"
                             borderRadius="none"
                         />
                     </Flex>
                 ))}
             </SimpleGrid>
-            <Flex mt={3}>
-                {viewmore && (
+            {viewmore && (
+                <Flex mt={5} justifyContent="center" w="100%">
                     <Button
                         variant="solid"
                         bg="brand.turtoise"
@@ -111,8 +118,8 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
                     >
                         <FiPlus /> View more
                     </Button>
-                )}
-            </Flex>
+                </Flex>
+            )}
         </Flex>
     )
 }

@@ -58,7 +58,7 @@ const Content = ({ children }: { children: React.ReactNode }) => {
             <Flex flexDirection="row">
                 <Sidebar />
                 <Flex minWidth="75dvw" minHeight="dvh" justifyContent="center">
-                    <Box maxWidth="40dvw">{children}</Box>
+                    <Box width="40dvw">{children}</Box>
                 </Flex>
             </Flex>
         </Suspense>

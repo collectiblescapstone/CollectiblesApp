@@ -10,12 +10,10 @@ import { SearchForCard } from '../SearchForCard'
 const testCases = {
     // Specific card names
     "Ash's Pikachu": 'Pikachu wearing a hat',
-    'Detective Pikachu':
-        'Pikachu wearing a gray detective hat and holding a magnifying glass',
     'Gengar VMAX':
         'Huge purple ghost Gengar swallowing a whole building in a colorful trippy art style',
     'Shining Magikarp': 'golden magikarp in deep sea',
-    'Rayquaza VMAX': 'Long green dragon flying over a forest',
+    'Rayquaza VMAX': 'Rayquaza flying over a forest',
     Melony: 'Girl making breakfast',
     'Galarian Meowth': 'A gray grinning fluffy cat',
     'Alolan Vulpix': 'Snowy squirrel',
@@ -30,23 +28,28 @@ const testCases = {
     Darumaka: 'A red little munchkin',
     Fidough: 'A dog made of dough',
     Exeggcute: 'Half a dozen eggs',
-    Falinks: 'Half a dozen black spheres',
-    Wobbuffet: 'Happy blue pokemon with a black tail giving a salute',
+    Falinks: 'Black spherical pokemon wearing yellow and red helmets',
+    Wobbuffet: 'Big smile blue-skinned pokemon',
     Riolu: 'Cute blue fighting pokemon',
     Onix: 'Long stream of rocks',
-    Gible: 'A mini shark',
+    Gible: 'Looks like a shark standing on land',
     Finizen: 'Dolphin',
     Pansear: 'Fire monkey',
-    Timburr: 'A little guy carrying a log'
+    Timburr: 'A little guy carrying a log',
+    Hoothoot: 'Owl with big eyes',
+    Wooloo: 'Sheep',
+    Maushold: 'Family of white rabbits'
 }
 
-const numTestCases = Object.keys(testCases).length
+const NUM_TEST_CASES = Object.keys(testCases).length
+const HITRATE_AT_N = 10
 
 export const TestSearchMetrics = () => {
     const cardSearch = useRef<Awaited<ReturnType<typeof CardSearcher>>>(null)
     const [matches, setMatches] = useState<
         Record<string, { card?: CardData; rank: number; speed: number }>
     >({})
+    const [hitRates, setHitRates] = useState<number[]>([])
 
     // Context
     const { allCards } = usePokemonCards()
@@ -65,6 +68,7 @@ export const TestSearchMetrics = () => {
             cardSearch.current = await CardSearcher()
 
             const foundCards: typeof matches = {}
+            const hitRatesAtN = [0, 0, 0]
             for (const [cardName, cardDescription] of Object.entries(
                 testCases
             )) {
@@ -91,9 +95,24 @@ export const TestSearchMetrics = () => {
                             rank,
                             speed: Math.round((endTime - startTime) * 100) / 100
                         }
+
+                        if (rank !== 0) {
+                            for (let i = 1; i <= hitRatesAtN.length; i++) {
+                                if (rank <= HITRATE_AT_N * i) {
+                                    hitRatesAtN[i - 1]++
+                                }
+                            }
+                        }
                     })
             }
 
+            for (let i = 0; i < hitRatesAtN.length; i++) {
+                hitRatesAtN[i] =
+                    Math.round((hitRatesAtN[i] / NUM_TEST_CASES) * 10000) /
+                    10000
+            }
+
+            setHitRates(hitRatesAtN)
             setMatches(foundCards)
         }
 
@@ -106,7 +125,7 @@ export const TestSearchMetrics = () => {
                 Object.values(matches).reduce(
                     (total, { speed }) => total + speed,
                     0
-                ) / numTestCases
+                ) / NUM_TEST_CASES
             ).toFixed(4),
         [matches]
     )
@@ -118,7 +137,7 @@ export const TestSearchMetrics = () => {
                     (total, { rank }) =>
                         rank === 0 ? total : total + 1 / rank,
                     0
-                ) / numTestCases
+                ) / NUM_TEST_CASES
             ).toFixed(4),
         [matches]
     )
@@ -132,6 +151,11 @@ export const TestSearchMetrics = () => {
                 <Box>
                     <Text>Speed (ms per image): {averageSpeed}</Text>
                     <Text>Mean Reciprocal Rank: {meanReciprocalRank}</Text>
+                    {hitRates.map((hitRate, i) => (
+                        <Text key={i}>
+                            Hit Rate at {HITRATE_AT_N * (i + 1)}: {hitRate}
+                        </Text>
+                    ))}
                 </Box>
             </VStack>
             <Grid
@@ -166,8 +190,8 @@ export const TestSearchMetrics = () => {
                                         borderRadius="none"
                                     />
                                 )}
-                                <Text>Rank #{match.rank}</Text>
-                                <Text>{match.speed}ms</Text>
+                                <Text>Rank #{match?.rank ?? 0}</Text>
+                                <Text>{match?.speed ?? 0}ms</Text>
                             </VStack>
                         )
                     }

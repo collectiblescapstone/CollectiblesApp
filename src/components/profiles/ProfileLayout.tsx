@@ -19,7 +19,7 @@ const ProfileLayout = ({
     leftInteractible,
     rightInteractible
 }: ProfileLayoutProps) => (
-    <Box bg="white" minH="100vh" color="black" mb={4}>
+    <Box bg="white" minH="100vh" minWidth="40dvw" color="black" mb={4}>
         <Box
             bgImage="url('/user-profile/banner_temp.jpg')"
             bgSize="cover"

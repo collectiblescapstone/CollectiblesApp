@@ -196,7 +196,6 @@ const TradePage = () => {
                         flexDirection="row"
                         justifyContent="center"
                         alignItems="center"
-                        gap={0}
                         pr={9}
                         pl={3}
                     >
@@ -238,6 +237,7 @@ const TradePage = () => {
                                 value={[sliderValue]}
                                 onValueChange={slideFn}
                                 width="100%"
+                                cursor="pointer"
                             >
                                 <HStack justifyContent="space-between">
                                     <Slider.Label w="40%" textAlign="left">

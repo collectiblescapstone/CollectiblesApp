@@ -17,7 +17,7 @@ import { UserProfile } from '@/types/personal-profile'
 import { useAuth } from '@/context/AuthProvider'
 import { useHeader } from '@/context/HeaderProvider'
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
-import { useMobileView } from '@/utils/mobileViewFinder'
+import { profilePictures } from '@/app/personal-profile/edit-profile/constants'
 
 const TradeScreen: React.FC = () => {
     const [user, setUser] = useState<UserProfile | null>(null)
@@ -26,10 +26,6 @@ const TradeScreen: React.FC = () => {
     const { setProfileID } = useHeader()
     const { session } = useAuth()
     const userID = session?.user.id
-    const isMobileView = useMobileView()
-
-    const cardWidth = isMobileView ? '105px' : '140px'
-    const gapSize = isMobileView ? 10 : 14
 
     useEffect(() => {
         if (!userID) {
@@ -91,13 +87,18 @@ const TradeScreen: React.FC = () => {
             <Flex flexDirection="column" gap={6} mt={4}>
                 <Flex
                     flexDirection="row"
-                    justifyContent="center"
+                    justifyContent="flex-start"
                     alignItems="center"
-                    px={4}
                     gap={4}
                 >
-                    <Avatar.Root boxSize="75px" shape="rounded">
-                        <Avatar.Image src="/user-profile/pfp_temp.jpg" />
+                    <Avatar.Root boxSize="100px" p={2} background="white">
+                        <Avatar.Image
+                            objectFit="contain"
+                            src={
+                                profilePictures[user.profile_pic]?.path ??
+                                profilePictures[0].path
+                            }
+                        />
                     </Avatar.Root>
                     <Flex
                         flexDirection="column"
@@ -124,15 +125,20 @@ const TradeScreen: React.FC = () => {
                     </Flex>
                 </Flex>
                 <Flex justifyContent="center" alignItems="center" mt={-4}>
-                    <Box height="3px" width="94%" bg="gray.600" mt={5} />
+                    <Box height="3px" width="95%" bg="black" mt={5} />
                 </Flex>
-                <SimpleGrid columns={{ base: 3 }} w="100%" gap={gapSize} px={3}>
+                <SimpleGrid
+                    columns={{ base: 3 }}
+                    w="100%"
+                    gap={{ base: 10, lg: 14 }}
+                    px={3}
+                >
                     {cards.map((card: PokemonCardImage, index: number) => (
                         <Flex key={index}>
                             <Image
                                 src={`${card.image}`}
                                 alt={card.name}
-                                w={cardWidth}
+                                w="100%"
                                 h="auto"
                                 borderRadius="none"
                             />

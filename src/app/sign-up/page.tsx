@@ -10,6 +10,7 @@ export default function SignUpPage() {
             alignItems="center"
             minHeight="inherit"
             minWidth="dvw"
+            py={10}
         >
             <RegistrationForm />
         </Flex>

@@ -5,14 +5,21 @@ import React, { useEffect, useState } from 'react'
 
 // Next.js
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 // Chakra UI
-import { Button, Text, HStack, VStack } from '@chakra-ui/react'
+import { Button, Text, HStack, VStack, Spinner } from '@chakra-ui/react'
 
 // Child Components
 import { Logo } from '@/components/logo/Logo'
+import { useAuth } from '@/context/AuthProvider'
+import { Capacitor } from '@capacitor/core'
+import TitleLogo from '@/components/auth/TitleLogo'
 
 const Landing: React.FC = () => {
+    const { session } = useAuth()
+    const { push } = useRouter()
+
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         const href = e.currentTarget.getAttribute('href') || ''
         if (href.startsWith('#')) {
@@ -62,7 +69,27 @@ const Landing: React.FC = () => {
         return () => clearInterval(interval)
     }, [])
 
-    return (
+    useEffect(() => {
+        if (session) {
+            push('/home')
+        }
+
+        if (Capacitor.isNativePlatform()) {
+            push('/sign-in')
+        }
+    }, [session, push])
+
+    return Capacitor.isNativePlatform() ? (
+        <VStack
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            minHeight="100vh"
+        >
+            <TitleLogo />
+            <Spinner size="xl" />
+        </VStack>
+    ) : (
         <>
             <style>
                 {`

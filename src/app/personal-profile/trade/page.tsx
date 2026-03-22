@@ -125,7 +125,7 @@ const TradeScreen: React.FC = () => {
                     </Flex>
                 </Flex>
                 <Flex justifyContent="center" alignItems="center" mt={-4}>
-                    <Box height="3px" width="95%" bg="black" mt={5} />
+                    <Box height="3px" width="97%" bg="black" mt={5} />
                 </Flex>
                 <SimpleGrid
                     columns={{ base: 3 }}

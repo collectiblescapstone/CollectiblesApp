@@ -330,17 +330,23 @@ const TradePage = () => {
                                             })
                                         }
                                     >
-                                        <ViableOptions
-                                            key={u.username}
-                                            username={u.username}
-                                            avatarUrl={u.avatarUrl}
-                                            rating={u.rating}
-                                            user1Wishlist={
-                                                u.user1Wishlist ?? []
-                                            }
-                                            distance={u.distance}
-                                            ratingCount={u.ratingCount}
-                                        />
+                                        <Flex
+                                            minW="40dvw"
+                                            alignItems="center"
+                                            justifyContent="center"
+                                        >
+                                            <ViableOptions
+                                                key={u.username}
+                                                username={u.username}
+                                                avatarUrl={u.avatarUrl}
+                                                rating={u.rating}
+                                                user1Wishlist={
+                                                    u.user1Wishlist ?? []
+                                                }
+                                                distance={u.distance}
+                                                ratingCount={u.ratingCount}
+                                            />
+                                        </Flex>
                                     </Box>
                                 </Flex>
                             ))

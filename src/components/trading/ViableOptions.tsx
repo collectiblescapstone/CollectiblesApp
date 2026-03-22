@@ -17,7 +17,11 @@ const ViableOptions: React.FC<TradeCardProps> = ({
     const cardsToDisplay = user1Wishlist ?? []
     const cardlength = cardsToDisplay.length
     return (
-        <Card.Root w="auto" minW="30dvw" borderRadius="md" shadow="md">
+        <Card.Root
+            width={{ base: '90dvw', lg: '35dvw' }}
+            borderRadius="md"
+            shadow="md"
+        >
             <Flex flexDirection="column">
                 <Flex
                     flexDirection="row"

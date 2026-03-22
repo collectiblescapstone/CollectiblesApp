@@ -10,8 +10,9 @@ const Footer = () => {
     const router = useRouter()
     const pathname = usePathname()
 
+    const platform = Capacitor.getPlatform()
+
     const footerPadding = useMemo(() => {
-        const platform = Capacitor.getPlatform()
         if (platform === 'ios') {
             return { pt: 4, pb: 8 }
         } else if (platform === 'android') {
@@ -19,7 +20,7 @@ const Footer = () => {
         } else {
             return { pt: 0, pb: 0 }
         }
-    }, [Capacitor.getPlatform()])
+    }, [platform])
 
     return (
         <Flex

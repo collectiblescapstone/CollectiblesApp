@@ -27,6 +27,25 @@ jest.mock('next/link', () => {
     }
 })
 
+jest.mock('@capacitor/core', () => ({
+    Capacitor: {
+        isNativePlatform: jest.fn(() => false)
+    }
+}))
+
+jest.mock('../../context/AuthProvider.tsx', () => ({
+    __esModule: true,
+    useAuth: jest.fn(() => ({
+        session: null
+    }))
+}))
+
+jest.mock('next/navigation', () => ({
+    useRouter: () => ({
+        push: jest.fn()
+    })
+}))
+
 jest.mock('@/components/logo/Logo', () => ({
     Logo: () => <svg data-testid="logo" />
 }))

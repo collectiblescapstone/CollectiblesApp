@@ -14,8 +14,9 @@ const Header = () => {
     const context = useHeader()
     const profileId = context?.profileId
 
+    const platform = Capacitor.getPlatform()
+
     const headerPadding = useMemo(() => {
-        const platform = Capacitor.getPlatform()
         if (platform === 'ios') {
             return { pt: 20, pb: 6 }
         } else if (platform === 'android') {
@@ -23,7 +24,7 @@ const Header = () => {
         } else {
             return { pt: 0, pb: 0 } // Default for web and other platforms
         }
-    }, [Capacitor.getPlatform()])
+    }, [platform])
 
     const showBackButton = useMemo(() => {
         return Object.keys(PAGE_HEADINGS).includes(pathname)

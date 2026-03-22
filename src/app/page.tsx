@@ -18,7 +18,7 @@ import TitleLogo from '@/components/auth/TitleLogo'
 
 const Landing: React.FC = () => {
     const { session } = useAuth()
-    const { push } = useRouter()
+    const { replace } = useRouter()
 
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         const href = e.currentTarget.getAttribute('href') || ''
@@ -71,13 +71,11 @@ const Landing: React.FC = () => {
 
     useEffect(() => {
         if (session) {
-            push('/home')
+            replace('/home')
+        } else if (Capacitor.isNativePlatform()) {
+            replace('/sign-in')
         }
-
-        if (Capacitor.isNativePlatform()) {
-            push('/sign-in')
-        }
-    }, [session, push])
+    }, [session, replace])
 
     return Capacitor.isNativePlatform() ? (
         <VStack

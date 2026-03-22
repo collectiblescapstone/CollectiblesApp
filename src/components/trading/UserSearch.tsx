@@ -115,7 +115,8 @@ const UserSearch = () => {
                     startElement={<CiSearch size={20} />}
                 >
                     <Input
-                        placeholder={`Search user by username or profile name`}
+                        placeholder={`Search by username or profile name`}
+                        fontSize="md"
                         ref={searchRef}
                         value={searchValue}
                         onChange={handleSearchChange}

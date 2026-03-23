@@ -6,8 +6,8 @@ import { Flex, Text, Spinner } from '@chakra-ui/react'
 import { UserProfile } from '@/types/personal-profile'
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller'
 import { useHeader } from '@/context/HeaderProvider'
-import ProfileWishlistLayout from '@/components/profiles/ProfileWishlistLayout'
 import { useProfileSelected } from '@/context/ProfileSelectionProvider'
+import ProfileListLayout from '@/components/profiles/ProfileListLayout'
 
 const WishScreen: React.FC = () => {
     const [user, setUser] = useState<UserProfile | null>(null)
@@ -42,6 +42,12 @@ const WishScreen: React.FC = () => {
         loadUserProfile()
     }, [userName, setProfileID])
 
+    const cards =
+        user?.wishlist.map((item) => ({
+            name: item.card.name,
+            image: item.card.image_url
+        })) ?? []
+
     if (loading) {
         return (
             <Flex
@@ -72,7 +78,7 @@ const WishScreen: React.FC = () => {
         )
     }
 
-    return <ProfileWishlistLayout user={user} />
+    return <ProfileListLayout user={user} cards={cards} type="wish" />
 }
 
 export default WishScreen

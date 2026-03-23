@@ -7,7 +7,7 @@ import { UserProfile } from '@/types/personal-profile'
 import { useAuth } from '@/context/AuthProvider'
 import { useHeader } from '@/context/HeaderProvider'
 import { fetchUserProfile } from '@/utils/profiles/userIDProfilePuller'
-import ProfileWishlistLayout from '@/components/profiles/ProfileWishlistLayout'
+import ProfileListLayout from '@/components/profiles/ProfileListLayout'
 
 const WishScreen: React.FC = () => {
     const [user, setUser] = useState<UserProfile | null>(null)
@@ -42,6 +42,12 @@ const WishScreen: React.FC = () => {
         loadUserProfile()
     }, [userID, setProfileID])
 
+    const cards =
+        user?.wishlist.map((item) => ({
+            name: item.card.name,
+            image: item.card.image_url
+        })) ?? []
+
     if (loading || !session) {
         return (
             <Box textAlign="center" mt={10}>
@@ -66,7 +72,7 @@ const WishScreen: React.FC = () => {
         )
     }
 
-    return <ProfileWishlistLayout user={user} />
+    return <ProfileListLayout user={user} cards={cards} type="wish" />
 }
 
 export default WishScreen

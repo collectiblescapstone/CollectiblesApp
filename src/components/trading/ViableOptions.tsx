@@ -18,9 +18,7 @@ const ViableOptions: React.FC<TradeCardProps> = ({
     const cardlength = cardsToDisplay.length
     return (
         <Card.Root
-            w="100%"
-            minW="350px"
-            maxW="350px"
+            width={{ base: '90dvw', lg: '35dvw' }}
             borderRadius="md"
             shadow="md"
         >
@@ -67,7 +65,11 @@ const ViableOptions: React.FC<TradeCardProps> = ({
                         w="100%"
                     >
                         <Flex align="center" gap={3}>
-                            <Avatar.Root boxSize="45px" shape="rounded">
+                            <Avatar.Root
+                                boxSize="65px"
+                                p={2}
+                                background="white"
+                            >
                                 <Avatar.Image
                                     objectFit="contain"
                                     src={avatarUrl}

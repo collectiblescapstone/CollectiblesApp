@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Divider from '@/components/profiles/Divider'
-import { Flex, Image, Text, HStack } from '@chakra-ui/react'
+import { Flex, Image, Text, HStack, SimpleGrid } from '@chakra-ui/react'
 import { PopCards } from '@/types/user-data'
 import { LuFlame } from 'react-icons/lu'
 
@@ -14,7 +14,7 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
     return (
         <Flex
             flexDirection="column"
-            gap={2}
+            gap={3}
             justifyContent="flex-start"
             alignItems="flex-start"
             w="100%"
@@ -25,7 +25,7 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
                 <HStack gap={1} alignItems="center">
                     <LuFlame color="#d35400" size={20} />
                     <Text
-                        fontSize="md"
+                        fontSize={{ base: 'md', lg: 'lg' }}
                         color="gray.700"
                         fontWeight="semibold"
                         mb={0}
@@ -35,25 +35,23 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
                 </HStack>
             </Flex>
             {cards.length !== 0 ? (
-                <Flex
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    wrap="wrap"
-                    gap={5}
+                <SimpleGrid
+                    columns={{ base: 3 }}
+                    w="100%"
+                    gap={{ base: 10, lg: 12 }}
                 >
                     {cards.map((card: PopCards, index: number) => (
                         <Flex key={index}>
                             <Image
                                 src={`${card.imageUrl}`}
                                 alt={card.name}
-                                w="105px"
+                                w="95%"
                                 h="auto"
                                 borderRadius="none"
                             />
                         </Flex>
                     ))}
-                </Flex>
+                </SimpleGrid>
             ) : (
                 <Flex
                     w="100%"
@@ -62,7 +60,7 @@ const PopularCards = ({ cards = [] }: PopularCardsProps) => {
                     py={3}
                 >
                     <Text
-                        fontSize="md"
+                        fontSize={{ base: 'md', lg: 'lg' }}
                         color="gray.600"
                         fontWeight="semibold"
                         mb={2}

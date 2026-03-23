@@ -71,8 +71,8 @@ const HomePage = () => {
             alignItems="center"
         >
             <Heading
-                mt={5}
-                fontSize="2xl"
+                mt={{ base: 5, lg: 8 }}
+                fontSize={{ base: '2xl', lg: '3xl' }}
                 textAlign="center"
                 fontWeight={'Bold'}
                 fontFamily="var(--font-sans)"
@@ -85,7 +85,7 @@ const HomePage = () => {
                 flexDirection="row"
                 w="fit-content"
                 maxW="100%"
-                mt={4}
+                mt={{ base: 4, lg: 6 }}
                 mx="auto"
                 alignSelf="center"
                 wrap="wrap"
@@ -94,28 +94,52 @@ const HomePage = () => {
                 px={8}
             >
                 <Flex direction="column" alignItems="center" w="25%">
-                    <Text fontSize="2xl" fontWeight="bold" color="#5D49C3">
+                    <Text
+                        fontSize={{ base: '2xl', lg: '4xl' }}
+                        fontWeight="bold"
+                        color="#5D49C3"
+                    >
                         {user.cardsLoggedthisMonth}
                     </Text>
-                    <Text fontSize="xs" color="gray.600" textAlign="center">
+                    <Text
+                        fontSize={{ base: 'xs', lg: 'sm' }}
+                        color="gray.600"
+                        textAlign="center"
+                    >
                         cards logged this month
                     </Text>
                 </Flex>
 
                 <Flex direction="column" alignItems="center" w="25%">
-                    <Text fontSize="2xl" fontWeight="bold" color="#5D49C3">
+                    <Text
+                        fontSize={{ base: '2xl', lg: '4xl' }}
+                        fontWeight="bold"
+                        color="#5D49C3"
+                    >
                         {user.cardsInCollection}
                     </Text>
-                    <Text fontSize="xs" color="gray.600" textAlign="center">
+                    <Text
+                        fontSize={{ base: 'xs', lg: 'sm' }}
+                        color="gray.600"
+                        textAlign="center"
+                    >
                         total cards in collection
                     </Text>
                 </Flex>
 
                 <Flex direction="column" alignItems="center" w="25%">
-                    <Text fontSize="2xl" fontWeight="bold" color="#5D49C3">
+                    <Text
+                        fontSize={{ base: '2xl', lg: '4xl' }}
+                        fontWeight="bold"
+                        color="#5D49C3"
+                    >
                         {user.cardsForTrade}
                     </Text>
-                    <Text fontSize="xs" color="gray.600" textAlign="center">
+                    <Text
+                        fontSize={{ base: 'xs', lg: 'sm' }}
+                        color="gray.600"
+                        textAlign="center"
+                    >
                         cards up for trade
                     </Text>
                 </Flex>

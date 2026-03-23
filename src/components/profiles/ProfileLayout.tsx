@@ -19,7 +19,7 @@ const ProfileLayout = ({
     leftInteractible,
     rightInteractible
 }: ProfileLayoutProps) => (
-    <Box bg="white" minH="100vh" color="black" mb={4}>
+    <Box bg="white" minH="100vh" minWidth="40dvw" color="black" mb={4}>
         <Box
             bgImage="url('/user-profile/banner_temp.jpg')"
             bgSize="cover"
@@ -49,7 +49,11 @@ const ProfileLayout = ({
                 />
             </Avatar.Root>
             {(user.firstName || user.lastName) && (
-                <Heading mt={3} fontSize="2xl" fontWeight={'Bold'}>
+                <Heading
+                    mt={3}
+                    fontSize={{ base: '2xl', lg: '3xl' }}
+                    fontWeight={'Bold'}
+                >
                     {user.firstName} {user.lastName}
                 </Heading>
             )}
@@ -59,10 +63,11 @@ const ProfileLayout = ({
                     justifyContent="center"
                     alignItems="center"
                     gap={1}
+                    mt={{ base: 0, lg: 2 }}
                 >
                     <Icon as={FiMapPin} boxSize={4} />
                     <Text
-                        fontSize="xs"
+                        fontSize={{ base: 'xs', lg: 'sm' }}
                         color="gray.600"
                         fontWeight={'semibold'}
                     >
@@ -72,7 +77,7 @@ const ProfileLayout = ({
             )}
             {user.bio && (
                 <Text
-                    fontSize="sm"
+                    fontSize={{ base: 'sm', lg: 'md' }}
                     color="gray.800"
                     textAlign="center"
                     maxW="400px"

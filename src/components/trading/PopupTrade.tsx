@@ -142,7 +142,11 @@ const TradeCardPopup: React.FC<TradeCardPopupProps> = (props) => {
                     <VStack align="center" gap={2}>
                         <HStack gap="2" mt={1}>
                             <Button variant="ghost" onClick={goProfile}>
-                                <Avatar.Root boxSize="30px" shape="rounded">
+                                <Avatar.Root
+                                    boxSize="50px"
+                                    p={2}
+                                    background="white"
+                                >
                                     <Avatar.Image src={avatarUrl} />
                                 </Avatar.Root>
                                 <Text fontWeight="semibold" textStyle="sm">

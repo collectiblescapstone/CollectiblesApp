@@ -5,6 +5,12 @@ import ForgetPasswordForm from '../ForgetPasswordForm'
 import { renderWithTheme } from '../../../utils/testing-utils'
 import { supabase } from '@/lib/supabase'
 
+const mockPush = jest.fn()
+
+jest.mock('next/navigation', () => ({
+    useRouter: () => ({ push: mockPush })
+}))
+
 jest.mock('../../../lib/supabase', () => ({
     supabase: {
         auth: {
@@ -23,6 +29,7 @@ const baseUrl =
 describe('ForgetPasswordForm', () => {
     beforeEach(() => {
         jest.clearAllMocks()
+        mockPush.mockClear()
     })
 
     it('renders Forget Password Form', () => {

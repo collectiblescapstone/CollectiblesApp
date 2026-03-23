@@ -48,7 +48,7 @@ const Content = ({ children }: { children: React.ReactNode }) => {
     const authenticatedLayout = isMobileView ? (
         <Suspense fallback={<Spinner size="xl" />}>
             <Header />
-            <Box minHeight="84dvh" w="full">
+            <Box minHeight="82dvh" w="full">
                 {children}
             </Box>
             <Footer />

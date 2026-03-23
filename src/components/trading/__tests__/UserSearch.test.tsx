@@ -141,7 +141,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
             expect(input).toBeInTheDocument()
         })
@@ -152,7 +152,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
             expect(input).toHaveValue('')
         })
@@ -199,7 +199,7 @@ describe('UserSearch', () => {
 
             // Focus on input to open popover
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -230,7 +230,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -260,7 +260,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -287,7 +287,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -314,7 +314,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -338,7 +338,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -362,7 +362,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -392,7 +392,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -419,7 +419,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -437,7 +437,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -463,7 +463,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -504,7 +504,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -524,7 +524,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -547,7 +547,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -585,7 +585,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -603,7 +603,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -641,7 +641,7 @@ describe('UserSearch', () => {
 
             // Component should still render without crashing
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
             expect(input).toBeInTheDocument()
 
@@ -663,7 +663,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -706,7 +706,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -736,7 +736,7 @@ describe('UserSearch', () => {
             })
 
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
 
             await act(async () => {
@@ -786,7 +786,7 @@ describe('UserSearch', () => {
 
             // Component should still render
             const input = screen.getByPlaceholderText(
-                'Search user by username or profile name'
+                'Search by username or profile name'
             )
             expect(input).toBeInTheDocument()
         })

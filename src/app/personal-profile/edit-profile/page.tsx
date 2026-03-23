@@ -407,6 +407,7 @@ const PersonalProfileScreen: React.FC = () => {
                     <Input
                         placeholder="Enter your first name"
                         fontWeight="normal"
+                        fontSize="md"
                         {...register('firstName')}
                     />
                     <Field.HelperText>
@@ -423,6 +424,7 @@ const PersonalProfileScreen: React.FC = () => {
                     <Input
                         placeholder="Enter your last name"
                         fontWeight="normal"
+                        fontSize="md"
                         {...register('lastName')}
                     />
                     <Field.HelperText>
@@ -441,6 +443,7 @@ const PersonalProfileScreen: React.FC = () => {
                     <Input
                         placeholder="Enter your username"
                         fontWeight="normal"
+                        fontSize="md"
                         {...register('username', {
                             required: 'Username is required'
                         })}
@@ -463,6 +466,7 @@ const PersonalProfileScreen: React.FC = () => {
                         disabled
                         placeholder="your email"
                         fontWeight="normal"
+                        fontSize="md"
                         {...register('email')}
                     />
                     <Field.HelperText>
@@ -483,6 +487,7 @@ const PersonalProfileScreen: React.FC = () => {
                         <Input
                             placeholder="Hi! This is my amazing bio!"
                             fontWeight="normal"
+                            fontSize="md"
                             maxLength={MAX_CHARACTERS}
                             {...register('bio')}
                         />
@@ -504,6 +509,7 @@ const PersonalProfileScreen: React.FC = () => {
                                 type="text"
                                 placeholder="ex. Toronto, ON"
                                 fontWeight="normal"
+                                fontSize="md"
                                 value={field.value}
                                 onChange={(e) => {
                                     field.onChange(e.target.value)
@@ -554,6 +560,7 @@ const PersonalProfileScreen: React.FC = () => {
                         <Input
                             placeholder="Instagram handle"
                             fontWeight="normal"
+                            fontSize="md"
                             {...register('instagram')}
                         />
                     </InputGroup>
@@ -564,6 +571,7 @@ const PersonalProfileScreen: React.FC = () => {
                         <Input
                             placeholder="Twitter/X handle"
                             fontWeight="normal"
+                            fontSize="md"
                             {...register('x')}
                         />
                     </InputGroup>
@@ -574,6 +582,7 @@ const PersonalProfileScreen: React.FC = () => {
                         <Input
                             placeholder="Facebook handle"
                             fontWeight="normal"
+                            fontSize="md"
                             {...register('facebook')}
                         />
                     </InputGroup>
@@ -584,6 +593,7 @@ const PersonalProfileScreen: React.FC = () => {
                         <Input
                             placeholder="WhatsApp number"
                             fontWeight="normal"
+                            fontSize="md"
                             {...register('whatsapp')}
                         />
                     </InputGroup>
@@ -594,6 +604,7 @@ const PersonalProfileScreen: React.FC = () => {
                         <Input
                             placeholder="Discord handle"
                             fontWeight="normal"
+                            fontSize="md"
                             {...register('discord')}
                         />
                     </InputGroup>

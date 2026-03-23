@@ -10,6 +10,7 @@ export default function SignInPage() {
             alignItems="center"
             minHeight="inherit"
             minWidth="dvw"
+            py={10}
         >
             <AuthForm />
         </Flex>

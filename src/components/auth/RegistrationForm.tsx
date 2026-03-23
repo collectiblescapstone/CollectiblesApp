@@ -176,6 +176,7 @@ const RegistrationForm = () => {
                             {...register('email', {
                                 required: 'Email is required'
                             })}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="Enter your username or email"
@@ -196,6 +197,7 @@ const RegistrationForm = () => {
                             {...register('username', {
                                 required: 'Username is required'
                             })}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="my_username"
@@ -212,6 +214,7 @@ const RegistrationForm = () => {
                         <Field.Label>First Name</Field.Label>
                         <Input
                             {...register('firstName')}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="First Name"
@@ -228,6 +231,7 @@ const RegistrationForm = () => {
                         <Field.Label>Last Name</Field.Label>
                         <Input
                             {...register('lastName')}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="Last Name"
@@ -248,6 +252,7 @@ const RegistrationForm = () => {
                             {...register('password', {
                                 required: 'Password is required'
                             })}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="Enter your password"
@@ -270,6 +275,7 @@ const RegistrationForm = () => {
                                 required:
                                     'You have to type the same password again'
                             })}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="Re-Enter your password"
@@ -294,6 +300,14 @@ const RegistrationForm = () => {
                     type="submit"
                 >
                     Sign Up
+                </Button>
+                <Button
+                    backgroundColor="brand.marigold"
+                    color="brand.turtoise"
+                    width="3/4"
+                    onClick={() => push('/sign-in')}
+                >
+                    Back to Sign In
                 </Button>
             </VStack>
         </form>

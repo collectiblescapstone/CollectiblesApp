@@ -1,6 +1,4 @@
 'use client'
-import { Button, Heading, Text, Tabs, HStack, VStack } from '@chakra-ui/react'
-import Link from 'next/link'
 
 // React
 import React, { useEffect, useState } from 'react'
@@ -12,11 +10,24 @@ import {
     LuGithub
 } from 'react-icons/lu'
 
+// Next.js
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
+// Chakra UI
+import { Button, Heading, Text, Tabs, HStack, VStack, Spinner } from '@chakra-ui/react'
+
 // Child Components
 import { Logo } from '@/components/logo/Logo'
 import TeamMember from '@/components/landing/TeamMember'
+import { useAuth } from '@/context/AuthProvider'
+import { Capacitor } from '@capacitor/core'
+import TitleLogo from '@/components/auth/TitleLogo'
 
 const Landing: React.FC = () => {
+    const { session } = useAuth()
+    const { replace } = useRouter()
+
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         const href = e.currentTarget.getAttribute('href') || ''
         if (href.startsWith('#')) {
@@ -199,6 +210,25 @@ const Landing: React.FC = () => {
     ]
 
     return (
+    useEffect(() => {
+        if (session) {
+            replace('/home')
+        } else if (Capacitor.isNativePlatform()) {
+            replace('/sign-in')
+        }
+    }, [session, replace])
+
+    return Capacitor.isNativePlatform() ? (
+        <VStack
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            minHeight="100vh"
+        >
+            <TitleLogo />
+            <Spinner size="xl" />
+        </VStack>
+    ) : (
         <>
             <style>
                 {`

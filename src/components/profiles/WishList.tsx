@@ -9,11 +9,10 @@ import { PokemonCardImage } from '@/types/personal-profile'
 
 interface WishListProps {
     type?: 'personal' | 'user'
-    username: string
     wishlist: PokemonCardImage[]
 }
 
-const WishList: React.FC<WishListProps> = ({ type, username, wishlist }) => {
+const WishList: React.FC<WishListProps> = ({ type, wishlist }) => {
     const router = useRouter()
 
     const display = wishlist.slice(0, 3)
@@ -24,7 +23,7 @@ const WishList: React.FC<WishListProps> = ({ type, username, wishlist }) => {
             router.push('/personal-profile/wish')
             return
         }
-        router.push(`/user-profile/wish?username=${username}`)
+        router.push(`/user-profile/wish`)
     }
     return (
         <Flex

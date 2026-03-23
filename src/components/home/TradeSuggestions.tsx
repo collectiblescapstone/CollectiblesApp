@@ -154,16 +154,14 @@ const TradeSuggestions: React.FC = () => {
     }, null)
 
     return (
-        <Flex
-            flexDirection="column"
-            gap={2}
-            justifyContent="flex-start"
-            alignItems="flex-start"
-            w="100%"
-            px={4}
-        >
+        <Flex flexDirection="column" gap={3} w="100%" px={4}>
             <Divider />
-            <Flex mt={1}>
+            <Flex
+                mt={1}
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                w="100%"
+            >
                 <Text
                     fontSize="md"
                     color="gray.700"
@@ -196,14 +194,16 @@ const TradeSuggestions: React.FC = () => {
                             })
                         }
                     >
-                        <ViableOptions
-                            username={u.username}
-                            avatarUrl={u.avatarUrl}
-                            rating={u.rating}
-                            user1Wishlist={u.user1Wishlist ?? []}
-                            distance={u.distance}
-                            ratingCount={u.ratingCount}
-                        />
+                        <Flex justifyContent="center" alignItems="center">
+                            <ViableOptions
+                                username={u.username}
+                                avatarUrl={u.avatarUrl}
+                                rating={u.rating}
+                                user1Wishlist={u.user1Wishlist ?? []}
+                                distance={u.distance}
+                                ratingCount={u.ratingCount}
+                            />
+                        </Flex>
                     </Box>
                 ))
             ) : (
@@ -230,11 +230,11 @@ const TradeSuggestions: React.FC = () => {
                 justifyContent="center"
                 alignItems="center"
                 w="100%"
-                pt={2}
+                pt={{ base: 2, lg: 4 }}
                 pb={5}
             >
                 <Button
-                    size="xs"
+                    size={{ base: 'sm', lg: 'md' }}
                     aria-label="See more trade suggestions"
                     bg={'brand.turtoise'}
                     onClick={() => router.push('/trade')}

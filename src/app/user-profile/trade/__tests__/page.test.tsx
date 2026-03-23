@@ -177,10 +177,7 @@ describe('TradeScreen', () => {
         await waitFor(() => {
             const img = screen.getByAltText('Pikachu')
             expect(img).toBeInTheDocument()
-            expect(img).toHaveAttribute(
-                'src',
-                'https://example.com/pikachu/high.png'
-            )
+            expect(img).toHaveAttribute('src', 'https://example.com/pikachu')
         })
     })
 

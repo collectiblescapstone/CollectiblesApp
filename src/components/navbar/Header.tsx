@@ -6,12 +6,25 @@ import { useMemo } from 'react'
 import { LuStepBack } from 'react-icons/lu'
 import { PAGE_HEADINGS } from './constants'
 import { useHeader } from '@/context/HeaderProvider'
+import { Capacitor } from '@capacitor/core'
 
 const Header = () => {
     const router = useRouter()
     const pathname = usePathname()
     const context = useHeader()
     const profileId = context?.profileId
+
+    const platform = Capacitor.getPlatform()
+
+    const headerPadding = useMemo(() => {
+        if (platform === 'ios') {
+            return { pt: 20, pb: 6 }
+        } else if (platform === 'android') {
+            return { pt: 3, pb: 6 } // Add android padding here
+        } else {
+            return { pt: 0, pb: 0 } // Default for web and other platforms
+        }
+    }, [platform])
 
     const showBackButton = useMemo(() => {
         return Object.keys(PAGE_HEADINGS).includes(pathname)
@@ -31,10 +44,11 @@ const Header = () => {
             color="brand.turtoise"
             bgColor="brand.marigold"
             w="full"
-            minHeight="8dvh"
+            height="8dvh"
             flexDir="row"
             alignItems="center"
             px={2}
+            {...headerPadding}
         >
             {!showBackButton && (
                 <LuStepBack

@@ -93,6 +93,7 @@ const DeleteAccountForm: React.FC = () => {
                     placeholder="Type delete_account here"
                     disabled={isDeleting}
                     variant="subtle"
+                    fontSize="md"
                     size="lg"
                 />
                 <Field.ErrorText>

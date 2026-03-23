@@ -140,6 +140,7 @@ const AuthForm = () => {
                             {...register('emailOrUsername', {
                                 required: 'Email or Username is required'
                             })}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="me@example.com"
@@ -161,6 +162,7 @@ const AuthForm = () => {
                             {...register('password', {
                                 required: 'Password is required'
                             })}
+                            fontSize="md"
                             variant="subtle"
                             color="black"
                             placeholder="Enter your password"

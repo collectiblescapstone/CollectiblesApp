@@ -3,16 +3,30 @@
 import { Box, Flex } from '@chakra-ui/react'
 import { usePathname, useRouter } from 'next/navigation'
 import { MENU_ITEMS } from './constants'
+import { useMemo } from 'react'
+import { Capacitor } from '@capacitor/core'
 
 const Footer = () => {
     const router = useRouter()
     const pathname = usePathname()
 
+    const platform = Capacitor.getPlatform()
+
+    const footerPadding = useMemo(() => {
+        if (platform === 'ios') {
+            return { pt: 4, pb: 8 }
+        } else if (platform === 'android') {
+            return { pt: 3, pb: 6 } // Add android padding here
+        } else {
+            return { pt: 0, pb: 0 }
+        }
+    }, [platform])
+
     return (
         <Flex
             color="brand.turtoise"
             background="brand.marigold"
-            minHeight="8dvh"
+            height="10dvh"
             position="sticky"
             bottom={0}
             left={0}
@@ -22,6 +36,7 @@ const Footer = () => {
             alignItems="center"
             justifyContent="space-between"
             px={8}
+            {...footerPadding}
         >
             {MENU_ITEMS.map((item) => (
                 <Box

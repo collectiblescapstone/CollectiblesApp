@@ -4,6 +4,9 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+// Next.js
+import { useRouter } from 'next/navigation'
+
 // Chakra UI
 import { Button, Field, Heading, Input, VStack } from '@chakra-ui/react'
 
@@ -19,9 +22,11 @@ import { baseUrl } from '@/utils/constants'
 // Types
 import { ForgetPasswordFormValues } from '@/types/auth'
 
-export default function ForgetPasswordForm() {
+const ForgetPasswordForm = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [message, setMessage] = useState<string>('')
+
+    const { push } = useRouter()
 
     const {
         register,
@@ -80,6 +85,7 @@ export default function ForgetPasswordForm() {
                             color="black"
                             placeholder="me@example.com"
                             disabled={isLoading}
+                            fontSize="md"
                         />
                         {errors.email && errors.email.type === 'required' && (
                             <Field.ErrorText>
@@ -105,7 +111,18 @@ export default function ForgetPasswordForm() {
                 >
                     Send Reset Link
                 </Button>
+
+                <Button
+                    backgroundColor="brand.marigold"
+                    color="brand.turtoise"
+                    width="3/4"
+                    onClick={() => push('/sign-in')}
+                >
+                    Back to Sign In
+                </Button>
             </VStack>
         </form>
     )
 }
+
+export default ForgetPasswordForm

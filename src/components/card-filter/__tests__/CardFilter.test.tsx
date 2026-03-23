@@ -322,24 +322,31 @@ describe('CardFilter', () => {
         })
 
         // Uncheck a generation
-        const gen1Checkbox = screen.getByRole('checkbox', { name: '1' })
+        fireEvent.click(screen.getByRole('checkbox', { name: '1' }))
 
-        if (gen1Checkbox) {
-            fireEvent.click(gen1Checkbox)
-
-            await waitFor(() => {
-                expect(gen1Checkbox).not.toBeChecked()
-            })
-        }
+        await waitFor(() => {
+            expect(
+                screen.getByRole('checkbox', { name: '1' })
+            ).not.toBeChecked()
+        })
 
         // Click Reset button
         const resetButton = screen.getByRole('button', { name: /reset/i })
         fireEvent.click(resetButton)
 
-        // Verify that generation 1 is checked again
+        // Confirm and verify defaults were restored in applied filters
+        fireEvent.click(screen.getByRole('button', { name: /confirm/i }))
+
         await waitFor(() => {
-            expect(gen1Checkbox).toBeChecked()
+            expect(mockSetFilters).toHaveBeenCalled()
         })
+
+        const callArg =
+            mockSetFilters.mock.calls[mockSetFilters.mock.calls.length - 1][0]
+        expect(callArg.generations).toEqual(
+            expect.arrayContaining([1, 2, 3, 4, 5, 6, 7, 8, 9])
+        )
+        expect(callArg.generations).toHaveLength(9)
     })
 
     it('does not apply changes when Cancel is clicked after modifications', async () => {

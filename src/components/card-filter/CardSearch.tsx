@@ -158,6 +158,7 @@ export const CardSearch = ({
                     <InputGroup endElement={clearSearch}>
                         <Input
                             placeholder={`Search by name${filterOnly ? '' : ' or describe the card...'}`}
+                            fontSize="md"
                             ref={searchRef}
                             value={searchValue}
                             onChange={(e) => {

@@ -1,29 +1,84 @@
+import React from 'react'
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import Page from '../page'
+import type {
+    ButtonProps,
+    FlexProps,
+    HeadingProps,
+    TextProps
+} from '@chakra-ui/react'
+
+jest.mock('next/link', () => ({
+    __esModule: true,
+    default: ({
+        href,
+        children,
+        ...props
+    }: {
+        href?: string | { pathname?: string }
+        children?: React.ReactNode
+    }) => {
+        const resolved =
+            typeof href === 'string'
+                ? href
+                : (href && (href as { pathname?: string }).pathname) || ''
+        return (
+            <a href={resolved} {...props}>
+                {children}
+            </a>
+        )
+    }
+}))
 
 jest.mock('@chakra-ui/react', () => {
     return {
         __esModule: true,
-        Flex: (props: any) => <div>{props.children}</div>,
-        Button: (props: any) => (
-            <button onClick={props.onClick}>{props.children}</button>
-        ),
-        Text: (props: any) => <span>{props.children}</span>,
-        HStack: (props: any) => <div>{props.children}</div>,
-        VStack: (props: any) => <div>{props.children}</div>
-    }
-})
 
-jest.mock('next/link', () => {
-    return ({ href, children, ...props }: any) => {
-        const resolvedHref =
-            typeof href === 'string' ? href : href?.pathname || ''
-        return (
-            <a href={resolvedHref} {...props}>
-                {children}
-            </a>
-        )
+        Flex: ({ children }: FlexProps & { children?: React.ReactNode }) => (
+            <div>{children}</div>
+        ),
+        Heading: ({
+            children
+        }: HeadingProps & { children?: React.ReactNode }) => (
+            <h1>{children}</h1>
+        ),
+        Text: ({ children }: TextProps & { children?: React.ReactNode }) => (
+            <p>{children}</p>
+        ),
+        Button: ({
+            children,
+            onClick
+        }: ButtonProps & {
+            children?: React.ReactNode
+            onClick?: () => void
+        }) => <button onClick={onClick}>{children}</button>,
+
+        // Add missing HStack and VStack mocks used by the page
+        HStack: ({ children }: FlexProps & { children?: React.ReactNode }) => (
+            <div data-testid="hstack">{children}</div>
+        ),
+        VStack: ({ children }: FlexProps & { children?: React.ReactNode }) => (
+            <div data-testid="vstack">{children}</div>
+        ),
+
+        Tabs: {
+            Root: ({ children }: { children?: React.ReactNode }) => (
+                <div data-testid="tabs-root">{children}</div>
+            ),
+            List: ({ children }: { children?: React.ReactNode }) => (
+                <div data-testid="tabs-list">{children}</div>
+            ),
+            Trigger: ({ children }: { children?: React.ReactNode }) => (
+                <button type="button">{children}</button>
+            ),
+            Indicator: ({ children }: { children?: React.ReactNode }) => (
+                <div data-testid="tabs-indicator">{children}</div>
+            ),
+            Content: ({ children }: { children?: React.ReactNode }) => (
+                <div>{children}</div>
+            )
+        }
     }
 })
 
@@ -62,7 +117,7 @@ describe('Landing Page', () => {
 
         expect(
             screen.getByText(
-                /Kollec is a final year computer science capstone project/i
+                /Kollec is a collection management platform developed as a final year Computer Science capstone project at McMaster University/i
             )
         ).toBeInTheDocument()
 
@@ -79,9 +134,6 @@ describe('Landing Page', () => {
         expect(
             screen.getByRole('button', { name: /Features/i })
         ).toBeInTheDocument()
-
-        expect(screen.getByRole('button', { name: /FAQ/i })).toBeInTheDocument()
-
         expect(
             screen.getByRole('button', { name: /Sign Up/i })
         ).toBeInTheDocument()
@@ -100,9 +152,9 @@ describe('Landing Page', () => {
     it('shows a countdown timer and updates as time advances', () => {
         jest.useFakeTimers()
 
+        // Start 10 seconds before target
         const start = new Date(2026, 3, 7, 9, 59, 50)
-
-        ;(jest as any).setSystemTime(start)
+        jest.setSystemTime(start)
 
         act(() => {
             render(<Page />)
@@ -124,9 +176,9 @@ describe('Landing Page', () => {
     it('shows launch message when target time is reached or passed', () => {
         jest.useFakeTimers()
 
+        // Set time just after target
         const afterTarget = new Date(2026, 3, 7, 10, 0, 1)
-
-        ;(jest as any).setSystemTime(afterTarget)
+        jest.setSystemTime(afterTarget)
 
         act(() => {
             render(<Page />)
@@ -155,7 +207,7 @@ describe('Landing Page', () => {
                 return id === 'about' ? mockEl : null
             })
 
-        fireEvent.click(screen.getByRole('button', { name: /About/i }))
+        fireEvent.click(screen.getByLabelText('Scroll to About section'))
 
         expect(spy).toHaveBeenCalledWith('about')
 

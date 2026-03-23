@@ -160,7 +160,7 @@ const TradePage = () => {
     }
 
     return (
-        <Flex flexDirection="column" gap={3}>
+        <Flex flexDirection="column" gap={3} w="100%">
             <Flex alignItems="center" flexDirection="column" mt={6}>
                 <UserSearch />
             </Flex>
@@ -191,13 +191,11 @@ const TradePage = () => {
                     </Flex>
                 </Box>
             ) : (
-                <Flex flexDirection="column" gap={6} mt={1}>
+                <Flex flexDirection="column" gap={6} mt={1} w="100%">
                     <Flex
                         flexDirection="row"
                         justifyContent="center"
                         alignItems="center"
-                        w="100%"
-                        gap={0}
                         pr={9}
                         pl={3}
                     >
@@ -239,6 +237,7 @@ const TradePage = () => {
                                 value={[sliderValue]}
                                 onValueChange={slideFn}
                                 width="100%"
+                                cursor="pointer"
                             >
                                 <HStack justifyContent="space-between">
                                     <Slider.Label w="40%" textAlign="left">
@@ -255,7 +254,7 @@ const TradePage = () => {
                             </Slider.Root>
                         </Box>
                     </Flex>
-                    <Flex flexDirection="column" alignItems="center" gap={2}>
+                    <Flex flexDirection="column" w="100%" gap={2}>
                         {(() => {
                             const filteredUsers = users.filter(
                                 (u) =>
@@ -298,43 +297,58 @@ const TradePage = () => {
                                 )
                             }
                             return filteredUsers.map((u) => (
-                                <Box
+                                <Flex
                                     key={u.username}
-                                    cursor="pointer"
-                                    alignItems="center"
-                                    onClick={() =>
-                                        TradePopup.open('trade', {
-                                            title: 'Trade with ' + u.username,
-                                            content: (
-                                                <TradeCardPopup
-                                                    username={u.username}
-                                                    avatarUrl={u.avatarUrl}
-                                                    contacts={u.contacts}
-                                                    user1Wishlist={
-                                                        u.user1Wishlist ?? []
-                                                    }
-                                                    user2Wishlist={
-                                                        u.user2Wishlist ?? []
-                                                    }
-                                                    onNavigateToProfile={
-                                                        closeTradePopup
-                                                    }
-                                                />
-                                            ),
-                                            onClickClose: closeTradePopup
-                                        })
-                                    }
+                                    w="100%"
+                                    justifyContent="center"
                                 >
-                                    <ViableOptions
-                                        key={u.username}
-                                        username={u.username}
-                                        avatarUrl={u.avatarUrl}
-                                        rating={u.rating}
-                                        user1Wishlist={u.user1Wishlist ?? []}
-                                        distance={u.distance}
-                                        ratingCount={u.ratingCount}
-                                    />
-                                </Box>
+                                    <Box
+                                        cursor="pointer"
+                                        onClick={() =>
+                                            TradePopup.open('trade', {
+                                                title:
+                                                    'Trade with ' + u.username,
+                                                content: (
+                                                    <TradeCardPopup
+                                                        username={u.username}
+                                                        avatarUrl={u.avatarUrl}
+                                                        contacts={u.contacts}
+                                                        user1Wishlist={
+                                                            u.user1Wishlist ??
+                                                            []
+                                                        }
+                                                        user2Wishlist={
+                                                            u.user2Wishlist ??
+                                                            []
+                                                        }
+                                                        onNavigateToProfile={
+                                                            closeTradePopup
+                                                        }
+                                                    />
+                                                ),
+                                                onClickClose: closeTradePopup
+                                            })
+                                        }
+                                    >
+                                        <Flex
+                                            minW="40dvw"
+                                            alignItems="center"
+                                            justifyContent="center"
+                                        >
+                                            <ViableOptions
+                                                key={u.username}
+                                                username={u.username}
+                                                avatarUrl={u.avatarUrl}
+                                                rating={u.rating}
+                                                user1Wishlist={
+                                                    u.user1Wishlist ?? []
+                                                }
+                                                distance={u.distance}
+                                                ratingCount={u.ratingCount}
+                                            />
+                                        </Flex>
+                                    </Box>
+                                </Flex>
                             ))
                         })()}
                         <TradePopup.Viewport />

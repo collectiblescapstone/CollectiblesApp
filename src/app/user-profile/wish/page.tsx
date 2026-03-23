@@ -17,6 +17,7 @@ import { useSearchParams } from 'next/navigation'
 import { UserProfile } from '@/types/personal-profile'
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller'
 import { useHeader } from '@/context/HeaderProvider'
+import { profilePictures } from '@/app/personal-profile/edit-profile/constants'
 
 const WishScreen: React.FC = () => {
     const searchParams = useSearchParams()
@@ -92,13 +93,18 @@ const WishScreen: React.FC = () => {
             <Flex flexDirection="column" gap={6} mt={4}>
                 <Flex
                     flexDirection="row"
-                    justifyContent="center"
+                    justifyContent="flex-start"
                     alignItems="center"
-                    px={4}
                     gap={4}
                 >
-                    <Avatar.Root boxSize="75px" shape="rounded">
-                        <Avatar.Image src="/user-profile/pfp_temp.jpg" />
+                    <Avatar.Root boxSize="100px" p={2} background="white">
+                        <Avatar.Image
+                            objectFit="contain"
+                            src={
+                                profilePictures[user.profile_pic]?.path ??
+                                profilePictures[0].path
+                            }
+                        />
                     </Avatar.Root>
                     <Flex
                         flexDirection="column"
@@ -125,15 +131,20 @@ const WishScreen: React.FC = () => {
                     </Flex>
                 </Flex>
                 <Flex justifyContent="center" alignItems="center" mt={-4}>
-                    <Box height="2px" width="90%" bg="gray.600" mt={5} />
+                    <Box height="3px" width="97%" bg="black" mt={5} />
                 </Flex>
-                <SimpleGrid columns={{ base: 3 }} w="100%" gap={10} px={6}>
+                <SimpleGrid
+                    columns={{ base: 3 }}
+                    w="100%"
+                    gap={{ base: 10, lg: 14 }}
+                    px={3}
+                >
                     {cards.map((card: PokemonCardImage, index: number) => (
                         <Flex key={index}>
                             <Image
                                 src={`${card.image}`}
                                 alt={card.name}
-                                w="105px"
+                                w="100%"
                                 h="auto"
                                 borderRadius="none"
                             />

@@ -26,47 +26,6 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
         }
         router.push(`/user-profile/trade?username=${username}`)
     }
-
-    if (tradelist.length === 0) {
-        return (
-            <Flex
-                flexDirection="column"
-                gap={2}
-                justifyContent="flex-start"
-                alignItems="flex-start"
-                w="100%"
-                px={4}
-            >
-                <Divider />
-                <Flex mt={1}>
-                    <Text
-                        fontSize="md"
-                        color="gray.900"
-                        fontWeight="semibold"
-                        mb={2}
-                    >
-                        Trade List
-                    </Text>
-                </Flex>
-                <Flex
-                    w="100%"
-                    justifyContent="center"
-                    alignItems="center"
-                    py={3}
-                >
-                    <Text
-                        fontSize="md"
-                        color="gray.600"
-                        fontWeight="semibold"
-                        mb={2}
-                    >
-                        User has not added any cards...yet
-                    </Text>
-                </Flex>
-            </Flex>
-        )
-    }
-
     return (
         <Flex
             flexDirection="column"
@@ -79,7 +38,7 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
             <Divider />
             <Flex mt={1}>
                 <Text
-                    fontSize="md"
+                    fontSize={{ base: 'md', lg: 'lg' }}
                     color="gray.900"
                     fontWeight="semibold"
                     mb={2}
@@ -87,32 +46,54 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
                     Trade List
                 </Text>
             </Flex>
-            <SimpleGrid columns={{ base: 3 }} w="100%" gap={10}>
-                {display.map((item, index: number) => (
-                    <Flex key={index}>
-                        <Image
-                            src={`${item.image}`}
-                            alt={item.name}
-                            w="105px"
-                            h="auto"
-                            borderRadius="none"
-                        />
-                    </Flex>
-                ))}
-            </SimpleGrid>
-            <Flex mt={3}>
-                {viewmore && (
+            {tradelist.length === 0 ? (
+                <Flex
+                    w="100%"
+                    justifyContent="center"
+                    alignItems="center"
+                    py={3}
+                >
+                    <Text
+                        fontSize={{ base: 'md', lg: 'lg' }}
+                        color="gray.600"
+                        fontWeight="semibold"
+                        mb={2}
+                    >
+                        User has not added any cards...yet
+                    </Text>
+                </Flex>
+            ) : (
+                <SimpleGrid
+                    columns={{ base: 3 }}
+                    w="100%"
+                    gap={{ base: 10, lg: 14 }}
+                >
+                    {display.map((item, index: number) => (
+                        <Flex key={index}>
+                            <Image
+                                src={`${item.image}`}
+                                alt={item.name}
+                                w="100%"
+                                h="auto"
+                                borderRadius="none"
+                            />
+                        </Flex>
+                    ))}
+                </SimpleGrid>
+            )}
+            {viewmore && (
+                <Flex mt={5} justifyContent="center" w="100%">
                     <Button
                         variant="solid"
                         bg="brand.turtoise"
                         color="white"
-                        size="sm"
+                        size={{ base: 'sm', lg: 'md' }}
                         onClick={press}
                     >
                         <FiPlus /> View more
                     </Button>
-                )}
-            </Flex>
+                </Flex>
+            )}
         </Flex>
     )
 }

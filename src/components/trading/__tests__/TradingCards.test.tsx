@@ -15,27 +15,25 @@ describe('TradingCards', () => {
         expect(screen.queryByRole('img')).not.toBeInTheDocument()
     })
 
-    it.each([
-        { count: 1, expectedWidth: '100px' },
-        { count: 2, expectedWidth: '100px' },
-        { count: 3, expectedWidth: '80px' },
-        { count: 4, expectedWidth: '60px' },
-        { count: 5, expectedWidth: '40px' }
-    ])('applies correct width for $count cards', ({ count, expectedWidth }) => {
-        const cards = Array.from({ length: count }, (_, index) => ({
-            name: `Card ${index + 1}`,
-            image: `card${index + 1}.png`
-        }))
+    it.each([1, 2, 3, 4, 5])(
+        'renders %i cards with full-width image style',
+        (count) => {
+            const cards = Array.from({ length: count }, (_, index) => ({
+                name: `Card ${index + 1}`,
+                image: `card${index + 1}.png`
+            }))
 
-        renderWithTheme(<TradingCards cards={cards} />)
+            renderWithTheme(<TradingCards cards={cards} />)
 
-        const images = screen.getAllByRole('img')
-        expect(images).toHaveLength(count)
+            const images = screen.getAllByRole('img')
+            expect(images).toHaveLength(count)
 
-        images.forEach((image) => {
-            expect(image).toHaveStyle(`width: ${expectedWidth}`)
-        })
-    })
+            images.forEach((image) => {
+                expect(image).toHaveStyle('width: 100%')
+                expect(image).toHaveStyle('max-width: 100%')
+            })
+        }
+    )
 
     it('renders correctly with multiple cards', () => {
         const mockCards = [

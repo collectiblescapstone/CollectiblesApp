@@ -15,7 +15,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 // Chakra UI
-import { Button, Heading, Text, Tabs, HStack, VStack, Spinner } from '@chakra-ui/react'
+import {
+    Button,
+    Heading,
+    Text,
+    Tabs,
+    HStack,
+    VStack,
+    Spinner
+} from '@chakra-ui/react'
 
 // Child Components
 import { Logo } from '@/components/logo/Logo'
@@ -209,7 +217,6 @@ const Landing: React.FC = () => {
         }
     ]
 
-    return (
     useEffect(() => {
         if (session) {
             replace('/home')

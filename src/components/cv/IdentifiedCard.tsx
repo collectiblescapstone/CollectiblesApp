@@ -16,6 +16,7 @@ interface IdentifiedCardProps {
     session: Session | null
     instantAdded?: boolean
     onInstantAdd?: () => void
+    onInstantAddSuccess?: () => void
 }
 
 export const IdentifiedCard = ({
@@ -23,7 +24,8 @@ export const IdentifiedCard = ({
     imageURL,
     session,
     instantAdded = false,
-    onInstantAdd = () => {}
+    onInstantAdd = () => {},
+    onInstantAddSuccess = () => {}
 }: IdentifiedCardProps) => {
     const instantAdd = async (card: CardData) => {
         instantAdded = true
@@ -56,10 +58,13 @@ export const IdentifiedCard = ({
                 return
             }
 
-            alert('Card saved to your collection')
+            onInstantAddSuccess()
         } catch (err) {
             console.error('Unexpected error saving card', err)
-            alert('Unexpected error saving card')
+            alert(
+                'Unexpected error saving card: ' +
+                    (err instanceof Error ? err.message : String(err))
+            )
         }
     }
 

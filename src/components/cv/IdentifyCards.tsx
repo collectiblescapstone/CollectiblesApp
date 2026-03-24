@@ -30,6 +30,9 @@ export const IdentifyCards = ({
 
     const [predictedCards, setPredictedCards] = useState<PredictedCards>()
     const [instantAddedCards, setInstantAddedCards] = useState<string[]>([]) // list of ids that have been instant added
+    const [instantAddSuccessId, setInstantAddSuccessId] = useState<
+        string | null
+    >(null)
 
     const { session } = useAuth()
 
@@ -38,6 +41,13 @@ export const IdentifyCards = ({
         Capacitor.getPlatform() === 'ios' ||
         (typeof navigator !== 'undefined' &&
             /iPad|iPhone|iPod/.test(navigator.userAgent))
+
+    const instantAddSuccessPopup = (cardId: string) => {
+        setInstantAddSuccessId(cardId)
+        setTimeout(() => {
+            setInstantAddSuccessId(null)
+        }, 700)
+    }
 
     useEffect(() => {
         // called when new image data is made available by parent, runs the whole identification pipeline and updates state with results
@@ -72,7 +82,10 @@ export const IdentifyCards = ({
                 if (response.status === 200) {
                     const predictedCards: PredictedCards =
                         response.data.predictedCards
-                    setPredictedCards(predictedCards)
+
+                    if (predictedCards.length > 0) {
+                        setPredictedCards(predictedCards)
+                    }
                 } else {
                     console.error(
                         'Failed to identify cards on server:',
@@ -105,16 +118,20 @@ export const IdentifyCards = ({
                 const similar: PredictedCards = []
                 for (const card of res?.results ?? []) {
                     // find most similar card
-                    const similarCards = classifier(cv.current!, card.image)
-                    if (similarCards.length > 0) {
-                        // update list of identified cards with closest result
-                        similar.push({
-                            data: similarCards[0],
-                            imageURL: similarCards[0].card.image + '/low.jpg'
-                        })
+                    const mostSimilarCard = classifier(cv.current!, card.image)
+                    if (!mostSimilarCard) {
+                        continue
                     }
+                    // update list of identified cards with closest result
+                    similar.push({
+                        data: mostSimilarCard,
+                        imageURL: mostSimilarCard.card.image + '/low.jpg'
+                    })
                 }
-                setPredictedCards(similar)
+
+                if (similar.length > 0) {
+                    setPredictedCards(similar)
+                }
 
                 // cleanup
                 for (const r of res?.results ?? []) {
@@ -164,6 +181,11 @@ export const IdentifyCards = ({
                                                 card.data.card.id
                                             ])
                                         }}
+                                        onInstantAddSuccess={() => {
+                                            instantAddSuccessPopup(
+                                                card.data.card.id
+                                            )
+                                        }}
                                     ></IdentifiedCard>
                                 ))
                             ) : (
@@ -174,6 +196,21 @@ export const IdentifyCards = ({
                 </ScrollArea.Viewport>
                 <ScrollArea.Scrollbar />
             </ScrollArea.Root>
+            {instantAddSuccessId && (
+                <Box
+                    position="absolute"
+                    top="10%"
+                    left="50%"
+                    transform="translateX(-50%)"
+                    backgroundColor="green.500"
+                    color="white"
+                    padding="1em 2em"
+                    borderRadius="8px"
+                    zIndex={1000}
+                >
+                    Added {instantAddSuccessId} to collection!
+                </Box>
+            )}
         </Box>
     )
 }

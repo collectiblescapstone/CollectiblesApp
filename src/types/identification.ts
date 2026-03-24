@@ -3,7 +3,7 @@ import cvReadyPromise from '@techstark/opencv-js'
 
 export type CardData = {
     hash: string
-    hashBits: string
+    hashBytes: Uint8Array
     card: PokemonCard
 }
 

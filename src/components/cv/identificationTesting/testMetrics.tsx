@@ -95,7 +95,7 @@ export const TestMetrics = () => {
                 const startTime = performance.now()
 
                 // identify card in image
-                const result: PredictedImageResult | undefined =
+                const result: PredictedImageResult | string =
                     await IdentifyCardInImage(imgSrc, rotation.NONE)
 
                 // end timing
@@ -104,7 +104,7 @@ export const TestMetrics = () => {
                 setSpeeds((prevSpeeds) => [...prevSpeeds, duration])
 
                 // update with results
-                if (result && result.predictedCard) {
+                if (typeof result !== 'string' && result.predictedCard) {
                     updateCardId(id, result.predictedCard.card.id)
 
                     // draw identified card image to canvas, and update foundCard

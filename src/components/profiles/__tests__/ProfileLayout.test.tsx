@@ -536,7 +536,7 @@ describe('ProfileLayout', () => {
     describe('TradeList Component Props', () => {
         it('passes correct type and username to TradeList', () => {
             const mockUser = createMockUser()
-            renderWithTheme(<ProfileLayout user={mockUser} />)
+            renderWithTheme(<ProfileLayout user={mockUser} type="personal" />)
 
             expect(screen.getByTestId('tradelist-type')).toHaveTextContent(
                 'personal'
@@ -579,7 +579,7 @@ describe('ProfileLayout', () => {
     describe('WishList Component Props', () => {
         it('passes correct type and username to WishList', () => {
             const mockUser = createMockUser()
-            renderWithTheme(<ProfileLayout user={mockUser} />)
+            renderWithTheme(<ProfileLayout user={mockUser} type="personal" />)
 
             expect(screen.getByTestId('wishlist-type')).toHaveTextContent(
                 'personal'

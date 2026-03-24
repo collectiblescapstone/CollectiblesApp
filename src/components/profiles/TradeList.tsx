@@ -9,11 +9,10 @@ import { PokemonCardImage } from '@/types/personal-profile'
 
 interface TradeListProps {
     type?: 'personal' | 'user'
-    username: string
     tradelist: PokemonCardImage[]
 }
 
-const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
+const TradeList: React.FC<TradeListProps> = ({ type, tradelist }) => {
     const router = useRouter()
 
     const display = tradelist.slice(0, 3)
@@ -24,7 +23,7 @@ const TradeList: React.FC<TradeListProps> = ({ type, username, tradelist }) => {
             router.push('/personal-profile/trade')
             return
         }
-        router.push(`/user-profile/trade?username=${username}`)
+        router.push('/user-profile/trade')
     }
     return (
         <Flex

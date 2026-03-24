@@ -107,8 +107,6 @@ describe('WishList', () => {
         const viewMoreButton = screen.getByRole('button', { name: 'View more' })
         fireEvent.click(viewMoreButton)
 
-        expect(mockPush).toHaveBeenCalledWith(
-            '/user-profile/wish?username=testuser'
-        )
+        expect(mockPush).toHaveBeenCalledWith('/user-profile/wish')
     })
 })

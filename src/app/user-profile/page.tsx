@@ -81,6 +81,7 @@ const ProfileScreen = () => {
             user={user}
             leftInteractible={<AccountOptions user={user} />}
             rightInteractible={rightButtonInteractible}
+            type="user"
         />
     )
 }

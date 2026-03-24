@@ -3,6 +3,7 @@ import { screen, waitFor } from '@testing-library/react'
 
 import WishScreen from '../page'
 import { useHeader } from '@/context/HeaderProvider'
+import { useProfileSelected } from '@/context/ProfileSelectionProvider'
 import { renderWithTheme } from '@/utils/testing-utils'
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller'
 import { UserProfile, VisibilityValues } from '@/types/personal-profile'
@@ -12,19 +13,17 @@ jest.mock('../../../../context/HeaderProvider.tsx', () => ({
     useHeader: jest.fn()
 }))
 
+jest.mock('../../../../context/ProfileSelectionProvider.tsx', () => ({
+    __esModule: true,
+    useProfileSelected: jest.fn()
+}))
+
 jest.mock('../../../../utils/profiles/userNameProfilePuller', () => ({
     fetchUserProfile: jest.fn()
 }))
 
-const mockSearchParams = new Map<string, string>()
-
-jest.mock('next/navigation', () => ({
-    useSearchParams: () => ({
-        get: (key: string) => mockSearchParams.get(key) ?? null
-    })
-}))
-
 const mockedUseHeader = jest.mocked(useHeader)
+const mockedUseProfileSelected = jest.mocked(useProfileSelected)
 const mockedFetchUserProfile = jest.mocked(fetchUserProfile)
 
 const createMockUser = (overrides: Partial<UserProfile> = {}): UserProfile => ({
@@ -57,7 +56,6 @@ const mockSetProfileID = jest.fn()
 describe('WishScreen', () => {
     beforeEach(() => {
         jest.clearAllMocks()
-        mockSearchParams.clear()
         mockedUseHeader.mockReturnValue({
             profileId: 'Kollec',
             setProfileID: mockSetProfileID
@@ -65,7 +63,10 @@ describe('WishScreen', () => {
     })
 
     it('renders loading spinner initially', () => {
-        mockSearchParams.set('username', 'testuser')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockImplementation(() => new Promise(() => {}))
 
         renderWithTheme(<WishScreen />)
@@ -75,7 +76,12 @@ describe('WishScreen', () => {
         expect(screen.getByText('Loading...')).toBeInTheDocument()
     })
 
-    it('renders error when username search param is missing', async () => {
+    it('renders error when profileSelected is missing', async () => {
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: '',
+            setProfileSelected: jest.fn()
+        })
+
         renderWithTheme(<WishScreen />)
 
         await waitFor(() => {
@@ -84,7 +90,10 @@ describe('WishScreen', () => {
     })
 
     it('renders error when fetchUserProfile fails', async () => {
-        mockSearchParams.set('username', 'testuser')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockRejectedValue(new Error('Network error'))
 
         renderWithTheme(<WishScreen />)
@@ -97,7 +106,10 @@ describe('WishScreen', () => {
     })
 
     it('renders error when fetchUserProfile returns null (causes error accessing username)', async () => {
-        mockSearchParams.set('username', 'testuser')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(null as unknown as UserProfile)
 
         renderWithTheme(<WishScreen />)
@@ -130,7 +142,10 @@ describe('WishScreen', () => {
                 }
             ]
         })
-        mockSearchParams.set('username', 'testuser')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<WishScreen />)
@@ -148,7 +163,10 @@ describe('WishScreen', () => {
             lastName: null,
             username: 'cardcollector'
         })
-        mockSearchParams.set('username', 'cardcollector')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'cardcollector',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<WishScreen />)
@@ -169,7 +187,10 @@ describe('WishScreen', () => {
                 }
             ]
         })
-        mockSearchParams.set('username', 'testuser')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<WishScreen />)
@@ -183,7 +204,10 @@ describe('WishScreen', () => {
 
     it('calls setProfileID with username when user is loaded', async () => {
         const mockUser = createMockUser({ username: 'wishuser' })
-        mockSearchParams.set('username', 'wishuser')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'wishuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<WishScreen />)
@@ -195,7 +219,10 @@ describe('WishScreen', () => {
 
     it('renders empty wish list correctly', async () => {
         const mockUser = createMockUser({ wishlist: [] })
-        mockSearchParams.set('username', 'testuser')
+        mockedUseProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<WishScreen />)

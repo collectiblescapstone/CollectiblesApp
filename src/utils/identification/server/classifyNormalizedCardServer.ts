@@ -74,7 +74,7 @@ export const CardClassifierServer = async (): Promise<
      * Reference: https://github.com/JohannesBuchner/imagehash/blob/4e289ebe056b961aa19fb1b50f5bdc66c87e0d55/imagehash/__init__.py#L304
      */
     const dhash = (cv: CV, image: Mat, hashSize = 16): string => {
-        // Convert image to a greyscale (hashSize + 1) x (hashSize) image
+        // Resize image to a (hashSize + 1) x (hashSize) image; the hash is computed from the first channel of the resized pixels
         const resizedImage = new cv.Mat()
         const dsize = new cv.Size(hashSize + 1, hashSize)
         cv.resize(image, resizedImage, dsize, 0, 0, cv.INTER_AREA)

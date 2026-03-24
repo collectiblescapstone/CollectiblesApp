@@ -12,12 +12,14 @@ interface ProfileLayoutProps {
     user: UserProfile
     leftInteractible?: React.ReactNode
     rightInteractible?: React.ReactNode
+    type?: 'personal' | 'user'
 }
 
 const ProfileLayout = ({
     user,
     leftInteractible,
-    rightInteractible
+    rightInteractible,
+    type = 'personal'
 }: ProfileLayoutProps) => (
     <Box bg="white" minH="100vh" minWidth="40dvw" color="black" mb={4}>
         <Box
@@ -103,16 +105,14 @@ const ProfileLayout = ({
             }))}
         />
         <TradeList
-            type={'personal'}
-            username={''}
+            type={type}
             tradelist={user.tradeList.map((item) => ({
                 name: item.card.name,
                 image: item.card.image_url
             }))}
         />
         <WishList
-            type={'personal'}
-            username={''}
+            type={type}
             wishlist={user.wishlist.map((item) => ({
                 name: item.card.name,
                 image: item.card.image_url

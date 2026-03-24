@@ -103,6 +103,7 @@ const PersonalProfileScreen: React.FC = () => {
             user={user}
             leftInteractible={leftButtonInteractible}
             rightInteractible={rightButtonInteractible}
+            type="personal"
         />
     )
 }

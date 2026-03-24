@@ -75,7 +75,7 @@ export const CardClassifier = async (): Promise<
      * Reference: https://github.com/JohannesBuchner/imagehash/blob/4e289ebe056b961aa19fb1b50f5bdc66c87e0d55/imagehash/__init__.py#L304
      */
     const dhash = (cv: CV, image: Mat, hashSize = 16): string => {
-        // Convert image to a greyscale (hashSize + 1) x (hashSize) image
+        // resize image to (hashSize + 1) x (hashSize) image
         const resizedImage = new cv.Mat()
         const dsize = new cv.Size(hashSize + 1, hashSize)
         cv.resize(image, resizedImage, dsize, 0, 0, cv.INTER_AREA)
@@ -95,7 +95,7 @@ export const CardClassifier = async (): Promise<
     }
 
     /**
-     * Given a card image, returns the (k) most similar card(s)
+     * Given a card image, returns the most similar card
      */
     const getSimilarCards = (
         cv: CV,

@@ -94,7 +94,7 @@ export const CardClassifierServer = async (): Promise<
     }
 
     /**
-     * Given a card image, returns the (k) most similar card(s)
+     * Given a card image, returns the most similar card
      */
     const getSimilarCards = (
         cv: CV,

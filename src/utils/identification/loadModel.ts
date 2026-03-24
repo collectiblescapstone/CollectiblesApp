@@ -42,7 +42,7 @@ export const loadModel = async (
         }
         dummyInput.dispose()
     } catch (err) {
-        console.log(
+        console.error(
             'failed creating webgpu session, falling back to wasm. error:',
             err
         )

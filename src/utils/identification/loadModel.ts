@@ -24,6 +24,7 @@ export const loadModel = async (
     }
 
     env.wasm.simd = true
+    env.wasm.numThreads = navigator.hardwareConcurrency || 1
 
     // create model session
     try {
@@ -42,6 +43,11 @@ export const loadModel = async (
         }
         dummyInput.dispose()
     } catch (err) {
+        console.log(
+            'failed creating webgpu session, falling back to wasm. error:',
+            err
+        )
+
         try {
             const settings2: InferenceSession.SessionOptions = {
                 executionProviders: ['wasm'],

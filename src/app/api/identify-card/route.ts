@@ -66,14 +66,15 @@ export const POST = async (request: Request) => {
         const similar: PredictedCards = []
         for (const card of res?.results ?? []) {
             // find most similar card
-            const similarCards = classifier(cv, card.image)
-            if (similarCards.length > 0) {
-                // update list of identified cards with closest result
-                similar.push({
-                    data: similarCards[0],
-                    imageURL: similarCards[0].card.image + '/low.jpg'
-                })
+            const mostSimilarCard = classifier(cv, card.image)
+            if (!mostSimilarCard) {
+                continue
             }
+            // update list of identified cards with closest result
+            similar.push({
+                data: mostSimilarCard,
+                imageURL: mostSimilarCard.card.image + '/low.jpg'
+            })
         }
 
         // cleanup

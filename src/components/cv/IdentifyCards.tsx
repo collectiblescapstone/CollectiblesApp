@@ -101,7 +101,6 @@ export const IdentifyCards = ({
                     const cvInstance = await cvReadyPromise
                     cv.current = cvInstance
                 }
-
                 const res = await locateWithYOLO(imageData, cv.current!, false)
 
                 // display overlay of detected cards in parent component

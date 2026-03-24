@@ -115,7 +115,7 @@ describe('IdentifyCardInImage', () => {
         })
 
         const predicted = { card: { id: 'sv1-1' } }
-        mockClassifier.mockReturnValue([predicted])
+        mockClassifier.mockReturnValue(predicted)
 
         const result = await IdentifyCardInImage('https://img')
 

@@ -7,7 +7,7 @@ import fs from 'fs/promises'
 let cardDataCacheServer: CardDataObj | null = null
 
 export const CardClassifierServer = async (): Promise<
-    (cv: CV, image: Mat, k?: number) => CardData | null
+    (cv: CV, image: Mat, hashThreshold?: number) => CardData | null
 > => {
     // Precompute the population count for all 8-bit numbers to speed up distance calculation
     const popCount8 = new Uint8Array(256)
@@ -25,7 +25,7 @@ export const CardClassifierServer = async (): Promise<
      * Converts hexadecimal string to byte array
      */
     const hexToBytes = (hex: string): Uint8Array => {
-        let len = hex.length >> 1
+        const len = hex.length >> 1
         const bytes = new Uint8Array(len)
         for (let i = 0; i < len; i++) {
             bytes[i] = parseInt(hex.substring(i * 2, i * 2 + 2), 16)
@@ -101,7 +101,7 @@ export const CardClassifierServer = async (): Promise<
         image: Mat,
         hashThreshold: number = 0.33
     ) => {
-        image.convertTo(image, cv.CV_8U)
+        image.convertTo(image, cv.CV_8UC3)
         const channels = new cv.MatVector()
         cv.split(image, channels)
         const imageR = channels.get(0)
@@ -122,7 +122,7 @@ export const CardClassifierServer = async (): Promise<
 
         for (const id in cardData) {
             let dist = 0
-            let cardBytes = cardData[id].hashBytes
+            const cardBytes = cardData[id].hashBytes
             for (let i = 0; i < dHashBytes.length; i++) {
                 dist += popCount8[dHashBytes[i] ^ cardBytes[i]]
             }

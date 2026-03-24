@@ -8,15 +8,15 @@ import { locateWithYOLO } from './locateWithYOLO'
  * DELETE foundCardImage after use to free up memory
  *
  * Identifies the card in the image at the given src URL
- * returns undefined if no card found, otherwise returns ProcessedImageResult
+ * returns "NoCard" if no card found, "CantClassify" if card found but cannot be classified, otherwise returns ProcessedImageResult
  *
  * @param src - URL of the image to identify the card in
- * @returns ProcessedImageResult | undefined
+ * @returns ProcessedImageResult | string
  */
 export const IdentifyCardInImage = async (
     src: string,
     rot: rotation = rotation.NONE
-): Promise<PredictedImageResult | undefined> => {
+): Promise<PredictedImageResult | string> => {
     if (!rot) console.log('fuck the linter bro')
 
     const cv = await cvReadyPromise
@@ -42,12 +42,12 @@ export const IdentifyCardInImage = async (
     const first = result?.results[0]
 
     if (!first || !first.image) {
-        return undefined
+        return 'NoCard'
     }
 
     const classifier = await CardClassifier()
 
-    const similarCards = classifier(cv, first.image)
+    const mostSimilarCard = classifier(cv, first.image)
 
     // cleanup
     for (const r of result?.results ?? []) {
@@ -56,8 +56,12 @@ export const IdentifyCardInImage = async (
         }
     }
 
+    if (!mostSimilarCard) {
+        return 'CantClassify'
+    }
+
     const ret: PredictedImageResult = {
-        predictedCard: similarCards[0],
+        predictedCard: mostSimilarCard,
         foundCardImage: first?.image,
         corners: first?.corners
     }

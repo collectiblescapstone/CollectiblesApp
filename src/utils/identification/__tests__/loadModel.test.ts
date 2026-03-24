@@ -56,12 +56,14 @@ describe('loadModel', () => {
         expect(createMock).toHaveBeenCalledWith(
             '/models/yolo.onnx',
             expect.objectContaining({
-                executionProviders: ['wasm'],
-                graphOptimizationLevel: 'all'
+                executionProviders: ['webgpu'],
+                graphOptimizationLevel: 'all',
+                enableCpuMemArena: true,
+                enableMemPattern: true
             })
         )
 
-        expect(rt.env.wasm.simd).toBe(false)
+        expect(rt.env.wasm.simd).toBe(true)
         expect(run).toHaveBeenCalledTimes(1)
         expect(run.mock.calls[0][0]).toHaveProperty('images')
         expect(disposeA).toHaveBeenCalledTimes(1)

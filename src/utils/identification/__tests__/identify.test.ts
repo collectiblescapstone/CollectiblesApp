@@ -87,12 +87,12 @@ describe('IdentifyCardInImage', () => {
         document.createElement = originalCreateElement
     })
 
-    it('returns undefined when no card image is detected', async () => {
+    it('returns "NoCard" when no card image is detected', async () => {
         mockLocateWithYOLO.mockResolvedValue({ results: [] })
 
         const result = await IdentifyCardInImage('https://img')
 
-        expect(result).toBeUndefined()
+        expect(result).toBe('NoCard')
         expect(mockCardClassifierFactory).not.toHaveBeenCalled()
     })
 
@@ -115,7 +115,7 @@ describe('IdentifyCardInImage', () => {
         })
 
         const predicted = { card: { id: 'sv1-1' } }
-        mockClassifier.mockReturnValue([predicted])
+        mockClassifier.mockReturnValue(predicted)
 
         const result = await IdentifyCardInImage('https://img')
 

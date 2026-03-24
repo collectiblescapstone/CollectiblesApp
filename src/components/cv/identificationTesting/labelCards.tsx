@@ -206,9 +206,9 @@ export const LabelCards = () => {
                 await drawImageToCanvas(imgSrc, id)
 
                 // identify card in image
-                const result: PredictedImageResult | undefined =
+                const result: PredictedImageResult | string =
                     await IdentifyCardInImage(imgSrc, rot)
-                if (result && result.predictedCard) {
+                if (typeof result !== 'string' && result.predictedCard) {
                     // set id
                     if (isBackImage) {
                         updateCardId(id, 'back')

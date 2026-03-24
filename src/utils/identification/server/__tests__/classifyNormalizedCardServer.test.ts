@@ -16,8 +16,23 @@ describe('CardClassifierServer', () => {
         class MockMat {
             __matrix: number[][] = []
             delete = jest.fn()
+            convertTo = jest.fn((dst: MockMat) => {
+                dst.__matrix = this.__matrix
+                return dst
+            })
             ucharPtr(row: number, col: number) {
                 return [this.__matrix[row][col]]
+            }
+        }
+
+        class MockMatVector {
+            private mats: MockMat[] = []
+            delete = jest.fn()
+            setMats(mats: MockMat[]) {
+                this.mats = mats
+            }
+            get(index: number) {
+                return this.mats[index]
             }
         }
 
@@ -32,11 +47,18 @@ describe('CardClassifierServer', () => {
 
         return {
             Mat: MockMat,
+            MatVector: MockMatVector,
             Size: MockSize,
-            COLOR_RGB2GRAY: 1,
             INTER_AREA: 2,
-            cvtColor: jest.fn((src: { __matrix: number[][] }, dst: MockMat) => {
-                dst.__matrix = src.__matrix
+            CV_8UC3: 16,
+            split: jest.fn((src: MockMat, channels: MockMatVector) => {
+                const r = new MockMat()
+                const g = new MockMat()
+                const b = new MockMat()
+                r.__matrix = src.__matrix
+                g.__matrix = src.__matrix
+                b.__matrix = src.__matrix
+                channels.setMats([r, g, b])
             }),
             resize: jest.fn((src: MockMat, dst: MockMat) => {
                 dst.__matrix = src.__matrix
@@ -52,16 +74,16 @@ describe('CardClassifierServer', () => {
         return matrix
     }
 
-    it('computes hash distances and respects k', async () => {
+    it('computes hash distances', async () => {
         const readFileMock = jest.fn().mockResolvedValue(
             JSON.stringify({
                 best: {
-                    hash: 'f'.repeat(64),
+                    hash: 'f'.repeat(64 * 3),
                     hashBits: '',
                     card: { id: 'best' }
                 },
                 worst: {
-                    hash: '0'.repeat(64),
+                    hash: '0'.repeat(64 * 3),
                     hashBits: '',
                     card: { id: 'worst' }
                 }
@@ -77,21 +99,31 @@ describe('CardClassifierServer', () => {
         const classify = await CardClassifierServer()
 
         const cv = createCV()
-        const image = { __matrix: makeIncreasingMatrix() }
+        const image = new cv.Mat()
+        image.__matrix = makeIncreasingMatrix()
 
-        expect(
-            classify(cv as any, image as any, 1).map((c) => c.card.id)
-        ).toEqual(['best'])
-        expect(classify(cv as any, image as any).map((c) => c.card.id)).toEqual(
-            ['best', 'worst']
-        )
+        const result = classify(cv as any, image as any)
+
+        expect(result?.card.id).toEqual('best')
+        expect(image.convertTo).toHaveBeenCalledWith(image, cv.CV_8UC3)
+        expect(cv.split).toHaveBeenCalled()
+        expect(cv.resize).toHaveBeenCalled()
+
+        const channels = (cv.split as jest.Mock).mock.calls[0][1] as {
+            get: (index: number) => { delete: jest.Mock }
+            delete: jest.Mock
+        }
+        expect(channels.get(0).delete).toHaveBeenCalledTimes(1)
+        expect(channels.get(1).delete).toHaveBeenCalledTimes(1)
+        expect(channels.get(2).delete).toHaveBeenCalledTimes(1)
+        expect(channels.delete).toHaveBeenCalledTimes(1)
     })
 
     it('reuses cache and avoids duplicate file reads', async () => {
         const readFileMock = jest.fn().mockResolvedValue(
             JSON.stringify({
                 only: {
-                    hash: 'f'.repeat(64),
+                    hash: 'f'.repeat(64 * 3),
                     hashBits: '',
                     card: { id: 'only' }
                 }

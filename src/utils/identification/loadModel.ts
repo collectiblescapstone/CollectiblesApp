@@ -24,7 +24,6 @@ export const loadModel = async (
     }
 
     env.wasm.simd = true
-    env.wasm.numThreads = navigator.hardwareConcurrency || 1
 
     // create model session
     try {

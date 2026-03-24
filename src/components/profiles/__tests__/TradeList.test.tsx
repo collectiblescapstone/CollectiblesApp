@@ -107,8 +107,6 @@ describe('TradeList', () => {
         const viewMoreButton = screen.getByRole('button', { name: 'View more' })
         fireEvent.click(viewMoreButton)
 
-        expect(mockPush).toHaveBeenCalledWith(
-            '/user-profile/trade?username=testuser'
-        )
+        expect(mockPush).toHaveBeenCalledWith('/user-profile/trade')
     })
 })

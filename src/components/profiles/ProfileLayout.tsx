@@ -12,14 +12,14 @@ interface ProfileLayoutProps {
     user: UserProfile
     leftInteractible?: React.ReactNode
     rightInteractible?: React.ReactNode
-    type: 'personal' | 'user'
+    type?: 'personal' | 'user'
 }
 
 const ProfileLayout = ({
     user,
     leftInteractible,
     rightInteractible,
-    type
+    type = 'personal'
 }: ProfileLayoutProps) => (
     <Box bg="white" minH="100vh" minWidth="40dvw" color="black" mb={4}>
         <Box

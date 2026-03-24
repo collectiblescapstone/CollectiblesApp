@@ -6,26 +6,25 @@ import { useHeader } from '@/context/HeaderProvider'
 import { renderWithTheme } from '@/utils/testing-utils'
 import { fetchUserProfile } from '@/utils/profiles/userNameProfilePuller'
 import { UserProfile, VisibilityValues } from '@/types/personal-profile'
+import { useProfileSelected } from '@/context/ProfileSelectionProvider'
 
 jest.mock('../../../../context/HeaderProvider.tsx', () => ({
     __esModule: true,
     useHeader: jest.fn()
 }))
 
+jest.mock('../../../../context/ProfileSelectionProvider.tsx', () => ({
+    __esModule: true,
+    useProfileSelected: jest.fn()
+}))
+
 jest.mock('../../../../utils/profiles/userNameProfilePuller', () => ({
     fetchUserProfile: jest.fn()
 }))
 
-const mockSearchParams = new Map<string, string>()
-
-jest.mock('next/navigation', () => ({
-    useSearchParams: () => ({
-        get: (key: string) => mockSearchParams.get(key) ?? null
-    })
-}))
-
 const mockedUseHeader = jest.mocked(useHeader)
 const mockedFetchUserProfile = jest.mocked(fetchUserProfile)
+const mockedProfileSelected = jest.mocked(useProfileSelected)
 
 const createMockUser = (overrides: Partial<UserProfile> = {}): UserProfile => ({
     id: 'user-1',
@@ -57,7 +56,6 @@ const mockSetProfileID = jest.fn()
 describe('TradeScreen', () => {
     beforeEach(() => {
         jest.clearAllMocks()
-        mockSearchParams.clear()
         mockedUseHeader.mockReturnValue({
             profileId: 'Kollec',
             setProfileID: mockSetProfileID
@@ -65,7 +63,10 @@ describe('TradeScreen', () => {
     })
 
     it('renders loading spinner initially', () => {
-        mockSearchParams.set('username', 'testuser')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockImplementation(() => new Promise(() => {}))
 
         renderWithTheme(<TradeScreen />)
@@ -75,7 +76,11 @@ describe('TradeScreen', () => {
         expect(screen.getByText('Loading...')).toBeInTheDocument()
     })
 
-    it('renders error when username search param is missing', async () => {
+    it('renders error when profileSelected is missing', async () => {
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: '',
+            setProfileSelected: jest.fn()
+        })
         renderWithTheme(<TradeScreen />)
 
         await waitFor(() => {
@@ -84,7 +89,10 @@ describe('TradeScreen', () => {
     })
 
     it('renders error when fetchUserProfile fails', async () => {
-        mockSearchParams.set('username', 'testuser')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockRejectedValue(new Error('Network error'))
 
         renderWithTheme(<TradeScreen />)
@@ -97,7 +105,10 @@ describe('TradeScreen', () => {
     })
 
     it('renders error when fetchUserProfile returns null (causes error accessing username)', async () => {
-        mockSearchParams.set('username', 'testuser')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(null as unknown as UserProfile)
 
         renderWithTheme(<TradeScreen />)
@@ -130,7 +141,10 @@ describe('TradeScreen', () => {
                 }
             ]
         })
-        mockSearchParams.set('username', 'testuser')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<TradeScreen />)
@@ -148,7 +162,10 @@ describe('TradeScreen', () => {
             lastName: null,
             username: 'pokemontrader'
         })
-        mockSearchParams.set('username', 'pokemontrader')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'pokemontrader',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<TradeScreen />)
@@ -169,7 +186,10 @@ describe('TradeScreen', () => {
                 }
             ]
         })
-        mockSearchParams.set('username', 'testuser')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<TradeScreen />)
@@ -183,7 +203,10 @@ describe('TradeScreen', () => {
 
     it('calls setProfileID with username when user is loaded', async () => {
         const mockUser = createMockUser({ username: 'myuser' })
-        mockSearchParams.set('username', 'myuser')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'myuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<TradeScreen />)
@@ -195,7 +218,10 @@ describe('TradeScreen', () => {
 
     it('renders empty trade list correctly', async () => {
         const mockUser = createMockUser({ tradeList: [] })
-        mockSearchParams.set('username', 'testuser')
+        mockedProfileSelected.mockReturnValue({
+            profileSelected: 'testuser',
+            setProfileSelected: jest.fn()
+        })
         mockedFetchUserProfile.mockResolvedValue(mockUser)
 
         renderWithTheme(<TradeScreen />)

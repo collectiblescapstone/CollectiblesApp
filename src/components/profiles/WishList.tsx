@@ -23,7 +23,7 @@ const WishList: React.FC<WishListProps> = ({ type, wishlist }) => {
             router.push('/personal-profile/wish')
             return
         }
-        router.push(`/user-profile/wish`)
+        router.push('/user-profile/wish')
     }
     return (
         <Flex

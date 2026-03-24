@@ -32,6 +32,7 @@ const ProfileListLayout = ({ user, cards, type }: ProfileListLayoutProps) => (
                             profilePictures[user.profile_pic]?.path ??
                             profilePictures[0].path
                         }
+                        alt={user.username}
                     />
                 </Avatar.Root>
                 <Flex

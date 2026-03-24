@@ -23,7 +23,7 @@ const TradeList: React.FC<TradeListProps> = ({ type, tradelist }) => {
             router.push('/personal-profile/trade')
             return
         }
-        router.push(`/user-profile/trade`)
+        router.push('/user-profile/trade')
     }
     return (
         <Flex

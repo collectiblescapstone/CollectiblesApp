@@ -219,6 +219,7 @@ const TradeSuggestions: React.FC = () => {
                         fontWeight="semibold"
                         mb={2}
                         w="80%"
+                        textAlign="center"
                     >
                         Let&apos;s add some more cards to that TradeList and
                         WishList, watcha say?

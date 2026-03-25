@@ -336,12 +336,20 @@ const CameraPage = () => {
                     wrap="wrap"
                 >
                     {!isCameraActive.current && (
-                        <Button onClick={startCamera} bg={'brand.turtoise'}>
+                        <Button
+                            onClick={startCamera}
+                            bg={'brand.turtoise'}
+                            color={'white'}
+                        >
                             Start Camera
                         </Button>
                     )}
                     <Box className="flex justify-center landscape:hidden">
-                        <Button onClick={toggleCamera} bg={'brand.turtoise'}>
+                        <Button
+                            onClick={toggleCamera}
+                            bg={'brand.turtoise'}
+                            color={'white'}
+                        >
                             Switch Camera
                         </Button>
                     </Box>

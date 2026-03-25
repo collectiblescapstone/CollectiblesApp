@@ -3,7 +3,15 @@
 import { IdentifyCards } from '@/components/cv/IdentifyCards'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useAuth } from '@/context/AuthProvider'
-import { Box, Button, Spinner, Heading, Text, VStack } from '@chakra-ui/react'
+import {
+    Box,
+    Button,
+    Spinner,
+    Heading,
+    Text,
+    VStack,
+    Flex
+} from '@chakra-ui/react'
 import TipsPopup from '@/components/ui/PopupUI'
 import { releaseModel } from '@/utils/identification/loadModel'
 
@@ -320,22 +328,43 @@ const CameraPage = () => {
                     }}
                 />
             </Box>
-            {!isCameraActive.current && (
-                <Button onClick={startCamera}>Start Camera</Button>
-            )}
-            <Box className="block flex justify-center landscape:hidden">
-                <Button onClick={toggleCamera}>Switch Camera</Button>
-            </Box>
-            {sourceImageData ? (
-                <IdentifyCards
-                    sourceImageData={sourceImageData}
-                    onProcessed={handleProcessed}
-                    overlayRef={isIOS ? null : overlayCanvas}
-                    inputCanvasForIOS={isIOS ? inputCanvas : undefined}
-                />
-            ) : (
-                <Box>No image captured.</Box>
-            )}
+            <Flex flexDirection="column" alignItems="center" mt={7} gap={7}>
+                <Flex
+                    flexDirection="row"
+                    justifyContent="center"
+                    gap={7}
+                    wrap="wrap"
+                >
+                    {!isCameraActive.current && (
+                        <Button
+                            onClick={startCamera}
+                            bg={'brand.turtoise'}
+                            color={'white'}
+                        >
+                            Start Camera
+                        </Button>
+                    )}
+                    <Box className="flex justify-center landscape:hidden">
+                        <Button
+                            onClick={toggleCamera}
+                            bg={'brand.turtoise'}
+                            color={'white'}
+                        >
+                            Switch Camera
+                        </Button>
+                    </Box>
+                </Flex>
+                {sourceImageData ? (
+                    <IdentifyCards
+                        sourceImageData={sourceImageData}
+                        onProcessed={handleProcessed}
+                        overlayRef={isIOS ? null : overlayCanvas}
+                        inputCanvasForIOS={isIOS ? inputCanvas : undefined}
+                    />
+                ) : (
+                    <Box>No image captured.</Box>
+                )}
+            </Flex>
             <TipsPopup.Viewport />
         </Box>
     )

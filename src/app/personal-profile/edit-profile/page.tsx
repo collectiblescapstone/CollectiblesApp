@@ -660,7 +660,12 @@ const PersonalProfileScreen: React.FC = () => {
                 mt={3}
                 mb={7}
             >
-                <Box height="3px" width="91%" bg="gray.500" mt={5} />
+                <Box
+                    height="3px"
+                    width={{ base: '91%', lg: '95%' }}
+                    bg="black"
+                    mt={5}
+                />
             </Flex>
             <Flex flexDirection="column" alignItems="flex-start" gap={2} px={5}>
                 <Text fontSize="md" color="red.500" fontWeight="bold" mb={2}>

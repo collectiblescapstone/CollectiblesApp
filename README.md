@@ -66,7 +66,7 @@ Using Next.js and Capacitor, Kollec can seamlessly run in your browser and as a 
 
 Kollect has already been deployed online and the complete version is available for use at [kollec.app](https://kollec.app/), accessible from any device with a web browser (access from desktop or Android mobile devices is recommended for the best experience).
 
-A native android app available on the Google Play Store and an iOS app available on the Apple App Store hoping to be released in the near future. 
+A native android app available on the Google Play Store and an iOS app available on the Apple App Store hoping to be released in the near future.
 
 For developers interested in contributing to the project, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to get started.
 
@@ -81,6 +81,7 @@ For developers interested in contributing to the project, please refer to the [C
 Feel free to contact any of the contributing developers if you have any questions or want to get involved!
 
 ### Emails:
+
 - Kenneth Ong - [kennethkvs060103@gmail.com](mailto:kennethkvs060103@gmail.com)
 - Elite Lu - [elitelulww@gmail.com](mailto:elitelulww@gmail.com)
 - Geon Youn - [geon.youn@outlook.com](mailto:geon.youn@outlook.com)

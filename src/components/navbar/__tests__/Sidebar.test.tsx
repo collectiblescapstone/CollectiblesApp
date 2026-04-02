@@ -249,16 +249,14 @@ describe('Sidebar', () => {
             expect(mockPush).toHaveBeenCalledWith('/trade')
         })
 
-        it('navigates on any key press (current behavior)', () => {
+        it('navigates on pressing Enter key', () => {
             renderWithTheme(<Sidebar />)
 
             const homeButton = screen.getByRole('button', {
                 name: 'Navigate to Home'
             })
-            fireEvent.keyDown(homeButton, { key: 'a', code: 'KeyA' })
+            fireEvent.keyDown(homeButton, { key: 'Enter', code: 'Enter' })
 
-            // Note: This is the current behavior due to operator precedence in the ternary
-            // The component should be refactored to only navigate on Enter/Space
             expect(mockPush).toHaveBeenCalledWith('/home')
         })
 

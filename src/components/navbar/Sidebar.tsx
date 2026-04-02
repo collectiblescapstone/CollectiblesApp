@@ -35,9 +35,13 @@ const Sidebar = () => {
                 _hover={{ bgColor: 'whiteAlpha.400' }}
                 padding={2}
                 borderRadius={8}
-                onKeyDown={(e) =>
-                    (e.key === 'Enter' || e.key === ' ') && router.back()
-                }
+                tabIndex={0}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        router.back()
+                    }
+                }}
             >
                 <LuStepBack size={24} />
             </Flex>
@@ -79,11 +83,16 @@ const Sidebar = () => {
                         role="button"
                         aria-label={`Navigate to ${item.name}`}
                         tabIndex={0}
-                        onKeyDown={(e) =>
-                            (e.key === 'Enter' || e.key === ' ') && item.onClick
-                                ? item.onClick(router)
-                                : router.push(item.path)
-                        }
+                        onKeyDown={(e) => {
+                            if (e.key !== 'Enter' && e.key !== ' ') {
+                                return
+                            }
+                            if (item.onClick) {
+                                item.onClick(router)
+                            } else {
+                                router.push(item.path)
+                            }
+                        }}
                     >
                         {item.icon}
                         <Heading size="2xl" ml={4}>

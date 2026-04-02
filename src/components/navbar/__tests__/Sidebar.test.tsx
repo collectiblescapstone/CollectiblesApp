@@ -249,16 +249,14 @@ describe('Sidebar', () => {
             expect(mockPush).toHaveBeenCalledWith('/trade')
         })
 
-        it('navigates on any key press (current behavior)', () => {
+        it('navigates on pressing Enter key', () => {
             renderWithTheme(<Sidebar />)
 
             const homeButton = screen.getByRole('button', {
                 name: 'Navigate to Home'
             })
-            fireEvent.keyDown(homeButton, { key: 'a', code: 'KeyA' })
+            fireEvent.keyDown(homeButton, { key: 'Enter', code: 'Enter' })
 
-            // Note: This is the current behavior due to operator precedence in the ternary
-            // The component should be refactored to only navigate on Enter/Space
             expect(mockPush).toHaveBeenCalledWith('/home')
         })
 
@@ -309,9 +307,9 @@ describe('Sidebar', () => {
         it('has role="button" for clickable menu items', () => {
             renderWithTheme(<Sidebar />)
 
-            // 5 menu items + 1 Kollec heading = 6 total headings, but we're checking buttons
+            // 5 menu items + 1 back button = 6 buttons
             const buttons = screen.getAllByRole('button')
-            expect(buttons.length).toBe(5)
+            expect(buttons.length).toBe(6)
         })
     })
 
@@ -321,7 +319,7 @@ describe('Sidebar', () => {
 
             // Verify all menu items are rendered vertically
             const buttons = screen.getAllByRole('button')
-            expect(buttons.length).toBe(5)
+            expect(buttons.length).toBe(6) // 5 menu items + 1 back button
         })
 
         it('renders logo before menu items', () => {

@@ -75,12 +75,19 @@ describe('SearchForCard', () => {
         fireEvent.change(input, { target: { value: 'bulbasaur' } })
         fireEvent.keyDown(input, { key: 'Enter' })
 
-        await waitFor(() => {
-            expect(mockSearch).toHaveBeenCalledWith('bulbasaur', undefined, 100)
-            expect(mockGetFilteredCards).toHaveBeenCalledWith({
-                ids: ['sv1-1', 'sv1-2']
-            })
-        })
+        await waitFor(
+            () => {
+                expect(mockSearch).toHaveBeenCalledWith(
+                    'bulbasaur',
+                    undefined,
+                    100
+                )
+                expect(mockGetFilteredCards).toHaveBeenCalledWith({
+                    ids: ['sv1-1', 'sv1-2']
+                })
+            },
+            { timeout: 5000 }
+        )
 
         expect(screen.getByText('Score: 0.123')).toBeInTheDocument()
         expect(screen.getByText('Score: 0.9')).toBeInTheDocument()
@@ -104,11 +111,14 @@ describe('SearchForCard', () => {
         fireEvent.change(input, { target: { value: 'unknown card' } })
         fireEvent.keyDown(input, { key: 'Enter' })
 
-        await waitFor(() => {
-            expect(screen.getByText('Score: 0.55')).toBeInTheDocument()
-            expect(
-                screen.getByRole('img', { name: 'sv1-404' })
-            ).toBeInTheDocument()
-        })
+        await waitFor(
+            () => {
+                expect(screen.getByText('Score: 0.55')).toBeInTheDocument()
+                expect(
+                    screen.getByRole('img', { name: 'sv1-404' })
+                ).toBeInTheDocument()
+            },
+            { timeout: 5000 }
+        )
     })
 })

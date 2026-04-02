@@ -57,23 +57,23 @@ Using Next.js and Capacitor, Kollec can seamlessly run in your browser and as a 
 
 ### Technologies
 
-- [Pytorch](https://pytorch.org/)
+- [PyTorch](https://pytorch.org/)
 - [Ultralytics](https://github.com/ultralytics/ultralytics)
-- [OpenCV CLIP](https://opencv.org/clip/)
+- [CLIP](https://openai.com/index/clip/)
 - [ONNX](https://onnx.ai/)
 
 ## Getting Started
 
-Kollect has already been deployed online and the complete version is available for use at [kollec.app](https://kollec.app/), accessible from any device with a web browser (access from desktop or Android mobile devices is recommended for the best experience).
+Kollec has already been deployed online and the complete version is available for use at [kollec.app](https://kollec.app/), accessible from any device with a web browser (access from desktop or Android mobile devices is recommended for the best experience).
 
-A native android app available on the Google Play Store and an iOS app available on the Apple App Store hoping to be released in the near future.
+A native Android app is available on the Google Play Store and an iOS app for the Apple App Store is planned for release in the near future.
 
 For developers interested in contributing to the project, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to get started.
 
 ## Contributors
 
 <a href="https://github.com/collectiblescapstone/CollectiblesApp/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=collectiblescapstone/CollectiblesApp" />
+  <img src="https://contrib.rocks/image?repo=collectiblescapstone/CollectiblesApp" alt="Project Contributors"/>
 </a>
 
 ## Contact

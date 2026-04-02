@@ -104,7 +104,7 @@ npm run dev:android
 npm run dev:ios
 ```
 
-These two commands will open Andriod Studio and Xcode respectively with the CollectiblesApp project already loaded.
+These two commands will open Android Studio and Xcode respectively with the CollectiblesApp project already loaded.
 
 If you already have the Android and/or iOS device emulator installed, all that's left to do is click **Run/Build** (usually the play button), and the emulators will run the app with live reload enabled (if you have the environment variable set up)
 

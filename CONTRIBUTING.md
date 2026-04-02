@@ -1,6 +1,39 @@
-# Collectibles App
+# Contributing to Kollec
 
-An app for collectors to keep track of their collectibles and trade with others! We're starting _not so small_ with Pokémon cards!
+Thank you for your interest in contributing to Kollec! We welcome contributions from the community to help us build and improve our platform for Pokémon card collectors.
+
+#### Disclaimer: Please note that getting access to the codebase and API keys is currently limited to the contributing developers. If you are interested in contributing, please reach out to any of the contributing developers to get involved! Contact information can be found at the bottom of the README.
+
+## Table of Contents
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#setting-up-mobile-development">Setting Up Mobile Development</a></li>
+    <li><a href="#setting-up-the-mobile-emulators">Setting Up the Mobile Emulator</a>
+    <ol>
+        <li><a href="#emulator-for-android">Emulator for Android</a></li>
+        <li><a href="#emulator-for-ios">Emulator for iOS</a></li>
+    </ol>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+    <li><a href="#deploying-native-app-production-build">Deploying Native App Production Build</a>
+    <ol>
+        <li><a href="#production-build-for-android">Production Build for Android</a></li>
+        <li><a href="#production-build-for-ios">Production Build for iOS</a></li>
+    </ol>
+    </li>
+    <li><a href="#running-your-own-local-database">Running your Own Local Database</a>
+    <ol>
+        <li><a href="#first-time-setup">First-Time Setup</a></li>
+        <li><a href="#database-workflow">Database Workflow</a></li>
+    </ol>
+    </li>
+  </ol>
+</details>
 
 ## Getting Started
 
@@ -48,7 +81,7 @@ At this point, the application should be available on http://localhost:3000
 
 \*Note: If at any point you need to check an email that is sent to you when you are developing locally, you WILL NOT receive it in your actual email inbox. This will be sent in Mailpit (Usually at http://127.0.0.1:54324/), which you can find the url on running `npx supabase start`.
 
-### Setting up mobile development
+## Setting up Mobile Development
 
 First, add the following environment variable:
 
@@ -78,9 +111,9 @@ These two commands will open Andriod Studio and Xcode respectively with the Coll
 
 If you already have the Android and/or iOS device emulator installed, all that's left to do is click **Run/Build** (usually the play button), and the emulators will run the app with live reload enabled (if you have the environment variable set up)
 
-### Setting up the mobile emulators
+## Setting up the Mobile Emulators
 
-#### Android
+### Emulator for Android
 
 1. Open **Android Studio**
 2. Go to **Device Manager** (Either under the 3 dots menu or an icon on the right side)
@@ -90,7 +123,7 @@ If you already have the Android and/or iOS device emulator installed, all that's
 
 Now, you should see the app build, then your emulator will boot up and open the CollectiblesApp project in the emulator.
 
-#### iOS
+### Emulator for iOS
 
 1. Open **Xcode**
 2. Go to **Settings > Components**, then click add an **iOS** simulator
@@ -100,14 +133,14 @@ Now, you should see the app build, then your emulator will boot up and open the 
 
 Now, you should see the app build, then your emulator will boot up and open the CollectiblesApp project in the emulator.
 
-#### Troubleshooting
+## Troubleshooting
 
 - [Android Studio Docs](https://developer.android.com/studio/run)
 - [XCode Emulator Docs](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)
 
-### Deploying native app production build
+## Deploying Native App Production Build
 
-#### Android
+### Production Build for Android
 
 delete the folders `android`, `out`, and `.next`
 
@@ -129,7 +162,7 @@ npx cap open android
 
 click run in android studio
 
-#### iOS
+### Production Build for iOS
 
 TODO add instructions
 
@@ -142,9 +175,9 @@ You will also need to add a permission to `Info.plist`. Follow the [Capacitor do
 <string>To save photos and videos</string>
 ```
 
-### Running your own local database
+## Running your Own Local Database
 
-#### First-Time Setup
+### First-Time Setup
 
 1. Make sure Docker is up and running.
 2. Add the following values to the `.env` file, you can obtain these values by running `npx supabase start` in your terminal:
@@ -169,7 +202,7 @@ npx prisma migrate dev
 npx prisma db seed
 ```
 
-#### Database Workflow
+### Database Workflow
 
 1. Turn on Docker
 2. Run `git pull origin main`

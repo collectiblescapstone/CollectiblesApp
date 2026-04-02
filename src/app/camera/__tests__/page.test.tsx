@@ -611,8 +611,8 @@ describe('CameraPage - iOS Native', () => {
             disableAudio: true,
             storeToFile: true,
             enableOpacity: false,
-            height: 300,
-            width: 300
+            height: 500,
+            width: 500
         })
     })
 

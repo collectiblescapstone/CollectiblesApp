@@ -309,9 +309,9 @@ describe('Sidebar', () => {
         it('has role="button" for clickable menu items', () => {
             renderWithTheme(<Sidebar />)
 
-            // 5 menu items + 1 Kollec heading = 6 total headings, but we're checking buttons
+            // 5 menu items + 1 back button = 6 buttons
             const buttons = screen.getAllByRole('button')
-            expect(buttons.length).toBe(5)
+            expect(buttons.length).toBe(6)
         })
     })
 
@@ -321,7 +321,7 @@ describe('Sidebar', () => {
 
             // Verify all menu items are rendered vertically
             const buttons = screen.getAllByRole('button')
-            expect(buttons.length).toBe(5)
+            expect(buttons.length).toBe(6) // 5 menu items + 1 back button
         })
 
         it('renders logo before menu items', () => {

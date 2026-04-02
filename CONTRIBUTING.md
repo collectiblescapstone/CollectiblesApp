@@ -5,6 +5,7 @@ Thank you for your interest in contributing to Kollec! We welcome contributions 
 #### Disclaimer: Please note that getting access to the codebase and API keys requires approval from the contributing developers. If you are interested in contributing, please reach out to any of the contributing developers to get involved! Contact information can be found at the bottom of the README.
 
 ## Table of Contents
+
 <ol>
 <li>
     <a href="#getting-started">Getting Started</a>

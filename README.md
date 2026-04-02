@@ -5,7 +5,7 @@
   <p align="center">
     A platform for Pokémon card collectors to catalogue their collection, showcase their best finds, and trade together.
     <br />
-     <a href="https://kollec.app/" target="_blank" rel="noopener noreferrer">Start Collecting</a>
+     <a href="https://kollec.app/" target="_blank" rel="noopener noreferrer">Start Collecting!</a>
   </p>
 </div>
 

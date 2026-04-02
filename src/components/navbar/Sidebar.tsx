@@ -11,6 +11,7 @@ import { Logo } from '@/components/logo/Logo'
 
 // Constants
 import { MENU_ITEMS } from './constants'
+import { LuStepBack } from 'react-icons/lu'
 
 const Sidebar = () => {
     const router = useRouter()
@@ -26,6 +27,20 @@ const Sidebar = () => {
             alignItems="flex-start"
             p={8}
         >
+            <Flex
+                onClick={() => router.back()}
+                role="button"
+                aria-label="Go back"
+                cursor="pointer"
+                _hover={{ bgColor: 'whiteAlpha.400' }}
+                padding={2}
+                borderRadius={8}
+                onKeyDown={(e) =>
+                    (e.key === 'Enter' || e.key === ' ') && router.back()
+                }
+            >
+                <LuStepBack size={24} />
+            </Flex>
             <VStack width="100%" pb={6} alignSelf="center">
                 <Logo
                     data-testid="logo"
@@ -40,40 +55,43 @@ const Sidebar = () => {
                     Kollec
                 </Heading>
             </VStack>
-            {MENU_ITEMS.map((item) => (
-                <Flex
-                    key={item.path}
-                    onClick={() =>
-                        item.onClick
-                            ? item.onClick(router)
-                            : router.push(item.path)
-                    }
-                    bgColor={
-                        pathname.startsWith(`${item.path}`)
-                            ? 'whiteAlpha.400'
-                            : 'transparent'
-                    }
-                    padding={2}
-                    borderRadius={8}
-                    flexDir="row"
-                    cursor="pointer"
-                    width="100%"
-                    mb={5}
-                    role="button"
-                    aria-label={`Navigate to ${item.name}`}
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                        (e.key === 'Enter' || e.key === ' ') && item.onClick
-                            ? item.onClick(router)
-                            : router.push(item.path)
-                    }
-                >
-                    {item.icon}
-                    <Heading size="2xl" ml={4}>
-                        {item.name}
-                    </Heading>
-                </Flex>
-            ))}
+            <VStack width="100%" alignItems="flex-start">
+                {MENU_ITEMS.map((item) => (
+                    <Flex
+                        key={item.path}
+                        onClick={() =>
+                            item.onClick
+                                ? item.onClick(router)
+                                : router.push(item.path)
+                        }
+                        bgColor={
+                            pathname.startsWith(`${item.path}`)
+                                ? 'whiteAlpha.400'
+                                : 'transparent'
+                        }
+                        _hover={{ bgColor: 'whiteAlpha.400' }}
+                        padding={2}
+                        borderRadius={8}
+                        flexDir="row"
+                        cursor="pointer"
+                        width="100%"
+                        mb={5}
+                        role="button"
+                        aria-label={`Navigate to ${item.name}`}
+                        tabIndex={0}
+                        onKeyDown={(e) =>
+                            (e.key === 'Enter' || e.key === ' ') && item.onClick
+                                ? item.onClick(router)
+                                : router.push(item.path)
+                        }
+                    >
+                        {item.icon}
+                        <Heading size="2xl" ml={4}>
+                            {item.name}
+                        </Heading>
+                    </Flex>
+                ))}
+            </VStack>
         </Flex>
     )
 }

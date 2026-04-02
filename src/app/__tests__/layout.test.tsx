@@ -24,6 +24,10 @@ jest.mock('next/font/google', () => ({
     Geist_Mono: () => ({ variable: 'geist-mono-variable' })
 }))
 
+jest.mock('@vercel/speed-insights/next', () => ({
+    SpeedInsights: () => <div data-testid="speed-insights" />
+}))
+
 describe('RootLayout', () => {
     it('renders children inside providers and applies font variables', () => {
         const { getByTestId } = render(

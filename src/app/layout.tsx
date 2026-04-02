@@ -8,6 +8,7 @@ import { Suspense } from 'react'
 import { Spinner } from '@chakra-ui/react'
 import { ProfileSelectionProvider } from '@/context/ProfileSelectionProvider'
 import { PokemonCardsProvider } from '@/context/PokemonCardsProvider'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
     title: 'Kollec',
@@ -28,7 +29,10 @@ export default function RootLayout({
                             <ProfileSelectionProvider>
                                 <PokemonCardsProvider>
                                     <Suspense fallback={<Spinner size="xl" />}>
-                                        <Content>{children}</Content>
+                                        <Content>
+                                            {children}
+                                            <SpeedInsights />
+                                        </Content>
                                     </Suspense>
                                 </PokemonCardsProvider>
                             </ProfileSelectionProvider>

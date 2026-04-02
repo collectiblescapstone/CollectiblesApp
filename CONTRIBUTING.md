@@ -2,38 +2,34 @@
 
 Thank you for your interest in contributing to Kollec! We welcome contributions from the community to help us build and improve our platform for Pokémon card collectors.
 
-#### Disclaimer: Please note that getting access to the codebase and API keys is currently limited to the contributing developers. If you are interested in contributing, please reach out to any of the contributing developers to get involved! Contact information can be found at the bottom of the README.
+#### Disclaimer: Please note that getting access to the codebase and API keys requires approval from the contributing developers. If you are interested in contributing, please reach out to any of the contributing developers to get involved! Contact information can be found at the bottom of the README.
 
 ## Table of Contents
-
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
-    <li><a href="#setting-up-mobile-development">Setting Up Mobile Development</a></li>
-    <li><a href="#setting-up-the-mobile-emulators">Setting Up the Mobile Emulator</a>
+<ol>
+<li>
+    <a href="#getting-started">Getting Started</a>
+</li>
+<li><a href="#setting-up-mobile-development">Setting Up Mobile Development</a></li>
+<li><a href="#setting-up-the-mobile-emulators">Setting Up the Mobile Emulator</a>
     <ol>
         <li><a href="#emulator-for-android">Emulator for Android</a></li>
         <li><a href="#emulator-for-ios">Emulator for iOS</a></li>
     </ol>
-    </li>
-    <li><a href="#troubleshooting">Troubleshooting</a></li>
-    <li><a href="#deploying-native-app-production-build">Deploying Native App Production Build</a>
+</li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#deploying-native-app-production-build">Deploying Native App Production Build</a>
     <ol>
         <li><a href="#production-build-for-android">Production Build for Android</a></li>
         <li><a href="#production-build-for-ios">Production Build for iOS</a></li>
     </ol>
-    </li>
-    <li><a href="#running-your-own-local-database">Running your Own Local Database</a>
+</li>
+<li><a href="#running-your-own-local-database">Running your Own Local Database</a>
     <ol>
         <li><a href="#first-time-setup">First-Time Setup</a></li>
         <li><a href="#database-workflow">Database Workflow</a></li>
     </ol>
-    </li>
-  </ol>
-</details>
+</li>
+</ol>
 
 ## Getting Started
 

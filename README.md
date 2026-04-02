@@ -15,18 +15,19 @@
 
 ## Table of Contents
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li><a href="#built-with">Built With</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#contributors">Contributors</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+<ol>
+  <li>
+    <a href="#about-the-project">About The Project</a>
+  </li>
+  <li><a href="#built-with">Built With</a></li>
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#contributors">Contributors</a></li>
+  <li><a href="#contact">Contact</a>
+    <ol>
+        <li><a href="#emails">Emails</a></li>
+    </ol>
+  </li>
+</ol>
 
 ## About The Project
 

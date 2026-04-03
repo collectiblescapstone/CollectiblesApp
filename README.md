@@ -41,7 +41,7 @@ Using Next.js and Capacitor, Kollec can seamlessly run in your browser and as a 
 
 ## Built With
 
-<img src="public/Images/README/Tech_stack_image.png" alt="Tech Stack" width="550">
+<img src="documentation/Tech_stack_image.png" alt="Tech Stack" width="550">
 
 ### Front End
 

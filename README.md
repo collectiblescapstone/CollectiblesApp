@@ -11,7 +11,7 @@
 
 ## Demo
 
-<!-- Add a demo video or GIF here -->
+https://github.com/user-attachments/assets/df0ea1e2-df24-499c-8949-e7e3d7502f80
 
 ## Table of Contents
 

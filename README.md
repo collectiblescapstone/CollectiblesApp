@@ -11,7 +11,7 @@
 
 ## Demo
 
-<!-- Add a demo video or GIF here -->
+https://github.com/user-attachments/assets/df0ea1e2-df24-499c-8949-e7e3d7502f80
 
 ## Table of Contents
 
@@ -41,7 +41,7 @@ Using Next.js and Capacitor, Kollec can seamlessly run in your browser and as a 
 
 ## Built With
 
-<img src="public/Images/README/Tech_stack_image.png" alt="Tech Stack" width="550">
+<img src="documentation/Tech_stack_image.png" alt="Tech Stack" width="550">
 
 ### Front End
 

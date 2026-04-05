@@ -17,12 +17,19 @@ jest.mock('next/navigation', () => ({
 
 jest.mock('@capacitor/core', () => ({
     Capacitor: {
-        isNativePlatform: jest.fn(() => false)
+        isNativePlatform: jest.fn(() => false),
+        getPlatform: jest.fn(() => 'web')
     }
 }))
 
 jest.mock('@ionic/pwa-elements/loader', () => ({
     defineCustomElements: jest.fn()
+}))
+
+jest.mock('@boengli/capacitor-fullscreen', () => ({
+    Fullscreen: {
+        activateImmersiveMode: jest.fn()
+    }
 }))
 
 jest.mock('../../components/navbar/Header.tsx', () => ({
@@ -47,6 +54,9 @@ import { Capacitor } from '@capacitor/core'
 
 const mockedUsePathname = jest.mocked(usePathname)
 const mockedCapacitor = jest.mocked(Capacitor)
+
+import { Fullscreen } from '@boengli/capacitor-fullscreen'
+const mockedFullscreen = jest.mocked(Fullscreen)
 
 const createMockSession = (): Session => ({
     user: {
@@ -77,6 +87,7 @@ describe('Content', () => {
         jest.clearAllMocks()
         mockedUsePathname.mockReturnValue('/home')
         mockedCapacitor.isNativePlatform.mockReturnValue(false)
+        mockedCapacitor.getPlatform.mockReturnValue('web')
         Object.defineProperty(window, 'innerWidth', {
             writable: true,
             configurable: true,

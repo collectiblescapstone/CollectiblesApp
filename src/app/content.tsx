@@ -47,13 +47,15 @@ const Content = ({ children }: { children: React.ReactNode }) => {
     }, [])
 
     useEffect(() => {
+        if (!session || pathname === '/reset-password') return
+
         if (
             Capacitor.isNativePlatform() &&
             Capacitor.getPlatform() === 'android'
         ) {
             Fullscreen.activateImmersiveMode()
         }
-    }, [])
+    }, [pathname, session])
 
     const authenticatedLayout = isMobileView ? (
         <Suspense fallback={<Spinner size="xl" />}>

@@ -140,6 +140,35 @@ describe('Content', () => {
         expect(screen.queryByTestId('footer')).not.toBeInTheDocument()
     })
 
+    it('activates immersive mode only for authenticated android renders', () => {
+        mockedUseAuth.mockReturnValue(baseAuthContext)
+        mockedCapacitor.isNativePlatform.mockReturnValue(true)
+        mockedCapacitor.getPlatform.mockReturnValue('android')
+
+        renderWithTheme(
+            <Content>
+                <div data-testid="child-content">Android Content</div>
+            </Content>
+        )
+
+        expect(mockedFullscreen.activateImmersiveMode).toHaveBeenCalledTimes(1)
+    })
+
+    it('does not activate immersive mode on reset-password', () => {
+        mockedUseAuth.mockReturnValue(baseAuthContext)
+        mockedUsePathname.mockReturnValue('/reset-password')
+        mockedCapacitor.isNativePlatform.mockReturnValue(true)
+        mockedCapacitor.getPlatform.mockReturnValue('android')
+
+        renderWithTheme(
+            <Content>
+                <div data-testid="child-content">Reset Password Content</div>
+            </Content>
+        )
+
+        expect(mockedFullscreen.activateImmersiveMode).not.toHaveBeenCalled()
+    })
+
     it('renders mobile layout with Header and Footer when authenticated on mobile', () => {
         mockedUseAuth.mockReturnValue(baseAuthContext)
         Object.defineProperty(window, 'innerWidth', {

@@ -9,6 +9,7 @@ import Sidebar from '@/components/navbar/Sidebar'
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
 import { useAuth } from '@/context/AuthProvider'
 import { usePathname } from 'next/navigation'
+import { Fullscreen } from '@boengli/capacitor-fullscreen'
 
 export const CHAKRA_UI_LG_BREAKPOINT = 992
 
@@ -44,6 +45,17 @@ const Content = ({ children }: { children: React.ReactNode }) => {
             window.removeEventListener('resize', handleResize)
         }
     }, [])
+
+    useEffect(() => {
+        if (!session || pathname === '/reset-password') return
+
+        if (
+            Capacitor.isNativePlatform() &&
+            Capacitor.getPlatform() === 'android'
+        ) {
+            Fullscreen.activateImmersiveMode()
+        }
+    }, [pathname, session])
 
     const authenticatedLayout = isMobileView ? (
         <Suspense fallback={<Spinner size="xl" />}>

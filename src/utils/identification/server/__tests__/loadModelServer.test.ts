@@ -24,6 +24,11 @@ jest.mock('onnxruntime-node', () => {
     }
 })
 
+jest.mock('@/utils/constants', () => ({
+    MODEL_INPUT_WIDTH: 320,
+    MODEL_INPUT_HEIGHT: 320
+}))
+
 describe('loadModelServer', () => {
     beforeEach(() => {
         jest.resetModules()

@@ -23,6 +23,11 @@ jest.mock('onnxruntime-web', () => {
     }
 })
 
+jest.mock('@/utils/constants', () => ({
+    MODEL_INPUT_WIDTH: 320,
+    MODEL_INPUT_HEIGHT: 320
+}))
+
 describe('loadModel', () => {
     beforeEach(() => {
         jest.resetModules()
@@ -73,7 +78,7 @@ describe('loadModel', () => {
             dims: number[]
             dispose: jest.Mock
         }
-        expect(tensor.dims).toEqual([1, 3, 640, 640])
+        expect(tensor.dims).toEqual([1, 3, 320, 320])
         expect(tensor.dispose).toHaveBeenCalledTimes(1)
     })
 

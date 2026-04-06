@@ -17,12 +17,19 @@ jest.mock('next/navigation', () => ({
 
 jest.mock('@capacitor/core', () => ({
     Capacitor: {
-        isNativePlatform: jest.fn(() => false)
+        isNativePlatform: jest.fn(() => false),
+        getPlatform: jest.fn(() => 'web')
     }
 }))
 
 jest.mock('@ionic/pwa-elements/loader', () => ({
     defineCustomElements: jest.fn()
+}))
+
+jest.mock('@boengli/capacitor-fullscreen', () => ({
+    Fullscreen: {
+        activateImmersiveMode: jest.fn()
+    }
 }))
 
 jest.mock('../../components/navbar/Header.tsx', () => ({
@@ -47,6 +54,9 @@ import { Capacitor } from '@capacitor/core'
 
 const mockedUsePathname = jest.mocked(usePathname)
 const mockedCapacitor = jest.mocked(Capacitor)
+
+import { Fullscreen } from '@boengli/capacitor-fullscreen'
+const mockedFullscreen = jest.mocked(Fullscreen)
 
 const createMockSession = (): Session => ({
     user: {
@@ -77,6 +87,7 @@ describe('Content', () => {
         jest.clearAllMocks()
         mockedUsePathname.mockReturnValue('/home')
         mockedCapacitor.isNativePlatform.mockReturnValue(false)
+        mockedCapacitor.getPlatform.mockReturnValue('web')
         Object.defineProperty(window, 'innerWidth', {
             writable: true,
             configurable: true,
@@ -127,6 +138,35 @@ describe('Content', () => {
         expect(screen.getByTestId('child-content')).toBeInTheDocument()
         expect(screen.queryByTestId('header')).not.toBeInTheDocument()
         expect(screen.queryByTestId('footer')).not.toBeInTheDocument()
+    })
+
+    it('activates immersive mode only for authenticated android renders', () => {
+        mockedUseAuth.mockReturnValue(baseAuthContext)
+        mockedCapacitor.isNativePlatform.mockReturnValue(true)
+        mockedCapacitor.getPlatform.mockReturnValue('android')
+
+        renderWithTheme(
+            <Content>
+                <div data-testid="child-content">Android Content</div>
+            </Content>
+        )
+
+        expect(mockedFullscreen.activateImmersiveMode).toHaveBeenCalledTimes(1)
+    })
+
+    it('does not activate immersive mode on reset-password', () => {
+        mockedUseAuth.mockReturnValue(baseAuthContext)
+        mockedUsePathname.mockReturnValue('/reset-password')
+        mockedCapacitor.isNativePlatform.mockReturnValue(true)
+        mockedCapacitor.getPlatform.mockReturnValue('android')
+
+        renderWithTheme(
+            <Content>
+                <div data-testid="child-content">Reset Password Content</div>
+            </Content>
+        )
+
+        expect(mockedFullscreen.activateImmersiveMode).not.toHaveBeenCalled()
     })
 
     it('renders mobile layout with Header and Footer when authenticated on mobile', () => {

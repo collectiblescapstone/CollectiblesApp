@@ -62,7 +62,7 @@ describe('IdentifiedCard', () => {
         consoleErrorSpy.mockRestore()
     })
 
-    it('renders card details and edit-card link', () => {
+    it('renders card details and user-card link', () => {
         renderWithTheme(
             <IdentifiedCard
                 data={data}
@@ -78,7 +78,7 @@ describe('IdentifiedCard', () => {
         ).toHaveAttribute('src', 'https://img/low.jpg')
         expect(screen.getByRole('link')).toHaveAttribute(
             'href',
-            '/edit-card?cardId=sv1-1'
+            '/user-cards?cardId=sv1-1'
         )
     })
 

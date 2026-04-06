@@ -99,7 +99,7 @@ export const CardClassifierServer = async (): Promise<
     const getSimilarCards = (
         cv: CV,
         image: Mat,
-        hashThreshold: number = 0.33
+        hashThreshold: number = 0.28
     ) => {
         image.convertTo(image, cv.CV_8UC3)
         const channels = new cv.MatVector()

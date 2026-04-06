@@ -1,4 +1,5 @@
 import { InferenceSession, Tensor } from 'onnxruntime-node'
+import { MODEL_INPUT_WIDTH, MODEL_INPUT_HEIGHT } from '@/utils/constants'
 
 let sessionNode: InferenceSession | null = null
 
@@ -14,7 +15,7 @@ export const loadModelServer = async (
         return sessionNode
     }
 
-    const DEFAULT_INPUT_SIZE = [1, 3, 640, 640]
+    const DEFAULT_INPUT_SIZE = [1, 3, MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH]
     const settings: InferenceSession.SessionOptions = {
         executionProviders: ['cpu'],
         graphOptimizationLevel: 'all'

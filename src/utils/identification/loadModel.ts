@@ -1,6 +1,6 @@
 // credit: https://github.com/nomi30701/yolo-multi-task-onnxruntime-web
 import { InferenceSession, Tensor, env } from 'onnxruntime-web'
-import { MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH } from '../constants'
+import { MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH } from '@/utils/constants'
 
 let session: InferenceSession | null = null
 

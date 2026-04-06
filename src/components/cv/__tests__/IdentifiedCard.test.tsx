@@ -62,7 +62,7 @@ describe('IdentifiedCard', () => {
         consoleErrorSpy.mockRestore()
     })
 
-    it('renders card details and edit-card link', () => {
+    it('renders card details and user-card link', () => {
         renderWithTheme(
             <IdentifiedCard
                 data={data}

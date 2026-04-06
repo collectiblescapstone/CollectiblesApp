@@ -531,34 +531,34 @@ const Landing: React.FC = () => {
                                     viable, mutually beneficial trades.
                                 </p>
                                 <p>
-                                  Kollec can be found on GitHub:
-                                  <a
-                                    href="https://github.com/collectiblescapstone/Kollec-App"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                      textDecoration: 'none',
-                                      display: 'inline-flex',
-                                      alignItems: 'center',
-                                      marginLeft: '0px',
-                                      verticalAlign: 'middle'
-                                    }}
-                                    aria-label="Open Kollec GitHub in new tab"
-                                  >
-                                    <Button
-                                      variant="ghost"
-                                      color="brand.turtoise"
-                                      fontSize="15px"
-                                      size="sm"
-                                      px={3}
-                                      py={1}
-                                      height="auto"
-                                      lineHeight="1"
-                                      style={{ verticalAlign: 'middle' }}
+                                    Kollec can be found on GitHub:
+                                    <a
+                                        href="https://github.com/collectiblescapstone/Kollec-App"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            textDecoration: 'none',
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            marginLeft: '0px',
+                                            verticalAlign: 'middle'
+                                        }}
+                                        aria-label="Open Kollec GitHub in new tab"
                                     >
-                                      Kollec GitHub
-                                    </Button>
-                                  </a>
+                                        <Button
+                                            variant="ghost"
+                                            color="brand.turtoise"
+                                            fontSize="15px"
+                                            size="sm"
+                                            px={3}
+                                            py={1}
+                                            height="auto"
+                                            lineHeight="1"
+                                            style={{ verticalAlign: 'middle' }}
+                                        >
+                                            Kollec GitHub
+                                        </Button>
+                                    </a>
                                 </p>
                                 <ul>
                                     {teamMembers.map((m) => (

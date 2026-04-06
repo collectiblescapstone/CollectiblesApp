@@ -78,7 +78,7 @@ describe('IdentifiedCard', () => {
         ).toHaveAttribute('src', 'https://img/low.jpg')
         expect(screen.getByRole('link')).toHaveAttribute(
             'href',
-            '/edit-card?cardId=sv1-1'
+            '/user-cards?cardId=sv1-1'
         )
     })
 

@@ -1,5 +1,6 @@
 // credit: https://github.com/nomi30701/yolo-multi-task-onnxruntime-web
 import { InferenceSession, Tensor, env } from 'onnxruntime-web'
+import { MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH } from '../constants'
 
 let session: InferenceSession | null = null
 
@@ -15,7 +16,7 @@ export const loadModel = async (
         return session
     }
 
-    const DEFAULT_INPUT_SIZE = [1, 3, 640, 640]
+    const DEFAULT_INPUT_SIZE = [1, 3, MODEL_INPUT_HEIGHT, MODEL_INPUT_WIDTH]
     const settings: InferenceSession.SessionOptions = {
         executionProviders: ['webgpu'],
         graphOptimizationLevel: 'all',

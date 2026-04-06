@@ -3,7 +3,8 @@
 import { Box, Button, Flex, HStack, Image, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 
-import { LuZap, LuPlus } from 'react-icons/lu'
+import { LuZap } from 'react-icons/lu'
+import { FaPencilAlt } from 'react-icons/fa'
 
 import { CardData } from '@/types/identification'
 import { CapacitorHttp } from '@capacitor/core'
@@ -94,14 +95,14 @@ export const IdentifiedCard = ({
                     <Text>{data?.card.set.name}</Text>
                     <Link
                         href={{
-                            pathname: '/edit-card',
+                            pathname: '/user-cards',
                             query: {
                                 cardId: data?.card.id ?? ''
                             }
                         }}
                     >
                         <Button width="13em">
-                            <LuPlus></LuPlus>Add To Collection
+                            <FaPencilAlt></FaPencilAlt>Configure Collection
                         </Button>
                     </Link>
                     <Button

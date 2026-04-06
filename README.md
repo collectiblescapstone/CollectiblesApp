@@ -13,6 +13,13 @@
 
 https://github.com/user-attachments/assets/df0ea1e2-df24-499c-8949-e7e3d7502f80
 
+## Deliverables
+
+- All the required deliverable documents (SRS, Design, V&V, and Reflection) are under the `docs/` directory.
+- All the meeting notes from the weekly meetings throughout the year are recorded under the `meetings/` directory.
+- The prototype video can be found in the `docs/videos/` directory.
+- The final demo video can be found above in this README file.
+
 ## Table of Contents
 
 <ol>
@@ -41,7 +48,7 @@ Using Next.js and Capacitor, Kollec can seamlessly run in your browser and as a 
 
 ## Built With
 
-<img src="documentation/Tech_stack_image.png" alt="Tech Stack" width="550">
+<img src="docs/documentation/Tech_stack_image.png" alt="Tech Stack" width="550">
 
 ### Front End
 

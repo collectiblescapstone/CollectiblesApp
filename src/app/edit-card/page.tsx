@@ -311,7 +311,7 @@ const EditCardPage = () => {
             const payload = {
                 cardName: data.CardName,
                 condition:
-                    data.CardGrade?.[0] === 'ungraded'
+                    data.CardGrade?.[0] === 'Ungraded'
                         ? data.Condition
                         : undefined,
                 variant: data.FoilPattern ?? 'normal',

@@ -10,7 +10,6 @@ import { CardData } from '@/types/identification'
 import { CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
 import type { Session } from '@supabase/supabase-js'
-import { refreshPokemonCards } from '@/utils/userPokemonCard'
 
 interface IdentifiedCardProps {
     data: CardData
@@ -60,7 +59,6 @@ export const IdentifiedCard = ({
                 return
             }
 
-            refreshPokemonCards(session.user.id)
             onInstantAddSuccess()
         } catch (err) {
             console.error('Unexpected error saving card', err)

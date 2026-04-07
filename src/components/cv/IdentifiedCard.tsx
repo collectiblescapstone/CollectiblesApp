@@ -59,6 +59,7 @@ export const IdentifiedCard = ({
                 return
             }
 
+            refreshPokemonCards(session.user.id)
             onInstantAddSuccess()
         } catch (err) {
             console.error('Unexpected error saving card', err)

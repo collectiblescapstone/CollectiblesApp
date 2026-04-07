@@ -310,7 +310,10 @@ const EditCardPage = () => {
             if (!session?.user?.id) return // Extra check to ensure user is authenticated before allowing submission
             const payload = {
                 cardName: data.CardName,
-                condition: data.Condition ?? undefined,
+                condition:
+                    data.CardGrade?.[0] === 'ungraded' && data.Condition
+                        ? data.Condition
+                        : undefined,
                 variant: data.FoilPattern ?? 'normal',
                 grade: data.CardGrade?.[0] ?? 'Ungraded',
                 gradeLevel: data.CardGradeDetail?.[0] ?? undefined,

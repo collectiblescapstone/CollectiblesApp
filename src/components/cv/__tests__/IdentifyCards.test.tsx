@@ -46,6 +46,10 @@ jest.mock('@/context/AuthProvider', () => ({
     useAuth: () => mockUseAuth()
 }))
 
+jest.mock('@/utils/userPokemonCard', () => ({
+    refreshPokemonCards: jest.fn()
+}))
+
 jest.mock('@capacitor/core', () => ({
     Capacitor: {
         getPlatform: () => mockGetPlatform()

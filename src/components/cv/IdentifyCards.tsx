@@ -11,6 +11,7 @@ import { IdentifiedCard } from './IdentifiedCard'
 import { useAuth } from '@/context/AuthProvider'
 import { Capacitor, CapacitorHttp } from '@capacitor/core'
 import { baseUrl } from '@/utils/constants'
+import { refreshPokemonCards } from '@/utils/userPokemonCard'
 
 interface IdentifyCardsProps {
     sourceImageData?: ImageData
@@ -181,6 +182,12 @@ export const IdentifyCards = ({
                                             ])
                                         }}
                                         onInstantAddSuccess={() => {
+                                            if (session?.user.id == undefined) {
+                                                return
+                                            }
+                                            refreshPokemonCards(
+                                                session?.user.id
+                                            )
                                             instantAddSuccessPopup(
                                                 card.data.card.id
                                             )

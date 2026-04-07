@@ -180,14 +180,14 @@ export const IdentifyCards = ({
                                                 ...prev,
                                                 card.data.card.id
                                             ])
+                                        }}
+                                        onInstantAddSuccess={() => {
                                             if (session?.user.id == undefined) {
                                                 return
                                             }
                                             refreshPokemonCards(
                                                 session?.user.id
                                             )
-                                        }}
-                                        onInstantAddSuccess={() => {
                                             instantAddSuccessPopup(
                                                 card.data.card.id
                                             )
